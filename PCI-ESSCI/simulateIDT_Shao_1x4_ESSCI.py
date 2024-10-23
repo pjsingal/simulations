@@ -1,5 +1,6 @@
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -118,7 +119,7 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='graph_reading'
+path='graph_reading\\PCI\\'
 df = pd.read_csv(path+'Shao_IDT\\1.csv')
 p_df = df['P']
 T_df = df['T']

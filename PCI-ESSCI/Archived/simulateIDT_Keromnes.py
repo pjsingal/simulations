@@ -1,5 +1,6 @@
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -76,7 +77,7 @@ def ignitionDelay(states, species):
     return states.t[i_ign]
 
 ################################################################################################
-# path='graph_reading'
+# path='graph_reading\\PCI\\'
 # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\exp_50H2_50CO.csv')
 # ax.semilogy(df['T'],df['IDT'],'o',fillstyle='none',linestyle='none',color='g',markersize=msz,markeredgewidth=mw,label='Exp 50H2/50CO', zorder=12)
 

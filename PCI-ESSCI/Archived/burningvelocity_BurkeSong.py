@@ -8,7 +8,8 @@ Keywords: combustion, 1D flow, premixed flame, multicomponent transport,
           saving output
 """
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 from pathlib import Path
 import cantera as ct
 import pandas as pd

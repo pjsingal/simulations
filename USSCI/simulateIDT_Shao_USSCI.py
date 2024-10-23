@@ -1,7 +1,9 @@
 #%%
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
+# from cantera.build.python import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
 import time
@@ -55,28 +57,28 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
         'base': r'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',
-        'LMRR': r'factory_mechanisms\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms\\alzuetamechanism_LMRR_allP.yaml',
+        # 'LMRR': r'factory_mechanisms\\alzuetamechanism_LMRR.yaml',
+        # 'LMRR-allP': r'factory_mechanisms\\alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
         'base': r'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
-        'LMRR': r'factory_mechanisms\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms\\mei-2019_LMRR_allP.yaml',
+        # 'LMRR': r'factory_mechanisms\\mei-2019_LMRR.yaml',
+        # 'LMRR-allP': r'factory_mechanisms\\mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
         'base': r"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"factory_mechanisms\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\zhang-2017_LMRR_allP.yaml",
+        # 'LMRR': r"factory_mechanisms\\zhang-2017_LMRR.yaml",
+        # 'LMRR-allP': r"factory_mechanisms\\zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
         'base': r"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"factory_mechanisms\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\otomo-2018_LMRR_allP.yaml",
+        # 'LMRR': r"factory_mechanisms\\otomo-2018_LMRR.yaml",
+        # 'LMRR-allP': r"factory_mechanisms\\otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
         'base': r"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"factory_mechanisms\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\stagni-2020_LMRR_allP.yaml",
+        # 'LMRR': r"factory_mechanisms\\stagni-2020_LMRR.yaml",
+        # 'LMRR-allP': r"factory_mechanisms\\stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -111,7 +113,6 @@ for z, n in enumerate(models):
     ax[3,z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
     ax[3,z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1e}"))
 
-
     # f.text(0.5, -0.1, r'Temperature [K]', ha='center', va='center')
 
     def ignitionDelay(states, species):
@@ -121,8 +122,8 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    path='graph_reading'
-    df = pd.read_csv(path+'Shao_IDT\\1.csv')
+    path=os.getcwd()+'/graph_reading/PCI/'
+    df = pd.read_csv(path+'Shao_IDT/1.csv')
     p_df = df['P']
     T_df = df['T']
     IDT_df = df['IDT']

@@ -27,7 +27,8 @@ Keywords: ignition delay time, shock tube, mixture rule, LMR-R
 """
 
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import time

@@ -2,7 +2,8 @@
 Class that allows for fitting of rate constants at various temperatures and pressures (k(T,P))
 """
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
 import numpy as np
 import pandas as pd

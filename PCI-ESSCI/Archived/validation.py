@@ -1,7 +1,8 @@
 #%%
 #Validation script
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import matplotlib.pyplot as plt
 import cantera as bklabct
 import numpy as np

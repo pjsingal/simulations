@@ -1,5 +1,6 @@
 import sys, os
-sys.path.append("cantera/build/python")
+sys.path.append(os.getcwd())
+sys.path.append("simulations/cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -79,7 +80,7 @@ def ignitionDelay(states, species):
 # ################################################################################################
 # #FIGURE 15
 # f, ax = plt.subplots(1, 1, figsize=(args.figwidth, args.figheight)) 
-# path='graph_reading'
+# path='graph_reading\\PCI\\'
 # # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\exp_50H2_50CO.csv')
 # # ax.semilogy(df['T'],df['IDT'],'o',fillstyle='full',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Exp 50 H$_2$/50 CO', zorder=12)
 
@@ -166,7 +167,7 @@ def ignitionDelay(states, species):
 ################################################################################################
 #FIGURE 13
 f, ax = plt.subplots(1, 1, figsize=(args.figwidth, args.figheight)) 
-path='graph_reading'
+path='graph_reading\\PCI\\'
 df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\Fig13_model_4bar.csv')
 # ax.semilogy(df['T'],df['IDT'],linestyle='-',color='k',linewidth=lw, label='Graph-read model (4 bar)', zorder=12)
 ax.semilogy(df['T'],df['IDT'],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Graph-read model (4 bar)', zorder=12)
