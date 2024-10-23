@@ -1,8 +1,8 @@
 # To run file: 
-# python "C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\simulateflamespeedGubbi.py"
+# python "GTech\\simulateflamespeedGubbi.py"
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -50,9 +50,9 @@ fslope=args.slopeVal #should be low enough that the results don't depend on the 
 fcurve=args.curveVal
 ftransport=args.transport # 'multicomponent' or 'mixture-averaged'
 models = {    
-          'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",
-          'Mei':'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Ammonia\\Mei-2019\\mei-2019.yaml',
-          'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_extraColliders.yaml",
+          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",
+          'Mei':'chemical_mechanisms\\Ammonia\\Mei-2019\\mei-2019.yaml',
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
           }
 ###############################################################################################################
 
@@ -105,7 +105,7 @@ for x, alpha in enumerate(alpha_list):
             mbr.append(f.velocity[0] * 100) # cm/s
 
           # Save phi_list and mbr to CSV
-          path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\GubbiResults_vsPhi_'+date+f' (slope={fslope} curve={fcurve})'
+          path=f'GTech\\GubbiResults_vsPhi_'+date+f' (slope={fslope} curve={fcurve})'
           os.makedirs(path,exist_ok=True)
           csv_filename =path+f'\\{m}_{p}bar_data_{alpha}alpha.csv'
           data = zip(phi_list, mbr)

@@ -56,29 +56,29 @@ lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
-        'base': r'test\\data\\alzuetamechanism.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -100,7 +100,7 @@ for z, n in enumerate(models):
     ax[1,z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
     # Plot experimental data
-    path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+    path="graph_reading"
     dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
     NH3_list = np.divide(dataset.iloc[:,0],100)
     ox_frac_list = np.subtract(1,NH3_list)
@@ -113,7 +113,7 @@ for z, n in enumerate(models):
     ax[1,z].plot(dataset.iloc[:,0],dataset.iloc[:,1],marker='x',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Wang',zorder=99)
 
     # Plot simulation data
-    path=f'burkelab_SimScripts\\USSCI_simulations\\data\\Ronney\\'+args.date+'\\'
+    path=f'USSCI\\data\\Ronney\\'+args.date+'\\'
     alpha_list = [1.0,0.6]
     p_list=[760]
     for x, alpha in enumerate(alpha_list):
@@ -142,7 +142,7 @@ ax[0,0].set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
 ax[1,0].set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
 ax[1,2].set_xlabel(r'Equivalence Ratio')
 
-path=f'burkelab_SimScripts\\USSCI_simulations\\figures\\'+args.date
+path=f'USSCI\\figures\\'+args.date
 os.makedirs(path,exist_ok=True)
 if save_plots == True:
     plt.savefig(path+f'\\{name}.png', dpi=500, bbox_inches='tight')

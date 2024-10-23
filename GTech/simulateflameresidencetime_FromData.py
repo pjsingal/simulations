@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
@@ -112,16 +112,16 @@ ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 
 models = [
-    {'name': 'Alzueta', 'path': 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml'},
-    {'name': 'LMR-R', 'path': 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_extraColliders.yaml'},
-          {'name': 'Mei', 'path': 'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml'},
-          {'name': 'Glarborg', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Glarborg-2018\\glarborg-2018.yaml"},
-          {'name': 'Zhang', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml"},
-          {'name': 'Otomo', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml"},
-          {'name': 'Stagni', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml"},
-          {'name': 'Shrestha', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Shrestha-2021\\shrestha-2021.yaml"},
-          {'name': 'Han', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Han-2021\\han-2021.yaml"},
-        #   {'name': 'Cornell', 'path': "G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Cornell-2024\\cornell-2024.yaml"},
+    {'name': 'Alzueta', 'path': 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml'},
+    {'name': 'LMR-R', 'path': 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml'},
+          {'name': 'Mei', 'path': 'chemical_mechanisms\\Mei-2019\\mei-2019.yaml'},
+          {'name': 'Glarborg', 'path': "chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml"},
+          {'name': 'Zhang', 'path': "chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml"},
+          {'name': 'Otomo', 'path': "chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml"},
+          {'name': 'Stagni', 'path': "chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml"},
+          {'name': 'Shrestha', 'path': "chemical_mechanisms\\Shrestha-2021\\shrestha-2021.yaml"},
+          {'name': 'Han', 'path': "chemical_mechanisms\\Han-2021\\han-2021.yaml"},
+        #   {'name': 'Cornell', 'path': "chemical_mechanisms\\Cornell-2024\\cornell-2024.yaml"},
         ]
 colours = ["xkcd:grey","xkcd:purple", "xkcd:teal", "orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:navy blue"]
 zorders = [90,100,80,70,60,50,40,30,20,10]
@@ -151,7 +151,7 @@ for i,P in enumerate(P_list):
     # x_eq = np.logspace(np.log10(dat.iloc[0, 0]),np.log10(dat.iloc[1, 0]),num=10)
     # y_eq = dat.iloc[0, 1]*np.ones(len(x_eq))
     # ax[i].loglog(x_eq,y_eq,marker='x',fillstyle='none',linestyle='none',color='k',markersize=mkrsz,markeredgewidth=mkrw, label=f"Gubbi_eq", zorder=110)
-    path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\GubbiResidenceTime_'+args.date
+    path=f'GTech\\GubbiResidenceTime_'+args.date
     state_eq=pd.read_csv(path+f'\\Mei_{P}bar_data_equilibrium.csv')
     XNOdry_eq = getXNOdry(list(state_eq['X_NO'])[-1], list(state_eq['X_O2'])[-1])
     # print(state_eq['tau [ms]'])
@@ -213,7 +213,7 @@ ax.tick_params(axis='both',direction='in')
 ax.tick_params(axis='both', which='minor', direction="in")
 # ax[1].tick_params(axis='both', which='minor', direction="in")
 # ax[2].tick_params(axis='both', which='minor', direction="in")
-path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"
+path="GTech\\figures\\"
 plt.savefig(path+f'residencetime_NO_{args.date}_{args.xscale}_{args.yscale}.pdf',dpi=1000, bbox_inches='tight')
 plt.savefig(path+f'residencetime_NO_{args.date}_{args.xscale}_{args.yscale}.svg',dpi=500, bbox_inches='tight')
 # print("Simulation complete!")

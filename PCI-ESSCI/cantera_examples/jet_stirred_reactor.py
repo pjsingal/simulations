@@ -26,7 +26,7 @@ Keywords: jet-stirred reactor, species profile, temperature profile, time histor
 """
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import numpy as np
 import pandas as pd
 import time as time

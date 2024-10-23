@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -77,9 +77,9 @@ ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 
 if fslope != -1:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
 else:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+"\\"
+    path="PCI-ESSCI\\RonneyResults_"+date+"\\"
 
 
 dataset=pd.read_csv(path+f'Ar_0_data_1.0alpha.csv')
@@ -97,7 +97,7 @@ ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color='xkcd:purple',lab
 
 # ax.set_title(f'{round(alpha*100)}% NH3/{round((1-alpha)*100)}% H2')
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
@@ -119,7 +119,7 @@ else:
     name = f'ronney_flamespeed_1.0Alpha_'+date+f'_{args.paper}'
     
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
 
 # plt.show()     

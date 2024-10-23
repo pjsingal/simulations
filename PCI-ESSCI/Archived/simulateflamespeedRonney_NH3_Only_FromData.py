@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -52,10 +52,10 @@ lgdfsz=7
 # ax[idxs[x]].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 models = {
-        'LMR-R':"test/data/alzuetamechanism_LMRR.yaml", 
-        'Alzueta':"test/data/alzuetamechanism.yaml",                 
-        'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-        r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
+        'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+        'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",                 
+        'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+        r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
         }
         
 # def plotPoints(fname, label, shape,color,x):
@@ -66,7 +66,7 @@ models = {
 #     phi_list = np.divide(np.divide(NH3_list,O2_list),np.divide(4,3))
 #     ax[x].plot(phi_list,dataset.iloc[:,1],marker=shape,fillstyle='none',markersize=3.5,markeredgewidth=0.5,linestyle='none',color=color,label=label)
     
-# path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+# path="graph_reading"
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\50torr.csv','50 torr','o','k')
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\100torr.csv','100 torr','^','k')
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\250torr.csv','250 torr','v','k')
@@ -76,7 +76,7 @@ models = {
 # dataset=pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
 # ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,marker='o',markersize=7,linewidth=3,fillstyle='none',linestyle='none',color='k',label='Ronney')
 
-path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_Mar04\\"
+path="PCI-ESSCI\\RonneyResults_Mar04\\"
 
 dataset=pd.read_csv(path+f'Ar_0_data_1alpha.csv')
 ax.plot(dataset.iloc[2:,0],dataset.iloc[2:,1],linewidth=lw,color='r',label='Ar')
@@ -91,7 +91,7 @@ dataset=pd.read_csv(path+f'LMR-R_0_data_1alpha.csv')
 ax.plot(dataset.iloc[2:,0],dataset.iloc[2:,1],linewidth=lw,color='xkcd:purple',label='LMR-R')
 
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
@@ -112,7 +112,7 @@ ax.set_xlim([0.6, 1.8])
 
 name = f'ronney_flamespeed_Mar04_3'
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
 
 # plt.show()     

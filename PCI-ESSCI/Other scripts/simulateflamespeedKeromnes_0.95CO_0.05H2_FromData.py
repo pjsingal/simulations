@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -73,7 +73,7 @@ import matplotlib.ticker as ticker
 # ax.yaxis.set_major_locator(ticker.MultipleLocator(2))
 # ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 dataset = pd.read_csv(path+'\\9 FS H2 CO (Keromnes)\\model_5atm.csv')
 phi_list = dataset.iloc[:,0]
@@ -82,9 +82,9 @@ ax.plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz,ma
 ax.set_title("Fig. 10, Keromnes (2013)")
 
 if fslope != -1:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\KeromnesResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI\\KeromnesResults_"+date+f' (slope={fslope} curve={fcurve})\\'
 else:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\KeromnesResults_"+date+"\\"
+    path="PCI-ESSCI\\KeromnesResults_"+date+"\\"
 
 dataset=pd.read_csv(path+f'Keromnes_0_data_0.95alpha.csv')
 ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color="xkcd:teal",label=r"This study (5 atm)",zorder=29)
@@ -109,7 +109,7 @@ else:
     name = f'Keromnes_flamespeed_'+date+f'_0.95CO_0.05H2'
     
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Flame Speed Plots\\"+name+'.png', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=1000, bbox_inches='tight')
 
 # plt.show()     

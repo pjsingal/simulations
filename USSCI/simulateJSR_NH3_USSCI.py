@@ -1,7 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -71,29 +71,29 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 
 models = {
     'Alzueta-2023': {
-        'base': r'test\\data\\alzuetamechanism.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -151,7 +151,7 @@ for z, n in enumerate(models):
     ##############################################################################################################################
 
 
-    path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\2 JSR NH3\\"
+    path="graph_reading\\2 JSR NH3\\"
     
     T_10_data = pd.read_csv(path+'JSR_T_NH3_10_data.csv') 
     O2_10_data = pd.read_csv(path+'JSR_O2_NH3_10_data.csv') 
@@ -271,7 +271,7 @@ ax[1,0].set_ylabel('O$_2$ mole fraction [%]')
 ax[2,0].set_ylabel('H$_2$ mole fraction [%]')
 ax[2,2].set_xlabel('Temperature [K]')
 
-path=f'burkelab_SimScripts/USSCI_simulations/figures/'+args.date
+path=f'USSCI/figures/'+args.date
 os.makedirs(path,exist_ok=True)
 
 if save_plots == True:

@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -89,19 +89,19 @@ name = 'IDT_shao'
 path=os.getcwd()
 
 # models = {    
-#           'Alzueta':"test/data/alzuetamechanism.yaml",            
-#           'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"test/data/alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
 #           }
 models = {    
-          'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",  
-          r"$\epsilon_{0,NH_3}(300K)$":"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",  
-          r"$\epsilon_{0,NH_3}(2000K)$":"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-        #   'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml",  
-          'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_extraColliders.yaml",
+          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
+          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
+          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",  
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
           }
 colors = ["xkcd:grey", "xkcd:teal", "orange", 'r', 'b', 'xkcd:purple']
 # colors = ['r', 'b', 'xkcd:purple']
@@ -118,7 +118,7 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\'
+path='graph_reading'
 df = pd.read_csv(path+'Shao_IDT\\1.csv')
 p_df = df['P']
 T_df = df['T']
@@ -327,7 +327,7 @@ plt.subplots_adjust(hspace=0.3)
 
 # plt.subplots_adjust(top=0.98)
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

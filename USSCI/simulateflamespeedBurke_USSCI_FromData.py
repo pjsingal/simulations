@@ -64,29 +64,29 @@ lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
-        'base': r'/home/pjs/cantera/test/data/alzuetamechanism.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -104,13 +104,13 @@ for z, n in enumerate(models):
     ax[z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
     # Plot experimental data
-    path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+    path="graph_reading"
     dataset = pd.read_csv(path+'\\5 FS H2O (Burke)\\exp_pts.csv',header=None)
     ax[z].plot(dataset.iloc[:,0],dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Burke et al.',zorder=100)
 
     # Plot simulation data
     for k, m in enumerate(models[n]):
-        path=f'burkelab_SimScripts\\USSCI_simulations\\data\\Burke\\'+args.date+'\\'
+        path=f'USSCI\\data\\Burke\\'+args.date+'\\'
         dataset=pd.read_csv(path+f'{n}_{m}.csv')
         ax[z].plot(dataset.iloc[:,0],dataset.iloc[:,1],color=colors[k],linestyle=lstyles[k],linewidth=lw,label=m)
     ax[z].tick_params(axis='both', direction="in")
@@ -122,7 +122,7 @@ ax[0].legend(fontsize=lgdfsz, frameon=False, loc='right', handlelength=lgdw)
 ax[0].set_ylabel(r'Mass burning rate [g $\rm cm^{-2}$ $\rm s^{-1}$]',fontsize=args.fszaxlab)
 ax[2].set_xlabel(r'Pressure [atm]',fontsize=args.fszaxlab)
 
-path=f'burkelab_SimScripts\\USSCI_simulations\\figures\\'+args.date
+path=f'USSCI\\figures\\'+args.date
 os.makedirs(path,exist_ok=True)
 if save_plots == True:
     plt.savefig(path+f'\\{name}.png', dpi=500, bbox_inches='tight')

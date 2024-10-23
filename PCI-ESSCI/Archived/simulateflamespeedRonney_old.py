@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -25,9 +25,9 @@ fig, ax = plt.subplots(1, 1, figsize=(9, 5))
 name = 'ronney_flamespeed'
 
 models = {
-          'LMR-R':"test/data/alzuetamechanism_LMRR.yaml",            
-          'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",            
+          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 # p_list = [50,100,250,760,1500]
@@ -71,7 +71,7 @@ def plotPoints(fname, label, shape,color):
     phi_list = np.divide(np.divide(NH3_list,O2_list),np.divide(4,3))
     ax.plot(phi_list,dataset.iloc[:,1],shape,linestyle='none',color=color,label=label)
     
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\50torr.csv','50 torr','o','k')
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\100torr.csv','100 torr','^','k')
 # # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\250torr.csv','250 torr','v','k')

@@ -1,7 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -89,18 +89,18 @@ def plotXvsTime(fname,pltlabel,pltcolour,lstyle='solid',zorder_value=10):
     moleFrac = timeHistory(refSpecies).X 
     ax.plot(shiftedTime, moleFrac*100, color=pltcolour,label=pltlabel,linestyle=lstyle,linewidth=lw,zorder=zorder_value)
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 # path=os.getcwd()
 def plotPoints(filename,mkr='none',mkrw='none',mkrsz='none',line='none',fill='none',colour='k',subplot='off',pltLabel="_hidden",zorder_value=10): 
     dataset = pd.read_csv(filename)
     ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,mkr,linewidth=0.7,fillstyle=fill,linestyle=line,color=colour,label=pltLabel,markersize=mkrsz,markeredgewidth=mkrw,zorder=zorder_value)
 
-# plotXvsTime("test/data/alzuetamechanism.yaml","Alzueta","xkcd:grey",zorder_value=90)
-# plotXvsTime("test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",r"$\epsilon_{0,NH_3}(300K)$","orange",zorder_value=82)
-# plotXvsTime("test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",r"$\epsilon_{0,NH_3}(2000K)$","xkcd:teal",zorder_value=81)
-plotXvsTime("test/data/alzuetamechanism_LMRR_allAR.yaml","Ar","r",lstyle="dotted",zorder_value=70)
-plotXvsTime("test/data/alzuetamechanism_LMRR_allH2O.yaml",r'$\rm H_2O$',"b",lstyle="dashed",zorder_value=80)
-plotXvsTime("test/data/alzuetamechanism_LMRR.yaml","LMR-R","xkcd:purple",lstyle="solid",zorder_value=100)
+# plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml","Alzueta","xkcd:grey",zorder_value=90)
+# plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",r"$\epsilon_{0,NH_3}(300K)$","orange",zorder_value=82)
+# plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",r"$\epsilon_{0,NH_3}(2000K)$","xkcd:teal",zorder_value=81)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml","Ar","r",lstyle="dotted",zorder_value=70)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",r'$\rm H_2O$',"b",lstyle="dashed",zorder_value=80)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml","LMR-R","xkcd:purple",lstyle="solid",zorder_value=100)
 # plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',pltLabel='Shao et al.',line=':',colour='k')
 plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',mkr='o',mkrsz=msz,pltLabel='Shao et al.',mkrw=mw,zorder_value=110)
 # plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\troe_k0co2.csv',pltLabel='Troe et al.',line='solid',colour='g')
@@ -119,7 +119,7 @@ ax.yaxis.set_major_locator(ticker.MultipleLocator(0.03))
 ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_PCI.pdf', dpi=1000, bbox_inches='tight')
-    # plt.savefig('burkelab_SimScripts/figures/'+name+'_PCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+'ShockTubeSpeciesProfile_H2O.eps', dpi=1000, bbox_inches='tight', format='eps')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_PCI.pdf', dpi=1000, bbox_inches='tight')
+    # plt.savefig('PCI-ESSCI\\figures\\'+name+'_PCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+'ShockTubeSpeciesProfile_H2O.eps', dpi=1000, bbox_inches='tight', format='eps')
 # plt.show()     

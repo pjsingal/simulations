@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -25,29 +25,29 @@ def save_to_csv(filename, data):
 name = 'MBR_BurkeSong'
 
 # models = {
-#           'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",            
-#           'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
 #           }
 
 # models = {    
-#           'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",  
-#           'Alzueta-300K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",  
-#           'Alzueta-2000K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-#           'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
+#           'Alzueta-300K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
+#           'Alzueta-2000K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
 #           }
 
 models = {    
-        #   'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",     
-        #   'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
-          'A1':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml", 
-          'A3':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR_Ax3.yaml", 
-          'A5':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR_Ax5.yaml", 
-          'A10':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR_Ax10.yaml", 
-          'A20':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR_Ax20.yaml", 
+        #   'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",     
+        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+          'A1':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml", 
+          'A3':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax3.yaml", 
+          'A5':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax5.yaml", 
+          'A10':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax10.yaml", 
+          'A20':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax20.yaml", 
           }
 
 
@@ -118,7 +118,7 @@ for i, m in enumerate(list(models.keys())):
 
     plt.tight_layout()  # Adjust the layout to prevent clipping
     # Uncomment the following to save the plot. A higher than usual resolution (dpi) helps
-    path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\BurkeSongResults_'+date+f' (sensitivity)\\'
+    path=f'PCI-ESSCI\\BurkeSongResults_'+date+f' (sensitivity)\\'
     os.makedirs(path,exist_ok=True)
     if m=="Alzueta" or m=="LMR-R":
         plt.savefig(path+f'{m}_10atm.png', dpi=300)

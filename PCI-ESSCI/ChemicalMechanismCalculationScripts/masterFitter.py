@@ -2,7 +2,7 @@
 Class that allows for fitting of rate constants at various temperatures and pressures (k(T,P))
 """
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import numpy as np
 import pandas as pd
@@ -421,7 +421,7 @@ def makeplot(nom_liste,nom_fig):
         hgr=2
         fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox_substituted.yaml'
         get_kTPoriginal(fname,np.logspace(lwr,hgr,num=10),T_ls,reaction,"Original","none","o","k",100,idx,mkrsz=4)
-        fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml'
+        fname=f'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
         get_kTPoriginal(fname,np.logspace(lwr,hgr,num=10),T_ls,reaction,"Singal","none","x","k",75,idx,mkrsz=4)
         for j, X in enumerate(colliders):
             fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_PLOG}.yaml'

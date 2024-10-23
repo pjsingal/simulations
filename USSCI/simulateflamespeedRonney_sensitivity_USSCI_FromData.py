@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -48,29 +48,29 @@ patterns = ['','x']*9
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
-        'base': r'test\\data\\alzuetamechanism.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml',
-        'LMRR': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms/Mei-2019\\mei-2019.yaml',
+        'LMRR': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR.yaml',
+        'LMRR-allP': r'LMRRfactory\\test\outputs\\Oct22\\mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Zhang-2017\\zhang-2017.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Otomo-2018\\otomo-2018.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
-        'base': r"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"C:\\Users\\pjsin\\Documents\\LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Stagni-2020\\stagni-2020.yaml",
+        'LMRR': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR.yaml",
+        'LMRR-allP': r"LMRRfactory\\test\outputs\\Oct22\\stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -90,7 +90,7 @@ for x, alpha in enumerate(alpha_list):
     reactionList = []
     for z, n in enumerate(models):
         for k, m in enumerate(models[n]):
-            path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+            path="USSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
             sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
             reactionList += sensitivities_subset.iloc[:,0].to_list()
         reactionList = list(set(reactionList))
@@ -100,7 +100,7 @@ for x, alpha in enumerate(alpha_list):
 
         for k, m in enumerate(models):
             for i, reaction in enumerate(reactionList):
-                path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+                path="USSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
                 sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
                 sensitivities_subset_sorted = sensitivities_subset.sort_values(by=1, ascending=False)
                 rxns = sensitivities_subset_sorted.iloc[:,0].to_list()
@@ -122,7 +122,7 @@ for x, alpha in enumerate(alpha_list):
         for k, m in enumerate(models):
             modelDict={}
             for i, reaction in enumerate(weighted_reactionList):
-                path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+                path="USSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
                 sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
                 sensitivities_subset_sorted = sensitivities_subset.sort_values(by=1, ascending=False)
                 rxns = sensitivities_subset_sorted.iloc[:,0].to_list()
@@ -159,7 +159,7 @@ pos = ax[1].get_position()
 ax[1].set_position([pos.x0*1.35, pos.y0, pos.width, pos.height])
 
             
-path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\Ronney_Sensitivity\\"
+path="USSCI\\figures\\Ronney_Sensitivity\\"
 name="sensitivity"+f"{date}"
 plt.savefig(path+name+'.pdf', dpi=1000, bbox_inches='tight')
 plt.savefig(path+name+'.svg', dpi=1000, bbox_inches='tight')

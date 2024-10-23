@@ -8,7 +8,7 @@ Keywords: combustion, 1D flow, premixed flame, multicomponent transport,
           saving output
 """
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 from pathlib import Path
 import cantera as ct
 import pandas as pd
@@ -33,7 +33,7 @@ plt.figure()
 mbr = []
 for p in p_list:
 
-    gas = ct.Solution('test/data/alzuetamechanism.yaml')
+    gas = ct.Solution('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml')
     gas.TPX = Tin, p*ct.one_atm, reactants
     
     f = ct.FreeFlame(gas, width=width)

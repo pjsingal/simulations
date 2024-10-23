@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -83,7 +83,7 @@ ax[1].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
 ax[1].yaxis.set_major_locator(ticker.MultipleLocator(10))
 ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
@@ -95,9 +95,9 @@ ax[0].plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz
 
 
 if fslope != -1:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
 else:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+"\\"
+    path="PCI-ESSCI\\RonneyResults_"+date+"\\"
 
 if args.paper == 'ESSCI':
     dataset=pd.read_csv(path+f'Alzueta_0_data_1.0alpha.csv')
@@ -185,7 +185,7 @@ else:
 
 #### ADD DATA POINTS
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 ax[0].tick_params(axis='both', direction="in")
 ax[0].tick_params(axis='both', which='minor', direction="in")
@@ -225,8 +225,8 @@ else:
     name = f'ronney_flamespeed_'+date+f'_0.6NH3_0.4H2 _{args.paper}'
     
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    # plt.savefig('burkelab_SimScripts/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+'ronney_flamespeed.eps', dpi=1000, bbox_inches='tight', format='eps')
+    plt.savefig("PCI-ESSCI\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    # plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\"+'ronney_flamespeed.eps', dpi=1000, bbox_inches='tight', format='eps')
 
 # plt.show()     

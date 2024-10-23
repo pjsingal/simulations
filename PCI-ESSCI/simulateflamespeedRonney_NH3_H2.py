@@ -1,8 +1,8 @@
 # To run file: 
-# python "C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\simulateflamespeedRonney_NH3_H2.py"
+# python "PCI-ESSCI\\simulateflamespeedRonney_NH3_H2.py"
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -48,20 +48,20 @@ fslope=args.slopeVal #should be low enough that the results don't depend on the 
 fcurve=args.curveVal
 ftransport=args.transport # 'multicomponent' or 'mixture-averaged'
 models = {    
-          'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",  
-        #   'Alzueta-300K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   'Alzueta-2000K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-          'epsNH3-300K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",
-          'epsNH3-2000K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",
-          # 'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
-          # 'epsALL-300K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
-          # 'epsALL-2000K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
-          'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_extraColliders.yaml", 
-            # 'LMR-R-PLOG':"test/data/LMRtests/LMRtest_PLOG_M.yaml",
-            # 'LMR-R-Troe':"test/data/LMRtests/LMRtest_Troe_M.yaml",
-            # 'LMR-R-Cheb':"test/data/LMRtests/LMRtest_cheb_M.yaml",   
+          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
+        #   'Alzueta-300K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   'Alzueta-2000K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          'epsNH3-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",
+          'epsNH3-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",
+          # 'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+          # 'epsALL-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
+          # 'epsALL-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+            # 'LMR-R-PLOG':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",
+            # 'LMR-R-Troe':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",
+            # 'LMR-R-Cheb':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",   
           }
 ###############################################################################################################
 
@@ -101,7 +101,7 @@ for x, alpha in enumerate(alpha_list):
                 mbr.append(f.velocity[0] * 100) # cm/s
 
             # Save phi_list and mbr to CSV
-            path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
+            path=f'PCI-ESSCI\\RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
             os.makedirs(path,exist_ok=True)
             csv_filename =path+f'\\{m}_{i}_data_{alpha}alpha.csv'
             data = zip(phi_list, mbr)

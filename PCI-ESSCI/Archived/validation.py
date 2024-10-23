@@ -1,7 +1,7 @@
 #%%
 #Validation script
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import matplotlib.pyplot as plt
 import cantera as bklabct
 import numpy as np
@@ -10,7 +10,7 @@ import numpy as np
 #%%
 # def printRateConstant(Temp,Pres,X) :
 #     # file = 'test/data/kineticsfromscratch_LMRtest.yaml'
-#     # file = 'test/data/alzuetamechanism_LMRR.yaml'
+#     # file = 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
 #     file = 'test/data/sandbox.yaml'
 #     # reactions = ['H + O2 (+M) <=> HO2 (+M)']
 #     reactions = ['NH2 + NH2 (+M) <=> N2H4 (+M)']
@@ -41,7 +41,7 @@ import numpy as np
 # def plotK(X,rxn):
 #     P=10/760
 #     Temp=np.linspace(400,4000)
-#     file = 'test/data/alzuetamechanism_LMRR.yaml'
+#     file = 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
 #     gas = bklabct.Solution(file)
 #     k_list=[]
 #     for k,T in enumerate(Temp):
@@ -142,7 +142,7 @@ import numpy as np
 
 
 def getK(T,P,X,rxn):
-    file = 'test/data/alzuetamechanism_LMRR.yaml'
+    file = 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
     gas = bklabct.Solution(file)
     gas.TPX = T,P,X
     rc = gas.forward_rate_constants[gas.reaction_equations().index(rxn)]
@@ -171,7 +171,7 @@ def getK(T,P,X,rxn):
 
 
 def getK(T,P,X,rxn):
-    # file = 'test/data/alzuetamechanism_LMRR.yaml'
+    # file = 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
     file = 'test/data/kineticsfromscratch_LMRtest_V2.yaml'
     gas = bklabct.Solution(file)
     gas.TPX = T,P,X
@@ -252,7 +252,7 @@ getK(1000,1e-3*101325,{"H2O":1},rxn3)
 
 # %%
 
-gas=bklabct.Solution('test/data/alzuetamechanism_LMRR.yaml')
+gas=bklabct.Solution('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml')
 for i, reaction in enumerate(gas.reactions()):
     print(f'Reaction {i + 1}: {reaction.equation}')
 
@@ -314,7 +314,7 @@ dirs2=['b']
 for i in range(len(rxns1)):
     plt.figure()
     plotK('test/data/sandbox2.yaml',Tlist,1,{'H':1},rxns1[i],'b','solid','NEW: '+rxns1[i],dirs1[i])
-    plotK('test/data/alzuetamechanism.yaml',Tlist,1,{'H':1},rxns2[i],'k','solid','OLD: '+rxns2[i],dirs2[i])
+    plotK('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',Tlist,1,{'H':1},rxns2[i],'k','solid','OLD: '+rxns2[i],dirs2[i])
     plt.legend()
     plt.show()
 
@@ -352,8 +352,8 @@ for i in range(len(rxns1)):
 # # kmols, m3, kg, s
 # for i in range(len(rxns1)):
 #     plt.figure()
-#     plotK('test/data/alzuetamechanism_LMRR.yaml',Tlist,1e-2,{'H':1},rxns1[i],'b','solid','NEW: '+rxns1[i],dirs1[i],'y',divvals[i])
-#     plotK('test/data/alzuetamechanism.yaml',Tlist,1e-2,{'H':1},rxns2[i],'k','solid','OLD: '+rxns2[i],dirs2[i],'n',divvals[i])
+#     plotK('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml',Tlist,1e-2,{'H':1},rxns1[i],'b','solid','NEW: '+rxns1[i],dirs1[i],'y',divvals[i])
+#     plotK('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',Tlist,1e-2,{'H':1},rxns2[i],'k','solid','OLD: '+rxns2[i],dirs2[i],'n',divvals[i])
 #     plt.legend()
 #     plt.show()
 # # %%

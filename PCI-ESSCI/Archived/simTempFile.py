@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -14,7 +14,7 @@ hfont = {'fontname':'sans-serif','fontweight':550,'fontsize':10,'fontstretch':50
 
 # # REPRODUCING BURKE FIGURE 1
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 def plotMassBurnRate(fname,labell,colour):
     # p_list = np.linspace(0,20,50)[1:]
@@ -51,9 +51,9 @@ def plotPoints(filename,mkr='none',line='none',fill='none',colour='k',subplot='o
 plt.figure()
 plotPoints(path+'5 FS H2O (Burke)\\black.csv',pltLabel='Keromnes et al.',line='solid',colour='k')
 plotPoints(path+'5 FS H2O (Burke)\\exp_pts.csv',pltLabel='Burke et al.',mkr='s',fill='full',colour='k')
-plotMassBurnRate('test/data/alzuetamechanism_LMRR.yaml', "LMR-R","m")
-# plotMassBurnRate('test/data/alzuetamechanism_LMRR_allAR.yaml', "AR","r")
-# plotMassBurnRate('test/data/alzuetamechanism_LMRR_allH2O.yaml', "H2O","b")
+plotMassBurnRate('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml', "LMR-R","m")
+# plotMassBurnRate('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml', "AR","r")
+# plotMassBurnRate('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml', "H2O","b")
 plt.legend()
 plt.xlabel('Pressure [atm]')
 plt.ylabel('Mass Burning Rate [g/cm2*s]')

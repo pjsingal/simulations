@@ -2,7 +2,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-# sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+# sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -77,10 +77,10 @@ name = 'JSR_net_rates_of_progress_2'
 models = {
     
             'glarborg':'test/data/reduced_glarborg.cti'
-        #   'LMR-R':"test/data/alzuetamechanism_LMRR.yaml", 
-        #   'Alzueta':"test/data/alzuetamechanism.yaml",            
-        #   'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-        #   r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
+        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+        #   'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
+        #   'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+        #   r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 T_list = np.concatenate((np.linspace(800,829.9,10),np.linspace(830,844,100),np.linspace(848.8,870.9,100),np.linspace(871,1050,50)))
@@ -229,7 +229,7 @@ for k,m in enumerate(models):
         ax2.tick_params(axis='both',direction='in')
         # ax2.legend()         
 
-# path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\1 JSR H2O\\"
+# path="graph_reading\\1 JSR H2O\\"
  
 # T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
 # O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 

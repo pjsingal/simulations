@@ -1,7 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -89,16 +89,16 @@ def plotXvsTime(fname,pltlabel,pltcolour,lstyle='solid',zorder_value=10):
     moleFrac = timeHistory(refSpecies).X 
     ax.plot(shiftedTime, moleFrac*100, color=pltcolour,label=pltlabel,linestyle=lstyle,linewidth=lw,zorder=zorder_value)
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 # path=os.getcwd()
 def plotPoints(filename,mkr='none',mkrw='none',mkrsz='none',line='none',fill='none',colour='k',subplot='off',pltLabel="_hidden",zorder_value=10): 
     dataset = pd.read_csv(filename)
     ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,mkr,linewidth=0.7,fillstyle=fill,linestyle=line,color=colour,label=pltLabel,markersize=mkrsz,markeredgewidth=mkrw,zorder=zorder_value)
 
-plotXvsTime("test/data/alzuetamechanism_LMRR.yaml",'LMR-R (PCI paper)',"xkcd:purple",lstyle="solid",zorder_value=100)
-plotXvsTime("test/data/LMRtests/LMRtest_PLOG_M.yaml",'LMR-R (PLOG)',"xkcd:grey",zorder_value=90)
-plotXvsTime("test/data/LMRtests/LMRtest_Troe_M.yaml",'LMR-R (Troe)',"r",lstyle="solid",zorder_value=70)
-plotXvsTime("test/data/LMRtests/LMRtest_cheb_M.yaml",'LMR-R (Cheb)',"b",lstyle="solid",zorder_value=80)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",'LMR-R (PCI paper)',"xkcd:purple",lstyle="solid",zorder_value=100)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",'LMR-R (PLOG)',"xkcd:grey",zorder_value=90)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",'LMR-R (Troe)',"r",lstyle="solid",zorder_value=70)
+plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",'LMR-R (Cheb)',"b",lstyle="solid",zorder_value=80)
 
 # plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',pltLabel='Shao et al.',line=':',colour='k')
 plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',mkr='o',mkrsz=msz,pltLabel='Shao et al.',mkrw=mw,zorder_value=110)
@@ -118,7 +118,7 @@ ax.yaxis.set_major_locator(ticker.MultipleLocator(0.03))
 ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_LMRtest.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_LMRtest.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'_LMRtest.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

@@ -1,5 +1,5 @@
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -20,26 +20,26 @@ def save_to_csv(filename, data):
 name = 'MBR_BurkeSong'
 
 # models = {
-#           'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",            
-#           'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
 #           }
 
 models = {    
-          # 'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",  
-          # 'Alzueta-300K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",  
-          # 'Alzueta-2000K':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          # 'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-          # r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-          # 'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
-            'LMR-R-PLOG':"test/data/LMRtests/LMRtest_PLOG_M.yaml",
-            'LMR-R-Troe':"test/data/LMRtests/LMRtest_Troe_M.yaml",
-            'LMR-R-Cheb':"test/data/LMRtests/LMRtest_cheb_M.yaml",   
+          # 'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
+          # 'Alzueta-300K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
+          # 'Alzueta-2000K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
+          # 'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          # r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          # 'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+            'LMR-R-PLOG':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",
+            'LMR-R-Troe':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",
+            'LMR-R-Cheb':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",   
           }
 
 # models = {    
-#           'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
 #           }
 
 parser = argparse.ArgumentParser()
@@ -79,7 +79,7 @@ for i, m in enumerate(list(models.keys())):
         f.solve(loglevel=loglevel, auto=True)
         mbr.append(f.velocity[0]*f.density[0] / 10) # g/cm2*s
 
-    path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\BurkeSongResults_'+date+f' (slope={fslope} curve={fcurve})'
+    path=f'PCI-ESSCI\\BurkeSongResults_'+date+f' (slope={fslope} curve={fcurve})'
     os.makedirs(path,exist_ok=True)
     csv_filename =path+f'\\{m}_data.csv'
     mbr_data = zip(p_list, mbr)

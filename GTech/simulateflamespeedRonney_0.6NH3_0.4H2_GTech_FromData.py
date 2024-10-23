@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -79,20 +79,20 @@ ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 
 models = {    
-          'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",
-          'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_extraColliders.yaml",
-          'Mei':'G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Mei-2019\\mei-2019.yaml',
-        #   'Glarborg':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Glarborg-2018\\glarborg-2018.yaml",
-          'Zhang':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Zhang-2017\\zhang-2017.yaml",
-          'Otomo':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Otomo-2018\\otomo-2018.yaml",
-          'Stagni':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        #   'Shrestha':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Shrestha-2021\\shrestha-2021.yaml",
-          'Han':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Han-2021\\han-2021.yaml",
-        # #   'Cornell':"G:\\Mon disque\\Columbia\\Burke Lab\\07 Mechanisms\\Cornell-2024\\cornell-2024.yaml",
+          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
+          'Mei':'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
+        #   'Glarborg':"chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml",
+          'Zhang':"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
+          'Otomo':"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
+          'Stagni':"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
+        #   'Shrestha':"chemical_mechanisms\\Shrestha-2021\\shrestha-2021.yaml",
+          'Han':"chemical_mechanisms\\Han-2021\\han-2021.yaml",
+        # #   'Cornell':"chemical_mechanisms\\Cornell-2024\\cornell-2024.yaml",
           }
 zorders = [90,100,80,70,60,50,40,30,20,10]
 colours = ["xkcd:grey","xkcd:purple", "xkcd:teal", "orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:navy blue"]
-path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\GTechResults_'+date+f' (slope={fslope} curve={fcurve})\\'
+path=f'GTech\\GTechResults_'+date+f' (slope={fslope} curve={fcurve})\\'
 
 for j, m in enumerate(models):
     label=f'{m}'
@@ -104,7 +104,7 @@ for j, m in enumerate(models):
 
 # ax[0].set_xlabel(r'Equivalence Ratio')
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
@@ -115,7 +115,7 @@ ax[0].plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz
 ax[0].legend(fontsize=lgdfsz, frameon=False, loc='upper right',handlelength=lgdw,ncols=2,columnspacing=0.5) 
 
 #### SECOND PLOT
-path=f'C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\GTechResults_'+date+f' (slope={fslope} curve={fcurve})\\'
+path=f'GTech\\GTechResults_'+date+f' (slope={fslope} curve={fcurve})\\'
 for j, m in enumerate(models):
     label=f'{m}'
     dataset=pd.read_csv(path+f'{m}_0_data_0.6alpha.csv')
@@ -128,7 +128,7 @@ for j, m in enumerate(models):
 
 #### ADD DATA POINTS
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 ax[0].tick_params(axis='both', direction="in")
 ax[0].tick_params(axis='both', which='minor', direction="in")
 
@@ -155,8 +155,8 @@ ax[1].set_ylim([0.001, 43])
 name = f'ronney_flamespeed_GTech_'+date
 
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("GTech\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
     # plt.savefig('burkelab_SimScripts/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
+    plt.savefig("GTech\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
 
 # plt.show()     

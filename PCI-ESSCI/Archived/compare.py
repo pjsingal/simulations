@@ -1,6 +1,6 @@
 import sys, os
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import sys, os
 import cantera as ct
 import numpy as np

@@ -1,6 +1,6 @@
 #%%
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -85,19 +85,19 @@ if LMRtest == 1:
     colors = ['xkcd:purple',"xkcd:grey", 'r', 'b']
     lstyles = ["solid","solid","solid","solid","solid","solid","solid","solid"]
     models = {
-            'LMR-R (PCI paper)':"test/data/alzuetamechanism_LMRR.yaml",
-            'LMR-R (PLOG)':"test/data/LMRtests/LMRtest_PLOG_M.yaml",
-            'LMR-R (Troe)':"test/data/LMRtests/LMRtest_Troe_M.yaml",
-            'LMR-R (Cheb)':"test/data/LMRtests/LMRtest_cheb_M.yaml",      
+            'LMR-R (PCI paper)':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",
+            'LMR-R (PLOG)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",
+            'LMR-R (Troe)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",
+            'LMR-R (Cheb)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",      
             }
     name = 'IDT_shao_LMRtest'
 else:
     colors = ['r','b','xkcd:purple']
     lstyles = ["dotted","dashed","solid"]
     models = {
-            'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-            r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
-            'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml",       
+            'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+            r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+            'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",       
             }
     name = 'IDT_shao_PCI'
 
@@ -108,7 +108,7 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\'
+path='graph_reading'
 df = pd.read_csv(path+'Shao_IDT\\1.csv')
 p_df = df['P']
 T_df = df['T']
@@ -285,6 +285,6 @@ ax[3].annotate('(d)', xy=(0.95, 0.9), xycoords='axes fraction',ha='right', va='t
 
 # plt.subplots_adjust(top=0.98)
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.eps', dpi=500, bbox_inches='tight', format='eps')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.eps', dpi=500, bbox_inches='tight', format='eps')
 # plt.show()     

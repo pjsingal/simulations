@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -79,9 +79,9 @@ for col in range(num_cols_fig-1):
 
 
 if fslope != -1:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
 else:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\RonneyResults_"+date+"\\"
+    path="PCI-ESSCI\\RonneyResults_"+date+"\\"
 
 lines = ["solid","dotted","dashed"]
 
@@ -281,7 +281,7 @@ ax[1,1].set_xlabel(r'Equivalence Ratio')
 
 
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\"+name+'.svg', dpi=1000, bbox_inches='tight')
 
 # plt.show()     

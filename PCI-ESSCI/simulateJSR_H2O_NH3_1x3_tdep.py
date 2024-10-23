@@ -1,7 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -92,12 +92,12 @@ ax[1,2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.4e}"))
 
 name = 'JSR_tdep'
 models = {    
-        #   'Alzueta':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism.yaml",  
-        #   r"$\epsilon_{0,NH_3}(300K)$":"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   r"$\epsilon_{0,NH_3}(2000K)$":"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR_allH2O.yaml",
-          'LMR-R':"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\alzuetamechanism_LMRR.yaml", 
+        #   'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
+        #   r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
           }
 
 # colors = ["xkcd:grey", "xkcd:teal", "orange", 'r', 'b', 'xkcd:purple']
@@ -306,6 +306,6 @@ for text in legend.get_texts():
         text.set_fontweight('bold')  # Make the font bold
 # plt.text(0.5, -0.05, 'Time [ms]', ha='center', va='center',fontsize=args.fszaxlab)
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

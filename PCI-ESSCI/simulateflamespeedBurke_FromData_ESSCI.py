@@ -1,6 +1,6 @@
 
 import sys, os
-# sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+# sys.path.append("cantera/build/python")
 # import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -76,9 +76,9 @@ fslope=args.slopeVal
 fcurve=args.curveVal
 
 if fslope != -1:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\BurkeSongResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI\\BurkeSongResults_"+date+f' (slope={fslope} curve={fcurve})\\'
 else:
-    path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\BurkeSongResults_"+date+'\\'
+    path="PCI-ESSCI\\BurkeSongResults_"+date+'\\'
 
 dataset=pd.read_csv(path+f'Alzueta_data.csv',header=None)
 ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color="xkcd:grey",label='Alzueta',zorder=80)
@@ -101,7 +101,7 @@ ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color='xkcd:purple',lab
 # if args.title != 'null':
 #     ax.set_title(args.title)
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\"
+path="graph_reading"
 
 # dataset = pd.read_csv(path+'\\5 FS H2O (Burke)\\black.csv')
 # pressures = dataset.iloc[:,0]
@@ -128,7 +128,7 @@ if fslope != -1:
 else:
     name = f"burkesong_flamespeed_"+date+"_ESSCI"
 
-path="C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"
+path="PCI-ESSCI\\figures\\"
 if save_plots == True:
     plt.savefig(path+name+'.pdf', dpi=500, bbox_inches='tight')
     plt.savefig(path+name+'.svg', dpi=500, bbox_inches='tight')

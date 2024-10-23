@@ -1,6 +1,6 @@
 #%%
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -62,18 +62,18 @@ name = 'IDT_shao'
 path=os.getcwd()
 
 # models = {
-#           'LMR-R':"test/data/alzuetamechanism_LMRR.yaml", 
-#           'A priori':"test/data/alzuetamechanism.yaml",             
-#           'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+#           'A priori':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",             
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
 #           }
 
 # colors = ['xkcd:purple',"xkcd:grey",'r','b']
 
 models = {
-          'LMR-R':"test/data/alzuetamechanism_LMRR.yaml",          
-          'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",          
+          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 colors = ['xkcd:purple','r','b']
@@ -85,7 +85,7 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\'
+path='graph_reading'
 df = pd.read_csv(path+'Shao_IDT\\1.csv')
 p_df = df['P']
 T_df = df['T']

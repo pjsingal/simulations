@@ -2,7 +2,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import pandas as pd
 import numpy as np
 import time
@@ -86,20 +86,20 @@ plt.subplots_adjust(wspace=0.3)
 # name = 'JSR_NH3_V1'
 # colors = ['r','b']
 # models = {
-#           'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",           
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",           
 #           }
 # name = 'JSR_NH3_V2'
 # colors = ['r','b',"xkcd:grey"]
 # models = {
-#           'Ar':"test/data/alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"test/data/alzuetamechanism_LMRR_allH2O.yaml",
-#           'Alzueta':"test/data/alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
 #           }
 name = 'JSR_NH3_MannaGlarborg'
 colors = ['r','b','xkcd:purple']
 models = {
-          r'This study (Glarborg)':"test\\data\\glarborg-2018.yaml",
+          r'This study (Glarborg)':"chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml",
           }
 T_list = np.linspace(900,2000,gridsz)
 P = 1.2
@@ -133,7 +133,7 @@ tempDependence = []
 ##############################################################################################################################
 
 
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\Graph Reading\\8 SP H2O X vs T (JSR) (Sabia)\\"
+path="graph_reading\\8 SP H2O X vs T (JSR) (Sabia)\\"
         
 H2_10_data = pd.read_csv(path+'Fig9_GlarborgModel.csv') 
 ax.plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',zorder=2,linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Graph-read model (Glarborg)")
@@ -274,6 +274,6 @@ ax.legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw)
 # ax.set_xlim([780,1070])
 
 if save_plots == True:
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig('burkelab_SimScripts/figures/'+name+'.png', dpi=500, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI\\figures\\'+name+'.png', dpi=500, bbox_inches='tight')
 # plt.show()     

@@ -1,6 +1,6 @@
 
 import sys, os
-sys.path.append("C:/Users/pjsin/Documents/cantera/build/python")
+sys.path.append("cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -184,5 +184,5 @@ ax[idx].tick_params(axis='both', which='minor', direction="in")
 fig.text(0.5, 0.07, r'Temperature [K]', ha='center', va='center',fontsize=args.fszaxlab)
 name = f'allArrheniusFits'
 if save_plots == True:
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig("C:\\Users\\pjsin\\Documents\\cantera\\burkelab_SimScripts\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\"+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
