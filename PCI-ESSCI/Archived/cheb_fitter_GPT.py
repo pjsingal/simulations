@@ -1,6 +1,5 @@
 import sys
-sys.path.append(os.getcwd())
-sys.path.append("simulations/cantera/build/python")
+sys.path.append(os.getcwd()+"cantera/build/python")
 import cantera as ct
 import numpy as np
 from scipy.optimize import curve_fit

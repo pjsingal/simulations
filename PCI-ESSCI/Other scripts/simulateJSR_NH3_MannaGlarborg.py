@@ -2,8 +2,7 @@
 from __future__ import division
 from __future__ import print_function
 import sys, os
-sys.path.append(os.getcwd())
-sys.path.append("simulations/cantera/build/python")
+sys.path.append(os.getcwd()+"cantera/build/python")
 import pandas as pd
 import numpy as np
 import time

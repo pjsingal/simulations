@@ -1,7 +1,6 @@
 
 import sys, os
-sys.path.append(os.getcwd())
-sys.path.append("simulations/cantera/build/python")
+sys.path.append(os.getcwd()+"cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd

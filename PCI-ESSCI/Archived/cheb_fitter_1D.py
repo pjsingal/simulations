@@ -2,8 +2,7 @@ import os
 import io
 import numpy as np
 import sys
-sys.path.append(os.getcwd())
-sys.path.append("simulations/cantera/build/python")
+sys.path.append(os.getcwd()+"cantera/build/python")
 import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
