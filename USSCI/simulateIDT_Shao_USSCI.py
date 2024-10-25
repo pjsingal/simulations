@@ -122,7 +122,7 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    path=os.getcwd()+'/graph_reading/PCI/'
+    path=os.getcwd()+'/PCI-ESSCI/graph_reading/'
     df = pd.read_csv(path+'Shao_IDT/1.csv')
     p_df = df['P']
     T_df = df['T']

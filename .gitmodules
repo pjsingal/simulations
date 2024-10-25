@@ -1,6 +1,3 @@
 [submodule "cantera"]
 	path = cantera
 	url = https://github.com/pjsingal/cantera.git
-[submodule "LMRRfactory"]
-	path = LMRRfactory
-	url = https://github.com/TheBurkeLab/LMRRfactory.git

@@ -10,7 +10,7 @@ msz=3.2
 lgdw=1.0
 lgdfsz=7
 
-python startup.py &
+# python startup.py &
 
 # python USSCI/simulateshocktubeShao_USSCI.py \
 # --figwidth 2.5 --figheight 2.5 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
