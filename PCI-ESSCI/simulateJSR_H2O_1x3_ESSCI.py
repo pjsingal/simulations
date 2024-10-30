@@ -148,7 +148,7 @@ maxSimulationTime = 50  # seconds
 tempDependence = []
 
 ##############################################################################################################################
-path="graph_reading/1 JSR H2O/"
+path="PCI-ESSCI/graph_reading/1 JSR H2O/"
 T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
 O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 
 H2_20_data = pd.read_csv(path+'JSR_H2_H2O_20_data.csv') 
@@ -248,7 +248,7 @@ for k,m in enumerate(models):
 
 
  
-path="graph_reading/1 JSR H2O/"
+path="PCI-ESSCI/graph_reading/1 JSR H2O/"
 
 # ax[0].set_xlabel('Temperature [K]')
 ax[0].set_ylabel(r'$\Delta$ T [K]')

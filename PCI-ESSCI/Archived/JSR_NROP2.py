@@ -229,7 +229,7 @@ for k,m in enumerate(models):
         ax2.tick_params(axis='both',direction='in')
         # ax2.legend()         
 
-# path="graph_reading/1 JSR H2O/"
+# path="PCI-ESSCI/graph_reading/1 JSR H2O/"
  
 # T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
 # O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 

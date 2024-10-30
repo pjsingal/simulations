@@ -151,7 +151,7 @@ for z, n in enumerate(models):
     ##############################################################################################################################
 
 
-    path="graph_reading/2 JSR NH3/"
+    path="PCI-ESSCI/graph_reading/2 JSR NH3/"
     
     T_10_data = pd.read_csv(path+'JSR_T_NH3_10_data.csv') 
     O2_10_data = pd.read_csv(path+'JSR_O2_NH3_10_data.csv') 

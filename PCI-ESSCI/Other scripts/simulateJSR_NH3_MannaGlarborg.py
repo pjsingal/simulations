@@ -133,7 +133,7 @@ tempDependence = []
 ##############################################################################################################################
 
 
-path="graph_reading/8 SP H2O X vs T (JSR) (Sabia)/"
+path="PCI-ESSCI/graph_reading/8 SP H2O X vs T (JSR) (Sabia)/"
         
 H2_10_data = pd.read_csv(path+'Fig9_GlarborgModel.csv') 
 ax.plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',zorder=2,linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Graph-read model (Glarborg)")

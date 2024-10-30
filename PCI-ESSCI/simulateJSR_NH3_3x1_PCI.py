@@ -143,7 +143,7 @@ tempDependence = []
 ##############################################################################################################################
 
 
-path="graph_reading/2 JSR NH3/"
+path="PCI-ESSCI/graph_reading/2 JSR NH3/"
         
 # T_0_data = pd.read_csv('JSR_T_NH3_0_data.csv') 
 # T_2_data = pd.read_csv('JSR_T_NH3_2_data.csv') 

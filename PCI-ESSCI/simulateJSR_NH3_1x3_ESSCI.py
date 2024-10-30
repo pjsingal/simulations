@@ -230,7 +230,7 @@ for k,m in enumerate(models):
         ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[k], linestyle='solid',linewidth=lw, label=m,zorder=zorder_value)   
         ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[k], linestyle='solid',linewidth=lw, label=m,zorder=zorder_value) 
         
-path="graph_reading/2 JSR NH3/"
+path="PCI-ESSCI/graph_reading/2 JSR NH3/"
         
 # T_0_data = pd.read_csv('JSR_T_NH3_0_data.csv') 
 # T_2_data = pd.read_csv('JSR_T_NH3_2_data.csv') 
