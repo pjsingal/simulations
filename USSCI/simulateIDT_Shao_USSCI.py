@@ -1,9 +1,5 @@
-#%%
-import sys, os
-sys.path.append(os.getcwd())
-sys.path.append("simulations/cantera/build/python")
+import os
 import cantera as ct
-# from cantera.build.python import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd 
 import time
@@ -25,7 +21,7 @@ parser.add_argument('--lgdw', type=float, help="lgdw = ", default=0.6)
 parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
 parser.add_argument('--dpi', type=int, help="dpi = ", default=500)
-parser.add_argument('--LMRtest', type=int, help="LMRtest = ", default=0)
+parser.add_argument('--date', type=str)
 
 args = parser.parse_args()
 lw=args.lw
@@ -56,32 +52,36 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 
 models = {
     'Alzueta-2023': {
-        'base': r'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml',
-        # 'LMRR': r'factory_mechanisms\\alzuetamechanism_LMRR.yaml',
-        # 'LMRR-allP': r'factory_mechanisms\\alzuetamechanism_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
-        # 'LMRR': r'factory_mechanisms\\mei-2019_LMRR.yaml',
-        # 'LMRR-allP': r'factory_mechanisms\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
-        # 'LMRR': r"factory_mechanisms\\zhang-2017_LMRR.yaml",
-        # 'LMRR-allP': r"factory_mechanisms\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
-    'Otomo-2018': {
-        'base': r"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
-        # 'LMRR': r"factory_mechanisms\\otomo-2018_LMRR.yaml",
-        # 'LMRR-allP': r"factory_mechanisms\\otomo-2018_LMRR_allP.yaml",
-                },
-    'Stagni-2020': {
-        'base': r"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
-        # 'LMRR': r"factory_mechanisms\\stagni-2020_LMRR.yaml",
-        # 'LMRR-allP': r"factory_mechanisms\\stagni-2020_LMRR_allP.yaml",
-                },
+    # 'Otomo-2018': {
+    #     'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
+    #             },
+    # 'Stagni-2020': {
+    #     'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #             },
+    # 'Han-2021': {
+    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    #             },
 }
-
 
 name = 'IDT_shao_multimech'
 save_plots = True
@@ -91,6 +91,7 @@ plt.suptitle('IDT_shao', fontsize=12)
 
 for z, n in enumerate(models):
     mech = n
+    print(n)
 
     import matplotlib.ticker as ticker
     plt.subplots_adjust(wspace=0.18)
@@ -122,7 +123,8 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    path=os.getcwd()+'/PCI-ESSCI/graph_reading/'
+    # path=os.getcwd()+'/PCI-ESSCI/graph_reading/'
+    path='PCI-ESSCI/graph_reading/'
     df = pd.read_csv(path+'Shao_IDT/1.csv')
     p_df = df['P']
     T_df = df['T']
@@ -164,7 +166,7 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    df = pd.read_csv(path+'\\Shao_IDT\\2.csv')
+    df = pd.read_csv(path+'/Shao_IDT/2.csv')
     p_df = df['P']
     T_df = df['T']
     IDT_df = df['IDT']
@@ -204,7 +206,7 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    df = pd.read_csv(path+'\\Shao_IDT\\3.csv')
+    df = pd.read_csv(path+'/Shao_IDT/3.csv')
     p_df = df['P']
     T_df = df['T']
     IDT_df = df['IDT']
@@ -244,7 +246,7 @@ for z, n in enumerate(models):
 
     ################################################################################################
 
-    df = pd.read_csv(path+'\\Shao_IDT\\4.csv')
+    df = pd.read_csv(path+'/Shao_IDT/4.csv')
     p_df = df['P']
     T_df = df['T']
     IDT_df = df['IDT']
