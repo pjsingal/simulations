@@ -9,8 +9,6 @@ import numpy as np
 import pandas as pd
 import numpy as np
 import time
-import os.path
-from os import path
 import matplotlib.pyplot as plt
 plt.rcParams.update(plt.rcParamsDefault)
 import matplotlib as mpl
@@ -74,25 +72,25 @@ models = {
         'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
-    # 'Zhang-2017': {
-    #     'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
-    #             },
-    # 'Otomo-2018': {
-    #     'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
-    #             },
-    # 'Stagni-2020': {
-    #     'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-    #             },
+    'Zhang-2017': {
+        'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
+                },
+    'Otomo-2018': {
+        'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
+                },
+    'Stagni-2020': {
+        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+                },
     # 'Han-2021': {
     #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
     #             },
 }
 name = 'JSR_H2O_multimech'

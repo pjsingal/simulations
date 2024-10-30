@@ -1,20 +1,12 @@
 from __future__ import division
 from __future__ import print_function
-import sys, os
-sys.path.append(os.getcwd()+"cantera/build/python")
+import os
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
-import time
-import scipy
-import scipy.optimize
-from scipy.optimize import curve_fit
-import numpy as np
-from matplotlib import gridspec
 import argparse
-
 import matplotlib as mpl
-import sys, os
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -29,7 +21,7 @@ parser.add_argument('--lgdw', type=float, help="lgdw = ", default=0.6)
 parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
 parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
-
+parser.add_argument('--date', type=str, help="sim date = ")
 
 import matplotlib.ticker as ticker
 
@@ -63,29 +55,34 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': r'factory_mechanisms/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms/alzuetamechanism_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
         'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        'LMRR': r'factory_mechanisms/mei-2019_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms/mei-2019_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
         'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-        'LMRR': r"factory_mechanisms/zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/zhang-2017_LMRR_allP.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
-    'Otomo-2018': {
-        'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-        'LMRR': r"factory_mechanisms/otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/otomo-2018_LMRR_allP.yaml",
-                },
-    'Stagni-2020': {
-        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': r"factory_mechanisms/stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/stagni-2020_LMRR_allP.yaml",
-                },
+    # 'Otomo-2018': {
+    #     'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
+    #             },
+    # 'Stagni-2020': {
+    #     'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #             },
+    # 'Han-2021': {
+    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    #             },
 }
 
 name = 'ShockTube_H2O_multimech'
@@ -101,7 +98,7 @@ for z, n in enumerate(models):
     ax[z].yaxis.set_major_locator(ticker.MultipleLocator(0.03))
     ax[z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
-    path="graph_reading"
+    path="PCI-ESSCI/graph_reading"
     shao_data = pd.read_csv(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv')
     ax[z].plot(shao_data.iloc[:,0],shao_data.iloc[:,1]*100,marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Shao et al.')
 

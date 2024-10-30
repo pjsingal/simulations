@@ -1,22 +1,14 @@
 from __future__ import division
 from __future__ import print_function
-import sys, os
-sys.path.append(os.getcwd()+"cantera/build/python")
 import cantera as ct
 import matplotlib.pyplot as plt
 import pandas as pd
 import time
-import scipy
-import scipy.optimize
-from scipy.optimize import curve_fit
+import os
 import numpy as np
-from matplotlib import gridspec
 import pandas as pd
 import numpy as np
 import time
-# import cantera as ct
-import os.path
-from os import path
 import matplotlib.pyplot as plt
 plt.rcParams.update(plt.rcParamsDefault)
 import matplotlib as mpl
@@ -72,29 +64,34 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': r'factory_mechanisms/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms/alzuetamechanism_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
         'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        'LMRR': r'factory_mechanisms/mei-2019_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms/mei-2019_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
         'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-        'LMRR': r"factory_mechanisms/zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/zhang-2017_LMRR_allP.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
         'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-        'LMRR': r"factory_mechanisms/otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/otomo-2018_LMRR_allP.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
         'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': r"factory_mechanisms/stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/stagni-2020_LMRR_allP.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
                 },
+    # 'Han-2021': {
+    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
+    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    #             },
 }
 
 name = 'JSR_NH3_multimech'
