@@ -1,3 +1,0 @@
-[submodule "cantera"]
-	path = cantera
-	url = https://github.com/Cantera/cantera
