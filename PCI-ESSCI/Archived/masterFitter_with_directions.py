@@ -209,7 +209,7 @@ class masterFitter:
     
     def final_yaml(self,foutName,fit_fxn): # returns PLOG in LMRR YAML format
         output = StringIO()
-        output.write(open('burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\preamble.txt').read())
+        output.write(open('burkelab_SimScripts/ChemicalMechanismCalculationScripts/preamble.txt').read())
         output.write("\n")
         for reaction in self.reactions.keys():
             # print(self.reactions.keys())
@@ -246,7 +246,7 @@ class masterFitter:
                     direction = keylist.index(reaction)
                     output.write(fit_fxn(reaction,direction,collider).getvalue())
             output.write("\n")
-        fout = open(f"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{foutName}.yaml", "w")
+        fout = open(f"C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{foutName}.yaml", "w")
         fout.write(output.getvalue())
         fout.close()
     
@@ -301,11 +301,11 @@ def makeplot(nom_liste,nom_fig):
         colliders = reactions[reaction].keys()
         idx=indices[j]
         for j, X in enumerate(colliders):
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_PLOG}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_PLOG}.yaml'
             get_kTP(fname,P_ls,T_ls,X,reaction.replace(" (+M)",""),"PLOG","-","none",j,1,idx)
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_troe}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_troe}.yaml'
             get_kTP(fname,P_ls,T_ls,X,reaction.replace(" (+M)",""),"Troe",":","none",j,10,idx)
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_cheb}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_cheb}.yaml'
             get_kTP(fname,P_ls,T_ls,X,reaction.replace(" (+M)",""),"Cheb","none","s",j,10,idx)
         ax[idx].set_title(f"{title}: {reaction} (T=1000K)")
         ax[idx].legend()
@@ -317,7 +317,7 @@ def makeplot(nom_liste,nom_fig):
 # Note: not all of the Troe entries in yaml sandbox must have efficiencies specified for all colliders (a limitation)
 
 # INPUTS
-path='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\'
+path='C:/Users/pjsin/Documents/cantera/test/data/'
 T_list=np.linspace(200,2000,30)
 P_list=np.logspace(-6,12,num=30)
 
@@ -372,7 +372,7 @@ mF.PLOG("LMRtest_PLOG_M_orig")
 mF.cheb2D("LMRtest_cheb_M_orig")
 makeplot(["LMRtest_PLOG_M_orig","LMRtest_Troe_M_orig","LMRtest_cheb_M_orig"],f'alzOrig_Plog_Troe_Cheb_fixedT.png')
 
-# python "burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\masterFitter.py" > fitsPLOG.txt
+# python "burkelab_SimScripts/ChemicalMechanismCalculationScripts/masterFitter.py" > fitsPLOG.txt
 
 
 

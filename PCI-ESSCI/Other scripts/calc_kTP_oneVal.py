@@ -12,7 +12,7 @@ P=ct.one_atm
 reaction='H + O2 (+M) <=> HO2 (+M)'
 # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
 colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
-fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\testLmrr.yaml'
+fname='C:/Users/pjsin/Documents/cantera/test/data/testLmrr.yaml'
 for j, X in enumerate(colliders):
     gas = ct.Solution(fname)
     gas.TPX = T, P, {X:1.0}

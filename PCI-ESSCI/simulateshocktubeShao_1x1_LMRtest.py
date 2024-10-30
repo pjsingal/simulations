@@ -95,14 +95,14 @@ def plotPoints(filename,mkr='none',mkrw='none',mkrsz='none',line='none',fill='no
     dataset = pd.read_csv(filename)
     ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,mkr,linewidth=0.7,fillstyle=fill,linestyle=line,color=colour,label=pltLabel,markersize=mkrsz,markeredgewidth=mkrw,zorder=zorder_value)
 
-plotXvsTime("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",'LMR-R (PCI paper)',"xkcd:purple",lstyle="solid",zorder_value=100)
-plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",'LMR-R (PLOG)',"xkcd:grey",zorder_value=90)
-plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",'LMR-R (Troe)',"r",lstyle="solid",zorder_value=70)
-plotXvsTime("chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",'LMR-R (Cheb)',"b",lstyle="solid",zorder_value=80)
+plotXvsTime("chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",'LMR-R (PCI paper)',"xkcd:purple",lstyle="solid",zorder_value=100)
+plotXvsTime("chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_PLOG_M.yaml",'LMR-R (PLOG)',"xkcd:grey",zorder_value=90)
+plotXvsTime("chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_Troe_M.yaml",'LMR-R (Troe)',"r",lstyle="solid",zorder_value=70)
+plotXvsTime("chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_cheb_M.yaml",'LMR-R (Cheb)',"b",lstyle="solid",zorder_value=80)
 
-# plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',pltLabel='Shao et al.',line=':',colour='k')
-plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\expData.csv',mkr='o',mkrsz=msz,pltLabel='Shao et al.',mkrw=mw,zorder_value=110)
-# plotPoints(path+'\\7 SP H2O X vs t (Shock Tube) (Shao)\\troe_k0co2.csv',pltLabel='Troe et al.',line='solid',colour='g')
+# plotPoints(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv',pltLabel='Shao et al.',line=':',colour='k')
+plotPoints(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv',mkr='o',mkrsz=msz,pltLabel='Shao et al.',mkrw=mw,zorder_value=110)
+# plotPoints(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/troe_k0co2.csv',pltLabel='Troe et al.',line='solid',colour='g')
     
 ax.legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')  
 ax.set_ylabel(r'$\rm H_2O$ mole fraction [%]')
@@ -118,7 +118,7 @@ ax.yaxis.set_major_locator(ticker.MultipleLocator(0.03))
 ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_LMRtest.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_LMRtest.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_LMRtest.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_LMRtest.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

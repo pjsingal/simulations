@@ -33,7 +33,7 @@ plt.figure()
 mbr = []
 for p in p_list:
 
-    gas = ct.Solution('chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml')
+    gas = ct.Solution('chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml')
     gas.TPX = Tin, p*ct.one_atm, reactants
     
     f = ct.FreeFlame(gas, width=width)

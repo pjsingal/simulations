@@ -39,28 +39,28 @@ ftransport=args.transport # 'multicomponent' or 'mixture-averaged'
 models = {
     'Alzueta-2023': {
         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': r'factory_mechanisms\\alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms\\alzuetamechanism_LMRR_allP.yaml',
+        'LMRR': r'factory_mechanisms/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': r'factory_mechanisms/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'chemical_mechanisms/Mei-2019\\mei-2019.yaml',
-        'LMRR': r'factory_mechanisms\\mei-2019_LMRR.yaml',
-        'LMRR-allP': r'factory_mechanisms\\mei-2019_LMRR_allP.yaml',
+        'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+        'LMRR': r'factory_mechanisms/mei-2019_LMRR.yaml',
+        'LMRR-allP': r'factory_mechanisms/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"chemical_mechanisms/Zhang-2017\\zhang-2017.yaml",
-        'LMRR': r"factory_mechanisms\\zhang-2017_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\zhang-2017_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+        'LMRR': r"factory_mechanisms/zhang-2017_LMRR.yaml",
+        'LMRR-allP': r"factory_mechanisms/zhang-2017_LMRR_allP.yaml",
                 },
     'Otomo-2018': {
-        'base': r"chemical_mechanisms/Otomo-2018\\otomo-2018.yaml",
-        'LMRR': r"factory_mechanisms\\otomo-2018_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\otomo-2018_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+        'LMRR': r"factory_mechanisms/otomo-2018_LMRR.yaml",
+        'LMRR-allP': r"factory_mechanisms/otomo-2018_LMRR_allP.yaml",
                 },
     'Stagni-2020': {
-        'base': r"chemical_mechanisms/Stagni-2020\\stagni-2020.yaml",
-        'LMRR': r"factory_mechanisms\\stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms\\stagni-2020_LMRR_allP.yaml",
+        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+        'LMRR': r"factory_mechanisms/stagni-2020_LMRR.yaml",
+        'LMRR-allP': r"factory_mechanisms/stagni-2020_LMRR_allP.yaml",
                 },
 }
 
@@ -105,8 +105,8 @@ for z, n in enumerate(models):
                   mbr.append(f.velocity[0] * 100) # cm/s
 
               # Save phi_list and mbr to CSV
-              path=f'USSCI\\data\\Ronney\\'+args.date
+              path=f'USSCI/data/Ronney/'+args.date
               os.makedirs(path,exist_ok=True)
-              csv_filename =path+f'\\{n}_{m}_{p}torr_{alpha}alpha.csv'
+              csv_filename =path+f'/{n}_{m}_{p}torr_{alpha}alpha.csv'
               data = zip(phi_list, mbr)
               save_to_csv(csv_filename, data)

@@ -89,19 +89,19 @@ name = 'IDT_shao'
 path=os.getcwd()
 
 # models = {    
-#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
-#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
 #           }
 models = {    
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
-          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
-          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",  
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",  
+          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=300K.yaml",  
+          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+        #   'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",  
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml",
           }
 colors = ["xkcd:grey", "xkcd:teal", "orange", 'r', 'b', 'xkcd:purple']
 # colors = ['r', 'b', 'xkcd:purple']
@@ -118,8 +118,8 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='graph_reading\\PCI\\'
-df = pd.read_csv(path+'Shao_IDT\\1.csv')
+path='graph_reading/PCI/'
+df = pd.read_csv(path+'Shao_IDT/1.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -166,7 +166,7 @@ ax[0].annotate('(a)', xy=(0.2, 0.1), xycoords='axes fraction', ha='right', va='t
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\2.csv')
+df = pd.read_csv(path+'/Shao_IDT/2.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -218,7 +218,7 @@ ax[1].annotate('(b)', xy=(0.2, 0.1), xycoords='axes fraction', ha='right', va='t
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\3.csv')
+df = pd.read_csv(path+'/Shao_IDT/3.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -270,7 +270,7 @@ ax[2].annotate('(c)', xy=(0.2, 0.1), xycoords='axes fraction',ha='right', va='to
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\4.csv')
+df = pd.read_csv(path+'/Shao_IDT/4.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -327,7 +327,7 @@ plt.subplots_adjust(hspace=0.3)
 
 # plt.subplots_adjust(top=0.98)
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

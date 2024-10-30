@@ -275,7 +275,7 @@ class masterFitter:
         output = StringIO()
         idx=0
         preambles=["preamble.txt","preamble_2.txt","preamble_3.txt","preamble_4.txt","preamble_5.txt","preamble_6.txt","preamble_7.txt"]
-        output.write(open('burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\'+preambles[idx]).read())
+        output.write(open('burkelab_SimScripts/ChemicalMechanismCalculationScripts/'+preambles[idx]).read())
         output.write("\n")
         for reaction in self.reactions.keys():
             # print(self.reactions.keys())
@@ -309,9 +309,9 @@ class masterFitter:
                     output.write(fit_fxn(reaction,collider).getvalue())  
             # output.write("\n")
             idx+=1
-            output.write(open('burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\'+preambles[idx]).read())
+            output.write(open('burkelab_SimScripts/ChemicalMechanismCalculationScripts/'+preambles[idx]).read())
             output.write("\n")
-        fout = open(f"C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{foutName}.yaml", "w")
+        fout = open(f"C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{foutName}.yaml", "w")
         fout.write(output.getvalue())
         fout.close()
     
@@ -419,16 +419,16 @@ def makeplot(nom_liste,nom_fig):
         idx=indices[j]
         lwr=-1
         hgr=2
-        fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox_substituted.yaml'
+        fname=f'C:/Users/pjsin/Documents/cantera/test/data/sandbox_substituted.yaml'
         get_kTPoriginal(fname,np.logspace(lwr,hgr,num=10),T_ls,reaction,"Original","none","o","k",100,idx,mkrsz=4)
-        fname=f'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml'
+        fname=f'chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml'
         get_kTPoriginal(fname,np.logspace(lwr,hgr,num=10),T_ls,reaction,"Singal","none","x","k",75,idx,mkrsz=4)
         for j, X in enumerate(colliders):
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_PLOG}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_PLOG}.yaml'
             get_kTP(fname,np.logspace(lwr,hgr,num=60),T_ls,X,reaction.replace(" (+M)",""),"PLOG","-","none",j,1,idx)
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_troe}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_troe}.yaml'
             get_kTP(fname,np.logspace(lwr,hgr,num=60),T_ls,X,reaction.replace(" (+M)",""),"Troe",":","none",j,50,idx)
-            fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_cheb}.yaml'
+            fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_cheb}.yaml'
             get_kTP(fname,np.logspace(lwr,hgr,num=30),T_ls,X,reaction.replace(" (+M)",""),"Cheb","none","s",j,75,idx)
 
         ax[idx].set_title(f"{title}: {reaction} (T=1000K)")
@@ -443,7 +443,7 @@ def makeplot(nom_liste,nom_fig):
 # Note: not all of the Troe entries in yaml sandbox must have efficiencies specified for all colliders (a limitation)
 
 # INPUTS
-path='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\'
+path='C:/Users/pjsin/Documents/cantera/test/data/'
 T_list=np.linspace(200,2000,200)
 # P_list=np.logspace(-12,12,num=120)
 P_list=np.logspace(-1,2,num=120)
@@ -494,7 +494,7 @@ makeplot(["LMRtest_PLOG_M","LMRtest_Troe_M","LMRtest_cheb_M"],f'Plog_Troe_Cheb_f
 # F_g=0.82
 # mF.reverse_Troe_params(path+"sandbox_fullyoriginal.yaml","H + NO (+M) <=> HNO (+M)",k0_g,ki_g,F_g)
 
-# python "burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\masterFitter.py" > fitsPLOG.txt
+# python "burkelab_SimScripts/ChemicalMechanismCalculationScripts/masterFitter.py" > fitsPLOG.txt
 
 
 
@@ -547,22 +547,22 @@ makeplot(["LMRtest_PLOG_M","LMRtest_Troe_M","LMRtest_cheb_M"],f'Plog_Troe_Cheb_f
 # nom_PLOG=nom_liste[0]
 # nom_troe=nom_liste[1]
 # nom_cheb=nom_liste[2]
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_PLOG}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_PLOG}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"PLOG_orig","-","none",1,1)
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_troe}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_troe}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"Troe_orig",":","none",1,10)
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_cheb}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_cheb}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"Cheb_orig","none","s",1,10)
 
 # nom_liste=["LMRtest_PLOG_M_sub","LMRtest_Troe_M_sub","LMRtest_cheb_M_sub"]
 # nom_PLOG=nom_liste[0]
 # nom_troe=nom_liste[1]
 # nom_cheb=nom_liste[2]
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_PLOG}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_PLOG}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"PLOG_sub","-","none",5,1)
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_troe}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_troe}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"Troe_sub",":","none",5,10)
-# fname=f'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\{nom_cheb}.yaml'
+# fname=f'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/{nom_cheb}.yaml'
 # get_kTP_1x1(fname,P_ls,T_ls,"AR",'H + O2 (+M) <=> HO2 (+M)'.replace(" (+M)",""),"Cheb_sub","none","s",5,10)
 
 # ax.set_title(f"H + O2 (+M) <=> HO2 (+M) (T=1000K)")

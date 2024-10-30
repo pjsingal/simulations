@@ -77,9 +77,9 @@ ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 
 if fslope != -1:
-    path="PCI-ESSCI\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI/RonneyResults_"+date+f' (slope={fslope} curve={fcurve})/'
 else:
-    path="PCI-ESSCI\\RonneyResults_"+date+"\\"
+    path="PCI-ESSCI/RonneyResults_"+date+"/"
 
 
 dataset=pd.read_csv(path+f'Ar_0_data_1.0alpha.csv')
@@ -99,7 +99,7 @@ ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color='xkcd:purple',lab
 
 path="graph_reading"
 
-dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
+dataset = pd.read_csv(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
 ox_frac_list = np.subtract(1,NH3_list)
 O2_list = np.multiply(ox_frac_list, 0.21)
@@ -119,7 +119,7 @@ else:
     name = f'ronney_flamespeed_1.0Alpha_'+date+f'_{args.paper}'
     
 if save_plots == True:
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.png', dpi=dpi, bbox_inches='tight')
 
 # plt.show()     

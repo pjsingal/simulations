@@ -84,16 +84,16 @@ ax.yaxis.set_major_locator(ticker.MultipleLocator(5))
 ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 models = {    
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
-          'Mei':'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
-          'Glarborg':"chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml",
-          'Zhang':"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
-          'Otomo':"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
-          'Stagni':"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
-          'Shrestha':"chemical_mechanisms\\Shrestha-2021\\shrestha-2021.yaml",
-          'Han':"chemical_mechanisms\\Han-2021\\han-2021.yaml",
-        #   'Cornell':"chemical_mechanisms\\Cornell-2024\\cornell-2024.yaml",
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml",
+          'Mei':'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+          'Glarborg':"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+          'Zhang':"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+          'Otomo':"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+          'Stagni':"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+          'Shrestha':"chemical_mechanisms/Shrestha-2021/shrestha-2021.yaml",
+          'Han':"chemical_mechanisms/Han-2021/han-2021.yaml",
+        #   'Cornell':"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
           }
 zorders = [90,100,80,70,60,50,40,30,20,10]
 colours = ["xkcd:grey","xkcd:purple", "xkcd:teal", "orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:navy blue"]
@@ -113,7 +113,7 @@ lines = ["solid","dashed",":"]
 # P_ls = [1,10,20]
 # # P_ls = [1,10]
 # alpha = 1.0
-# path=f'GTech\\GubbiResults_vsPhi_'+date+f' (slope={fslope} curve={fcurve})\\'
+# path=f'GTech/GubbiResults_vsPhi_'+date+f' (slope={fslope} curve={fcurve})/'
 # for i, P in enumerate(P_ls):
 #     ax[col].plot(0, 0, '.', color='white',markersize=0.1,label=f'{P} bar')  # dummy handle to provide label to lgd column
 #     for j, m in enumerate(models):
@@ -138,7 +138,7 @@ col = 1
 colspacing=0.5
 lgd_loc='upper right'
 alpha = 1.0
-path=f'GTech\\GubbiResults_vsP_'+date+f' (slope={fslope} curve={fcurve})\\'
+path=f'GTech/GubbiResults_vsP_'+date+f' (slope={fslope} curve={fcurve})/'
 
 for j, m in enumerate(models):
     label=f'{m}'
@@ -161,7 +161,7 @@ ax.set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]',fontsize=7)
 ax.tick_params(axis='both',direction='in')
 
 if save_plots == True:
-    plt.savefig("GTech\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("GTech\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
+    plt.savefig("GTech/figures/"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("GTech/figures/"+name+'.svg', dpi=500, bbox_inches='tight')
 
 # plt.show()     

@@ -75,16 +75,16 @@ import matplotlib.ticker as ticker
 
 path="graph_reading"
 
-dataset = pd.read_csv(path+'\\9 FS H2 CO (Keromnes)\\model_5atm.csv')
+dataset = pd.read_csv(path+'/9 FS H2 CO (Keromnes)/model_5atm.csv')
 phi_list = dataset.iloc[:,0]
 ax.plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Graph-read model (5 atm)',zorder=100)
 
 ax.set_title("Fig. 10, Keromnes (2013)")
 
 if fslope != -1:
-    path="PCI-ESSCI\\KeromnesResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI/KeromnesResults_"+date+f' (slope={fslope} curve={fcurve})/'
 else:
-    path="PCI-ESSCI\\KeromnesResults_"+date+"\\"
+    path="PCI-ESSCI/KeromnesResults_"+date+"/"
 
 dataset=pd.read_csv(path+f'Keromnes_0_data_0.95alpha.csv')
 ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color="xkcd:teal",label=r"This study (5 atm)",zorder=29)
@@ -109,7 +109,7 @@ else:
     name = f'Keromnes_flamespeed_'+date+f'_0.95CO_0.05H2'
     
 if save_plots == True:
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.png', dpi=1000, bbox_inches='tight')
 
 # plt.show()     

@@ -184,5 +184,5 @@ ax[idx].tick_params(axis='both', which='minor', direction="in")
 fig.text(0.5, 0.07, r'Temperature [K]', ha='center', va='center',fontsize=args.fszaxlab)
 name = f'allArrheniusFits'
 if save_plots == True:
-    plt.savefig("PCI-ESSCI\\figures\\"+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig("PCI-ESSCI\\figures\\"+name+'.svg', dpi=500, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/"+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/"+name+'.svg', dpi=500, bbox_inches='tight')

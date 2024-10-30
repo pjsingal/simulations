@@ -25,27 +25,27 @@ sys.stderr = open(log_path, 'a')
 name = 'MBR_BurkeSong'
 
 # models = {
-#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",            
-#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",            
+#           'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
 #           }
 
 # models = {    
-#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
-#           'Alzueta-300K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
-#           'Alzueta-2000K':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
+#           'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",  
+#           'Alzueta-300K':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=300K.yaml",  
+#           'Alzueta-2000K':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=2000K.yaml",            
+#           'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
 #           }
 
 models = {    
-          'A1':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml", 
-          'A3':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax3.yaml", 
-          'A5':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax5.yaml", 
-          'A10':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax10.yaml", 
-          'A20':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax20.yaml", 
+          'A1':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml", 
+          'A3':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax3.yaml", 
+          'A5':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax5.yaml", 
+          'A10':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax10.yaml", 
+          'A20':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax20.yaml", 
           }
 
 parser = argparse.ArgumentParser()
@@ -84,9 +84,9 @@ for i, m in enumerate(list(models.keys())):
         f.solve(loglevel=loglevel, auto=True)
         mbr.append(f.velocity[0]*f.density[0] / 10) # g/cm2*s
 
-    path=f'PCI-ESSCI\\BurkeSongResults_'+date+f' (slope={fslope} curve={fcurve})'
+    path=f'PCI-ESSCI/BurkeSongResults_'+date+f' (slope={fslope} curve={fcurve})'
     os.makedirs(path,exist_ok=True)
-    csv_filename =path+f'\\{m}_data.csv'
+    csv_filename =path+f'/{m}_data.csv'
     mbr_data = zip(p_list, mbr)
     save_to_csv(csv_filename, mbr_data)
 

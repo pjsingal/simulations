@@ -12,14 +12,14 @@ import argparse
 import csv
 
 models = {    
-          f'epsNH3-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   'epsNH3-1000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=1000K.yaml", 
-          f'epsNH3-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",  
-          f'epsALL-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
-          f'epsALL-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
-          f'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml", 
-          f'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          f'LMR-R-extra':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+          f'epsNH3-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   'epsNH3-1000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=1000K.yaml", 
+          f'epsNH3-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=2000K.yaml",  
+          f'epsALL-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=300K.yaml",  
+          f'epsALL-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=2000K.yaml",    
+          f'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml", 
+          f'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          f'LMR-R-extra':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 
 parser = argparse.ArgumentParser()
@@ -67,19 +67,19 @@ loglevel = 0  # amount of diagnostic output (0 to 8)
 Tin = [296,298]  # unburned gas temperature [K]
 
 colours = ["xkcd:teal","xkcd:orange","b", "r", "xkcd:grey","xkcd:purple", "xkcd:sea green"]
-# patterns = ['/', '\\', '|', '-', '+', 'x', 'o', 'O', '.'] 
+# patterns = ['/', '/', '|', '-', '+', 'x', 'o', 'O', '.'] 
 # patterns = ['.','.','.','.','.','.','.'] 
 patterns = ['','x','','x','','x',''] 
 
 models = {    
-          f'epsNH3-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   'epsNH3-1000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=1000K.yaml", 
-          f'epsNH3-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",  
-          f'epsALL-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
-          f'epsALL-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
-          f'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml", 
-          f'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          f'LMR-R-extra':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+          f'epsNH3-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   'epsNH3-1000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=1000K.yaml", 
+          f'epsNH3-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=2000K.yaml",  
+          f'epsALL-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=300K.yaml",  
+          f'epsALL-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=2000K.yaml",    
+          f'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml", 
+          f'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          f'LMR-R-extra':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 
 
@@ -87,7 +87,7 @@ for x, alpha in enumerate(alpha_list):
     reactionList = []
 
     for k, m in enumerate(models):
-        path="PCI-ESSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+        path="PCI-ESSCI/figures/Ronney_Sensitivity/"+f"{date}_data/"
         sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
         reactionList += sensitivities_subset.iloc[:,0].to_list()
     reactionList = list(set(reactionList))
@@ -97,7 +97,7 @@ for x, alpha in enumerate(alpha_list):
 
     for k, m in enumerate(models):
         for i, reaction in enumerate(reactionList):
-            path="PCI-ESSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+            path="PCI-ESSCI/figures/Ronney_Sensitivity/"+f"{date}_data/"
             sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
             sensitivities_subset_sorted = sensitivities_subset.sort_values(by=1, ascending=False)
             rxns = sensitivities_subset_sorted.iloc[:,0].to_list()
@@ -123,7 +123,7 @@ for x, alpha in enumerate(alpha_list):
     for k, m in enumerate(models):
         modelDict={}
         for i, reaction in enumerate(weighted_reactionList):
-            path="PCI-ESSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+            path="PCI-ESSCI/figures/Ronney_Sensitivity/"+f"{date}_data/"
             sensitivities_subset=pd.read_csv(path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv',header=None)
             sensitivities_subset_sorted = sensitivities_subset.sort_values(by=1, ascending=False)
             rxns = sensitivities_subset_sorted.iloc[:,0].to_list()
@@ -207,7 +207,7 @@ pos = ax[1].get_position()
 ax[1].set_position([pos.x0*1.35, pos.y0, pos.width, pos.height])
 
             
-path="PCI-ESSCI\\figures\\Ronney_Sensitivity\\"
+path="PCI-ESSCI/figures/Ronney_Sensitivity/"
 name="sensitivity"+f"{date}"
 plt.savefig(path+name+'.pdf', dpi=1000, bbox_inches='tight')
 plt.savefig(path+name+'.svg', dpi=1000, bbox_inches='tight')

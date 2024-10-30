@@ -8,11 +8,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 models = {    
-          'A1':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml", 
-          'A3':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax3.yaml", 
-          'A5':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax5.yaml", 
-          'A10':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax10.yaml", 
-          'A20':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR_Ax20.yaml", 
+          'A1':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml", 
+          'A3':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax3.yaml", 
+          'A5':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax5.yaml", 
+          'A10':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax10.yaml", 
+          'A20':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR_Ax20.yaml", 
           }
 
 reactions = ["H + O2 (+M) <=> HO2 (+M)", "H + O2 <=> O + OH"]
@@ -47,5 +47,5 @@ plt.legend(fontsize=5,frameon=False,loc='upper left', handlelength=1.0)
 plt.xlabel('Temperature [K]')
 plt.ylabel('Rate constant (k)')
 
-path=f'PCI-ESSCI\\figures\\'
+path=f'PCI-ESSCI/figures/'
 plt.savefig(path+f'k_vs_T_allAR.png', dpi=300)

@@ -42,7 +42,7 @@ def plot_fixed_T():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_PLOG.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_PLOG.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -56,7 +56,7 @@ def plot_fixed_T():
         else:
             ax[0].loglog(P_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_purePLOG.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_purePLOG.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -81,7 +81,7 @@ def plot_fixed_T():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_Troe.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_Troe.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -95,7 +95,7 @@ def plot_fixed_T():
         else:
             ax[1].loglog(P_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_pureTroe.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_pureTroe.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -121,7 +121,7 @@ def plot_fixed_T():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_Chebyshev.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_Chebyshev.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -135,7 +135,7 @@ def plot_fixed_T():
         else:
             ax[2].loglog(P_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_pureChebyshev.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_pureChebyshev.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -182,7 +182,7 @@ def plot_fixed_P():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_PLOG.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_PLOG.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -196,7 +196,7 @@ def plot_fixed_P():
         else:
             ax[0].semilogy(T_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_purePLOG.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_purePLOG.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -220,7 +220,7 @@ def plot_fixed_P():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_Troe.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_Troe.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -234,7 +234,7 @@ def plot_fixed_P():
         else:
             ax[1].semilogy(T_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_pureTroe.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_pureTroe.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -260,7 +260,7 @@ def plot_fixed_P():
     # colliders = ["Ar","H2O","CO2", "N2", "H2O2"]
     colliders=["Ar","HE","N2", "H2", "CO2", "NH3", "H2O"]
     colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(colliders))]
-    fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_M_Chebyshev.yaml'
+    fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_M_Chebyshev.yaml'
     gas = ct.Solution(fname)
     for j, X in enumerate(colliders):
         k_TP = []
@@ -274,7 +274,7 @@ def plot_fixed_P():
         else:
             ax[2].semilogy(T_ls,k_TP, linestyle="-",label=None,color=colours[j])
 
-    # fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_pureChebyshev.yaml'
+    # fname='C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_pureChebyshev.yaml'
     # gas = ct.Solution(fname)
     # for j, X in enumerate(colliders):
     #     k_TP = []
@@ -317,7 +317,7 @@ plot_fixed_T()
 
 
 
-# file = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\LMRtests\\LMRtest_purePLOG.yaml'
+# file = 'C:/Users/pjsin/Documents/cantera/test/data/LMRtests/LMRtest_purePLOG.yaml'
 # # reactions = ['H + OH (+M) <=> H2O (+M)']
 # reactions = ['H + O2 (+M) <=> HO2 (+M)']
 # # reactions=[1]
@@ -354,7 +354,7 @@ plot_fixed_T()
 #     #     plt.plot(Temp,k_list[j],label=str(P)+' atm') 
 #     #     #plt.semilogy(Temp,k_list[j],label=str(P)+' atm')    
 
-# # file = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\kineticsfromscratch_LMRtest_Troe.yaml'
+# # file = 'C:/Users/pjsin/Documents/cantera/test/data/kineticsfromscratch_LMRtest_Troe.yaml'
 # # # reactions = ['H + O2 (+M) <=> HO2 (+M)']
 # # gas = bklabct.Solution(file)
 # # Temp=[1000]

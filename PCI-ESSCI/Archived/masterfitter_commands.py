@@ -5,7 +5,7 @@ from masterFitter import *
 T_list=np.linspace(200,2000,50)
 # P_list=np.logspace(-6,12,num=140)
 P_list=np.logspace(-6,12,num=10)
-fname='C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml'
+fname='C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml'
 # reaction='H2O2 (+M) <=> 2 OH (+M)'
 
 reactions={'H + OH <=> H2O':{"N2":"{A: 1, b: 0, Ea: 0}",
@@ -65,6 +65,6 @@ plog_fit.print_PLOG_YAML_format()
 #         plog_fit = PLOGFit(T_list,P_list,c,reaction,fname)
 #         plog_fit.print_PLOG_YAML_format()
 
-# python "burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\masterfitter_commands.py"
+# python "burkelab_SimScripts/ChemicalMechanismCalculationScripts/masterfitter_commands.py"
 
 

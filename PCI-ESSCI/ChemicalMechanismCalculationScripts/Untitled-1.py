@@ -45,7 +45,7 @@ def cheby_poly(n_T, n_P, k, T_ls, P_ls, P_min=0.01, P_max=100, T_min=200, T_max=
     coef = np.linalg.lstsq(cheb_mat, np.log10(np.array(k)))[0]
     return coef
 
-model = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml'
+model = 'C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml'
 gas = ct.Solution(model)
 
 reaction = 'H + O2 (+M) <=> HO2 (+M)'

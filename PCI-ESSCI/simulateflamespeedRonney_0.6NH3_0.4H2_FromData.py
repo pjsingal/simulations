@@ -85,7 +85,7 @@ ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 path="graph_reading"
 
-dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
+dataset = pd.read_csv(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
 ox_frac_list = np.subtract(1,NH3_list)
 O2_list = np.multiply(ox_frac_list, 0.21)
@@ -95,9 +95,9 @@ ax[0].plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz
 
 
 if fslope != -1:
-    path="PCI-ESSCI\\RonneyResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI/RonneyResults_"+date+f' (slope={fslope} curve={fcurve})/'
 else:
-    path="PCI-ESSCI\\RonneyResults_"+date+"\\"
+    path="PCI-ESSCI/RonneyResults_"+date+"/"
 
 if args.paper == 'ESSCI':
     dataset=pd.read_csv(path+f'Alzueta_0_data_1.0alpha.csv')
@@ -191,9 +191,9 @@ ax[0].tick_params(axis='both', direction="in")
 ax[0].tick_params(axis='both', which='minor', direction="in")
 
 
-dataset = pd.read_csv(path+f'\\Han\\han_0pt6_NH3.csv')
+dataset = pd.read_csv(path+f'/Han/han_0pt6_NH3.csv')
 ax[1].plot(dataset.iloc[:,0],dataset.iloc[:,1],marker='s',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Han',zorder=100)
-dataset = pd.read_csv(path+f'\\Wang\\wang_0pt6_NH3.csv')
+dataset = pd.read_csv(path+f'/Wang/wang_0pt6_NH3.csv')
 ax[1].plot(dataset.iloc[:,0],dataset.iloc[:,1],marker='x',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Wang',zorder=99)
 ax[1].legend(fontsize=lgdfsz, frameon=False, loc='upper right',handlelength=lgdw) 
 
@@ -225,8 +225,8 @@ else:
     name = f'ronney_flamespeed_'+date+f'_0.6NH3_0.4H2 _{args.paper}'
     
 if save_plots == True:
-    plt.savefig("PCI-ESSCI\\figures\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    # plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig("PCI-ESSCI\\figures\\"+'ronney_flamespeed.eps', dpi=1000, bbox_inches='tight', format='eps')
+    plt.savefig("PCI-ESSCI/figures/"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    # plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/"+'ronney_flamespeed.eps', dpi=1000, bbox_inches='tight', format='eps')
 
 # plt.show()     

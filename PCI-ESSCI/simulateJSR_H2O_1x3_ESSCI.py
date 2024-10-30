@@ -103,13 +103,13 @@ ax[2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
 
 name = 'JSR_H2O'
 models = {    
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
-          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
-          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",  
+          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=300K.yaml",  
+          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+        #   'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 # colors = ["xkcd:grey", "orange", "xkcd:teal", 'r', 'b', 'xkcd:purple']
 colors = ["xkcd:grey", "xkcd:teal", "orange", 'r', 'b', 'xkcd:purple']
@@ -148,7 +148,7 @@ maxSimulationTime = 50  # seconds
 tempDependence = []
 
 ##############################################################################################################################
-path="graph_reading\\1 JSR H2O\\"
+path="graph_reading/1 JSR H2O/"
 T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
 O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 
 H2_20_data = pd.read_csv(path+'JSR_H2_H2O_20_data.csv') 
@@ -248,7 +248,7 @@ for k,m in enumerate(models):
 
 
  
-path="graph_reading\\1 JSR H2O\\"
+path="graph_reading/1 JSR H2O/"
 
 # ax[0].set_xlabel('Temperature [K]')
 ax[0].set_ylabel(r'$\Delta$ T [K]')
@@ -274,7 +274,7 @@ ax[2].set_xlim([780,1070])
 ax[2].legend(fontsize=lgdfsz,frameon=False,loc='upper right', handlelength=lgdw)
 
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

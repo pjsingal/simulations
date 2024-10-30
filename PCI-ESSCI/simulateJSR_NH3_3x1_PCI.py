@@ -109,19 +109,19 @@ if LMRtest == 1:
     colors = ['xkcd:purple',"xkcd:grey", 'r', 'b']
     lstyles = ["solid","solid","solid","solid","solid","solid","solid","solid"]
     models = {
-            'LMR-R (PCI paper)':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",
-            'LMR-R (PLOG)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",
-            'LMR-R (Troe)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",
-            'LMR-R (Cheb)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",      
+            'LMR-R (PCI paper)':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",
+            'LMR-R (PLOG)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_PLOG_M.yaml",
+            'LMR-R (Troe)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_Troe_M.yaml",
+            'LMR-R (Cheb)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_cheb_M.yaml",      
             }
     name = 'JSR_NH3_LMRtest'
 else:
     colors = ['r','b','xkcd:purple']
     lstyles = ["dotted","dashed","solid"]
     models = {
-            'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-            r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-            'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",        
+            'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+            r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+            'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",        
             }
     name = 'JSR_NH3_PCI'
 
@@ -143,7 +143,7 @@ tempDependence = []
 ##############################################################################################################################
 
 
-path="graph_reading\\2 JSR NH3\\"
+path="graph_reading/2 JSR NH3/"
         
 # T_0_data = pd.read_csv('JSR_T_NH3_0_data.csv') 
 # T_2_data = pd.read_csv('JSR_T_NH3_2_data.csv') 
@@ -351,6 +351,6 @@ ax[2].set_xlim([780,1070])
 # ax[2].set_ylim([0.6,3.4])
 
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+'JSR_NH3.eps', dpi=500, bbox_inches='tight', format='eps')
+    plt.savefig('PCI-ESSCI/figures/'+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+'JSR_NH3.eps', dpi=500, bbox_inches='tight', format='eps')
 # plt.show()     

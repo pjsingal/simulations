@@ -18,8 +18,8 @@ hfont = {'fontname':'sans-serif','fontweight':550,'fontsize':10,'fontstretch':50
 # %%
 #STEP 1: GET RATE CONSTANTS FROM TROE PARAMETERS
 def getKfromTroe(P_list,T_list,rxn,ref_collider):
-    # file = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml'
-    file="C:\\Users\\pjsin\\OneDrive\\Desktop\\sandbox_cheby.yaml"
+    # file = 'C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml'
+    file="C:/Users/pjsin/OneDrive/Desktop/sandbox_cheby.yaml"
     reaction = rxn
     gas = ct.Solution(file)
     def getK(Temp,Pres,X) :

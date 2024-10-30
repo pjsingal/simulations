@@ -1,5 +1,5 @@
 # To run file: 
-# python "PCI-ESSCI\\simulateflamespeedRonney_NH3_H2.py"
+# python "PCI-ESSCI/simulateflamespeedRonney_NH3_H2.py"
 
 import sys, os
 sys.path.append(os.getcwd()+"cantera/build/python")
@@ -48,14 +48,14 @@ fslope=args.slopeVal #should be low enough that the results don't depend on the 
 fcurve=args.curveVal
 ftransport=args.transport # 'multicomponent' or 'mixture-averaged'
 models = {    
-        #   'epsNH3-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   'epsNH3-1000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=1000K.yaml", 
-        #   'epsNH3-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",  
-        #   'epsALL-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
-        #   'epsALL-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
-        #   'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml", 
-        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          'LMR-R-extra':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+        #   'epsNH3-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   'epsNH3-1000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=1000K.yaml", 
+        #   'epsNH3-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=2000K.yaml",  
+        #   'epsALL-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=300K.yaml",  
+        #   'epsALL-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=2000K.yaml",    
+        #   'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml", 
+        #   'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          'LMR-R-extra':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 ###############################################################################################################
 
@@ -96,9 +96,9 @@ for x, alpha in enumerate(alpha_list):
                 mbr.append(f.velocity[0] * 100) # cm/s
 
             # Save phi_list and mbr to CSV
-            path=f'PCI-ESSCI\\RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
+            path=f'PCI-ESSCI/RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
             os.makedirs(path,exist_ok=True)
-            csv_filename =path+f'\\{m}_{p}_data_{alpha}alpha.csv'
+            csv_filename =path+f'/{m}_{p}_data_{alpha}alpha.csv'
             data = zip(phi_list, mbr)
             save_to_csv(csv_filename, data)
 
@@ -130,8 +130,8 @@ for x, alpha in enumerate(alpha_list):
 #                 mbr.append(f.velocity[0] * 100) # cm/s
 
 #             # Save phi_list and mbr to CSV
-#             path=f'PCI-ESSCI\\RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
+#             path=f'PCI-ESSCI/RonneyResults_'+date+f' (slope={fslope} curve={fcurve})'
 #             os.makedirs(path,exist_ok=True)
-#             csv_filename =path+f'\\{m}_760_{T}K_data_{alpha}alpha.csv'
+#             csv_filename =path+f'/{m}_760_{T}K_data_{alpha}alpha.csv'
 #             data = zip(phi_list, mbr)
 #             save_to_csv(csv_filename, data)

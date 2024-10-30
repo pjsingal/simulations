@@ -104,7 +104,7 @@ python burkelab_SimScripts/simulateflamespeedBurke_FromData_PCI.py \
 # python burkelab_SimScripts/simulateflamespeedRonney_NH3_H2.py --gridsz 50 --date 'Sep12' --slopeVal 0.05 --curveVal 0.05 --transport 'multicomponent'
 
 # # # # ## OTHER PLOTS
-# # python burkelab_SimScripts\\ChemicalMechanismCalculationScripts\\AllArrheniusFits.py \
+# # python burkelab_SimScripts/ChemicalMechanismCalculationScripts/AllArrheniusFits.py \
 # # --figwidth 6.5 --figheight 6 --fsz 7 --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 &
 # # python burkelab_SimScripts/simulateflamespeedRonney_NH3_H2_FromData.py \
@@ -167,7 +167,7 @@ python burkelab_SimScripts/simulateflamespeedBurke_FromData_PCI.py \
 
 ## USEFUL COMMANDS
 # # Convert a cti to a yaml
-# python interfaces\\cython\\cantera\\cti2yaml.py "chemical_mechanisms\\09 Nitrogen\\Shrestha\\shrestha2018.cti" 
+# python interfaces/cython/cantera/cti2yaml.py "chemical_mechanisms/09 Nitrogen/Shrestha/shrestha2018.cti" 
 
 # # To make this file executable:
 # chmod +x burkelab_SimScripts/burkelabSims.sh

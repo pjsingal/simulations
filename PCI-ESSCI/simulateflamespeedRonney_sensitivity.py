@@ -12,14 +12,14 @@ import argparse
 import csv
 
 models = {    
-          f'epsNH3-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=300K.yaml",  
-        #   'epsNH3-1000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=1000K.yaml", 
-          f'epsNH3-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsNH3_T=2000K.yaml",  
-          f'epsALL-300K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=300K.yaml",  
-          f'epsALL-2000K':"chemical_mechanisms\\Alzueta-2023\\LMR_eps_comparison\\alzuetamechanism_epsALL_T=2000K.yaml",    
-          f'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml", 
-          f'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          f'LMR-R-extra':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+          f'epsNH3-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=300K.yaml",  
+        #   'epsNH3-1000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=1000K.yaml", 
+          f'epsNH3-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsNH3_T=2000K.yaml",  
+          f'epsALL-300K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=300K.yaml",  
+          f'epsALL-2000K':"chemical_mechanisms/Alzueta-2023/LMR_eps_comparison/alzuetamechanism_epsALL_T=2000K.yaml",    
+          f'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml", 
+          f'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          f'LMR-R-extra':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 
 parser = argparse.ArgumentParser()
@@ -83,7 +83,7 @@ for x, alpha in enumerate(alpha_list):
         threshold = 0.03
         sensitivities_subset = sensitivities[sensitivities["base_case"].abs() > threshold]
         print("Sensitivity analysis complete. Now saving to CSV...")
-        path="PCI-ESSCI\\figures\\Ronney_Sensitivity\\"+f"{date}_data\\"
+        path="PCI-ESSCI/figures/Ronney_Sensitivity/"+f"{date}_data/"
         os.makedirs(path,exist_ok=True)
         csv_filename =path+f"{m}_{alpha}alpha_{Tin[x]}K_1atm_1phi"+'.csv'
         data = zip(sensitivities_subset.index,sensitivities_subset["base_case"])

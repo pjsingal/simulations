@@ -27,10 +27,10 @@ fig, ax = plt.subplots(1, 1, figsize=(9, 5))
 name = 'IDT_NH3_fig3'
 
 models = {
-        #   'mevel':'D:\\Research\\Models\\Mevel\\mevel.cti',
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",            
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+        #   'mevel':'D:/Research/Models/Mevel/mevel.cti',
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",            
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 colors = ['xkcd:purple','r','b']
@@ -75,7 +75,7 @@ for i, m in enumerate(list(models.keys())):
 
 
 path="graph_reading"
-dataset0 = pd.read_csv(path+'\\Peng Fig 3\\Fig3expData.csv')
+dataset0 = pd.read_csv(path+'/Peng Fig 3/Fig3expData.csv')
 ax.plot(dataset0.iloc[:, 0],dataset0.iloc[:, 1],marker='s',color='k', markersize=6, zorder=2, fillstyle='full', linestyle = 'None', label="Peng et al.")
 ax.legend(fontsize=15, frameon=False)#, loc='upper right')  
 ax.set_ylabel(r'Ignition delay [$\mathdefault{\mu s}$]', fontsize=18)

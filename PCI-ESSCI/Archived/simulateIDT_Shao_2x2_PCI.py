@@ -62,18 +62,18 @@ name = 'IDT_shao'
 path=os.getcwd()
 
 # models = {
-#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-#           'A priori':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",             
-#           'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-#           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+#           'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+#           'A priori':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",             
+#           'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+#           r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
 #           }
 
 # colors = ['xkcd:purple',"xkcd:grey",'r','b']
 
 models = {
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",          
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",          
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 colors = ['xkcd:purple','r','b']
@@ -85,8 +85,8 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='graph_reading\\PCI\\'
-df = pd.read_csv(path+'Shao_IDT\\1.csv')
+path='graph_reading/PCI/'
+df = pd.read_csv(path+'Shao_IDT/1.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -124,7 +124,7 @@ ax[0, 0].annotate('(a)', xy=(0.95, 0.9), xycoords='axes fraction', ha='right', v
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\2.csv')
+df = pd.read_csv(path+'/Shao_IDT/2.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -162,7 +162,7 @@ ax[0,1].annotate('(b)', xy=(0.95, 0.9), xycoords='axes fraction', ha='right', va
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\3.csv')
+df = pd.read_csv(path+'/Shao_IDT/3.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -200,7 +200,7 @@ ax[1,0].annotate('(c)', xy=(0.95, 0.9), xycoords='axes fraction',ha='right', va=
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\4.csv')
+df = pd.read_csv(path+'/Shao_IDT/4.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']

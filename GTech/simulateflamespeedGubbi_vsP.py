@@ -1,5 +1,5 @@
 # To run file: 
-# python "GTech\\simulateflamespeedGubbi.py"
+# python "GTech/simulateflamespeedGubbi.py"
 
 import sys, os
 sys.path.append(os.getcwd()+"cantera/build/python")
@@ -58,21 +58,21 @@ fslope=args.slopeVal #should be low enough that the results don't depend on the 
 fcurve=args.curveVal
 ftransport=args.transport # 'multicomponent' or 'mixture-averaged'
 # models = {    
-#           'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",
-#           'Mei':'chemical_mechanisms\\Ammonia\\Mei-2019\\mei-2019.yaml',
-#           'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
+#           'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",
+#           'Mei':'chemical_mechanisms/Ammonia/Mei-2019/mei-2019.yaml',
+#           'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml",
 #           }
 models = {    
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",
-          'Mei':'chemical_mechanisms\\Mei-2019\\mei-2019.yaml',
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml",
-          'Glarborg':"chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml",
-          'Zhang':"chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml",
-          'Otomo':"chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml",
-          'Stagni':"chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml",
-          'Shrestha':"chemical_mechanisms\\Shrestha-2021\\shrestha-2021.yaml",
-          'Han':"chemical_mechanisms\\Han-2021\\han-2021.yaml",
-          'Cornell':"chemical_mechanisms\\Cornell-2024\\cornell-2024.yaml",
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",
+          'Mei':'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml",
+          'Glarborg':"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+          'Zhang':"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+          'Otomo':"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+          'Stagni':"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+          'Shrestha':"chemical_mechanisms/Shrestha-2021/shrestha-2021.yaml",
+          'Han':"chemical_mechanisms/Han-2021/han-2021.yaml",
+          'Cornell':"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
           }
 ###############################################################################################################
 
@@ -117,8 +117,8 @@ for x, alpha in enumerate(alpha_list):
         mbr.append(f.velocity[0] * 100) # cm/s
 
       # Save phi_list and mbr to CSV
-      path=f'GTech\\GubbiResults_vsP_'+date+f' (slope={fslope} curve={fcurve})'
+      path=f'GTech/GubbiResults_vsP_'+date+f' (slope={fslope} curve={fcurve})'
       os.makedirs(path,exist_ok=True)
-      csv_filename =path+f'\\{m}_{phi}phi_data.csv'
+      csv_filename =path+f'/{m}_{phi}phi_data.csv'
       data = zip(p_list, mbr)
       save_to_csv(csv_filename, data)

@@ -76,9 +76,9 @@ fslope=args.slopeVal
 fcurve=args.curveVal
 
 if fslope != -1:
-    path="PCI-ESSCI\\BurkeSongResults_"+date+f' (slope={fslope} curve={fcurve})\\'
+    path="PCI-ESSCI/BurkeSongResults_"+date+f' (slope={fslope} curve={fcurve})/'
 else:
-    path="PCI-ESSCI\\BurkeSongResults_"+date+'\\'
+    path="PCI-ESSCI/BurkeSongResults_"+date+'/'
 
 # dataset=pd.read_csv(path+f'Alzueta_data.csv')
 # ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,color="xkcd:grey",label='Alzueta',zorder=80)
@@ -103,11 +103,11 @@ ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],linewidth=lw,linestyle="solid",color
 
 path="graph_reading"
 
-# dataset = pd.read_csv(path+'\\5 FS H2O (Burke)\\black.csv')
+# dataset = pd.read_csv(path+'/5 FS H2O (Burke)/black.csv')
 # pressures = dataset.iloc[:,0]
 # mbr_list = dataset.iloc[:,1]
 # ax.plot(pressures,mbr_list,marker='^',fillstyle='none',markersize=1,markeredgewidth=mw,linestyle='none',color='b',label='Burke Model',zorder=1)
-dataset = pd.read_csv(path+'\\5 FS H2O (Burke)\\exp_pts.csv',header=None)
+dataset = pd.read_csv(path+'/5 FS H2O (Burke)/exp_pts.csv',header=None)
 pressures = dataset.iloc[:,0]
 mbr_list = dataset.iloc[:,1]
 ax.plot(pressures,mbr_list,marker='o',fillstyle='none',markersize=msz,markeredgewidth=mw,linestyle='none',color='k',label='Burke et al.',zorder=100)
@@ -127,7 +127,7 @@ if fslope != -1:
 else:
     name = f"burkesong_flamespeed_"+date+"_PCI"
 
-path="PCI-ESSCI\\figures\\"
+path="PCI-ESSCI/figures/"
 if save_plots == True:
     plt.savefig(path+name+'.pdf', dpi=500, bbox_inches='tight')
     plt.savefig(path+'burkesong_flamespeed_PCI.eps', dpi=500, bbox_inches='tight', format='eps')

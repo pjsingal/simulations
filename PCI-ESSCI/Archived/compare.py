@@ -102,7 +102,7 @@ n_T = 5
 n_P = 5
 X = {'Ar': 1.0}
 reaction = 'H2O2 (+M) <=> 2 OH (+M)'
-fname = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml'
+fname = 'C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml'
 colours = [(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(P_list))]
 
 # Create chebFit_2D object

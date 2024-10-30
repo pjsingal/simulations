@@ -52,10 +52,10 @@ lgdfsz=7
 # ax[idxs[x]].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
 
 models = {
-        'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-        'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",                 
-        'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-        r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+        'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+        'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",                 
+        'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+        r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
         }
         
 # def plotPoints(fname, label, shape,color,x):
@@ -67,16 +67,16 @@ models = {
 #     ax[x].plot(phi_list,dataset.iloc[:,1],marker=shape,fillstyle='none',markersize=3.5,markeredgewidth=0.5,linestyle='none',color=color,label=label)
     
 # path="graph_reading"
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\50torr.csv','50 torr','o','k')
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\100torr.csv','100 torr','^','k')
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\250torr.csv','250 torr','v','k')
-# plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv','Ronney','o','k',x)
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\1500torr.csv','1500 torr','D','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/50torr.csv','50 torr','o','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/100torr.csv','100 torr','^','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/250torr.csv','250 torr','v','k')
+# plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv','Ronney','o','k',x)
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/1500torr.csv','1500 torr','D','k')
 
-# dataset=pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
+# dataset=pd.read_csv(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv')
 # ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,marker='o',markersize=7,linewidth=3,fillstyle='none',linestyle='none',color='k',label='Ronney')
 
-path="PCI-ESSCI\\RonneyResults_Mar04\\"
+path="PCI-ESSCI/RonneyResults_Mar04/"
 
 dataset=pd.read_csv(path+f'Ar_0_data_1alpha.csv')
 ax.plot(dataset.iloc[2:,0],dataset.iloc[2:,1],linewidth=lw,color='r',label='Ar')
@@ -93,14 +93,14 @@ ax.plot(dataset.iloc[2:,0],dataset.iloc[2:,1],linewidth=lw,color='xkcd:purple',l
 
 path="graph_reading"
 
-dataset = pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
+dataset = pd.read_csv(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv')
 NH3_list = np.divide(dataset.iloc[:,0],100)
 ox_frac_list = np.subtract(1,NH3_list)
 O2_list = np.multiply(ox_frac_list, 0.21)
 phi_list = np.divide(np.divide(NH3_list,O2_list),np.divide(4,3))
 ax.plot(phi_list,dataset.iloc[:,1],marker='o',fillstyle='none',markersize=msz,markeredgewidth=0.5,linestyle='none',color='k',label='Ronney')
 
-# dataset = pd.read_csv(path+f'\\AlzuetaFig15\\1pt0_NH3.csv')
+# dataset = pd.read_csv(path+f'/AlzuetaFig15/1pt0_NH3.csv')
 # ax.plot(dataset.iloc[:,0],dataset.iloc[:,1],marker='s',markersize=msz,markeredgewidth=0.5,linestyle='none',color='b',label='Alz Sim (Graph Read)')
 ax.legend(fontsize=lgdfsz, frameon=False, loc='upper right') 
 
@@ -112,7 +112,7 @@ ax.set_xlim([0.6, 1.8])
 
 name = f'ronney_flamespeed_Mar04_3'
 if save_plots == True:
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig("PCI-ESSCI\\figures\\Flame Speed Plots\\"+name+'.png', dpi=dpi, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig("PCI-ESSCI/figures/Flame Speed Plots/"+name+'.png', dpi=dpi, bbox_inches='tight')
 
 # plt.show()     

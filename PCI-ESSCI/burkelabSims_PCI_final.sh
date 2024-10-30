@@ -35,7 +35,7 @@ python burkelab_SimScripts/simulateflamespeedRonney_0.6NH3_0.4H2_FromData.py \
 
 ## USEFUL COMMANDS
 # # Convert a cti to a yaml
-# python interfaces\\cython\\cantera\\cti2yaml.py "chemical_mechanisms\\09 Nitrogen\\Shrestha\\shrestha2018.cti" 
+# python interfaces/cython/cantera/cti2yaml.py "chemical_mechanisms/09 Nitrogen/Shrestha/shrestha2018.cti" 
 
 # # To make this file executable:
 # chmod +x burkelab_SimScripts/burkelabSims.sh

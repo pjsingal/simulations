@@ -20,7 +20,7 @@ hfont = {'fontname':'sans-serif','fontweight':550,'fontsize':10,'fontstretch':50
 def arrhenius(T, A, n, Ea):
     return np.log(A) + n*np.log(T)+ (-Ea/(1.987*T))
 pltcolours = ['k','g','b','r','olive','orange','brown','indigo']
-path="G:\\Mon disque\\Columbia\\Burke Lab\\01 Mixture Rules Project\\"
+path="G:/Mon disque/Columbia/Burke Lab/01 Mixture Rules Project/"
 fname=path+"rateConstantCalculations_SKJFig5.csv"
 plt.figure(figsize=(8,6))
 p_list = [10,100,300,760,2280,7600,22800,76000]
@@ -69,7 +69,7 @@ plt.show()
 # for i, p in enumerate(p_list):
 #     ratelist_plog = []
 #     for j, T in enumerate(T_list):
-#         gas = ct.Solution("C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml")
+#         gas = ct.Solution("C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml")
 #         # print(p)
 #         gas.TPX = T, p/760, 'H2:0.2,O2:0.2,Ar:0.8'
 #         rc_plog = gas.forward_rate_constants[gas.reaction_equations().index(reaction_plog)] # m3/kmol/s

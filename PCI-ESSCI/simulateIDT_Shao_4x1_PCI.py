@@ -85,19 +85,19 @@ if LMRtest == 1:
     colors = ['xkcd:purple',"xkcd:grey", 'r', 'b']
     lstyles = ["solid","solid","solid","solid","solid","solid","solid","solid"]
     models = {
-            'LMR-R (PCI paper)':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",
-            'LMR-R (PLOG)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_PLOG_M.yaml",
-            'LMR-R (Troe)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_Troe_M.yaml",
-            'LMR-R (Cheb)':"chemical_mechanisms\\Alzueta-2023\\LMRtests\\LMRtest_cheb_M.yaml",      
+            'LMR-R (PCI paper)':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",
+            'LMR-R (PLOG)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_PLOG_M.yaml",
+            'LMR-R (Troe)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_Troe_M.yaml",
+            'LMR-R (Cheb)':"chemical_mechanisms/Alzueta-2023/LMRtests/LMRtest_cheb_M.yaml",      
             }
     name = 'IDT_shao_LMRtest'
 else:
     colors = ['r','b','xkcd:purple']
     lstyles = ["dotted","dashed","solid"]
     models = {
-            'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-            r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-            'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",       
+            'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+            r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+            'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",       
             }
     name = 'IDT_shao_PCI'
 
@@ -108,8 +108,8 @@ def ignitionDelay(states, species):
 
 ################################################################################################
 
-path='graph_reading\\PCI\\'
-df = pd.read_csv(path+'Shao_IDT\\1.csv')
+path='graph_reading/PCI/'
+df = pd.read_csv(path+'Shao_IDT/1.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -152,7 +152,7 @@ ax[0].annotate('(a)', xy=(0.95, 0.9), xycoords='axes fraction', ha='right', va='
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\2.csv')
+df = pd.read_csv(path+'/Shao_IDT/2.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -195,7 +195,7 @@ ax[1].annotate('(b)', xy=(0.95, 0.9), xycoords='axes fraction', ha='right', va='
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\3.csv')
+df = pd.read_csv(path+'/Shao_IDT/3.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -237,7 +237,7 @@ ax[2].annotate('(c)', xy=(0.95, 0.9), xycoords='axes fraction',ha='right', va='t
 
 ################################################################################################
 
-df = pd.read_csv(path+'\\Shao_IDT\\4.csv')
+df = pd.read_csv(path+'/Shao_IDT/4.csv')
 p_df = df['P']
 T_df = df['T']
 IDT_df = df['IDT']
@@ -285,6 +285,6 @@ ax[3].annotate('(d)', xy=(0.95, 0.9), xycoords='axes fraction',ha='right', va='t
 
 # plt.subplots_adjust(top=0.98)
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=500, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'.eps', dpi=500, bbox_inches='tight', format='eps')
+    plt.savefig('PCI-ESSCI/figures/'+name+'.pdf', dpi=500, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'.eps', dpi=500, bbox_inches='tight', format='eps')
 # plt.show()     

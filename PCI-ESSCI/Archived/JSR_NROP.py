@@ -76,10 +76,10 @@ name = 'JSR_net_rates_of_progress_1'
 models = {
     
             # 'glarborg':'test/data/reduced_glarborg.cti'
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",          
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-           r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",          
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+           r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 # T_list = np.concatenate((np.linspace(800,829.9,10),np.linspace(830,844,100),np.linspace(848.8,870.9,100),np.linspace(871,1050,50)))

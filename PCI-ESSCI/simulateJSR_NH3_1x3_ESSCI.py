@@ -96,13 +96,13 @@ ax[2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
 name = 'JSR_NH3'
 
 models = {    
-          'Alzueta':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml",  
-          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=300K.yaml",  
-          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_epsNH3_T=2000K.yaml",            
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
-        #   'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml", 
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml", 
+          'Alzueta':"chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml",  
+          r"$\epsilon_{0,NH_3}(300K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=300K.yaml",  
+          r"$\epsilon_{0,NH_3}(2000K)$":"chemical_mechanisms/Alzueta-2023/alzuetamechanism_epsNH3_T=2000K.yaml",            
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+        #   'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml", 
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml", 
           }
 # colors = ["xkcd:grey", "orange", "xkcd:teal", 'r', 'b', 'xkcd:purple']
 colors = ["xkcd:grey", "xkcd:teal", "orange", 'r', 'b', 'xkcd:purple']
@@ -230,7 +230,7 @@ for k,m in enumerate(models):
         ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[k], linestyle='solid',linewidth=lw, label=m,zorder=zorder_value)   
         ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[k], linestyle='solid',linewidth=lw, label=m,zorder=zorder_value) 
         
-path="graph_reading\\2 JSR NH3\\"
+path="graph_reading/2 JSR NH3/"
         
 # T_0_data = pd.read_csv('JSR_T_NH3_0_data.csv') 
 # T_2_data = pd.read_csv('JSR_T_NH3_2_data.csv') 
@@ -305,7 +305,7 @@ ax[2].set_xlim([780,1070])
 # ax[2].set_ylim([0.6,3.4])
 
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.png', dpi=1000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'_ESSCI.svg', dpi=1000, bbox_inches='tight')
 # plt.show()     

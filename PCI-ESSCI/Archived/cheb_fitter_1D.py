@@ -87,5 +87,5 @@ def run_fitter(n_T,T_ls,cti_file):
 
 n_T=20
 T_ls=np.linspace(200,2000)
-file = 'C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\sandbox.yaml'
+file = 'C:/Users/pjsin/Documents/cantera/test/data/sandbox.yaml'
 run_fitter(n_T,T_ls,file)

@@ -25,9 +25,9 @@ fig, ax = plt.subplots(1, 1, figsize=(9, 5))
 name = 'ronney_flamespeed'
 
 models = {
-          'LMR-R':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR.yaml",            
-          'Ar':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml",
-          r'H$_2$O':"chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allH2O.yaml",
+          'LMR-R':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR.yaml",            
+          'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+          r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
           }
 
 # p_list = [50,100,250,760,1500]
@@ -72,13 +72,13 @@ def plotPoints(fname, label, shape,color):
     ax.plot(phi_list,dataset.iloc[:,1],shape,linestyle='none',color=color,label=label)
     
 path="graph_reading"
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\50torr.csv','50 torr','o','k')
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\100torr.csv','100 torr','^','k')
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\250torr.csv','250 torr','v','k')
-# plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv','Ronney','s','k')
-# # plotPoints(path+'\\6 FS NH3 (Stagni-Ronney)\\1500torr.csv','1500 torr','D','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/50torr.csv','50 torr','o','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/100torr.csv','100 torr','^','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/250torr.csv','250 torr','v','k')
+# plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv','Ronney','s','k')
+# # plotPoints(path+'/6 FS NH3 (Stagni-Ronney)/1500torr.csv','1500 torr','D','k')
 
-dataset=pd.read_csv(path+'\\6 FS NH3 (Stagni-Ronney)\\760torr.csv')
+dataset=pd.read_csv(path+'/6 FS NH3 (Stagni-Ronney)/760torr.csv')
 ax.plot(dataset.iloc[:,0],dataset.iloc[:,1]*100,marker='o',markersize=7,linewidth=3,fillstyle='none',linestyle='none',color='k',label='Ronney')
 
 ax.legend(fontsize=15, frameon=False)#, loc='upper right')  

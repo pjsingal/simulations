@@ -79,17 +79,17 @@ def ignitionDelay(states, species):
 # ################################################################################################
 # #FIGURE 15
 # f, ax = plt.subplots(1, 1, figsize=(args.figwidth, args.figheight)) 
-# path='graph_reading\\PCI\\'
-# # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\exp_50H2_50CO.csv')
+# path='graph_reading/PCI/'
+# # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/exp_50H2_50CO.csv')
 # # ax.semilogy(df['T'],df['IDT'],'o',fillstyle='full',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Exp 50 H$_2$/50 CO', zorder=12)
 
-# # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\exp_85H2_85CO.csv')
+# # df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/exp_85H2_85CO.csv')
 # # ax.semilogy(df['T'],df['IDT'],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Exp 85 H$_2$/15 CO', zorder=12)
 
-# df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\model_50H2_50CO.csv')
+# df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/model_50H2_50CO.csv')
 # ax.semilogy(df['T'],df['IDT'],linestyle='-',color='k',linewidth=lw, label='Model 50 H$_2$/50 CO', zorder=12)
 
-# df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\model_85H2_85CO.csv')
+# df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/model_85H2_85CO.csv')
 # ax.semilogy(df['T'],df['IDT'],linestyle='--',color='k',linewidth=lw, label='Model 85 H$_2$/15 CO', zorder=12)
 
 # #PLOT THE 50H2/50CO LINE
@@ -99,8 +99,8 @@ def ignitionDelay(states, species):
 # estimatedIgnitionDelayTimes[:] = 0.05
 # ignitionDelays_RG = np.zeros(len(T_list))
 # for j, T in enumerate(T_list):
-#     gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
-#     # gas = ct.Solution("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml")
+#     gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
+#     # gas = ct.Solution("chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml")
 #     # gas.TPX = T, 17*ct.one_atm, {'H2':0.03, 'O2':0.015, 'Ar':1-0.03-0.015}
 #     # gas.TP = T, 16*ct.one_atm
 #     # fuel = {'H2':0.50, 'CO':0.50}
@@ -131,7 +131,7 @@ def ignitionDelay(states, species):
 # estimatedIgnitionDelayTimes[:] = 0.05
 # ignitionDelays_RG = np.zeros(len(T_list))
 # for j, T in enumerate(T_list):
-#     gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
+#     gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
 #     gas.TPX = T, 16*ct.one_atm, {'H2':0.0298, 'CO':0.0052, 'O2':0.0351, 'N2':0.4657, 'AR':0.4642}
 #     r = ct.Reactor(contents=gas)
 #     reactorNetwork = ct.ReactorNet([r])
@@ -159,20 +159,20 @@ def ignitionDelay(states, species):
 # # plt.subplots_adjust(top=0.98)
 # name = 'IDT_keromnes_Fig15'
 # if save_plots == True:
-#     plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=2000, bbox_inches='tight')
-#     plt.savefig('PCI-ESSCI\\figures\\'+name+'.png', dpi=2000, bbox_inches='tight')
+#     plt.savefig('PCI-ESSCI/figures/'+name+'.pdf', dpi=2000, bbox_inches='tight')
+#     plt.savefig('PCI-ESSCI/figures/'+name+'.png', dpi=2000, bbox_inches='tight')
 # # plt.show()     
 
 ################################################################################################
 #FIGURE 13
 f, ax = plt.subplots(1, 1, figsize=(args.figwidth, args.figheight)) 
-path='graph_reading\\PCI\\'
-df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\Fig13_model_4bar.csv')
+path='graph_reading/PCI/'
+df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/Fig13_model_4bar.csv')
 # ax.semilogy(df['T'],df['IDT'],linestyle='-',color='k',linewidth=lw, label='Graph-read model (4 bar)', zorder=12)
 ax.semilogy(df['T'],df['IDT'],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Graph-read model (4 bar)', zorder=12)
 
 
-df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)\\Fig13_model_16bar.csv')
+df = pd.read_csv(path+'10 IDT H2 CO (Keromnes)/Fig13_model_16bar.csv')
 ax.semilogy(df['T'],df['IDT'],'o',fillstyle='none',linestyle='none',color="xkcd:teal",markersize=msz,markeredgewidth=mw, label='Graph-read model (16 bar)', zorder=12)
 
 #PLOT THE 4 BAR LINE
@@ -181,10 +181,10 @@ estimatedIgnitionDelayTimes = np.ones(len(T_list))
 estimatedIgnitionDelayTimes[:] = 0.05
 ignitionDelays_RG = np.zeros(len(T_list))
 for j, T in enumerate(T_list):
-    # gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
-    gas = ct.Solution("C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\Keromnes-2013.yaml")
+    # gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
+    gas = ct.Solution("C:/Users/pjsin/Documents/cantera/test/data/Keromnes-2013.yaml")
     
-    # # gas = ct.Solution("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml")
+    # # gas = ct.Solution("chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml")
     # gas.TP = T, 4e5
     # fuel = {'H2':0.048991, 'CO':0.95101}
     # oxidizer = {'O2':1.0}
@@ -213,10 +213,10 @@ ax.semilogy(np.divide(10000,T_list), 1e3*ignitionDelays_RG, linestyle='-', linew
 # estimatedIgnitionDelayTimes[:] = 0.05
 # ignitionDelays_RG = np.zeros(len(T_list))
 # for j, T in enumerate(T_list):
-#     # gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
-#     gas = ct.Solution("C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\Keromnes-2013.yaml")
+#     # gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
+#     gas = ct.Solution("C:/Users/pjsin/Documents/cantera/test/data/Keromnes-2013.yaml")
     
-#     # # gas = ct.Solution("chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_allAR.yaml")
+#     # # gas = ct.Solution("chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml")
 #     # gas.TP = T, 4e5
 #     # fuel = {'H2':0.048991, 'CO':0.95101}
 #     # oxidizer = {'O2':1.0}
@@ -245,8 +245,8 @@ estimatedIgnitionDelayTimes = np.ones(len(T_list))
 estimatedIgnitionDelayTimes[:] = 0.05
 ignitionDelays_RG = np.zeros(len(T_list))
 for j, T in enumerate(T_list):
-    # gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
-    gas = ct.Solution("C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\Keromnes-2013.yaml")
+    # gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
+    gas = ct.Solution("C:/Users/pjsin/Documents/cantera/test/data/Keromnes-2013.yaml")
     gas.TPX = T, 16e5, {'H2':0.0017, 'CO':0.0330, 'O2':0.0347, 'AR':0.9306}
     r = ct.Reactor(contents=gas)
     reactorNetwork = ct.ReactorNet([r])
@@ -270,8 +270,8 @@ ax.semilogy(np.divide(10000,T_list), 1e3*ignitionDelays_RG, linestyle='-', linew
 # estimatedIgnitionDelayTimes[:] = 0.05
 # ignitionDelays_RG = np.zeros(len(T_list))
 # for j, T in enumerate(T_list):
-#     # gas = ct.Solution("chemical_mechanisms\\01 Syngas (H2-CO)\\Keromnes-2013.yaml")
-#     gas = ct.Solution("C:\\Users\\pjsin\\Documents\\cantera\\test\\data\\Keromnes-2013.yaml")
+#     # gas = ct.Solution("chemical_mechanisms/01 Syngas (H2-CO)/Keromnes-2013.yaml")
+#     gas = ct.Solution("C:/Users/pjsin/Documents/cantera/test/data/Keromnes-2013.yaml")
 #     gas.TPX = T, 16*101325, {'H2':0.0017, 'CO':0.0330, 'O2':0.0347, 'AR':0.9306}
 #     r = ct.Reactor(contents=gas)
 #     reactorNetwork = ct.ReactorNet([r])
@@ -301,6 +301,6 @@ ax.set_title("Fig. 13, Keromnes (2013)", fontsize=9)
 # plt.subplots_adjust(top=0.98)
 name = 'IDT_keromnes_Fig13'
 if save_plots == True:
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'.pdf', dpi=2000, bbox_inches='tight')
-    plt.savefig('PCI-ESSCI\\figures\\'+name+'.png', dpi=2000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'.pdf', dpi=2000, bbox_inches='tight')
+    plt.savefig('PCI-ESSCI/figures/'+name+'.png', dpi=2000, bbox_inches='tight')
 # plt.show()     

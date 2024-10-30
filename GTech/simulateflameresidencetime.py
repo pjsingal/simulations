@@ -18,20 +18,20 @@ parser.add_argument('--curveVal', type=float, help="curve value = ")
 args = parser.parse_args()
 
 # if args.mode == 'quick':
-#     models = [{'name': 'Mei', 'path': 'chemical_mechanisms\\Ammonia\\Mei-2019\\mei-2019.yaml', 'colour':'xkcd:teal'}]
+#     models = [{'name': 'Mei', 'path': 'chemical_mechanisms/Ammonia/Mei-2019/mei-2019.yaml', 'colour':'xkcd:teal'}]
 #     P_list = [1,10,20] # bar
 # else: #args.mode == 'std'
-# models = [{'name': 'Alzueta', 'path': 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism.yaml'},
-        #   {'name': 'Mei', 'path': 'chemical_mechanisms\\Mei-2019\\mei-2019.yaml'},
-        #   {'name': 'LMR-R', 'path': 'chemical_mechanisms\\Alzueta-2023\\alzuetamechanism_LMRR_extraColliders.yaml'},
+# models = [{'name': 'Alzueta', 'path': 'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml'},
+        #   {'name': 'Mei', 'path': 'chemical_mechanisms/Mei-2019/mei-2019.yaml'},
+        #   {'name': 'LMR-R', 'path': 'chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_extraColliders.yaml'},
 models = [
-    # {'name': 'Glarborg', 'path': "chemical_mechanisms\\Glarborg-2018\\glarborg-2018.yaml"},
-        #   {'name': 'Zhang', 'path': "chemical_mechanisms\\Zhang-2017\\zhang-2017.yaml"},
-        #   {'name': 'Otomo', 'path': "chemical_mechanisms\\Otomo-2018\\otomo-2018.yaml"},
-          {'name': 'Stagni', 'path': "chemical_mechanisms\\Stagni-2020\\stagni-2020.yaml"},
-        #   {'name': 'Shrestha', 'path': "chemical_mechanisms\\Shrestha-2021\\shrestha-2021.yaml"},
-        #   {'name': 'Han', 'path': "chemical_mechanisms\\Han-2021\\han-2021.yaml"},
-        #   {'name': 'Cornell', 'path': "chemical_mechanisms\\Cornell-2024\\cornell-2024.yaml"},
+    # {'name': 'Glarborg', 'path': "chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml"},
+        #   {'name': 'Zhang', 'path': "chemical_mechanisms/Zhang-2017/zhang-2017.yaml"},
+        #   {'name': 'Otomo', 'path': "chemical_mechanisms/Otomo-2018/otomo-2018.yaml"},
+          {'name': 'Stagni', 'path': "chemical_mechanisms/Stagni-2020/stagni-2020.yaml"},
+        #   {'name': 'Shrestha', 'path': "chemical_mechanisms/Shrestha-2021/shrestha-2021.yaml"},
+        #   {'name': 'Han', 'path': "chemical_mechanisms/Han-2021/han-2021.yaml"},
+        #   {'name': 'Cornell', 'path': "chemical_mechanisms/Cornell-2024/cornell-2024.yaml"},
         ]
 # colours = ["xkcd:grey", "xkcd:teal", "xkcd:purple","orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:gold", "xkcd:navy blue"]
 # P_list = [1,10,20] # bar
@@ -106,16 +106,16 @@ for i,P in enumerate(P_list):
         mix = ct.Solution(model['path'])
         mix.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
         state = getFlame(mix,widths[i])
-        path=f'GTech\\GubbiResidenceTime_'+args.date
+        path=f'GTech/GubbiResidenceTime_'+args.date
         os.makedirs(path,exist_ok=True)
         if j==0:
             mix_eq = ct.Solution(model['path'])
             mix_eq.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
             state_eq = getFlame(mix_eq,widths_eq[i])
-            csv_filename =path+f'\\{model['name']}_{P}bar_data_equilibrium.csv'
+            csv_filename =path+f'/{model['name']}_{P}bar_data_equilibrium.csv'
             save_state_to_csv(csv_filename,state_eq)
             print(f"Equilibrium state saved to CSV.")
-        csv_filename =path+f'\\{model['name']}_{P}bar_data.csv'
+        csv_filename =path+f'/{model['name']}_{P}bar_data.csv'
         save_state_to_csv(csv_filename,state)
         print(f"Transient state saved to CSV.")
 print("Simulation complete!")
