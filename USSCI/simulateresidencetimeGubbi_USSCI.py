@@ -14,40 +14,37 @@ parser.add_argument('--slopeVal', type=float, help="slope value = ")
 parser.add_argument('--curveVal', type=float, help="curve value = ")
 args = parser.parse_args()
 
-
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        # 'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        # 'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
         'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        # 'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
-        # 'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
         'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-        # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
-        # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
-    # 'Otomo-2018': {
-    #     'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
-    #             },
-    # 'Stagni-2020': {
-    #     'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-    #             },
-    # 'Han-2021': {
-    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
-    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
-    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
-    #             },
+    'Otomo-2018': {
+        'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
+                },
+    'Stagni-2020': {
+        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+                },
+    'Han-2021': {
+        'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+                },
 }
 
 P = 20 # bar
@@ -105,7 +102,7 @@ for z,n in enumerate(models):
     print(f"{n}")
     for k,m in enumerate(models[n]):
         def cp(T,P,X):
-            gas_stream = ct.Solution(list(models[n].values())[k])
+            gas_stream = ct.Solution(models[n][m])
             gas_stream.TPX = T, P*1e5, {X:1}
             return gas_stream.cp_mole # [J/kmol/K]
         cp_fuel = cp(T_fuel,P,'NH3') # [J/kmol/K]
@@ -117,19 +114,19 @@ for z,n in enumerate(models):
         # x_air=1-x_fuel
         T_mix = (x_fuel*cp_fuel*T_fuel+(x_o2*cp_o2+x_n2*cp_n2)*T_air)/(x_fuel*cp_fuel+ x_o2*cp_o2 + x_n2*cp_n2)
         # print(f"Getting mixture state...")
-        mix = ct.Solution(list(models[n].values())[k])
+        mix = ct.Solution(models[n][m])
         mix.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
         state = getFlame(mix,widths)
         path=f'USSCI/data/residence-time/'+args.date
         os.makedirs(path,exist_ok=True)
         if k==0:
-            mix_eq = ct.Solution(list(models[n].values())[k])
+            mix_eq = ct.Solution(models[n][m])
             mix_eq.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
             state_eq = getFlame(mix_eq,widths_eq)
-            csv_filename =path+f'/{m}_{list(models[n].keys())[k]}_eq.csv'
+            csv_filename =path+f'/{n}_{m}_eq.csv'
             save_state_to_csv(csv_filename,state_eq)
             print(f"Equilibrium state saved to CSV.")
-        csv_filename =path+f'//{m}_{list(models[n].keys())[k]}.csv'
+        csv_filename =path+f'//{n}_{m}.csv'
         save_state_to_csv(csv_filename,state)
         print(f"Transient state saved to CSV.")
 print("Simulation complete!")

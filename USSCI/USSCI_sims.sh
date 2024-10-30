@@ -32,4 +32,8 @@ date='Oct30'
 # --figwidth 10 --figheight 5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 50 --date $date
 
-python USSCI/simulateresidencetimeGubbi_USSCI.py --date 'Oct30' --slopeVal 0.05 --curveVal 0.05
+# python USSCI/simulateresidencetimeGubbi_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05
+
+python USSCI/simulateresidencetimeGubbi_FromData.py \
+--figwidth 6.5 --figheight 2.72 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz $lgdfsz --date $date --slopeVal 0.05 --curveVal 0.05 --xscale 'linear' --yscale 'linear'&
