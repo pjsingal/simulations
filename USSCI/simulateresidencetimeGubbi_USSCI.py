@@ -40,14 +40,16 @@ models = {
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
                 },
-    'Han-2021': {
-        'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
-                },
 }
+# P_list = [1,10,20] # bar
+# widths=[1.6,0.15,0.05]
+P_list = [1,10] # bar
+widths=[1.6,0.15]
 
-P = 20 # bar
+# P = 20 # bar
+# widths_eq=[3,1.6,1]
+# widths=0.05
+# widths_eq=1
 
 expData=['1bar','10bar','20bar']
 expData_eq=['1bar_eq','10bar_eq','20bar_eq']
@@ -55,15 +57,9 @@ expData_eq=['1bar_eq','10bar_eq','20bar_eq']
 T_fuel = 300
 T_air = 650
 phi = 1.22
-
 lw=1
 mkrw=0.5
 mkrsz=3
-
-# widths=[1.6,0.15,0.05]
-# widths_eq=[3,1.6,1]
-widths=0.05
-widths_eq=1
 
 def save_state_to_csv(filename, etat):
     headers = list(etat.keys())
@@ -98,35 +94,36 @@ def getFlame(gaz,largeur):
     etat['tau [ms]']=[(ft - tau_f)*1000 for ft in full_time] # [ms]
     return etat
 
-for z,n in enumerate(models):
-    print(f"{n}")
-    for k,m in enumerate(models[n]):
-        def cp(T,P,X):
-            gas_stream = ct.Solution(models[n][m])
-            gas_stream.TPX = T, P*1e5, {X:1}
-            return gas_stream.cp_mole # [J/kmol/K]
-        cp_fuel = cp(T_fuel,P,'NH3') # [J/kmol/K]
-        cp_o2 = cp(T_air,P,'O2') # [J/kmol/K]
-        cp_n2 = cp(T_air,P,'N2') # [J/kmol/K]
-        x_fuel = (phi*(1/0.75)*0.21)/(1+phi*(1/0.75)*0.21)
-        x_o2 = 0.21*(1-x_fuel)
-        x_n2 = 0.79*(1-x_fuel)
-        # x_air=1-x_fuel
-        T_mix = (x_fuel*cp_fuel*T_fuel+(x_o2*cp_o2+x_n2*cp_n2)*T_air)/(x_fuel*cp_fuel+ x_o2*cp_o2 + x_n2*cp_n2)
-        # print(f"Getting mixture state...")
-        mix = ct.Solution(models[n][m])
-        mix.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
-        state = getFlame(mix,widths)
-        path=f'USSCI/data/residence-time/'+args.date
-        os.makedirs(path,exist_ok=True)
-        if k==0:
-            mix_eq = ct.Solution(models[n][m])
-            mix_eq.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
-            state_eq = getFlame(mix_eq,widths_eq)
-            csv_filename =path+f'/{n}_{m}_eq.csv'
-            save_state_to_csv(csv_filename,state_eq)
-            print(f"Equilibrium state saved to CSV.")
-        csv_filename =path+f'//{n}_{m}.csv'
-        save_state_to_csv(csv_filename,state)
-        print(f"Transient state saved to CSV.")
+for i, P in enumerate(P_list):
+    for z,n in enumerate(models):
+        print(f"{n}")
+        for k,m in enumerate(models[n]):
+            def cp(T,P,X):
+                gas_stream = ct.Solution(models[n][m])
+                gas_stream.TPX = T, P*1e5, {X:1}
+                return gas_stream.cp_mole # [J/kmol/K]
+            cp_fuel = cp(T_fuel,P,'NH3') # [J/kmol/K]
+            cp_o2 = cp(T_air,P,'O2') # [J/kmol/K]
+            cp_n2 = cp(T_air,P,'N2') # [J/kmol/K]
+            x_fuel = (phi*(1/0.75)*0.21)/(1+phi*(1/0.75)*0.21)
+            x_o2 = 0.21*(1-x_fuel)
+            x_n2 = 0.79*(1-x_fuel)
+            # x_air=1-x_fuel
+            T_mix = (x_fuel*cp_fuel*T_fuel+(x_o2*cp_o2+x_n2*cp_n2)*T_air)/(x_fuel*cp_fuel+ x_o2*cp_o2 + x_n2*cp_n2)
+            # print(f"Getting mixture state...")
+            mix = ct.Solution(models[n][m])
+            mix.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
+            state = getFlame(mix,widths[i])
+            path=f'USSCI/data/residence-time/'+args.date
+            os.makedirs(path,exist_ok=True)
+            # if k==0:
+            #     mix_eq = ct.Solution(models[n][m])
+            #     mix_eq.TPX = T_mix, P*1e5,{'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
+            #     state_eq = getFlame(mix_eq,widths_eq)
+            #     csv_filename =path+f'/{n}_{m}_{P}bar_eq.csv'
+            #     save_state_to_csv(csv_filename,state_eq)
+            #     print(f"Equilibrium state saved to CSV.")
+            csv_filename =path+f'//{n}_{m}_{P}bar.csv'
+            save_state_to_csv(csv_filename,state)
+            print(f"Transient state saved to CSV.")
 print("Simulation complete!")
