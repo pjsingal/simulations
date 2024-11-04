@@ -34,9 +34,9 @@ date='Oct30'
 
 # python USSCI/simulateresidencetimeGubbi_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05
 
-# python USSCI/simulateflamespeedGubbi_vsP_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05 --gridsz 50
+python USSCI/simulateflamespeedGubbi_vsP_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05 --gridsz 50
 
-python USSCI/simulateflamespeedGubbi_vsPhi_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05 --gridsz 20
+# python USSCI/simulateflamespeedGubbi_vsPhi_USSCI.py --date $date --slopeVal 0.05 --curveVal 0.05 --gridsz 20
 
 # python USSCI/simulateresidencetimeGubbi_FromData.py \
 # --figwidth 6.5 --figheight 2.72 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
