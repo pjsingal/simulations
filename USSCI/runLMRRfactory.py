@@ -5,6 +5,9 @@ parser.add_argument('--date', type=str)
 parser.add_argument('--allPdep', type=str, default='False')
 args = parser.parse_args()
 
+allPdep = args.allPdep
+date = args.date
+
 models = {
     'Alzueta': 'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
     'Mei': 'chemical_mechanisms/Mei-2019/mei-2019.yaml',
@@ -13,11 +16,11 @@ models = {
     'Otomo': "chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
     'Stagni': "chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
     # 'Shrestha': "chemical_mechanisms/Shrestha-2021/shrestha-2021.yaml",
-    'Han': "chemical_mechanisms/Han-2021/han-2021.yaml"
+    # 'Han': "chemical_mechanisms/Han-2021/han-2021.yaml"
     }
 
 
-if args.allPdep == 'True':
+if allPdep == 'True':
     for m in models.keys():
         LMRRfactory.makeYAML(mechInput=models[m],
                             outputPath='USSCI/factory_mechanisms',

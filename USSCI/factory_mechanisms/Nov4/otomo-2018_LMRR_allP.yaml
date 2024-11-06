@@ -1,0 +1,1282 @@
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [O, H, N, He, Ar]
+  species: ['NO', NH3, H2, O2, H, O, OH, HO2, H2O, H2O2, NH2, NH, N, NNH, NH2OH, H2NO,
+    HNOH, HNO, HON, NO2, HONO, HNO2, NO3, HONO2, N2O, N2H4, N2H3, N2H2, H2NN, AR,
+    HE, N2]
+  kinetics: gas
+  transport: mixture-averaged
+  state: {T: 300.0, P: 1 atm}
+species:
+- name: 'NO'
+  composition: {N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.21859896, -0.00463988124, 1.10443049e-05, -9.34055507e-09, 2.80554874e-12,
+      9845.09964, 2.28061001]
+    - [3.26071234, 0.00119101135, -4.29122646e-07, 6.94481463e-11, -4.03295681e-15,
+      9921.43132, 6.36900518]
+    note: RUS89
+  transport: {model: gas, geometry: linear, well-depth: 97.53, diameter: 3.621, polarizability: 1.76,
+    rotational-relaxation: 4.0}
+- name: NH3
+  composition: {H: 3, N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.46075151, -0.00568781763, 2.11411484e-05, -2.0284998e-08, 6.89500555e-12,
+      -6707.53514, -1.34450793]
+    - [2.09566674, 0.00614750045, -2.00328925e-06, 3.01334626e-10, -1.71227204e-14,
+      -6309.45436, 9.59574081]
+    note: RRHOA12/04
+  transport: {model: gas, geometry: nonlinear, well-depth: 481.0, diameter: 2.92,
+    dipole: 1.47, rotational-relaxation: 10.0}
+- name: H2
+  composition: {H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.34433112, 0.00798052075, -1.9478151e-05, 2.01572094e-08, -7.37611761e-12,
+      -917.935173, 0.683010238]
+    - [2.93286575, 0.000826608026, -1.46402364e-07, 1.54100414e-11, -6.888048e-16,
+      -813.065581, -1.02432865]
+    note: REFELEMENTtpis78
+  transport: {model: gas, geometry: linear, well-depth: 38.0, diameter: 2.92, polarizability: 0.79,
+    rotational-relaxation: 280.0}
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.78245636, -0.00299673416, 9.84730201e-06, -9.68129509e-09, 3.24372837e-12,
+      -1063.94356, 3.65767573]
+    - [3.66096065, 0.000656365811, -1.41149627e-07, 2.05797935e-11, -1.29913436e-15,
+      -1215.97718, 3.41536279]
+    note: REFELEMENTRUS89
+  transport: {model: gas, geometry: linear, well-depth: 107.4, diameter: 3.458, polarizability: 1.6,
+    rotational-relaxation: 3.8}
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 25473.66, -0.44668285]
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 25473.66, -0.44668285]
+    note: "L6/94\n O3                L 5/90O   3    0    0    0G   200.000  6000.000\
+      \ 1000.        1\n  1.23302914E+01-1.19324783E-02 7.98741278E-06-1.77194552E-09\
+      \ 1.26075824E-13    2\n  1.26755831E+04-4.08823374E+01 3.40738221E+00 2.05379063E-03\
+      \ 1.38486052E-05    3\n -2.23311542E-08 9.76073226E-12 1.58644979E+04 8.28247580E+00\
+      \ 1.70545228E+04    4"
+  transport: {model: gas, geometry: atom, well-depth: 145.0, diameter: 2.05}
+- name: O
+  composition: {O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.1682671, -0.00327931884, 6.64306396e-06, -6.12806624e-09, 2.11265971e-12,
+      29122.2592, 2.05193346]
+    - [2.54363697, -2.73162486e-05, -4.1902952e-09, 4.95481845e-12, -4.79553694e-16,
+      29226.012, 4.92229457]
+    note: L1/90
+  transport: {model: gas, geometry: atom, well-depth: 80.0, diameter: 2.75}
+- name: OH
+  composition: {O: 1, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.99198424, -0.00240106655, 4.61664033e-06, -3.87916306e-09, 1.36319502e-12,
+      3368.89836, -0.103998477]
+    - [2.83853033, 0.00110741289, -2.94000209e-07, 4.20698729e-11, -2.4228989e-15,
+      3697.80808, 5.84494652]
+    note: HYDROXYLRADIIU3/03
+  transport: {model: gas, geometry: linear, well-depth: 80.0, diameter: 2.75}
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 5000.0]
+    data:
+    - [4.30179807, -0.00474912097, 2.11582905e-05, -2.42763914e-08, 9.29225225e-12,
+      264.018485, 3.7166622]
+    - [4.17228741, 0.00188117627, -3.46277286e-07, 1.94657549e-11, 1.76256905e-16,
+      31.0206839, 2.95767672]
+    note: T1/09
+  transport: {model: gas, geometry: nonlinear, well-depth: 107.4, diameter: 3.458,
+    rotational-relaxation: 1.0, note: (*)}
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.1986352, -0.0020364017, 6.5203416e-06, -5.4879269e-09, 1.771968e-12, -30293.726,
+      -0.84900901]
+    - [2.6770389, 0.0029731816, -7.7376889e-07, 9.4433514e-11, -4.2689991e-15, -29885.894,
+      6.88255]
+    note: L5/89
+  transport: {model: gas, geometry: nonlinear, well-depth: 572.4, diameter: 2.605,
+    dipole: 1.844, rotational-relaxation: 4.0}
+- name: H2O2
+  composition: {H: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.31515149, -0.000847390622, 1.76404323e-05, -2.26762944e-08, 9.08950158e-12,
+      -17706.7437, 3.27373319]
+    - [4.57977305, 0.00405326003, -1.2984473e-06, 1.982114e-10, -1.13968792e-14, -18007.1775,
+      0.664970694]
+    note: T8/03
+  transport: {model: gas, geometry: nonlinear, well-depth: 107.4, diameter: 3.458,
+    rotational-relaxation: 3.8}
+- name: NH2
+  composition: {N: 1, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 3000.0]
+    data:
+    - [4.19198016, -0.00204602827, 6.67756134e-06, -5.24907235e-09, 1.55589948e-12,
+      21499.1387, -0.0904785244]
+    - [2.59263049, 0.00347683597, -1.08271624e-06, 1.49342558e-10, -5.75241187e-15,
+      21886.5421, 7.90565351]
+    note: AMIDOGENRADIU3/03
+  transport: {model: gas, geometry: nonlinear, well-depth: 80.0, diameter: 2.65, polarizability: 2.26,
+    rotational-relaxation: 4.0}
+- name: NH
+  composition: {N: 1, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.49295037, 0.00031179572, -1.48906628e-06, 2.48167402e-09, -1.03570916e-12,
+      42105.9722, 1.84834973]
+    - [2.78372644, 0.00132985888, -4.24785573e-07, 7.83494442e-11, -5.5045131e-15,
+      42346.1945, 5.74084863]
+    note: ATcT/A
+  transport: {model: gas, geometry: linear, well-depth: 80.0, diameter: 2.65, rotational-relaxation: 4.0}
+- name: N
+  composition: {N: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, 56104.638, 4.1939088]
+    - [2.4159429, 0.00017489065, -1.1902369e-07, 3.0226244e-11, -2.0360983e-15, 56133.775,
+      4.6496095]
+    note: L6/88
+  transport: {model: gas, geometry: atom, well-depth: 71.4, diameter: 3.298, note: (*)}
+- name: NNH
+  composition: {N: 2, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.25474632, -0.00345098298, 1.37788699e-05, -1.33263744e-08, 4.41023397e-12,
+      28832.3793, 3.28551762]
+    - [3.42744423, 0.00323295234, -1.17296299e-06, 1.90508356e-10, -1.14491506e-14,
+      28806.774, 6.39209233]
+    note: T1/06
+  transport: {model: gas, geometry: nonlinear, well-depth: 71.4, diameter: 3.798,
+    rotational-relaxation: 1.0, note: (*)}
+- name: NH2OH
+  composition: {N: 1, H: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.21016092, 0.00619671676, 1.10594948e-05, -1.96668262e-08, 8.8251659e-12,
+      -6581.48481, 7.93293571]
+    - [3.88112502, 0.00815708448, -2.82615576e-06, 4.37930933e-10, -2.52724604e-14,
+      -6860.18419, 3.79156136]
+    note: ATcT/A
+  transport: {model: gas, geometry: nonlinear, well-depth: 116.7, diameter: 3.492,
+    rotational-relaxation: 1.0, note: =HNOH}
+- name: H2NO
+  composition: {H: 2, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 3000.0]
+    data:
+    - [4.07694692, 0.00021917994, 9.92160372e-06, -1.02259681e-08, 3.26220462e-12,
+      6485.47616, 3.93185152]
+    - [3.33719385, 0.00572250531, -2.14985397e-06, 3.65983461e-10, -2.18615301e-14,
+      6506.21112, 6.86465421]
+    note: '1510'
+  transport: {model: gas, geometry: nonlinear, well-depth: 116.7, diameter: 3.492,
+    rotational-relaxation: 1.0, note: JAM}
+- name: HNOH
+  composition: {H: 2, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.95608248, -0.0030261102, 2.56874396e-05, -3.1564512e-08, 1.24084574e-11,
+      10919.979, 5.55950983]
+    - [3.98321933, 0.00488846374, -1.65086637e-06, 2.55371446e-10, -1.48308561e-14,
+      10578.0106, 3.62582838]
+    note: "trans&EquT11/11\nNH2OH  cis        T02/12N  1.H  3.O  1.   0.G   200.000\
+      \  6000.000 1000.        1\n 4.00743867E+00 7.32310180E-03-2.47602819E-06 3.83254459E-10-2.22649810E-14\
+      \    2\n-4.74292237E+03 2.73458714E+00 3.93981196E+00-1.77979633E-03 2.86748802E-05\
+      \    3\n-3.54484775E-08 1.38290834E-11-4.31981942E+03 5.21025339E+00-3.03445423E+03\
+      \    4"
+  transport: {model: gas, geometry: nonlinear, well-depth: 116.7, diameter: 3.492,
+    rotational-relaxation: 1.0, note: JAM}
+- name: HNO
+  composition: {H: 1, N: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.53525574, -0.00568543377, 1.8519854e-05, -1.71881225e-08, 5.55818157e-12,
+      11618.3003, 1.74315886]
+    - [3.16598124, 0.00299958892, -3.94376786e-07, -3.85344089e-11, 7.07602668e-15,
+      11772.6311, 7.64511172]
+    note: "ATcT/A\n HNOH cis  ATcT C  T11/11H  2.N  1.O  1.   0.G   200.000  6000.000\
+      \ 1000.        1\n  4.11664692E+00 4.81707273E-03-1.63507639E-06 2.53797646E-10-1.47744717E-14\
+      \    2\n  1.25020921E+04 3.12195287E+00 3.80983976E+00 4.35965662E-04 1.51571801E-05\
+      \    3\n -1.96181113E-08 7.75279218E-12 1.28164979E+04 5.90835846E+00 1.40705826E+04\
+      \    4"
+  transport: {model: gas, geometry: nonlinear, well-depth: 116.7, diameter: 3.492,
+    rotational-relaxation: 1.0, note: (*)}
+- name: HON
+  composition: {N: 1, O: 1, H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [4.30796097, -0.00501538487, 2.27054537e-05, -2.65676371e-08, 1.02998699e-11,
+      24585.0141, 3.93009562]
+    - [4.00745749, 0.00241824666, -8.13734001e-07, 1.25573064e-10, -7.28062602e-15,
+      24396.5586, 4.01091333]
+    note: T11/11
+  transport: {model: gas, geometry: nonlinear, well-depth: 116.7, diameter: 3.492,
+    rotational-relaxation: 1.0, note: =HNO}
+- name: NO2
+  composition: {N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.9440312, -0.001585429, 1.6657812e-05, -2.0475426e-08, 7.8350564e-12, 2896.618,
+      6.3119919]
+    - [4.884754, 0.0021723955, -8.2806909e-07, 1.574751e-10, -1.0510895e-14, 2316.4982,
+      -0.11741695]
+    note: L7/88
+  transport: {model: gas, geometry: nonlinear, well-depth: 200.0, diameter: 3.5, rotational-relaxation: 1.0,
+    note: (*)}
+- name: HONO
+  composition: {H: 1, N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.21415915, 0.00812778066, 1.65998916e-06, -9.52814708e-09, 4.87131424e-12,
+      -10783.0727, 9.82200056]
+    - [5.79182717, 0.00365162554, -1.2929339e-06, 2.06892796e-10, -1.23154749e-14,
+      -11595.3895, -4.05538852]
+    note: equilATcTT9/11
+  transport: {model: gas, geometry: nonlinear, well-depth: 232.4, diameter: 3.828,
+    rotational-relaxation: 1.0, note: =HNNO}
+- name: HNO2
+  composition: {H: 1, N: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1500.0, 4000.0]
+    data:
+    - [1.934838, 0.01010036, -4.964616e-06, 8.70112e-10, -2.324135e-15, -5915.71591,
+      14.7282082]
+    - [6.47963, 0.001995274, -1.740387e-07, -9.695872e-11, 1.70148e-14, -7809.50291,
+      -10.6771518]
+    note: '103190'
+  transport: {model: gas, geometry: nonlinear, well-depth: 252.0, diameter: 4.29,
+    rotational-relaxation: 1.0, note: (OIS)=HSO2}
+- name: NO3
+  composition: {N: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.1735933, 0.0104902685, 1.10472669e-05, -2.81561867e-08, 1.3658396e-11, 7812.90905,
+      14.602209]
+    - [7.48347702, 0.00257772064, -1.00945831e-06, 1.72314063e-10, -1.07154008e-14,
+      6129.90474, -14.1618136]
+    note: ATcT/A
+  transport: {model: gas, geometry: nonlinear, well-depth: 378.4, diameter: 4.175,
+    rotational-relaxation: 1.0, note: =SO3}
+- name: HONO2
+  composition: {H: 1, N: 1, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [1.69329154, 0.0190167702, -8.25176697e-06, -6.06113827e-09, 4.65236978e-12,
+      -17388.2411, 17.1839655]
+    - [8.03098942, 0.00446958589, -1.72459491e-06, 2.91556153e-10, -1.80102702e-14,
+      -19282.1685, -16.261672]
+    note: T8/03
+  transport: {model: gas, geometry: nonlinear, well-depth: 378.4, diameter: 4.175,
+    rotational-relaxation: 1.0, note: =SO3=HNO3}
+- name: N2O
+  composition: {N: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.2571502, 0.011304728, -1.3671319e-05, 9.6819803e-09, -2.9307182e-12, 8741.7746,
+      10.757992]
+    - [4.8230729, 0.0026270251, -9.5850872e-07, 1.6000712e-10, -9.7752302e-15, 8073.4047,
+      -2.2017208]
+    note: L7/88
+  transport: {model: gas, geometry: linear, well-depth: 232.4, diameter: 3.828, rotational-relaxation: 1.0,
+    note: (*)}
+- name: N2H4
+  composition: {N: 2, H: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [0.06442606, 0.0274973, -2.899451e-05, 1.74524e-08, -4.422282e-12, 10451.92,
+      21.27789]
+    - [4.977317, 0.009595519, -3.547639e-06, 6.124299e-10, -4.029795e-14, 9341.219,
+      -2.96299]
+    note: '121286'
+  transport: {model: gas, geometry: nonlinear, well-depth: 205.0, diameter: 4.23,
+    polarizability: 4.26, rotational-relaxation: 1.5}
+- name: N2H3
+  composition: {N: 2, H: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [3.174204, 0.004715907, 1.334867e-05, -1.919685e-08, 7.487564e-12, 17272.7,
+      7.557224]
+    - [4.441846, 0.007214271, -2.495684e-06, 3.920565e-10, -2.29895e-14, 16642.21,
+      -0.4275205]
+    note: '120186'
+  transport: {model: gas, geometry: nonlinear, well-depth: 200.0, diameter: 3.9, rotational-relaxation: 1.0,
+    note: (*)}
+- name: N2H2
+  composition: {N: 2, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1000.0, 5000.0]
+    data:
+    - [1.617999, 0.01306312, -1.715712e-05, 1.605608e-08, -6.093639e-12, 24675.26,
+      13.79467]
+    - [3.371185, 0.006039968, -2.303854e-06, 4.062789e-10, -2.713144e-14, 24181.72,
+      4.980585]
+    note: '121286'
+  transport: {model: gas, geometry: nonlinear, well-depth: 71.4, diameter: 3.798,
+    rotational-relaxation: 1.0, note: (*)}
+- name: H2NN
+  composition: {N: 2, H: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 1695.0, 5000.0]
+    data:
+    - [2.88544262, 0.00469495999, 7.0198323e-07, -1.53359038e-09, 3.79345858e-13,
+      33603.069, 8.95096779]
+    - [3.13531032, 0.00568632569, -1.93983467e-06, 3.01290501e-10, -1.74978144e-14,
+      33367.8346, 7.0481584]
+    note: DBOZ00M93/JBPM396
+  transport: {model: gas, geometry: nonlinear, well-depth: 71.4, diameter: 3.798,
+    rotational-relaxation: 1.0, note: =N2H2}
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.37967491]
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.37967491]
+    note: REFELEMENTg5/97
+  transport: {model: gas, geometry: atom, well-depth: 136.5, diameter: 3.33}
+- name: HE
+  composition: {He: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.928723974]
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.928723974]
+    note: REFELEMENTg5/97
+  transport: {model: gas, geometry: atom, well-depth: 10.2, diameter: 2.576, note: (*)}
+- name: N2
+  composition: {N: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.53100528, -0.000123660988, -5.02999433e-07, 2.43530612e-09, -1.40881235e-12,
+      -1046.97628, 2.96747038]
+    - [2.95257637, 0.0013969004, -4.92631603e-07, 7.86010195e-11, -4.60755204e-15,
+      -923.948688, 5.87188762]
+    note: REFELEMENTG8/02
+  transport: {model: gas, geometry: linear, well-depth: 97.53, diameter: 3.621, polarizability: 1.76,
+    rotational-relaxation: 4.0}
+reactions:
+- equation: H + O2 <=> O + OH
+  rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 15286.0}
+  note: "*****************************************************************************\n\
+    \   H2/O2 subset                                                            *\n\
+    *****************************************************************************"
+- equation: O + H2 <=> OH + H
+  duplicate: true
+  rate-constant: {A: 3800000000000.0, b: 0.0, Ea: 7948.0}
+- equation: O + H2 <=> OH + H
+  duplicate: true
+  rate-constant: {A: 880000000000000.0, b: 0.0, Ea: 19175.0}
+- equation: OH + H2 <=> H + H2O
+  rate-constant: {A: 220000000.0, b: 1.51, Ea: 3430.0}
+- equation: OH + OH <=> O + H2O
+  duplicate: true
+  rate-constant: {A: 14000000.0, b: 1.689, Ea: -1167.0}
+- equation: OH + OH <=> O + H2O
+  duplicate: true
+  rate-constant: {A: -27000000000.0, b: 0.567, Ea: 0.0}
+  negative-A: true
+- equation: H2 + M <=> H + H + M
+  type: three-body
+  rate-constant: {A: 4.6e+19, b: -1.4, Ea: 104380.0}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.0}
+- equation: H2 + AR <=> H + H + AR
+  rate-constant: {A: 5.8e+18, b: -1.1, Ea: 104380.0}
+- equation: H + O + M <=> OH + M
+  type: three-body
+  rate-constant: {A: 4.7e+18, b: -1.0, Ea: 0.0}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.75}
+- equation: O + O + M <=> O2 + M
+  type: three-body
+  rate-constant: {A: 19000000000000.0, b: 0.0, Ea: -1788.0}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.0}
+- equation: H2O + M <=> H + OH + M
+  type: three-body
+  rate-constant: {A: 6.1e+27, b: -3.322, Ea: 120790.0}
+  efficiencies: {H2: 3.0, H2O: 0.0, N2: 2.0, O2: 1.5}
+- equation: H2O + H2O <=> H + OH + H2O
+  rate-constant: {A: 1.006e+26, b: -2.44, Ea: 120180.0}
+- equation: H + O2 (+M) <=> HO2 (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 6.366e+20, b: -1.72, Ea: 524.8}
+    high-P-rate-constant: {A: 4700000000000.0, b: 0.44, Ea: 0.0}
+    Troe: {A: 0.5, T3: 1.0e-30, T1: 1.0e+30}
+  - name: HE
+    efficiency: {A: 0.33760072, b: 0.18256786, Ea: 36.24077833}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 124.93183838, b: -0.59326267, Ea: 540.92123387}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 31371.70907565, b: -1.25419464, Ea: 1129.2410602}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 4.97750265, b: 0.1648553, Ea: -280.35050197}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 36.91455865, b: -0.07129016, Ea: 31.90867703}
+    note: Jasper-2022
+- equation: HO2 + H <=> H2 + O2
+  rate-constant: {A: 2800000.0, b: 2.09, Ea: -1451.0}
+- equation: HO2 + H <=> OH + OH
+  rate-constant: {A: 71000000000000.0, b: 0.0, Ea: 295.0}
+- equation: HO2 + H <=> H2O + O
+  rate-constant: {A: 1400000000000.0, b: 0.0, Ea: 0.0}
+- equation: HO2 + O <=> O2 + OH
+  rate-constant: {A: 29000000000.0, b: 1.0, Ea: -724.0}
+- equation: HO2 + OH <=> H2O + O2
+  duplicate: true
+  rate-constant: {A: 1.93e+20, b: -2.49, Ea: 584.0}
+- equation: HO2 + OH <=> H2O + O2
+  duplicate: true
+  rate-constant: {A: 1210000000.0, b: 1.24, Ea: -1310.0}
+- equation: HO2 + HO2 <=> H2O2 + O2
+  duplicate: true
+  rate-constant: {A: 1200000000.0, b: 0.7712, Ea: -1825.0}
+- equation: HO2 + HO2 <=> H2O2 + O2
+  duplicate: true
+  rate-constant: {A: 1300000000000.0, b: 0.295, Ea: 7397.0}
+- equation: H2O2 (+M) <=> OH + OH (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.49e+24, b: -2.3, Ea: 48749.0}
+    high-P-rate-constant: {A: 2000000000000.0, b: 0.9, Ea: 48749.0}
+    Troe: {A: 0.43, T3: 1.0e-30, T1: 1.0e+30}
+  - name: N2
+    efficiency: {A: 1.14813005, b: 0.04600896, Ea: -2.92412554}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 0.64529544, b: 0.42626591, Ea: 42.89315626}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 1.36377291, b: 0.30659152, Ea: 210.07862109}
+    note: Jasper-2022
+  - name: HE
+    efficiency: {A: 0.22766022, b: 0.19992445, Ea: 50.01878812}
+    note: Matsugi-2021
+  - name: H2
+    efficiency: {A: 4.29127763, b: -0.09640595, Ea: 50.00623898}
+    note: Matsugi-2021
+- equation: H2O2 + H <=> H2O + OH
+  rate-constant: {A: 24000000000000.0, b: 0.0, Ea: 3970.0}
+- equation: H2O2 + H <=> HO2 + H2
+  rate-constant: {A: 48000000000000.0, b: 0.0, Ea: 7950.0}
+- equation: H2O2 + O <=> HO2 + OH
+  rate-constant: {A: 9600000.0, b: 2.0, Ea: 3970.0}
+  note: Tsang and Hampson, J. Phys. Chem. Ref. Data, 15:1087 (1986)
+- equation: H2O2 + OH <=> HO2 + H2O
+  duplicate: true
+  rate-constant: {A: 1700000000000.0, b: 0.0, Ea: 318.0}
+- equation: H2O2 + OH <=> HO2 + H2O
+  duplicate: true
+  rate-constant: {A: 76000000000000.0, b: 0.0, Ea: 7270.0}
+- equation: NH3 + M <=> NH2 + H + M
+  type: three-body
+  rate-constant: {A: 2.2e+16, b: 0.0, Ea: 93470.0}
+  note: "************************************************************************\n\
+    \  NH3 subset                                                           *\n************************************************************************"
+- equation: NH3 + H <=> NH2 + H2
+  rate-constant: {A: 640000.0, b: 2.39, Ea: 10171.0}
+- equation: NH3 + O <=> NH2 + OH
+  rate-constant: {A: 9400000.0, b: 1.94, Ea: 6460.0}
+- equation: NH3 + OH <=> NH2 + H2O
+  rate-constant: {A: 2000000.0, b: 2.04, Ea: 566.0}
+- equation: NH3 + HO2 <=> NH2 + H2O2
+  rate-constant: {A: 300000000000.0, b: 0.0, Ea: 22000.0}
+- equation: NH2 + H <=> NH + H2
+  rate-constant: {A: 1000000.0, b: 2.32, Ea: 799.0}
+- equation: NH2 + O <=> HNO + H
+  rate-constant: {A: 66000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH2 + O <=> NH + OH
+  duplicate: true
+  rate-constant: {A: 7000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH2 + O <=> NH + OH
+  duplicate: true
+  rate-constant: {A: 0.86, b: 4.01, Ea: 1673.0}
+- equation: NH2 + OH <=> NH + H2O
+  rate-constant: {A: 3300000.0, b: 1.949, Ea: -217.0}
+- equation: NH2 + HO2 <=> NH3 + O2
+  rate-constant: {A: 17000.0, b: 1.55, Ea: 2027.0}
+- equation: NH2 + HO2 <=> H2NO + OH
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH2 + HO2 <=> HNO + H2O
+  duplicate: true
+  rate-constant: {A: 16000000.0, b: 0.55, Ea: 525.0}
+- equation: NH2 + HO2 <=> HNO + H2O
+  duplicate: true
+  rate-constant: {A: 5700000000000000.0, b: -1.12, Ea: 707.0}
+- equation: NH2 + HO2 <=> HON + H2O
+  rate-constant: {A: 21000000.0, b: 0.64, Ea: 811.0}
+- equation: NH2 + O2 <=> H2NO + O
+  rate-constant: {A: 260000000000.0, b: 0.4872, Ea: 29050.0}
+- equation: NH2 + O2 <=> HNO + OH
+  rate-constant: {A: 0.029, b: 3.764, Ea: 18185.0}
+- equation: NH2 + NH2 <=> NH3 + NH
+  rate-constant: {A: 5.6, b: 3.53, Ea: 552.0}
+- equation: NH2 + NH <=> NH3 + N
+  rate-constant: {A: 9600.0, b: 2.46, Ea: 107.0}
+- equation: NH2 + N <=> N2 + H + H
+  rate-constant: {A: 70000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH2 + HNO <=> NH3 + NO
+  rate-constant: {A: 3600000.0, b: 1.63, Ea: -1250.0}
+- equation: NH2 + NO <=> N2 + H2O
+  duplicate: true
+  rate-constant: {A: 1.3e+16, b: -1.25, Ea: 0.0}
+- equation: NH2 + NO <=> N2 + H2O
+  duplicate: true
+  rate-constant: {A: -31000000000000.0, b: -0.48, Ea: 1180.0}
+  negative-A: true
+- equation: NH2 + NO <=> NNH + OH
+  rate-constant: {A: 42900000000.0, b: 0.29, Ea: -870.0}
+- equation: NH2 + HONO <=> NH3 + NO2
+  rate-constant: {A: 71.0, b: 3.02, Ea: -4940.0}
+- equation: NH2 + NO2 <=> N2O + H2O
+  rate-constant: {A: 2.6e+18, b: -2.191, Ea: 455.0}
+- equation: NH2 + NO2 <=> H2NO + NO
+  rate-constant: {A: 910000000000.0, b: 0.0321, Ea: -1512.0}
+- equation: NH + H <=> N + H2
+  rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH + O <=> NO + H
+  rate-constant: {A: 92000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH + OH <=> HNO + H
+  rate-constant: {A: 320000000000000.0, b: -0.376, Ea: -46.0}
+- equation: NH + OH <=> N + H2O
+  rate-constant: {A: 16000000.0, b: 1.733, Ea: -576.0}
+- equation: NH + O2 <=> HNO + O
+  rate-constant: {A: 460000.0, b: 2.0, Ea: 6500.0}
+- equation: NH + O2 <=> NO + OH
+  rate-constant: {A: 1300000.0, b: 1.5, Ea: 100.0}
+- equation: NH + NH <=> NH2 + N
+  rate-constant: {A: 0.57, b: 3.88, Ea: 342.0}
+- equation: NH + N <=> N2 + H
+  rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH + NO <=> N2O + H
+  rate-constant: {A: 500000000000000.0, b: -0.4, Ea: 0.0}
+- equation: NH + NO <=> N2 + OH
+  rate-constant: {A: 2700000000000.0, b: -0.0721, Ea: -512.0}
+- equation: NH + HONO <=> NH2 + NO2
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH + NO2 <=> N2O + OH
+  rate-constant: {A: 4100000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH + NO2 <=> HNO + NO
+  rate-constant: {A: 5900000000000.0, b: 0.0, Ea: 0.0}
+- equation: N + OH <=> NO + H
+  rate-constant: {A: 38000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N + O2 <=> NO + O
+  rate-constant: {A: 6400000000.0, b: 1.0, Ea: 6280.0}
+- equation: N + NO <=> N2 + O
+  rate-constant: {A: 9400000000000.0, b: 0.14, Ea: 0.0}
+- equation: NNH <=> N2 + H
+  rate-constant: {A: 1000000000.0, b: 0.0, Ea: 0.0}
+- equation: NNH + H <=> N2 + H2
+  rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NNH + O <=> N2O + H
+  rate-constant: {A: 190000000000000.0, b: -0.274, Ea: -22.0}
+- equation: NNH + O <=> N2 + OH
+  rate-constant: {A: 12000000000000.0, b: 0.145, Ea: -217.0}
+- equation: NNH + O <=> NH + NO
+  rate-constant: {A: 520000000000.0, b: 0.381, Ea: -409.0}
+- equation: NNH + OH <=> N2 + H2O
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NNH + O2 <=> N2 + HO2
+  rate-constant: {A: 560000000000000.0, b: -0.385, Ea: -13.0}
+- equation: NNH + NH <=> N2 + NH2
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NNH + NH2 <=> N2 + NH3
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NNH + NO <=> N2 + HNO
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NH2OH (+M) <=> NH2 + OH (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 5.4e+37, b: -5.96, Ea: 66783.0}
+    high-P-rate-constant: {A: 1.4e+20, b: -1.31, Ea: 64080.0}
+    Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: NH2OH + H <=> HNOH + H2
+  rate-constant: {A: 480000000.0, b: 1.5, Ea: 6249.0}
+- equation: NH2OH + H <=> H2NO + H2
+  rate-constant: {A: 240000000.0, b: 1.5, Ea: 5067.0}
+- equation: NH2OH + O <=> HNOH + OH
+  rate-constant: {A: 330000000.0, b: 1.5, Ea: 3865.0}
+- equation: NH2OH + O <=> H2NO + OH
+  rate-constant: {A: 170000000.0, b: 1.5, Ea: 3010.0}
+- equation: NH2OH + OH <=> HNOH + H2O
+  rate-constant: {A: 15000.0, b: 2.61, Ea: -3537.0}
+- equation: NH2OH + OH <=> H2NO + H2O
+  rate-constant: {A: 150000.0, b: 2.28, Ea: -1296.0}
+- equation: NH2OH + NH2 <=> HNOH + NH3
+  rate-constant: {A: 0.11, b: 4.0, Ea: -97.0}
+- equation: NH2OH + NH2 <=> H2NO + NH3
+  rate-constant: {A: 9.5, b: 3.42, Ea: -1013.0}
+- equation: NH2OH + NH <=> HNOH + NH2
+  rate-constant: {A: 0.0029, b: 4.4, Ea: 1564.0}
+- equation: NH2OH + NH <=> H2NO + NH2
+  rate-constant: {A: 0.0015, b: 4.6, Ea: 2424.0}
+- equation: NH2OH + HO2 <=> HNOH + H2O2
+  rate-constant: {A: 29000.0, b: 2.69, Ea: 9557.0}
+- equation: NH2OH + HO2 <=> H2NO + H2O2
+  rate-constant: {A: 14000.0, b: 2.69, Ea: 6418.0}
+- equation: H2NO + M <=> HNO + H + M
+  type: three-body
+  rate-constant: {A: 2.8e+24, b: -2.83, Ea: 64915.0}
+  efficiencies: {H2O: 10.0}
+- equation: H2NO + M <=> HNOH + M
+  type: three-body
+  rate-constant: {A: 1.1e+29, b: -4.0, Ea: 44000.0}
+  efficiencies: {H2O: 10.0}
+- equation: H2NO + M <=> H2 + NO + M
+  type: three-body
+  rate-constant: {A: 3.83e+27, b: -4.29, Ea: 60300.0}
+- equation: H2NO + H <=> HNO + H2
+  rate-constant: {A: 30000000.0, b: 2.0, Ea: 2000.0}
+- equation: H2NO + H <=> NH2 + OH
+  rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NO + O <=> HNO + OH
+  rate-constant: {A: 30000000.0, b: 2.0, Ea: 2000.0}
+- equation: H2NO + OH <=> HNO + H2O
+  rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NO + HO2 <=> HNO + H2O2
+  rate-constant: {A: 29000.0, b: 2.69, Ea: -1600.0}
+- equation: H2NO + O2 <=> HNO + HO2
+  rate-constant: {A: 230.0, b: 2.994, Ea: 18900.0}
+- equation: H2NO + NH2 <=> HNO + NH3
+  rate-constant: {A: 3000000000000.0, b: 0.0, Ea: 1000.0}
+- equation: H2NO + NO <=> HNO + HNO
+  rate-constant: {A: 20000.0, b: 2.0, Ea: 13000.0}
+- equation: H2NO + NO2 <=> HONO + HNO
+  rate-constant: {A: 600000000000.0, b: 0.0, Ea: 2000.0}
+- equation: HNOH + M <=> HNO + H + M
+  type: three-body
+  rate-constant: {A: 2.0e+24, b: -2.84, Ea: 58934.0}
+  efficiencies: {H2O: 10.0}
+- equation: HNOH + H <=> NH2 + OH
+  rate-constant: {A: 40000000000000.0, b: 0.0, Ea: 0.0}
+- equation: HNOH + H <=> HNO + H2
+  rate-constant: {A: 480000000.0, b: 1.5, Ea: 378.0}
+- equation: HNOH + O <=> HNO + OH
+  duplicate: true
+  rate-constant: {A: 70000000000000.0, b: 0.0, Ea: 0.0}
+- equation: HNOH + O <=> HNO + OH
+  duplicate: true
+  rate-constant: {A: 330000000.0, b: 1.5, Ea: -358.0}
+- equation: HNOH + OH <=> HNO + H2O
+  rate-constant: {A: 2400000.0, b: 2.0, Ea: -1192.0}
+- equation: HNOH + HO2 <=> HNO + H2O2
+  rate-constant: {A: 29000.0, b: 2.69, Ea: -1600.0}
+- equation: HNOH + HO2 <=> NH2OH + O2
+  rate-constant: {A: 29000.0, b: 2.69, Ea: -1600.0}
+- equation: HNOH + O2 <=> HNO + HO2
+  rate-constant: {A: 3000000000000.0, b: 0.0, Ea: 25000.0}
+- equation: HNOH + NH2 <=> NH3 + HNO
+  rate-constant: {A: 1800000.0, b: 1.94, Ea: -1152.0}
+- equation: HNOH + NO2 <=> HONO + HNO
+  rate-constant: {A: 600000000000.0, b: 0.0, Ea: 2000.0}
+- equation: NO + H (+M) <=> HNO (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 240000000000000.0, b: 0.206, Ea: -1550.0}
+    high-P-rate-constant: {A: 1500000000000000.0, b: -0.41, Ea: 0.0}
+    Troe: {A: 0.82, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: N2
+    efficiency: {A: 7.56770814, b: -0.19687796, Ea: 253.16784752}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 3.35450824, b: 0.13335183, Ea: 66.46330368}
+    note: Jasper-2022
+- equation: HNO + H <=> NO + H2
+  rate-constant: {A: 968000000000.0, b: 0.62, Ea: 356.0}
+- equation: HNO + O <=> NO + OH
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
+- equation: HNO + OH <=> NO + H2O
+  rate-constant: {A: 36000000000000.0, b: 0.0, Ea: 0.0}
+- equation: HNO + O2 <=> HO2 + NO
+  rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 16000.0}
+- equation: HNO + HNO <=> N2O + H2O
+  rate-constant: {A: 3950000000000.0, b: 0.0, Ea: 5000.0}
+- equation: HNO + NO2 <=> HONO + NO
+  rate-constant: {A: 44000.0, b: 2.64, Ea: 4040.0}
+- equation: NO + HO2 <=> NO2 + OH
+  rate-constant: {A: 2100000000000.0, b: 0.0, Ea: -497.0}
+- equation: NO + O (+M) <=> NO2 (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 4.72e+24, b: -2.87, Ea: 1550.0}
+    high-P-rate-constant: {A: 1300000000000000.0, b: -0.75, Ea: 0.0}
+    Troe: {A: 0.75, T3: 1000.0, T1: 100000.0, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: NO + HO2 + M <=> HONO2 + M
+  type: three-body
+  rate-constant: {A: 2230000000000.0, b: -3.5, Ea: 2200.0}
+- equation: NO2 + H <=> NO + OH
+  rate-constant: {A: 130000000000000.0, b: 0.0, Ea: 362.0}
+- equation: NO2 + O <=> NO + O2
+  rate-constant: {A: 110000000000000.0, b: -0.52, Ea: 0.0}
+- equation: NO2 + HO2 <=> HONO + O2
+  rate-constant: {A: 1.9, b: 3.32, Ea: 3044.0}
+- equation: NO2 + HO2 <=> HNO2 + O2
+  rate-constant: {A: 19.0, b: 3.26, Ea: 4983.0}
+- equation: NO2 + NO2 <=> NO + NO + O2
+  rate-constant: {A: 2000000000000.0, b: 0.0, Ea: 26825.0}
+- equation: NO2 + NO2 <=> NO3 + NO
+  rate-constant: {A: 9600000000.0, b: 0.73, Ea: 20900.0}
+- equation: NO2 + NO <=> N2O + O2
+  rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 60000.0}
+- equation: NO + OH (+M) <=> HONO (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 3.392e+23, b: -2.5, Ea: 0.0}
+    high-P-rate-constant: {A: 110000000000000.0, b: -0.3, Ea: 0.0}
+    Troe: {A: 0.75, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: NO2 + H2 <=> HONO + H
+  rate-constant: {A: 13000.0, b: 2.76, Ea: 29770.0}
+- equation: N + NO2 <=> N2O + O
+  rate-constant: {A: 1800000000000.0, b: 0.0, Ea: 0.0}
+- equation: HONO + H <=> HNO + OH
+  rate-constant: {A: 56000000000.0, b: 0.86, Ea: 5000.0}
+- equation: HONO + H <=> NO + H2O
+  rate-constant: {A: 8100000.0, b: 1.89, Ea: 3850.0}
+- equation: HONO + O <=> NO2 + OH
+  rate-constant: {A: 12000000000000.0, b: 0.0, Ea: 5960.0}
+- equation: HONO + OH <=> NO2 + H2O
+  rate-constant: {A: 13000000000.0, b: 1.0, Ea: 135.0}
+- equation: HONO + NO2 <=> HONO2 + NO
+  rate-constant: {A: 200000000000.0, b: 0.0, Ea: 32700.0}
+- equation: HONO + HONO <=> NO + NO2 + H2O
+  rate-constant: {A: 0.35, b: 3.64, Ea: 12140.0}
+- equation: HNO2 (+M) <=> HONO (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 3.1e+18, b: 0.0, Ea: 31500.0}
+    high-P-rate-constant: {A: 250000000000000.0, b: 0.0, Ea: 32300.0}
+    Troe: {A: 1.149, T3: 1.0e-30, T1: 3125.0, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: HNO2 + H <=> NO2 + H2
+  rate-constant: {A: 240000000.0, b: 1.5, Ea: 5087.0}
+- equation: HNO2 + O <=> NO2 + OH
+  rate-constant: {A: 170000000.0, b: 1.5, Ea: 3020.0}
+- equation: HNO2 + OH <=> NO2 + H2O
+  rate-constant: {A: 1200000.0, b: 2.0, Ea: -596.0}
+- equation: NO2 + O (+M) <=> NO3 (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.5e+20, b: -1.5, Ea: 0.0}
+    high-P-rate-constant: {A: 3500000000000.0, b: 0.24, Ea: 0.0}
+    Troe: {A: 0.71, T3: 1.0e-30, T1: 1700.0, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: NO3 + H <=> NO2 + OH
+  rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NO3 + O <=> NO2 + O2
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NO3 + OH <=> NO2 + HO2
+  rate-constant: {A: 14000000000000.0, b: 0.0, Ea: 0.0}
+- equation: NO3 + HO2 <=> NO2 + O2 + OH
+  rate-constant: {A: 1500000000000.0, b: 0.0, Ea: 0.0}
+- equation: NO3 + NO2 <=> NO + NO2 + O2
+  rate-constant: {A: 50000000000.0, b: 0.0, Ea: 2940.0}
+- equation: NO2 + OH (+M) <=> HONO2 (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.938e+25, b: -3.0, Ea: 0.0}
+    high-P-rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+    Troe: {A: 0.4, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: HONO2 + H <=> H2 + NO3
+  rate-constant: {A: 560000000.0, b: 1.5, Ea: 16400.0}
+- equation: HONO2 + H <=> H2O + NO2
+  rate-constant: {A: 61.0, b: 3.3, Ea: 6285.0}
+- equation: HONO2 + H <=> OH + HONO
+  rate-constant: {A: 380000.0, b: 2.3, Ea: 6976.0}
+- equation: HONO2 + OH <=> H2O + NO3
+  rate-constant: {A: 10000000000.0, b: 0.0, Ea: -1240.0}
+- equation: N2O (+M) <=> N2 + O (+M)
+  type: falloff
+  low-P-rate-constant: {A: 662000000000000.0, b: 0.0, Ea: 57500.0}
+  high-P-rate-constant: {A: 99000000000.0, b: 0.0, Ea: 57960.0}
+  efficiencies: {N2: 1.7, O2: 1.4, H2O: 12.0}
+- equation: N2O + H <=> N2 + OH
+  duplicate: true
+  rate-constant: {A: 33100000000.0, b: 0.0, Ea: 5090.0}
+- equation: N2O + H <=> N2 + OH
+  duplicate: true
+  rate-constant: {A: 783000000000000.0, b: 0.0, Ea: 19390.0}
+- equation: N2O + O <=> NO + NO
+  rate-constant: {A: 92000000000000.0, b: 0.0, Ea: 27679.0}
+- equation: N2O + O <=> N2 + O2
+  rate-constant: {A: 3700000000000.0, b: 0.0, Ea: 15936.0}
+- equation: N2O + OH <=> N2 + HO2
+  rate-constant: {A: 2000000000000.0, b: 0.0, Ea: 40000.0}
+- equation: HNO + NO <=> N2O + OH
+  rate-constant: {A: 2000000000000.0, b: 0.0, Ea: 26000.0}
+- equation: HNO + N <=> NO + NH
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 1990.0}
+- equation: N2O + NO <=> NO2 + N2
+  rate-constant: {A: 530000.0, b: 2.23, Ea: 46280.0}
+- equation: N2O + N <=> N2 + NO
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 19870.0}
+- equation: NH2 + NH2 <=> N2H2 + H2
+  rate-constant: {A: 170000000.0, b: 1.02, Ea: 11783.0}
+  note: "************************************************************************\n\
+    \  N2 amine subset                                                          *\n\
+    ************************************************************************"
+- equation: NH2 + NH2 <=> H2NN + H2
+  rate-constant: {A: 72000.0, b: 1.88, Ea: 8802.0}
+- equation: NH2 + NH <=> N2H2 + H
+  rate-constant: {A: 1500000000000000.0, b: -0.5, Ea: 0.0}
+- equation: HNOH + NH2 <=> N2H3 + OH
+  rate-constant: {A: 10.0, b: 3.46, Ea: -467.0}
+- equation: HNOH + NH2 <=> H2NN + H2O
+  rate-constant: {A: 8.8e+16, b: -1.08, Ea: 1113.0}
+- equation: NH2 + NH2 (+M) <=> N2H4 (+M)
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.6e+34, b: -5.49, Ea: 1987.0}
+    high-P-rate-constant: {A: 560000000000000.0, b: -0.414, Ea: 66.0}
+    Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: N2
+    efficiency: {A: 14.68477648, b: -0.30096166, Ea: 165.14610502}
+    note: Jasper-2022
+  - name: O2
+    efficiency: {A: 1.53607628, b: -0.03908567, Ea: 4.43752035}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 16.41958948, b: -0.07296362, Ea: 366.09891308}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 21.76578656, b: -0.11471476, Ea: 419.21606823}
+    note: Jasper-2022
+- equation: N2H4 + H <=> N2H3 + H2
+  rate-constant: {A: 7000000000000.0, b: 0.0, Ea: 2500.0}
+- equation: N2H4 + O <=> NH2OH + NH
+  rate-constant: {A: 290000000000.0, b: 0.0, Ea: -1270.0}
+- equation: N2H4 + O <=> N2H3 + OH
+  rate-constant: {A: 150000000000.0, b: 0.0, Ea: -1270.0}
+- equation: N2H4 + OH <=> N2H3 + H2O
+  rate-constant: {A: 13000000000000.0, b: 0.0, Ea: -318.0}
+- equation: N2H4 + NH2 <=> N2H3 + NH3
+  rate-constant: {A: 3900000000000.0, b: 0.0, Ea: 1500.0}
+- equation: N2H3 <=> N2H2 + H
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 2.3e+43, b: -9.55, Ea: 64468.0}
+    - {P: 1.0 atm, A: 3.6e+47, b: -10.38, Ea: 69009.0}
+    - {P: 10.0 atm, A: 1.8e+45, b: -9.39, Ea: 70141.0}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: N2H3 + H <=> N2H2 + H2
+  rate-constant: {A: 240000000.0, b: 1.5, Ea: -10.0}
+- equation: N2H3 + O <=> N2H2 + OH
+  rate-constant: {A: 170000000.0, b: 1.5, Ea: -646.0}
+- equation: N2H3 + O <=> NH2 + HNO
+  rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H3 + O => NH2 + NO + H
+  rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H3 + OH <=> N2H2 + H2O
+  rate-constant: {A: 1200000.0, b: 2.0, Ea: -1192.0}
+- equation: N2H3 + OH <=> H2NN + H2O
+  rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H3 + OH <=> NH3 + HNO
+  rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 15000.0}
+- equation: N2H3 + HO2 <=> N2H2 + H2O2
+  rate-constant: {A: 14000.0, b: 2.69, Ea: -1600.0}
+- equation: N2H3 + HO2 <=> N2H4 + O2
+  rate-constant: {A: 920000.0, b: 1.94, Ea: 2126.0}
+- equation: N2H3 + NH2 <=> N2H2 + NH3
+  rate-constant: {A: 920000.0, b: 1.94, Ea: -1152.0}
+- equation: N2H3 + NH2 <=> H2NN + NH3
+  rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H3 + NH <=> N2H2 + NH2
+  rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H2 <=> NNH + H
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 5.6e+36, b: -7.75, Ea: 70340.0}
+    - {P: 1.0 atm, A: 1.8e+40, b: -8.41, Ea: 73320.0}
+    - {P: 10.0 atm, A: 3.1e+41, b: -8.42, Ea: 76102.0}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: N2H2 + H <=> NNH + H2
+  rate-constant: {A: 85000.0, b: 2.63, Ea: 230.0}
+  note: '*
+
+    *
+
+    *'
+- equation: N2H2 + O <=> NNH + OH
+  rate-constant: {A: 330000000.0, b: 1.5, Ea: 497.0}
+- equation: N2H2 + O <=> NH2 + NO
+  rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
+- equation: N2H2 + OH <=> NNH + H2O
+  rate-constant: {A: 59.0, b: 3.4, Ea: 1360.0}
+- equation: N2H2 + NH2 <=> NNH + NH3
+  rate-constant: {A: 0.088, b: 4.05, Ea: 1610.0}
+- equation: N2H2 + NH <=> NNH + NH2
+  rate-constant: {A: 2400000.0, b: 2.0, Ea: -1192.0}
+- equation: N2H2 + NO <=> N2O + NH2
+  rate-constant: {A: 4000000000000.0, b: 0.0, Ea: 11922.0}
+- equation: H2NN <=> NNH + H
+  type: linear-Burke
+  duplicate: true
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 5.9e+32, b: -6.99, Ea: 51791.0}
+    - {P: 1.0 atm, A: 9.6e+35, b: -7.57, Ea: 54841.0}
+    - {P: 10.0 atm, A: 5.0e+36, b: -7.43, Ea: 57295.0}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: H2NN <=> NNH + H
+  type: linear-Burke
+  duplicate: true
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 7.2e+28, b: -7.77, Ea: 50758.0}
+    - {P: 1.0 atm, A: 3.2e+31, b: -6.22, Ea: 52318.0}
+    - {P: 10.0 atm, A: 5.1e+33, b: -6.52, Ea: 54215.0}
+  - name: HE
+    efficiency: {A: 2.56, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0.0, Ea: -0.0}
+    note: Jasper-2022 (generic)
+- equation: H2NN + H <=> NNH + H2
+  rate-constant: {A: 480000000.0, b: 1.5, Ea: -894.0}
+- equation: H2NN + H <=> N2H2 + H
+  rate-constant: {A: 70000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NN + O <=> NNH + OH
+  rate-constant: {A: 330000000.0, b: 1.5, Ea: -894.0}
+- equation: H2NN + O <=> NH2 + NO
+  rate-constant: {A: 70000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NN + OH <=> NNH + H2O
+  rate-constant: {A: 2400000.0, b: 2.0, Ea: -1192.0}
+- equation: H2NN + OH => NH2 + NO + H
+  rate-constant: {A: 2000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NN + HO2 => NH2 + NO + OH
+  rate-constant: {A: 9000000000000.0, b: 0.0, Ea: 0.0}
+- equation: H2NN + HO2 <=> NNH + H2O2
+  rate-constant: {A: 29000.0, b: 2.69, Ea: -1600.0}
+- equation: H2NN + O2 <=> NH2 + NO2
+  rate-constant: {A: 1500000000000.0, b: 0.0, Ea: 5961.0}
+- equation: H2NN + NH2 <=> NNH + NH3
+  rate-constant: {A: 1800000.0, b: 1.94, Ea: -1152.0}
+- equation: N2 + M <=> N + N + M
+  type: three-body
+  rate-constant: {A: 1.89e+18, b: -0.85, Ea: 224950.0}
+- equation: N + O + M <=> NO + M
+  type: three-body
+  rate-constant: {A: 760000000000000.0, b: -0.1, Ea: -1770.0}
+  note: " **** OH* reactions *****************************************\nH+O+M=OH*+M\
+    \           \t\t      3.1E14   0.0     10000 !\nOH*+AR=OH+AR                 \
+    \        2.17E10  0.5      2060 !\nOH*+H2=OH+H2                         2.95E12\
+    \  0.5      -444 !\nOH*+O2=OH+O2                         2.10E12  0.5      -482\
+    \ !\nOH*+OH=OH+OH                         1.50E12  0.5         0 !\nOH*+H=OH+H\
+    \                           1.50E12  0.5         0 !\nOH*+O=OH+O             \
+    \              1.50E12  0.5         0 !\nN2O+H=N2+OH*                        \
+    \ 1.60E14  0.0     50300 !\nOH*=OH                               1.40E06  0.0\
+    \         0 !"
