@@ -54,17 +54,17 @@ lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
     'Alzueta-2023': {
-        'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
         'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Mei-2019': {
-        'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+        # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
         'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
                 },
     'Zhang-2017': {
-        'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+        # 'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
