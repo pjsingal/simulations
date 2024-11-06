@@ -4131,8 +4131,7 @@ reactions:
   note: XU K Xu ZF Lin MC Mol Phys 105:2763-2776 2007
 - equation: CH2OH + OH <=> CH2O + H2O  # Reaction 154
   rate-constant: {A: 2.4e+13, b: 0.0, Ea: 0.0}
-  note: Seetula JA Kalinovski IJ Slagle IR Gutman D Chem. Phys. Lett. 224:533
-    1994
+  note: Seetula JA Kalinovski IJ Slagle IR Gutman D Chem. Phys. Lett. 224:533 1994
 - equation: CH2OH + HO2 <=> CH2O + H2O2  # Reaction 155
   rate-constant: {A: 1.2e+13, b: 0.0, Ea: 0.0}
   note: Tsang W JPCRD 16:471 1987
@@ -4446,12 +4445,10 @@ reactions:
     Stewart PH Rothem T Golden DM PCI 22:943-952
 - equation: C2H5 + O <=> CH3CHO + H  # Reaction 224
   rate-constant: {A: 5.3e+13, b: 0.0, Ea: 0.0}
-  note: Slagle IR Sarzynski D Gutman D Miller JA Melius CF JCSFT2 84:491
-    1988
+  note: Slagle IR Sarzynski D Gutman D Miller JA Melius CF JCSFT2 84:491 1988
 - equation: C2H5 + O <=> C2H4 + OH  # Reaction 225
   rate-constant: {A: 3.1e+13, b: 0.0, Ea: 0.0}
-  note: Slagle IR Sarzynski D Gutman D Miller JA Melius CF JCSFT2 84:491
-    1988
+  note: Slagle IR Sarzynski D Gutman D Miller JA Melius CF JCSFT2 84:491 1988
 - equation: C2H5 + OH <=> C2H4 + H2O  # Reaction 226
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -5944,8 +5941,7 @@ reactions:
   note: est
 - equation: CH3CH2O + CO <=> C2H5 + CO2  # Reaction 395
   rate-constant: {A: 9.5e+25, b: -4.93, Ea: 9080.0}
-  note: Fittschen, C.; Frenzel, A.; Imrik, K.; Devolder, P. Int J Chem Kinet
-    1999, 31, 860866.
+  note: Fittschen, C.; Frenzel, A.; Imrik, K.; Devolder, P. Int J Chem Kinet 1999, 31, 860866.
 - equation: CH3CHO (+M) <=> CH3 + HCO (+M)  # Reaction 396
   type: falloff
   low-P-rate-constant: {A: 1.1e+59, b: -11.3, Ea: 9.5912e+04}
@@ -7802,8 +7798,7 @@ reactions:
   note: NBS91      Tsang W JPCRD 20:221 1991
 - equation: HONO + NO2 <=> HONO2 + NO  # Reaction 743
   rate-constant: {A: 2.0e+11, b: 0.0, Ea: 3.27e+04}
-  note: Burkholder JB Mellouki A Talukdar R Ravishankara AR IJCK 24:711
-    1992
+  note: Burkholder JB Mellouki A Talukdar R Ravishankara AR IJCK 24:711 1992
 - equation: HONO + HONO <=> NO + NO2 + H2O  # Reaction 744
   rate-constant: {A: 0.35, b: 3.64, Ea: 1.214e+04}
   note: Park J Giles ND Moore J Lin MC JPCA 102:10099 1998
@@ -7837,12 +7832,10 @@ reactions:
   note: Becker E Rahman MM Schindler RN BBPC 96:776 1992
 - equation: NO3 + OH <=> NO2 + HO2  # Reaction 752
   rate-constant: {A: 1.4e+13, b: 0.0, Ea: 0.0}
-  note: Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC Ref Data
-    1992, 21, 11251568.
+  note: Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC Ref Data 1992, 21, 11251568.
 - equation: NO3 + HO2 <=> NO2 + O2 + OH  # Reaction 753
   rate-constant: {A: 1.5e+12, b: 0.0, Ea: 0.0}
-  note: Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC Ref Data
-    1992, 21, 11251568.
+  note: Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC Ref Data 1992, 21, 11251568.
 - equation: NO3 + NO2 <=> NO + NO2 + O2  # Reaction 754
   rate-constant: {A: 5.0e+10, b: 0.0, Ea: 2940.0}
   note: Becker E Rahman MM Schindler RN BBPC 96:776 1992
@@ -8291,8 +8284,8 @@ reactions:
 - equation: HNCO + NH <=> NH2 + NCO  # Reaction 857
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 2.37e+04}
   note: |-
-    X.-G. Wei, X.-M. Sun, X.-P. Wu, S. Geng, Y. Ren, N.-B. Wong, and W.-K. Li. J Mol Model 17:20692082, 2011.
-    X. Cheng, Y. Zhao, W. Zhu, and Y. Liu. J Mol Model, 19:50375043, 2013.
+    X.-G. Wei, X.-M. Sun, X.-P. Wu, S. Geng, Y. Ren, N.-B. Wong, and W.-K. Li. J Mol Model 17:2069--2082, 2011.
+    X. Cheng, Y. Zhao, W. Zhu, and Y. Liu. J Mol Model, 19:5037--5043, 2013.
     P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68.
 - equation: HNCO + HNCO <=> HNCNH + CO2  # Reaction 858
   rate-constant: {A: 6.9e+11, b: 0.0, Ea: 4.21e+04}
@@ -8694,8 +8687,7 @@ reactions:
      Combust. Flame, submitted (2017).
 - equation: CH + N <=> CN + H  # Reaction 947
   rate-constant: {A: 1.3e+13, b: 0.0, Ea: 0.0}
-  note: Becker KH Engelhardt B Geiger H Kurtenbach R Wiesen P CPL 210:135-140
-    1993
+  note: Becker KH Engelhardt B Geiger H Kurtenbach R Wiesen P CPL 210:135-140 1993
 - equation: CH + NO <=> CO + NH  # Reaction 948
   rate-constant: {A: 9.1e+12, b: 0.0, Ea: 0.0}
   note: Messing I Filseth SV Sadowski CM Carrington T JCP 74:3874 1981
@@ -8730,8 +8722,7 @@ reactions:
     D Troe J Tsang W Walker RW Warnatz J JPCRD 34:757-1397 2005
 - equation: C + NO <=> CN + O  # Reaction 956
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
-  note: Becker KH Engelhardt B Geiger H Kurtenbach R Wiesen P CPL 210:135-140
-    1993
+  note: Becker KH Engelhardt B Geiger H Kurtenbach R Wiesen P CPL 210:135-140 1993
 - equation: C + NO <=> CO + N  # Reaction 957
   rate-constant: {A: 2.8e+13, b: 0.0, Ea: 0.0}
   note: Baulch DL Cobos CJ Cox RA Frank P Hayman G Just Th Kerr JA Murrells
@@ -8742,8 +8733,7 @@ reactions:
     T Pilling MJ Troe J Walker RW Warnatz J JPCRD 23:847-1033 1994
 - equation: CH3OH + NO2 <=> HONO + CH2OH  # Reaction 959
   rate-constant: {A: 150.0, b: 3.32, Ea: 2.0035e+04}
-  note: Dorthe G Caubet P Vias Th Barrere B Marchais J JPC 95:5109-5116
-    1991
+  note: Dorthe G Caubet P Vias Th Barrere B Marchais J JPC 95:5109-5116 1991
 - equation: CH3OH + NO2 <=> HNO2 + CH2OH  # Reaction 960
   rate-constant: {A: 2400.0, b: 2.9, Ea: 2.747e+04}
   note: Xiao C-X Yan N Zou M Hou S-C Kou Y Liu W Zhang S J Mol Cat A Chem
@@ -8802,12 +8792,10 @@ reactions:
   note: Schuck A Volpp H-R Wolfrum J CF 99:491 1994
 - equation: C2H5 + N <=> CH3 + H2CN  # Reaction 976
   rate-constant: {A: 2.3e+13, b: 0.0, Ea: 0.0}
-  note: Stief LJ Nesbitt FL Payne WA Kuo SC Tao W Klemm RB JCP 102:5309-5316
-    1995
+  note: Stief LJ Nesbitt FL Payne WA Kuo SC Tao W Klemm RB JCP 102:5309-5316 1995
 - equation: C2H5 + NO2 <=> CH3CH2O + NO  # Reaction 977
   rate-constant: {A: 4.0e+13, b: -0.2, Ea: 0.0}
-  note: Stief LJ Nesbitt FL Payne WA Kuo SC Tao W Klemm RB JCP 102:5309-5316
-    1995
+  note: Stief LJ Nesbitt FL Payne WA Kuo SC Tao W Klemm RB JCP 102:5309-5316 1995
 - equation: C2H4 + NH2 <=> C2H3 + NH3  # Reaction 978
   rate-constant: {A: 5.3e+12, b: 0.0, Ea: 1.0274e+04}
   note: |-
@@ -8862,8 +8850,7 @@ reactions:
     W Feng JF Hershberger J. Phys. Chem. A 2013, 117, 3585-3592 (pr)
 - equation: C2 + N2 <=> CN + CN  # Reaction 988
   rate-constant: {A: 1.5e+13, b: 0.0, Ea: 4.173e+04}
-  note: Carl, S.A.; Nguyen, H.MT.; Nguyen, M.T.; Peeters, J. J. Chem. Phys.
-    118, 10996-11008, 2003 (ktot)
+  note: Carl, S.A.; Nguyen, H.MT.; Nguyen, M.T.; Peeters, J. J. Chem. Phys. 118, 10996-11008, 2003 (ktot)
 - equation: C2 + NO <=> C2O + N  # Reaction 989
   rate-constant: {A: 2.3e+13, b: 0.0, Ea: 8640.0}
   note: Sommer T Kruse T Roth P Hippler H JPCA 101, 3720-3725 1997
