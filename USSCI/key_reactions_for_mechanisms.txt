@@ -1,0 +1,67 @@
+Mei-2019: Models the high-pressure propagation of O2-enriched ammonia flames. Contains submechanisms for H2/O2 (Hashemi-2015) and NH3 (Shrestha-2018),
+comprising 38 species and 265 reactions. Simulated rate constants of NH2
++ H = NH + H2, N2H2 + H = NNH + H2, and N2H2 + M = NNH + H + M;
+laminar flame speeds of NH3/air and NH3/O2/N2; and ignition delay times of
+NH3/O2/Ar. 295 citations.
+
+Stagni-2020: Models the gas-phase oxidation of ammonia (500–2000K, ϕ=0.01–0.375).
+Contains submechanisms for H2/O2 (AramcoMech 1.3), and NOx (Song2019) with an added NH3 module, comprising 31 species and 203 reactions.
+Simulated rate constants of barrierless NH3 decomposition (NH3=NH2+H),
+NH3 recombination (NH2+H=NH3), HNO recombination (H+NO=HNO);
+NH3/O2/He (500–1200K, 106.7kPa), NH3/NO/O2/He (1100–1450K, 1atm),
+NH3/NO/O2/N2 (950–1450K, 1atm) in a jet-stirred reactor; NH3/O2/He
+(1200–2000K, 126.7kPa), NH3/O2/N2 (850–1250K, 1atm), NH3/O2/N2 (450–
+925K, 30–100bar), NH3/O2/N2 (950–1350K, 1.05bar) in a flow reactor;
+NH3/Ar (2300–2800K, 0.8–1.1atm), NH3/O2/Ar (1550–2500K, 1.4–30atm),
+NH3/N2/O2 (1100–1600K, 20–40bar) in a shock tube; NH3/O2/N2/Ar (1000–
+1100K, 37–75atm), NH3/O2/Ar (1000–1130K, 40–60bar) in an RCM; laminar
+flame speeds of NH3/N2/O2 (298K, 1atm), NH3/O2 (298K, 1atm), NH3/N2/O2
+(298K, 1atm); and burner-stabilized flames of NH3/O2 (300K, 20torr). 252
+citations.
+
+
+Zhang-2017:
+Some processes are sensitive to this reaction, according to the paper:
+- equation: NO + O (+M) <=> NO2 (+M)  # Reaction 58
+  type: falloff
+  low-P-rate-constant: {A: 9.44e+24, b: -2.87, Ea: 1551.0}
+  high-P-rate-constant: {A: 1.3e+15, b: -0.75, Ea: 0.0}
+  Troe: {A: 0.962, T3: 10.0, T1: 7962.0}
+  efficiencies: {AR: 0.6, NO2: 6.2, NO: 1.8, O2: 0.8, N2O: 4.4, CO2: 6.0,
+    H2O: 10.0}
+  note: |-
+    NOV+O=>NO+O     1.8E13  0.0  0.0   !\AUTHOR: YJZ !\REF:Dodd et al., JCP, 1999, 111(8): 3498-3507 !\COMMENT: FROM Glarborg
+    NO+O=>NOV+O    1.8E13  0.0  5343   !\AUTHOR: YJZ !\REF:Dodd et al., JCP, 1999, 111(8): 3498-3507 !\COMMENT: FROM Glarborg
+    ----------------------------------------------------------------------------------------------------------------------------------
+    \ENDSUBMECH: \NO
+    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------------------------------
+    \SUBMECH: \NO2
+    \MECHCOMMENTS:
+    \MECHWARNINGS:
+    ----------------------------------------------------------------------------------------------------------------------------------
+    ___________________________________________________________________________________________________________
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+    ___________________________________________________________________________________________________________
+    \AUTHOR: YJZ !\REF:Tsang and Herron, JPCRD, 1991,20(4): 609-663 !\OMMENT:
+
+
+This reaction is also relevant:
+- equation: NO + OH (+M) <=> HONO (+M)  # Reaction 102
+  type: falloff
+  low-P-rate-constant: {A: 2.37e+23, b: -2.4, Ea: 0.0}
+  high-P-rate-constant: {A: 1.1e+14, b: -0.3, Ea: 0.0}
+  Troe: {A: 0.81, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: |-
+    ----------------------------------------------------------------------------------------------------------------------------------
+    \ENDSUBMECH: \HON
+    ----------------------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------------------------------
+    \SUBMECH: \HONO
+    \MECHCOMMENTS:
+    \MECHWARNINGS:
+    ----------------------------------------------------------------------------------------------------------------------------------
+    ___________________________________________________________________________________________________________
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+    ___________________________________________________________________________________________________________
+    \AUTHOR: YJZ !\REF:Atkinson et al., ACP, 2004, 4(6): 1467-1738 !\COMMENT:
