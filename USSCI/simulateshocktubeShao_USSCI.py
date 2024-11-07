@@ -41,14 +41,14 @@ mpl.rcParams['xtick.labelsize'] = args.fszxtick
 mpl.rcParams['ytick.labelsize'] = args.fszytick
 from matplotlib.legend_handler import HandlerTuple
 plt.rcParams['axes.labelsize'] = args.fszaxlab
-mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
-mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
-mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
-mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
-mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
-mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
-mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
-mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
+# mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
+# mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
+# mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
+# mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
+# mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
+# mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
+# mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
+# mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
@@ -87,54 +87,72 @@ models = {
 
 name = 'ShockTube_H2O_multimech'
 save_plots = True
-fig, ax = plt.subplots(1, len(models.keys()),figsize=(args.figwidth, args.figheight))
 
-for z, n in enumerate(models):
-    mech = n
+temps = [800,1100,1500,2000]
+pressures=[1,2,5,10]
+phi_list = [0.8,1.0,1.22,1.4]
+alpha_list = [1.0,0.8,0.6,0.4,0.2,0.0]
+a_st = [0.75,0.7,0.65,0.6,0.55,0.5]
 
-    import matplotlib.ticker as ticker
-    ax[z].xaxis.set_major_locator(ticker.MultipleLocator(50))
-    ax[z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[z].yaxis.set_major_locator(ticker.MultipleLocator(0.03))
-    ax[z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
+def cp(T,P,X,model):
+  gas_stream = ct.Solution(model)
+  gas_stream.TPX = T, P*1e5, {X:1}
+  return gas_stream.cp_mole # [J/kmol/K]
 
-    path="PCI-ESSCI/graph_reading"
-    shao_data = pd.read_csv(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv')
-    ax[z].plot(shao_data.iloc[:,0],shao_data.iloc[:,1]*100,marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Shao et al.')
+for phi in phi_list:
+    for T in temps:
+        for P in pressures:
+            fig, ax = plt.subplots(1, len(models.keys()),figsize=(args.figwidth, args.figheight))
+            for z, n in enumerate(models):
+                mech = n
+                # import matplotlib.ticker as ticker
+                # ax[z].xaxis.set_major_locator(ticker.MultipleLocator(50))
+                # ax[z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+                # ax[z].yaxis.set_major_locator(ticker.MultipleLocator(0.03))
+                # ax[z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
 
-    for k,m in enumerate(models[n]):
-        X_H2O2 = 1163e-6
-        X_H2O = 1330e-6
-        X_O2 = 665e-6
-        X_CO2= 0.2*(1-X_H2O2-X_H2O-X_O2)
-        X_Ar = 1-X_CO2
-        gas = ct.Solution(list(models[n].values())[k])
-        X = {'H2O2':X_H2O2, 'H2O':X_H2O, 'O2':X_O2, 'CO2':X_CO2, 'AR':X_Ar}
-        gas.TPX = 1196, 2.127*ct.one_atm, X
-        r = ct.Reactor(contents=gas,energy="on")
-        reactorNetwork = ct.ReactorNet([r])
-        timeHistory = ct.SolutionArray(gas, extra=['t'])
-        estIgnitDelay = 1
-        t = 0
-        counter = 1
-        while t < estIgnitDelay:
-            t = reactorNetwork.step()
-            if counter % 10 == 0:
-                timeHistory.append(r.thermo.state, t=t)
-            counter += 1
-        ax[z].plot(timeHistory.t*1e6, timeHistory('H2O').X*100, color=colors[k],linestyle=lstyles[k],linewidth=lw,label=m)
+                # path="PCI-ESSCI/graph_reading"
+                # shao_data = pd.read_csv(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv')
+                # ax[z].plot(shao_data.iloc[:,0],shao_data.iloc[:,1]*100,marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Shao et al.')
+
+                for k,m in enumerate(models[n]):
+                    gas = ct.Solution(list(models[n].values())[k])
+                    ##Shao Mixture
+                    # X_H2O2 = 1163e-6
+                    # X_H2O = 1330e-6
+                    # X_O2 = 665e-6
+                    # X_CO2= 0.2*(1-X_H2O2-X_H2O-X_O2)
+                    # X_Ar = 1-X_CO2
+                    # X = {'H2O2':X_H2O2, 'H2O':X_H2O, 'O2':X_O2, 'CO2':X_CO2, 'AR':X_Ar}
+                    #Ronney Mixture
+                    x_fuel = (phi*(1/0.75)*0.21)/(1+phi*(1/0.75)*0.21)
+                    x_o2 = 0.21*(1-x_fuel)
+                    x_n2 = 0.79*(1-x_fuel)
+                    gas.TPX = T, P*ct.one_atm, {'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
+                    r = ct.Reactor(contents=gas,energy="on")
+                    reactorNetwork = ct.ReactorNet([r])
+                    timeHistory = ct.SolutionArray(gas, extra=['t'])
+                    estIgnitDelay = 1
+                    t = 0
+                    counter = 1
+                    while t < estIgnitDelay:
+                        t = reactorNetwork.step()
+                        if counter % 10 == 0:
+                            timeHistory.append(r.thermo.state, t=t)
+                        counter += 1
+                    ax[z].plot(timeHistory.t*1e6, timeHistory('H2O').X*100, color=colors[k],linestyle=lstyles[k],linewidth=lw,label=m)
 
 
-    ax[z].legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right') 
-    ax[z].tick_params(axis='both', direction="in")#, labelsize=7)
-    ax[z].set_xlim([0.0001,299.999])
-    ax[z].set_ylim([0.120001,0.269999])
-    ax[z].set_title(f"{mech}")
+                ax[z].legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')
+                ax[z].tick_params(axis='both', direction="in")#, labelsize=7)
+                # ax[z].set_xlim([0.0001,299.999])
+                # ax[z].set_ylim([0.120001,0.269999])
+                ax[z].set_title(f"{mech} ({T}K,{P}atm,{phi}phi)")
 
-ax[0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
-ax[2].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+            ax[0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
+            ax[2].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
 
-path=f'USSCI/figures/'+args.date
-os.makedirs(path,exist_ok=True)
-if save_plots == True:
-    plt.savefig(path+f'/{name}.png', dpi=500, bbox_inches='tight')
+            path=f'USSCI/figures/{args.date}/shock-tube'
+            os.makedirs(path,exist_ok=True)
+            if save_plots == True:
+                plt.savefig(path+f'/{T}K_{P}atm_{phi}phi.png', dpi=500, bbox_inches='tight')
