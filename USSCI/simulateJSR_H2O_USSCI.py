@@ -62,36 +62,36 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 # lstyles = ["solid"]*3 + ["dashed"]*3 + ["dotted"]*3
 
 models = {
-    'Alzueta-2023': {
-        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-                },
-    'Mei-2019': {
-        # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
-                },
+    # 'Alzueta-2023': {
+    #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+    #             },
+    # 'Mei-2019': {
+    #     # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
+    #             },
     'Zhang-2017': {
         # 'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
                 },
-    'Otomo-2018': {
-        # 'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
-                },
-    'Stagni-2020': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-                },
-    # 'Han-2021': {
-    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
-    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
-    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    # 'Otomo-2018': {
+    #     # 'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
     #             },
+    # 'Stagni-2020': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #             },
+    # # 'Han-2021': {
+    # #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
+    # #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
+    # #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    # #             },
 }
 name = 'JSR_H2O_multimech'
 save_plots = True
@@ -147,14 +147,14 @@ for z, n in enumerate(models):
     ##############################################################################################################################
 
 
-    path="PCI-ESSCI/graph_reading/1 JSR H2O/"
+    # path="PCI-ESSCI/graph_reading/1 JSR H2O/"
     
-    T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
-    O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 
-    H2_20_data = pd.read_csv(path+'JSR_H2_H2O_20_data.csv') 
-    ax[0,z].plot(T_20_data.iloc[:, 0],T_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
-    ax[1,z].plot(O2_20_data.iloc[:, 0],O2_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
-    ax[2,z].plot(H2_20_data.iloc[:, 0],H2_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
+    # T_20_data = pd.read_csv(path+'JSR_T_H2O_20_data.csv') 
+    # O2_20_data = pd.read_csv(path+'JSR_O2_H2O_20_data.csv') 
+    # H2_20_data = pd.read_csv(path+'JSR_H2_H2O_20_data.csv') 
+    # ax[0,z].plot(T_20_data.iloc[:, 0],T_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
+    # ax[1,z].plot(O2_20_data.iloc[:, 0],O2_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
+    # ax[2,z].plot(H2_20_data.iloc[:, 0],H2_20_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
 
 
     for k,m in enumerate(models[n]):

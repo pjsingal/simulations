@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import argparse
 import matplotlib as mpl
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
@@ -85,50 +86,44 @@ models = {
     #             },
 }
 
-name = 'ShockTube_H2O_multimech'
-save_plots = True
+conditions = {
+    'Zhang-2017': {
+        # 'X': {'N2O':0.02, 'AR': 0.98},
+        'X': {'H2':0.0005, 'CO': 0.03, 'N2O': 0.01, 'AR': 0.9595},
+        'T': [11],
+        # 'P': [3,12],
+        'P': [1.4,10],
+        'phi_list': [0.063],
+                },
+}
 
-temps = [800,1100,1500,2000]
-pressures=[1,2,5,10]
-phi_list = [0.8,1.0,1.22,1.4]
-alpha_list = [1.0,0.8,0.6,0.4,0.2,0.0]
-a_st = [0.75,0.7,0.65,0.6,0.55,0.5]
+
+##Shao Mixture
+# # X_H2O2 = 1163e-6
+# # X_H2O = 1330e-6
+# # X_O2 = 665e-6
+# # X_CO2= 0.2*(1-X_H2O2-X_H2O-X_O2)
+# # X_Ar = 1-X_CO2
+# # X = {'H2O2':X_H2O2, 'H2O':X_H2O, 'O2':X_O2, 'CO2':X_CO2, 'AR':X_Ar}
+# #Ronney Mixture
+# x_fuel = (phi*(1/0.75)*0.21)/(1+phi*(1/0.75)*0.21)
+# x_o2 = 0.21*(1-x_fuel)
+# x_n2 = 0.79*(1-x_fuel)
 
 def cp(T,P,X,model):
   gas_stream = ct.Solution(model)
   gas_stream.TPX = T, P*1e5, {X:1}
   return gas_stream.cp_mole # [J/kmol/K]
 
-for phi in phi_list:
-    for T in temps:
-        for P in pressures:
-            fig, ax = plt.subplots(1, len(models.keys()),figsize=(args.figwidth, args.figheight))
-            for z, n in enumerate(models):
-                mech = n
-                # import matplotlib.ticker as ticker
-                # ax[z].xaxis.set_major_locator(ticker.MultipleLocator(50))
-                # ax[z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-                # ax[z].yaxis.set_major_locator(ticker.MultipleLocator(0.03))
-                # ax[z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.2f}"))
-
-                # path="PCI-ESSCI/graph_reading"
-                # shao_data = pd.read_csv(path+'/7 SP H2O X vs t (Shock Tube) (Shao)/expData.csv')
-                # ax[z].plot(shao_data.iloc[:,0],shao_data.iloc[:,1]*100,marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Shao et al.')
-
-                for k,m in enumerate(models[n]):
+for z, n in enumerate(models):
+    for phi in conditions[n]['phi_list']:
+        for P in conditions[n]['P']:
+            # fig, ax = plt.subplots(1, len(models.keys()),figsize=(args.figwidth, args.figheight))
+            plt.figure()
+            for k,m in enumerate(models[n]):
+                for T in conditions[n]['T']:
                     gas = ct.Solution(list(models[n].values())[k])
-                    ##Shao Mixture
-                    # X_H2O2 = 1163e-6
-                    # X_H2O = 1330e-6
-                    # X_O2 = 665e-6
-                    # X_CO2= 0.2*(1-X_H2O2-X_H2O-X_O2)
-                    # X_Ar = 1-X_CO2
-                    # X = {'H2O2':X_H2O2, 'H2O':X_H2O, 'O2':X_O2, 'CO2':X_CO2, 'AR':X_Ar}
-                    #Ronney Mixture
-                    x_fuel = (phi*(1/0.75)*0.21)/(1+phi*(1/0.75)*0.21)
-                    x_o2 = 0.21*(1-x_fuel)
-                    x_n2 = 0.79*(1-x_fuel)
-                    gas.TPX = T, P*ct.one_atm, {'NH3':x_fuel,'O2':x_o2,'N2':x_n2}
+                    gas.TPX = T, P*ct.one_atm, conditions[n]['X']
                     r = ct.Reactor(contents=gas,energy="on")
                     reactorNetwork = ct.ReactorNet([r])
                     timeHistory = ct.SolutionArray(gas, extra=['t'])
@@ -140,19 +135,12 @@ for phi in phi_list:
                         if counter % 10 == 0:
                             timeHistory.append(r.thermo.state, t=t)
                         counter += 1
-                    ax[z].plot(timeHistory.t*1e6, timeHistory('H2O').X*100, color=colors[k],linestyle=lstyles[k],linewidth=lw,label=m)
-
-
-                ax[z].legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')
-                ax[z].tick_params(axis='both', direction="in")#, labelsize=7)
-                # ax[z].set_xlim([0.0001,299.999])
-                # ax[z].set_ylim([0.120001,0.269999])
-                ax[z].set_title(f"{mech} ({T}K,{P}atm,{phi}phi)")
-
-            ax[0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
-            ax[2].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
-
-            path=f'USSCI/figures/{args.date}/shock-tube'
-            os.makedirs(path,exist_ok=True)
-            if save_plots == True:
-                plt.savefig(path+f'/{T}K_{P}atm_{phi}phi.png', dpi=500, bbox_inches='tight')
+                    plt.plot(timeHistory.t*1e6, timeHistory('H2O').X*100, color=colors[k],linestyle=lstyles[k],linewidth=lw,label=f'{m} {P}atm')
+                plt.legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')
+                plt.title(f"{n} ({T}K,{P}atm,{phi}phi)")
+                plt.set_ylabel(r'$\rm H_2O$ mole fraction [%]')
+                plt.set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+                X_str = "_".join(f"{key}{value}" for key, value in conditions[n]['X'].items())
+                path=f'USSCI/figures/{args.date}/shock-tube'
+                os.makedirs(path,exist_ok=True)
+                plt.savefig(path+f'/{n}_{X_str}.png', dpi=500, bbox_inches='tight')

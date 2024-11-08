@@ -101,8 +101,8 @@ lstyles = ["solid","dashed","dotted"]
 
 def ignitionDelay(states, species):
     # i_ign = np.gradient(states(species).Y.T[0]).argmax()
-    i_ign = np.gradient(states(species).Y.T[0]).argmax()
-    # i_ign = states(species).Y.T[0].argmax()
+    # i_ign = np.gradient(states(species).Y.T[0]).argmax()
+    i_ign = states(species).Y.T[0].argmax()
     # print(np.gradient(states(species).Y.T[0]).argmax())
     return states.t[i_ign]
 
