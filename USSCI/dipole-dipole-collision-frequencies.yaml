@@ -1,0 +1,394 @@
+# All Z values have units [10^(-10)*cm^3*molec^-1*s^-1]
+reactions:
+- equation: H + O2 (+M) <=> HO2 (+M)
+  colliders:
+  - name: HE
+    temperatures: [200, 300, 500, 800, 1500]
+    Z_LJ: [3.18, 3.56, 4.14, 4.80, 5.92]
+    Z_id-id: [5.73, 6.13, 6.68, 7.22, 8.02]
+    note: Fernandes-2008
+  - name: AR
+    temperatures: [200, 300, 500, 800, 1500]
+    Z_LJ: [2.59, 5.81, 3.17, 3.60, 4.33]
+    Z_id-id: [4.88, 5.22, 5.68, 6.15, 6.83]
+    note: Fernandes-2008
+  - name: N2
+    temperatures: [200, 300, 500, 800, 1500]
+    Z_LJ: [2.94, 3.19, 3.60, 4.08, 4.91]
+    Z_id-id: [5.49, 5.87, 6.39, 6.92, 7.68]
+    note: Fernandes-2008
+  - name: H2O
+    temperatures: [200, 300, 500, 800, 1500]
+    Z_LJ: [3.41, 3.55, 3.85, 4.25, 4.97]
+    Z_d-d: [5.76, 6.54, 7.71, 8.96, 11.0]
+    note: Fernandes-2008
+
+- equation: H2O2 (+M) <=> OH + OH (+M)
+  colliders:
+  - name: HE
+    temperatures: [750, 1500]
+    Z_LJ: [5.89, 7.55]
+    Z_cap: [8.47, 9.56]
+    note: Matsugi-2021
+  - name: AR
+    temperatures: [750, 1500]
+    Z_LJ: [4.12, 5.16]
+    Z_cap: [7.11, 8.01]
+    note: Matsugi-2021
+  - name: H2
+    temperatures: [750, 1500]
+    Z_LJ: [10.1, 12.77]
+    Z_cap: [16.93, 19.08]
+    note: Matsugi-2021
+  - name: N2
+    temperatures: [750, 1500]
+    Z_LJ: [4.69, 5.89]
+    Z_cap: [7.97, 8.92]
+    note: Matsugi-2021
+  - name: CO
+    temperatures: [750, 1500]
+    Z_LJ: [4.69, 5.87]
+    Z_cap: [8.11, 9.09]
+    note: Matsugi-2021
+  - name: CH4
+    temperatures: [750, 1500]
+    Z_LJ: [5.94, 7.38]
+    Z_cap: [10.57, 11.87]
+    note: Matsugi-2021
+  - name: H2O
+    temperatures: [750, 1500]
+    Z_LJ: [5.95, 6.46]
+    Z_cap: [9.98, 11.2]
+    note: Matsugi-2021
+
+- equation: CH3NC (+M)
+  colliders:
+  - name: CH3NC
+    temperatures: [554]
+    Z_LJ: [8.53]
+    Z_cap: [11.32]
+    note: Matsugi-2019
+  - name: HE
+    temperatures: [554]
+    Z_LJ: [6.05]
+    Z_cap: [9.15]
+    note: Matsugi-2019
+  - name: AR
+    temperatures: [554]
+    Z_LJ: [4.19]
+    Z_cap: [7.13]
+    note: Matsugi-2019
+  - name: H2
+    temperatures: [554]
+    Z_LJ: [10.39]
+    Z_cap: [17.98]
+    note: Matsugi-2019
+  - name: N2
+    temperatures: [554]
+    Z_LJ: [4.81]
+    Z_cap: [8.22]
+    note: Matsugi-2019
+  - name: CO
+    temperatures: [554]
+    Z_LJ: [4.65]
+    Z_cap: [8.22]
+    note: Matsugi-2019
+  - name: CO2
+    temperatures: [554]
+    Z_LJ: [4.96]
+    Z_cap: [8.84]
+    note: Matsugi-2019
+  - name: HCN
+    temperatures: [554]
+    Z_LJ: [8.22]
+    Z_cap: [11.32]
+    note: Matsugi-2019
+  - name: NH3
+    temperatures: [554]
+    Z_LJ: [6.98]
+    Z_cap: [10.7]
+    note: Matsugi-2019
+  - name: CH4
+    temperatures: [554]
+    Z_LJ: [6.2]
+    Z_cap: [11.01]
+    note: Matsugi-2019
+  - name: CH3F
+    temperatures: [554]
+    Z_LJ: [6.36]
+    Z_cap: [9.77]
+    note: Matsugi-2019
+  - name: CF4
+    temperatures: [554]
+    Z_LJ: [4.81]
+    Z_cap: [8.53]
+    note: Matsugi-2019
+  - name: C2H2
+    temperatures: [554]
+    Z_LJ: [6.05]
+    Z_cap: [10.7]
+    note: Matsugi-2019
+  - name: C2H4
+    temperatures: [554]
+    Z_LJ: [6.05]
+    Z_cap: [10.7]
+    note: Matsugi-2019
+  - name: C2H6
+    temperatures: [554]
+    Z_LJ: [6.2]
+    Z_cap: [11.01]
+    note: Matsugi-2019
+
+# n-alkanes
+- equation: CH4 (+M) <=> CH3 + H (+M)
+  colliders:
+  - name: HE
+    temperatures: [300, 2000]
+    Z_LJ: [4.05, 7.72]
+    Z_cap: [6.21, 8.52]
+    note: |-
+    Z_cap: Jasper-2013
+    Z_LJ: Jasper-2020
+  - name: NE
+    temperatures: [300, 2000]
+    Z_LJ: [2.8, 5.12]
+    Z_cap: [4.78, 6.56]
+    note: Jasper-2013
+  - name: AR
+    temperatures: [300, 2000]
+    Z_LJ: [3.49, 5.97]
+    Z_cap: [6.46, 8.81]
+    note: |-
+    Z_cap: Jasper-2013
+    Z_LJ: Jasper-2020
+  - name: KR
+    temperatures: [300, 2000]
+    Z_LJ: [3.62, 6.06]
+    Z_cap: [6.77, 9.29]
+    note: Jasper-2013
+  - name: H2
+    temperatures: [300, 2000]
+    Z_LJ: [6.54, 11.54]
+    Z_cap: [12.2, 16.7]
+    note: |-
+    Z_cap: Jasper-2013
+    Z_LJ: Jasper-2020
+  - name: N2
+    temperatures: [300, 2000]
+    Z_LJ: [3.87, 6.69]
+    Z_cap: [6.92, 9.49]
+    note: |-
+    Z_cap: Jasper-2013
+    Z_LJ: Jasper-2020
+  - name: O2
+    temperatures: [300, 2000]
+    Z_LJ: [3.69, 6.37]
+    Z_cap: [6.92, 9.49]
+    note: Jasper-2013
+  - name: CH4
+    temperatures: [300, 2000]
+    Z_LJ: [4.68, 8.07]
+    Z_cap: [8.61, 11.8]
+    note: Jasper-2013
+  - name: H2O
+    temperatures: [300, 2000]
+    Z_LJ: [4.07, 6.75]
+    Z_cap: [7.66, 10.5]
+    note: Jasper-2013
+
+- equation: C2H6 (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.63, 4.94, 6.09]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.9, 7.24, 9.22]
+    note: Jasper-2020
+  - name: N2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.07, 5.62, 6.97]
+    note: Jasper-2020
+  - name: H2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [8.15, 11.39, 14.19]
+    note: Jasper-2020
+
+- equation: C3H8 (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.82, 5.15, 6.33]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [5.58, 8.19, 10.4]
+    note: Jasper-2020
+  - name: N2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.34, 5.94, 7.34]
+    note: Jasper-2020
+  - name: H2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [9.42, 13.06, 16.22]
+    note: Jasper-2020
+
+- equation: C4H10 (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.07, 5.45, 6.68]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.25, 9.13, 11.59]
+    note: Jasper-2020
+  - name: N2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.63, 6.31, 7.78]
+    note: Jasper-2020
+  - name: H2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [10.62, 14.66, 18.18]
+    note: Jasper-2020
+
+- equation: C5H12 (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.34, 5.77, 7.05]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.86, 9.97, 12.62]
+    note: Jasper-2020
+  - name: N2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.96, 6.72, 8.27]
+    note: Jasper-2020
+  - name: H2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [11.7, 16.05, 19.85]
+    note: Jasper-2020
+
+- equation: C6H14 (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.66, 6.17, 7.53]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [7.56, 10.97, 13.88]
+    note: Jasper-2020
+  - name: N2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [5.36, 7.24, 8.9]
+    note: Jasper-2020
+  - name: H2
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [13.05, 17.86, 22.07]
+    note: Jasper-2020
+
+
+#n-alcohols
+- equation: C2H5OH (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.18, 4.23, 5.18]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.14, 6.12, 7.8]
+    note: Jasper-2020
+
+- equation: C3H7OH (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.51, 4.63, 5.64]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.84, 7.13, 9.08]
+    note: Jasper-2020
+
+- equation: C4H9OH (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.73, 4.88, 5.94]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [5.36, 7.87, 10.01]
+    note: Jasper-2020
+
+- equation: C5H11OH (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.12, 5.38, 6.53]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.11, 8.98, 11.41]
+    note: Jasper-2020
+
+- equation: C6H13OH (+M)
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.39, 5.7, 6.92]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.64, 9.75, 12.38]
+    note: Jasper-2020
+
+# n-peroxides
+- equation: C3H10O2 (+M) # Trimethyl hydroperoxide
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.21, 4.3, 5.28]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.66, 6.88, 8.76]
+    note: Jasper-2020
+
+- equation: C4H10O2 (+M) # Tert-butyl hydroperoxide
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.56, 4.72, 5.77]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [5.42, 7.92, 10.04]
+    note: Jasper-2020
+
+- equation: C5H12O2 (+M) # Pentyl hydroperoxide
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [3.87, 5.09, 6.2]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.07, 8.81, 11.15]
+    note: Jasper-2020
+
+- equation: C6H14O2 (+M) # Hexyl hydroperoxide
+  colliders:
+  - name: AR
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [4.27, 5.58, 6.78]
+    note: Jasper-2020
+  - name: HE
+    temperatures: [300, 1000, 2000]
+    Z_LJ: [6.87, 9.93, 12.53]
+    note: Jasper-2020
