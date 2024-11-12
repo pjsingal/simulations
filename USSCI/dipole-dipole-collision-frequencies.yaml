@@ -253,44 +253,6 @@ reactions:
     Z_LJ: [10.62, 14.66, 18.18]
     note: Jasper-2020
 
-- equation: C5H12 (+M)
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.34, 5.77, 7.05]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [6.86, 9.97, 12.62]
-    note: Jasper-2020
-  - name: N2
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.96, 6.72, 8.27]
-    note: Jasper-2020
-  - name: H2
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [11.7, 16.05, 19.85]
-    note: Jasper-2020
-
-- equation: C6H14 (+M)
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.66, 6.17, 7.53]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [7.56, 10.97, 13.88]
-    note: Jasper-2020
-  - name: N2
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [5.36, 7.24, 8.9]
-    note: Jasper-2020
-  - name: H2
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [13.05, 17.86, 22.07]
-    note: Jasper-2020
-
 
 #n-alcohols
 - equation: C2H5OH (+M)
@@ -326,28 +288,6 @@ reactions:
     Z_LJ: [5.36, 7.87, 10.01]
     note: Jasper-2020
 
-- equation: C5H11OH (+M)
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.12, 5.38, 6.53]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [6.11, 8.98, 11.41]
-    note: Jasper-2020
-
-- equation: C6H13OH (+M)
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.39, 5.7, 6.92]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [6.64, 9.75, 12.38]
-    note: Jasper-2020
-
 # n-peroxides
 - equation: C3H10O2 (+M) # Trimethyl hydroperoxide
   colliders:
@@ -369,26 +309,4 @@ reactions:
   - name: HE
     temperatures: [300, 1000, 2000]
     Z_LJ: [5.42, 7.92, 10.04]
-    note: Jasper-2020
-
-- equation: C5H12O2 (+M) # Pentyl hydroperoxide
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [3.87, 5.09, 6.2]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [6.07, 8.81, 11.15]
-    note: Jasper-2020
-
-- equation: C6H14O2 (+M) # Hexyl hydroperoxide
-  colliders:
-  - name: AR
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [4.27, 5.58, 6.78]
-    note: Jasper-2020
-  - name: HE
-    temperatures: [300, 1000, 2000]
-    Z_LJ: [6.87, 9.93, 12.53]
     note: Jasper-2020
