@@ -7446,10 +7446,21 @@ reactions:
     C2H6: 3.0}
 - equation: O2 + H <=> O + OH
   rate-constant: {A: 104000000000000.0, b: 0.0, Ea: 15286.0}
-- equation: H + OH + M <=> H2O + M
-  type: three-body
-  rate-constant: {A: 3.5e+22, b: -2.0, Ea: 0.0}
-  efficiencies: {H2: 0.73, H2O: 3.65, CH4: 2.0, C2H6: 3.0, AR: 0.38}
+- equation: H + OH (+M) <=> H2O (+M)
+  type: linear-Burke
+  reference-collider: N2
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 4.53e+21, b: -1.81, Ea: 498.7}
+    high-P-rate-constant: {A: 25100000000000.0, b: 0.234, Ea: -114.2}
+    Troe: {A: 0.73, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  - name: AR
+    efficiency: {A: 0.02206208, b: 0.47403597, Ea: -113.14813345}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 0.10452866, b: 0.55078681, Ea: -232.67496903}
+    note: Jasper-2022
 - equation: O + H2O <=> OH + OH
   rate-constant: {A: 67000000.0, b: 1.704, Ea: 14986.8}
 - equation: O + H + M <=> OH + M
