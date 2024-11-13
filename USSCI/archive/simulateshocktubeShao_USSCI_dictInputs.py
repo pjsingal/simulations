@@ -54,21 +54,26 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 models = {
+    'AramcoMech3.0': {
+        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml',
+                },
     'Alzueta-2023': {
         # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
         'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
-    'Mei-2019': {
-        # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
-                },
-    'Zhang-2017': {
-        # 'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
-                },
+    # 'Mei-2019': {
+    #     # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
+    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
+    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
+    #             },
+    # 'Zhang-2017': {
+    #     # 'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
+    #             },
     # 'Otomo-2018': {
     #     'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
     #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
@@ -87,14 +92,22 @@ models = {
 }
 
 conditions = {
-    'Zhang-2017': {
+    'AramcoMech3.0': {
         # 'X': {'N2O':0.02, 'AR': 0.98},
-        'X': {'H2':0.0005, 'CO': 0.03, 'N2O': 0.01, 'AR': 0.9595},
-        'T': [11],
+        'X': {'C4H6':0.01, 'O2': 0.11, 'AR': 0.88},
+        'T': [1232],
         # 'P': [3,12],
-        'P': [1.4,10],
-        'phi_list': [0.063],
+        'P': [1.2],
+        'phi_list': [0.5],
                 },
+    # 'Zhang-2017': {
+    #     # 'X': {'N2O':0.02, 'AR': 0.98},
+    #     'X': {'H2':0.0005, 'CO': 0.03, 'N2O': 0.01, 'AR': 0.9595},
+    #     'T': [11],
+    #     # 'P': [3,12],
+    #     'P': [1.4,10],
+    #     'phi_list': [0.063],
+    #             },
 }
 
 
@@ -138,8 +151,8 @@ for z, n in enumerate(models):
                     plt.plot(timeHistory.t*1e6, timeHistory('H2O').X*100, color=colors[k],linestyle=lstyles[k],linewidth=lw,label=f'{m} {P}atm')
                 plt.legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')
                 plt.title(f"{n} ({T}K,{P}atm,{phi}phi)")
-                plt.set_ylabel(r'$\rm H_2O$ mole fraction [%]')
-                plt.set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+                plt.ylabel(r'$\rm H_2O$ mole fraction [%]')
+                plt.xlabel(r'Time [$\mathdefault{\mu s}$]')
                 X_str = "_".join(f"{key}{value}" for key, value in conditions[n]['X'].items())
                 path=f'USSCI/figures/{args.date}/shock-tube'
                 os.makedirs(path,exist_ok=True)

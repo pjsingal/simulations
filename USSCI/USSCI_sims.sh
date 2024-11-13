@@ -14,15 +14,15 @@ lgdfsz=7
 
 date='Nov13'
 
-python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
+# python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
 
 # python USSCI/simulateIDT_Shao_USSCI.py \
 # --figwidth 7 --figheight 6.66667 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 9 --date $date &
 
-# python USSCI/simulateshocktubeShao_USSCI.py \
-# --figwidth 7 --figheight 2.5 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 3 --date $date &
+python USSCI/simulateshocktubeAramco_USSCI.py \
+--figwidth 7 --figheight 2.5 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 3 --date $date &
 
 # python USSCI/simulateJSR_NH3_USSCI.py \
 # --figwidth 10 --figheight 5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
