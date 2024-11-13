@@ -61,6 +61,14 @@ reactions:
     Z_cap: [9.98, 11.2]
     note: Matsugi-2021
 
+###############################
+# Need to add params for these from Jasper
+- equation: H + OH (+M) <=> H2O (+M)
+- equation: NH3 (+M) <=> H + NH2 (+M)
+- equation: NH2 + NH2 (+M) <=> N2H4 (+M)
+- equation: HNO (+M) <=> H + NO (+M)
+################################
+
 - equation: CH3NC (+M)
   colliders:
   - name: CH3NC
@@ -196,7 +204,8 @@ reactions:
     Z_cap: [7.66, 10.5]
     note: Jasper-2013
 
-- equation: C2H6 (+M)
+- equation: CH3 + CH3 (+M) <=> C2H6 (+M)
+- equation: C2H5 + H (+M) <=> C2H6 (+M)
   colliders:
   - name: AR
     temperatures: [300, 1000, 2000]
@@ -215,7 +224,7 @@ reactions:
     Z_LJ: [8.15, 11.39, 14.19]
     note: Jasper-2020
 
-- equation: C3H8 (+M)
+- equation: C3H8 (+M) <=> CH3 + C2H5 (+M)
   colliders:
   - name: AR
     temperatures: [300, 1000, 2000]
@@ -234,7 +243,8 @@ reactions:
     Z_LJ: [9.42, 13.06, 16.22]
     note: Jasper-2020
 
-- equation: C4H10 (+M)
+- equation: C4H10 (+M) <=> C2H5 + C2H5 (+M)
+- equation: C4H10 (+M) <=> NC3H7 + CH3 (+M)
   colliders:
   - name: AR
     temperatures: [300, 1000, 2000]
@@ -255,7 +265,7 @@ reactions:
 
 
 #n-alcohols
-- equation: C2H5OH (+M)
+- equation: CH3OCH3 (+M) <=> CH3 + CH3O (+M) # C2H5OH (+M)
   colliders:
   - name: AR
     temperatures: [300, 1000, 2000]
@@ -310,3 +320,29 @@ reactions:
     temperatures: [300, 1000, 2000]
     Z_LJ: [5.42, 7.92, 10.04]
     note: Jasper-2020
+
+
+# # Orphans from AramcoMech 3.0
+# - equation: CO + O (+M) <=> CO2 (+M)
+# CH2 + H (+M) <=> CH3 (+M)
+# CH3 + O2 (+M) <=> CH3O2 (+M) 
+# CH3OH (+M) <=> CH3 + OH (+M)
+# CH3OH (+M) <=> CH2(S) + H2O (+M)
+# CH3OH (+M) <=> CH2OH + H (+M)
+# HCO + H (+M) <=> CH2O (+M)
+# CO + H2 (+M) <=> CH2O (+M)
+# CH2O + H (+M) <=> CH2OH (+M)
+# CH3O (+M) <=> CH2O + H (+M)
+# C2H4 + H (+M) <=> C2H5 (+M)
+# C2H3 + H (+M) <=> C2H4 (+M)
+# C2H4 (+M) <=> H2 + H2CC (+M)
+# C2H2 + H (+M) <=> C2H3 (+M)
+# C2H + H (+M) <=> C2H2 (+M)
+# C2H2 (+M) <=> H2CC (+M)
+# CH3CHO (+M) <=> CH3 + HCO (+M)
+# CH3CHO (+M) <=> CH4 + CO (+M)
+# CH3CO (+M) <=> CH3 + CO (+M)
+# CH3CO (+M) <=> CH2CO + H (+M)
+# CH2CHO (+M) <=> CH2CO + H (+M)
+# CH2CHO (+M) <=> CH3 + CO (+M)
+# #incomplete list...
