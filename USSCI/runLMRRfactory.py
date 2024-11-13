@@ -24,13 +24,13 @@ models = {
 if allPdep == 'True':
     for m in models.keys():
         LMRRfactory.makeYAML(mechInput=models[m],
-                            outputPath=f"USSCI\\factory_mechanisms\\{date}",
+                            outputPath=f"USSCI/factory_mechanisms/{date}",
                             allPdep=True)
         LMRRfactory.makeYAML(mechInput=models[m],
-                            outputPath=f"USSCI\\factory_mechanisms\\{date}",
+                            outputPath=f"USSCI/factory_mechanisms/{date}",
                             allPdep=False)
 else:
     for m in models.keys():
         LMRRfactory.makeYAML(mechInput=models[m],
-            outputPath=f"USSCI\\factory_mechanisms\\{date}",
+            outputPath=f"USSCI/factory_mechanisms/{date}",
             allPdep=False)

@@ -12,7 +12,7 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Nov4'
+date='Nov13'
 
 python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
 
