@@ -10456,10 +10456,16 @@ reactions:
     CH4: 2.0, C2H6: 3.0}
 - equation: O2 + H <=> O + OH  # Reaction 5
   rate-constant: {A: 1.04e+14, b: 0.0, Ea: 1.5286e+04}
-- equation: H + OH + M <=> H2O + M  # Reaction 6
-  type: three-body
-  rate-constant: {A: 3.5e+22, b: -2.0, Ea: 0.0}
-  efficiencies: {H2: 0.73, H2O: 3.65, CH4: 2.0, C2H6: 3.0, AR: 0.38}
+# - equation: H + OH + M <=> H2O + M  # Reaction 6
+#   type: three-body
+#   rate-constant: {A: 3.5e+22, b: -2.0, Ea: 0.0}
+#   efficiencies: {H2: 0.73, H2O: 3.65, CH4: 2.0, C2H6: 3.0, AR: 0.38}
+- equation: H + OH (+M) <=> H2O (+M)
+  type: falloff
+  low-P-rate-constant: {A: 4.5300E+21, b: -1.8100E+00, Ea: 4.9870E+02}
+  high-P-rate-constant: {A: 2.5100E+13, b: 0.234, Ea: -114.2}
+  Troe: {A: 7.3000E-01, T3: 1.0000E-30, T1: 1.0000E+30, T2: 1.0000E+30}
+  note: Subbed in from Stagni-2020 by PSingal
 - equation: O + H2O <=> OH + OH  # Reaction 7
   rate-constant: {A: 6.7e+07, b: 1.704, Ea: 1.49868e+04}
 - equation: O + H + M <=> OH + M  # Reaction 8
