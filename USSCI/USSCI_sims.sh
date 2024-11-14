@@ -44,6 +44,10 @@ date='Nov14'
 # --figwidth 6.5 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 12 --date $date
 
-python USSCI/simulateST_USSCI.py \
---figwidth 12 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 12 --date $date
+# python USSCI/simulateST_USSCI.py \
+# --figwidth 12 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 12 --date $date
+
+python USSCI/simulateIDT_USSCI.py \
+--figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 3 --date $date
