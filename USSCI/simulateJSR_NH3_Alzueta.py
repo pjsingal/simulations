@@ -30,6 +30,8 @@ parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
 parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
 parser.add_argument('--date', type=str, help="sim date = ")
+parser.add_argument('--reactorT', type=float, help="sim date = ")
+parser.add_argument('--reactorP', type=float, help="sim date = ")
 
 args = parser.parse_args()
 lw=args.lw
@@ -39,6 +41,37 @@ dpi=args.dpi
 lgdw=args.lgdw
 lgdfsz=args.lgdfsz
 gridsz=args.gridsz
+
+models = {
+    'Alzueta-2023': {
+        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+                },
+    # 'Stagni-2020': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #             },
+}
+
+T_list = np.linspace(800,1050,gridsz)
+diluent = 0.94
+NH3percent_list = [0, 0.20, 0.40]
+lines =['-','--','-','-','-']
+reactorTemperature = args.reactorT #1000  # Kelvin
+reactorPressure = args.reactorP*ct.one_atm #1.2*ct.one_atm  # in atm. This equals 1.06 bars
+residenceTime = 0.5 # tau [s]
+reactorVolume = 0.000113 #30.5*(1e-2)**3  # m3
+heatTransferCoefficient = 79.5 # W/m2/K
+reactorRadius = np.cbrt(reactorVolume*3/4/np.pi) # [m3]
+reactorSurfaceArea = 4*np.pi*np.square(reactorRadius) # m3
+pressureValveCoefficient = 2e-5
+maxPressureRiseAllowed = 0.01
+maxSimulationTime = 50  # seconds
+tempDependence = []
+
+
 from matplotlib.legend_handler import HandlerTuple
 mpl.rc('font',family='Times New Roman')
 mpl.rcParams['mathtext.fontset'] = 'stix'
@@ -55,88 +88,27 @@ mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
 mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
-plt.subplots_adjust(hspace=0.18)
 # colors = ["xkcd:grey"]*3 + ["xkcd:teal"]*3 + ["orange"]*3 + ['r']*3 + ['b']*3 + ['xkcd:purple']*3
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 # lstyles = ["solid"]*3 + ["dashed"]*3 + ["dotted"]*3
 
-models = {
-    'Alzueta-2023': {
-        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-                },
-    # 'Stagni-2020': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-    #             },
-}
-
-name = 'JSR_NH3_multimech'
-save_plots = True
-# figsize=(3.5,7)
-f, ax = plt.subplots(1, 3, figsize=(args.figwidth,args.figheight)) 
-plt.suptitle('JSR_NH3', fontsize=12)
+f, ax = plt.subplots(1, 3, figsize=(args.figwidth,args.figheight))
+plt.subplots_adjust(wspace=0.3)
 
 for z, n in enumerate(models):
     mech = n
 
     import matplotlib.ticker as ticker
-    plt.subplots_adjust(hspace=0.3)
-    # plt.subplots_adjust(wspace=0.3)
-    ax[0].yaxis.set_major_locator(ticker.MultipleLocator(5))
-    ax[1].yaxis.set_major_locator(ticker.MultipleLocator(0.5))
-    ax[2].yaxis.set_major_locator(ticker.MultipleLocator(1))
-    ax[0].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[1].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[2].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[0].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[0].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[1].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
-    ax[2].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
 
-    T_list = np.concatenate((np.linspace(800,829.9,10),np.linspace(830,844,100),np.linspace(848.8,870.9,100),np.linspace(871,1050,50)))
-    # T_list = np.linspace(800,1050,50)
-    P = 1.2
-    tau = 0.5
-
-    # NH3_con_list = [0.02, 0.05, 0.075, 0.10]
-    # H2O_con_list = [0, 0.05, 0.10, 0.15, 0.20]
-    diluent = 0.94
-    NH3percent_list = [0, 0.05, 0.10, 0.15, 0.20]
-    # NH3percent_list = [0.10]
-    lines =['-','--','-','-','-']
-
-
-    ##############################################################################################################################
-
-    reactorTemperature = 1000  # Kelvin
-    reactorPressure = P*ct.one_atm  # in atm. This equals 1.06 bars
-    residenceTime = tau  # s
-    reactorVolume = 0.000113 #30.5*(1e-2)**3  # m3
-    heatTransferCoefficient = 79.5 # W/m2/K
-    reactorRadius = np.cbrt(reactorVolume*3/4/np.pi) # [m3]
-    reactorSurfaceArea = 4*np.pi*np.square(reactorRadius) # m3
-    pressureValveCoefficient = 2e-5
-    maxPressureRiseAllowed = 0.01
-    maxSimulationTime = 50  # seconds
-    tempDependence = []
-
-    ##############################################################################################################################
-
-
-    path="PCI-ESSCI/graph_reading/2 JSR NH3/"
+    # path="PCI-ESSCI/graph_reading/2 JSR NH3/"
     
-    T_10_data = pd.read_csv(path+'JSR_T_NH3_10_data.csv') 
-    O2_10_data = pd.read_csv(path+'JSR_O2_NH3_10_data.csv') 
-    H2_10_data = pd.read_csv(path+'JSR_H2_NH3_10_data.csv') 
-    ax[0].plot(T_10_data.iloc[:, 0],T_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
-    ax[1].plot(O2_10_data.iloc[:, 0],O2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
-    ax[2].plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
+    # T_10_data = pd.read_csv(path+'JSR_T_NH3_10_data.csv') 
+    # O2_10_data = pd.read_csv(path+'JSR_O2_NH3_10_data.csv') 
+    # H2_10_data = pd.read_csv(path+'JSR_H2_NH3_10_data.csv') 
+    # ax[0].plot(T_10_data.iloc[:, 0],T_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
+    # ax[1].plot(O2_10_data.iloc[:, 0],O2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
+    # ax[2].plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
 
     for k,m in enumerate(models[n]):
         for i, NH3percent in enumerate(NH3percent_list):
@@ -217,35 +189,42 @@ for z, n in enumerate(models):
                 toc = time.time()
                 concentrations = stirredReactor.thermo.X
                 tempDependence[i].loc[T] = state
-            ax[0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
-            ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
-            ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$') 
-    ax[0].set_title(f"{n} ({reactorPressure}atm, {reactorTemperature}K)")
-# ax[0].set_xlabel('Temperature [K]')
-ax[0].tick_params(axis='both',direction='in')
-# ax[0].legend(frameon=False)#,loc='lower right')
+            if k==0:
+                ax[0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+                ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+                ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$') 
+            if k==1:
+                ax[0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+                ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+                ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {NH3percent}'+r'% NH$_3$') 
 
-# ax[1].set_xlabel('Temperature [K]')
+                
+    ax[1].set_title(f"{n} ({float(reactorPressure/ct.one_atm)}atm, {int(reactorTemperature)}K)")
+    # ax[0].set_xlabel('Temperature [K]')
+    ax[0].tick_params(axis='both',direction='in')
+    # ax[0].legend(frameon=False)#,loc='lower right')
 
-ax[1].tick_params(axis='both',direction='in')
-# ax[1].legend(frameon=False)#,loc='upper right')
+    # ax[1].set_xlabel('Temperature [K]')
 
-ax[2].tick_params(axis='both',direction='in')
+    ax[1].tick_params(axis='both',direction='in')
+    # ax[1].legend(frameon=False)#,loc='upper right')
 
-ax[2].legend(fontsize=lgdfsz,frameon=False,loc='lower left', handlelength=lgdw)
+    ax[2].tick_params(axis='both',direction='in')
 
-ax[0].set_xlim([780,1070])
-ax[0].set_ylim([-1,24.99])
-ax[1].set_xlim([780,1070])
-ax[1].set_ylim([1.45,3.2])
-ax[2].set_xlim([780,1070])
-ax[2].set_ylim([0.0001,3.3])
+    ax[2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
 
-ax[0].set_ylabel(r'$\Delta$ T [K]')
-ax[1].set_ylabel('O$_2$ mole fraction [%]')
-ax[2].set_ylabel('H$_2$ mole fraction [%]')
-ax[1].set_xlabel('Temperature [K]')
+    # ax[0].set_xlim([600,1400])
+    # ax[0].set_ylim([-1,45])
+    # ax[1].set_xlim([600,1400])
+    # ax[1].set_ylim([0.0001,5])
+    # ax[2].set_xlim([600,1400])
+    # ax[2].set_ylim([0.0001,5])
 
-path=f'USSCI/figures/'+args.date+'/JSR'
-os.makedirs(path,exist_ok=True)
-plt.savefig(path+f'/{name}_NH3.png', dpi=500, bbox_inches='tight')
+    ax[0].set_ylabel(r'$\Delta$ T [K]')
+    ax[1].set_ylabel('O$_2$ mole fraction [%]')
+    ax[2].set_ylabel('H$_2$ mole fraction [%]')
+    ax[1].set_xlabel('Temperature [K]')
+
+    path=f'USSCI/figures/'+args.date+'/JSR'
+    os.makedirs(path,exist_ok=True)
+    plt.savefig(path+f'/{n}_{args.reactorP}atm_{args.reactorT}K_NH3.png', dpi=500, bbox_inches='tight')
