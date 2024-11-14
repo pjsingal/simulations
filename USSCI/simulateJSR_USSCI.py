@@ -77,7 +77,7 @@ models = {
                 },
 }
 
-T_list = np.linspace(600,1050,gridsz)
+T_list = [np.linspace(800,1100,gridsz),np.linspace(750,850,gridsz),np.linspace(750,825,gridsz),np.linspace(750,800,gridsz)]
 dilution = 0.94
 codiluentList = ['NH3', 'H2O']
 codiluentPercentList = [0, 0.20, 0.40]
@@ -154,7 +154,7 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 h = 79.5 # heat transfer coefficient W/m2/K
                 K = 2e-5 # pressureValveCoefficient
                 t_max = 50  # max simulation time [s]
-                tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max)
+                tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list[z],P,X,t_max)
                 ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
                 ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
                 ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')
