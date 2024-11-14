@@ -78,8 +78,8 @@ codiluentList = ['NH3', 'H2O']
 codiluentPercentList = [0, 0.20, 0.40]
 H2Percent = 0.3
 O2Percent = 0.3
-Tin_list = [1000, 1400, 1800] # Kelvin
-P_list = [1.2, 10, 25, 50] # [atm]
+Tin_list = [600, 750, 900, 1050] # Kelvin
+P_list = [1.2, 25, 50, 100] # [atm]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 ########################################################################################
@@ -150,15 +150,10 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 K = 2e-5 # pressureValveCoefficient
                 t_max = 50  # max simulation time [s]
                 tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max)
-                if k==0:
-                    ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                    ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
-                    ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$') 
-                if k==1:
-                    ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                    ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                    ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}') 
-        ax[z,1].set_title(f"{model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2/{dilution*codiluentPercent}% {codiluent}/{dilution*(1-codiluentPercent)}% Ar)")
+                ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
+                ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')
+        ax[z,1].set_title(f"JSR {model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2, {dilution}% {codiluent}/Ar)")
         ax[z,0].tick_params(axis='both',direction='in')
         ax[z,1].tick_params(axis='both',direction='in')
         ax[z,2].tick_params(axis='both',direction='in')
