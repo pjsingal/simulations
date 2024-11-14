@@ -93,8 +93,8 @@ ax.legend(fontsize=lgdfsz,handlelength=lgdw, frameon=False, loc='lower right')
 ax.set_ylabel(r'$\rm H_2O$ mole fraction [%]')
 ax.set_xlabel(r'Time [$\mathdefault{\mu s}$]')
 ax.tick_params(axis='both', direction="in")#, labelsize=7)
-ax.set_xlim([0.0001,299.999])
-ax.set_ylim([2.25,2.75])
+ax.set_xlim([550,700])
+ax.set_ylim([0.0001,2.999])
 
 # import matplotlib.ticker as ticker
 # ax.xaxis.set_major_locator(ticker.MultipleLocator(50))
