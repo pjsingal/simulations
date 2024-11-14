@@ -55,7 +55,7 @@ mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
 mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
-plt.subplots_adjust(wspace=0.18)
+plt.subplots_adjust(hspace=0.18)
 # colors = ["xkcd:grey"]*3 + ["xkcd:teal"]*3 + ["orange"]*3 + ['r']*3 + ['b']*3 + ['xkcd:purple']*3
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
@@ -67,56 +67,37 @@ models = {
         'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
-    'Mei-2019': {
-        # 'base': r'chemical_mechanisms/Mei-2019/mei-2019.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allP.yaml',
-                },
-    'Zhang-2017': {
-        # 'base': r"chemical_mechanisms/Zhang-2017/zhang-2017.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/zhang-2017_LMRR_allP.yaml",
-                },
-    'Otomo-2018': {
-        # 'base': r"chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
-                },
-    'Stagni-2020': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-                },
-    # 'Han-2021': {
-    #     'base': r"chemical_mechanisms/Han-2021/han-2021.yaml",
-    #     # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR.yaml",
-    #     # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/han-2021_LMRR_allP.yaml",
+    # 'Stagni-2020': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
     #             },
 }
 
 name = 'JSR_NH3_multimech'
 save_plots = True
 # figsize=(3.5,7)
-f, ax = plt.subplots(3, len(models.keys()), figsize=(args.figwidth,args.figheight)) 
+f, ax = plt.subplots(1, 3, figsize=(args.figwidth,args.figheight)) 
 plt.suptitle('JSR_NH3', fontsize=12)
+
 for z, n in enumerate(models):
     mech = n
 
     import matplotlib.ticker as ticker
     plt.subplots_adjust(hspace=0.3)
     # plt.subplots_adjust(wspace=0.3)
-    ax[0,z].yaxis.set_major_locator(ticker.MultipleLocator(5))
-    ax[1,z].yaxis.set_major_locator(ticker.MultipleLocator(0.5))
-    ax[2,z].yaxis.set_major_locator(ticker.MultipleLocator(1))
-    ax[0,z].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[1,z].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[2,z].xaxis.set_major_locator(ticker.MultipleLocator(100))
-    ax[0,z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[0,z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[1,z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[1,z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
-    ax[2,z].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
-    ax[2,z].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
+    ax[0].yaxis.set_major_locator(ticker.MultipleLocator(5))
+    ax[1].yaxis.set_major_locator(ticker.MultipleLocator(0.5))
+    ax[2].yaxis.set_major_locator(ticker.MultipleLocator(1))
+    ax[0].xaxis.set_major_locator(ticker.MultipleLocator(100))
+    ax[1].xaxis.set_major_locator(ticker.MultipleLocator(100))
+    ax[2].xaxis.set_major_locator(ticker.MultipleLocator(100))
+    ax[0].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+    ax[0].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+    ax[1].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+    ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
+    ax[2].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+    ax[2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.1f}"))
 
     T_list = np.concatenate((np.linspace(800,829.9,10),np.linspace(830,844,100),np.linspace(848.8,870.9,100),np.linspace(871,1050,50)))
     # T_list = np.linspace(800,1050,50)
@@ -126,8 +107,8 @@ for z, n in enumerate(models):
     # NH3_con_list = [0.02, 0.05, 0.075, 0.10]
     # H2O_con_list = [0, 0.05, 0.10, 0.15, 0.20]
     diluent = 0.94
-    # NH3percent_list = [0, 0.05, 0.10, 0.15, 0.20]
-    NH3percent_list = [0.10]
+    NH3percent_list = [0, 0.05, 0.10, 0.15, 0.20]
+    # NH3percent_list = [0.10]
     lines =['-','--','-','-','-']
 
 
@@ -153,20 +134,17 @@ for z, n in enumerate(models):
     T_10_data = pd.read_csv(path+'JSR_T_NH3_10_data.csv') 
     O2_10_data = pd.read_csv(path+'JSR_O2_NH3_10_data.csv') 
     H2_10_data = pd.read_csv(path+'JSR_H2_NH3_10_data.csv') 
-    ax[0,z].plot(T_10_data.iloc[:, 0],T_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
-    ax[1,z].plot(O2_10_data.iloc[:, 0],O2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
-    ax[2,z].plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
-
+    ax[0].plot(T_10_data.iloc[:, 0],T_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
+    ax[1].plot(O2_10_data.iloc[:, 0],O2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label="Sabia et al.")
+    ax[2].plot(H2_10_data.iloc[:, 0],H2_10_data.iloc[:, 1],marker='o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw, label="Sabia et al.")
 
     for k,m in enumerate(models[n]):
         for i, NH3percent in enumerate(NH3percent_list):
             NH3 = diluent * NH3percent
             Ar = diluent * (1-NH3percent)
             # reactants = {'H2': 0.03, "H":1e-6, 'O2': 0.03, 'AR': Ar, 'NH3':NH3}    
-            reactants = {'H2': 0.03, 'O2': 0.03, 'AR': Ar, 'NH3':NH3}    
-            
+            reactants = {'H2': 0.03, 'O2': 0.03, 'AR': Ar, 'NH3':NH3} 
             # for j, T in enumerate(T_list):
-            
             concentrations = reactants
             gas = ct.Solution(list(models[n].values())[k])
             gas.TPX = reactorTemperature, reactorPressure, concentrations 
@@ -239,37 +217,35 @@ for z, n in enumerate(models):
                 toc = time.time()
                 concentrations = stirredReactor.thermo.X
                 tempDependence[i].loc[T] = state
-            ax[0,z].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[k], linestyle=lstyles[k], linewidth=lw, label=m)   
-            ax[1,z].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=m)   
-            ax[2,z].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=m) 
-    ax[0,z].set_title(f"{mech}")
-    # ax[0,z].set_xlabel('Temperature [K]')
-    ax[0,z].tick_params(axis='both',direction='in')
-    # ax[0,z].legend(frameon=False)#,loc='lower right')
+            ax[0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+            ax[1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$')   
+            ax[2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=f'{m} {NH3percent}'+r'% NH$_3$') 
+    ax[0].set_title(f"{n} ({reactorPressure}atm, {reactorTemperature}K)")
+# ax[0].set_xlabel('Temperature [K]')
+ax[0].tick_params(axis='both',direction='in')
+# ax[0].legend(frameon=False)#,loc='lower right')
 
-    # ax[1,z].set_xlabel('Temperature [K]')
+# ax[1].set_xlabel('Temperature [K]')
 
-    ax[1,z].tick_params(axis='both',direction='in')
-    # ax[1,z].legend(frameon=False)#,loc='upper right')
+ax[1].tick_params(axis='both',direction='in')
+# ax[1].legend(frameon=False)#,loc='upper right')
 
-    ax[2,z].tick_params(axis='both',direction='in')
+ax[2].tick_params(axis='both',direction='in')
 
-    ax[2,z].legend(fontsize=lgdfsz,frameon=False,loc='lower left', handlelength=lgdw)
+ax[2].legend(fontsize=lgdfsz,frameon=False,loc='lower left', handlelength=lgdw)
 
-    ax[0,z].set_xlim([780,1070])
-    ax[0,z].set_ylim([-1,24.99])
-    ax[1,z].set_xlim([780,1070])
-    ax[1,z].set_ylim([1.45,3.2])
-    ax[2,z].set_xlim([780,1070])
-    ax[2,z].set_ylim([0.0001,3.3])
+ax[0].set_xlim([780,1070])
+ax[0].set_ylim([-1,24.99])
+ax[1].set_xlim([780,1070])
+ax[1].set_ylim([1.45,3.2])
+ax[2].set_xlim([780,1070])
+ax[2].set_ylim([0.0001,3.3])
 
-ax[0,0].set_ylabel(r'$\Delta$ T [K]')
-ax[1,0].set_ylabel('O$_2$ mole fraction [%]')
-ax[2,0].set_ylabel('H$_2$ mole fraction [%]')
-ax[2,2].set_xlabel('Temperature [K]')
+ax[0].set_ylabel(r'$\Delta$ T [K]')
+ax[1].set_ylabel('O$_2$ mole fraction [%]')
+ax[2].set_ylabel('H$_2$ mole fraction [%]')
+ax[1].set_xlabel('Temperature [K]')
 
-path=f'USSCI/figures/'+args.date
+path=f'USSCI/figures/'+args.date+'/JSR'
 os.makedirs(path,exist_ok=True)
-
-if save_plots == True:
-    plt.savefig(path+f'/{name}.png', dpi=500, bbox_inches='tight')
+plt.savefig(path+f'/{name}_NH3.png', dpi=500, bbox_inches='tight')
