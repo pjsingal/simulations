@@ -55,21 +55,21 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    'Stagni-2020': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-                },
-    'Alzueta-2023': {
-        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-                },
-    'Glarborg-2018': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
-                },
+    # 'Stagni-2020': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #             },
+    # 'Alzueta-2023': {
+    #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+    #             },
+    # 'Glarborg-2018': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
+    #             },
     'Aramco-3.0': {
         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
@@ -146,11 +146,10 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 if option=='P': # TP_list contains pressures and TP is a temperature
                     newT_list = T_list[z]
                     T, P = val1, val2
-                    gas.TPX = T, P*ct.one_atm, X
                 if option=='T': # TP_list contains temperatures and TP is a pressure
                     newT_list = T_list[0]
                     T, P = val2, val1
-                    gas.TPX = T, P*ct.one_atm, X
+                gas.TPX = T, P*ct.one_atm, X
                 tau = 0.5 # residence time [s]
                 V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]
                 h = 79.5 # heat transfer coefficient W/m2/K
@@ -158,8 +157,8 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 t_max = 50  # max simulation time [s]
                 tempDependence = getTemperatureDependence(gas,V,tau,K,h,newT_list,P,X,t_max)
                 ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
-                ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')
+                ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')
         ax[z,1].set_title(f"JSR {model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2, {dilution}% {codiluent}/Ar)",fontsize=args.fsz)
         ax[z,0].tick_params(axis='both',direction='in')
         ax[z,1].tick_params(axis='both',direction='in')
