@@ -72,13 +72,13 @@ models = {
                 },
 }
 
-T_list = np.linspace(800,1050,gridsz)
+T_list = np.linspace(600,1500,gridsz)
 dilution = 0.94
 codiluentList = ['NH3', 'H2O']
 codiluentPercentList = [0, 0.20, 0.40]
 H2Percent = 0.3
 O2Percent = 0.3
-Tin_list = [600, 750, 900, 1050] # Kelvin
+Tin_list = [600, 850, 1100, 1350] # Kelvin
 P_list = [1.2, 25, 50, 100] # [atm]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
