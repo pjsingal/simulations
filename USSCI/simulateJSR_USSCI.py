@@ -144,9 +144,11 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 X = {'H2': H2Percent, 'O2': O2Percent, 'AR': dilution*(1-codiluentPercent), codiluent: dilution*codiluentPercent}
                 gas = ct.Solution(list(models[model].values())[k])
                 if option=='P': # TP_list contains pressures and TP is a temperature
+                    newT_list = T_list[z]
                     T, P = val1, val2
                     gas.TPX = T, P*ct.one_atm, X
                 if option=='T': # TP_list contains temperatures and TP is a pressure
+                    newT_list = T_list[0]
                     T, P = val2, val1
                     gas.TPX = T, P*ct.one_atm, X
                 tau = 0.5 # residence time [s]
@@ -154,7 +156,7 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 h = 79.5 # heat transfer coefficient W/m2/K
                 K = 2e-5 # pressureValveCoefficient
                 t_max = 50  # max simulation time [s]
-                tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list[z],P,X,t_max)
+                tempDependence = getTemperatureDependence(gas,V,tau,K,h,newT_list,P,X,t_max)
                 ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
                 ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
                 ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')
