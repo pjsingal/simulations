@@ -12,7 +12,6 @@ import time
 import matplotlib.pyplot as plt
 plt.rcParams.update(plt.rcParamsDefault)
 import matplotlib as mpl
-
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -30,7 +29,6 @@ parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
 parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
 parser.add_argument('--date', type=str, help="sim date = ")
-
 args = parser.parse_args()
 lw=args.lw
 mw=args.mw
@@ -39,7 +37,23 @@ dpi=args.dpi
 lgdw=args.lgdw
 lgdfsz=args.lgdfsz
 gridsz=args.gridsz
+from matplotlib.legend_handler import HandlerTuple
+mpl.rc('font',family='Times New Roman')
+mpl.rcParams['mathtext.fontset'] = 'stix'
+mpl.rcParams['font.size'] = args.fsz
+mpl.rcParams['xtick.labelsize'] = args.fszxtick
+mpl.rcParams['ytick.labelsize'] = args.fszytick
+plt.rcParams['axes.labelsize'] = args.fszaxlab
+mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
+mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
+mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
+mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
+mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
+mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
+mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
+mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
+########################################################################################
 models = {
     'Alzueta-2023': {
         # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
@@ -65,129 +79,92 @@ codiluentPercentList = [0, 0.20, 0.40]
 H2Percent = 0.3
 O2Percent = 0.3
 lines =['-','--','-','-','-']
-reactorTemperature = 1000 # Kelvin
-reactorPressureList = np.multiply([1.2, 10, 25, 50],ct.one_atm)
-residenceTime = 0.5 # tau [s]
-reactorVolume = 0.000113 #30.5*(1e-2)**3  # m3
-heatTransferCoefficient = 79.5 # W/m2/K
-reactorRadius = np.cbrt(reactorVolume*3/4/np.pi) # [m3]
-reactorSurfaceArea = 4*np.pi*np.square(reactorRadius) # m3
-pressureValveCoefficient = 2e-5
-maxPressureRiseAllowed = 0.01
-maxSimulationTime = 50  # seconds
-tempDependence = []
-
-
-from matplotlib.legend_handler import HandlerTuple
-mpl.rc('font',family='Times New Roman')
-mpl.rcParams['mathtext.fontset'] = 'stix'
-mpl.rcParams['font.size'] = args.fsz
-mpl.rcParams['xtick.labelsize'] = args.fszxtick
-mpl.rcParams['ytick.labelsize'] = args.fszytick
-plt.rcParams['axes.labelsize'] = args.fszaxlab
-mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
-mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
-mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
-mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
-mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
-mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
-mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
-mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
-
-# colors = ["xkcd:grey"]*3 + ["xkcd:teal"]*3 + ["orange"]*3 + ['r']*3 + ['b']*3 + ['xkcd:purple']*3
+T = 1000 # Kelvin
+P_list = [1.2, 10, 25, 50] # [atm]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
-# lstyles = ["solid"]*3 + ["dashed"]*3 + ["dotted"]*3
+########################################################################################
 
-f, ax = plt.subplots(len(reactorPressureList), 3, figsize=(args.figwidth,args.figheight))
-plt.subplots_adjust(wspace=0.3)
-plt.subplots_adjust(hspace=0.3)
+def getStirredReactor(gas,V,tau,K,h):
+    reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
+    reactorSurfaceArea =4*np.pi*reactorRadius**2 # [m3]
+    fuelAirMixtureTank = ct.Reservoir(gas)
+    exhaust = ct.Reservoir(gas)
+    env = ct.Reservoir(gas)
+    reactor = ct.IdealGasReactor(gas, energy='on', volume=V)
+    ct.MassFlowController(upstream=fuelAirMixtureTank,
+                          downstream=reactor,
+                          mdot=reactor.mass/tau)
+    ct.Valve(upstream=reactor,
+             downstream=exhaust,
+             K=K)
+    ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
+    return reactor
+
+def getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max):
+    stirredReactor = getStirredReactor(gas,V,tau,K,h)
+    columnNames = (
+        ['pressure'] +
+        [stirredReactor.component_name(item)
+         for item in range(stirredReactor.n_vars)]
+    )
+    tempDependence = pd.DataFrame(columns=columnNames)
+    for T in T_list:
+        gas.TPX = T, P*ct.one_atm, X
+        stirredReactor = getStirredReactor(gas,V,tau,K,h)
+        reactorNetwork = ct.ReactorNet([stirredReactor])
+        t = 0
+        while t < t_max:
+            t = reactorNetwork.step()
+        state = np.hstack([stirredReactor.thermo.P,
+                        stirredReactor.mass,
+                        stirredReactor.volume,
+                        stirredReactor.T,
+                        stirredReactor.thermo.X])
+        tempDependence.loc[T] = state
+    return tempDependence
 
 for n, model in enumerate(models):
+    print(f'Model: {model}')
     for codiluent in codiluentList:
-        for z, reactorPressure in enumerate(reactorPressureList):
+        print(f'Codiluent: {codiluent}')
+        f, ax = plt.subplots(len(P_list), 3, figsize=(args.figwidth,args.figheight))
+        plt.subplots_adjust(wspace=0.3)
+        plt.subplots_adjust(hspace=0.3)
+        for z, P in enumerate(P_list):
+            print(f'Pressure: {P}atm')
             for k,m in enumerate(models[model]):
+                print(f'Submodel: {m}')
                 for i, codiluentPercent in enumerate(codiluentPercentList):
+                    print(f'{codiluent}: {codiluentPercent}%')
                     X = {'H2': H2Percent, 'O2': O2Percent, 'AR': dilution*(1-codiluentPercent), codiluent: dilution*codiluentPercent}
                     gas = ct.Solution(list(models[model].values())[k])
-                    gas.TPX = reactorTemperature, reactorPressure, X
-                    fuelAirMixtureTank = ct.Reservoir(gas)
-                    exhaust = ct.Reservoir(gas)
-                    env = ct.Reservoir(gas)
-                    stirredReactor = ct.IdealGasReactor(gas, energy='on', volume=reactorVolume)
-                    massFlowController = ct.MassFlowController(upstream=fuelAirMixtureTank,
-                                                                downstream=stirredReactor,
-                                                                mdot=stirredReactor.mass/residenceTime)
-                    pressureRegulator = ct.Valve(upstream=stirredReactor,
-                                                downstream=exhaust,
-                                                K=pressureValveCoefficient)
-                    w2 = ct.Wall(stirredReactor, env, A=reactorSurfaceArea, U=heatTransferCoefficient)
-                    reactorNetwork = ct.ReactorNet([stirredReactor])
-                    columnNames = [stirredReactor.component_name(item) for item in range(stirredReactor.n_vars)]
-                    columnNames = ['pressure'] + columnNames
-                    timeHistory = pd.DataFrame(columns=columnNames)
-                    tic = time.time()
-                    t = 0
-                    counter = 1
-                    while t < maxSimulationTime:
-                        t = reactorNetwork.step()
-                        if(counter%10 == 0):
-                            state = np.hstack([stirredReactor.thermo.P, stirredReactor.mass, 
-                                        stirredReactor.volume, stirredReactor.T, stirredReactor.thermo.X])
-                            timeHistory.loc[t] = state
-                        counter += 1
-                    toc = time.time()
-                    pressureDifferential = timeHistory['pressure'].max()-timeHistory['pressure'].min()
-                    if(abs(pressureDifferential/reactorPressure) > maxPressureRiseAllowed):
-                        print("WARNING: Non-trivial pressure rise in the reactor. Adjust K value in valve")
-                    tempDependence.append(pd.DataFrame(columns=timeHistory.columns))
-                    tempDependence[i].index.name = 'Temperature'
-                    for j,T in enumerate(T_list): #temperature in T:
-                        reactorTemperature = T #temperature  # Kelvin
-                        gas.TPX = reactorTemperature, reactorPressure, X
-                        timeHistory = pd.DataFrame(columns=columnNames)
-                        fuelAirMixtureTank = ct.Reservoir(gas)
-                        exhaust = ct.Reservoir(gas)
-                        env = ct.Reservoir(gas)
-                        # gas.TPX = reactorTemperature, reactorPressure, concentrations
-                        stirredReactor = ct.IdealGasReactor(gas, energy='on', volume=reactorVolume)
-                        massFlowController = ct.MassFlowController(upstream=fuelAirMixtureTank,
-                                                                downstream=stirredReactor,
-                                                                mdot=stirredReactor.mass/residenceTime)
-                        pressureRegulator = ct.Valve(upstream=stirredReactor, 
-                                                    downstream=exhaust, 
-                                                    K=pressureValveCoefficient)
-                        w2 = ct.Wall(stirredReactor, env, A=reactorSurfaceArea, U=heatTransferCoefficient)
-                        reactorNetwork = ct.ReactorNet([stirredReactor])
-                        tic = time.time()
-                        t = 0
-                        while t < maxSimulationTime:
-                            t = reactorNetwork.step()
-                        state = np.hstack([stirredReactor.thermo.P, 
-                                        stirredReactor.mass, 
-                                        stirredReactor.volume, 
-                                        stirredReactor.T, 
-                                        stirredReactor.thermo.X])
-                        toc = time.time()
-                        concentrations = stirredReactor.thermo.X
-                        tempDependence[i].loc[T] = state
+                    gas.TPX = T, P*ct.one_atm, X
+                    tau = 0.5 # residence time [s]
+                    V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]
+                    h = 79.5 # heat transfer coefficient W/m2/K
+                    K = 2e-5 # pressureValveCoefficient
+                    t_max = 50  # max simulation time [s]
+                    tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max)
                     if k==0:
-                        ax[z,0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
-                        ax[z,2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$') 
+                        ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                        ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
+                        ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$') 
                     if k==1:
-                        ax[z,0].plot(tempDependence[i].index, np.subtract(tempDependence[i]['temperature'],tempDependence[i].index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,1].plot(tempDependence[i].index, tempDependence[i]['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,2].plot(tempDependence[i].index, tempDependence[i]['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}') 
-            ax[z,1].set_title(f"{model} ({float(reactorPressure/ct.one_atm)}atm, {int(reactorTemperature)}K, {H2Percent}% H2/{O2Percent}% O2/{dilution*codiluentPercent}% {codiluent}/{dilution*(1-codiluentPercent)}% Ar)")
+                        ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                        ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                        ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}') 
+            ax[z,1].set_title(f"{model} ({P}atm, {int(T)}K, {H2Percent}% H2/{O2Percent}% O2/{dilution*codiluentPercent}% {codiluent}/{dilution*(1-codiluentPercent)}% Ar)")
             ax[z,0].tick_params(axis='both',direction='in')
             ax[z,1].tick_params(axis='both',direction='in')
             ax[z,2].tick_params(axis='both',direction='in')
             ax[z,0].set_ylabel(r'$\Delta$ T [K]')
             ax[z,1].set_ylabel('O$_2$ mole fraction [%]')
             ax[z,2].set_ylabel('H$_2$ mole fraction [%]')
-        ax[len(reactorPressureList)-1,2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
-        ax[len(reactorPressureList)-1,1].set_xlabel('Temperature [K]')
+            print('Subplot added to figure!')
+        ax[len(P_list)-1,2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
+        ax[len(P_list)-1,1].set_xlabel('Temperature [K]')
         path=f'USSCI/figures/'+args.date+'/JSR'
         os.makedirs(path,exist_ok=True)
         plt.savefig(path+f'/{model}__{codiluent}_Pdependence.png', dpi=500, bbox_inches='tight')
+        print(f'Simulation has been stored at {path}/{model}__{codiluent}_Pdependence.png\n')
