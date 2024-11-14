@@ -70,6 +70,11 @@ models = {
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
                 },
+    'Aramco-3.0': {
+        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+                },
 }
 
 T_list = np.linspace(600,1050,gridsz)
@@ -153,7 +158,7 @@ def generatePlot(model,codiluent,TP_list,val1,option):
                 ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
                 ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
                 ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')
-        ax[z,1].set_title(f"JSR {model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2, {dilution}% {codiluent}/Ar)")
+        ax[z,1].set_title(f"JSR {model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2, {dilution}% {codiluent}/Ar)",fontsize=args.fsz)
         ax[z,0].tick_params(axis='both',direction='in')
         ax[z,1].tick_params(axis='both',direction='in')
         ax[z,2].tick_params(axis='both',direction='in')
@@ -174,7 +179,11 @@ def generatePlot(model,codiluent,TP_list,val1,option):
 
 for model in models:
     print(f'Model: {model}')
-    for codiluent in codiluentList:
+    if model == 'Aramco-3.0':
+        newCodiluentList=['H2O']
+    else:
+        newCodiluentList=codiluentList
+    for codiluent in newCodiluentList:
         print(f'Codiluent: {codiluent}')
-        generatePlot(model,codiluent,P_list,Tin_list[0],'P')
-        generatePlot(model,codiluent,Tin_list,P_list[0],'T')
+        generatePlot(model,codiluent,P_list,1000,'P')
+        generatePlot(model,codiluent,Tin_list,1.2,'T')

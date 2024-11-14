@@ -42,4 +42,4 @@ date='Nov13'
 #### JET-STIRRED REACTOR WITH NH3 DILUENT
 python USSCI/simulateJSR_USSCI.py \
 --figwidth 6.5 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 12 --date $date
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 30 --date $date
