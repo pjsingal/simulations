@@ -55,15 +55,15 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    'Alzueta-2023': {
-        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-                },
     'Stagni-2020': {
         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+                },
+    'Alzueta-2023': {
+        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
                 },
     'Glarborg-2018': {
         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
@@ -78,8 +78,7 @@ codiluentList = ['NH3', 'H2O']
 codiluentPercentList = [0, 0.20, 0.40]
 H2Percent = 0.3
 O2Percent = 0.3
-lines =['-','--','-','-','-']
-T = 1000 # Kelvin
+Tin_list = [1000, 1400, 1800] # Kelvin
 P_list = [1.2, 10, 25, 50] # [atm]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
@@ -124,47 +123,63 @@ def getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max):
         tempDependence.loc[T] = state
     return tempDependence
 
-for n, model in enumerate(models):
+def generatePlot(model,codiluent,TP_list,val1,option):
+    f, ax = plt.subplots(len(P_list), 3, figsize=(args.figwidth,args.figheight))
+    plt.subplots_adjust(wspace=0.3)
+    plt.subplots_adjust(hspace=0.3)
+    for z, val2 in enumerate(TP_list):
+        if option=='P':
+            print(f'Pressure: {val2}atm')
+        if option=='T':
+            print(f'Temperature: {val2}K')
+        for k,m in enumerate(models[model]):
+            print(f'Submodel: {m}')
+            for i, codiluentPercent in enumerate(codiluentPercentList):
+                print(f'{codiluent}: {codiluentPercent}%')
+                X = {'H2': H2Percent, 'O2': O2Percent, 'AR': dilution*(1-codiluentPercent), codiluent: dilution*codiluentPercent}
+                gas = ct.Solution(list(models[model].values())[k])
+                if option=='P': # TP_list contains pressures and TP is a temperature
+                    T, P = val1, val2
+                    gas.TPX = T, P*ct.one_atm, X
+                if option=='T': # TP_list contains temperatures and TP is a pressure
+                    T, P = val2, val1
+                    gas.TPX = T, P*ct.one_atm, X
+                tau = 0.5 # residence time [s]
+                V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]
+                h = 79.5 # heat transfer coefficient W/m2/K
+                K = 2e-5 # pressureValveCoefficient
+                t_max = 50  # max simulation time [s]
+                tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max)
+                if k==0:
+                    ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                    ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
+                    ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$') 
+                if k==1:
+                    ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                    ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
+                    ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}') 
+        ax[z,1].set_title(f"{model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2/{dilution*codiluentPercent}% {codiluent}/{dilution*(1-codiluentPercent)}% Ar)")
+        ax[z,0].tick_params(axis='both',direction='in')
+        ax[z,1].tick_params(axis='both',direction='in')
+        ax[z,2].tick_params(axis='both',direction='in')
+        ax[z,0].set_ylabel(r'$\Delta$ T [K]')
+        ax[z,1].set_ylabel('O$_2$ mole fraction [%]')
+        ax[z,2].set_ylabel('H$_2$ mole fraction [%]')
+        print('Subplot added to figure!')
+    ax[len(P_list)-1,2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
+    ax[len(P_list)-1,1].set_xlabel('Temperature [K]')
+    path=f'USSCI/figures/'+args.date+'/JSR'
+    os.makedirs(path,exist_ok=True)
+    if option=='P':
+        plt.savefig(path+f'/{model}_{codiluent}_P_dependence.png', dpi=500, bbox_inches='tight')
+        print(f'Simulation has been stored at {path}/{model}_{codiluent}_P_dependence.png\n')
+    if option=='T':
+        plt.savefig(path+f'/{model}_{codiluent}_Tin_dependence.png', dpi=500, bbox_inches='tight')
+        print(f'Simulation has been stored at {path}/{model}_{codiluent}_Tin_dependence.png\n')
+
+for model in models:
     print(f'Model: {model}')
     for codiluent in codiluentList:
         print(f'Codiluent: {codiluent}')
-        f, ax = plt.subplots(len(P_list), 3, figsize=(args.figwidth,args.figheight))
-        plt.subplots_adjust(wspace=0.3)
-        plt.subplots_adjust(hspace=0.3)
-        for z, P in enumerate(P_list):
-            print(f'Pressure: {P}atm')
-            for k,m in enumerate(models[model]):
-                print(f'Submodel: {m}')
-                for i, codiluentPercent in enumerate(codiluentPercentList):
-                    print(f'{codiluent}: {codiluentPercent}%')
-                    X = {'H2': H2Percent, 'O2': O2Percent, 'AR': dilution*(1-codiluentPercent), codiluent: dilution*codiluentPercent}
-                    gas = ct.Solution(list(models[model].values())[k])
-                    gas.TPX = T, P*ct.one_atm, X
-                    tau = 0.5 # residence time [s]
-                    V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]
-                    h = 79.5 # heat transfer coefficient W/m2/K
-                    K = 2e-5 # pressureValveCoefficient
-                    t_max = 50  # max simulation time [s]
-                    tempDependence = getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max)
-                    if k==0:
-                        ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$')   
-                        ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}'+r'% NH$_3$') 
-                    if k==1:
-                        ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index), color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                        ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], marker='x',fillstyle='none',linestyle='none',markersize=msz,markeredgewidth=mw, label=f'{m} {codiluentPercent}% {codiluent}') 
-            ax[z,1].set_title(f"{model} ({P}atm, {int(T)}K, {H2Percent}% H2/{O2Percent}% O2/{dilution*codiluentPercent}% {codiluent}/{dilution*(1-codiluentPercent)}% Ar)")
-            ax[z,0].tick_params(axis='both',direction='in')
-            ax[z,1].tick_params(axis='both',direction='in')
-            ax[z,2].tick_params(axis='both',direction='in')
-            ax[z,0].set_ylabel(r'$\Delta$ T [K]')
-            ax[z,1].set_ylabel('O$_2$ mole fraction [%]')
-            ax[z,2].set_ylabel('H$_2$ mole fraction [%]')
-            print('Subplot added to figure!')
-        ax[len(P_list)-1,2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
-        ax[len(P_list)-1,1].set_xlabel('Temperature [K]')
-        path=f'USSCI/figures/'+args.date+'/JSR'
-        os.makedirs(path,exist_ok=True)
-        plt.savefig(path+f'/{model}__{codiluent}_Pdependence.png', dpi=500, bbox_inches='tight')
-        print(f'Simulation has been stored at {path}/{model}__{codiluent}_Pdependence.png\n')
+        generatePlot(model,codiluent,P_list,Tin_list[0],'P')
+        generatePlot(model,codiluent,Tin_list,P_list[0],'T')
