@@ -24,10 +24,6 @@ date='Nov13'
 # --figwidth 7 --figheight 2.5 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 3 --date $date &
 
-python USSCI/simulateJSR_NH3_Alzueta.py \
---figwidth 6.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 50 --date $date
-
 # python USSCI/simulateJSR_H2O_Alzueta.py \
 # --figwidth 6.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 50 --date $date
@@ -41,3 +37,9 @@ python USSCI/simulateJSR_NH3_Alzueta.py \
 # python USSCI/simulateresidencetimeGubbi_FromData.py \
 # --figwidth 6.5 --figheight 2.72 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz $lgdfsz --date $date --slopeVal 0.05 --curveVal 0.05 --xscale 'log' --yscale 'log'&
+
+
+#### JET-STIRRED REACTOR WITH NH3 DILUENT
+python USSCI/simulateJSR_Pdependence.py \
+--figwidth 6.5 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 10 --date $date
