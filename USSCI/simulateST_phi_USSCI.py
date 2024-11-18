@@ -111,7 +111,7 @@ for model in models:
     f, ax = plt.subplots(len(P_list), len(fuelList), figsize=(args.figwidth, args.figheight))
     plt.subplots_adjust(wspace=0.3)
     plt.subplots_adjust(hspace=0.3)
-    plt.suptitle(f'IDT: {model}', fontsize=10, y=0.91)
+    plt.suptitle(f'ST: {model}', fontsize=10, y=0.91)
     for z, P in enumerate(P_list):
         print(f'Pressure: {P}atm')
         for w, fuel in enumerate(fuelList):
