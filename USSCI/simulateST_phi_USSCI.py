@@ -1,11 +1,12 @@
+from __future__ import division
+from __future__ import print_function
 import os
 import cantera as ct
 import matplotlib.pyplot as plt
-import pandas as pd 
-import time
-import numpy as np
-import matplotlib as mpl
+import pandas as pd
 import argparse
+import matplotlib as mpl
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
@@ -20,13 +21,16 @@ parser.add_argument('--msz', type=float, help="msz = ", default=2.5)
 parser.add_argument('--lgdw', type=float, help="lgdw = ", default=0.6)
 parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
-parser.add_argument('--dpi', type=int, help="dpi = ", default=500)
-parser.add_argument('--date', type=str)
+parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
+parser.add_argument('--date', type=str, help="sim date = ")
+
+import matplotlib.ticker as ticker
 
 args = parser.parse_args()
 lw=args.lw
 mw=args.mw
 msz=args.msz
+dpi=args.dpi
 lgdw=args.lgdw
 lgdfsz=args.lgdfsz
 gridsz=args.gridsz
@@ -50,71 +54,57 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 ########################################################################################
 models = {
-    'Stagni-2020': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-                },
-    'Alzueta-2023': {
-        # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-        'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-        'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-                },
-    'Glarborg-2018': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
-                },
-    # 'Aramco-3.0': {
+    # 'Stagni-2020': {
     #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
     #             },
+    # 'Alzueta-2023': {
+    #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+    #             },
+    # 'Glarborg-2018': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
+    #             },
+    'Aramco-3.0': {
+        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+                },
 }
 
-fuelList=['H2','NH3']
-# fuelList=['C2H2','CH3OH','C4H10']
+# model = 'aramco30'
+refSpecies='H2O'
+fuelList=['C2H2','CH3OH','C4H10']
+# fuelList=['H2','NH3']
 oxidizer={'O2':1, 'N2': 3.76}
-T_list = np.linspace(830,1667,gridsz)
-phi_list = [1,4]
-P_list = [1,10]
+phi_list = [0.7,1,1.6,4]
+P_list = [1,10,50]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
+# Tin_list = [1001,1300, 1600, 1900] # Kelvin
+T=1196
 
+# gas.TPX = 1196, 2.127*101325, X
+########################################################################################
 
-def getIDT(gas,T_list,P):
-    def ignitionDelay(states, species):
-        # i_ign = np.gradient(states(species).Y.T[0]).argmax()
-        # i_ign = np.gradient(states(species).Y.T[0]).argmax()
-        i_ign = states(species).Y.T[0].argmax()
-        # print(np.gradient(states(species).Y.T[0]).argmax())
-        return states.t[i_ign]    
-    estimatedIgnitionDelayTimes = np.ones(len(T_list))
-    # estimatedIgnitionDelayTimes[:6] = 6 * [0.1]
-    # estimatedIgnitionDelayTimes[-4:-2] = 10
-    # estimatedIgnitionDelayTimes[-2:] = 100
-    estimatedIgnitionDelayTimes[:]=0.1
-    ignitionDelays_RG = np.zeros(len(T_list))
-    for j, T in enumerate(T_list):
-        gas.TP = T, P*ct.one_atm
-        # r = ct.Reactor(contents=gas)
-        r = ct.IdealGasReactor(contents=gas, name="Batch Reactor")
-        # r = ct.Reactor(contents=gas, name="Batch Reactor")
-        reactorNetwork = ct.ReactorNet([r])
-        timeHistory = ct.SolutionArray(gas, extra=['t'])
-        t0 = time.time()
-        t = 0
-        # counter = 1
-        while t < estimatedIgnitionDelayTimes[j]:
-            t = reactorNetwork.step()
-            # if counter % 1 == 0:
+def getTimeHistory(gas):
+    r = ct.Reactor(contents=gas,energy="on")
+    reactorNetwork = ct.ReactorNet([r]) # this will be the only reactor in the network
+    timeHistory = ct.SolutionArray(gas, extra=['t'])
+    estIgnitDelay = 1
+    t = 0
+    counter = 1
+    while t < estIgnitDelay:
+        t = reactorNetwork.step()
+        if counter % 10 == 0:
             timeHistory.append(r.thermo.state, t=t)
-            # counter += 1
-        # print(timeHistory('o').Y)
-        tau = ignitionDelay(timeHistory, 'oh')
-        t1 = time.time()
-        ignitionDelays_RG[j] = tau
-    return ignitionDelays_RG
+        counter += 1
+    return timeHistory
+
 
 for model in models:
     print(f'Model: {model}')
@@ -132,14 +122,17 @@ for model in models:
                 for i, phi in enumerate(phi_list):
                     print(r'$\phi$: '+f'{phi}')
                     gas.set_equivalence_ratio(phi,fuel,oxidizer)
-                    ignitionDelays = getIDT(gas,T_list,P)
-                    ax[z,w].loglog(T_list, ignitionDelays*1e6, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
-            ax[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
+                    gas.TP = T, P*ct.one_atm
+                    timeHistory = getTimeHistory(gas)
+                    ax[z,w].loglog(timeHistory.t*1e6, timeHistory(refSpecies).X*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
+            ax[z,w].set_title(f"{fuel}/air ({T}K, {P}atm)",fontsize=8)
             ax[z,w].tick_params(axis='both',direction='in')
-            ax[len(P_list)-1,w].set_xlabel('Temperature [K]')
-        ax[z,0].set_ylabel(r'Ignition delay [$\mathdefault{\mu s}$]')
-    ax[len(P_list)-1,len(fuelList)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)  
-    path=f'USSCI/figures/'+args.date+'/IDT'
+            
+            # ax[z,w].set_xlim([0.0001,899.999])
+            ax[len(P_list)-1,w].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+        ax[z,0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
+    ax[len(P_list)-1,len(fuelList)-1].legend(fontsize=6,frameon=False,loc='best',handlelength=lgdw)  
+    path=f'USSCI/figures/'+args.date+'/shock-tube'
     os.makedirs(path,exist_ok=True)
     plt.savefig(path+f'/{model}.png', dpi=500, bbox_inches='tight')
     print(f'Simulation has been stored at {path}/{model}.png\n')
