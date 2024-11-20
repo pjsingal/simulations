@@ -145,7 +145,7 @@ for model in models:
         gas = ct.Solution(list(models[model].values())[k])
         for i, phi in enumerate(phi_list):
             print(r'$\phi$: '+f'{phi}')
-            gas.set_equivalence_ratio(phi,fuel,oxidizer)
+            gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
             gas.TP = reactorTemperature, P*ct.one_atm
             tau = 3e-3 # from Bartok / Glarborg Fig. 7
             V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]

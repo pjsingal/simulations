@@ -20,7 +20,6 @@ parser.add_argument('--mw', type=float, help="mw = ", default=0.5)
 parser.add_argument('--msz', type=float, help="msz = ", default=2.5)
 parser.add_argument('--lgdw', type=float, help="lgdw = ", default=0.6)
 parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
-parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
 parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
 parser.add_argument('--date', type=str, help="sim date = ")
 
@@ -33,7 +32,6 @@ msz=args.msz
 dpi=args.dpi
 lgdw=args.lgdw
 lgdfsz=args.lgdfsz
-gridsz=args.gridsz
 
 mpl.rc('font',family='Times New Roman')
 mpl.rcParams['mathtext.fontset'] = 'stix'
@@ -54,84 +52,115 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 ########################################################################################
 models = {
-    # 'Stagni-2020': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
-    #             },
-    # 'Alzueta-2023': {
-    #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-    #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
-    #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
-    #             },
-    # 'Glarborg-2018': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
-    #             },
-    'Aramco-3.0': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
-                },
+    'Stagni-2020': {
+        'submodels': {
+            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+                    },
+        'fuels': ['H2','NH3'],
+        'oxidizer':'O2:1.0, N2:3.76',
+        'phi_list':[0.5, 2],
+        'P_list':[20,40],
+        'refSpecies': 'H2O',
+        'estIgnitDelay':12100e-6,
+        'xlim': [[60,160], [11000,12000],[60,160], [5250,5550]]
+    },
+    'Alzueta-2023': {
+        'submodels': {
+            # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+            'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+            'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+                    },
+        'fuels': ['H2','NH3'],
+        'oxidizer':'O2:1.0, N2:3.76',
+        'phi_list':[0.5, 2],
+        'P_list':[20,40],
+        'refSpecies': 'H2O',
+        'estIgnitDelay':23200e-6,
+        'xlim': [[60,160], [12500,23000],[60,160], [5000,9500]]
+    },
+    'Glarborg-2018': {
+        'submodels': {
+            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
+                    },
+        'fuels': ['H2','NH3'],
+        'oxidizer':'O2:1.0, N2:3.76',
+        'phi_list':[0.5, 2],
+        'P_list':[20,40],
+        'refSpecies': 'H2O',
+        'estIgnitDelay':9100e-6,
+        'xlim': [[60,200], [6000,9000],[60,200], [3400,4800]]
+    },
+    # 'Aramco-3.0': {
+    #     'submodels': {
+    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+    #                 },
+    #     'fuels': ['C2H2','CH3OH','C4H10'],
+    #     'oxidizer':'O2:1.0, N2:3.76',
+    #     'phi_list':[0.5, 2],
+    #     'P_list':[20,40],
+    #     'refSpecies': 'H2O',
+    #     'estIgnitDelay':410e-6,
+    #     'xlim': [[-10,200], [-10,125],[100,380], [0,300], [0,75], [0,220]],
+    # }
 }
 
-# model = 'aramco30'
-refSpecies='H2O'
-fuelList=['C2H2','CH3OH','C4H10']
-# fuelList=['H2','NH3']
-oxidizer={'O2':1, 'N2': 3.76}
-phi_list = [0.7,1,1.6,4]
-P_list = [1,10,50]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
-# Tin_list = [1001,1300, 1600, 1900] # Kelvin
 T=1196
 
-# gas.TPX = 1196, 2.127*101325, X
 ########################################################################################
 
-def getTimeHistory(gas):
+def getTimeHistory(gas,oxidizer,est):
+    gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
+    gas.TP = T, P*ct.one_atm
     r = ct.Reactor(contents=gas,energy="on")
     reactorNetwork = ct.ReactorNet([r]) # this will be the only reactor in the network
-    timeHistory = ct.SolutionArray(gas, extra=['t'])
-    estIgnitDelay = 1
+    estIgnitDelay = est
     t = 0
     counter = 1
+    timeHistoryStates=[]
     while t < estIgnitDelay:
         t = reactorNetwork.step()
-        if counter % 10 == 0:
-            timeHistory.append(r.thermo.state, t=t)
+        if not counter % 1:
+            timeHistoryStates.append((r.thermo.state, t))
         counter += 1
+    timeHistory = ct.SolutionArray(gas, extra=['t'])
+    for state, time in timeHistoryStates:
+        timeHistory.append(state, t=time)
     return timeHistory
 
 
 for model in models:
     print(f'Model: {model}')
-    f, ax = plt.subplots(len(P_list), len(fuelList), figsize=(args.figwidth, args.figheight))
+    f, ax = plt.subplots(len(models[model]['P_list']), len(models[model]['fuels']), figsize=(args.figwidth, args.figheight))
     plt.subplots_adjust(wspace=0.3)
     plt.subplots_adjust(hspace=0.3)
-    plt.suptitle(f'ST: {model}', fontsize=10, y=0.91)
-    for z, P in enumerate(P_list):
+    plt.suptitle(f'ST: {model}', fontsize=10)
+    counter=0
+    for z, P in enumerate(models[model]['P_list']):
         print(f'Pressure: {P}atm')
-        for w, fuel in enumerate(fuelList):
+        for w, fuel in enumerate(models[model]['fuels']):
             print(f'Fuel: {fuel}')
-            for k,m in enumerate(models[model]):
+            for k,m in enumerate(models[model]['submodels']):
                 print(f'Submodel: {m}')
-                gas = ct.Solution(list(models[model].values())[k])
-                for i, phi in enumerate(phi_list):
+                gas = ct.Solution(list(models[model]['submodels'].values())[k])
+                for i, phi in enumerate(models[model]['phi_list']):
                     print(r'$\phi$: '+f'{phi}')
-                    gas.set_equivalence_ratio(phi,fuel,oxidizer)
-                    gas.TP = T, P*ct.one_atm
-                    timeHistory = getTimeHistory(gas)
-                    ax[z,w].loglog(timeHistory.t*1e6, timeHistory(refSpecies).X*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
+                    timeHistory = getTimeHistory(gas,models[model]['oxidizer'],models[model]['estIgnitDelay'])
+                    ax[z,w].plot(timeHistory.t*1e6, timeHistory(models[model]['refSpecies']).X*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
             ax[z,w].set_title(f"{fuel}/air ({T}K, {P}atm)",fontsize=8)
             ax[z,w].tick_params(axis='both',direction='in')
-            
-            # ax[z,w].set_xlim([0.0001,899.999])
-            ax[len(P_list)-1,w].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+            ax[z,w].set_xlim(models[model]['xlim'][z+w+counter])
+            ax[len(models[model]['P_list'])-1,w].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+        counter+=len(models[model]['fuels'])-1
         ax[z,0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
-    ax[len(P_list)-1,len(fuelList)-1].legend(fontsize=6,frameon=False,loc='best',handlelength=lgdw)  
+    ax[len(models[model]['P_list'])-1,len(models[model]['fuels'])-1].legend(fontsize=6,frameon=False,loc='best',handlelength=lgdw)  
     path=f'USSCI/figures/'+args.date+'/shock-tube'
     os.makedirs(path,exist_ok=True)
     plt.savefig(path+f'/{model}.png', dpi=500, bbox_inches='tight')
