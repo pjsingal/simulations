@@ -12,7 +12,7 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Nov14'
+date='Nov19'
 
 # python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
 
@@ -41,8 +41,16 @@ date='Nov14'
 
 #### JET-STIRRED REACTOR WITH NH3 DILUENT
 # python USSCI/simulateJSR_USSCI.py \
-# --figwidth 6.5 --figheight 12 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 12 --date $date
+# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 10 --date $date
+
+# python USSCI/simulateJSR_BartokGlarborg.py \
+# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 70 --date $date
+
+# python USSCI/simulateJSR_AlzuetaFig3.py \
+# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.8 --gridsz 30 --date $date
 
 
 # python USSCI/simulateST_USSCI.py \

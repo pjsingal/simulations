@@ -78,16 +78,15 @@ models = {
 
 # model = 'aramco30'
 refSpecies='H2O'
-X_H2O2 = 1163e-6
-X_H2O = 1330e-6
-X_O2 = 665e-6
-dilution = 1-X_H2O2-X_H2O-X_O2
-codiluentList = [r'CO$_2$']
-X_codiluentList = [0,0.25,0.5]
-Tin_list = [1001,1300, 1600, 1900] # Kelvin
-P_list = [1,10,25,50]
+fuelList=['C2H2','CH3OH','C4H10']
+# fuelList=['H2','NH3']
+oxidizer={'O2':1, 'N2': 3.76}
+phi_list = [0.7,1,1.6,4]
+P_list = [1,10,50]
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
+# Tin_list = [1001,1300, 1600, 1900] # Kelvin
+T=1196
 
 # gas.TPX = 1196, 2.127*101325, X
 ########################################################################################
@@ -96,7 +95,7 @@ def getTimeHistory(gas):
     r = ct.Reactor(contents=gas,energy="on")
     reactorNetwork = ct.ReactorNet([r]) # this will be the only reactor in the network
     timeHistory = ct.SolutionArray(gas, extra=['t'])
-    estIgnitDelay = 0.1
+    estIgnitDelay = 1
     t = 0
     counter = 1
     while t < estIgnitDelay:
@@ -106,41 +105,34 @@ def getTimeHistory(gas):
         counter += 1
     return timeHistory
 
-def generatePlot(model,codiluent,T_list,P_list):
-    newCodiluent = codiluent.replace('$','').replace('_','')
-    print(f'Codiluent: {codiluent}')
-    f, ax = plt.subplots(len(P_list), len(T_list), figsize=(args.figwidth, args.figheight))
-    plt.subplots_adjust(wspace=0.3)
-    plt.subplots_adjust(hspace=0.1)
-    plt.suptitle(f'Shock Tube: {model}', fontsize=10, y=0.91)
-    for z, P in enumerate(P_list):
-        print(f'Pressure: {P}atm')
-        for w, T in enumerate(T_list):
-            print(f'Temperature: {T}K')
-            for k,m in enumerate(models[model]):
-                print(f'Submodel: {m}')
-                for i, X_codiluent in enumerate(X_codiluentList):
-                    print(f'{newCodiluent}: {X_codiluent}%')
-                    
-                    X = {'H2O2':X_H2O2, 'H2O':X_H2O, 'O2':X_O2, 'AR':dilution*(1-X_codiluent), newCodiluent:dilution*X_codiluent}
-                    gas = ct.Solution(list(models[model].values())[k])
-                    gas.TPX = T, P*ct.one_atm, X
-                    timeHistory = getTimeHistory(gas)
-                    
-                    ax[z,w].plot(timeHistory.t*1e6, timeHistory(refSpecies).X*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {X_codiluent}% {codiluent}')
-            ax[z,w].set_title(f"{P}atm, {T}K\n{int(X_H2O2*1e6)} H$_2$O$_2$/{int(X_H2O*1e6)} H$_2$O/{int(X_O2*1e6)} O$_2$\n{round(dilution*100,2)}% {codiluent}/Ar",fontsize=5.6,y=0.01,x=0.97,loc='right')
-            ax[z,w].tick_params(axis='both',direction='in')
-            
-            ax[z,w].set_xlim([0.0001,299.999])
-            ax[len(P_list)-1,w].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
-        ax[z,0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
-    ax[len(P_list)-1,len(T_list)-1].legend(fontsize=lgdfsz,frameon=False,loc='center',bbox_to_anchor=(0.5, 0.45), handlelength=lgdw)  
-    path=f'USSCI/figures/'+args.date+'/shock-tube'
-    os.makedirs(path,exist_ok=True)
-    plt.savefig(path+f'/{model}_{newCodiluent}.png', dpi=500, bbox_inches='tight')
-    print(f'Simulation has been stored at {path}/{model}_{newCodiluent}.png\n')
 
 for model in models:
     print(f'Model: {model}')
-    for codiluent in codiluentList:
-        generatePlot(model,codiluent,Tin_list,P_list)
+    f, ax = plt.subplots(len(P_list), len(fuelList), figsize=(args.figwidth, args.figheight))
+    plt.subplots_adjust(wspace=0.3)
+    plt.subplots_adjust(hspace=0.3)
+    plt.suptitle(f'ST: {model}', fontsize=10, y=0.91)
+    for z, P in enumerate(P_list):
+        print(f'Pressure: {P}atm')
+        for w, fuel in enumerate(fuelList):
+            print(f'Fuel: {fuel}')
+            for k,m in enumerate(models[model]):
+                print(f'Submodel: {m}')
+                gas = ct.Solution(list(models[model].values())[k])
+                for i, phi in enumerate(phi_list):
+                    print(r'$\phi$: '+f'{phi}')
+                    gas.set_equivalence_ratio(phi,fuel,oxidizer)
+                    gas.TP = T, P*ct.one_atm
+                    timeHistory = getTimeHistory(gas)
+                    ax[z,w].loglog(timeHistory.t*1e6, timeHistory(refSpecies).X*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
+            ax[z,w].set_title(f"{fuel}/air ({T}K, {P}atm)",fontsize=8)
+            ax[z,w].tick_params(axis='both',direction='in')
+            
+            # ax[z,w].set_xlim([0.0001,899.999])
+            ax[len(P_list)-1,w].set_xlabel(r'Time [$\mathdefault{\mu s}$]')
+        ax[z,0].set_ylabel(r'$\rm H_2O$ mole fraction [%]')
+    ax[len(P_list)-1,len(fuelList)-1].legend(fontsize=6,frameon=False,loc='best',handlelength=lgdw)  
+    path=f'USSCI/figures/'+args.date+'/shock-tube'
+    os.makedirs(path,exist_ok=True)
+    plt.savefig(path+f'/{model}.png', dpi=500, bbox_inches='tight')
+    print(f'Simulation has been stored at {path}/{model}.png\n')
