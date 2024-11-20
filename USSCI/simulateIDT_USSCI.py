@@ -75,7 +75,7 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 models = {
     'Stagni-2020': {
         'submodels': {
-            'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
             'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
                     },
@@ -85,9 +85,6 @@ models = {
         'P_list':[20,40],
         'T_range':[[1223,1490],
                    [1188,1520]]
-        # 'T_range':[[1490,1223],
-        #            [1520,1188]]
-
     }
 }
 
@@ -156,8 +153,10 @@ for model in models:
                     # gas.set_equivalence_ratio(phi,fuel,models[model]['oxidizer'],basis='mole')
                     ignitionDelays = getIDT(phi,fuel,models[model]['oxidizer'],T_list,P)
                     ax[z,w].semilogy(T_list, ignitionDelays*1e3, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
-                    dat = pd.read_csv(f'USSCI/graph-reading/{model}/{P}bar_{phi}phi.csv',header=None)
-                    ax[z,w].semilogy(dat.iloc[:,0],dat.iloc[:,1],mkrs[i],fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=r'$\phi$='+f'{phi}', zorder=120)
+                    
+                    if fuel=='NH3':
+                        dat = pd.read_csv(f'USSCI/graph-reading/{model}/{P}bar_{phi}phi.csv',header=None)
+                        ax[z,w].semilogy(dat.iloc[:,0],dat.iloc[:,1],mkrs[i],fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=r'$\phi$='+f'{phi}', zorder=120)
             
             ax[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
             ax[z,w].tick_params(axis='both',direction='in')
