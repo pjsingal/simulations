@@ -97,10 +97,11 @@ models = {
         'fraction':'diluent:0.9795',
         'phi_list':[0.01, 0.08],
         'QOI':['NO','NH3'],
-        'tau': 1.5, # from Bartok / Glarborg Fig. 7
+        'tau': 1.5,
+        'V': 85e-6, #[m3]
         'P_list':[800/750,10],
-        'T_range': np.linspace(800,1210,gridsz),
-        'xlim':[[600,1210],[600,1210],[600,1210],[600,1210]],
+        'T_range': np.linspace(500,1210,gridsz),
+        'xlim':[[600,1300],[600,1300],[600,1300],[600,1300]],
         't_max':1,
     },
     # 'Alzueta-2023': {
@@ -156,8 +157,7 @@ colors = ["xkcd:purple","xkcd:teal","k"]*3
 
 ########################################################################################
 
-def getStirredReactor(gas,tau):
-    V = 161e-6 # from Bartok
+def getStirredReactor(gas,tau,V):
     h = 79.5 # heat transfer coefficient W/m2/K
     K = 0.01 # pressureValveCoefficient
     reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
@@ -175,13 +175,14 @@ def getStirredReactor(gas,tau):
     ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
     return reactor
 
-def getTemperatureDependence(gas,T_list,P,phi,oxidizer,fuel,t_max,tau,diluent=None,fraction=None):
+def getTemperatureDependence(gas,T_list,P,phi,oxidizer,fuel,t_max,tau,V,diluent=None,fraction=None):
     gas.TP = reactorTemperature, P*ct.one_atm
     if diluent:
         gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction,basis='mole')
     else:
         gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
-    stirredReactor = getStirredReactor(gas,tau)
+    # gas.TPX=reactorTemperature, P*ct.one_atm, {'NH3':500e-6,'O2':0.03,'He':0.9795}
+    stirredReactor = getStirredReactor(gas,tau,V)
     columnNames = (
         ['pressure'] +
         [stirredReactor.component_name(item)
@@ -190,8 +191,12 @@ def getTemperatureDependence(gas,T_list,P,phi,oxidizer,fuel,t_max,tau,diluent=No
     tempDependence = pd.DataFrame(columns=columnNames)
     for T in T_list:
         gas.TP = T, P*ct.one_atm
-        gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
-        stirredReactor = getStirredReactor(gas,tau)
+        if diluent:
+            gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction,basis='mole')
+        else:
+            gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
+        # gas.TPX=reactorTemperature, P*ct.one_atm, {'NH3':500e-6,'O2':0.03,'He':0.9795}
+        stirredReactor = getStirredReactor(gas,tau,V)
         reactorNetwork = ct.ReactorNet([stirredReactor])
         # reactorNetwork.max_time_step=1e-4  # Set a smaller maximum time step
         # reactorNetwork.rtol = 1e-6             # Reduce relative tolerance
@@ -200,14 +205,14 @@ def getTemperatureDependence(gas,T_list,P,phi,oxidizer,fuel,t_max,tau,diluent=No
         counter=1
         while t < t_max:
             t = reactorNetwork.step()
-            if not counter % 50:
-                state = np.hstack([
-                        stirredReactor.thermo.P,
-                        stirredReactor.mass,
-                        stirredReactor.volume,
-                        stirredReactor.T,
-                        stirredReactor.thermo.X,
-                        ])
+            # if not counter % 50:
+            state = np.hstack([
+                    stirredReactor.thermo.P,
+                    stirredReactor.mass,
+                    stirredReactor.volume,
+                    stirredReactor.T,
+                    stirredReactor.thermo.X,
+                    ])
             counter+=1
         tempDependence.loc[T] = state
     return tempDependence
@@ -238,9 +243,9 @@ for model in models:
                 for i, phi in enumerate(models[model]['phi_list']):
                     print(r'$\phi$: '+f'{phi}')
                     if models[model].get('diluent') is not None:
-                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'],diluent=models[model]['diluent'],fraction=models[model]['fraction'])
+                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'],models[model]['V'],diluent=models[model]['diluent'],fraction=models[model]['fraction'])
                     else:
-                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'])
+                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'],models[model]['V'],)
                     ax1[z,w].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')   
                     ax2[z,w].plot(tempDependence.index,tempDependence[QOI1]*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')   
                     ax3[z,w].plot(tempDependence.index,tempDependence[QOI2]*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
