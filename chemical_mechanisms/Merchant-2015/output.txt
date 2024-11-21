@@ -1,0 +1,6 @@
+Wrote YAML mechanism file to 'chem.yaml'.
+Mechanism contains 110 species and 629 reactions.
+Validating mechanism...
+/home/pjs/anaconda3/envs/ct-build2/lib/python3.12/site-packages/cantera/ck2yaml.py:2348: UserWarning: TroeRate::setFalloffCoeffs: Unexpected parameter value T2=0. Omitting exp(T2/T) term from falloff expression. To suppress this warning, remove value for T2 from the input file. In the unlikely case that the exp(T2/T) term should be included with T2 effectively equal to 0, set T2 to a sufficiently small value (for example, T2 < 1e-16).
+  gas = Solution(out_name)
+PASSED
