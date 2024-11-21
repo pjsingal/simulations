@@ -484,7 +484,7 @@ reactions:
     efficiency: {A: 0.22766022, b: 0.19992445, Ea: 50.01878812}
     note: Matsugi-2021
   - name: H2
-    efficiency: {A: 4.29127763, b: -0.09640595, Ea: 50.00623898}
+    efficiency: {A: 4.29127763, b: -0.09640595, Ea: 50.00623896}
     note: Matsugi-2021
 - equation: H2O2 + H <=> H2O + OH
   rate-constant: {A: 24100000000000.0, b: 0.0, Ea: 3970.0}

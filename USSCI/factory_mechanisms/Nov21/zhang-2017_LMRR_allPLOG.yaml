@@ -1228,44 +1228,40 @@ reactions:
     \AUTHOR: YJZ !\REF:Baulch et al., J.Phys. Chem. Ref. Data, 2005, 34: 757-1397
     !\COMMENT:'
 - equation: NO + O (+M) <=> NO2 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 9.44e+24, b: -2.87, Ea: 1551.0}
-    high-P-rate-constant: {A: 1300000000000000.0, b: -0.75, Ea: 0.0}
-    Troe: {A: 0.962, T3: 10.0, T1: 7962.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 9.44e+24, b: -2.87, Ea: 1551.0}
+  high-P-rate-constant: {A: 1300000000000000.0, b: -0.75, Ea: 0.0}
+  Troe: {A: 0.962, T3: 10.0, T1: 7962.0}
+  efficiencies: {AR: 0.6, NO2: 6.2, 'NO': 1.8, O2: 0.8, N2O: 4.4, CO2: 6.0, H2O: 10.0}
+  note: 'NOV+O=>NO+O     1.8E13  0.0  0.0   !\AUTHOR: YJZ !\REF:Dodd et al., JCP,
+    1999, 111(8): 3498-3507 !\COMMENT: FROM Glarborg
+
+    NO+O=>NOV+O    1.8E13  0.0  5343   !\AUTHOR: YJZ !\REF:Dodd et al., JCP, 1999,
+    111(8): 3498-3507 !\COMMENT: FROM Glarborg
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \ENDSUBMECH: \NO
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \SUBMECH: \NO2
+
+    \MECHCOMMENTS:
+
+    \MECHWARNINGS:
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Tsang and Herron, JPCRD, 1991,20(4): 609-663 !\OMMENT:'
 - equation: NO2 + H <=> NO + OH
   rate-constant: {A: 150700000000000.0, b: 0.0, Ea: 362.0}
   note: 'COMMENT: 2.0A_4.72E24 LPL has big effect on CO
@@ -1380,44 +1376,33 @@ reactions:
   rate-constant: {A: 210000000000000.0, b: 0.0, Ea: 32500.0}
   note: '\AUTHOR: YJZ !\REF: Kosarev et al., CNF, 2007, 151: 61-73 !\COMMENT: A_2.1E14'
 - equation: NO2 + O (+M) <=> NO3 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 2.5e+20, b: -1.5, Ea: 0.0}
-    high-P-rate-constant: {A: 3500000000000.0, b: 0.24, Ea: 0.0}
-    Troe: {A: 0.71, T3: 1.0e-30, T1: 1700.0, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 2.5e+20, b: -1.5, Ea: 0.0}
+  high-P-rate-constant: {A: 3500000000000.0, b: 0.24, Ea: 0.0}
+  Troe: {A: 0.71, T3: 1.0e-30, T1: 1700.0, T2: 1.0e+30}
+  note: '----------------------------------------------------------------------------------------------------------------------------------
+
+    \ENDSUBMECH: \N2O
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \SUBMECH: \NO3
+
+    \MECHCOMMENTS:
+
+    \MECHWARNINGS:
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Hahn et al., PCCP, 2000, 22(2): 5098-5104 !\COMMENT:'
 - equation: NO3 + H <=> NO2 + OH
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
   note: '___________________________________________________________________________________________________________
@@ -1573,44 +1558,33 @@ reactions:
   note: '\AUTHOR: YJZ !\REF:Dean and Bozzelli, In Combustion Chemistry of Nitrogen,
     2000: 125-341 !\COMMENT:***       DB'
 - equation: NO + OH (+M) <=> HONO (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 2.37e+23, b: -2.4, Ea: 0.0}
-    high-P-rate-constant: {A: 110000000000000.0, b: -0.3, Ea: 0.0}
-    Troe: {A: 0.81, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 2.37e+23, b: -2.4, Ea: 0.0}
+  high-P-rate-constant: {A: 110000000000000.0, b: -0.3, Ea: 0.0}
+  Troe: {A: 0.81, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: '----------------------------------------------------------------------------------------------------------------------------------
+
+    \ENDSUBMECH: \HON
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \SUBMECH: \HONO
+
+    \MECHCOMMENTS:
+
+    \MECHWARNINGS:
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Atkinson et al., ACP, 2004, 4(6): 1467-1738 !\COMMENT:'
 - equation: HONO + H <=> HNO + OH
   rate-constant: {A: 56400000000.0, b: 0.86, Ea: 5000.0}
   note: '___________________________________________________________________________________________________________
@@ -1643,44 +1617,33 @@ reactions:
   note: '\AUTHOR: YJZ !\REF:Mebel, A.M.; Lin, M.C.; Melius, C.F, J. Phys. Chem. A,
     1998, 102: 1803-1807 !\COMMENT:!98Mebel/liN/MeliuS'
 - equation: HNO2 (+M) <=> HONO (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.1e+18, b: 0.0, Ea: 31500.0}
-    high-P-rate-constant: {A: 250000000000000.0, b: 0.0, Ea: 32300.0}
-    Troe: {A: 1.149, T3: 1.0e-30, T1: 3125.0, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 3.1e+18, b: 0.0, Ea: 31500.0}
+  high-P-rate-constant: {A: 250000000000000.0, b: 0.0, Ea: 32300.0}
+  Troe: {A: 1.149, T3: 1.0e-30, T1: 3125.0, T2: 1.0e+30}
+  note: '----------------------------------------------------------------------------------------------------------------------------------
+
+    \ENDSUBMECH: \HONO
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \SUBMECH: \HNO2
+
+    \MECHCOMMENTS:
+
+    \MECHWARNINGS:
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \ISOABSTRACTION                             \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Rasmussen et al., IJCK, 2008, 40(8): 454-480 !\COMMENT:'
 - equation: HNO2 + O <=> NO2 + OH
   rate-constant: {A: 170000000.0, b: 1.5, Ea: 2000.0}
   note: '___________________________________________________________________________________________________________
@@ -1695,44 +1658,33 @@ reactions:
   rate-constant: {A: 40000000000000.0, b: 0.0, Ea: 0.0}
   note: '\AUTHOR: YJZ !\REF:Rasmussen et al., IJCK, 2008, 40(8): 454-480 !\COMMENT:'
 - equation: NO2 + OH (+M) <=> HONO2 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.13e+25, b: -3.0, Ea: 0.0}
-    high-P-rate-constant: {A: 16300000000000.0, b: 0.0, Ea: 0.0}
-    Troe: {A: 0.41, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 3.13e+25, b: -3.0, Ea: 0.0}
+  high-P-rate-constant: {A: 16300000000000.0, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.41, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: '----------------------------------------------------------------------------------------------------------------------------------
+
+    \ENDSUBMECH: \HNO2
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    \SUBMECH: \HONO2 ISOMERS
+
+    \MECHCOMMENTS:
+
+    \MECHWARNINGS:
+
+    ----------------------------------------------------------------------------------------------------------------------------------
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Troe, JPCA, 2012, 116(24): 6387-6393 !\COMMENT:'
 - equation: NO + HO2 + M <=> HNO3 + M
   type: three-body
   rate-constant: {A: 1.5e+24, b: -3.5, Ea: 2200.0}
@@ -2110,44 +2062,29 @@ reactions:
   rate-constant: {A: 600000000000.0, b: 0.0, Ea: 2000.0}
   note: '\AUTHOR: YJZ !\REF:Skreiberg et al., CNF, 2004, 136(4): 501-518 !\COMMENT:'
 - equation: NH2OH (+M) <=> NH2 + OH (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 5.4e+37, b: -5.96, Ea: 66783.0}
-    high-P-rate-constant: {A: 1.4e+20, b: -1.31, Ea: 64080.0}
-    Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
+  type: falloff
+  low-P-rate-constant: {A: 5.4e+37, b: -5.96, Ea: 66783.0}
+  high-P-rate-constant: {A: 1.4e+20, b: -1.31, Ea: 64080.0}
+  Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+  note: '===========================================================================================================
+
+    \ENDSUBSPECIES: \H2NO
+
+    ===========================================================================================================
+
+    ===========================================================================================================
+
+    \SUBSPECIES: \NH2OH
+
+    ===========================================================================================================
+
+    ___________________________________________________________________________________________________________
+
+    \REACTIONCLASS:  \UNIMOL                                    \A              \N              \EA
+
+    ___________________________________________________________________________________________________________
+
+    \AUTHOR: YJZ !\REF:Klippenstein et al., CNF, 2011, 158: 774-789 !\COMMENT:'
 - equation: NH2OH + H <=> HNOH + H2
   rate-constant: {A: 480000000.0, b: 1.5, Ea: 6249.0}
   note: '___________________________________________________________________________________________________________
