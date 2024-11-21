@@ -236,7 +236,7 @@ for model in models:
         for w, fuel in enumerate(models[model]['fuels']):
             print(f'Fuel: {fuel}')
             # T_list = np.linspace(models[model]['T_range'][z+w+counter][0],models[model]['T_range'][z+w+counter][1],gridsz)
-            T_list=models[model]['T_range']
+            T_list=models[model]['T_range']  #THIS MIGHT BE INCORRECT PLEASE REVIEW
             for k,m in enumerate(models[model]['submodels']):
                 print(f'Submodel: {m}')
                 gas = ct.Solution(list(models[model]['submodels'].values())[k])
