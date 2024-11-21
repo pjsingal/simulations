@@ -12,9 +12,9 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Nov20'
+date='Nov21'
 
-# python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
+python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
 
 # python USSCI/simulateIDT_Shao_USSCI.py \
 # --figwidth 7 --figheight 6.66667 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -44,9 +44,9 @@ date='Nov20'
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 100 --date $date
 
-python USSCI/simulateFR_phi_USSCI.py \
---figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
+# python USSCI/simulateFR_phi_USSCI.py \
+# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
 
 # python USSCI/simulateJSR_BartokGlarborg.py \
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
