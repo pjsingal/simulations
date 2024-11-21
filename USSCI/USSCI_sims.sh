@@ -14,7 +14,7 @@ lgdfsz=7
 
 date='Nov21'
 
-python USSCI/runLMRRfactory.py --date $date --allPdep 'True'
+python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
 # python USSCI/simulateIDT_Shao_USSCI.py \
 # --figwidth 7 --figheight 6.66667 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
