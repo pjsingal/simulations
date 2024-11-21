@@ -1,0 +1,1473 @@
+generator: ck2yaml
+input-files: [chem.inp, therm.dat]
+cantera-version: 3.1.0a4
+date: Thu, 21 Nov 2024 17:01:39 +0000
+
+units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
+
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements: [C, H, N, O, Ar, He]
+  species: [HE, AR, O2, OH, HO2, C3H6, npropyl, ipropyl, npropyloo, ipropyloo,
+    propoxide, QOOH_1, QOOH_2, QOOH_3, well_1, well_2, well_3, well_5, prod_1,
+    prod_2, prod_3, prod_4, prod_5, prod_6, prod_7, frag_1, frag_3, frag_4,
+    frag_5, allyloxy, propen1oxy, propen2oxy, CH3, HCO, CH2O, acetyl, vinoxy,
+    acetaldehyde, glyoxal, H, H2O, C2H3, C2H4, acrolein, allyl, vinoxylmethyl,
+    formylethyl]
+  kinetics: gas
+  state: {T: 300.0, P: 1 atm}
+
+species:
+- name: HE
+  composition: {He: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.928723974]
+    note: REF ELEMENT
+- name: AR
+  composition: {Ar: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 6000.0]
+    data:
+    - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.3796749]
+    note: |-
+      L 6/88
+       The first four sets of polynomial coefficients (Ar, N2, Ne, He) are from         
+       THIRD MILLENIUM IDEAL GAS AND CONDENSED PHASE THERMOCHEMICAL DATABASE FOR     
+       COMBUSTION WITH UPDATES FROM ACTIVE THERMOCHENICAL TABLES                     
+       Authors: Alexander Burcat and Branko Ruscic                                   
+       The rest of the species are computed by CFG using RQCI/CBS//B3LYP/6-311++G(d,p) and CanTherm.
+- name: O2
+  composition: {O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.44425769, -3.53085203e-04, 2.4746805e-06, -1.42166891e-09, 1.55234165e-14,
+      -687.435348, 3.93226522]
+    - [3.52889546, 9.20304835e-04, -3.42573868e-07, 5.65127995e-11, -3.43169108e-15,
+      -835.437759, 2.99485686]
+- name: OH
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.65106632, -1.05060571e-03, 2.49323139e-06, -2.482759e-09, 1.02790209e-12,
+      3317.07614, 0.846226654]
+    - [2.81293905, 1.08508878e-03, -2.94881927e-07, 3.75210425e-11, -1.83188055e-15,
+      3592.60406, 5.31150707]
+- name: HO2
+  composition: {H: 1, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.23857622, 3.22520148e-03, -2.58431673e-07, -5.54874783e-10, 3.34134016e-14,
+      443.838112, 8.11563406]
+    - [3.91340071, 2.47906818e-03, -8.2826142e-07, 1.27003433e-10, -7.32618925e-15,
+      169.701891, 4.26805198]
+- name: C3H6
+  composition: {H: 6, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.54606737, 0.0436553128, -5.61392417e-05, 4.98421927e-08, -1.84798923e-11,
+      2070.56233, 29.9232495]
+    - [6.59032304, 0.0152592866, -5.30369441e-06, 8.35510888e-10, -4.91215549e-14,
+      -247.481113, -11.5748238]
+    note: propene
+- name: npropyl
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-2.20120865, 0.0529641653, -7.23640506e-05, 6.3699694e-08, -2.29332581e-11,
+      1.15130744e+04, 34.3669174]
+    - [7.48614243, 0.0165769478, -5.74876481e-06, 9.04103694e-10, -5.30867231e-14,
+      8937.10008, -14.2595379]
+- name: ipropyl
+  composition: {H: 7, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.897467137, 0.0415744022, -4.94778349e-05, 4.56493655e-08, -1.79085437e-11,
+      9939.50407, 29.2641758]
+    - [6.70775549, 0.0174048076, -6.07615926e-06, 9.60084351e-10, -5.6565649e-14,
+      7553.77821, -10.3686516]
+- name: npropyloo
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-2.18764216, 0.0663266676, -8.85670635e-05, 7.52623609e-08, -2.66793523e-11,
+      -5870.82784, 38.0774389]
+    - [11.3928391, 0.018179582, -6.36612872e-06, 1.00817882e-09, -5.9500027e-14,
+      -9538.50281, -30.5901531]
+    note: npropylperoxy           H  7 C  3 O  2      G     298.0    6000.0    1000.0    1
+- name: ipropyloo
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.26789412, 0.0659175817, -9.14324526e-05, 7.8841997e-08, -2.7858959e-11,
+      -8430.89252, 31.7397573]
+    - [11.6518761, 0.0178468509, -6.22317562e-06, 9.82584904e-10, -5.78627616e-14,
+      -1.18137559e+04, -33.0378983]
+    note: ipropylperoxy           H  7 C  3 O  2      G     298.0    6000.0    1000.0    1
+- name: propoxide
+  composition: {H: 6, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-3.60560035, 0.0592739764, -7.84180471e-05, 6.62951368e-08, -2.34890771e-11,
+      -1.18448962e+04, 39.6542555]
+    - [8.6767598, 0.0162109789, -5.67756895e-06, 8.99303615e-10, -5.30840384e-14,
+      -1.51808239e+04, -22.5569114]
+    note: cC3H6O                  H  6 C  3 O  1      G     298.0    6000.0    1000.0    1
+  note: ' propylene-oxide '
+- name: QOOH_1
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.53407267, 0.0704778409, -9.92876404e-05, 8.31696376e-08, -2.84706143e-11,
+      1696.77071, 36.0558537]
+    - [12.753423, 0.0164990825, -5.75149933e-06, 9.07558827e-10, -5.34133116e-14,
+      -1897.97992, -35.1115892]
+  note: ' 3-hydroperoxyl-1-propyl'
+- name: QOOH_2
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.231788195, 0.058940322, -7.58216034e-05, 6.40075479e-08, -2.28655864e-11,
+      558.163402, 31.0560403]
+    - [11.9117459, 0.0172429343, -6.0213394e-06, 9.51631116e-10, -5.60794491e-14,
+      -2801.35372, -30.7150037]
+  note: ' 3-hydroperoxyl-2-propyl'
+- name: QOOH_3
+  composition: {H: 7, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [0.496681747, 0.0623815568, -8.42822521e-05, 6.96046015e-08, -2.38234674e-11,
+      -33.0058597, 24.8222677]
+    - [13.1297157, 0.0159433631, -5.50990122e-06, 8.64640808e-10, -5.06975031e-14,
+      -3273.95713, -38.4214936]
+  note: ' 2-hydroperoxyl-1-propyl'
+- name: well_1
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.13644827, 0.0708966637, -9.88121604e-05, 8.35368568e-08, -2.90297184e-11,
+      -1.67295306e+04, 14.0731005]
+    - [17.7220428, 0.017112705, -6.00138642e-06, 9.50850996e-10, -5.61219256e-14,
+      -2.05082883e+04, -59.016776]
+    note: |2-
+       3-hydroperoxyl-n-propylperoxy
+      HOOCH2CH2CH2OO          H  7 C  3 O  4      G     298.0    6000.0    1000.0    1
+  note: ' 3-hydroperoxyl-n-propylperoxy'
+- name: well_2
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.381397617, 0.0985120058, -1.58283818e-04, 1.3456253e-07, -4.45238697e-11,
+      -1.80390351e+04, 27.0337651]
+    - [18.2762511, 0.0164989318, -5.74012117e-06, 9.03430575e-10, -5.30406277e-14,
+      -2.20174364e+04, -62.6721543]
+    note: |2-
+       1-methyl-2-hydroperoxyl-ethylperoxy
+      CH3CHOOCH2OOH           H  7 C  3 O  4      G     298.0    6000.0    1000.0    1
+  note: ' 1-methyl-2-hydroperoxyl-ethylperoxy'
+- name: well_3
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [1.29331456, 0.0854394489, -1.21025094e-04, 9.56711649e-08, -3.08523183e-11,
+      -1.81688389e+04, 19.9097432]
+    - [19.7278309, 0.0153754381, -5.37583603e-06, 8.49063129e-10, -4.99797627e-14,
+      -2.25760448e+04, -71.2852199]
+    note: |-
+      2-hydroperoxyl-n-propylperoxy
+      CH3CHOOHCH2OO           H  7 C  3 O  4      G     298.0    6000.0    1000.0    1
+  note: ' 2-hydroperoxyl-n-propylperoxy'
+- name: well_5
+  composition: {H: 7, C: 3, O: 4}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [0.932176447, 0.0854901848, -1.23079234e-04, 9.91652847e-08, -3.24677763e-11,
+      -1.04601429e+04, 25.3027474]
+    - [19.2920199, 0.015312525, -5.36239915e-06, 8.48522339e-10, -5.00319374e-14,
+      -1.48744597e+04, -65.5354976]
+    note: |2-
+       2,3-dihydroperoxyl-n-propyl
+      CH2CHOOHCH2OOH          H  7 C  3 O  4      G     298.0    6000.0    1000.0    1
+  note: ' 2,3-dihydroperoxyl-n-propyl'
+- name: prod_1
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [5.41530167, 0.0435927794, -5.43753738e-05, 4.93856476e-08, -1.89868197e-11,
+      -3.37525093e+04, 3.35182219]
+    - [14.094982, 0.0156175081, -5.50405747e-06, 8.74852801e-10, -5.17497813e-14,
+      -3.63943081e+04, -41.6291747]
+    note: |-
+      2-formyl-ethyl-hydroperoxide
+      OCHCH2CH2OOH            H  6 C  3 O  3      G     298.0    6000.0    1000.0    1
+  note: ' 2-formyl-ethyl-hydroperoxide'
+- name: prod_2
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.18124993, 0.0435233041, -5.16277353e-05, 4.32011427e-08, -1.57714983e-11,
+      -7635.21503, 12.1725683]
+    - [12.0838649, 0.0147946591, -5.13212591e-06, 8.07504999e-10, -4.74394983e-14,
+      -1.02184463e+04, -33.6434791]
+    note: |2-
+       allyl-hydroperoxide
+      CH2CHCH2OOH             H  6 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' allyl-hydroperoxide'
+- name: prod_3
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-3.00958599, 0.088276619, -1.25553178e-04, 9.65507241e-08, -3.01798261e-11,
+      -2.18929109e+04, 36.3822959]
+    - [16.7494899, 0.0132161418, -4.55229086e-06, 7.13196225e-10, -4.17831703e-14,
+      -2.65236037e+04, -61.1371989]
+    note: |-
+      oxiranyl-methyl-hydroperoxide
+      cC2H3OCH2OOH            H  6 C  3 O  3      G     298.0    6000.0    1000.0    1
+  note: ' oxiranyl-methyl-hydroperoxide'
+- name: prod_4
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.32774111, 0.078034041, -1.11371969e-04, 8.99625701e-08, -2.96902072e-11,
+      -3.64922801e+04, 31.7616966]
+    - [15.6732435, 0.0141688444, -4.97861024e-06, 7.89884981e-10, -4.6668664e-14,
+      -4.06606558e+04, -52.6950835]
+    note: |2-
+       acetyl-methyl-hydroperoxide
+      CH3COCH2OOH             H  6 C  3 O  3      G     298.0    6000.0    1000.0    1
+  note: ' acetyl-methyl-hydroperoxide'
+- name: prod_5
+  composition: {H: 6, C: 3, O: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [0.215186644, 0.0700064965, -9.69200722e-05, 7.87555973e-08, -2.65005248e-11,
+      -3.43882327e+04, 24.6424651]
+    - [15.6065854, 0.0141895282, -4.98349534e-06, 7.90805961e-10, -4.67403378e-14,
+      -3.8316232e+04, -52.4540536]
+    note: |-
+      2-formyl-ethyl-hydroperoxide
+      CH3CHOOHCHO             H  6 C  3 O  3      G     298.0    6000.0    1000.0    1
+  note: ' 1-formyl-ethyl-hydroperoxide'
+- name: prod_6
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [6.05480242e-03, 0.057296255, -7.65094431e-05, 6.36300985e-08, -2.20626642e-11,
+      -8822.38404, 26.857227]
+    - [11.7366777, 0.0150781115, -5.22873766e-06, 8.22569776e-10, -4.8319881e-14,
+      -1.1905157e+04, -32.1649975]
+    note: |2-
+       propene-1-hydroperoxide
+      propen1ooh              H  6 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' 1-propene-hydroperoxide'
+- name: prod_7
+  composition: {H: 6, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.9221408, 0.074757519, -1.14477005e-04, 9.60658373e-08, -3.18580028e-11,
+      -1.10322543e+04, 32.7197181]
+    - [12.535286, 0.0141801036, -4.8640817e-06, 7.59244931e-10, -4.43443519e-14,
+      -1.4274698e+04, -37.5622448]
+    note: |2-
+       propene-2-hydroperoxide
+      propen2ooh              H  6 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' 2-propene-hydroperoxide'
+- name: frag_1
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.500838068, 0.0519868081, -6.76895492e-05, 5.81287856e-08, -2.11513136e-11,
+      -1.42793836e+04, 31.3661013]
+    - [10.8162478, 0.0142673665, -5.07333766e-06, 8.11888154e-10, -4.82713892e-14,
+      -1.75002033e+04, -26.5683503]
+    note: |-
+      2-formyl-ethoxy
+      OCHCH2CH2O              H  5 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' 2-formyl-ethoxy'
+- name: frag_3
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-3.25790882, 0.0635984482, -8.40196636e-05, 6.84776972e-08, -2.36341598e-11,
+      -2326.2129, 40.8214635]
+    - [11.118678, 0.0143803689, -5.10146129e-06, 8.15258156e-10, -4.84301415e-14,
+      -6201.36369, -32.0717878]
+    note: oxiranylmethoxy         H  5 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' oxiranyl-methoxy'
+- name: frag_4
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.63400217, 0.058088054, -7.34135076e-05, 5.78597454e-08, -1.97422853e-11,
+      -1.70179459e+04, 34.2469683]
+    - [12.0468243, 0.0130215084, -4.60027946e-06, 7.33462319e-10, -4.35106903e-14,
+      -2.07614264e+04, -35.4795005]
+    note: |-
+      acetyl-methoxy
+      CH3COCH2O               H  5 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' acetyl-methoxy'
+- name: frag_5
+  composition: {H: 5, C: 3, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.4665916, 0.0566230006, -7.74174869e-05, 6.48509146e-08, -2.25803408e-11,
+      -1.51736963e+04, 28.0727052]
+    - [11.67401, 0.0133335148, -4.70205748e-06, 7.48354315e-10, -4.43251788e-14,
+      -1.83895944e+04, -33.1263121]
+    note: |2-
+       1-formyl-ethoxy
+      CH3CHOCHO               H  5 C  3 O  2      G     298.0    6000.0    1000.0    1
+  note: ' 1-formyl-ethoxy'
+- name: allyloxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.22904891, 0.0510682935, -6.93185536e-05, 5.84958068e-08, -2.04960267e-11,
+      1.12279936e+04, 30.9764754]
+    - [9.34720957, 0.0130735257, -4.58398309e-06, 7.26633413e-10, -4.29140495e-14,
+      8422.59965, -22.3111344]
+- name: propen1oxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.225678119, 0.0428814739, -5.48714506e-05, 4.86486419e-08, -1.81868578e-11,
+      -3678.89917, 26.7938468]
+    - [8.29634516, 0.014310761, -5.13501118e-06, 8.22908478e-10, -4.88736049e-14,
+      -6165.54258, -16.9642961]
+- name: propen2oxy
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-2.13010409, 0.0552945218, -7.94937825e-05, 6.90379248e-08, -2.43730213e-11,
+      -4344.739, 35.3690806]
+    - [9.07281261, 0.0132865648, -4.73702969e-06, 7.58247637e-10, -4.50561316e-14,
+      -7258.26854, -20.7104447]
+- name: CH3
+  composition: {H: 3, C: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.972997, 8.103601e-03, -1.05275507e-05, 1.06264855e-08, -4.08422312e-12,
+      1.65847758e+04, 4.42261944]
+    - [3.20652999, 5.4242197e-03, -1.79704071e-06, 2.73244394e-10, -1.5643655e-14,
+      1.65553578e+04, 3.5574925]
+- name: HCO
+  composition: {H: 1, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [3.30203037, 3.73861461e-03, -4.71694907e-06, 6.65692998e-09, -3.24106397e-12,
+      3956.5263, 7.19013519]
+    - [3.68920215, 2.9428863e-03, -1.05111195e-06, 1.68625638e-10, -1.00401212e-14,
+      3721.14428, 4.83346918]
+- name: CH2O
+  composition: {H: 2, C: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.78126616, 5.25589567e-03, -2.68269472e-06, 5.65734047e-09, -3.567651e-12,
+      -1.42571096e+04, 8.94198134]
+    - [3.41683925, 5.75831905e-03, -2.03634189e-06, 3.24581754e-10, -1.92413829e-14,
+      -1.47358376e+04, 4.616482]
+- name: acetyl
+  composition: {H: 3, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [1.08987608, 0.0231845496, -2.91513965e-05, 2.67169851e-08, -1.02800344e-11,
+      -2125.77108, 20.0704285]
+    - [5.51175057, 8.6196944e-03, -3.02216855e-06, 4.78987148e-10, -2.82833647e-14,
+      -3465.81132, -2.79149555]
+- name: vinoxy
+  composition: {H: 3, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.663164128, 0.0348527583, -4.8830519e-05, 4.10455784e-08, -1.41569024e-11,
+      1399.77574, 26.3860001]
+    - [6.53549303, 8.1331325e-03, -2.84444395e-06, 4.50121936e-10, -2.65521856e-14,
+      -444.966159, -9.61474239]
+- name: acetaldehyde
+  composition: {H: 4, C: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [0.639975206, 0.0268054413, -3.212116e-05, 3.01809817e-08, -1.20244275e-11,
+      -2.09181085e+04, 21.2808313]
+    - [5.72934761, 0.0110557434, -3.88434517e-06, 6.16505234e-10, -3.64398794e-14,
+      -2.25513819e+04, -5.38618866]
+- name: glyoxal
+  composition: {H: 2, C: 2, O: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [1.33907187, 0.0262214657, -2.66641382e-05, 1.94626836e-08, -7.19343944e-12,
+      -2.69250177e+04, 18.1046062]
+    - [9.19889549, 5.74240255e-03, -2.09755582e-06, 3.42586819e-10, -2.06851179e-14,
+      -2.93886972e+04, -23.4131829]
+- name: H
+  composition: {H: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.50052819, -3.11697989e-06, 6.47853854e-09, -5.71962326e-12, 1.82988158e-15,
+      2.55011937e+04, -0.462100153]
+    - [2.50000005, -6.91290402e-11, 3.17013507e-14, -5.99512384e-18, 4.00484424e-22,
+      2.5501259e+04, -0.459778617]
+- name: H2O
+  composition: {H: 2, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [4.32231982, -3.07636154e-03, 9.28243511e-06, -8.58374239e-09, 2.95334192e-12,
+      -3.06699431e+04, -1.3676441]
+    - [2.70713499, 2.93488437e-03, -8.5489649e-07, 1.17019377e-10, -6.14934848e-15,
+      -3.02645629e+04, 6.68669628]
+- name: C2H3
+  composition: {H: 3, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [0.0746293856, 0.0256700755, -3.66704994e-05, 3.13984304e-08, -1.0831195e-11,
+      3.54760692e+04, 21.3968786]
+    - [4.74984705, 6.92062581e-03, -2.37917153e-06, 3.71878785e-10, -2.17389586e-14,
+      3.43398804e+04, -1.65477527]
+- name: C2H4
+  composition: {H: 4, C: 2}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-0.519348957, 0.0258911193, -3.09811487e-05, 2.68079494e-08, -9.94877844e-12,
+      6056.44106, 22.7264626]
+    - [4.26858023, 9.89101902e-03, -3.41359007e-06, 5.35136428e-10, -3.13527546e-14,
+      4664.0939, -1.85281167]
+- name: acrolein
+  composition: {H: 4, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.30819989, 0.048677025, -6.9854379e-05, 6.09330392e-08, -2.17017624e-11,
+      -8417.78158, 28.476068]
+    - [8.98562475, 0.0111429887, -3.98457684e-06, 6.39809682e-10, -3.81229207e-14,
+      -1.11606093e+04, -23.350185]
+- name: allyl
+  composition: {H: 5, C: 3}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-3.32899442, 0.0538423469, -7.65500752e-05, 6.35512285e-08, -2.14283003e-11,
+      2.03420628e+04, 36.8038362]
+    - [7.37604097, 0.0123449782, -4.26463882e-06, 6.69045835e-10, -3.92202554e-14,
+      1.7733296e+04, -16.1758204]
+- name: vinoxylmethyl
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [-1.44860882, 0.0542514911, -7.45556749e-05, 6.03597706e-08, -2.01938036e-11,
+      1.01608402e+04, 31.6318657]
+    - [10.0397568, 0.0118952742, -4.13512716e-06, 6.51590471e-10, -3.83196617e-14,
+      7273.0153, -25.7171542]
+    note: |-
+      vinoxyl-methyl
+      CH2OCHCH2               H  5 C  3 O  1      G     298.0    6000.0    1000.0    1
+- name: formylethyl
+  composition: {H: 5, C: 3, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.0, 1000.0, 6000.0]
+    data:
+    - [2.23085078, 0.0351044754, -4.40998043e-05, 4.00355717e-08, -1.52720345e-11,
+      1801.33296, 16.4536197]
+    - [8.85691307, 0.013015626, -4.55093768e-06, 7.19909372e-10, -4.24513072e-14,
+      -180.261247, -17.705356]
+    note: |-
+      2-formyl-ethyl
+      CH2CH2CHO               H  5 C  3 O  1      G     298.0    6000.0    1000.0    1
+
+reactions:
+- equation: O2 + npropyl <=> npropyloo  # Reaction 1
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.2e+08, b: 0.405, Ea: -4398.65}
+  - {P: 0.1 atm, A: 1.45e+14, b: -0.984, Ea: -1710.8}
+  - {P: 1.0 atm, A: 2.09e+13, b: -0.499, Ea: -938.423}
+  - {P: 10.0 atm, A: 1.15e+20, b: -2.42, Ea: 2451.26}
+  - {P: 100.0 atm, A: 2.07e+16, b: -1.3, Ea: 803.419}
+  note: |
+    -----------------------------------------------------------
+    ------------- CFG:  O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + n-propyl rates
+- equation: O2 + npropyl <=> QOOH_2  # Reaction 2
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.97e+15, b: -2.84, Ea: 3567.51}
+  - {P: 0.1 atm, A: 2.64e+12, b: -1.58, Ea: 3362.32}
+  - {P: 1.0 atm, A: 278.0, b: 1.63, Ea: -492.364}
+  - {P: 10.0 atm, A: 1.3e+14, b: -1.73, Ea: 5163.66}
+  - {P: 100.0 atm, A: 7.63e+16, b: -2.3, Ea: 9036.14}
+- equation: O2 + npropyl <=> QOOH_1  # Reaction 3
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.09e+146, b: -45.9, Ea: 3.12822e+04}
+  - {P: 0.1 atm, A: 1.26e+47, b: -12.4, Ea: 8203.13}
+  - {P: 1.0 atm, A: 1.3e+23, b: -4.03, Ea: 5088.67}
+  - {P: 10.0 atm, A: 3.94e-18, b: 8.88, Ea: -6199.7}
+  - {P: 100.0 atm, A: 6.58e-15, b: 7.8, Ea: -3431.01}
+- equation: O2 + npropyl <=> QOOH_1  # Reaction 4
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.19e+08, b: 0.878, Ea: 1.11866e+04}
+  - {P: 0.1 atm, A: 1.12e+14, b: -0.531, Ea: 1.38975e+04}
+  - {P: 1.0 atm, A: 2.07e+14, b: -0.4, Ea: 1.51581e+04}
+  - {P: 10.0 atm, A: 1.02e+21, b: -2.26, Ea: 1.8554e+04}
+  - {P: 100.0 atm, A: 1.05e+15, b: -0.486, Ea: 1.58767e+04}
+- equation: O2 + npropyl <=> HO2 + C3H6  # Reaction 5
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.05e+10, b: 0.0206, Ea: 501.905}
+  - {P: 0.1 atm, A: 7.47e+15, b: -1.45, Ea: 4112.9}
+  - {P: 1.0 atm, A: 1.18e+19, b: -2.35, Ea: 7299.53}
+  - {P: 10.0 atm, A: 2.63, b: 3.46, Ea: 2481.17}
+  - {P: 100.0 atm, A: 737.0, b: 2.71, Ea: 5496.47}
+- equation: O2 + npropyl <=> OH + propoxide  # Reaction 6
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.98e+07, b: 0.596, Ea: -63.5854}
+  - {P: 0.1 atm, A: 1.97e+13, b: -0.939, Ea: 3664.19}
+  - {P: 1.0 atm, A: 1.73e+17, b: -2.05, Ea: 7251.03}
+  - {P: 10.0 atm, A: 335.0, b: 2.61, Ea: 4697.39}
+  - {P: 100.0 atm, A: 3.05e+08, b: 0.919, Ea: 1.10484e+04}
+- equation: npropyloo <=> QOOH_2  # Reaction 7
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 9.48e+20, b: -5.14, Ea: 2.37097e+04}
+  - {P: 0.1 atm, A: 1.24e+22, b: -4.93, Ea: 2.64778e+04}
+  - {P: 1.0 atm, A: 1.99e+20, b: -3.92, Ea: 2.76341e+04}
+  - {P: 10.0 atm, A: 2.58e+42, b: -10.3, Ea: 3.76702e+04}
+  - {P: 100.0 atm, A: 2.79e+42, b: -10.1, Ea: 3.91082e+04}
+- equation: npropyloo <=> QOOH_1  # Reaction 8
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.69e+04, b: 1.56, Ea: 1.85703e+04}
+  - {P: 0.1 atm, A: 5.85e+04, b: 1.66, Ea: 1.9612e+04}
+  - {P: 1.0 atm, A: 1500.0, b: 2.32, Ea: 1.97537e+04}
+  - {P: 10.0 atm, A: 1.01, b: 3.38, Ea: 1.89948e+04}
+  - {P: 100.0 atm, A: 3.39, b: 3.23, Ea: 1.92093e+04}
+- equation: npropyloo <=> QOOH_1  # Reaction 9
+  duplicate: true
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.72e+17, b: 5.57e-04, Ea: 4.03931e+04}
+  - {P: 0.1 atm, A: 7.02e+18, b: -1.18e-03, Ea: 4.69318e+04}
+  - {P: 1.0 atm, A: 1.19e+20, b: -7.68e-03, Ea: 5.52238e+04}
+  - {P: 10.0 atm, A: 1.26e+23, b: -0.0315, Ea: 7.54407e+04}
+  - {P: 100.0 atm, A: 4.06e+26, b: -0.0366, Ea: 9.94007e+04}
+- equation: npropyloo <=> HO2 + C3H6  # Reaction 10
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.3e+53, b: -14.0, Ea: 3.9526e+04}
+  - {P: 0.1 atm, A: 9.52e+57, b: -15.0, Ea: 4.26843e+04}
+  - {P: 1.0 atm, A: 6.9e+33, b: -7.03, Ea: 3.65435e+04}
+  - {P: 10.0 atm, A: 2.55e+16, b: -1.22, Ea: 3.24803e+04}
+  - {P: 100.0 atm, A: 2.26e+32, b: -6.22, Ea: 3.79482e+04}
+- equation: npropyloo <=> OH + propoxide  # Reaction 11
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.09e+47, b: -12.6, Ea: 3.66774e+04}
+  - {P: 0.1 atm, A: 5.45e+52, b: -13.7, Ea: 4.06341e+04}
+  - {P: 1.0 atm, A: 7.59e+33, b: -7.28, Ea: 3.7564e+04}
+  - {P: 10.0 atm, A: 3.28e+21, b: -2.88, Ea: 3.73428e+04}
+  - {P: 100.0 atm, A: 7.93e+33, b: -6.68, Ea: 4.37971e+04}
+- equation: QOOH_2 <=> QOOH_1  # Reaction 12
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.24e-135, b: 45.7, Ea: -1.94619e+04}
+  - {P: 0.1 atm, A: 3.0e-176, b: 57.9, Ea: -4.04217e+04}
+  - {P: 1.0 atm, A: 1.0e-15, b: 10.2, Ea: 2.85937e+04}
+  - {P: 10.0 atm, A: 5.36e-85, b: 31.0, Ea: 535.821}
+  - {P: 100.0 atm, A: 1.58e-133, b: 45.1, Ea: -2.11265e+04}
+- equation: QOOH_2 <=> HO2 + C3H6  # Reaction 13
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.49e-15, b: 9.24, Ea: 1.89606e+04}
+  - {P: 0.1 atm, A: 2.9e-44, b: 17.6, Ea: 1888.7}
+  - {P: 1.0 atm, A: 1.08e+31, b: -4.56, Ea: 3.21226e+04}
+  - {P: 10.0 atm, A: 1.16e-09, b: 7.46, Ea: 1.47457e+04}
+  - {P: 100.0 atm, A: 1.27e-15, b: 8.78, Ea: 9266.54}
+- equation: QOOH_2 <=> OH + propoxide  # Reaction 14
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.76, b: 3.2, Ea: 8964.96}
+  - {P: 0.1 atm, A: 3.64e-05, b: 4.82, Ea: 5689.6}
+  - {P: 1.0 atm, A: 1.74e+17, b: -1.42, Ea: 1.54174e+04}
+  - {P: 10.0 atm, A: 1.17e+04, b: 2.74, Ea: 1.07594e+04}
+  - {P: 100.0 atm, A: 3.34e+14, b: -0.746, Ea: 1.30738e+04}
+- equation: QOOH_1 <=> HO2 + C3H6  # Reaction 15
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.55e-90, b: 27.5, Ea: -3.5057e+04}
+  - {P: 0.1 atm, A: 3.21e+04, b: -0.342, Ea: 4339.23}
+  - {P: 1.0 atm, A: 1.97e+26, b: -5.97, Ea: 1.87428e+04}
+  - {P: 10.0 atm, A: 1.6e+10, b: -0.444, Ea: 1.75318e+04}
+  - {P: 100.0 atm, A: 3.45e+17, b: -2.82, Ea: 2.15791e+04}
+- equation: QOOH_1 <=> OH + propoxide  # Reaction 16
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.0e-94, b: 28.3, Ea: -3.70056e+04}
+  - {P: 0.1 atm, A: 17.2, b: 0.354, Ea: 3373.05}
+  - {P: 1.0 atm, A: 1.97e+25, b: -5.92, Ea: 1.91448e+04}
+  - {P: 10.0 atm, A: 4.6e+14, b: -1.97, Ea: 2.12429e+04}
+  - {P: 100.0 atm, A: 3.96e+25, b: -5.29, Ea: 2.90028e+04}
+- equation: O2 + ipropyl <=> ipropyloo  # Reaction 17
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.33e+05, b: 1.33, Ea: -6345.64}
+  - {P: 0.1 atm, A: 2.24e+11, b: -0.105, Ea: -3697.87}
+  - {P: 1.0 atm, A: 1.54e+18, b: -2.02, Ea: -498.567}
+  - {P: 10.0 atm, A: 6.74e+27, b: -4.85, Ea: 3779.82}
+  - {P: 100.0 atm, A: 1.67e+29, b: -5.15, Ea: 5036.45}
+  note: |
+    o2 + i-propyl rates
+- equation: O2 + ipropyl <=> QOOH_3  # Reaction 18
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.86e+10, b: -1.56, Ea: -708.183}
+  - {P: 0.1 atm, A: 3.76e+11, b: -1.48, Ea: 470.031}
+  - {P: 1.0 atm, A: 4.08e+12, b: -1.45, Ea: 2168.78}
+  - {P: 10.0 atm, A: 1.13e+14, b: -1.5, Ea: 5253.42}
+  - {P: 100.0 atm, A: 3.56e+10, b: -0.116, Ea: 7056.45}
+- equation: O2 + ipropyl <=> HO2 + C3H6  # Reaction 19
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.91e+09, b: 0.428, Ea: -1438.57}
+  - {P: 0.1 atm, A: 1.6e+14, b: -0.845, Ea: 1423.77}
+  - {P: 1.0 atm, A: 4.05e+18, b: -2.07, Ea: 4971.47}
+  - {P: 10.0 atm, A: 4.91e+17, b: -1.66, Ea: 6964.04}
+  - {P: 100.0 atm, A: 9.84e+07, b: 1.34, Ea: 5379.12}
+- equation: O2 + ipropyl <=> OH + propoxide  # Reaction 20
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 743.0, b: 2.04, Ea: -2163.11}
+  - {P: 0.1 atm, A: 3.03e+07, b: 0.708, Ea: 692.028}
+  - {P: 1.0 atm, A: 4.0e+13, b: -1.03, Ea: 5014.64}
+  - {P: 10.0 atm, A: 2.81e+18, b: -2.31, Ea: 1.01193e+04}
+  - {P: 100.0 atm, A: 1.35e+14, b: -0.832, Ea: 1.26015e+04}
+- equation: ipropyloo <=> QOOH_3  # Reaction 21
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.0e+33, b: -8.94, Ea: 3.04423e+04}
+  - {P: 0.1 atm, A: 2.48e+34, b: -8.62, Ea: 3.29047e+04}
+  - {P: 1.0 atm, A: 2.01e+33, b: -7.75, Ea: 3.48901e+04}
+  - {P: 10.0 atm, A: 4.62e+27, b: -5.55, Ea: 3.50367e+04}
+  - {P: 100.0 atm, A: 2.22e+18, b: -2.35, Ea: 3.32447e+04}
+- equation: ipropyloo <=> HO2 + C3H6  # Reaction 22
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.61e+75, b: -20.6, Ea: 4.6203e+04}
+  - {P: 0.1 atm, A: 1.72e+66, b: -17.3, Ea: 4.54589e+04}
+  - {P: 1.0 atm, A: 4.03e+56, b: -14.0, Ea: 4.40102e+04}
+  - {P: 10.0 atm, A: 1.29e+40, b: -8.58, Ea: 3.94186e+04}
+  - {P: 100.0 atm, A: 6.4e+25, b: -4.02, Ea: 3.49139e+04}
+- equation: ipropyloo <=> OH + propoxide  # Reaction 23
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.67e+87, b: -25.3, Ea: 5.10301e+04}
+  - {P: 0.1 atm, A: 1.24e+72, b: -19.8, Ea: 4.91111e+04}
+  - {P: 1.0 atm, A: 1.35e+67, b: -17.7, Ea: 5.08045e+04}
+  - {P: 10.0 atm, A: 1.94e+53, b: -13.0, Ea: 4.93824e+04}
+  - {P: 100.0 atm, A: 7.6e+36, b: -7.67, Ea: 4.65002e+04}
+- equation: QOOH_3 <=> HO2 + C3H6  # Reaction 24
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.27e-80, b: 27.8, Ea: -1.57525e+04}
+  - {P: 0.1 atm, A: 3.07e-68, b: 24.1, Ea: -1.36247e+04}
+  - {P: 1.0 atm, A: 7.16e-48, b: 18.1, Ea: -6620.37}
+  - {P: 10.0 atm, A: 5.04e-23, b: 10.5, Ea: 2465.01}
+  - {P: 100.0 atm, A: 1.04e+23, b: -3.25, Ea: 2.02479e+04}
+- equation: QOOH_3 <=> OH + propoxide  # Reaction 25
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.31e-06, b: 4.58, Ea: 2774.7}
+  - {P: 0.1 atm, A: 3.37, b: 2.89, Ea: 5130.02}
+  - {P: 1.0 atm, A: 1.15e+09, b: 0.521, Ea: 9007.53}
+  - {P: 10.0 atm, A: 5.4e+16, b: -1.64, Ea: 1.26945e+04}
+  - {P: 100.0 atm, A: 2.98e+18, b: -2.0, Ea: 1.42508e+04}
+- equation: HO2 + C3H6 <=> OH + propoxide  # Reaction 26
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.72e+04, b: 2.29, Ea: 1.23361e+04}
+  - {P: 0.1 atm, A: 1.09e+05, b: 2.18, Ea: 1.25346e+04}
+  - {P: 1.0 atm, A: 4.66e+07, b: 1.42, Ea: 1.40662e+04}
+  - {P: 10.0 atm, A: 1.93e+12, b: 0.107, Ea: 1.73848e+04}
+  - {P: 100.0 atm, A: 1.3e+11, b: 0.544, Ea: 1.90592e+04}
+  note: |
+    propene + HO2 rates
+- equation: O2 + QOOH_1 <=> well_1  # Reaction 27
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.95e+42, b: -10.2, Ea: 5862.36}
+  - {P: 0.1 atm, A: 4.3e+42, b: -9.88, Ea: 7526.86}
+  - {P: 1.0 atm, A: 7.47e+36, b: -7.85, Ea: 6724.35}
+  - {P: 10.0 atm, A: 2.18e+27, b: -4.75, Ea: 4026.17}
+  - {P: 100.0 atm, A: 1.46e+18, b: -1.85, Ea: 1005.84}
+  note: |
+    -----------------------------------------------------------
+    ------------- END   O2 + C3H7 MECHANISM   -----------------
+    -----------------------------------------------------------
+    ----------------------------------------------------------
+    ------------- CFG:  O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+     o2 + qooh-1 
+- equation: O2 + QOOH_1 <=> OH + OH + frag_1  # Reaction 28
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.2e+30, b: -6.23, Ea: 5241.55}
+  - {P: 0.1 atm, A: 2.42e+32, b: -6.58, Ea: 8144.72}
+  - {P: 1.0 atm, A: 3.7e+27, b: -5.03, Ea: 8654.43}
+  - {P: 10.0 atm, A: 3.58e+15, b: -1.36, Ea: 5985.73}
+  - {P: 100.0 atm, A: 6.32, b: 3.02, Ea: 1625.07}
+  note: |
+    O2 + QOOH_1 = OH + prod_1     1.0E11  0.0  0.0 
+- equation: O2 + QOOH_1 <=> HO2 + prod_2  # Reaction 29
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.46e+15, b: -1.27, Ea: 3278.88}
+  - {P: 0.1 atm, A: 2.53e+20, b: -2.73, Ea: 7332.77}
+  - {P: 1.0 atm, A: 2.77e+20, b: -2.61, Ea: 9796.94}
+  - {P: 10.0 atm, A: 3.08e+11, b: 0.179, Ea: 8569.97}
+  - {P: 100.0 atm, A: 6.76e-04, b: 4.57, Ea: 4463.75}
+- equation: O2 + QOOH_1 <=> OH + prod_3  # Reaction 30
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.19e+11, b: -0.662, Ea: 2531.87}
+  - {P: 0.1 atm, A: 2.74e+17, b: -2.21, Ea: 6728.97}
+  - {P: 1.0 atm, A: 6.7e+17, b: -2.19, Ea: 9352.46}
+  - {P: 10.0 atm, A: 1.36e+09, b: 0.523, Ea: 8258.81}
+  - {P: 100.0 atm, A: 2.54e-06, b: 4.94, Ea: 4158.7}
+- equation: O2 + QOOH_2 <=> well_2  # Reaction 31
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.53e+43, b: -10.6, Ea: 5580.18}
+  - {P: 0.1 atm, A: 1.73e+44, b: -10.5, Ea: 7435.82}
+  - {P: 1.0 atm, A: 5.07e+40, b: -9.11, Ea: 7633.29}
+  - {P: 10.0 atm, A: 4.23e+32, b: -6.42, Ea: 5737.0}
+  - {P: 100.0 atm, A: 6.65e+22, b: -3.28, Ea: 2694.88}
+  note: |
+    o2 + qooh-2 
+- equation: O2 + QOOH_2 <=> well_3  # Reaction 32
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.23e+68, b: -18.8, Ea: 1.58888e+04}
+  - {P: 0.1 atm, A: 9.14e+63, b: -17.2, Ea: 1.72064e+04}
+  - {P: 1.0 atm, A: 3.48e+57, b: -15.0, Ea: 1.78921e+04}
+  - {P: 10.0 atm, A: 2.64e+39, b: -9.26, Ea: 1.39274e+04}
+  - {P: 100.0 atm, A: 9.85e+16, b: -2.36, Ea: 7518.56}
+- equation: O2 + QOOH_2 <=> well_5  # Reaction 33
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.7e+71, b: -20.4, Ea: 1.93355e+04}
+  - {P: 0.1 atm, A: 1.18e+56, b: -15.4, Ea: 1.72485e+04}
+  - {P: 1.0 atm, A: 9.12e+46, b: -12.2, Ea: 1.82452e+04}
+  - {P: 10.0 atm, A: 1.88e+34, b: -8.11, Ea: 1.82617e+04}
+  - {P: 100.0 atm, A: 1.26e+09, b: -0.359, Ea: 1.27879e+04}
+- equation: O2 + QOOH_2 <=> OH + prod_3  # Reaction 34
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.9e+40, b: -10.4, Ea: 9903.31}
+  - {P: 0.1 atm, A: 4.98e+43, b: -11.1, Ea: 1.50599e+04}
+  - {P: 1.0 atm, A: 2.48e+44, b: -11.0, Ea: 2.05661e+04}
+  - {P: 10.0 atm, A: 1.77e+36, b: -8.31, Ea: 2.35873e+04}
+  - {P: 100.0 atm, A: 9.9e+09, b: -0.31, Ea: 1.91655e+04}
+- equation: O2 + QOOH_2 <=> OH + OH + frag_4  # Reaction 35
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.81e+37, b: -9.43, Ea: 8668.1}
+  - {P: 0.1 atm, A: 6.21e+39, b: -9.86, Ea: 1.30868e+04}
+  - {P: 1.0 atm, A: 4.55e+37, b: -9.0, Ea: 1.65229e+04}
+  - {P: 10.0 atm, A: 1.97e+26, b: -5.41, Ea: 1.65377e+04}
+  - {P: 100.0 atm, A: 715.0, b: 1.7, Ea: 1.11595e+04}
+  note: |
+    O2 + QOOH_2 = OH + prod_4     1.0E11  0.0  0.0  
+- equation: O2 + QOOH_2 <=> OH + OH + frag_5  # Reaction 36
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.79e+12, b: -0.855, Ea: 528.159}
+  - {P: 0.1 atm, A: 8.75e+17, b: -2.4, Ea: 4566.98}
+  - {P: 1.0 atm, A: 1.79e+20, b: -2.96, Ea: 7843.92}
+  - {P: 10.0 atm, A: 9.72e+14, b: -1.26, Ea: 8212.43}
+  - {P: 100.0 atm, A: 73.6, b: 2.72, Ea: 5020.39}
+  note: |
+    O2 + QOOH_2 = OH + prod_5     1.0E11  0.0  0.0  
+- equation: O2 + QOOH_2 <=> HO2 + prod_2  # Reaction 37
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.32e+10, b: 1.66e-03, Ea: 874.545}
+  - {P: 0.1 atm, A: 5.12e+16, b: -1.68, Ea: 4872.14}
+  - {P: 1.0 atm, A: 1.51e+20, b: -2.59, Ea: 8512.58}
+  - {P: 10.0 atm, A: 1.51e+16, b: -1.27, Ea: 9391.5}
+  - {P: 100.0 atm, A: 4350.0, b: 2.55, Ea: 6477.35}
+- equation: O2 + QOOH_2 <=> HO2 + prod_6  # Reaction 38
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.8e+08, b: 0.606, Ea: 591.748}
+  - {P: 0.1 atm, A: 2.05e+14, b: -1.12, Ea: 4599.17}
+  - {P: 1.0 atm, A: 1.61e+18, b: -2.16, Ea: 8382.66}
+  - {P: 10.0 atm, A: 5.14e+14, b: -0.988, Ea: 9471.9}
+  - {P: 100.0 atm, A: 250.0, b: 2.77, Ea: 6674.51}
+- equation: O2 + QOOH_2 <=> HO2 + prod_7  # Reaction 39
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.76e+26, b: -5.92, Ea: 6495.86}
+  - {P: 0.1 atm, A: 3.26e+32, b: -7.42, Ea: 1.18907e+04}
+  - {P: 1.0 atm, A: 1.52e+34, b: -7.71, Ea: 1.66291e+04}
+  - {P: 10.0 atm, A: 1.33e+26, b: -5.08, Ea: 1.79826e+04}
+  - {P: 100.0 atm, A: 2.68e+04, b: 1.52, Ea: 1.34351e+04}
+- equation: O2 + QOOH_2 <=> O2 + QOOH_3  # Reaction 40
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.68e+33, b: -7.31, Ea: 8134.43}
+  - {P: 0.1 atm, A: 4.31e+38, b: -8.76, Ea: 1.33994e+04}
+  - {P: 1.0 atm, A: 8.96e+39, b: -8.95, Ea: 1.7948e+04}
+  - {P: 10.0 atm, A: 3.58e+31, b: -6.24, Ea: 1.90919e+04}
+  - {P: 100.0 atm, A: 1.02e+10, b: 0.304, Ea: 1.44948e+04}
+- equation: O2 + QOOH_3 <=> well_2  # Reaction 41
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.34e+46, b: -12.0, Ea: 9049.43}
+  - {P: 0.1 atm, A: 5.37e+42, b: -10.6, Ea: 1.0094e+04}
+  - {P: 1.0 atm, A: 2.82e+34, b: -7.84, Ea: 9748.12}
+  - {P: 10.0 atm, A: 8.14e+26, b: -5.4, Ea: 9407.36}
+  - {P: 100.0 atm, A: 5.55e+09, b: -0.118, Ea: 4986.52}
+  note: |
+    o2 + qooh-3 
+- equation: O2 + QOOH_3 <=> well_3  # Reaction 42
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.15e+19, b: -3.42, Ea: -4037.27}
+  - {P: 0.1 atm, A: 1.5e+27, b: -5.55, Ea: 517.703}
+  - {P: 1.0 atm, A: 4.1e+33, b: -7.19, Ea: 4543.4}
+  - {P: 10.0 atm, A: 5.85e+33, b: -6.97, Ea: 6018.35}
+  - {P: 100.0 atm, A: 6.87e+25, b: -4.35, Ea: 4019.75}
+- equation: O2 + QOOH_3 <=> well_5  # Reaction 43
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.06e+29, b: -7.2, Ea: 1939.2}
+  - {P: 0.1 atm, A: 4.31e+34, b: -8.44, Ea: 6445.02}
+  - {P: 1.0 atm, A: 3.03e+37, b: -8.9, Ea: 1.07705e+04}
+  - {P: 10.0 atm, A: 2.01e+31, b: -6.67, Ea: 1.1888e+04}
+  - {P: 100.0 atm, A: 1.46e+16, b: -1.87, Ea: 8889.32}
+- equation: O2 + QOOH_3 <=> OH + prod_3  # Reaction 44
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.19e+13, b: -1.36, Ea: 92.5373}
+  - {P: 0.1 atm, A: 2.98e+22, b: -3.99, Ea: 5872.99}
+  - {P: 1.0 atm, A: 1.3e+32, b: -6.72, Ea: 1.30559e+04}
+  - {P: 10.0 atm, A: 3.6e+31, b: -6.33, Ea: 1.72835e+04}
+  - {P: 100.0 atm, A: 1.15e+15, b: -1.23, Ea: 1.50306e+04}
+- equation: O2 + QOOH_3 <=> OH + OH + frag_4  # Reaction 45
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.28e+09, b: -0.0411, Ea: -1693.52}
+  - {P: 0.1 atm, A: 1.26e+16, b: -2.06, Ea: 2603.12}
+  - {P: 1.0 atm, A: 6.7e+22, b: -3.98, Ea: 7360.21}
+  - {P: 10.0 atm, A: 2.35e+21, b: -3.39, Ea: 9360.49}
+  - {P: 100.0 atm, A: 1.13e+10, b: 0.117, Ea: 7227.07}
+  note: |
+    O2 + QOOH_3 = OH + prod_4     1.0E11  0.0  0.0  
+- equation: O2 + QOOH_3 <=> OH + OH + frag_5  # Reaction 46
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.11e+18, b: -3.19, Ea: 5910.89}
+  - {P: 0.1 atm, A: 3.67e+13, b: -1.44, Ea: 6967.38}
+  - {P: 1.0 atm, A: 5.7e+06, b: 0.697, Ea: 7673.86}
+  - {P: 10.0 atm, A: 2300.0, b: 1.68, Ea: 9631.39}
+  - {P: 100.0 atm, A: 5.91e-13, b: 6.32, Ea: 6807.79}
+  note: |
+    O2 + QOOH_3 = OH + prod_5     1.0E11  0.0  0.0  
+- equation: O2 + QOOH_3 <=> HO2 + prod_2  # Reaction 47
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.83e+15, b: -1.76, Ea: 4656.56}
+  - {P: 0.1 atm, A: 4.68e+15, b: -1.86, Ea: 6599.16}
+  - {P: 1.0 atm, A: 1.81e+22, b: -3.78, Ea: 1.18049e+04}
+  - {P: 10.0 atm, A: 8.68e+20, b: -3.2, Ea: 1.53524e+04}
+  - {P: 100.0 atm, A: 2.23e+04, b: 1.94, Ea: 1.30748e+04}
+- equation: O2 + QOOH_3 <=> HO2 + prod_6  # Reaction 48
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.06e+18, b: -2.77, Ea: 6957.57}
+  - {P: 0.1 atm, A: 2.41e+12, b: -0.913, Ea: 7831.26}
+  - {P: 1.0 atm, A: 3.37e+05, b: 1.25, Ea: 8423.79}
+  - {P: 10.0 atm, A: 781.0, b: 2.02, Ea: 1.06172e+04}
+  - {P: 100.0 atm, A: 2.04e-12, b: 6.35, Ea: 8211.57}
+- equation: O2 + QOOH_3 <=> HO2 + prod_7  # Reaction 49
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.69e+05, b: 1.47, Ea: -339.622}
+  - {P: 0.1 atm, A: 1.92e+11, b: -0.295, Ea: 3115.73}
+  - {P: 1.0 atm, A: 8.39e+18, b: -2.5, Ea: 7895.85}
+  - {P: 10.0 atm, A: 3.26e+20, b: -2.84, Ea: 1.0971e+04}
+  - {P: 100.0 atm, A: 2.02e+11, b: 0.0484, Ea: 9736.61}
+- equation: well_1 <=> OH + prod_1  # Reaction 50
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.08e+29, b: -6.39, Ea: 2.34402e+04}
+  - {P: 0.1 atm, A: 2.49e+25, b: -4.95, Ea: 2.26125e+04}
+  - {P: 1.0 atm, A: 1.01e+19, b: -2.88, Ea: 2.08036e+04}
+  - {P: 10.0 atm, A: 4.46e+11, b: -0.538, Ea: 1.84411e+04}
+  - {P: 100.0 atm, A: 1.67e+05, b: 1.48, Ea: 1.62379e+04}
+  note: |
+    well-1 
+- equation: well_1 <=> HO2 + prod_2  # Reaction 51
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.85e+46, b: -11.4, Ea: 3.78724e+04}
+  - {P: 0.1 atm, A: 5.56e+44, b: -10.5, Ea: 3.88355e+04}
+  - {P: 1.0 atm, A: 3.87e+37, b: -8.08, Ea: 3.75223e+04}
+  - {P: 10.0 atm, A: 6.42e+26, b: -4.59, Ea: 3.43972e+04}
+  - {P: 100.0 atm, A: 1.96e+16, b: -1.27, Ea: 3.09174e+04}
+- equation: well_1 <=> OH + prod_3  # Reaction 52
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.47e+38, b: -9.47, Ea: 3.37339e+04}
+  - {P: 0.1 atm, A: 4.84e+35, b: -8.3, Ea: 3.44354e+04}
+  - {P: 1.0 atm, A: 6.96e+27, b: -5.62, Ea: 3.29059e+04}
+  - {P: 10.0 atm, A: 2.66e+16, b: -1.93, Ea: 2.95836e+04}
+  - {P: 100.0 atm, A: 1.72e+05, b: 1.6, Ea: 2.58824e+04}
+- equation: well_2 <=> well_3  # Reaction 53
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.97e+32, b: -7.73, Ea: 2.49489e+04}
+  - {P: 0.1 atm, A: 7.45e+30, b: -7.03, Ea: 2.50233e+04}
+  - {P: 1.0 atm, A: 8.96e+26, b: -5.68, Ea: 2.43057e+04}
+  - {P: 10.0 atm, A: 3.25e+19, b: -3.28, Ea: 2.2143e+04}
+  - {P: 100.0 atm, A: 8.35e+10, b: -0.557, Ea: 1.93347e+04}
+  note: |
+    well-2 decomp
+- equation: well_2 <=> well_5  # Reaction 54
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.93e+57, b: -15.8, Ea: 4.06438e+04}
+  - {P: 0.1 atm, A: 4.01e+56, b: -15.2, Ea: 4.29381e+04}
+  - {P: 1.0 atm, A: 1.65e+51, b: -13.3, Ea: 4.38991e+04}
+  - {P: 10.0 atm, A: 1.53e+39, b: -9.43, Ea: 4.22092e+04}
+  - {P: 100.0 atm, A: 7.45e+08, b: -0.201, Ea: 3.18605e+04}
+- equation: well_2 <=> OH + prod_3  # Reaction 55
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.96e+74, b: -20.6, Ea: 4.90257e+04}
+  - {P: 0.1 atm, A: 3.82e+75, b: -20.6, Ea: 5.32619e+04}
+  - {P: 1.0 atm, A: 3.59e+71, b: -19.1, Ea: 5.63378e+04}
+  - {P: 10.0 atm, A: 2.3e+58, b: -14.9, Ea: 5.61284e+04}
+  - {P: 100.0 atm, A: 2.87e+29, b: -6.03, Ea: 4.90954e+04}
+- equation: well_2 <=> OH + prod_4  # Reaction 56
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.1e+67, b: -18.3, Ea: 4.52148e+04}
+  - {P: 0.1 atm, A: 7.5e+62, b: -16.8, Ea: 4.65753e+04}
+  - {P: 1.0 atm, A: 6.21e+52, b: -13.6, Ea: 4.56424e+04}
+  - {P: 10.0 atm, A: 8.86e+36, b: -8.6, Ea: 4.21939e+04}
+  - {P: 100.0 atm, A: 1.29e+15, b: -1.92, Ea: 3.5845e+04}
+- equation: well_2 <=> OH + prod_5  # Reaction 57
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.53e+40, b: -9.91, Ea: 3.26314e+04}
+  - {P: 0.1 atm, A: 2.54e+37, b: -8.72, Ea: 3.29095e+04}
+  - {P: 1.0 atm, A: 1.12e+31, b: -6.53, Ea: 3.18066e+04}
+  - {P: 10.0 atm, A: 1.98e+21, b: -3.34, Ea: 2.91378e+04}
+  - {P: 100.0 atm, A: 1.95e+10, b: 0.154, Ea: 2.5612e+04}
+- equation: well_2 <=> HO2 + prod_2  # Reaction 58
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.02e+51, b: -12.8, Ea: 3.93617e+04}
+  - {P: 0.1 atm, A: 1.2e+50, b: -12.2, Ea: 4.0662e+04}
+  - {P: 1.0 atm, A: 1.15e+45, b: -10.3, Ea: 4.03316e+04}
+  - {P: 10.0 atm, A: 3.13e+35, b: -7.15, Ea: 3.79395e+04}
+  - {P: 100.0 atm, A: 7.71e+23, b: -3.45, Ea: 3.43005e+04}
+- equation: well_2 <=> HO2 + prod_6  # Reaction 59
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.04e+50, b: -12.7, Ea: 3.95358e+04}
+  - {P: 0.1 atm, A: 2.23e+49, b: -12.1, Ea: 4.10053e+04}
+  - {P: 1.0 atm, A: 2.98e+44, b: -10.3, Ea: 4.08144e+04}
+  - {P: 10.0 atm, A: 5.65e+34, b: -7.1, Ea: 3.84419e+04}
+  - {P: 100.0 atm, A: 5.15e+22, b: -3.26, Ea: 3.46912e+04}
+- equation: well_2 <=> HO2 + prod_7  # Reaction 60
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.84e+68, b: -18.8, Ea: 4.83569e+04}
+  - {P: 0.1 atm, A: 1.43e+67, b: -18.0, Ea: 5.07954e+04}
+  - {P: 1.0 atm, A: 4.77e+59, b: -15.4, Ea: 5.11842e+04}
+  - {P: 10.0 atm, A: 1.87e+45, b: -10.8, Ea: 4.86553e+04}
+  - {P: 100.0 atm, A: 1.55e+23, b: -3.97, Ea: 4.24779e+04}
+- equation: well_3 <=> well_5  # Reaction 61
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.75e+42, b: -10.5, Ea: 3.11586e+04}
+  - {P: 0.1 atm, A: 2.76e+39, b: -9.32, Ea: 3.16906e+04}
+  - {P: 1.0 atm, A: 1.42e+33, b: -7.12, Ea: 3.06965e+04}
+  - {P: 10.0 atm, A: 3.66e+25, b: -4.59, Ea: 2.88575e+04}
+  - {P: 100.0 atm, A: 1.98e+16, b: -1.63, Ea: 2.5974e+04}
+  note: |
+    well-3 decomp
+- equation: well_3 <=> OH + prod_3  # Reaction 62
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.11e+75, b: -20.3, Ea: 4.66221e+04}
+  - {P: 0.1 atm, A: 3.41e+71, b: -18.8, Ea: 4.86322e+04}
+  - {P: 1.0 atm, A: 1.91e+60, b: -15.0, Ea: 4.77755e+04}
+  - {P: 10.0 atm, A: 3.44e+50, b: -11.8, Ea: 4.70802e+04}
+  - {P: 100.0 atm, A: 8.89e+30, b: -5.73, Ea: 4.18277e+04}
+- equation: well_3 <=> OH + prod_4  # Reaction 63
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.03e+49, b: -12.6, Ea: 3.43143e+04}
+  - {P: 0.1 atm, A: 9.78e+40, b: -9.67, Ea: 3.2757e+04}
+  - {P: 1.0 atm, A: 1.47e+28, b: -5.51, Ea: 2.91113e+04}
+  - {P: 10.0 atm, A: 7.98e+18, b: -2.52, Ea: 2.63998e+04}
+  - {P: 100.0 atm, A: 2.04e+09, b: 0.515, Ea: 2.32465e+04}
+- equation: well_3 <=> OH + prod_5  # Reaction 64
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.74e+40, b: -9.94, Ea: 3.66527e+04}
+  - {P: 0.1 atm, A: 1.98e+53, b: -14.1, Ea: 4.25456e+04}
+  - {P: 1.0 atm, A: 1.46e+53, b: -13.7, Ea: 4.63238e+04}
+  - {P: 10.0 atm, A: 1.08e+38, b: -8.9, Ea: 4.33298e+04}
+  - {P: 100.0 atm, A: 1.4e+16, b: -2.18, Ea: 3.70962e+04}
+- equation: well_3 <=> HO2 + prod_2  # Reaction 65
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 4.87e+48, b: -12.3, Ea: 3.95968e+04}
+  - {P: 0.1 atm, A: 6.31e+85, b: -23.5, Ea: 5.59002e+04}
+  - {P: 1.0 atm, A: 7.67e+59, b: -15.1, Ea: 4.99265e+04}
+  - {P: 10.0 atm, A: 1.3e+50, b: -11.8, Ea: 4.95067e+04}
+  - {P: 100.0 atm, A: 2.1e+29, b: -5.33, Ea: 4.40437e+04}
+- equation: well_3 <=> HO2 + prod_6  # Reaction 66
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.6e+41, b: -10.3, Ea: 3.8545e+04}
+  - {P: 0.1 atm, A: 3.08e+56, b: -14.9, Ea: 4.58661e+04}
+  - {P: 1.0 atm, A: 2.01e+57, b: -14.8, Ea: 4.98037e+04}
+  - {P: 10.0 atm, A: 1.71e+43, b: -10.3, Ea: 4.74851e+04}
+  - {P: 100.0 atm, A: 1.45e+21, b: -3.45, Ea: 4.13826e+04}
+- equation: well_3 <=> HO2 + prod_7  # Reaction 67
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 6.58e+63, b: -16.7, Ea: 4.44813e+04}
+  - {P: 0.1 atm, A: 1.17e+59, b: -14.8, Ea: 4.49121e+04}
+  - {P: 1.0 atm, A: 1.74e+47, b: -10.9, Ea: 4.21456e+04}
+  - {P: 10.0 atm, A: 3.79e+37, b: -7.68, Ea: 3.96391e+04}
+  - {P: 100.0 atm, A: 2.99e+26, b: -4.15, Ea: 3.6105e+04}
+- equation: well_5 <=> OH + prod_3  # Reaction 68
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.3e+11, b: -0.635, Ea: 1.10415e+04}
+  - {P: 0.1 atm, A: 1.61e+18, b: -2.41, Ea: 1.44138e+04}
+  - {P: 1.0 atm, A: 4.78e+24, b: -4.13, Ea: 1.811e+04}
+  - {P: 10.0 atm, A: 5.27e+21, b: -3.0, Ea: 1.81253e+04}
+  - {P: 100.0 atm, A: 6.12e+15, b: -1.06, Ea: 1.64864e+04}
+  note: |
+    well-5 decomp
+- equation: well_5 <=> OH + prod_4  # Reaction 69
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.16e-25, b: 10.4, Ea: 2788.19}
+  - {P: 0.1 atm, A: 5.6e-37, b: 13.9, Ea: -256.536}
+  - {P: 1.0 atm, A: 2.24e+08, b: 0.0821, Ea: 1.74394e+04}
+  - {P: 10.0 atm, A: 4.11e+20, b: -3.63, Ea: 2.43075e+04}
+  - {P: 100.0 atm, A: 5.09e+05, b: 0.938, Ea: 2.06527e+04}
+- equation: well_5 <=> OH + prod_5  # Reaction 70
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.61e-32, b: 11.9, Ea: 4218.28}
+  - {P: 0.1 atm, A: 9.21e-42, b: 14.8, Ea: 1990.43}
+  - {P: 1.0 atm, A: 2.2e+06, b: 0.0203, Ea: 2.15108e+04}
+  - {P: 10.0 atm, A: 3.28e+28, b: -6.77, Ea: 3.36821e+04}
+  - {P: 100.0 atm, A: 2.83e+08, b: -0.63, Ea: 2.99615e+04}
+- equation: well_5 <=> HO2 + prod_2  # Reaction 71
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 0.0143, b: 3.17, Ea: 9063.13}
+  - {P: 0.1 atm, A: 7.78e+13, b: -1.39, Ea: 1.54095e+04}
+  - {P: 1.0 atm, A: 2.85e+25, b: -4.59, Ea: 2.12133e+04}
+  - {P: 10.0 atm, A: 4.89e+22, b: -3.45, Ea: 2.16608e+04}
+  - {P: 100.0 atm, A: 1.71e+15, b: -1.0, Ea: 1.96782e+04}
+- equation: well_5 <=> HO2 + prod_6  # Reaction 72
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.45e-32, b: 12.1, Ea: 4947.89}
+  - {P: 0.1 atm, A: 8.98e-42, b: 14.9, Ea: 2925.61}
+  - {P: 1.0 atm, A: 2.85e+07, b: -0.22, Ea: 2.2938e+04}
+  - {P: 10.0 atm, A: 2.1e+30, b: -7.16, Ea: 3.55712e+04}
+  - {P: 100.0 atm, A: 6.29e+10, b: -1.14, Ea: 3.22713e+04}
+- equation: well_5 <=> HO2 + prod_7  # Reaction 73
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.18e-24, b: 10.1, Ea: 5619.89}
+  - {P: 0.1 atm, A: 7.46e-35, b: 13.4, Ea: 2720.21}
+  - {P: 1.0 atm, A: 4.29e+12, b: -0.99, Ea: 2.13647e+04}
+  - {P: 10.0 atm, A: 1.78e+26, b: -5.03, Ea: 2.9085e+04}
+  - {P: 100.0 atm, A: 2.66e+11, b: -0.433, Ea: 2.57314e+04}
+- equation: prod_2 <=> allyloxy + OH  # Reaction 74
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.49e+58, b: -13.9, Ea: 5.42669e+04}
+  - {P: 0.1 atm, A: 1.8e+54, b: -12.4, Ea: 5.41938e+04}
+  - {P: 1.0 atm, A: 3.36e+46, b: -9.81, Ea: 5.24685e+04}
+  - {P: 10.0 atm, A: 2.39e+36, b: -6.54, Ea: 4.9429e+04}
+  - {P: 100.0 atm, A: 1.28e+27, b: -3.61, Ea: 4.63331e+04}
+  note: |
+    -------------------------------------------------
+     C3H5OOH decomp
+     NOTE prod_2 decomp belongs to the allyl + HO2 mechanism.
+- equation: prod_6 <=> propen1oxy + OH  # Reaction 75
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.49e+58, b: -13.9, Ea: 2.81469e+04}
+  - {P: 0.1 atm, A: 1.8e+54, b: -12.4, Ea: 2.80738e+04}
+  - {P: 1.0 atm, A: 3.36e+46, b: -9.81, Ea: 2.63485e+04}
+  - {P: 10.0 atm, A: 2.39e+36, b: -6.54, Ea: 2.3309e+04}
+  - {P: 100.0 atm, A: 1.28e+27, b: -3.61, Ea: 2.02131e+04}
+  note: |
+    not computed explicitly; taken by analogy from oh + allyloxy
+- equation: prod_7 <=> propen2oxy + OH  # Reaction 76
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.49e+58, b: -13.9, Ea: 3.09669e+04}
+  - {P: 0.1 atm, A: 1.8e+54, b: -12.4, Ea: 3.08938e+04}
+  - {P: 1.0 atm, A: 3.36e+46, b: -9.81, Ea: 2.91685e+04}
+  - {P: 10.0 atm, A: 2.39e+36, b: -6.54, Ea: 2.6129e+04}
+  - {P: 100.0 atm, A: 1.28e+27, b: -3.61, Ea: 2.30331e+04}
+  note: |
+    not computed explicitly; taken by analogy from oh + allyloxy
+- equation: prod_1 <=> frag_1 + OH  # Reaction 77
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3.41e+64, b: -15.9, Ea: 5.57614e+04}
+  - {P: 0.1 atm, A: 1.97e+61, b: -14.6, Ea: 5.60115e+04}
+  - {P: 1.0 atm, A: 1.07e+54, b: -12.1, Ea: 5.45628e+04}
+  - {P: 10.0 atm, A: 5.29e+43, b: -8.74, Ea: 5.15685e+04}
+  - {P: 100.0 atm, A: 4.06e+33, b: -5.54, Ea: 4.82254e+04}
+  note: |
+    -------------------------------------------------
+     OC3H5OOH decomp
+- equation: prod_3 <=> frag_3 + OH  # Reaction 78
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.2e+64, b: -15.9, Ea: 5.66501e+04}
+  - {P: 0.1 atm, A: 2.19e+60, b: -14.2, Ea: 5.64797e+04}
+  - {P: 1.0 atm, A: 1.08e+52, b: -11.5, Ea: 5.45804e+04}
+  - {P: 10.0 atm, A: 1.56e+41, b: -7.97, Ea: 5.1321e+04}
+  - {P: 100.0 atm, A: 1.03e+31, b: -4.76, Ea: 4.79219e+04}
+  note: |
+    not computed explicitly; taken by analogy from acetyl-methoxy + oh
+- equation: prod_4 <=> frag_4 + OH  # Reaction 79
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.2e+64, b: -15.9, Ea: 5.66501e+04}
+  - {P: 0.1 atm, A: 2.19e+60, b: -14.2, Ea: 5.64797e+04}
+  - {P: 1.0 atm, A: 1.08e+52, b: -11.5, Ea: 5.45804e+04}
+  - {P: 10.0 atm, A: 1.56e+41, b: -7.97, Ea: 5.1321e+04}
+  - {P: 100.0 atm, A: 1.03e+31, b: -4.76, Ea: 4.79219e+04}
+- equation: prod_5 <=> frag_5 + OH  # Reaction 80
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.2e+64, b: -15.9, Ea: 5.66501e+04}
+  - {P: 0.1 atm, A: 2.19e+60, b: -14.2, Ea: 5.64797e+04}
+  - {P: 1.0 atm, A: 1.08e+52, b: -11.5, Ea: 5.45804e+04}
+  - {P: 10.0 atm, A: 1.56e+41, b: -7.97, Ea: 5.1321e+04}
+  - {P: 100.0 atm, A: 1.03e+31, b: -4.76, Ea: 4.79219e+04}
+- equation: frag_1 <=> vinoxy + CH2O  # Reaction 81
+  rate-constant: {A: 4.94e+10, b: 0.857, Ea: 5809.2}
+  note: |
+    C3H5O2 beta-scission rates
+- equation: frag_4 <=> acetyl + CH2O  # Reaction 82
+  rate-constant: {A: 5.73e+13, b: -0.0247, Ea: 4473.48}
+- equation: frag_5 <=> CH3 + glyoxal  # Reaction 83
+  rate-constant: {A: 1.74e+11, b: 0.833, Ea: 9833.14}
+- equation: frag_5 <=> HCO + acetaldehyde  # Reaction 84
+  rate-constant: {A: 2.12e+14, b: -0.141, Ea: 1108.66}
+- equation: allyl + HO2 <=> prod_2  # Reaction 85
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.91e+31, b: -7.23, Ea: 1336.16}
+  - {P: 0.1 atm, A: 6.31e+42, b: -10.3, Ea: 5568.88}
+  - {P: 1.0 atm, A: 1.03e+45, b: -10.6, Ea: 7851.49}
+  - {P: 10.0 atm, A: 2.79e+37, b: -7.92, Ea: 6497.86}
+  - {P: 100.0 atm, A: 4.73e+25, b: -4.13, Ea: 2923.78}
+  note: |
+    -----------------------------------------------------------
+    ------------- END   O2 + QOOH MECHANISM   -----------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    ------------- BEGIN ALLYL + HO2 MECHANISM   ---------------
+    -----------------------------------------------------------
+- equation: allyl + HO2 <=> acrolein + H2O  # Reaction 86
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.09, b: 3.01, Ea: -3421.08}
+  - {P: 0.1 atm, A: 63.5, b: 2.5, Ea: -2341.44}
+  - {P: 1.0 atm, A: 6.05e+05, b: 1.39, Ea: 595.059}
+  - {P: 10.0 atm, A: 3.1e+05, b: 1.59, Ea: 2677.55}
+  - {P: 100.0 atm, A: 5.07e-05, b: 4.59, Ea: 927.501}
+- equation: allyl + HO2 <=> allyloxy + OH  # Reaction 87
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.02e+13, b: -0.158, Ea: -1417.01}
+  - {P: 0.1 atm, A: 4.98e+14, b: -0.642, Ea: -349.128}
+  - {P: 1.0 atm, A: 7.77e+17, b: -1.52, Ea: 2379.2}
+  - {P: 10.0 atm, A: 2.93e+15, b: -0.684, Ea: 3615.32}
+  - {P: 100.0 atm, A: 1.64e+04, b: 2.74, Ea: 1144.38}
+- equation: prod_2 <=> acrolein + H2O  # Reaction 88
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.99e+50, b: -12.7, Ea: 5.35319e+04}
+  - {P: 0.1 atm, A: 4.72e+47, b: -11.5, Ea: 5.43609e+04}
+  - {P: 1.0 atm, A: 1.5e+40, b: -8.84, Ea: 5.31792e+04}
+  - {P: 10.0 atm, A: 2.54e+28, b: -5.0, Ea: 4.99194e+04}
+  - {P: 100.0 atm, A: 1.48e+16, b: -1.12, Ea: 4.59493e+04}
+  note: |
+    allyl-hydroperoxide decomposition
+- equation: allyloxy <=> C2H3 + CH2O  # Reaction 89
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 7.26e+06, b: 0.182, Ea: 1.78155e+04}
+  - {P: 0.01 atm, A: 6.97e+16, b: -2.5, Ea: 2.08787e+04}
+  - {P: 0.1 atm, A: 6.64e+23, b: -4.23, Ea: 2.3565e+04}
+  - {P: 1.0 atm, A: 1.07e+26, b: -4.56, Ea: 2.46229e+04}
+  - {P: 10.0 atm, A: 6.5e+29, b: -5.37, Ea: 2.6645e+04}
+  - {P: 100.0 atm, A: 4.63e+31, b: -5.59, Ea: 2.89153e+04}
+  - {P: 1000.0 atm, A: 8.52e+25, b: -3.61, Ea: 2.78634e+04}
+  note: |2
+     commented out because it is included in C3H5OOH decomp above.
+    prod_2 = allyloxy + OH     1.0E11  0.0  0.0 
+    PLOG/ 0.01 1.49e+058 -13.9 54266.9/
+    PLOG/ 0.1 1.8e+054 -12.4 54193.8/
+    PLOG/ 1 3.36e+046 -9.81 52468.5/
+    PLOG/ 10 2.39e+036 -6.54 49429/
+    PLOG/ 100 1.28e+027 -3.61 46333.1/
+     allyloxy decomposition
+- equation: allyloxy <=> vinoxylmethyl  # Reaction 90
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 3.17e+20, b: -4.15, Ea: 1.21213e+04}
+  - {P: 0.01 atm, A: 4.79e+24, b: -5.03, Ea: 1.46061e+04}
+  - {P: 0.1 atm, A: 1.9e+26, b: -5.16, Ea: 1.61244e+04}
+  - {P: 1.0 atm, A: 1.51e+28, b: -5.4, Ea: 1.81654e+04}
+  - {P: 10.0 atm, A: 2.42e+28, b: -5.17, Ea: 1.96912e+04}
+  - {P: 100.0 atm, A: 5.57e+24, b: -3.86, Ea: 1.93952e+04}
+  - {P: 1000.0 atm, A: 1.35e+18, b: -1.73, Ea: 1.73865e+04}
+- equation: allyloxy <=> formylethyl  # Reaction 91
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 5.25e-49, b: 15.5, Ea: -1.56399e+04}
+  - {P: 0.01 atm, A: 1.46e-88, b: 27.6, Ea: -3.5995e+04}
+  - {P: 0.1 atm, A: 4.44e-22, b: 8.38, Ea: -3819.01}
+  - {P: 1.0 atm, A: 6.23e+12, b: -1.44, Ea: 1.08292e+04}
+  - {P: 10.0 atm, A: 3.48e+42, b: -9.91, Ea: 2.52979e+04}
+  - {P: 100.0 atm, A: 1.88e+38, b: -8.16, Ea: 2.59745e+04}
+  - {P: 1000.0 atm, A: 1.67e+21, b: -2.74, Ea: 2.03377e+04}
+- equation: allyloxy <=> acrolein + H  # Reaction 92
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 3.0e+15, b: -2.31, Ea: 1.46679e+04}
+  - {P: 0.01 atm, A: 1.5e+22, b: -3.96, Ea: 1.8283e+04}
+  - {P: 0.1 atm, A: 1.95e+23, b: -3.99, Ea: 1.91433e+04}
+  - {P: 1.0 atm, A: 1.15e+25, b: -4.24, Ea: 2.03112e+04}
+  - {P: 10.0 atm, A: 1.76e+28, b: -4.89, Ea: 2.27652e+04}
+  - {P: 100.0 atm, A: 1.41e+27, b: -4.28, Ea: 2.37706e+04}
+  - {P: 1000.0 atm, A: 2.57e+20, b: -2.06, Ea: 2.20401e+04}
+- equation: allyloxy <=> C2H4 + HCO  # Reaction 93
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 6.62e+16, b: -2.84, Ea: 1.3197e+04}
+  - {P: 0.01 atm, A: 1.26e+20, b: -3.53, Ea: 1.54692e+04}
+  - {P: 0.1 atm, A: 2.13e+21, b: -3.64, Ea: 1.65845e+04}
+  - {P: 1.0 atm, A: 1.07e+24, b: -4.16, Ea: 1.8985e+04}
+  - {P: 10.0 atm, A: 8.42e+25, b: -4.4, Ea: 2.23826e+04}
+  - {P: 100.0 atm, A: 1.86e+21, b: -2.73, Ea: 2.36588e+04}
+  - {P: 1000.0 atm, A: 4.75e+08, b: 1.14, Ea: 2.09225e+04}
+- equation: vinoxylmethyl <=> C2H3 + CH2O  # Reaction 94
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 3.3e+09, b: -0.638, Ea: 1.97478e+04}
+  - {P: 0.01 atm, A: 3.36e+21, b: -3.9, Ea: 2.39452e+04}
+  - {P: 0.1 atm, A: 2.91e+29, b: -5.9, Ea: 2.72497e+04}
+  - {P: 1.0 atm, A: 1.83e+34, b: -6.94, Ea: 3.06904e+04}
+  - {P: 10.0 atm, A: 9.72e+33, b: -6.5, Ea: 3.30025e+04}
+  - {P: 100.0 atm, A: 2.68e+27, b: -4.26, Ea: 3.33056e+04}
+  - {P: 1000.0 atm, A: 8.81e+14, b: -0.326, Ea: 3.15531e+04}
+  note: |
+    vinoxyl-methyl decomposition
+- equation: vinoxylmethyl <=> formylethyl  # Reaction 95
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 8.01e-92, b: 27.8, Ea: -3.73212e+04}
+  - {P: 0.01 atm, A: 7.78e-11, b: 3.7, Ea: -2766.86}
+  - {P: 0.1 atm, A: 5.11e+15, b: -2.76, Ea: 1.59376e+04}
+  - {P: 1.0 atm, A: 4.48e+25, b: -5.2, Ea: 2.15322e+04}
+  - {P: 10.0 atm, A: 3.97e+34, b: -7.41, Ea: 2.81169e+04}
+  - {P: 100.0 atm, A: 5.62e+22, b: -3.56, Ea: 2.58067e+04}
+  - {P: 1000.0 atm, A: 2.51e+20, b: -2.63, Ea: 2.92884e+04}
+- equation: vinoxylmethyl <=> acrolein + H  # Reaction 96
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 4.93e+24, b: -5.05, Ea: 2.01084e+04}
+  - {P: 0.01 atm, A: 2.14e+28, b: -5.8, Ea: 2.22194e+04}
+  - {P: 0.1 atm, A: 1.93e+32, b: -6.64, Ea: 2.51082e+04}
+  - {P: 1.0 atm, A: 8.6e+34, b: -7.11, Ea: 2.82091e+04}
+  - {P: 10.0 atm, A: 2.17e+34, b: -6.64, Ea: 3.06476e+04}
+  - {P: 100.0 atm, A: 4.17e+28, b: -4.71, Ea: 3.12319e+04}
+  - {P: 1000.0 atm, A: 3.98e+18, b: -1.62, Ea: 3.01298e+04}
+- equation: vinoxylmethyl <=> C2H4 + HCO  # Reaction 97
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 8.23e+26, b: -5.84, Ea: 1.93569e+04}
+  - {P: 0.01 atm, A: 1.32e+29, b: -6.21, Ea: 2.12936e+04}
+  - {P: 0.1 atm, A: 3.47e+32, b: -6.96, Ea: 2.41973e+04}
+  - {P: 1.0 atm, A: 1.44e+36, b: -7.76, Ea: 2.80078e+04}
+  - {P: 10.0 atm, A: 9.72e+37, b: -8.02, Ea: 3.23946e+04}
+  - {P: 100.0 atm, A: 2.43e+31, b: -5.81, Ea: 3.42958e+04}
+  - {P: 1000.0 atm, A: 3.73e+14, b: -0.726, Ea: 3.20083e+04}
+- equation: formylethyl <=> C2H3 + CH2O  # Reaction 98
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 6.89e-69, b: 21.5, Ea: 2637.98}
+  - {P: 0.01 atm, A: 5.34e-33, b: 11.1, Ea: 1.67491e+04}
+  - {P: 0.1 atm, A: 6.11e+26, b: -6.01, Ea: 4.41167e+04}
+  - {P: 1.0 atm, A: 8.04e+35, b: -8.31, Ea: 4.69197e+04}
+  - {P: 10.0 atm, A: 5.52e+40, b: -9.19, Ea: 5.05087e+04}
+  - {P: 100.0 atm, A: 5.85e+35, b: -7.18, Ea: 5.20384e+04}
+  - {P: 1000.0 atm, A: 1.93e+19, b: -1.94, Ea: 4.844e+04}
+  note: |
+    formyl-ethyl decomposition
+- equation: formylethyl <=> acrolein + H  # Reaction 99
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 1.61e+10, b: -1.24, Ea: 3.23713e+04}
+  - {P: 0.01 atm, A: 5.84e+15, b: -2.61, Ea: 3.28784e+04}
+  - {P: 0.1 atm, A: 3.64e+23, b: -4.6, Ea: 3.42753e+04}
+  - {P: 1.0 atm, A: 7.58e+31, b: -6.63, Ea: 3.78954e+04}
+  - {P: 10.0 atm, A: 2.86e+32, b: -6.3, Ea: 3.99907e+04}
+  - {P: 100.0 atm, A: 1.57e+23, b: -3.14, Ea: 3.80117e+04}
+  - {P: 1000.0 atm, A: 4.52e+12, b: 0.214, Ea: 3.45705e+04}
+- equation: formylethyl <=> C2H4 + HCO  # Reaction 100
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 2.9e+32, b: -7.24, Ea: 2.56875e+04}
+  - {P: 0.01 atm, A: 5.3e+33, b: -7.28, Ea: 2.71006e+04}
+  - {P: 0.1 atm, A: 2.0e+35, b: -7.41, Ea: 2.90273e+04}
+  - {P: 1.0 atm, A: 1.01e+34, b: -6.7, Ea: 3.00181e+04}
+  - {P: 10.0 atm, A: 9.76e+27, b: -4.63, Ea: 2.89239e+04}
+  - {P: 100.0 atm, A: 2.11e+19, b: -1.85, Ea: 2.62398e+04}
+  - {P: 1000.0 atm, A: 1.59e+13, b: 0.0634, Ea: 2.40863e+04}
+- equation: C2H3 + CH2O <=> acrolein + H  # Reaction 101
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 2.6e+04, b: 2.26, Ea: 1510.3}
+  - {P: 0.01 atm, A: 5.13e+04, b: 2.17, Ea: 1675.54}
+  - {P: 0.1 atm, A: 3.99e+05, b: 1.91, Ea: 2218.34}
+  - {P: 1.0 atm, A: 1.75e+07, b: 1.45, Ea: 3428.01}
+  - {P: 10.0 atm, A: 1.35e+09, b: 0.933, Ea: 5172.99}
+  - {P: 100.0 atm, A: 2.24e+11, b: 0.357, Ea: 8001.32}
+  - {P: 1000.0 atm, A: 6.01e+05, b: 2.09, Ea: 7895.57}
+  note: |
+    vinyl + CH2O
+- equation: C2H3 + CH2O <=> C2H4 + HCO  # Reaction 102
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 1.11e+07, b: 1.09, Ea: 1807.2}
+  - {P: 0.01 atm, A: 2.47e+07, b: 0.993, Ea: 1994.94}
+  - {P: 0.1 atm, A: 2.47e+08, b: 0.704, Ea: 2596.2}
+  - {P: 1.0 atm, A: 1.42e+10, b: 0.209, Ea: 3934.18}
+  - {P: 10.0 atm, A: 3.45e+13, b: -0.726, Ea: 6944.28}
+  - {P: 100.0 atm, A: 3.31e+14, b: -0.866, Ea: 1.09657e+04}
+  - {P: 1000.0 atm, A: 16.5, b: 3.17, Ea: 9399.76}
+  note: |
+    -----------------------------------------------------------
+    ------------- END ALLYL + HO2 MECHANISM   -----------------
+    -----------------------------------------------------------
