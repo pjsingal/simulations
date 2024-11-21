@@ -73,18 +73,35 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 # }
 
 models = {
-    'Stagni-2020': {
+    # 'Stagni-2020': {
+    #     'submodels': {
+    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allPLOG.yaml",
+    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #                 },
+    #     'fuels': ['H2','NH3'],
+    #     'oxidizer':'O2:1.0, N2:3.76',
+    #     'phi_list':[0.5, 2],
+    #     'P_list':[20,40],
+    #     'T_range':[[1223,1490],
+    #                [1188,1520]],
+    #     'data': ['NH3']
+    # },
+    'Merchant-2015': {
         'submodels': {
-            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+            # 'base': r"chemical_mechanisms/Goldsmith-2012/goldsmith-2012.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+            # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allP.yaml",
                     },
-        'fuels': ['H2','NH3'],
+        'fuels': ['C2H6','C3H8'],
         'oxidizer':'O2:1.0, N2:3.76',
-        'phi_list':[0.5, 2],
-        'P_list':[20,40],
-        'T_range':[[1223,1490],
-                   [1188,1520]]
+        'phi_list':[0.5,1],
+        'P_list':[1,30],
+        'T_range':[[625,1000],[625,1000],
+                   [625,1000],[625,1000]],
+        'data': []
     }
 }
 
@@ -153,9 +170,8 @@ for model in models:
                     # gas.set_equivalence_ratio(phi,fuel,models[model]['oxidizer'],basis='mole')
                     ignitionDelays = getIDT(phi,fuel,models[model]['oxidizer'],T_list,P)
                     ax[z,w].semilogy(T_list, ignitionDelays*1e3, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
-                    
-                    if fuel=='NH3':
-                        dat = pd.read_csv(f'USSCI/graph-reading/{model}/{P}bar_{phi}phi.csv',header=None)
+                    if fuel in models[model]['data']:
+                        dat = pd.read_csv(f'USSCI/graph-reading/{model}/IDT/{P}bar_{phi}phi.csv',header=None)
                         ax[z,w].semilogy(dat.iloc[:,0],dat.iloc[:,1],mkrs[i],fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=r'$\phi$='+f'{phi}', zorder=120)
             
             ax[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
