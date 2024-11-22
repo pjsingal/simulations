@@ -1965,59 +1965,12 @@ reactions:
   rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 0.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM HOYERMANN ET AL, 18TH SYMPOSIUM\n"
 - equation: CH3 + O2 (+M) <=> CH3OO (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.816e+31, b: -4.89, Ea: 3432.0}
-    high-P-rate-constant: {A: 100600000.0, b: 1.63, Ea: 0.0}
-    Troe: {A: 0.045, T3: 880.1, T1: 2500000000.0, T2: 1786000000.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 3.816e+31, b: -4.89, Ea: 3432.0}
+  high-P-rate-constant: {A: 100600000.0, b: 1.63, Ea: 0.0}
+  Troe: {A: 0.045, T3: 880.1, T1: 2500000000.0, T2: 1786000000.0}
+  note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM CURRAN AND PITZ RATE EXPRESSIONS\
+    \ FOR CH3O2 SYSTEM.\n"
 - equation: CH3OO + CH2O <=> CH3OOH + HCO
   rate-constant: {A: 1990000000000.0, b: 0.0, Ea: 11660.0}
   note: "!REV/ 7.282E+13 0.42 3.333E+04 /\nTROE FALL-OFF REACTION\nHEALY ET AL C&F,\
@@ -2182,167 +2135,25 @@ reactions:
 
     '
 - equation: OH + CH3 (+M) <=> CH3OH (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 4.0e+36, b: -5.92, Ea: 3140.0}
-    high-P-rate-constant: {A: 2.79e+18, b: -1.43, Ea: 1330.0}
-    Troe: {A: 0.412, T3: 195.0, T1: 5900.0, T2: 6394.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 4.0e+36, b: -5.92, Ea: 3140.0}
+  high-P-rate-constant: {A: 2.79e+18, b: -1.43, Ea: 1330.0}
+  Troe: {A: 0.412, T3: 195.0, T1: 5900.0, T2: 6394.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0}
+  note: "******************************  CH3OH REACTIONS  ********************************\n\
+    \ GRI-3.0\n"
 - equation: H + CH2OH (+M) <=> CH3OH (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 4.36e+31, b: -4.65, Ea: 5080.0}
-    high-P-rate-constant: {A: 1055000000000.0, b: 0.5, Ea: 86.0}
-    Troe: {A: 0.6, T3: 100.0, T1: 90000.0, T2: 10000.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 4.36e+31, b: -4.65, Ea: 5080.0}
+  high-P-rate-constant: {A: 1055000000000.0, b: 0.5, Ea: 86.0}
+  Troe: {A: 0.6, T3: 100.0, T1: 90000.0, T2: 10000.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0}
 - equation: H + CH3O (+M) <=> CH3OH (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 4.66e+41, b: -7.44, Ea: 14080.0}
-    high-P-rate-constant: {A: 2430000000000.0, b: 0.515, Ea: 50.0}
-    Troe: {A: 0.7, T3: 100.0, T1: 90000.0, T2: 10000.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 4.66e+41, b: -7.44, Ea: 14080.0}
+  high-P-rate-constant: {A: 2430000000000.0, b: 0.515, Ea: 50.0}
+  Troe: {A: 0.7, T3: 100.0, T1: 90000.0, T2: 10000.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0}
 - equation: CH3OH + H <=> CH2OH + H2
   rate-constant: {A: 32000000000000.0, b: 0.0, Ea: 6095.0}
   note: 'WARNATZ, IN GARDINER, JR. COMBUSTION CHEMISTRY (1984)
@@ -2409,59 +2220,19 @@ reactions:
 - equation: CH3 + CH2 <=> C2H4 + H
   rate-constant: {A: 40000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2 + H (+M) <=> CH3 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.2e+27, b: -3.14, Ea: 1230.0}
-    high-P-rate-constant: {A: 2.5e+16, b: -0.8, Ea: 0.0}
-    Troe: {A: 0.68, T3: 78.0, T1: 1995.0, T2: 5590.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 3.2e+27, b: -3.14, Ea: 1230.0}
+  high-P-rate-constant: {A: 2.5e+16, b: -0.8, Ea: 0.0}
+  Troe: {A: 0.68, T3: 78.0, T1: 1995.0, T2: 5590.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0, AR: 0.7}
+  note: "*************************** CH/CH2/CH2(S) REACTIONS  *******************************\n\
+    \ GRI-1.2\nCH4+CH2(S) = CH3+CH3                        1.600E+13  0.00 -5.700E+02\n\
+    CH3+OH = CH2(S)+H2O                         2.501E+13  0.00  0.000E+00\nCH3+CH2(S)\
+    \ = C2H4+H                         1.200E+13  0.00 -5.700E+02\nCH3O+H = CH2(S)+H2O\
+    \                         1.600E+13  0.00  0.000E+00\n GRI-3.0\nCH2(S)+H2O(+M)\
+    \ = CH3OH(+M)                  4.820E+17 -1.16  1.145E+03\n   LOW  /  1.880E+38\
+    \   -6.360   5040.00/\n   TROE/   .6027  208.00  3922.00  10180.0 /\n   H2/2.00/\
+    \ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/\n GRI-1.2\n"
 - equation: CH2 + O <=> HCO + H
   rate-constant: {A: 80000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2 + OH <=> CH2O + H
@@ -2473,59 +2244,11 @@ reactions:
 - equation: CH2 + HO2 <=> CH2O + OH
   rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2 + CO (+M) <=> ketene (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 2.69e+33, b: -5.11, Ea: 7095.0}
-    high-P-rate-constant: {A: 810000000000.0, b: 0.5, Ea: 4510.0}
-    Troe: {A: 0.5907, T3: 275.0, T1: 1226.0, T2: 5185.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 2.69e+33, b: -5.11, Ea: 7095.0}
+  high-P-rate-constant: {A: 810000000000.0, b: 0.5, Ea: 4510.0}
+  Troe: {A: 0.5907, T3: 275.0, T1: 1226.0, T2: 5185.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0, AR: 0.7}
 - equation: CH2 + CH2 <=> C2H2 + H2
   rate-constant: {A: 32000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2(S) + M <=> CH2 + M
@@ -2628,59 +2351,38 @@ reactions:
     \ WESTBROOK,C.K.,\n\"CHEMICAL KINETICS OF ORGANOPHOSPHORUS COMPOUNDS\", PROCEEDINGS\
     \ OF THE\n"
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
+    HE: 0.7}
+  note: "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n CFG:  NO HCOOH\n\
+    !!!!!!!!!!!!!!! HCOOH REACTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!\nFORMIC ACID REACTIONS,\
+    \ FROM LI DME\nHOCH2O = HCOOH+H                            1.000E+14  0.00  1.490E+04\n\
+    CH2O+OH = HOCH2O                            4.500E+15 -1.11  0.000E+00\nHCOOH+M\
+    \ = CO+H2O+M                          2.300E+13  0.00  5.000E+04\nHCOOH+M = CO2+H2+M\
+    \                          1.500E+16  0.00  5.700E+04\nHCOOH = HCO+OH        \
+    \                      4.593E+18 -0.46  1.083E+05\nHCOOH+OH = H2O+CO2+H      \
+    \                  2.620E+06  2.06  9.160E+02\nHCOOH+OH = H2O+CO+OH          \
+    \              1.850E+07  1.51 -9.620E+02\nHCOOH+H = H2+CO2+H                \
+    \          4.240E+06  2.10  4.868E+03\nHCOOH+H = H2+CO+OH                    \
+    \      6.030E+13 -0.35  2.988E+03\nHCOOH+CH3 = CH4+CO+OH                     \
+    \  3.900E-07  5.80  2.200E+03\nHCOOH+HO2 = H2O2+CO+OH                      1.000E+12\
+    \  0.00  1.192E+04\nHCOOH+O = CO+OH+OH                          1.770E+18 -1.90\
+    \  2.975E+03\nWKM\nREACTION AND RATE TAKEN FROM NUIG BUT NAMING SCHEME CHANGED\n\
+    HOCHO CHANGED TO HCOOH\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM TAYLOR ET\
+    \ AL. 1996.\nacetaldehyde+OH = CH3+HCOOH 3.000E+15 -1.08 0.000E+00\nHEALY ET AL\
+    \ C&F, 155: 451 461 (2008) \nCH3OCH3+formyloxy = CH3OCH2+HCOOH 1.000E+13 0.00\
+    \ 1.769E+04\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\
+    ! CFG:  NO C2H\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH 3.0\nC2H+H(+M)\
+    \ = C2H2(+M) 1.000E+17 0.00 0.000E+00\nLOW / 3.7500E+33 -4.8000E+00 1.9000E+03\
+    \ / \nTROE / 6.4600E-01 1.3200E+02 1.3150E+03 5.5660E+03 / !TROE FALL-OFF REACTION\n\
+    H2/2/ H2O/6/ AR/.7/ CO/1.5/ CO2/2/ CH4/2/ C2H6/3/ HE/.7/ \nHEALY ET AL C&F, 155:\
+    \ 451 461 (2008) \nFROM GRI MECH 3.0\nO+C2H2 = C2H+OH 4.600E+19 -1.40 2.895E+04\n\
+    HEALY ET AL C&F, 155: 451 461 (2008) \nC2H2+OH = C2H+H2O 3.370E+07 2.00 1.400E+04\n\
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nHEALY ET\
+    \ AL C&F, 155: 451 461 (2008) \nFROM GRI MECH 3.0\n"
 - equation: C2H6 + H <=> C2H5 + H2
   rate-constant: {A: 115000000.0, b: 1.9, Ea: 7530.0}
   note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH\
@@ -2717,59 +2419,17 @@ reactions:
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM TSANG & HAMPSON, METHANE, J.\
     \ PHYS. CHEM. REF. DATA, VOL 15, 1986\n"
 - equation: H + C2H4 (+M) <=> C2H5 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 9.0e+41, b: -7.62, Ea: 6970.0}
-    high-P-rate-constant: {A: 810000000000.0, b: 0.454, Ea: 1820.0}
-    Troe: {A: 0.9753, T3: 210.0, T1: 984.0, T2: 4374.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 9.0e+41, b: -7.62, Ea: 6970.0}
+  high-P-rate-constant: {A: 810000000000.0, b: 0.454, Ea: 1820.0}
+  Troe: {A: 0.9753, T3: 210.0, T1: 984.0, T2: 4374.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
+    HE: 0.7}
+  note: 'HEALY ET AL C&F, 155: 451 461 (2008)
+
+    FROM GRI MECH 3.0 (X 1.5 (WKM))
+
+    '
 - equation: H2 + CH3OO <=> H + CH3OOH
   rate-constant: {A: 150000000000000.0, b: 0.0, Ea: 26030.0}
   note: 'HEALY ET AL C&F, 155: 451 461 (2008)
@@ -3056,113 +2716,22 @@ reactions:
   rate-constant: {A: 42000000000.0, b: 0.0, Ea: 850.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM HIDAKA ??\n"
 - equation: C2H3 + H (+M) <=> C2H4 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.4e+30, b: -3.86, Ea: 3320.0}
-    high-P-rate-constant: {A: 136000000000000.0, b: 0.17, Ea: 660.0}
-    Troe: {A: 0.782, T3: 207.5, T1: 2663.0, T2: 6095.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 1.4e+30, b: -3.86, Ea: 3320.0}
+  high-P-rate-constant: {A: 136000000000000.0, b: 0.17, Ea: 660.0}
+  Troe: {A: 0.782, T3: 207.5, T1: 2663.0, T2: 6095.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
+    HE: 0.7}
+  note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM CURRAN LITERATURE SEARCH\n"
 - equation: C2H4 (+M) <=> C2H2 + H2 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.58e+51, b: -9.3, Ea: 97800.0}
-    high-P-rate-constant: {A: 8000000000000.0, b: 0.44, Ea: 88770.0}
-    Troe: {A: 0.735, T3: 180.0, T1: 1035.0, T2: 5417.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 1.58e+51, b: -9.3, Ea: 97800.0}
+  high-P-rate-constant: {A: 8000000000000.0, b: 0.44, Ea: 88770.0}
+  Troe: {A: 0.735, T3: 180.0, T1: 1035.0, T2: 5417.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
+    HE: 0.7}
+  note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH\
+    \ 3.0\n"
 - equation: C2H4 + H <=> C2H3 + H2
   rate-constant: {A: 50700000.0, b: 1.93, Ea: 12950.0}
   note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM KNYAZEV,V.D.;\
@@ -3209,59 +2778,13 @@ reactions:
   rate-constant: {A: 2230000000000.0, b: 0.0, Ea: 17190.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \n"
 - equation: C2H2 + H (+M) <=> C2H3 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.8e+40, b: -7.27, Ea: 7220.0}
-    high-P-rate-constant: {A: 5600000000000.0, b: 0.0, Ea: 2400.0}
-    Troe: {A: 0.751, T3: 98.5, T1: 1302.0, T2: 4167.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 3.8e+40, b: -7.27, Ea: 7220.0}
+  high-P-rate-constant: {A: 5600000000000.0, b: 0.0, Ea: 2400.0}
+  Troe: {A: 0.751, T3: 98.5, T1: 1302.0, T2: 4167.0}
+  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
+    HE: 0.7}
+  note: "---CFG\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH 3.0\n"
 - equation: C2H3 + O2 <=> HCO + CH2O
   rate-constant: {A: 4.58e+16, b: -1.39, Ea: 1015.0}
   note: 'TROE FALL-OFF REACTION
@@ -3313,221 +2836,37 @@ reactions:
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM SMITH ET AL., GRI MECH 2.11\n"
 - equation: ethanol (+M) <=> CH2OH + CH3 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 3.11e+85, b: -18.84, Ea: 113100.0}
-    high-P-rate-constant: {A: 5.71e+23, b: -1.68, Ea: 94400.0}
-    Troe: {A: 0.5, T3: 550.0, T1: 825.0, T2: 6100.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 3.11e+85, b: -18.84, Ea: 113100.0}
+  high-P-rate-constant: {A: 5.71e+23, b: -1.68, Ea: 94400.0}
+  Troe: {A: 0.5, T3: 550.0, T1: 825.0, T2: 6100.0}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO: 2.0, CO2: 3.0}
+  note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM NICK MARINOV\nIJCK 31: 183 220,\
+    \ 1999\n"
 - equation: ethanol (+M) <=> C2H5 + OH (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 5.11e+85, b: -18.8, Ea: 118770.0}
-    high-P-rate-constant: {A: 2.4e+23, b: -1.62, Ea: 99540.0}
-    Troe: {A: 0.5, T3: 650.0, T1: 800.0, T2: 1000000000000000.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 5.11e+85, b: -18.8, Ea: 118770.0}
+  high-P-rate-constant: {A: 2.4e+23, b: -1.62, Ea: 99540.0}
+  Troe: {A: 0.5, T3: 650.0, T1: 800.0, T2: 1000000000000000.0}
+  efficiencies: {H2: 2.0, H2O: 5.0, CO: 2.0, CO2: 3.0}
+  note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM NICK\
+    \ MARINOV\nIJCK 31: 183 220, 1999\n"
 - equation: ethanol (+M) <=> C2H4 + H2O (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 2.57e+83, b: -18.85, Ea: 86453.0}
-    high-P-rate-constant: {A: 27900000000000.0, b: 0.09, Ea: 66140.0}
-    Troe: {A: 0.7, T3: 350.0, T1: 800.0, T2: 3800.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 2.57e+83, b: -18.85, Ea: 86453.0}
+  high-P-rate-constant: {A: 27900000000000.0, b: 0.09, Ea: 66140.0}
+  Troe: {A: 0.7, T3: 350.0, T1: 800.0, T2: 3800.0}
+  efficiencies: {H2O: 5.0}
+  note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM NICK\
+    \ MARINOV\nIJCK 31: 183 220, 1999\n"
 - equation: ethanol (+M) <=> acetaldehyde + H2 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 4.46e+87, b: -19.42, Ea: 115580.0}
-    high-P-rate-constant: {A: 724000000000.0, b: 0.1, Ea: 91010.0}
-    Troe: {A: 0.9, T3: 900.0, T1: 1100.0, T2: 3500.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 4.46e+87, b: -19.42, Ea: 115580.0}
+  high-P-rate-constant: {A: 724000000000.0, b: 0.1, Ea: 91010.0}
+  Troe: {A: 0.9, T3: 900.0, T1: 1100.0, T2: 3500.0}
+  efficiencies: {H2O: 5.0}
+  note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM NICK\
+    \ MARINOV\nIJCK 31: 183 220, 1999\n"
 - equation: ethanol + O2 <=> CH2CH2OH + HO2
   rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 52800.0}
   note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \n"
@@ -3626,59 +2965,11 @@ reactions:
   rate-constant: {A: 3810000.0, b: 2.0, Ea: 1641.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nCURRAN ESTIMATE\nANALOGY TO CH2OH+O2\n"
 - equation: acetone (+M) <=> acetyl + CH3 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 7.013e+89, b: -20.38, Ea: 107150.0}
-    high-P-rate-constant: {A: 7.108e+21, b: -1.57, Ea: 84680.0}
-    Troe: {A: 0.863, T3: 10000000000.0, T1: 416.4, T2: 3290000000.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 7.013e+89, b: -20.38, Ea: 107150.0}
+  high-P-rate-constant: {A: 7.108e+21, b: -1.57, Ea: 84680.0}
+  Troe: {A: 0.863, T3: 10000000000.0, T1: 416.4, T2: 3290000000.0}
+  note: " CFG:  NO ACETONE\nHEALY ET AL C&F, 155: 451 461 (2008) \n"
 - equation: acetone + OH <=> propen2oxy + H2O
   rate-constant: {A: 125000.0, b: 2.48, Ea: 445.0}
   note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \n"
@@ -3836,59 +3127,15 @@ reactions:
   rate-constant: {A: 151000000000.0, b: 0.0, Ea: 4810.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \n"
 - equation: CH3OCH3 (+M) <=> CH3 + CH3O (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.722e+59, b: -11.4, Ea: 93243.3}
-    high-P-rate-constant: {A: 2.33e+19, b: -0.661, Ea: 84092.4}
-    Troe: {A: 1.0, T3: 1.0e-20, T1: 880.0, T2: 0.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 1.722e+59, b: -11.4, Ea: 93243.3}
+  high-P-rate-constant: {A: 2.33e+19, b: -0.661, Ea: 84092.4}
+  Troe: {A: 1.0, T3: 1.0e-20, T1: 880.0, T2: 0.0}
+  note: " CFG:  NO DME\nWKM\nNEW DME RATE CONSTANTS FROM CURRAN.\nPRIVATE COMMUNICATION\n\
+    UNIMOLECULAR DECOMPOSITION OF DME (BATH GAS: N2)\nCH3OCH3(+M)<=>CH3+CH3O(+M) 4.848E+21\
+    \ -1.560 8.313E+04\nLOW / 1.118E+71 -1.4530E+01 1.0043E+05 /\nTROE / 8.4300E-01\
+    \ 9.4900E+09 5.5636E+02 6.7100E+09 / !TROE FALL-OFF REACTION\n Replace the above\
+    \ values with results from Raghu\n Comb. & Flame 158 (2011) 618-632\n"
 - equation: CH3OCH3 + OH <=> CH3OCH2 + H2O
   rate-constant: {A: 935000.0, b: 2.29, Ea: -781.0}
   note: 'TROE FALL-OFF REACTION
@@ -4217,113 +3464,24 @@ reactions:
   rate-constant: {A: 1700000000000.0, b: 0.0, Ea: 8440.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nANALOGY WITH ACETALDEHYDE\n"
 - equation: allyl + H (+M) <=> C3H6 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.33e+60, b: -12.0, Ea: 5967.8}
-    high-P-rate-constant: {A: 200000000000000.0, b: 0.0, Ea: 0.0}
-    Troe: {A: 0.02, T3: 1096.6, T1: 1096.6, T2: 6859.5}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 1.33e+60, b: -12.0, Ea: 5967.8}
+  high-P-rate-constant: {A: 200000000000000.0, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.02, T3: 1096.6, T1: 1096.6, T2: 6859.5}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0, AR: 0.7}
+  note: 'LASKIN ET AL. IJCK 32 589-614 2000
+
+    '
 - equation: C2H3 + CH3 (+M) <=> C3H6 (+M)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 4.27e+58, b: -11.94, Ea: 9769.8}
-    high-P-rate-constant: {A: 25000000000000.0, b: 0.0, Ea: 0.0}
-    Troe: {A: 0.175, T3: 1340.6, T1: 60000.0, T2: 10139.8}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  type: falloff
+  low-P-rate-constant: {A: 4.27e+58, b: -11.94, Ea: 9769.8}
+  high-P-rate-constant: {A: 25000000000000.0, b: 0.0, Ea: 0.0}
+  Troe: {A: 0.175, T3: 1340.6, T1: 60000.0, T2: 10139.8}
+  efficiencies: {H2: 2.0, H2O: 6.0, CH4: 2.0, CO: 1.5, CO2: 2.0, C2H6: 3.0, AR: 0.7,
+    C2H2: 3.0, C2H4: 3.0}
+  note: 'LASKIN ET AL. IJCK 32 589-614 2000
+
+    '
 - equation: C3H6 <=> propen1yl + H
   rate-constant: {A: 7.71e+69, b: -16.09, Ea: 140000.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \n"
@@ -4427,6 +3585,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + H <=> allyl + H2
   rate-constant: {A: 173000.0, b: 2.5, Ea: 2490.0}
   note: 'LASKIN ET AL IJCK 32 589-614 2000
@@ -4550,6 +3711,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + O2 <=> acetyl + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -4604,6 +3768,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + O2 <=> acrolein + OH
   type: linear-Burke
   reference-collider: AR
@@ -4658,6 +3825,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + HCO <=> C3H6 + CO
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
   note: 'LASKIN ET AL. IJCK 32 589-614 2000
@@ -4718,6 +3888,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl <=> propen1yl
   type: linear-Burke
   reference-collider: AR
@@ -4773,6 +3946,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C2H2 + CH3 <=> allyl
   type: linear-Burke
   reference-collider: AR
@@ -4828,6 +4004,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + CH3OO <=> allyloxy + CH3O
   rate-constant: {A: 7000000000000.0, b: 0.0, Ea: -1000.0}
   note: "HEALY ET AL C&F, 155: 451 461 (2008) \nFROM GLAUDE,P.A.,MELIUS,C.,PITZ,W.J.,AND\
@@ -4892,6 +4071,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: propen1yl + O <=> C2H4 + HCO
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
   note: 'LASKIN ET AL. IJCK 32 589-614 2000
@@ -4972,6 +4154,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: propen2yl <=> propen1yl
   type: linear-Burke
   reference-collider: AR
@@ -5027,6 +4212,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: propen2yl + O <=> CH3 + ketene
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
   note: 'LASKIN ET AL. IJCK 32 589-614 2000
@@ -5364,6 +4552,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> ethenol + CH3
   type: linear-Burke
   duplicate: true
@@ -5426,6 +4617,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> ethenol + CH3
   type: linear-Burke
   duplicate: true
@@ -5488,6 +4682,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> propen1ol + H
   type: linear-Burke
   duplicate: true
@@ -5550,6 +4747,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> propen1ol + H
   type: linear-Burke
   duplicate: true
@@ -5612,6 +4812,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> propen2ol + H
   type: linear-Burke
   duplicate: true
@@ -5674,6 +4877,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> propen2ol + H
   type: linear-Burke
   duplicate: true
@@ -5736,6 +4942,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C3H6 + OH <=> acetaldehyde + CH3
   type: linear-Burke
   reference-collider: AR
@@ -5797,6 +5006,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + HO2 <=> prod_2
   type: linear-Burke
   reference-collider: AR
@@ -5854,6 +5066,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + HO2 <=> acrolein + H2O
   type: linear-Burke
   reference-collider: AR
@@ -5911,6 +5126,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyl + HO2 <=> allyloxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -5968,6 +5186,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_2 <=> acrolein + H2O
   type: linear-Burke
   reference-collider: AR
@@ -6025,6 +5246,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_2 <=> allyloxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -6082,6 +5306,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyloxy <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -6141,6 +5368,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyloxy <=> vinoxylmethyl
   type: linear-Burke
   reference-collider: AR
@@ -6200,6 +5430,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyloxy <=> formylethyl
   type: linear-Burke
   reference-collider: AR
@@ -6259,6 +5492,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyloxy <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -6318,6 +5554,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: allyloxy <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -6377,6 +5616,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: vinoxylmethyl <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -6436,6 +5678,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: vinoxylmethyl <=> formylethyl
   type: linear-Burke
   reference-collider: AR
@@ -6495,6 +5740,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: vinoxylmethyl <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -6554,6 +5802,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: vinoxylmethyl <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -6613,6 +5864,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: formylethyl <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -6672,6 +5926,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: formylethyl <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -6731,6 +5988,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: formylethyl <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -6790,6 +6050,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C2H3 + CH2O <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -6849,6 +6112,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: C2H3 + CH2O <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -6908,6 +6174,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> npropyloo
   type: linear-Burke
   reference-collider: AR
@@ -6965,6 +6234,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> QOOH_2
   type: linear-Burke
   reference-collider: AR
@@ -7022,6 +6294,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -7080,6 +6355,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -7138,6 +6416,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -7195,6 +6476,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + npropyl <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -7252,6 +6536,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: npropyloo <=> QOOH_2
   type: linear-Burke
   reference-collider: AR
@@ -7309,6 +6596,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: npropyloo <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -7367,6 +6657,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: npropyloo <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -7425,6 +6718,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: npropyloo <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -7482,6 +6778,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: npropyloo <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -7539,6 +6838,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_2 <=> QOOH_1
   type: linear-Burke
   reference-collider: AR
@@ -7596,6 +6898,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_2 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -7653,6 +6958,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_2 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -7710,6 +7018,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_1 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -7767,6 +7078,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_1 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -7824,6 +7138,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + ipropyl <=> ipropyloo
   type: linear-Burke
   reference-collider: AR
@@ -7881,6 +7198,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + ipropyl <=> QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -7938,6 +7258,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + ipropyl <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -7995,6 +7318,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + ipropyl <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -8052,6 +7378,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: ipropyloo <=> QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -8109,6 +7438,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: ipropyloo <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -8166,6 +7498,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: ipropyloo <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -8223,6 +7558,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_3 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -8280,6 +7618,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: QOOH_3 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -8337,6 +7678,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HO2 + C3H6 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -8394,6 +7738,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_1 <=> well_1
   type: linear-Burke
   reference-collider: AR
@@ -8451,6 +7798,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_1 <=> OH + OH + frag_1
   type: linear-Burke
   reference-collider: AR
@@ -8508,6 +7858,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_1 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -8565,6 +7918,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_1 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -8622,6 +7978,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> well_2
   type: linear-Burke
   reference-collider: AR
@@ -8679,6 +8038,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -8736,6 +8098,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -8793,6 +8158,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -8850,6 +8218,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> OH + OH + frag_4
   type: linear-Burke
   reference-collider: AR
@@ -8907,6 +8278,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> OH + OH + frag_5
   type: linear-Burke
   reference-collider: AR
@@ -8964,6 +8338,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -9021,6 +8398,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -9078,6 +8458,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -9135,6 +8518,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_2 <=> O2 + QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -9192,6 +8578,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> well_2
   type: linear-Burke
   reference-collider: AR
@@ -9249,6 +8638,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -9306,6 +8698,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -9363,6 +8758,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -9420,6 +8818,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> OH + OH + frag_4
   type: linear-Burke
   reference-collider: AR
@@ -9477,6 +8878,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> OH + OH + frag_5
   type: linear-Burke
   reference-collider: AR
@@ -9534,6 +8938,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -9591,6 +8998,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -9648,6 +9058,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: O2 + QOOH_3 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -9705,6 +9118,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_1 <=> OH + prod_1
   type: linear-Burke
   reference-collider: AR
@@ -9762,6 +9178,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_1 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -9819,6 +9238,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_1 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -9876,6 +9298,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -9933,6 +9358,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -9990,6 +9418,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -10047,6 +9478,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -10104,6 +9538,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -10161,6 +9598,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -10218,6 +9658,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -10275,6 +9718,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_2 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -10332,6 +9778,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -10389,6 +9838,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -10446,6 +9898,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -10503,6 +9958,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -10560,6 +10018,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -10617,6 +10078,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -10674,6 +10138,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_3 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -10731,6 +10198,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -10788,6 +10258,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -10845,6 +10318,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -10902,6 +10378,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -10959,6 +10438,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -11016,6 +10498,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: well_5 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -11073,6 +10558,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_6 <=> propen1oxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -11130,6 +10618,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_7 <=> propen2oxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -11187,6 +10678,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_1 <=> frag_1 + OH
   type: linear-Burke
   reference-collider: AR
@@ -11244,6 +10738,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_3 <=> frag_3 + OH
   type: linear-Burke
   reference-collider: AR
@@ -11301,6 +10798,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_4 <=> frag_4 + OH
   type: linear-Burke
   reference-collider: AR
@@ -11358,6 +10858,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: prod_5 <=> frag_5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -11415,6 +10918,9 @@ reactions:
   - name: CH3OCH3
     efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
     note: Sivaramakrishnan-CNF2011 via Bugler-2016
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: frag_1 <=> vinoxy + CH2O
   rate-constant: {A: 49400000000.0, b: 0.857, Ea: 5809.2}
   note: 'C3H5O2 beta-scission rates

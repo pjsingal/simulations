@@ -830,6 +830,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: CO + OH <=> HOCO
   type: linear-Burke
   reference-collider: AR
@@ -872,6 +884,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: CO + HO2 <=> CO2 + OH
   rate-constant: {A: 160000.0, b: 2.18, Ea: 17943.0}
 - equation: CO + O2 <=> CO2 + O
@@ -948,6 +972,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: CH2O + H <=> HCO + H2
   type: linear-Burke
   duplicate: true
@@ -989,6 +1025,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: CH2O + H <=> H + CO + H2
   type: linear-Burke
   reference-collider: AR
@@ -1029,6 +1077,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: CH2O + O <=> HCO + OH
   duplicate: true
   rate-constant: {A: 5.6e+31, b: -5.189, Ea: 19968.0}
@@ -1319,6 +1379,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: H2NO + H <=> HNO + H2
   rate-constant: {A: 30000000.0, b: 2.0, Ea: 2000.0}
 - equation: H2NO + H <=> NH2 + OH
@@ -1425,6 +1497,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: HNO + OH <=> NO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -1470,6 +1554,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: HNO + HO2 <=> HNO2 + OH
   rate-constant: {A: 2000.0, b: 2.36, Ea: 8980.0}
 - equation: HNO + O2 <=> HO2 + NO
@@ -1562,6 +1658,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: NO + OH <=> HNO2
   rate-constant: {A: 3100000000000000.0, b: -2.17, Ea: 2775.0}
 - equation: HNO2 + H <=> NO + H2O
@@ -1609,6 +1717,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: HNO2 + H <=> HNO + OH
   type: linear-Burke
   reference-collider: AR
@@ -1654,6 +1774,18 @@ reactions:
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: HNO2 + H <=> NO2 + H2
   rate-constant: {A: 23000.0, b: 2.77, Ea: -2022.0}
 - equation: HNO2 + O <=> NO2 + OH

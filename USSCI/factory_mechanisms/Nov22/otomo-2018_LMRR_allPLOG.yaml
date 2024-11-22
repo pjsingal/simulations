@@ -957,6 +957,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H3 + H <=> N2H2 + H2
   rate-constant: {A: 240000000.0, b: 1.5, Ea: -10.0}
 - equation: N2H3 + O <=> N2H2 + OH
@@ -1012,6 +1021,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H2 + H <=> NNH + H2
   rate-constant: {A: 85000.0, b: 2.63, Ea: 230.0}
   note: '*
@@ -1063,6 +1081,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NN <=> NNH + H
   type: linear-Burke
   duplicate: true
@@ -1095,6 +1122,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NN + H <=> NNH + H2
   rate-constant: {A: 480000000.0, b: 1.5, Ea: -894.0}
 - equation: H2NN + H <=> N2H2 + H

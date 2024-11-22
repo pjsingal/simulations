@@ -1044,6 +1044,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H4 + H <=> N2H3 + H2
   rate-constant: {A: 960000000.0, b: 1.5, Ea: 4838.3}
   note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
@@ -1121,6 +1130,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H3 + H <=> N2H2 + H2
   rate-constant: {A: 240000000.0, b: 1.5, Ea: 0.0}
   note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
@@ -1207,6 +1225,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H2 <=> NNH + H
   type: linear-Burke
   duplicate: true
@@ -1239,6 +1266,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: N2H2 + H <=> NNH + H2
   rate-constant: {A: 482000000.0, b: 1.76, Ea: 739.2}
   note: '\AUTHOR: AS !\REF: Li, Y. and Sarathy, S.M., Int. J. Hydrogen Energy 45 23624-23637
@@ -1306,6 +1342,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NN <=> NNH + H
   type: linear-Burke
   duplicate: true
@@ -1338,6 +1383,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NN <=> NNH + H
   type: linear-Burke
   duplicate: true
@@ -1370,6 +1424,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NN + O2 <=> NH2 + NO2
   rate-constant: {A: 1500000000000.0, b: 0.0, Ea: 5961.0}
   note: ' H2NN
@@ -1531,6 +1594,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HNO <=> H + NO
   type: linear-Burke
   reference-collider: AR
@@ -1597,6 +1669,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HNO + OH <=> NO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -1633,6 +1714,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HNO + O2 <=> NO + HO2
   rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 14896.0}
   note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
@@ -1718,6 +1808,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HONO + O <=> NO2 + OH
   rate-constant: {A: 12100000000000.0, b: 0.0, Ea: 5960.0}
   note: "\\AUTHOR: AS !\\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20\
@@ -1776,6 +1875,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H2NO + M <=> HNO + H + M
   type: three-body
   rate-constant: {A: 2.8e+24, b: -2.83, Ea: 64974.9}
@@ -2013,6 +2121,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: HNO2 + NH2 <=> NH3 + NO2
   rate-constant: {A: 28000000000.0, b: 0.0, Ea: -5760.0}
   note: '\AUTHOR: AS !\REF: Thaxton, A.G.; Hsu, C.C.; Lin, M.C. Int. J. Chem. Kinet.
@@ -2055,6 +2172,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: H + HNO2 <=> HNO + OH
   type: linear-Burke
   reference-collider: AR
@@ -2091,6 +2217,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: OH + NO <=> HNO2
   type: linear-Burke
   reference-collider: AR
@@ -2127,6 +2262,15 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
 - equation: OH + NO2 (+M) <=> HONO2 (+M)
   type: falloff
   low-P-rate-constant: {A: 2.938e+25, b: -3.0, Ea: 0.0}
