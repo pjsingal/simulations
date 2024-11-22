@@ -1051,6 +1051,9 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
+  - name: N2O4
+    efficiency: {A: 2.69522506, b: -0.03759404, Ea: 50.01649786}
+    note: Zhang-2017
 - equation: HOCO <=> CO2 + H
   type: linear-Burke
   reference-collider: AR
@@ -1104,6 +1107,9 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
+  - name: N2O4
+    efficiency: {A: 2.69522506, b: -0.03759404, Ea: 50.01649786}
+    note: Zhang-2017
 - equation: HOCO + H <=> CO2 + H2
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
   note: '\AUTHOR: YJZ!\REF: Yu and Francisco, JCP, 2008, 128(24): 244315-!\COMMENT:'
@@ -1521,6 +1527,9 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
+  - name: N2O4
+    efficiency: {A: 2.69522506, b: -0.03759404, Ea: 50.01649786}
+    note: Zhang-2017
 - equation: HNO + HNO <=> N2O + H2O
   rate-constant: {A: 900000000.0, b: 0.0, Ea: 3100.0}
   note: '\AUTHOR: YJZ !\REF:Skreiberg et al., CNF, 2004, 136(4): 501-518 !\COMMENT:'

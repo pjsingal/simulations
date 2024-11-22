@@ -7644,6 +7644,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: HOCO <=> CO2 + H
   type: linear-Burke
   reference-collider: AR
@@ -7706,6 +7709,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + H (+M) <=> CH4 (+M)
   type: linear-Burke
   reference-collider: AR
@@ -7897,6 +7903,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + OH <=> CH2O + H2
   type: linear-Burke
   reference-collider: AR
@@ -7951,6 +7960,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + OH <=> CH2OH + H
   type: linear-Burke
   reference-collider: AR
@@ -8005,6 +8017,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + OH <=> H + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -8059,6 +8074,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + OH <=> HCOH + H2
   type: linear-Burke
   reference-collider: AR
@@ -8113,6 +8131,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + OH <=> CH2 + H2O
   rate-constant: {A: 42930.0, b: 2.568, Ea: 3997.8}
 - equation: CH3 + HO2 <=> CH3O + OH
@@ -8358,6 +8379,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2O + HO2 <=> OCH2O2H
   rate-constant: {A: 150000000000.0, b: 0.0, Ea: 11900.0}
 - equation: OCH2O2H <=> HOCH2O2
@@ -8474,6 +8498,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H6 + O2 <=> C2H5 + HO2
   rate-constant: {A: 60300000000000.0, b: 0.0, Ea: 51870.0}
 - equation: C2H6 + O <=> C2H5 + OH
@@ -8566,6 +8593,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5 + O2 <=> C2H4O2H
   type: linear-Burke
   reference-collider: AR
@@ -8618,6 +8648,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5 + O2 <=> C2H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -8670,6 +8703,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5 + O2 <=> C2H4O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -8722,6 +8758,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5 + O2 <=> CH3CHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -8774,6 +8813,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4O2H <=> C2H5O2
   type: linear-Burke
   reference-collider: AR
@@ -8826,6 +8868,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5O2 <=> CH3CHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -8878,6 +8923,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5O2 <=> C2H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -8930,6 +8978,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5O2 <=> C2H4O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -8982,6 +9033,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4O2H <=> C2H4O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -9034,6 +9088,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4O2H <=> C2H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -9086,6 +9143,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4O2H <=> CH3CHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -9138,6 +9198,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5O2 + HO2 <=> C2H5O2H + O2
   rate-constant: {A: 17500000000.0, b: 0.0, Ea: -3275.0}
 - equation: C2H5O2 + CH2O <=> C2H5O2H + HCO
@@ -9268,6 +9331,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + OH <=> CH3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -9323,6 +9389,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + OH <=> C2H3OH + H
   type: linear-Burke
   reference-collider: AR
@@ -9378,6 +9447,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + OH <=> PC2H4OH
   type: linear-Burke
   reference-collider: AR
@@ -9433,6 +9505,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + HO2 <=> C2H4O1-2 + OH
   rate-constant: {A: 3345000000000.0, b: 0.0, Ea: 17190.0}
 - equation: C2H4 + CH3O2 <=> C2H4O1-2 + CH3O
@@ -9504,6 +9579,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> C2H3OO
   type: linear-Burke
   duplicate: true
@@ -9562,6 +9640,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CHCHO + OH
   type: linear-Burke
   duplicate: true
@@ -9620,6 +9701,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CHCHO + OH
   type: linear-Burke
   duplicate: true
@@ -9678,6 +9762,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2CHO + O
   type: linear-Burke
   duplicate: true
@@ -9736,6 +9823,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2CHO + O
   type: linear-Burke
   duplicate: true
@@ -9794,6 +9884,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> C2H2 + HO2
   type: linear-Burke
   duplicate: true
@@ -9852,6 +9945,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> C2H2 + HO2
   type: linear-Burke
   duplicate: true
@@ -9910,6 +10006,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CHOCHO + H
   type: linear-Burke
   duplicate: true
@@ -9968,6 +10067,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CHOCHO + H
   type: linear-Burke
   duplicate: true
@@ -10026,6 +10128,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2CO + OH
   type: linear-Burke
   duplicate: true
@@ -10084,6 +10189,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2CO + OH
   type: linear-Burke
   duplicate: true
@@ -10142,6 +10250,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2O + HCO
   type: linear-Burke
   duplicate: true
@@ -10200,6 +10311,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CH2O + HCO
   type: linear-Burke
   duplicate: true
@@ -10258,6 +10372,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -10316,6 +10433,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -10374,6 +10494,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CO + CH3O
   type: linear-Burke
   duplicate: true
@@ -10432,6 +10555,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CO + CH3O
   type: linear-Burke
   duplicate: true
@@ -10490,6 +10616,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CO2 + CH3
   type: linear-Burke
   duplicate: true
@@ -10548,6 +10677,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + O2 <=> CO2 + CH3
   type: linear-Burke
   duplicate: true
@@ -10606,6 +10738,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CHCHO + OH
   type: linear-Burke
   duplicate: true
@@ -10664,6 +10799,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CHCHO + OH
   type: linear-Burke
   duplicate: true
@@ -10722,6 +10860,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2CHO + O
   type: linear-Burke
   duplicate: true
@@ -10780,6 +10921,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2CHO + O
   type: linear-Burke
   duplicate: true
@@ -10838,6 +10982,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CHOCHO + H
   type: linear-Burke
   duplicate: true
@@ -10896,6 +11043,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CHOCHO + H
   type: linear-Burke
   duplicate: true
@@ -10954,6 +11104,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2CO + OH
   type: linear-Burke
   duplicate: true
@@ -11012,6 +11165,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2CO + OH
   type: linear-Burke
   duplicate: true
@@ -11070,6 +11226,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2O + HCO
   type: linear-Burke
   duplicate: true
@@ -11128,6 +11287,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO <=> CH2O + HCO
   type: linear-Burke
   duplicate: true
@@ -11186,6 +11348,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -11244,6 +11409,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -11302,6 +11470,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -11360,6 +11531,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OO => CH2O + H + CO
   type: linear-Burke
   duplicate: true
@@ -11418,6 +11592,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + H <=> C2H2 + H2
   rate-constant: {A: 170000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C2H3 + H <=> H2CC + H2
@@ -11532,6 +11709,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H2 + OH <=> CH2CO + H
   type: linear-Burke
   reference-collider: AR
@@ -11587,6 +11767,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H2 + OH <=> CH3 + CO
   type: linear-Burke
   reference-collider: AR
@@ -11642,6 +11825,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H2 + OH <=> C2H2OH
   type: linear-Burke
   reference-collider: AR
@@ -11697,6 +11883,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: H + HCCOH <=> H + CH2CO
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH3CHO (+M) <=> CH3 + HCO (+M)
@@ -11803,6 +11992,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OH + O2 <=> CH2CHO + HO2
   rate-constant: {A: 531000000000.0, b: 0.21, Ea: 39830.0}
 - equation: C2H3OH + O <=> CH2CHO + OH
@@ -11899,6 +12091,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHO + O2 <=> CH2CO + HO2
   type: linear-Burke
   reference-collider: AR
@@ -11952,6 +12147,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHO + O2 => CH2O + CO + OH
   type: linear-Burke
   reference-collider: AR
@@ -12005,6 +12203,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHO + O2 <=> HO2CH2CO
   type: linear-Burke
   reference-collider: AR
@@ -12058,6 +12259,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2CH2CHO <=> HO2CH2CO
   type: linear-Burke
   reference-collider: AR
@@ -12111,6 +12315,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2CH2CHO <=> CH2CO + HO2
   type: linear-Burke
   reference-collider: AR
@@ -12164,6 +12371,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: HO2CH2CO => CO + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -12217,6 +12427,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: HO2CH2CO <=> CH2CO + HO2
   type: linear-Burke
   reference-collider: AR
@@ -12270,6 +12483,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2 + CO (+M) <=> CH2CO (+M)
   type: falloff
   low-P-rate-constant: {A: 2.69e+33, b: -5.11, Ea: 7095.0}
@@ -12365,6 +12581,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5OH <=> CH3 + CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -12420,6 +12639,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5OH <=> C2H5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -12475,6 +12697,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H5OH + O <=> C2H5O + OH
   rate-constant: {A: 0.00146, b: 4.73, Ea: 1727.0}
 - equation: C2H5OH + OH <=> C2H5O + H2O
@@ -12576,6 +12801,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC2H4OH <=> C2H3OH + H
   type: linear-Burke
   reference-collider: AR
@@ -12633,6 +12861,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC2H4OH <=> C2H5O
   type: linear-Burke
   reference-collider: AR
@@ -12690,6 +12921,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC2H4OH <=> PC2H4OH
   type: linear-Burke
   reference-collider: AR
@@ -12747,6 +12981,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + CH2O <=> C2H5O
   rate-constant: {A: 300000000000.0, b: 0.0, Ea: 6336.0}
 - equation: CH3CHO + H <=> C2H5O
@@ -12811,6 +13048,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2C2H4OH => OH + CH2O + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -12865,6 +13105,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH3 (+M) <=> CH3 + CH3O (+M)
   type: falloff
   low-P-rate-constant: {A: 1.72e+59, b: -11.4, Ea: 93295.6}
@@ -12958,6 +13201,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2 + O2 <=> CH3OCH2O2
   type: linear-Burke
   reference-collider: AR
@@ -13015,6 +13261,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2 + O2 <=> CH2OCH2O2H
   type: linear-Burke
   reference-collider: AR
@@ -13072,6 +13321,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2 + O2 => CH2O + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -13129,6 +13381,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O2 => CH2O + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -13186,6 +13441,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O2 <=> CH2OCH2O2H
   type: linear-Burke
   reference-collider: AR
@@ -13243,6 +13501,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2OCH2O2H => CH2O + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -13300,6 +13561,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2OCH2O2H + O2 <=> O2CH2OCH2O2H
   type: linear-Burke
   reference-collider: AR
@@ -13357,6 +13621,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2OCH2O2H + O2 <=> HO2CH2OCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -13414,6 +13681,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2CH2OCH2O2H <=> HO2CH2OCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -13471,6 +13741,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O2 + CH3OCH2O2 <=> O2 + CH3OCH2O + CH3OCH2O
   type: linear-Burke
   reference-collider: AR
@@ -13528,6 +13801,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O2 + CH3OCH2O2 <=> O2 + CH3OCHO + CH3OCH2OH
   type: linear-Burke
   reference-collider: AR
@@ -13585,6 +13861,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O2H <=> CH3OCH2O + OH
   rate-constant: {A: 2.106e+22, b: -2.12, Ea: 43830.0}
 - equation: CH3OCH2O2 + CH2O <=> CH3OCH2O2H + HCO
@@ -13653,6 +13932,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: HOCH2OCO <=> CH2OH + CO2
   rate-constant: {A: 1.117e+17, b: -1.526, Ea: 20771.9}
 - equation: HOCH2OCO <=> HOCH2O + CO
@@ -13715,6 +13997,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCH2O + O2 <=> CH3OCHO + HO2
   rate-constant: {A: 50000000000.0, b: 0.0, Ea: 500.0}
 - equation: CH3OCH2O + CH3OCH2 <=> CH3OCHO + CH3OCH3
@@ -13832,6 +14117,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3OCO <=> CH3O + CO
   type: linear-Burke
   reference-collider: AR
@@ -13885,6 +14173,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2OCHO <=> CH2O + HCO
   type: linear-Burke
   reference-collider: AR
@@ -13943,6 +14234,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H8 (+M) <=> CH3 + C2H5 (+M)
   type: linear-Burke
   reference-collider: AR
@@ -14104,6 +14398,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + IC3H7 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -14158,6 +14455,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + NC3H7 <=> C3H6OOH1-2
   type: linear-Burke
   reference-collider: AR
@@ -14212,6 +14512,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + NC3H7 <=> C3H6OOH1-3
   type: linear-Burke
   duplicate: true
@@ -14267,6 +14570,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + NC3H7 <=> C3H6OOH1-3
   type: linear-Burke
   duplicate: true
@@ -14322,6 +14628,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + NC3H7 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -14376,6 +14685,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + IC3H7 <=> C3H6OOH2-1
   type: linear-Burke
   reference-collider: AR
@@ -14430,6 +14742,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + IC3H7 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -14484,6 +14799,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + NC3H7 <=> NC3H7O2
   type: linear-Burke
   reference-collider: AR
@@ -14538,6 +14856,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + IC3H7 <=> IC3H7O2
   type: linear-Burke
   reference-collider: AR
@@ -14592,6 +14913,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -14646,6 +14970,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H7O2 <=> C3H6 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -14700,6 +15027,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -14754,6 +15084,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H7O2 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -14808,6 +15141,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2 <=> C3H6OOH1-2
   type: linear-Burke
   reference-collider: AR
@@ -14862,6 +15198,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2 <=> C3H6OOH1-3
   type: linear-Burke
   duplicate: true
@@ -14917,6 +15256,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2 <=> C3H6OOH1-3
   type: linear-Burke
   duplicate: true
@@ -14972,6 +15314,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H7O2 <=> C3H6OOH2-1
   type: linear-Burke
   reference-collider: AR
@@ -15026,6 +15371,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2 <=> C3H6OOH1-3
   type: linear-Burke
   reference-collider: AR
@@ -15080,6 +15428,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -15134,6 +15485,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -15188,6 +15542,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-3 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -15242,6 +15599,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-3 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -15296,6 +15656,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -15350,6 +15713,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1 <=> OH + C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -15404,6 +15770,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-3 <=> C3H6OOH1-3O2
   type: linear-Burke
   reference-collider: AR
@@ -15458,6 +15827,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> C3H6OOH1-2O2
   type: linear-Burke
   reference-collider: AR
@@ -15512,6 +15884,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> C3H6OOH1-2O2
   type: linear-Burke
   reference-collider: AR
@@ -15566,6 +15941,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> C3H6OOH2-1O2
   type: linear-Burke
   reference-collider: AR
@@ -15620,6 +15998,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> C3H6OOH2-1O2
   type: linear-Burke
   reference-collider: AR
@@ -15674,6 +16055,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-3 <=> OH + C3KET13
   type: linear-Burke
   reference-collider: AR
@@ -15728,6 +16112,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-3 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -15782,6 +16169,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-3 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -15836,6 +16226,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> C3H51-2,3OOH
   type: linear-Burke
   reference-collider: AR
@@ -15890,6 +16283,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -15944,6 +16340,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 => OH + OH + CH3COCH2O
   type: linear-Burke
   reference-collider: AR
@@ -15998,6 +16397,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> OH + C3KET12
   type: linear-Burke
   reference-collider: AR
@@ -16052,6 +16454,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -16106,6 +16511,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> HO2 + C3H5-SOOH
   type: linear-Burke
   reference-collider: AR
@@ -16160,6 +16568,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH1-2 <=> O2 + C3H6OOH2-1
   type: linear-Burke
   reference-collider: AR
@@ -16214,6 +16625,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> C3H51-2,3OOH
   type: linear-Burke
   reference-collider: AR
@@ -16268,6 +16682,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -16322,6 +16739,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 => OH + OH + CH3COCH2O
   type: linear-Burke
   reference-collider: AR
@@ -16376,6 +16796,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> OH + C3KET12
   type: linear-Burke
   reference-collider: AR
@@ -16430,6 +16853,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -16484,6 +16910,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> HO2 + C3H5-SOOH
   type: linear-Burke
   reference-collider: AR
@@ -16538,6 +16967,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OOH2-1 <=> HO2 + C3H5-1E-2OOH
   type: linear-Burke
   reference-collider: AR
@@ -16592,6 +17024,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> C3H6OOH2-1O2
   type: linear-Burke
   reference-collider: AR
@@ -16646,6 +17081,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> C3H51-2,3OOH
   type: linear-Burke
   reference-collider: AR
@@ -16700,6 +17138,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -16754,6 +17195,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> OH + C3KET21
   type: linear-Burke
   reference-collider: AR
@@ -16808,6 +17252,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> OH + C3KET12
   type: linear-Burke
   reference-collider: AR
@@ -16862,6 +17309,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -16916,6 +17366,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> HO2 + C3H5-SOOH
   type: linear-Burke
   reference-collider: AR
@@ -16970,6 +17423,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-2O2 <=> HO2 + C3H5-1E-2OOH
   type: linear-Burke
   reference-collider: AR
@@ -17024,6 +17480,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> C3H51-2,3OOH
   type: linear-Burke
   reference-collider: AR
@@ -17078,6 +17537,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -17132,6 +17594,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> OH + C3KET21
   type: linear-Burke
   reference-collider: AR
@@ -17186,6 +17651,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> OH + C3KET12
   type: linear-Burke
   reference-collider: AR
@@ -17240,6 +17708,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -17294,6 +17765,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> HO2 + C3H5-SOOH
   type: linear-Burke
   reference-collider: AR
@@ -17348,6 +17822,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH2-1O2 <=> HO2 + C3H5-1E-2OOH
   type: linear-Burke
   reference-collider: AR
@@ -17402,6 +17879,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-3O2 <=> C3KET13 + OH
   type: linear-Burke
   reference-collider: AR
@@ -17456,6 +17936,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-3O2 <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -17510,6 +17993,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6OOH1-3O2 <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -17564,6 +18050,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> OH + C3H5O1-2OOH-3
   type: linear-Burke
   reference-collider: AR
@@ -17618,6 +18107,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> OH + C3KET21
   type: linear-Burke
   reference-collider: AR
@@ -17672,6 +18164,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> OH + C3KET12
   type: linear-Burke
   reference-collider: AR
@@ -17726,6 +18221,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> HO2 + AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -17780,6 +18278,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> HO2 + C3H5-SOOH
   type: linear-Burke
   reference-collider: AR
@@ -17834,6 +18335,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H51-2,3OOH <=> HO2 + C3H5-1E-2OOH
   type: linear-Burke
   reference-collider: AR
@@ -17888,6 +18392,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3OOH <=> CH2CHO + OH
   rate-constant: {A: 840000000000000.0, b: 0.0, Ea: 43000.0}
 - equation: C2H3OOH => CH2CO + H + OH
@@ -17946,6 +18453,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O1-2OOH-3 => CH2CHO + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -18000,6 +18510,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3KET21 <=> CH3COCH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -18054,6 +18567,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3KET12 => CH3CHO + HCO + OH
   type: linear-Burke
   reference-collider: AR
@@ -18108,6 +18624,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC3H7O2H <=> NC3H7O + OH
   rate-constant: {A: 1.5e+16, b: 0.0, Ea: 42500.0}
 - equation: NC3H7O2 + H2 <=> NC3H7O2H + H
@@ -18273,6 +18792,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> CC3H6
   type: linear-Burke
   duplicate: true
@@ -18328,6 +18850,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C3H6
   type: linear-Burke
   duplicate: true
@@ -18383,6 +18908,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C3H6
   type: linear-Burke
   duplicate: true
@@ -18438,6 +18966,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18493,6 +19024,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18548,6 +19082,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -18603,6 +19140,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2(S) + C2H4 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -18658,6 +19198,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + CH3 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18713,6 +19256,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + CH3 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18768,6 +19314,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -18823,6 +19372,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -18878,6 +19430,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18933,6 +19488,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -18988,6 +19546,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> CC3H6
   type: linear-Burke
   duplicate: true
@@ -19043,6 +19604,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> CC3H6
   type: linear-Burke
   duplicate: true
@@ -19098,6 +19662,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H6 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -19153,6 +19720,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H6 <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -19208,6 +19778,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H6 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -19263,6 +19836,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H6 <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -19318,6 +19894,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C3H6
   type: linear-Burke
   duplicate: true
@@ -19373,6 +19952,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C3H6
   type: linear-Burke
   duplicate: true
@@ -19428,6 +20010,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -19483,6 +20068,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C3H5-A + H
   type: linear-Burke
   duplicate: true
@@ -19538,6 +20126,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -19593,6 +20184,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + H <=> C2H3 + CH3
   type: linear-Burke
   duplicate: true
@@ -19648,6 +20242,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 <=> C3H5-S + H
   rate-constant: {A: 7.71e+69, b: -16.09, Ea: 140000.0}
 - equation: C3H6 + H <=> C3H5-A + H2
@@ -19760,6 +20357,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> H + CH3COCH2
   type: linear-Burke
   reference-collider: AR
@@ -19814,6 +20414,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> C2H4 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -19868,6 +20471,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> C2H5 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -19922,6 +20528,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> CH3 + CH2CHO
   type: linear-Burke
   reference-collider: AR
@@ -19976,6 +20585,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> H2 + CH3CHCO
   type: linear-Burke
   reference-collider: AR
@@ -20030,6 +20642,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> CO + C2H6
   type: linear-Burke
   reference-collider: AR
@@ -20084,6 +20699,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> H2 + C2H4 + CO
   type: linear-Burke
   reference-collider: AR
@@ -20138,6 +20756,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> C3H6O1-2
   type: linear-Burke
   reference-collider: AR
@@ -20192,6 +20813,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + O <=> C2H5CHO
   type: linear-Burke
   reference-collider: AR
@@ -20246,6 +20870,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> NC3H7
   type: linear-Burke
   duplicate: true
@@ -20301,6 +20928,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> NC3H7
   type: linear-Burke
   duplicate: true
@@ -20356,6 +20986,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> C2H4 + CH3
   type: linear-Burke
   duplicate: true
@@ -20411,6 +21044,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> C2H4 + CH3
   type: linear-Burke
   duplicate: true
@@ -20466,6 +21102,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> IC3H7
   type: linear-Burke
   duplicate: true
@@ -20521,6 +21160,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + H <=> IC3H7
   type: linear-Burke
   duplicate: true
@@ -20576,6 +21218,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + CH3 <=> NC3H7
   type: linear-Burke
   duplicate: true
@@ -20631,6 +21276,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H4 + CH3 <=> NC3H7
   type: linear-Burke
   duplicate: true
@@ -20686,6 +21334,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + HO2 <=> C3H6O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -20739,6 +21390,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + H <=> C3H4-A + H2
   rate-constant: {A: 1232.0, b: 3.035, Ea: 2582.0}
 - equation: C3H5-A + OH <=> C3H4-A + H2O
@@ -20815,6 +21469,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + C2H5 <=> C2H4 + C3H6
   rate-constant: {A: 400000000000.0, b: 0.0, Ea: 0.0}
 - equation: C3H5-A + HCO <=> C3H6 + CO
@@ -20889,6 +21546,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + O2 <=> C3H4-A + HO2
   type: linear-Burke
   reference-collider: AR
@@ -20940,6 +21600,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + O2 <=> CH3CO + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -20991,6 +21654,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + O2 <=> C2H3CHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -21042,6 +21708,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-S + O2 <=> CH3CHO + HCO
   rate-constant: {A: 3.1e+31, b: -5.944, Ea: 5748.4}
 - equation: C3H5-S + O2 <=> CH3CHCHO + O
@@ -21108,6 +21777,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + HO2 <=> AC3H5OOH
   type: linear-Burke
   reference-collider: AR
@@ -21162,6 +21834,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + HO2 <=> C2H3CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -21216,6 +21891,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: AC3H5OOH <=> C2H3CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -21270,6 +21948,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: AC3H5OOH <=> C3H5O + OH
   type: linear-Burke
   reference-collider: AR
@@ -21324,6 +22005,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -21380,6 +22064,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O <=> CH2CHOCH2
   type: linear-Burke
   reference-collider: AR
@@ -21436,6 +22123,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O <=> CH2CH2CHO
   type: linear-Burke
   reference-collider: AR
@@ -21492,6 +22182,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O <=> C2H3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -21548,6 +22241,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5O <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -21604,6 +22300,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHOCH2 <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -21660,6 +22359,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHOCH2 <=> CH2CH2CHO
   type: linear-Burke
   reference-collider: AR
@@ -21716,6 +22418,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHOCH2 <=> C2H3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -21772,6 +22477,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHOCH2 <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -21828,6 +22536,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CH2CHO <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -21884,6 +22595,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CH2CHO <=> C2H3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -21940,6 +22654,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CH2CHO <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -21996,6 +22713,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + CH2O <=> C2H3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -22052,6 +22772,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + CH2O <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -22108,6 +22831,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + CH3O2 <=> C3H5O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -22162,6 +22888,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + CH3O2 <=> AC4H7OOH
   type: linear-Burke
   reference-collider: AR
@@ -22216,6 +22945,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: AC4H7OOH <=> C3H5O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -22270,6 +23002,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C3H5OH + H
   type: linear-Burke
   reference-collider: AR
@@ -22328,6 +23063,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C2H3OH + CH3
   type: linear-Burke
   reference-collider: AR
@@ -22386,6 +23124,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> IC3H5OH + H
   type: linear-Burke
   reference-collider: AR
@@ -22444,6 +23185,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> SC3H5OH + H
   type: linear-Burke
   reference-collider: AR
@@ -22502,6 +23246,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> CH3CHO + CH3
   type: linear-Burke
   reference-collider: AR
@@ -22560,6 +23307,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C3H6OH1-2
   type: linear-Burke
   duplicate: true
@@ -22619,6 +23369,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C3H6OH1-2
   type: linear-Burke
   duplicate: true
@@ -22678,6 +23431,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C3H6OH2-1
   type: linear-Burke
   duplicate: true
@@ -22737,6 +23493,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H6 + OH <=> C3H6OH2-1
   type: linear-Burke
   duplicate: true
@@ -22796,6 +23555,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + C2H2 <=> CVCCVCCJ
   rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 6883.4}
 - equation: C3H5-A + C2H3 => C5H6 + H + H
@@ -22853,6 +23615,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H4 <=> C3H4-P
   type: linear-Burke
   reference-collider: AR
@@ -22905,6 +23670,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CC3H4 <=> C3H4-A
   type: linear-Burke
   reference-collider: AR
@@ -22957,6 +23725,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P <=> C3H3 + H
   type: linear-Burke
   reference-collider: AR
@@ -23008,6 +23779,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A <=> C3H3 + H
   type: linear-Burke
   reference-collider: AR
@@ -23059,6 +23833,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + H <=> CC3H4
   type: linear-Burke
   reference-collider: AR
@@ -23111,6 +23888,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + C3H3 <=> C3H4-A + C3H3
   rate-constant: {A: 6140000.0, b: 1.74, Ea: 10450.0}
 - equation: C3H4-P + O2 <=> C3H3 + HO2
@@ -23202,6 +23982,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H4-P + H
   type: linear-Burke
   duplicate: true
@@ -23257,6 +24040,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H5-A
   type: linear-Burke
   duplicate: true
@@ -23312,6 +24098,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H5-A
   type: linear-Burke
   duplicate: true
@@ -23367,6 +24156,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H5-S
   type: linear-Burke
   reference-collider: AR
@@ -23420,6 +24212,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H5-T
   type: linear-Burke
   duplicate: true
@@ -23475,6 +24270,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> C3H5-T
   type: linear-Burke
   duplicate: true
@@ -23530,6 +24328,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> CH3 + C2H2
   type: linear-Burke
   duplicate: true
@@ -23585,6 +24386,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + H <=> CH3 + C2H2
   type: linear-Burke
   duplicate: true
@@ -23640,6 +24444,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> C3H5-T
   type: linear-Burke
   duplicate: true
@@ -23695,6 +24502,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> C3H5-T
   type: linear-Burke
   duplicate: true
@@ -23750,6 +24560,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> C3H5-S
   type: linear-Burke
   duplicate: true
@@ -23805,6 +24618,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> C3H5-S
   type: linear-Burke
   duplicate: true
@@ -23860,6 +24676,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> CH3 + C2H2
   type: linear-Burke
   reference-collider: AR
@@ -23914,6 +24733,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + H <=> C3H5-A
   type: linear-Burke
   reference-collider: AR
@@ -23969,6 +24791,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A <=> C3H5-T
   type: linear-Burke
   reference-collider: AR
@@ -24024,6 +24849,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A <=> C3H5-S
   type: linear-Burke
   reference-collider: AR
@@ -24077,6 +24905,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H2 + CH3 <=> C3H5-T
   type: linear-Burke
   reference-collider: AR
@@ -24132,6 +24963,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T <=> C3H5-S
   type: linear-Burke
   reference-collider: AR
@@ -24185,6 +25019,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H2 + CH3 <=> C3H5-A
   type: linear-Burke
   reference-collider: AR
@@ -24240,6 +25077,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + C2H2 <=> C3H5-S
   type: linear-Burke
   duplicate: true
@@ -24295,6 +25135,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3 + C2H2 <=> C3H5-S
   type: linear-Burke
   duplicate: true
@@ -24350,6 +25193,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-P + O <=> HCCO + CH3
   rate-constant: {A: 7300000000000.0, b: 0.0, Ea: 2250.0}
 - equation: C3H4-P + O <=> C2H4 + CO
@@ -24429,6 +25275,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3CHCHO <=> CH3CHCO + H
   rate-constant: {A: 8328000000000.0, b: -0.02, Ea: 32410.0}
 - equation: CH3CHCHO + H2 <=> C2H5CHO + H
@@ -24523,6 +25372,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + HO2 <=> C3H3O2H
   type: linear-Burke
   reference-collider: AR
@@ -24577,6 +25429,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + HO2 <=> C2HCHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -24631,6 +25486,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3O2H <=> C2HCHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -24685,6 +25543,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H + CH2O <=> C3H3O
   type: linear-Burke
   reference-collider: AR
@@ -24740,6 +25601,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2HCHO <=> C2H2 + CO
   rate-constant: {A: 251000000000000.0, b: 0.0, Ea: 68000.0}
 - equation: C2H + HCO <=> C2HCHO
@@ -24798,6 +25662,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + H <=> H2CCC(S) + H2
   type: linear-Burke
   reference-collider: AR
@@ -24850,6 +25717,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + H <=> C3H2C + H2
   type: linear-Burke
   reference-collider: AR
@@ -24902,6 +25772,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H2C + O2 <=> C2H2 + CO2
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C3H3 + OH <=> C3H2 + H2O
@@ -24975,6 +25848,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + C3H3 <=> C6H6
   type: linear-Burke
   reference-collider: AR
@@ -25027,6 +25903,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + C3H3 <=> FULVENE
   type: linear-Burke
   reference-collider: AR
@@ -25079,6 +25958,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H3 + C3H5-A => FULVENE + H + H
   rate-constant: {A: 3.26e+29, b: -5.397, Ea: 3390.0}
 - equation: C3H3 + C3H4-A <=> C6H6 + H
@@ -25280,6 +26162,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: O2 + C3H6OH1-2 <=> CH3CHO + CH2O + OH
   rate-constant: {A: 1500000000000.0, b: 0.0, Ea: 5000.0}
 - equation: O2 + C3H6OH1-3 <=> HO2 + C3H5OH
@@ -25479,6 +26364,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH3COCH2 + H <=> CH3COCH3
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH3COCH3 + OH <=> CH3COCH2 + H2O
@@ -25651,6 +26539,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H10 <=> SC4H9 + H
   type: linear-Burke
   reference-collider: AR
@@ -25705,6 +26596,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H10 + H <=> PC4H9 + H2
   rate-constant: {A: 349000.0, b: 2.69, Ea: 6450.0}
 - equation: C4H10 + O2 <=> PC4H9 + HO2
@@ -26283,6 +27177,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TC4H9 + HO2 <=> TC4H9O + OH
   rate-constant: {A: 7000000000000.0, b: 0.0, Ea: -1000.0}
 - equation: TC4H9 + CH3O2 <=> TC4H9O + CH3O
@@ -26722,6 +27619,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 <=> IC4H7 + H
   type: linear-Burke
   reference-collider: AR
@@ -26777,6 +27677,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC4H7 + H2O
   rate-constant: {A: 43950.169, b: 2.67841, Ea: -827.103}
 - equation: IC4H8 + O2 <=> IC4H7 + HO2
@@ -26886,6 +27789,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H4-A + CH3 <=> IC4H7
   rate-constant: {A: 40209.7, b: 2.5, Ea: 8847.5}
 - equation: IC4H7 + HO2 <=> IC4H7O + OH
@@ -26942,6 +27848,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + HO2 <=> IC4H7OOH
   type: linear-Burke
   reference-collider: AR
@@ -26996,6 +27905,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + HO2 <=> IC3H5CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -27050,6 +27962,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7OOH <=> IC3H5CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -27104,6 +28019,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7OOH <=> IC4H7O + OH
   type: linear-Burke
   reference-collider: AR
@@ -27158,6 +28076,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7O <=> C3H5-T + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -27214,6 +28135,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7O <=> IC3H5OCH2
   type: linear-Burke
   reference-collider: AR
@@ -27270,6 +28194,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7O <=> IC3H6CHO
   type: linear-Burke
   reference-collider: AR
@@ -27326,6 +28253,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7O <=> IC3H5CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -27382,6 +28312,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7O <=> C3H6 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -27438,6 +28371,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H5OCH2 <=> C3H5-T + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -27494,6 +28430,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H5OCH2 <=> IC3H6CHO
   type: linear-Burke
   reference-collider: AR
@@ -27550,6 +28489,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H5OCH2 <=> IC3H5CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -27606,6 +28548,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H5OCH2 <=> C3H6 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -27662,6 +28607,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H6CHO <=> C3H5-T + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -27718,6 +28666,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H6CHO <=> IC3H5CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -27774,6 +28725,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC3H6CHO <=> C3H6 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -27830,6 +28784,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + CH2O <=> IC3H5CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -27886,6 +28843,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-T + CH2O <=> C3H6 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -27942,6 +28902,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + CH3O2 <=> IC4H7O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -27996,6 +28959,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + CH3O2 <=> IC4H7OOCH3
   type: linear-Burke
   reference-collider: AR
@@ -28050,6 +29016,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7OOCH3 <=> IC4H7O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -28104,6 +29073,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + IC4H7O2 <=> IC4H7O + IC4H7O
   type: linear-Burke
   reference-collider: AR
@@ -28158,6 +29130,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + IC4H7O2 <=> IC4H7OOIC4H7
   type: linear-Burke
   reference-collider: AR
@@ -28212,6 +29187,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7OOIC4H7 <=> IC4H7O + IC4H7O
   type: linear-Burke
   reference-collider: AR
@@ -28266,6 +29244,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + NC3H7O2 <=> IC4H7O + NC3H7O
   rate-constant: {A: 7000000000000.0, b: 0.0, Ea: -1000.0}
 - equation: IC4H7 + PC4H9O2 <=> IC4H7O + PC4H9O
@@ -28389,6 +29370,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + H <=> IC4H9
   type: linear-Burke
   duplicate: true
@@ -28443,6 +29427,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + H <=> TC4H9
   type: linear-Burke
   duplicate: true
@@ -28498,6 +29485,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + H <=> TC4H9
   type: linear-Burke
   duplicate: true
@@ -28553,6 +29543,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + H <=> C3H6 + CH3
   type: linear-Burke
   duplicate: true
@@ -28608,6 +29601,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + H <=> C3H6 + CH3
   type: linear-Burke
   duplicate: true
@@ -28663,6 +29659,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + HO2 <=> TC4H9O2
   rate-constant: {A: 0.104, b: 3.45, Ea: 4338.0}
 - equation: IC4H8 + HO2 <=> IC4H8O2H-T
@@ -28720,6 +29719,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + HO2 <=> IC4H8O + OH
   type: linear-Burke
   reference-collider: AR
@@ -28773,6 +29775,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TC4H8O2H-I <=> IC4H8O + OH
   type: linear-Burke
   reference-collider: AR
@@ -28826,6 +29831,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + O <=> IC3H7 + HCO
   rate-constant: {A: 7450000.0, b: 1.88, Ea: 183.0}
 - equation: IC4H8 + O => CH2CO + CH3 + CH3
@@ -28890,6 +29898,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> SC3H5OH + CH3
   type: linear-Burke
   reference-collider: AR
@@ -28948,6 +29959,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC3H5OH + CH3
   type: linear-Burke
   reference-collider: AR
@@ -29006,6 +30020,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> SC4H7OH-I + H
   type: linear-Burke
   reference-collider: AR
@@ -29064,6 +30081,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> CH3COCH3 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -29122,6 +30142,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC4H8OH-IT
   type: linear-Burke
   duplicate: true
@@ -29181,6 +30204,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC4H8OH-IT
   type: linear-Burke
   duplicate: true
@@ -29240,6 +30266,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC4H8OH-TI
   type: linear-Burke
   duplicate: true
@@ -29299,6 +30328,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8 + OH <=> IC4H8OH-TI
   type: linear-Burke
   duplicate: true
@@ -29358,6 +30390,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C3H5-A + CH3 (+M) <=> C4H8-1 (+M)
   type: falloff
   low-P-rate-constant: {A: 3.91e+60, b: -12.81, Ea: 6250.0}
@@ -29514,6 +30549,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> C2H4 + C2H5
   type: linear-Burke
   duplicate: true
@@ -29570,6 +30608,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> C3H6 + CH3
   type: linear-Burke
   duplicate: true
@@ -29626,6 +30667,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> C3H6 + CH3
   type: linear-Burke
   duplicate: true
@@ -29682,6 +30726,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> PC4H9
   type: linear-Burke
   duplicate: true
@@ -29738,6 +30785,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> PC4H9
   type: linear-Burke
   duplicate: true
@@ -29794,6 +30844,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> SC4H9
   type: linear-Burke
   duplicate: true
@@ -29850,6 +30903,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> SC4H9
   type: linear-Burke
   duplicate: true
@@ -29906,6 +30962,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + H <=> C2H4 + C2H5
   type: linear-Burke
   reference-collider: AR
@@ -29961,6 +31020,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + H <=> C3H6 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -30016,6 +31078,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + H <=> PC4H9
   type: linear-Burke
   reference-collider: AR
@@ -30071,6 +31136,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + H <=> SC4H9
   type: linear-Burke
   reference-collider: AR
@@ -30126,6 +31194,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> C4H8-2 + H
   type: linear-Burke
   duplicate: true
@@ -30182,6 +31253,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + H <=> C4H8-2 + H
   type: linear-Burke
   duplicate: true
@@ -30238,6 +31312,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC4H9 <=> PC4H9
   type: linear-Burke
   reference-collider: AR
@@ -30293,6 +31370,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: PC4H9 <=> C2H4 + C2H5
   type: linear-Burke
   reference-collider: AR
@@ -30348,6 +31428,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: PC4H9 <=> C3H6 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -30403,6 +31486,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC4H9 <=> C2H4 + C2H5
   type: linear-Burke
   reference-collider: AR
@@ -30458,6 +31544,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: SC4H9 <=> C3H6 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -30513,6 +31602,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + O <=> NC3H7 + HCO
   rate-constant: {A: 7450000.0, b: 1.88, Ea: 183.0}
 - equation: C4H8-1 + O => CH2CO + C2H5 + H
@@ -30658,6 +31750,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + HO2 <=> C4H7O2-1 + OH
   type: linear-Burke
   reference-collider: AR
@@ -30715,6 +31810,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + HO2 <=> SC3H5CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -30772,6 +31870,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H72-1OOH <=> C4H7O2-1 + OH
   type: linear-Burke
   reference-collider: AR
@@ -30829,6 +31930,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H72-1OOH <=> SC3H5CHO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -30886,6 +31990,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + HO2 <=> C4H71-3OOH
   type: linear-Burke
   reference-collider: AR
@@ -30943,6 +32050,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + HO2 <=> C4H71-O + OH
   type: linear-Burke
   reference-collider: AR
@@ -31000,6 +32110,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + HO2 <=> C2H3COCH3 + H2O
   type: linear-Burke
   reference-collider: AR
@@ -31057,6 +32170,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3OOH <=> C4H71-O + OH
   type: linear-Burke
   reference-collider: AR
@@ -31114,6 +32230,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3OOH <=> C2H3COCH3 + H2O
   type: linear-Burke
   reference-collider: AR
@@ -31171,6 +32290,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + CH3O2 <=> C4H71-3OOCH3
   type: linear-Burke
   reference-collider: AR
@@ -31228,6 +32350,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + CH3O2 <=> C4H71-O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -31285,6 +32410,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3OOCH3 <=> C4H71-O + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -31342,6 +32470,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + CH3O2 <=> C4H72-1OOCH3
   type: linear-Burke
   reference-collider: AR
@@ -31399,6 +32530,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + CH3O2 <=> C4H7O2-1 + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -31456,6 +32590,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H72-1OOCH3 <=> C4H7O2-1 + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -31513,6 +32650,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 + C2H5O2 <=> C4H71-O + C2H5O
   rate-constant: {A: 3800000000000.0, b: 0.0, Ea: -1200.0}
 - equation: C4H71-3 + IC3H7O2 <=> C4H71-O + IC3H7O
@@ -31711,6 +32851,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + HO2 <=> C4H8OOH2-1
   type: linear-Burke
   reference-collider: AR
@@ -31764,6 +32907,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + HO2 <=> C4H8O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -31817,6 +32963,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8OOH2-1 <=> C4H8O1-2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -31870,6 +33019,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + HO2 <=> C4H8OOH2-3
   type: linear-Burke
   reference-collider: AR
@@ -31923,6 +33075,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-2 + HO2 <=> C4H8O2-3 + OH
   type: linear-Burke
   reference-collider: AR
@@ -31976,6 +33131,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8OOH2-3 <=> C4H8O2-3 + OH
   type: linear-Burke
   reference-collider: AR
@@ -32029,6 +33187,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H8-1 + CH3O2 <=> C4H8O1-2 + CH3O
   rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 14340.0}
 - equation: C4H8-2 + CH3O2 <=> C4H8O2-3 + CH3O
@@ -32474,6 +33635,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> IQJC4H8OH
   type: linear-Burke
   reference-collider: AR
@@ -32531,6 +33695,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> TQC4H8OI
   type: linear-Burke
   reference-collider: AR
@@ -32588,6 +33755,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> QC4H7OHP
   type: linear-Burke
   reference-collider: AR
@@ -32645,6 +33815,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> TQC4H7OHI
   type: linear-Burke
   reference-collider: AR
@@ -32702,6 +33875,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> IQC4H8OT
   type: linear-Burke
   reference-collider: AR
@@ -32759,6 +33935,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> IQC4H7OHT
   type: linear-Burke
   reference-collider: AR
@@ -32816,6 +33995,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> IC4H7OH + HO2
   type: linear-Burke
   duplicate: true
@@ -32874,6 +34056,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> IC4H7OH + HO2
   type: linear-Burke
   duplicate: true
@@ -32932,6 +34117,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> SC4H7OH-I + HO2
   type: linear-Burke
   duplicate: true
@@ -32990,6 +34178,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> SC4H7OH-I + HO2
   type: linear-Burke
   duplicate: true
@@ -33048,6 +34239,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 => CH3COCH3 + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -33105,6 +34299,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> CCY(CCO)COH + OH
   type: linear-Burke
   reference-collider: AR
@@ -33162,6 +34359,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-IT + O2 <=> C2CY(COC)OH + OH
   type: linear-Burke
   reference-collider: AR
@@ -33219,6 +34419,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> IC3H6OHCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -33276,6 +34479,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 => CH3COCH3 + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -33333,6 +34539,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> CH3 + C3KET21
   type: linear-Burke
   reference-collider: AR
@@ -33390,6 +34599,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 => IC3H5OH + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -33447,6 +34659,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H8OH-TI + O2 <=> CCY(CCOC)OH + OH
   type: linear-Burke
   reference-collider: AR
@@ -33504,6 +34719,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQJC4H8OH <=> TQC4H8OI
   type: linear-Burke
   reference-collider: AR
@@ -33561,6 +34779,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQJC4H8OH <=> QC4H7OHP
   type: linear-Burke
   reference-collider: AR
@@ -33618,6 +34839,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQJC4H8OH <=> TQC4H7OHI
   type: linear-Burke
   reference-collider: AR
@@ -33675,6 +34899,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQJC4H8OH <=> IQC4H8OT
   type: linear-Burke
   reference-collider: AR
@@ -33732,6 +34959,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQJC4H8OH <=> IQC4H7OHT
   type: linear-Burke
   reference-collider: AR
@@ -33789,6 +35019,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQJC4H8OH <=> IC4H7OH + HO2
   type: linear-Burke
   duplicate: true
@@ -33847,6 +35080,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQJC4H8OH <=> IC4H7OH + HO2
   type: linear-Burke
   duplicate: true
@@ -33905,6 +35141,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQJC4H8OH <=> IC3H6OHCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -33962,6 +35201,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQC4H8OI => CH3COCH3 + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -34019,6 +35261,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: QC4H7OHP <=> IC4H7OH + HO2
   type: linear-Burke
   reference-collider: AR
@@ -34076,6 +35321,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: QC4H7OHP <=> CCY(CCO)COH + OH
   type: linear-Burke
   reference-collider: AR
@@ -34133,6 +35381,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQC4H7OHI <=> C2CY(COC)OH + OH
   type: linear-Burke
   reference-collider: AR
@@ -34190,6 +35441,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: TQC4H7OHI <=> SC4H7OH-I + HO2
   type: linear-Burke
   reference-collider: AR
@@ -34247,6 +35501,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQC4H7OHT => IC3H5OH + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -34304,6 +35561,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQC4H7OHT <=> CCY(CCOC)OH + OH
   type: linear-Burke
   reference-collider: AR
@@ -34361,6 +35621,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQC4H7OHT <=> IC4H7OOH + OH
   type: linear-Burke
   reference-collider: AR
@@ -34418,6 +35681,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQC4H8OT => CH3COCH3 + CH2O + OH
   rate-constant: {A: 3640000000.0, b: 1.3, Ea: 23700.0}
 - equation: IQC4H8OT <=> CH3 + C3KET21
@@ -34512,6 +35778,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IQC4H8OTQ-I => OH + CH2O + C3KET21
   rate-constant: {A: 12000000000.0, b: 0.35, Ea: 15700.0}
 - equation: IQC4H8OTQ-I <=> CH3 + CO(CH2OOH)2
@@ -34669,6 +35938,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 <=> C2H2 + C2H4
   type: linear-Burke
   reference-collider: AR
@@ -34722,6 +35994,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 <=> C4H6-2
   type: linear-Burke
   reference-collider: AR
@@ -34775,6 +36050,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 <=> CH3 + C3H3
   type: linear-Burke
   reference-collider: AR
@@ -34828,6 +36106,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 => C2H2 + C2H3 + H
   type: linear-Burke
   reference-collider: AR
@@ -34881,6 +36162,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 => C4H4 + H + H
   type: linear-Burke
   reference-collider: AR
@@ -34934,6 +36218,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + H <=> C4H5-N + H2
   duplicate: true
   rate-constant: {A: 6360000.0, b: 2.35, Ea: 15206.054}
@@ -35036,6 +36323,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-2 <=> C4H5-I
   rate-constant: {A: 1.5e+67, b: -16.89, Ea: 59100.0}
 - equation: C2H3 + C2H2 <=> C4H4 + H
@@ -35092,6 +36382,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + C2H2 <=> C4H5-N
   type: linear-Burke
   reference-collider: AR
@@ -35146,6 +36439,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + C2H2 <=> C4H5-I
   type: linear-Burke
   reference-collider: AR
@@ -35200,6 +36496,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + C2H3 <=> C4H5-I + H
   type: linear-Burke
   reference-collider: AR
@@ -35252,6 +36551,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3 + C2H3 <=> C4H5-N + H
   type: linear-Burke
   reference-collider: AR
@@ -35304,6 +36606,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H4 + H <=> C4H5-N
   type: linear-Burke
   reference-collider: AR
@@ -35358,6 +36663,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H4 + H <=> C4H5-I
   type: linear-Burke
   reference-collider: AR
@@ -35412,6 +36720,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + H <=> C4H71-3
   type: linear-Burke
   reference-collider: AR
@@ -35465,6 +36776,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + H <=> C4H71-4
   type: linear-Burke
   reference-collider: AR
@@ -35518,6 +36832,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + H <=> C2H4 + C2H3
   type: linear-Burke
   reference-collider: AR
@@ -35571,6 +36888,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 <=> C4H71-4
   type: linear-Burke
   reference-collider: AR
@@ -35624,6 +36944,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-3 <=> C2H4 + C2H3
   type: linear-Burke
   reference-collider: AR
@@ -35677,6 +37000,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-4 <=> C2H4 + C2H3
   type: linear-Burke
   reference-collider: AR
@@ -35730,6 +37056,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + O <=> CH2O + C3H4-A
   type: linear-Burke
   reference-collider: AR
@@ -35782,6 +37111,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + O <=> C2H3 + CH2CHO
   type: linear-Burke
   reference-collider: AR
@@ -35834,6 +37166,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + O <=> CH2CHCHCHO + H
   type: linear-Burke
   reference-collider: AR
@@ -35886,6 +37221,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + OH <=> C4H64,2-1OH
   type: linear-Burke
   duplicate: true
@@ -35945,6 +37283,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + OH <=> C4H64,2-1OH
   type: linear-Burke
   duplicate: true
@@ -36004,6 +37345,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + OH <=> C2H3CHOHCH2
   type: linear-Burke
   duplicate: true
@@ -36063,6 +37407,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H6 + OH <=> C2H3CHOHCH2
   type: linear-Burke
   duplicate: true
@@ -36122,6 +37469,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H64,2-1OH <=> C4H7O2-1
   type: linear-Burke
   reference-collider: AR
@@ -36175,6 +37525,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H7O2-1 <=> CH2O + C3H5-S
   type: linear-Burke
   reference-collider: AR
@@ -36228,6 +37581,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3CHOHCH2 <=> C4H71-O
   type: linear-Burke
   reference-collider: AR
@@ -36280,6 +37636,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H64,2-1OH <=> C4H7O1-4
   type: linear-Burke
   reference-collider: AR
@@ -36332,6 +37691,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H7O1-4 <=> CH2O + C3H5-A
   type: linear-Burke
   reference-collider: AR
@@ -36385,6 +37747,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-O <=> CH3 + C2H3CHO
   type: linear-Burke
   reference-collider: AR
@@ -36438,6 +37803,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H71-O <=> CH3CHO + C2H3
   type: linear-Burke
   reference-collider: AR
@@ -36491,6 +37859,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3CHOHCH2 + O2 <=> C2H3CHOHCH2OO
   rate-constant: {A: 6.865e+16, b: -1.627, Ea: 198.7}
 - equation: C2H3CHOHCH2 + O2 <=> C4H51,3OH2 + HO2
@@ -36658,6 +38029,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> C4H513-OO2
   type: linear-Burke
   reference-collider: AR
@@ -36713,6 +38087,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> CYCCCOO-3J
   type: linear-Burke
   reference-collider: AR
@@ -36768,6 +38145,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> C2H3 + CH2CO + O
   type: linear-Burke
   reference-collider: AR
@@ -36823,6 +38203,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> C2H3CO + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -36878,6 +38261,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> CH2CHO + CH2CO
   type: linear-Burke
   reference-collider: AR
@@ -36933,6 +38319,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + O2 <=> C4H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -36988,6 +38377,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H512-OO4 <=> C4H513-OO2
   type: linear-Burke
   reference-collider: AR
@@ -37043,6 +38435,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H512-OO4 <=> CYCCCOO-3J
   type: linear-Burke
   reference-collider: AR
@@ -37098,6 +38493,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H513-OO2 <=> CYCCCOO-3J
   type: linear-Burke
   reference-collider: AR
@@ -37153,6 +38551,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CYCCCOO-3J <=> CH2CYCOO-CH2
   type: linear-Burke
   reference-collider: AR
@@ -37208,6 +38609,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CYCCCOO-3J <=> CYCOOC-CH2
   type: linear-Burke
   reference-collider: AR
@@ -37263,6 +38667,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CYCOO-CH2 <=> C2H3COOCH2
   type: linear-Burke
   reference-collider: AR
@@ -37318,6 +38725,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CYCCCOO-3J <=> C2H3 + CH2CO + O
   type: linear-Burke
   reference-collider: AR
@@ -37373,6 +38783,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CYCCCOO-3J <=> C4H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -37428,6 +38841,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CYCOOC-CH2 <=> CH2CHO + CH2CO
   type: linear-Burke
   reference-collider: AR
@@ -37483,6 +38899,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C2H3COOCH2 <=> C2H3CO + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -37538,6 +38957,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + HO2 <=> C3H3CH2OOH
   rate-constant: {A: 1020000000000.0, b: 0.6, Ea: -2106.0}
 - equation: C3H3CH2OOH <=> C3H3CH2O + OH
@@ -37610,6 +39032,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> NC4H5O2
   type: linear-Burke
   duplicate: true
@@ -37668,6 +39093,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> CH2CHCHCHO + O
   type: linear-Burke
   duplicate: true
@@ -37726,6 +39154,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> CH2CHCHCHO + O
   type: linear-Burke
   duplicate: true
@@ -37784,6 +39215,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> C2H3CHO + HCO
   type: linear-Burke
   duplicate: true
@@ -37842,6 +39276,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> C2H3CHO + HCO
   type: linear-Burke
   duplicate: true
@@ -37900,6 +39337,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> C2H3CHO + H + CO
   type: linear-Burke
   duplicate: true
@@ -37958,6 +39398,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + O2 <=> C2H3CHO + H + CO
   type: linear-Burke
   duplicate: true
@@ -38016,6 +39459,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> CH2CHCHCHO + O
   type: linear-Burke
   duplicate: true
@@ -38074,6 +39520,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> CH2CHCHCHO + O
   type: linear-Burke
   duplicate: true
@@ -38132,6 +39581,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3CHO + HCO
   type: linear-Burke
   duplicate: true
@@ -38190,6 +39642,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3CHO + HCO
   type: linear-Burke
   duplicate: true
@@ -38248,6 +39703,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3 + CHOCHO
   type: linear-Burke
   duplicate: true
@@ -38306,6 +39764,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3 + CHOCHO
   type: linear-Burke
   duplicate: true
@@ -38364,6 +39825,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3CHO + H + CO
   type: linear-Burke
   duplicate: true
@@ -38422,6 +39886,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: NC4H5O2 <=> C2H3CHO + H + CO
   type: linear-Burke
   duplicate: true
@@ -38480,6 +39947,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + C2H2 <=> C6H6 + H
   type: linear-Burke
   reference-collider: AR
@@ -38535,6 +40005,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + C2H2 <=> FULVENE + H
   type: linear-Burke
   reference-collider: AR
@@ -38590,6 +40063,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-N + C2H2 <=> CH2CHCHCHCCH + H
   type: linear-Burke
   reference-collider: AR
@@ -38645,6 +40121,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CH2CHCHCHCCH + OH => 2 C2H2 + C2H + H2O
   duplicate: true
   rate-constant: {A: 765000.0, b: 2.07, Ea: 1905.53}
@@ -38706,6 +40185,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + C2H2 <=> FULVENE + H
   type: linear-Burke
   reference-collider: AR
@@ -38761,6 +40243,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H5-I + C2H2 <=> CHCC(CH2)CHCH2 + H
   type: linear-Burke
   reference-collider: AR
@@ -38816,6 +40301,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: CHCC(CH2)CHCH2 + OH => C2H2 + C4H2 + H + H2O
   duplicate: true
   rate-constant: {A: 765000.0, b: 2.07, Ea: 1905.53}
@@ -39615,6 +41103,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C6H101-5 + H <=> C6H9-A + H2
   rate-constant: {A: 675200.0, b: 2.36, Ea: 207.0}
 - equation: C6H101-5 + O2 <=> C6H9-A + HO2
@@ -39705,6 +41196,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: IC4H7 + IC4H7 <=> H15DE25DM
   type: linear-Burke
   reference-collider: AR
@@ -39757,6 +41251,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: H15DE25DM + H <=> H15DE25DM-S + H2
   rate-constant: {A: 1420000.0, b: 2.3151654, Ea: 2075.9558}
 - equation: H15DE25DM + O2 <=> H15DE25DM-S + HO2
@@ -40029,6 +41526,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C6H5 + HO2 <=> C6H5O + OH
   rate-constant: {A: 5000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C6H5 + O2 <=> C6H5O + O
@@ -40401,6 +41901,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C7H6 <=> C7H5 + H
   type: linear-Burke
   reference-collider: AR
@@ -40453,6 +41956,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C7H6 + H <=> C7H5 + H2
   rate-constant: {A: 190000000.0, b: 1.847, Ea: 4965.0}
 - equation: C7H6 + OH <=> C7H5 + H2O
@@ -40512,6 +42018,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: C4H3-N + C3H3 <=> C7H6
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
 - equation: O-O2C6H4CH3 <=> OC6H4CH2 + OH
@@ -40568,6 +42077,9 @@ reactions:
   - name: CH3OH
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Glarborg-2018
+  - name: CH3OCH3
+    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
+    note: Sivaramakrishnan-CNF2011 via Bugler-2016
 - equation: OC6H4CH2 <=> C6H6 + CO
   rate-constant: {A: 631000000000000.0, b: 0.0, Ea: 67160.0}
 - equation: C5H5 + CH3 <=> C5H5CH3
