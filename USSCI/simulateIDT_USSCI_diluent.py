@@ -61,8 +61,8 @@ models = {
         'oxidizer':'O2',
         'diluent':'NH3:0.1,HE:0.9',
         'fraction':{"diluent":0.92},
-        'phi_list':[0.5,2],
-        'P_list':[6.5,12],
+        'phi_list':[0.3,0.9],
+        'P_list':[1,10,50,100],
         'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
         'data': []
     },

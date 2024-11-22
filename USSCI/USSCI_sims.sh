@@ -14,7 +14,7 @@ lgdfsz=7
 
 date='Nov21'
 
-python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
+# python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
 # python USSCI/simulateIDT_Shao_USSCI.py \
 # --figwidth 7 --figheight 6.66667 --fsz $fszaxlab --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -66,9 +66,9 @@ python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
 
-# python USSCI/simulateIDT_USSCI_diluent.py \
-# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
+python USSCI/simulateIDT_USSCI_diluent.py \
+--figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
 
 
 
