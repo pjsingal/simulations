@@ -10,3 +10,7 @@ for H2/O2/H2O(9%)/He at phi=1/6.5atm, phi=3/6.5atm, phi=1/12atm, phi=3/12atm.
 
 - Differences also noticed for allyl alcohol under same conditions, but results are
 highly unstable. Maybe try simming at different conditions.
+
+-All of the same trends as above hold for an H2/O2/CO2(20%)/He mixture
+
+-allyl alcohol deleted from fuel list because too unstable

@@ -92,7 +92,7 @@ models = {
     #                [1188,1520]],
     #     'data': []
     # },
-    # 'Merchant-2015-a_H2O-He': {
+    # 'Merchant-2015-a_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
@@ -100,14 +100,14 @@ models = {
     #                 },
     #     'fuels': ['CH4', 'C2H2','ethanol'],
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Merchant-2015-b_H2O-He': {
+    # 'Merchant-2015-b_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
@@ -116,14 +116,14 @@ models = {
     #     'fuels': ['C2H4', 'C2H6','H2'],
     #     # 'fuels': ['C2H2','C2H4'],
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Merchant-2015-c_H2O-He': {
+    # 'Merchant-2015-c_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
@@ -131,29 +131,29 @@ models = {
     #                 },
     #     'fuels': ['CH3OH','C3H8','C3H6'], 
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    'Merchant-2015-d_H2O-He': {
+    'Merchant-2015-d_CO2-He': {
         'submodels': {
             'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
                     },
-        'fuels': ['allyl-alcohol','CH3OCH3', 'CH2O'], 
+        'fuels': ['CH3OCH3', 'CH2O'], 
         'oxidizer':'O2',
-        'diluent':'H2O:0.09,HE:0.91',
+        'diluent':'CO2:0.21,HE:0.79',
         'fraction':{"diluent":0.96},
         'phi_list':[1,3],
         'P_list':[6.5,12],
         'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
         'data': []
     },
-    # 'Aramco-3.0-a_H2O-He': {
+    # 'Aramco-3.0-a_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
@@ -161,14 +161,14 @@ models = {
     #                 },
     #     'fuels': ['CH4', 'C2H2','ethanol'],
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Aramco-3.0-b_H2O-He': {
+    # 'Aramco-3.0-b_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
@@ -176,14 +176,14 @@ models = {
     #                 },
     #     'fuels': ['C2H4', 'C2H6','H2'],
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Aramco-3.0-c_H2O-He': {
+    # 'Aramco-3.0-c_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
@@ -191,22 +191,22 @@ models = {
     #                 },
     #     'fuels': ['CH3OH','C3H8','C3H6'], 
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Aramco-3.0-d_H2O-He': {
+    # 'Aramco-3.0-d_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
     #                 },
-    #     'fuels': ['allyl-alcohol','CH3OCH3', 'CH2O'], 
+    #     'fuels': ['CH3OCH3', 'CH2O'], 
     #     'oxidizer':'O2',
-    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'diluent':'CO2:0.21,HE:0.79',
     #     'fraction':{"diluent":0.90},
     #     'phi_list':[1,3],
     #     'P_list':[6.5,12],
