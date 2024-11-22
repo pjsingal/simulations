@@ -1048,6 +1048,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: HOCO <=> CO2 + H
   type: linear-Burke
   reference-collider: AR
@@ -1098,6 +1101,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: HOCO + H <=> CO2 + H2
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
   note: '\AUTHOR: YJZ!\REF: Yu and Francisco, JCP, 2008, 128(24): 244315-!\COMMENT:'
@@ -1512,6 +1518,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: HNO + HNO <=> N2O + H2O
   rate-constant: {A: 900000000.0, b: 0.0, Ea: 3100.0}
   note: '\AUTHOR: YJZ !\REF:Skreiberg et al., CNF, 2004, 136(4): 501-518 !\COMMENT:'

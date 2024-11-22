@@ -576,6 +576,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + npropyl <=> QOOH_2
   type: linear-Burke
   reference-collider: AR
@@ -597,6 +603,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + npropyl <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -619,6 +631,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + npropyl <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -641,6 +659,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + npropyl <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -662,6 +686,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + npropyl <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -683,6 +713,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: npropyloo <=> QOOH_2
   type: linear-Burke
   reference-collider: AR
@@ -704,6 +740,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: npropyloo <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -726,6 +768,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: npropyloo <=> QOOH_1
   type: linear-Burke
   duplicate: true
@@ -748,6 +796,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: npropyloo <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -769,6 +823,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: npropyloo <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -790,6 +850,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_2 <=> QOOH_1
   type: linear-Burke
   reference-collider: AR
@@ -811,6 +877,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_2 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -832,6 +904,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_2 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -853,6 +931,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_1 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -874,6 +958,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_1 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -895,6 +985,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + ipropyl <=> ipropyloo
   type: linear-Burke
   reference-collider: AR
@@ -916,6 +1012,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + ipropyl <=> QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -937,6 +1039,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + ipropyl <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -958,6 +1066,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + ipropyl <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -979,6 +1093,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: ipropyloo <=> QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -1000,6 +1120,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: ipropyloo <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -1021,6 +1147,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: ipropyloo <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -1042,6 +1174,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_3 <=> HO2 + C3H6
   type: linear-Burke
   reference-collider: AR
@@ -1063,6 +1201,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: QOOH_3 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -1084,6 +1228,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: HO2 + C3H6 <=> OH + propoxide
   type: linear-Burke
   reference-collider: AR
@@ -1105,6 +1255,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_1 <=> well_1
   type: linear-Burke
   reference-collider: AR
@@ -1126,6 +1282,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_1 <=> OH + OH + frag_1
   type: linear-Burke
   reference-collider: AR
@@ -1147,6 +1309,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_1 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1168,6 +1336,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_1 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1189,6 +1363,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> well_2
   type: linear-Burke
   reference-collider: AR
@@ -1210,6 +1390,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -1231,6 +1417,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -1252,6 +1444,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1273,6 +1471,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> OH + OH + frag_4
   type: linear-Burke
   reference-collider: AR
@@ -1294,6 +1498,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> OH + OH + frag_5
   type: linear-Burke
   reference-collider: AR
@@ -1315,6 +1525,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1336,6 +1552,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -1357,6 +1579,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -1378,6 +1606,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_2 <=> O2 + QOOH_3
   type: linear-Burke
   reference-collider: AR
@@ -1399,6 +1633,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> well_2
   type: linear-Burke
   reference-collider: AR
@@ -1420,6 +1660,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -1441,6 +1687,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -1462,6 +1714,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1483,6 +1741,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> OH + OH + frag_4
   type: linear-Burke
   reference-collider: AR
@@ -1504,6 +1768,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> OH + OH + frag_5
   type: linear-Burke
   reference-collider: AR
@@ -1525,6 +1795,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1546,6 +1822,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -1567,6 +1849,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: O2 + QOOH_3 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -1588,6 +1876,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_1 <=> OH + prod_1
   type: linear-Burke
   reference-collider: AR
@@ -1609,6 +1903,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_1 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1630,6 +1930,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_1 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1651,6 +1957,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> well_3
   type: linear-Burke
   reference-collider: AR
@@ -1672,6 +1984,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -1693,6 +2011,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1714,6 +2038,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -1735,6 +2065,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -1756,6 +2092,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1777,6 +2119,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -1798,6 +2146,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_2 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -1819,6 +2173,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> well_5
   type: linear-Burke
   reference-collider: AR
@@ -1840,6 +2200,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1861,6 +2227,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -1882,6 +2254,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -1903,6 +2281,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -1924,6 +2308,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -1945,6 +2335,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_3 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -1966,6 +2362,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> OH + prod_3
   type: linear-Burke
   reference-collider: AR
@@ -1987,6 +2389,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> OH + prod_4
   type: linear-Burke
   reference-collider: AR
@@ -2008,6 +2416,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> OH + prod_5
   type: linear-Burke
   reference-collider: AR
@@ -2029,6 +2443,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> HO2 + prod_2
   type: linear-Burke
   reference-collider: AR
@@ -2050,6 +2470,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> HO2 + prod_6
   type: linear-Burke
   reference-collider: AR
@@ -2071,6 +2497,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: well_5 <=> HO2 + prod_7
   type: linear-Burke
   reference-collider: AR
@@ -2092,6 +2524,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_2 <=> allyloxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -2113,6 +2551,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_6 <=> propen1oxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -2134,6 +2578,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_7 <=> propen2oxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -2155,6 +2605,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_1 <=> frag_1 + OH
   type: linear-Burke
   reference-collider: AR
@@ -2176,6 +2632,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_3 <=> frag_3 + OH
   type: linear-Burke
   reference-collider: AR
@@ -2197,6 +2659,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_4 <=> frag_4 + OH
   type: linear-Burke
   reference-collider: AR
@@ -2218,6 +2686,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_5 <=> frag_5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -2239,6 +2713,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: frag_1 <=> vinoxy + CH2O
   rate-constant: {A: 49400000000.0, b: 0.857, Ea: 5809.2}
   note: 'C3H5O2 beta-scission rates
@@ -2271,6 +2751,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyl + HO2 <=> acrolein + H2O
   type: linear-Burke
   reference-collider: AR
@@ -2292,6 +2778,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyl + HO2 <=> allyloxy + OH
   type: linear-Burke
   reference-collider: AR
@@ -2313,6 +2805,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: prod_2 <=> acrolein + H2O
   type: linear-Burke
   reference-collider: AR
@@ -2334,6 +2832,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyloxy <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -2357,6 +2861,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyloxy <=> vinoxylmethyl
   type: linear-Burke
   reference-collider: AR
@@ -2380,6 +2890,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyloxy <=> formylethyl
   type: linear-Burke
   reference-collider: AR
@@ -2403,6 +2919,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyloxy <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -2426,6 +2948,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: allyloxy <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -2449,6 +2977,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: vinoxylmethyl <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -2472,6 +3006,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: vinoxylmethyl <=> formylethyl
   type: linear-Burke
   reference-collider: AR
@@ -2495,6 +3035,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: vinoxylmethyl <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -2518,6 +3064,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: vinoxylmethyl <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -2541,6 +3093,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: formylethyl <=> C2H3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -2564,6 +3122,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: formylethyl <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -2587,6 +3151,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: formylethyl <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -2610,6 +3180,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: C2H3 + CH2O <=> acrolein + H
   type: linear-Burke
   reference-collider: AR
@@ -2633,6 +3209,12 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
 - equation: C2H3 + CH2O <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -2656,3 +3238,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H4
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Aramco-3.0 / TsangHampson-1986
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018

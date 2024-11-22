@@ -1102,6 +1102,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NH2OH + H <=> HNOH + H2
   rate-constant: {A: 480000000.0, b: 1.5, Ea: 6249.0}
   note: '         ! 450-2500 K
@@ -1209,6 +1212,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NH3 + H <=> NH2 + H2
   rate-constant: {A: 636000.0, b: 2.39, Ea: 10170.0}
   note: 'Baulch 2005 error(+/-0.3) 2000-3000 K  M=AR
@@ -1388,6 +1394,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NO + HO2 <=> NO2 + OH
   rate-constant: {A: 2100000000000.0, b: 0.0, Ea: -480.0}
   note: " FUL/TRO98\n FUL/TRO98 [M=He,T=400K]\nNO+OH(+M)=HONO(+M)                \
@@ -1451,6 +1460,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NO2 + OH (+M) <=> HONO2 (+M)
   type: linear-Burke
   reference-collider: AR
@@ -1490,6 +1502,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NO2 + NO2 <=> NO + NO + O2
   rate-constant: {A: 4500000000000.0, b: 0.0, Ea: 27600.0}
   note: 'Rasmussen;IJCK 40: 454 C480,2008 cited PAR/LIN98 also used by Lamoureux 2016'
@@ -1635,6 +1650,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: HNO2 + O <=> NO2 + OH
   rate-constant: {A: 170000000.0, b: 1.5, Ea: 2000.0}
   note: Rasmussen; IJCK 40, 454 C480 cited DEA/BOZ00 also used by KLIMIC2011
@@ -1696,6 +1714,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NO2 + NO2 <=> NO3 + NO
   rate-constant: {A: 9600000000.0, b: 0.7, Ea: 20900.0}
   note: 'M=N2
@@ -1763,6 +1784,9 @@ reactions:
   - name: O2
     efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
     note: Jasper-2022 (generic)
+  - name: C2H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: Aramco-3.0 / TsangHampson-1986
 - equation: NO + HO2 + M <=> HNO3 + M
   type: three-body
   rate-constant: {A: 1.5e+24, b: -3.5, Ea: 2200.0}
