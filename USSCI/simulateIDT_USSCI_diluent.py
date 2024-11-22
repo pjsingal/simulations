@@ -92,71 +92,125 @@ models = {
     #                [1188,1520]],
     #     'data': []
     # },
-    'Merchant-2015-a': {
+    # 'Merchant-2015-a_H2O-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['CH4', 'C2H2','ethanol'],
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
+    # 'Merchant-2015-b_H2O-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['C2H4', 'C2H6','H2'],
+    #     # 'fuels': ['C2H2','C2H4'],
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
+    # 'Merchant-2015-c_H2O-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['CH3OH','C3H8','C3H6'], 
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
+    'Merchant-2015-d_H2O-He': {
         'submodels': {
+            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
                     },
-        'fuels': ['CH4', 'C2H2','ethanol', 'C2H4', 'C2H6','H2'],
-        # rm  
-        'oxidizer':'O2:1.0, N2:3.76',
-        'phi_list':[0.5,1],
-        'P_list':[20,100],
-        'T_range':[[500,2000],[500,2000],[500,2000],[500,2000]],
+        'fuels': ['allyl-alcohol','CH3OCH3', 'CH2O'], 
+        'oxidizer':'O2',
+        'diluent':'H2O:0.09,HE:0.91',
+        'fraction':{"diluent":0.96},
+        'phi_list':[1,3],
+        'P_list':[6.5,12],
+        'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
         'data': []
     },
-    # 'Merchant-2015-c': {
+    # 'Aramco-3.0-a_H2O-He': {
     #     'submodels': {
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    #     'fuels': ['CH3OH','C3H8','C3H6','allyl-alcohol','CH3OCH3', 'CH2O'],
-    #     # rm  
-    #     'oxidizer':'O2:1.0, N2:3.76',
-    #     'phi_list':[0.5,1],
-    #     'P_list':[20,100],
-    #     'T_range':[[500,1600],[500,1600],[500,1600],[500,1600]],
-    #     'data': []
-    # },
-    # 'Merchant-2015-b': {
-    #     'submodels': {
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    #     'fuels': ['C2H5', 'C3H8','CH3OH','CH3OCH3','H2','CH2O'],
-    #     #other fuel options are 'CH4', 'C2H2','ethanol','allyl-alcohol', 'C2H6', and 'C2H4', but the present conditions make sims break
-    #     'oxidizer':'O2:1.0, N2:3.76',
-    #     'phi_list':[0.5,1],
-    #     'P_list':[10,30],
-    #     'T_range':[[500,1000],[500,1000],
-    #                [625,1000],[625,1000]],
-    #     'data': []
-    # },
-    # 'Aramco-3.0-a': {
-    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
     #                 },
-    #     'fuels': ['CH4', 'C2H2','C2H5OH', 'C2H4', 'C2H6','C3H6', 'C3H8','CH3OH','CH3OCH3', 'H2','CH2O'],
-    #     'oxidizer':'O2:1.0, N2:3.76',
-    #     'phi_list':[0.5,1],
-    #     'P_list':[1,20],
-    #     'T_range':[[500,1000],[500,1000],
-    #                [625,1000],[625,1000]],
+    #     'fuels': ['CH4', 'C2H2','ethanol'],
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    # 'Aramco-3.0-b': {
+    # 'Aramco-3.0-b_H2O-He': {
     #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
     #                 },
-    #     'fuels': ['C2H5', 'C3H8','CH3OH','CH3OCH3','H2','CH2O'],
-    #     #other fuel options are 'CH4', 'C2H2','ethanol','allyl-alcohol', 'C2H6', and 'C2H4', but the present conditions make sims break
-    #     'oxidizer':'O2:1.0, N2:3.76',
-    #     'phi_list':[0.5,1],
-    #     'P_list':[10,30],
-    #     'T_range':[[500,1000],[500,1000],
-    #                [625,1000],[625,1000]],
+    #     'fuels': ['C2H4', 'C2H6','H2'],
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
+    # 'Aramco-3.0-c_H2O-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['CH3OH','C3H8','C3H6'], 
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
+    # 'Aramco-3.0-d_H2O-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['allyl-alcohol','CH3OCH3', 'CH2O'], 
+    #     'oxidizer':'O2',
+    #     'diluent':'H2O:0.09,HE:0.91',
+    #     'fraction':{"diluent":0.90},
+    #     'phi_list':[1,3],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
 }
@@ -171,13 +225,13 @@ models = {
 lstyles = ["solid","dashed","dotted"]
 colors = ["xkcd:grey","xkcd:purple", "xkcd:teal", "orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:navy blue","xkcd:grey","cyan"]*2
 
-def getTimeHistory(phi,fuel,oxidizer,T,P):
+def getTimeHistory(phi,fuel,oxidizer,diluent,fraction,T,P):
     def ignitionDelay(states, species):
         i_ign = np.gradient(states(species).Y.T[0]).argmax()
         # i_ign = states(species).Y.T[0].argmax()
         # print(np.gradient(states(species).Y.T[0]).argmax())
         return states.t[i_ign]   
-    gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
+    gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction)
     gas.TP = T, P*ct.one_atm
     r = ct.Reactor(contents=gas)
     reactorNetwork = ct.ReactorNet([r])
@@ -194,9 +248,9 @@ def getTimeHistory(phi,fuel,oxidizer,T,P):
 
 
 # def getIDT(gas,T_list,P):
-def getTempHistory(phi,fuel,oxidizer,T_list,P):
+def getTempHistory(phi,fuel,oxidizer,diluent,fraction,T_list,P):
     IDT_list = Parallel(n_jobs=-1)(  # Use all available cores; adjust n_jobs if needed
-        delayed(getTimeHistory)(phi,fuel,oxidizer,T,P)
+        delayed(getTimeHistory)(phi,fuel,oxidizer,diluent,fraction,T,P)
         for T in T_list
     )
     return np.array(IDT_list)
@@ -222,7 +276,7 @@ for model in models:
                 mkrs=['o','x']
                 for i, fuel in enumerate(models[model]['fuels']):
                 # for i, phi in enumerate(models[model]['phi_list']):
-                    IDT = getTempHistory(phi, fuel, models[model]['oxidizer'], T_list, P)
+                    IDT = getTempHistory(phi, fuel, models[model]['oxidizer'], models[model]['diluent'], models[model]['fraction'], T_list, P)
                     print(f'Fuel: {fuel}')
                     ax[z,w].semilogy(T_list, IDT*1e3, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{fuel}')#label=f'{m} '+r'$\phi$='+f'{phi}')
                     # if fuel in models[model]['data']:

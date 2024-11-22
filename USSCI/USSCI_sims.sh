@@ -62,9 +62,13 @@ date='Nov21'
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --date $date
 
 
-python USSCI/simulateIDT_USSCI.py \
+# python USSCI/simulateIDT_USSCI.py \
+# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
+
+python USSCI/simulateIDT_USSCI_diluent.py \
 --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 50 --date $date
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
 
 
 

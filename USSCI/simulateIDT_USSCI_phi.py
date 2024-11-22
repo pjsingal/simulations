@@ -99,8 +99,9 @@ models = {
                     },
         'fuels': ['CH4', 'C2H2','ethanol', 'C2H4', 'C2H6','H2'],
         # rm  
-        'oxidizer':'O2:1.0, N2:3.76',
-        'phi_list':[0.5,1],
+        # 'oxidizer':'O2:1.0, N2:3.76',
+        'oxidizer':'O2:1.0, He:8, H2O:2',
+        'phi_list':[4,2],
         'P_list':[20,100],
         'T_range':[[500,2000],[500,2000],[500,2000],[500,2000]],
         'data': []

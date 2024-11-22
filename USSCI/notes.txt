@@ -1,0 +1,12 @@
+MERCHANT-2015
+- Notable difference between LMRR/LMRR-allPLOG and base for H2/O2/H2O(9%)/He
+at phi=1/6.5atm, phi=3/6.5atm, phi=1/12atm, phi=3/12atm. No difference
+at all between LMRR and LMRR-allPLOG
+- Minor differences between LMRR and base also observed for C2H4 and C2H6
+
+- BREAKTRHOUGH!! C3H8 has notable differences between LMRR vs LMRR-allPLOG vs base
+for H2/O2/H2O(9%)/He at phi=1/6.5atm, phi=3/6.5atm, phi=1/12atm, phi=3/12atm.
+- Minor differences also observed between all three for C3H6
+
+- Differences also noticed for allyl alcohol under same conditions, but results are
+highly unstable. Maybe try simming at different conditions.
