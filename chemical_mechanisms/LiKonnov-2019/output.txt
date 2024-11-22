@@ -1,0 +1,44 @@
+*******************************************************************************
+No thermo data found for species 'CH2NH'
+*******************************************************************************
+Error while reading transport data in tran.dat starting on line 522:
+"""
+HONO               2   350.000     3.950     1.639     0.000     1.000 ! CJP
+"""
+Duplicate transport data for species 'HONO'. Run ck2yaml again with the
+'--permissive' option to ignore this redundant entry.
+*******************************************************************************
+Error while reading transport data in tran.dat starting on line 523:
+"""
+NO3                2   400.000     4.200     0.200     0.000     1.000 ! CJP
+"""
+Duplicate transport data for species 'NO3'. Run ck2yaml again with the
+'--permissive' option to ignore this redundant entry.
+*******************************************************************************
+Error while reading transport data in tran.dat starting on line 528:
+"""
+NO                 1   139.320     3.339     0.200     1.760     4.000 ! CJP
+"""
+Duplicate transport data for species 'NO'. Run ck2yaml again with the
+'--permissive' option to ignore this redundant entry.
+*******************************************************************************
+Error while reading transport data in tran.dat starting on line 529:
+"""
+HNO                2   170.000     3.430     1.620     0.000     1.000 ! CJP
+"""
+Duplicate transport data for species 'HNO'. Run ck2yaml again with the
+'--permissive' option to ignore this redundant entry.
+*******************************************************************************
+Error while reading transport data in tran.dat starting on line 530:
+"""
+NO2                2   333.590     3.852     0.400     0.000     1.000 ! CJP
+"""
+Duplicate transport data for species 'NO2'. Run ck2yaml again with the
+'--permissive' option to ignore this redundant entry.
+Suppressed 1 additional errors about duplicate transport data.
+Run ck2yaml again with the '--verbose' option to see all errors.
+
+*******************************************************************************
+Unable to convert mechanism due to errors. Please check
+https://cantera.org/stable/userguide/ck2yaml-tutorial.html#debugging-common-errors-in-ck-files
+for the correct Chemkin syntax.
