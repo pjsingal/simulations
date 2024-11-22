@@ -51,21 +51,21 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 ########################################################################################
 models = {
-    # 'Stagni-2020_NH3-He': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allPLOG.yaml",
-    #                 },
-    #     'fuels': ['H2','NH3'],
-    #     'oxidizer':'O2',
-    #     'diluent':'NH3:0.1,HE:0.9',
-    #     'fraction':{"diluent":0.92},
-    #     'phi_list':[0.5,2],
-    #     'P_list':[6.5,12],
-    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
-    #     'data': []
-    # },
+    'Stagni-2020_NH3-He': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allPLOG.yaml",
+                    },
+        'fuels': ['H2','NH3'],
+        'oxidizer':'O2',
+        'diluent':'NH3:0.1,HE:0.9',
+        'fraction':{"diluent":0.92},
+        'phi_list':[0.5,2],
+        'P_list':[6.5,12],
+        'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+        'data': []
+    },
     # 'Alzueta-2023_NH3-He': {
     #     'submodels': {
     #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
@@ -81,21 +81,21 @@ models = {
     #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
     #     'data': []
     # },
-    'Glarborg-2018_NH3-He': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-                    },
-        'fuels': ['H2','NH3'],
-        'oxidizer':'O2',
-        'diluent':'NH3:0.1,HE:0.9',
-        'fraction':{"diluent":0.92},
-        'phi_list':[0.5,2],
-        'P_list':[6.5,12],
-        'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
-        'data': []
-    },
+    # 'Glarborg-2018_NH3-He': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    #     'fuels': ['H2','NH3'],
+    #     'oxidizer':'O2',
+    #     'diluent':'NH3:0.1,HE:0.9',
+    #     'fraction':{"diluent":0.92},
+    #     'phi_list':[0.5,2],
+    #     'P_list':[6.5,12],
+    #     'T_range':[[950,1300],[950,1300],[950,1300],[950,1300]],
+    #     'data': []
+    # },
     # 'Merchant-2015-a_CO2-He': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
