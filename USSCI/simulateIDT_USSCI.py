@@ -51,12 +51,12 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 ########################################################################################
 models = {
-    # 'Stagni-2020': {
+    # 'Stagni-2023': {
     #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allPLOG.yaml",
-    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
     #                 },
     #     'fuels': ['H2','NH3'],
     #     'oxidizer':'O2:1.0, N2:3.76',
@@ -240,6 +240,6 @@ for model in models:
     toc = time.time()
     print(f'Simulation completed in {toc-tic}s and stored at {path}/{model}.png\n')
 
-#     /home/pjs/simulations/USSCI/graph-reading/Stagni-2020/20bar_0,5phi.csv
-# 'USSCI/graph-reading/Stagni-2020/20bar_0.5phi.csv
+#     /home/pjs/simulations/USSCI/graph-reading/Stagni-2023/20bar_0,5phi.csv
+# 'USSCI/graph-reading/Stagni-2023/20bar_0.5phi.csv
 

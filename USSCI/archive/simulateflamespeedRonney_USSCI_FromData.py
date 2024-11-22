@@ -75,10 +75,10 @@ models = {
         'LMRR': r"factory_mechanisms/otomo-2018_LMRR.yaml",
         'LMRR-allP': r"factory_mechanisms/otomo-2018_LMRR_allP.yaml",
                 },
-    'Stagni-2020': {
-        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': r"factory_mechanisms/stagni-2020_LMRR.yaml",
-        'LMRR-allP': r"factory_mechanisms/stagni-2020_LMRR_allP.yaml",
+    'Stagni-2023': {
+        'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+        'LMRR': r"factory_mechanisms/stagni-2023_LMRR.yaml",
+        'LMRR-allP': r"factory_mechanisms/stagni-2023_LMRR_allP.yaml",
                 },
 }
 

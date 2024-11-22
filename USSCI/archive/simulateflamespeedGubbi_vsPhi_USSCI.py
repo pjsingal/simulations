@@ -43,10 +43,10 @@ models = {
         'LMRR': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR.yaml",
         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/otomo-2018_LMRR_allP.yaml",
                 },
-    'Stagni-2020': {
-        'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    'Stagni-2023': {
+        'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
                 },
 }
 ###############################################################################################################

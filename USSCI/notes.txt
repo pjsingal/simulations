@@ -1,5 +1,5 @@
-MERCHANT-2015
-- Notable difference between LMRR/LMRR-allPLOG and base for H2/O2/H2O(9%)/He
+MERCHANT-2015 (90% diluent)
+- For H2, notable difference between LMRR/LMRR-allPLOG and base for H2/O2/H2O(9%)/He
 at phi=1/6.5atm, phi=3/6.5atm, phi=1/12atm, phi=3/12atm. No difference
 at all between LMRR and LMRR-allPLOG
 - Minor differences between LMRR and base also observed for C2H4 and C2H6
@@ -14,3 +14,15 @@ highly unstable. Maybe try simming at different conditions.
 -All of the same trends as above hold for an H2/O2/CO2(20%)/He mixture
 
 -allyl alcohol deleted from fuel list because too unstable
+
+
+ALZUETA
+- For H2O-He sim (92% diluent), H2 has notable difference between LMRR/LMRR-allPLOG and base for H2/O2/H2O(9%)/He
+at phi=1/6.5atm, phi=3/6.5atm, phi=1/12atm, phi=3/12atm. No difference
+at all between LMRR and LMRR-allPLOG
+- Same for NH3, but its simulation is unstable
+- For NH3-He sim, similar trends observed, but some separation between the LMRR and
+LMRR-allPLOG cases. Hard to tell if this separation is real or due to numerical instability
+
+GLARBORG, STAGNI
+- ditto

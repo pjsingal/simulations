@@ -4,7 +4,7 @@ comprising 38 species and 265 reactions. Simulated rate constants of NH2
 laminar flame speeds of NH3/air and NH3/O2/N2; and ignition delay times of
 NH3/O2/Ar. 295 citations.
 
-Stagni-2020: Models the gas-phase oxidation of ammonia (500–2000K, ϕ=0.01–0.375).
+Stagni-2023: Models the gas-phase oxidation of ammonia (500–2000K, ϕ=0.01–0.375).
 Contains submechanisms for H2/O2 (AramcoMech 1.3), and NOx (Song2019) with an added NH3 module, comprising 31 species and 203 reactions.
 Simulated rate constants of barrierless NH3 decomposition (NH3=NH2+H),
 NH3 recombination (NH2+H=NH3), HNO recombination (H+NO=HNO);

@@ -55,10 +55,10 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    'Stagni-2020': {
-        # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+    'Stagni-2023': {
+        # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
                 },
     # 'Alzueta-2023': {
     #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
@@ -66,30 +66,30 @@ models = {
     #     'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
     #             },
     # 'Glarborg-2018': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
     #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
     #             },
     # 'Aramco-3.0': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #     # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
     #             },
 }
 
 # fuels = {
-#     'Stagni-2020':['H2','NH3'],
+#     'Stagni-2023':['H2','NH3'],
 #     # 'Alzueta-2023': ['H2','NH3'],
 #     # 'Glarborg-2018':['H2','NH3'],
 #     # 'Aramco-3.0':['C2H2','CH3OH','C4H10']
 # }
 
 models = {
-    'Stagni-2020': {
+    'Stagni-2023': {
         'submodels': {
-            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+            # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
                     },
         'fuels': ['H2','NH3'],
         'oxidizer':'O2',
@@ -121,7 +121,7 @@ models = {
     # },
     # 'Glarborg-2018': {
     #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
     #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
     #                 },
@@ -136,7 +136,7 @@ models = {
     # },
     # 'Aramco-3.0': {
     #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
     #                 },

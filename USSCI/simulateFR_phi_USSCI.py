@@ -60,11 +60,11 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 #######################################################################
 
 models = {
-    'Stagni-2020': {
+    'Stagni-2023': {
         'submodels': {
-            # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR.yaml",
-            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2020_LMRR_allP.yaml",
+            # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
                     },
         'fuel': 'NH3',
         'oxidizer':'O2:1.0, N2:3.76',
@@ -94,7 +94,7 @@ models = {
     # },
     # 'Glarborg-2018': {
     #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
     #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
     #                 },
@@ -109,7 +109,7 @@ models = {
     # },
     # 'Aramco-3.0': {
     #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Stagni-2020/stagni-2020.yaml",
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
     #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
     #                 },
@@ -215,8 +215,8 @@ def getXvsT(gas,vals,T,P,phi,species):
     print(f'IDT = {IDT}')
 
 
-gas = ct.Solution(models['Stagni-2020']['submodels']['LMRR'])
-getXvsT(gas,models['Stagni-2020'],1300,1.25,0.375,'NH3')
+gas = ct.Solution(models['Stagni-2023']['submodels']['LMRR'])
+getXvsT(gas,models['Stagni-2023'],1300,1.25,0.375,'NH3')
 
 # for model in models:
 #     print(f'Model: {model}')
