@@ -77,18 +77,25 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Merchant-2015': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Merchant-2015': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+                    },
+    },
     'Bugler-2016': {
         'submodels': {
             'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Song-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
                     },
     },
     # 'Aramco-3.0': {
@@ -103,19 +110,21 @@ models = {
 X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
 P=1.1
 T_list = np.linspace(725,1190,gridsz)
-data='XCH4_75N2_25H2O.csv'
+data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
 tau=0.5
 V=113e-6
-t_max=20
+t_max=50
 reactorTemperature = 1000
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","k"]*3
+colors = ["xkcd:purple","xkcd:teal","r"]*3
+
+Xspecies=['CH4','CO2','CO']
 
 ########################################################################################
 
 def getStirredReactor(gas):
     h = 79.5 # heat transfer coefficient W/m2/K
-    K = 0.01 # pressureValveCoefficient
+    K = 2e-5 # pressureValveCoefficient
     reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
     reactorSurfaceArea =4*np.pi*reactorRadius**2 # [m3]
     fuelAirMixtureTank = ct.Reservoir(gas)
@@ -131,63 +140,60 @@ def getStirredReactor(gas):
     ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
     return reactor
 
-def getTimeHistory(gas,T,P):
-    gas.TPX = T, P*ct.one_atm, X
+def getTemperatureDependence(model,m):
+    print(f'Sub-model: {m}')
+    gas = ct.Solution(models[model]['submodels'][m])
     stirredReactor = getStirredReactor(gas)
-    reactorNetwork = ct.ReactorNet([stirredReactor])
-    # reactorNetwork.max_time_step=1e-4  # Set a smaller maximum time step
-    # reactorNetwork.rtol = 1e-6             # Reduce relative tolerance
-    # reactorNetwork.atol = 1e-12            # Reduce absolute tolerance
-    t = 0
-    counter=1
-    while t < t_max:
-        t = reactorNetwork.step()
-        # if not counter % 50:
-        counter+=1
-    state = np.hstack([
-            stirredReactor.thermo.P,
-            stirredReactor.mass,
-            stirredReactor.volume,
-            stirredReactor.T,
-            stirredReactor.thermo.X,
-            ])
-    return T, state
-
-def getTemperatureDependence(gas,T_list,P):
-    gas.TPX = reactorTemperature, P*ct.one_atm, X
-    stirredReactor = getStirredReactor(gas)
-    results = Parallel(n_jobs=-1)(
-        delayed(getTimeHistory)(gas,T,P)
-        for T in T_list
-        )
     columnNames = (
         ['pressure'] +
         [stirredReactor.component_name(item)
          for item in range(stirredReactor.n_vars)]
     )
     tempDependence = pd.DataFrame(columns=columnNames)
-    for T, state in results:
-        tempDependence.loc[T]=state
+    concentrations = X
+    for T in T_list:
+        gas.TPX = T, P*ct.one_atm, concentrations
+        stirredReactor = getStirredReactor(gas)
+        reactorNetwork = ct.ReactorNet([stirredReactor])
+        t = 0
+        while t < t_max:
+            t = reactorNetwork.step()
+        state = np.hstack([stirredReactor.thermo.P,
+                        stirredReactor.mass,
+                        stirredReactor.volume,
+                        stirredReactor.T,
+                        stirredReactor.thermo.X])
+        concentrations = stirredReactor.thermo.X
+        tempDependence.loc[T] = state
     return tempDependence
 
-f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
+f, ax = plt.subplots(1,len(Xspecies), figsize=(args.figwidth, args.figheight))
+plt.subplots_adjust(wspace=0.3)
 tic = time.time()
 for j,model in enumerate(models):
-    print(f'Model: {model}')
-    for k,m in enumerate(models[model]['submodels']):
-        print(f'Submodel: {m}')
-        gas = ct.Solution(list(models[model]['submodels'].values())[k])
-        tempDependence = getTemperatureDependence(gas,T_list, P)
-        ax.plot(tempDependence.index,tempDependence['CH4']*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=f'{model}-{m}')#label=f'{m} '+r'$\phi$='+f'{phi}')
-dat = pd.read_csv(f'USSCI/graph-reading/Lavadera-2018/{data}',header=None)
-ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=r'CH4')
-ax.set_title(r'Lavadera et al.',fontsize=8)
-# ax.set_ylim([60,6000])
-ax.set_xlim([700,1200])
-ax.tick_params(axis='both',direction='in')
-ax.set_xlabel('Temperature [K]')
-ax.set_ylabel(r'mole fraction [%]')
-ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=2)  
+    print(f'\nModel: {model}')
+    tempDependences = Parallel(n_jobs=3)(
+        delayed(getTemperatureDependence)(model,m)
+        for m in models[model]['submodels']
+        )
+    for z, species in enumerate(Xspecies):
+        for k,m in enumerate(models[model]['submodels']):
+            tempDependence=tempDependences[k]
+            print(f'Submodel: {m}')
+            if k==0:
+                label=f'{model}'
+            else:
+                label=None
+            ax[z].plot(tempDependence.index,tempDependence[species]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [%]')
+        if j==len(list(models.keys()))-1:
+            dat = pd.read_csv(f'USSCI/graph-reading/Lavadera-2018/{data[z]}',header=None)
+            ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
+        ax[z].set_xlim([700,1200])
+        ax[z].tick_params(axis='both',direction='in')
+        ax[z].set_xlabel('Temperature [K]')
+plt.suptitle(r'Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)',fontsize=10)
+ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
 path=f'USSCI/figures/'+args.date+'/Lavadera-2018'
 os.makedirs(path,exist_ok=True)
 name=f'Fig3.png'
