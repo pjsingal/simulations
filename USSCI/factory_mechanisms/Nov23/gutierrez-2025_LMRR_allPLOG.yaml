@@ -1896,21 +1896,17 @@ reactions:
 - equation: H2 + M <=> H + H + M
   type: three-body
   rate-constant: {A: 4.6e+19, b: -1.4, Ea: 104380.0}
-  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.0}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.0, O2: 0.0, N2: 0.0}
 - equation: H2 + AR <=> H + H + AR
   rate-constant: {A: 5.8e+18, b: -1.1, Ea: 104380.0}
 - equation: H + O + M <=> OH + M
   type: three-body
   rate-constant: {A: 4.7e+18, b: -1.0, Ea: 0.0}
-  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.75, CO: 1.9, CO2: 3.8}
+  efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.75, CO: 1.9, CO2: 3.8, O2: 0.0}
 - equation: O + O + M <=> O2 + M
   type: three-body
   rate-constant: {A: 19000000000000.0, b: 0.0, Ea: -1788.0}
   efficiencies: {H2: 2.5, H2O: 12.0, AR: 0.0, CO: 1.9, CO2: 3.8}
-  note: '
-
-
-    '
 - equation: H2O + M <=> H + OH + M
   type: three-body
   rate-constant: {A: 6.1e+27, b: -3.322, Ea: 120790.0}
