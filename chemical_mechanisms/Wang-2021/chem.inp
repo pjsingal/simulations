@@ -1,0 +1,1191 @@
+!CEU-NH3 Mechanism for ammonia combustion from ZJU, 2020 Nov.
+ELEM C O N AR H HE
+END
+SPECIES ! structure, source of thermo-data 
+
+N2                AR                HE                H                 O2                
+OH                O                 H2                H2O               HO2               
+H2O2              CO                CO2               HCO               OHEX
+CH3               
+CH4               CH2O              T-CH2             S-CH2             C2H4              
+CH3O              C2H5              C2H6              CH                C2H2              
+C2H4OOH           OC2H3OOH          C2H3              CH2CHO            C2H4O             
+HCCO              CH2CO             C2H               CH2OH             CH3OH             
+CH3CHO            CH3CO             C2H5OH            CH2CH2OH          CH3CHOH           
+CH3CH2O           C3H4              C3H3              C3H5              C3H6              
+C3H8              I-C3H7            N-C3H7            C3H6OOH           OC3H5OOH 
+C4H10             PC4H9             SC4H9             C4H8              SC4H9O2     
+C4H8OOH1-3        NC4KET13	    CHCHO
+
+N	NO	NO2	N2O 	NH3	HNO	H2NO
+NNH	NH2	NH  	N2H2	N2H3	N2H4	H2NN
+
+!!!! reactions of HONO,HON,H2NO,HONO,HNO2,HONO2,HNO3,NO3,and HON 
+! are important for oxidation processes of NO,NO2,N2O....
+! However, they have NEGELIGEBLE influence on the global combustion parameters of NH3,
+! thus the following species and the coresponding reactions (see the last part of reactions)
+! can be deleted TO INCREASE THE CPU TIME when needed.
+
+HONO	HNOH	HNO2	HONO2	NO3	HON
+
+!C-N interactions from Konnov mechanism
+CN    	HCN   	HNC   	H2CN  	HCNH   
+NCN  	HCNN 	HNCN 
+NCO  	HNCO 	HOCN 	HCNO 
+
+END
+REACTIONS      
+!ELTE
+!################
+!   H submech   #                          
+!################
+!     1
+H+O2<=>O+OH                  5.0712E+015   -0.48596       16126.7
+!     2                                                         
+O+H2<=>H+OH                  1.2554E+006    2.27039       6956.9
+!     3                                                         
+OH+H2<=>H+H2O                1.3193E+007    1.87803       3151.0
+!     4                                                         
+2OH<=>O+H2O                  8.4999E+004    2.26419      -1784.8
+!     5                                                         
+2H+M<=>H2+M                  4.9806E+018   -1.21273       612.04
+H2/2.5/ O2/1/ H2O/12/ CO/1.9/ CO2/3.8/ HE/0.83/ AR/1/
+! Added O2 and AR as a potential thirdbody
+
+!     6                                      
+2O+M<=>O2+M                    6.165E+15    -0.5000        0.00
+H2/2.5/ H2O/12/ AR/0.83/ CO/1.9/ CO2/3.8/ HE/0.83/
+!     7
+O+H+M<=>OH+M                   4.714E+18    -1.0000        0.00
+H2/2.5/ O2/1/ H2O/12/ AR/0.75/ CO/1.5/ CO2/2/ HE/0.75/
+! Added O2 as a potential thirdbody
+
+!     8                                      
+H+OH+M<=>H2O+M               1.4818E+024   -2.53792       120.79
+H2/2.5/ O2/1/ H2O/12/ AR/0.38/ HE/0.44/ CO/1.9/ CO2/3.8/
+! Added O2 as a potential thirdbody
+
+!     9                                      
+H+O2(+M)<=>HO2(+M)             4.650E+12     0.4400        0.00
+LOW                  /       5.2669E+019   -1.37367        0.00     /
+TROE                 /         6.700E-01    1.0E-30     1.0E+30    1.0E+30 /
+H2/1.511/ O2/1.00/ CO/1.9/ CO2/3.8/ HE/0.65/ H2O/11.372/ AR/0.474/
+! Added O2 as a potential thirdbody
+
+!    10
+H+HO2<=>H2+O2                2.1231E+006    2.11330      -1624.7
+!    11                                        
+HO2+H<=>2OH                  5.7734E+013     0.000        171.02
+!    12                                                
+HO2+O<=>OH+O2                  3.250E+13     0.000         0.00
+!    13                                                
+HO2+OH<=>H2O+O2              9.5840E+011    0.42008      -948.59
+!    14                                                
+2HO2<=>H2O2+O2                 1.300E+11     0.000       -1630.0
+DUPLICATE                                              
+!    15                                                
+2HO2<=>H2O2+O2               1.6048E+015     0.0000       15549
+DUPLICATE                                              
+!    16                                                
+2OH(+M)<=>H2O2(+M)             2.148E+05     2.3219    -3402.4
+LOW                  /       1.9928E+018   -1.17797    -4272.7     /
+TROE                 /        4.3000E-01  1.0000E-30 1.0000E+30 1.0000E+30 /
+H2O/5/ CO2/1.07/ AR/0.67/ O2/0.8/ HE/0.43/ H2O2/5.13/ H2/2.47/ CO/1.87/
+!    17
+H2O2+H<=>H2O+OH                2.410E+13     0.0000     3970.0
+!    18                                                
+H2O2+H<=>H2+HO2              9.7543E+019   -1.92495       9425.1
+!    19                                                                     
+H2O2+O<=>OH+HO2                9.550E+06     2.0000     3970.0
+!    20                                                
+H2O2+OH<=>H2O+HO2              1.740E+12     0.0000      318.00
+DUPLICATE                                              
+!    21                                                
+H2O2+OH<=>H2O+HO2              7.590E+13     0.0000     7269.0
+DUPLICATE                                              
+!################                                      
+!   CO submech  #                                      
+!################                                      
+!    22                                                
+CO+O(+M)<=>CO2(+M)             1.362E+10      0.000    2384.0
+LOW                  /         1.173E+24      -2.79    4191.0     /
+H2/2.0/ H2O/12/ CO/1.75/ CO2/3.6/ AR/0.7/ HE/0.7/
+!    23
+CO+O2<=>CO2+O                2.8865E+012     0.0000      47697
+!    24                                                        
+CO+OH<=>CO2+H                1.6596E+004    2.22171     -1380.4
+!    25                                            
+CO+HO2<=>CO2+OH              1.5144E+007    1.67957      18159
+!################                                      
+!  HCO submech  #                                      
+!################                                      
+!    26                                                
+HCO(+M)<=>H+CO(+M)             4.930E+16      -0.93        19725
+LOW                  /       4.9426E+010    0.95965      14640     /
+TROE                 /        8.5200E-01  5.1400E+01 3.5700E+03 3.4200E+03 /
+H2/2/ O2/1/ AR/0.55/ HE/0.786/ H2O/12/ CO/1.5/ CO2/2/
+!Added O2, AR and HE as a potential thirdbody
+!    27
+HCO+O2<=>CO+HO2                7.580E+12      0.000      410.00
+!    28                                               
+HCO+H<=>CO+H2                6.4126E+013      0.000   0.000E+00
+!    29                                               
+HCO+O<=>CO+OH                  3.020E+13      0.000   0.000E+00
+!    30                                               
+HCO+O<=>CO2+H                  3.000E+13      0.000   0.000E+00
+!    31                                               
+HCO+OH<=>CO+H2O                1.020E+14      0.000   0.000E+00
+!    32                                               
+HCO+HO2=>CO2+H+OH              3.000E+13      0.000   0.000E+00
+!    33                                               
+2HCO=>H2+2CO                   3.000E+12      0.000   0.000E+00
+!################                                     
+! OHEX submech  #                                     
+!################                                     
+!    34                                               
+H+O+M<=>OHEX+M                 1.500E+13     0.0000     5975.0
+H2/1/ H2O/6.5/ O2/0.4/ N2/0.4/ AR/0.35/               
+!    35                                               
+OHEX+H2O<=>OH+H2O              5.930E+12     0.5000     -859.99
+!    36                                               
+OHEX+H2<=>OH+H2                2.950E+12     0.5000     -444.00
+!    37                                               
+OHEX+N2<=>OH+N2                1.080E+11     0.5000     -1242.0
+!    38                                               
+OHEX+OH<=>2OH                  6.010E+12     0.5000     -764.00
+!    39                                               
+OHEX+H<=>OH+H                  1.310E+12     0.5000      -167.01
+!    40                                               
+OHEX+AR<=>OH+AR                1.690E+12     0.0000     4135.0
+!    41                                               
+OHEX<=>OH+HV                   1.450E+06     0.0000        0.00
+!
+!Chemkin can identify automatically the HV in photoactive reactions.
+!If other code has trouble identifying HV, e.g., the LOGOsoft, please revise #41 as following
+!OHEX<=>OH                   1.450E+06     0.0000        0.00
+
+!    42                                               
+OHEX+O2<=>OH+O2                2.100E+12     0.5000     -477.99
+!    43                                               
+OHEX+CO2<=>OH+CO2              2.750E+12        0.5     -968.01
+!    44                                               
+OHEX+CO<=>OH+CO                3.230E+12        0.5     -786.99
+
+
+
+!***********San diego mech main(excluding H2/CO reactions)************
+!
+HCO+CH3<=>CO+CH4                         5.000e+13    0.000      0.00
+H+HCO(+M)<=>CH2O(+M)                     1.090e+12    0.480   -260.04
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  1.350e+24   -2.570    424.95 /
+     TROE/  0.7824      271      2755      6570 /
+CH2O+H<=>HCO+H2                          5.740e+07    1.900   2748.57
+CH2O+O<=>HCO+OH                          3.500e+13    0.000   3513.38
+CH2O+OH<=>HCO+H2O                        3.900e+10    0.890    406.31
+CH2O+O2<=>HCO+HO2                        6.000e+13    0.000  40674.00
+CH2O+HO2<=>HCO+H2O2                      4.110e+04    2.500  10210.33
+CH4+H<=>H2+CH3                           1.300e+04    3.000   8037.76
+CH4+OH<=>H2O+CH3                         1.600e+07    1.830   2782.03
+CH4+O<=>CH3+OH                           1.900e+09    1.440   8675.91
+CH4+O2<=>CH3+HO2                         3.980e+13    0.000  56890.54
+CH4+HO2<=>CH3+H2O2                       9.030e+12    0.000  24641.49
+CH3+H<=>T-CH2+H2                         1.800e+14    0.000  15105.16
+CH3+H<=>S-CH2+H2                         1.550e+14    0.000  13479.92
+CH3+OH<=>S-CH2+H2O                       4.000e+13    0.000   2502.39
+CH3+O<=>CH2O+H                           8.430e+13    0.000      0.00
+CH3+T-CH2<=>C2H4+H                       4.220e+13    0.000      0.00
+CH3+HO2<=>CH3O+OH                        5.000e+12    0.000      0.00
+CH3+O2<=>CH2O+OH                         3.300e+11    0.000   8941.20
+CH3+O2<=>CH3O+O                          1.100e+13    0.000  27820.03
+2 CH3<=>C2H4+H2                          1.000e+14    0.000  32002.87
+2 CH3<=>C2H5+H                           3.160e+13    0.000  14698.85
+H+CH3(+M)<=>CH4(+M)                      1.270e+16   -0.630    382.89
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  2.470e+33   -4.760   2440.01 /
+     TROE/   0.783       74      2941      6964 /
+2 CH3(+M)<=>C2H6(+M)                     1.810e+13    0.000      0.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  1.270e+41   -7.000   2762.91 /
+     TROE/    0.62       73   1.2e+03        /
+S-CH2+OH<=>CH2O+H                        3.000e+13    0.000      0.00
+S-CH2+O2<=>CO+OH+H                       3.130e+13    0.000      0.00
+S-CH2+CO2<=>CO+CH2O                      3.000e+12    0.000      0.00
+S-CH2+M<=>T-CH2+M                        6.000e+12    0.000      0.00
+H2/2.40/ H2O/15.40/ CO/1.80/ CO2/3.60/ 
+
+
+!R3
+!T-CH2+H<=>CH+H2                          6.020e+12    0.000  -1787.76
+!San !1992BAU/COB411-429(REVIEW)
+
+!DeR3
+T-CH2+H=CH+H2			3.12E13		0	-1341
+!1995DEV/VAN16953-16959 (EXP.)
+
+
+
+T-CH2+OH<=>CH2O+H                        2.500e+13    0.000      0.00
+T-CH2+OH<=>CH+H2O                        1.130e+07    2.000   2999.52
+T-CH2+O<=>CO+2 H                         8.000e+13    0.000      0.00
+T-CH2+O<=>CO+H2                          4.000e+13    0.000      0.00
+T-CH2+O2<=>CO2+H2                        2.630e+12    0.000   1491.40
+T-CH2+O2<=>CO+OH+H                       6.580e+12    0.000   1491.40
+2 T-CH2<=>C2H2+2 H                       1.000e+14    0.000      0.00
+C2H2+HO2 <=> CHCHO+OH			 1.6e08       1.36    15420
+
+CHCHO+O2=CH2O+CO+O                       1.3E06       2.4202  1604
+
+
+CH+O<=>CO+H                              4.000e+13    0.000      0.00
+CH+O2<=>HCO+O                            1.770e+11    0.760   -478.01
+CH+H2O<=>CH2O+H                          1.170e+15   -0.750      0.00
+
+
+
+!RO6
+!CH+CO2<=>HCO+CO                          4.800e+01    3.220  -3226.58
+!San
+
+!MeRO6
+CH+CO2<=>HCO+CO  		0.03 	  	4.44 	  	-3537
+!1996MEH/FRO2335-2341
+
+
+
+CH3O+H<=>CH2O+H2                         2.000e+13    0.000      0.00
+CH3O+H<=>S-CH2+H2O                       1.600e+13    0.000      0.00
+CH3O+OH<=>CH2O+H2O                       5.000e+12    0.000      0.00
+CH3O+O<=>OH+CH2O                         1.000e+13    0.000      0.00
+CH3O+O2<=>CH2O+HO2                       4.280e-13    7.600  -3537.28
+CH3O+M<=>CH2O+H+M                        7.780e+13    0.000  13513.38
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+C2H6+H<=>C2H5+H2                         5.400e+02    3.500   5210.33
+C2H6+O<=>C2H5+OH                         1.400e+00    4.300   2772.47
+C2H6+OH<=>C2H5+H2O                       2.200e+07    1.900   1123.33
+C2H6+CH3<=>C2H5+CH4                      5.500e-01    4.000   8293.50
+C2H6(+M)<=>C2H5+H(+M)                    8.850e+20   -1.230 102222.75
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  4.900e+42   -6.430 107169.93 /
+     TROE/    0.84      125      2219      6882 /
+C2H6+HO2<=>C2H5+H2O2                     1.320e+13    0.000  20469.89
+C2H5+H<=>C2H4+H2                         3.000e+13    0.000      0.00
+C2H5+O<=>C2H4+OH                         3.060e+13    0.000      0.00
+C2H5+O<=>CH3+CH2O                        4.240e+13    0.000      0.00
+C2H5+O2<=>C2H4+HO2                       7.500e+14   -1.000   4799.95
+C2H5+O2<=>C2H4OOH                        2.000e+12    0.000      0.00
+C2H4OOH<=>C2H4+HO2                       4.000e+34   -7.200  23000.00
+C2H4OOH+O2<=>OC2H3OOH+OH                 7.500e+05    1.300  -5799.95
+OC2H3OOH<=>CH2O+HCO+OH                   1.000e+15    0.000  43000.00
+C2H5(+M)<=>C2H4+H(+M)                    1.110e+10    1.037  36768.64
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  3.990e+33   -4.990  40000.00 /
+     TROE/   0.168  1.2e+03     1e-30        /
+C2H4+H<=>C2H3+H2                         4.490e+07    2.120  13360.42
+C2H4+OH<=>C2H3+H2O                       5.530e+05    2.310   2963.67
+C2H4+O<=>CH3+HCO                         2.250e+06    2.080      0.00
+C2H4+O<=>CH2CHO+H                        1.210e+06    2.080      0.00
+2 C2H4<=>C2H3+C2H5                       5.010e+14    0.000  64700.05
+C2H4+O2<=>C2H3+HO2                       4.220e+13    0.000  57623.09
+C2H4+HO2<=>C2H4O+OH                      2.230e+12    0.000  17189.29
+C2H4O+HO2<=>CH3+CO+H2O2                  4.000e+12    0.000  17007.65
+C2H4+M<=>C2H3+H+M                        2.600e+17    0.000  96568.12
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+C2H4+M<=>C2H2+H2+M                       3.500e+16    0.000  71532.03
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+C2H3+H<=>C2H2+H2                         4.000e+13    0.000      0.00
+C2H3(+M)<=>C2H2+H(+M)                    6.380e+09    1.000  37626.67
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  1.510e+14    0.100  32685.95 /
+     TROE/     0.3    1e+30     1e-30        /
+C2H3+O2<=>CH2O+HCO                       1.700e+29   -5.312   6503.11
+C2H3+O2<=>CH2CHO+O                       7.000e+14   -0.611   5262.43
+C2H3+O2<=>C2H2+HO2                       5.190e+15   -1.260   3312.62
+C2H2+O<=>HCCO+H                          4.000e+14    0.000  10659.66
+C2H2+O<=>T-CH2+CO                        1.600e+14    0.000   9894.84
+C2H2+O2<=>CH2O+CO                        4.600e+15   -0.540  44933.08
+C2H2+OH<=>CH2CO+H                        1.900e+07    1.700    999.04
+C2H2+OH<=>C2H+H2O                        3.370e+07    2.000  14000.96
+CH2CO+H<=>CH3+CO                         1.500e+09    1.430   2688.81
+CH2CO+O<=>T-CH2+CO2                      2.000e+13    0.000   2294.46
+CH2CO+O<=>HCCO+OH                        1.000e+13    0.000   2000.48
+CH2CO+CH3<=>C2H5+CO                      9.000e+10    0.000      0.00
+HCCO+H<=>S-CH2+CO                        1.500e+14    0.000      0.00
+HCCO+OH<=>HCO+CO+H                       2.000e+12    0.000      0.00
+HCCO+O<=>2 CO+H                          9.640e+13    0.000      0.00
+HCCO+O2<=>2 CO+OH                        2.880e+07    1.700   1001.43
+HCCO+O2<=>CO2+CO+H                       1.400e+07    1.700   1001.43
+C2H+OH<=>HCCO+H                          2.000e+13    0.000      0.00
+C2H+O<=>CO+CH                            1.020e+13    0.000      0.00
+C2H+O2<=>HCCO+O                          6.020e+11    0.000      0.00
+C2H+O2<=>CH+CO2                          4.500e+15    0.000  25095.60
+C2H+O2<=>HCO+CO                          2.410e+12    0.000      0.00
+CH2OH+H<=>CH2O+H2                        3.000e+13    0.000      0.00
+
+
+!RO1
+!CH2OH+H<=>CH3+OH                         2.500e+17   -0.930   5126.91
+!SAN
+
+!SHRO1
+ CH3+OH=CH2OH+H                           1.621E+010     0.965    3210.0 ! 
+ PLOG/      0.010     1.621E+10     0.965      3214.0/                          !
+ PLOG/      0.100     1.807E+10     0.950      3247.0/                          !
+ PLOG/      1.000     4.686E+10     0.833      3566.0/                          !
+ PLOG/     10.000     1.525E+13     0.134      5641.0/                          !
+ PLOG/    100.000     3.590E+14    -0.186      8601.0/                          !
+!Shresha
+!JASPER/KLIPP,J.PHYS.CHEM A, 2007, 111,19,3932-3950
+
+
+
+
+CH2OH+OH<=>CH2O+H2O                      2.400e+13    0.000      0.00
+CH2OH+O2<=>CH2O+HO2                      5.000e+12    0.000      0.00
+
+
+!RO11
+!CH2OH+M<=>CH2O+H+M                       5.000e+13    0.000  25119.50
+!AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+!sAN
+
+!GLRO11(1)
+CH2OH(+M)=CH2O+H(+M)                 7.4E10   0.811   39559 !
+LOW /                                3.5E21  -1.990   23983 /
+TROE / 0.844 900  1  3315 /
+HE/0.67/ AR/0.85/ O2/1/ H2/2/ CO/1.5/ CO2/2/ H2O/6/ CH4/2/ CH2O/2.5/ 
+C2H6/3/ CH3OH/3/
+! Dames, E. E., & Golden, D. M. (2013). Master equation modeling of the unimolecular decompositions of hydroxymethyl (CH2OH) and methoxy (CH3O) radicals to formaldehyde (CH2O)+ H. 
+!Glarborg
+
+
+CH3O+M<=>CH2OH+M                         1.000e+14    0.000  19120.46
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+CH2CO+OH<=>CH2OH+CO                      1.020e+13    0.000      0.00
+CH3OH+OH<=>CH2OH+H2O                     1.440e+06    2.000   -838.91
+CH3OH+OH<=>CH3O+H2O                      4.400e+06    2.000   1505.74
+CH3OH+H<=>CH2OH+H2                       1.354e+03    3.200   3490.68
+CH3OH+H<=>CH3O+H2                        6.830e+01    3.400   7239.96
+CH3OH+O<=>CH2OH+OH                       3.880e+05    2.500   3080.78
+CH3OH+HO2<=>CH2OH+H2O2                   8.000e+13    0.000  19383.37
+CH3OH+O2<=>CH2OH+HO2                     2.000e+13    0.000  44933.08
+CH3OH(+M)<=>CH3+OH(+M)                   1.900e+16    0.000  91729.92
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  2.950e+44   -7.350  95460.09 /
+     TROE/   0.414  2.8e+02   5.5e+03        /
+CH2CHO<=>CH2CO+H                         1.047e+37   -7.189  44340.34
+CH2CHO+H<=>CH3+HCO                       5.000e+13    0.000      0.00
+CH2CHO+H<=>CH2CO+H2                      2.000e+13    0.000      0.00
+CH2CHO+O<=>CH2O+HCO                      1.000e+14    0.000      0.00
+CH2CHO+OH<=>CH2CO+H2O                    3.000e+13    0.000      0.00
+CH2CHO+O2<=>CH2O+CO+OH                   3.000e+10    0.000      0.00
+CH2CHO+CH3<=>C2H5+CO+H                   4.900e+14   -0.500      0.00
+CH2CHO+HO2<=>CH2O+HCO+OH                 7.000e+12    0.000      0.00
+CH2CHO+HO2<=>CH3CHO+O2                   3.000e+12    0.000      0.00
+CH2CHO<=>CH3+CO                          1.170e+43   -9.800  43799.95
+CH3CHO<=>CH3+HCO                         7.000e+15    0.000  81700.05
+CH3CO(+M)<=>CH3+CO(+M)                   3.000e+12    0.000  16700.05
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  1.200e+15    0.000  12500.00 /
+     TROE/       1        1     1e+07     1e+07 /
+CH3CHO+OH<=>CH3CO+H2O                    3.370e+12    0.000   -619.98
+CH3CHO+OH<=>CH2CHO+H2O                   3.370e+11    0.000   -619.98
+CH3CHO+O<=>CH3CO+OH                      1.770e+18   -1.900   2979.92
+CH3CHO+O<=>CH2CHO+OH                     3.720e+13   -0.200   3559.99
+CH3CHO+H<=>CH3CO+H2                      4.660e+13   -0.300   2989.96
+CH3CHO+H<=>CH2CHO+H2                     1.850e+12    0.400   5359.94
+CH3CHO+CH3<=>CH3CO+CH4                   3.900e-07    5.800   2200.05
+CH3CHO+CH3<=>CH2CHO+CH4                  2.450e+01    3.100   5729.92
+CH3CHO+HO2<=>CH3CO+H2O2                  3.600e+19   -2.200  14000.00
+CH3CHO+HO2<=>CH2CHO+H2O2                 2.320e+11    0.400  14900.10
+CH3CHO+O2<=>CH3CO+HO2                    1.000e+14    0.000  42200.05
+C2H5OH(+M)<=>CH3+CH2OH(+M)               5.000e+15    0.000  82000.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  3.000e+16    0.000  58000.00 /
+     TROE/     0.5    1e-30     1e+30        /
+C2H5OH(+M)<=>C2H4+H2O(+M)                8.000e+13    0.000  65000.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+     LOW  /  1.000e+17    0.000  54000.00 /
+     TROE/     0.5    1e-30     1e+30        /
+C2H5OH+OH<=>CH2CH2OH+H2O                 1.810e+11    0.400    717.02
+C2H5OH+OH<=>CH3CHOH+H2O                  3.090e+10    0.500   -380.02
+C2H5OH+OH<=>CH3CH2O+H2O                  1.050e+10    0.800    717.02
+C2H5OH+H<=>CH2CH2OH+H2                   1.900e+07    1.800   5099.90
+C2H5OH+H<=>CH3CHOH+H2                    2.580e+07    1.600   2830.07
+C2H5OH+H<=>CH3CH2O+H2                    1.500e+07    1.600   3039.91
+C2H5OH+O<=>CH2CH2OH+OH                   9.410e+07    1.700   5460.09
+C2H5OH+O<=>CH3CHOH+OH                    1.880e+07    1.900   1820.03
+C2H5OH+O<=>CH3CH2O+OH                    1.580e+07    2.000   4450.05
+C2H5OH+CH3<=>CH2CH2OH+CH4                2.190e+02    3.200   9619.98
+C2H5OH+CH3<=>CH3CHOH+CH4                 7.280e+02    3.000   7950.05
+C2H5OH+CH3<=>CH3CH2O+CH4                 1.450e+02    3.000   7650.10
+C2H5OH+HO2<=>CH3CHOH+H2O2                8.200e+03    2.500  10799.95
+C2H5OH+HO2<=>CH2CH2OH+H2O2               2.430e+04    2.500  15799.95
+C2H5OH+HO2<=>CH3CH2O+H2O2                3.800e+12    0.000  24000.00
+C2H4+OH<=>CH2CH2OH                       2.410e+11    0.000  -2380.02
+C2H5+HO2<=>CH3CH2O+OH                    4.000e+13    0.000      0.00
+CH3CH2O+M<=>CH3CHO+H+M                   5.600e+34   -5.900  25299.95
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+
+
+!RO12
+!CH3CH2O+M<=>CH3+CH2O+M                   5.350e+37   -7.000  23799.95
+!AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+!SAN
+
+!GLRO12
+CH3CH2O(+M)=CH3+CH2O(+M)             6.3E10   0.930   17098 ! 
+ LOW /                               4.7E25   0.930   16532/ ! N2
+ TROE /0.426 0.3 2278 100000/  
+! E.E. Dames,  Int. J. Chem. Kinet. 46 (2014) 176?188.
+!GLarborg
+
+
+
+
+
+CH3CH2O+O2<=>CH3CHO+HO2                  4.000e+10    0.000   1099.90
+CH3CH2O+CO<=>C2H5+CO2                    4.680e+02    3.200   5380.02
+CH3CH2O+H<=>CH3+CH2OH                    3.000e+13    0.000      0.00
+CH3CH2O+H<=>C2H4+H2O                     3.000e+13    0.000      0.00
+CH3CH2O+OH<=>CH3CHO+H2O                  1.000e+13    0.000      0.00
+CH3CHOH+O2<=>CH3CHO+HO2                  4.820e+13    0.000   5020.08
+CH3CHOH+O<=>CH3CHO+OH                    1.000e+14    0.000      0.00
+CH3CHOH+H<=>C2H4+H2O                     3.000e+13    0.000      0.00
+CH3CHOH+H<=>CH3+CH2OH                    3.000e+13    0.000      0.00
+CH3CHOH+HO2<=>CH3CHO+2 OH                4.000e+13    0.000      0.00
+CH3CHOH+OH<=>CH3CHO+H2O                  5.000e+12    0.000      0.00
+CH3CHOH+M<=>CH3CHO+H+M                   1.000e+14    0.000  25000.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ 
+C3H4+O<=>C2H4+CO                         2.000e+07    1.800   1000.00
+CH3+C2H2<=>C3H4+H                        2.560e+09    1.100  13643.88
+C3H4+O<=>HCCO+CH3                        7.300e+12    0.000   2250.00
+C3H3+H(+M)<=>C3H4(+M)                    3.000e+13    0.000      0.00
+
+     LOW  /  9.000e+15    1.000      0.00 /
+     TROE/     0.5    1e+30     1e-30        /
+C3H3+HO2<=>C3H4+O2                       2.500e+12    0.000      0.00
+C3H4+OH<=>C3H3+H2O                       5.300e+06    2.000   2000.00
+C3H3+O2<=>CH2CO+HCO                      3.000e+10    0.000   2868.07
+C3H4+H(+M)<=>C3H5(+M)                    4.000e+13    0.000      0.00
+
+     LOW  /  3.000e+24   -2.000      0.00 /
+     TROE/     0.8    1e+30     1e-30        /
+C3H5+H<=>C3H4+H2                         1.800e+13    0.000      0.00
+C3H5+O2<=>C3H4+HO2                       4.990e+15   -1.400  22428.06
+C3H5+CH3<=>C3H4+CH4                      3.000e+12   -0.320   -130.98
+C2H2+CH3(+M)<=>C3H5(+M)                  6.000e+08    0.000      0.00
+
+     LOW  /  2.000e+09    1.000      0.00 /
+     TROE/     0.5    1e+30     1e-30        /
+C3H5+OH<=>C3H4+H2O                       6.000e+12    0.000      0.00
+C3H3+HCO<=>C3H4+CO                       2.500e+13    0.000      0.00
+C3H3+HO2<=>OH+CO+C2H3                    8.000e+11    0.000      0.00
+C3H4+O2<=>CH3+HCO+CO                     4.000e+14    0.000  41826.00
+C3H6+O<=>C2H5+HCO                        3.500e+07    1.650   -972.75
+C3H6+OH<=>C3H5+H2O                       3.100e+06    2.000   -298.28
+C3H6+O<=>CH2CO+CH3+H                     1.200e+08    1.650    327.44
+C3H6+H<=>C3H5+H2                         1.700e+05    2.500   2492.83
+C3H5+H(+M)<=>C3H6(+M)                    2.000e+14    0.000      0.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  1.330e+60  -12.000   5967.97 /
+     TROE/    0.02     1097      1097      6860 /
+C3H5+HO2<=>C3H6+O2                       2.660e+12    0.000      0.00
+C3H5+HO2<=>OH+C2H3+CH2O                  3.000e+12    0.000      0.00
+C2H3+CH3(+M)<=>C3H6(+M)                  2.500e+13    0.000      0.00
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  4.270e+58  -11.940   9770.55 /
+     TROE/   0.175     1341     6e+04 1.014e+04 /
+C3H6+H<=>C2H4+CH3                        1.600e+22   -2.390  11185.47
+CH3+C2H3<=>C3H5+H                        1.500e+24   -2.830  18618.55
+C3H8(+M)<=>CH3+C2H5(+M)                  1.100e+17    0.000  84392.93
+
+     LOW  /  7.830e+18    0.000  64978.01 /
+     TROE/    0.76  1.9e+03        38        /
+C3H8+O2<=>I-C3H7+HO2                     4.000e+13    0.000  47500.00
+C3H8+O2<=>N-C3H7+HO2                     4.000e+13    0.000  50932.12
+C3H8+H<=>I-C3H7+H2                       1.300e+06    2.400   4471.08
+C3H8+H<=>N-C3H7+H2                       1.330e+06    2.540   6761.47
+C3H8+O<=>I-C3H7+OH                       4.760e+04    2.710   2107.31
+C3H8+O<=>N-C3H7+OH                       1.900e+05    2.680   3718.45
+C3H8+OH<=>N-C3H7+H2O                     1.000e+10    1.000   1599.90
+C3H8+OH<=>I-C3H7+H2O                     2.000e+07   -1.600    -99.90
+C3H8+HO2<=>I-C3H7+H2O2                   9.640e+03    2.600  13917.30
+C3H8+HO2<=>N-C3H7+H2O2                   4.760e+04    2.550  16491.40
+I-C3H7+C3H8<=>N-C3H7+C3H8                8.400e-03    4.200   8675.91
+C3H6+H(+M)<=>I-C3H7(+M)                  1.330e+13    0.000   1560.71
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  8.700e+42   -7.500   4732.31 /
+     TROE/       1     1000     645.4      6844 /
+I-C3H7+O2<=>C3H6+HO2                     1.300e+11    0.000      0.00
+N-C3H7(+M)<=>CH3+C2H4(+M)                1.230e+13   -0.100  30210.33
+
+     LOW  /  5.490e+49  -10.000  35778.92 /
+     TROE/   -1.17      251     1e-15      1185 /
+H+C3H6(+M)<=>N-C3H7(+M)                  1.330e+13    0.000   3260.04
+AR/0.70/ H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ 
+     LOW  /  6.260e+38   -6.660   7000.48 /
+     TROE/       1     1000      1310  4.81e+04 /
+N-C3H7+O2<=>C3H6+HO2                     3.500e+16   -1.600   3500.00
+N-C3H7+O2<=>C3H6OOH                      2.000e+12    0.000      0.00
+C3H6OOH<=>C3H6+HO2                       2.500e+35   -8.300  22000.00
+C3H6OOH+O2<=>OC3H5OOH+OH                 1.500e+08    0.000  -7000.00
+OC3H5OOH<=>CH2CHO+CH2O+OH                1.000e+15    0.000  43000.00
+C4H10(+M)<=>2C2H5(+M)          2.720e+15    0.000   75609.94 
+     LOW  /  4.720e+18    0.000  49580.07 /
+     TROE/ 0.72  1500.00   1.0000E-10 1.0000E+10 /
+C4H10+O2<=>PC4H9+HO2                     6.000e+13    0.000  52340.11  
+C4H10+O2<=>SC4H9+HO2                     4.000e+13    0.000  49799.95  
+C4H10+HO2<=>PC4H9+H2O2                   4.080e+01    3.590  17159.89  
+C4H10+HO2<=>SC4H9+H2O2                   1.264e+02    3.370  13719.89  
+C4H10+O<=>PC4H9+OH                       1.130E+14    0.000   7850.00
+C4H10+O<=>SC4H9+OH                       5.620E+13    0.000   5200.00
+C4H10+OH<=>PC4H9+H2O                     1.054e+10    0.970   1586.04  
+C4H10+OH<=>SC4H9+H2O                     9.340e+07    1.610    -34.89  
+C4H10+H<=>H2+PC4H9                       2.8000E+06   2.540   6965.4   
+C4H10+H<=>H2+SC4H9                       1.6900E+06   2.400   4493.0   
+PC4H9<=>C2H5+C2H4                        3.504e+12    0.463  29469.89  
+SC4H9<=>C3H6+CH3                         4.803e+10    1.044  30349.90  
+C4H8<=>C3H5+CH3                          1.000e+16    0.000  72896.75  
+C4H8+H<=>H2+C2H3+C2H4                    6.600e+05    2.540   6763.86 
+SC4H9+O2<=>SC4H9O2                       7.500e+12    0.000      0.00  
+SC4H9O2<=>C4H8+HO2                       5.075E+42   -9.410  41490.00 
+PC4H9+O2<=>C4H8+HO2                      8.370e-01    3.590  12000.00 
+PC4H9+O2<=>C4H8OOH1-3                    2.000E+12    0.000      0.00  
+C4H8OOH1-3<=>C4H8+HO2                    2.000E+12    0.000  24000.00 
+C4H8OOH1-3+O2<=>NC4KET13+OH              3.500E+00    2.234 -16560.00 
+NC4KET13<=>N-C3H7+CO2+OH                 3.000E+16    0.000  41500.00  
+
+
+
+!************N submech organised by the present work***********
+
+!R1
+NH3+O=NH2+OH  		1.63E07	1.85	6457
+!D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W.J.J.o.p. Tsang, c.r. data, Evaluated kinetic data for combustion modeling: supplement II, 34 (2005) 757-1397.
+
+
+!R2
+NH3+H=NH2+H2   		1.26E14	0	2.15E04
+!R.K. Hanson, S. Salimian, Survey of rate constants in the N/H/O system, Combustion chemistry, Springer1984, pp. 361-421.
+
+
+!R3
+NH3+OH=NH2+H2O          5.0E07 	1.6     954
+!N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311.
+
+
+!R4
+NH3+HO2=NH2+H2O2	3.0E11	0	22000	
+!J.A. Miller, C.T. Bowman, Kinetic modeling of the reduction of nitric oxide in combustion products by isocyanic acid, International Journal of Chemical Kinetics 23 (1991) 289-313
+
+
+!R5
+NH3+NO=NH2+HNO		3.26E07	1.73	5.66E04
+!A.M. Mebel, E.W.G. Diau, M.C. Lin, K. Morokuma, Theoretical Rate Constants for the NH3 + NOx ? NH2 + HNOx (x = 1, 2) Reactions by ab Initio MO/VTST Calculations, The Journal of Physical Chemistry 100 (1996) 7517-7525.
+
+
+!R6	
+NH3+NH+M=N2H4+M		1.09E15	0	0	
+!C. Zetzsch, F. Stuhl, Formation and Fate of NH(X3S-) in the Pulsed Vacuum UV Photolysis of NH3, Berichte der Bunsengesellschaft für physikalische Chemie 85 (1981) 564-568
+
+
+!R7 
+NH2+O=NH+OH		7.0E12	0	0	
+DUP	
+NH2+O=NH+OH		8.6E-1	4.01	1673	
+DUP
+!P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Modeling nitrogen chemistry in combustion, Progress in Energy and Combustion Science 67 (2018) 31-68
+
+
+!R8
+HNO+H=NH2+O		3.5E15	-0.3	2.92E04
+!N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+
+
+!R9
+NH+H2=NH2+H             2.1E13   0     15417 
+!A. Fontijn, S.M. Shamsuddin, D. Crammond, P. Marshall, W.R. Anderson, Kinetics of the NH reaction with H2 and reassessment of HNO formation from NH + CO2, H2O, Combustion and Flame 145 (2006) 543-551
+
+
+!R10
+NH2+OH=NH+H2O 		4.0E6	2.0	1001
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+
+
+!R11
+NH2+O2=H2NO+O		2.6E11	0.4872	29050	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789.
+
+
+!R12
+NH2+O2=HNO+OH		2.9E-2	3.764	18185	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789.
+
+
+!R13
+NH2+H2NO=HNO+NH3	3.0E12	0	1000	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+
+
+!R14+R15
+NH2+NO2=N2O+H2O		1.6E16	-1.44	268	
+NH2+NO2=H2NO+NO		6.5E16	-1.44	268	
+!J. Park, M.C. Lin, A Mass Spectrometric Study of the NH2 + NO2 Reaction, The Journal of Physical Chemistry A 101 (1997) 2643-2647
+
+
+!R16+R17
+NH2+NO=N2+H2O           2.6E19  -2.369     870 !    
+NH2+NO=NNH+OH           4.3E10   0.294    -866 !  
+!S. Song R.K. Hanson C.T. Bowman D.M. Golden Int J Chem Kinet 33 715-721, 2001 (kT)     
+
+
+!R18
+H2NO+H=NH2+OH		5.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+
+
+!R19
+NH2+HO2=H2NO+OH		2.5E17	-1.28	1166	
+!R. Sumathi, S.D. Peyerimhoff, A quantum statistical analysis of the rate constant for the HO2 + NH2 reaction, Chemical Physics Letters 263 (1996) 742-748.
+
+
+!R20
+NH2+HO2=NH3+O2		4.5E13	0	0	
+!O. Sarkisov, S. Cheskis, V. Nadtochenko, E. Sviridenkov, V. Vedeneev, Spectroscopic Study of Elementary Reactions Involving Oxomethyl, Amidogen, and Nitrosyl Hydride, Arch. Comb 4 (1984) 111-120.
+
+
+!R21
+NH2+NH=NH3+N		9.6E03	2.46	107	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+
+
+!R22
+NH2+NH=N2H3		7.0E13	0	0	
+!P.B. Pagsberg, J. Eriksen, H. Christensen, Pulse radiolysis of gaseous ammonia-oxygen mixtures, Journal of Physical Chemistry 83 (1979) 582-590
+
+
+!R23
+NH2+NH=N2H2+H		5.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+
+
+!R24
+NH2+NH2=NH3+NH		5.6E0	3.53	552	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+
+
+!R25
+NH2+NH2(+M)=N2H4(+M)	5.6E14	-0.414	66	
+LOW/1.6E34   -5.49   1987/	
+TROE/0.31  1E-30  1E30  1E30/	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+
+
+!R26
+NH2+NH2=N2H3+H		1.2E12	-0.03	10084	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341.
+
+
+!R27
+NH2+NH2=N2H2+H2		1.7E08	1.62	11783	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+
+
+
+!R28
+NH2+NH2=H2NN+H2	 	7.2E04	1.88	8802	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259
+
+
+!R29
+NH2+N=N2+H+H		7.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27
+
+
+!R30
+NH+H=N+H2               3.01E13  0.0  0.0       
+!C. Morley. The mechanism of NO formation from nitrogen compounds in hydrogen flames studied by laser fluorescence. In: editor^editors. Symposium (International) on Combustion; 1981: Elsevier. p. 23-32. 
+
+
+!R31
+NH+N=N2+H		9.0E11	0.5	0	
+!A.A. Konnov, Implementation of the NCN pathway of prompt-NO formation in the detailed reaction mechanism, Combustion and Flame 156 (2009) 2093-2105
+
+
+!R32
+NH+OH=N+H2O		2.0E09	1.2	0	
+!N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+
+
+!R33
+NH+OH=HNO+H		3.2E14	-0.376	-46	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+
+
+!R34
+NH+O2=HNO+O             2.4E13   0.000   13850 
+!P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68 
+
+
+!R35
+NH+O2=NO+OH		2.014E16 -1.38	 5672	
+!M.R. Talipov, S.L. Khursan, R.L. Safiullin, RRKM and Ab Initio Investigation of the NH (X) Oxidation by Dioxygen, The Journal of Physical Chemistry A 113 (2009) 6468-6476
+
+
+!R36+R37
+NH+NO=N2O+H          	1.8E14 -0.351   -244        
+NH+NO=N2+OH             2.7E12 -0.0721  -512      
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+
+
+!R38
+NH+NH=NH2+N		5.7E-1	3.88	342	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+
+
+!R39
+NH+NH=N2H2		6.26E13	-0.036	-161  	
+!S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.C. Su, J.V. Michael, Thermal Decomposition of NH2OH and Subsequent Reactions: Ab Initio Transition State Theory and Reflected Shock Tube Experiments, The Journal of Physical Chemistry A 113 (2009) 10241-10259.
+
+
+!R40
+N+O+M=NO+M		7.6E14	-0.1	-1770	
+H2O/16.25/	
+!Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+
+
+!R41
+N+NO=N2+O	1.529E13	-0.0027		-185.41
+!Modified by HXL FROM fitting exprimental data
+!KK2-updated Konnov2019
+
+
+!R42
+N+O2=NO+O		5.9E09	1.0	6280	
+!D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W. Tsang, Evaluated kinetic data for combustion modeling: supplement II, Journal of physical and chemical reference data 34 (2005) 757-1397.
+
+
+!R43
+N2+M=N+N+M		1.89E18	-0.85	224950	
+H2O/16.25/	
+!Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141.
+
+
+!R44
+NNH=N2+H		1.0E09	0	0	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+
+!R45
+NNH+O=N2+OH		1.2E13	0.145	-217	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+
+
+!R46
+NNH+O=N2O+H		1.0E14	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+
+
+!R47
+NNH+O=NH+NO		3.3E14	-0.23	-1013	
+!J.W. Bozzelli, A.M. Dean, O+ NNH: A possible new route for NOx formation in flames, International journal of chemical kinetics 27 (1995) 1097-1109
+
+
+!R48
+NNH+OH=N2+H2O		5.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+
+
+!R49
+NNH+H=N2+H2		1.0E12	0	0	
+!J.W. Bozzelli, A.M. Dean, O+ NNH: A possible new route for NOx formation in flames, International journal of chemical kinetics 27 (1995) 1097-1109
+
+
+!R50
+NNH+O2=N2+HO2		5.6E14	-0.385	-13	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+
+!R51 
+NNH+O2=N2+H+O2		5.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+
+
+!R52
+NNH+NO=N2+HNO		5.0E13	0	0	
+!P. Glarborg, M.U. Alzueta, K. Dam-Johansen, J.A. Miller, Kinetic Modeling of Hydrocarbon/Nitric Oxide Interactions in a Flow Reactor, Combustion and Flame 115 (1998) 1-27.
+
+
+!R53
+N2H2+O=NNH+OH		3.3E08	1.5	497	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R54
+N2H2+H=NNH+H2		1.1E14	0	3128	
+!P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Modeling nitrogen chemistry in combustion, Progress in Energy and Combustion Science 67 (2018) 31-68
+
+
+!R55
+N2H2+OH=NNH+H2O		5.9E01	3.4	-1363	
+!D.P. Linder, X. Duan, M. Page, Thermal rate constants for R+ N2H2? RH+ N2H (R= H, OH, NH2) determined from multireference configuration interaction and variational transition state theory calculations, The Journal of chemical physics 104 (1996) 6298-6307
+
+
+!R56
+N2H2+NH=NNH+NH2		2.4E06	2.0	-1192	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R57
+N2H2+NO=N2O+NH2		4.0E12	0	11922	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R58
+N2H2+NH2=NNH+NH3	8.8E-2	4.05	-1610	
+!D.P. Linder, X. Duan, M. Page, Thermal rate constants for R+ N2H2? RH+ N2H (R= H, OH, NH2) determined from multireference configuration interaction and variational transition state theory calculations, The Journal of chemical physics 104 (1996) 6298-6307
+
+
+!R59
+H2NN+H=NNH+H2		4.8E08	1.5	-894	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R60
+H2NN+H=N2H2+H		7.0E13	0	0	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R61
+H2NN+O=NNH+OH		3.3E08	1.5	-894	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R62
+H2NN+O=NH2+NO		7.0E13	0	0	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R63
+H2NN+OH=NNH+H2O		2.4E06	2.0	-1192	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R64
+H2NN+HO2=NNH+H2O2	2.9E04	2.69	-1600	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R65
+H2NN+O2=NH2+NO2		1.5E12	0	5961	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R66
+H2NN+NH2=NNH+NH3	1.8E06	1.94	-1152	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R67
+N2H3+O=N2H2+OH		1.7E08	1.5	-646	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R68
+N2H3+O=NH2+HNO		3.0E13	0	0	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R69
+N2H3+H=N2H2+H2		2.4E08	1.5	-10	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R70
+N2H3+OH=N2H2+H2O	1.2E06	2.0	-1192	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R71
+N2H3+NH2=N2H2+NH3	9.2E05	1.94	-1152	
+!A.M. Dean, J.W. Bozzelli, Combustion chemistry of nitrogen, Gas-phase combustion chemistry, Springer2000, pp. 125-341
+
+
+!R72
+N2H4+H=N2H3+H2		4.5E07	1.8	2613	
+!D.-Y. Hwang, A.M. Mebel, Reaction mechanism of N2/H2 conversion to NH3: a theoretical study, The Journal of Physical Chemistry A 107 (2003) 2865-2874
+
+
+!R73
+N2H4+OH=N2H3+H2O	4.0E13	0	0	
+!P. Glarborg, K. Dam-Johansen, J.A. Miller, R.J. Kee, M.E. Coltrin, Modeling the thermal DENOx process in flow reactors. Surface effects and nitrous oxide formation, International Journal of Chemical Kinetics 26 (1994) 421-436.
+
+
+!R74
+HNO+O=NO+OH             3.61E+13 0      0 
+!W. Tsang, J.T. Herron, Chemical Kinetic Data Base for Propellant Combustion I. Reactions Involving NO, NO2, HNO, HNO2, HCN and N2O, Journal of Physical and Chemical Reference Data 20 (1991) 609-663.
+
+
+!R75
+HNO+H=NO+H2		4.4E11	0.72	650	
+!M.R. Soto, M. Page, Ab initio variational transition-state-theory reaction-rate calculations for the gas-phase reaction H+ HNO? H2+ NO, The Journal of chemical physics 97 (1992) 7287-7296
+
+
+!R76
+HNO+OH<=>NO+H2O         3.600E+13  0    0      
+!M.R. Soto, M. Page, M.L.J.C.p. McKee, Theoretical study of the reaction of OH with HNO, 153 (1991) 415-426.
+
+
+!R77
+HNO+N=NO+NH		1.0E13	 0	1990	
+!R. Sivaramakrishnan, K. Brezinsky, G. Dayma, P. Dagaut, High pressure effects on the mutual sensitization of the oxidation of NO and CH4–C2H6 blends, Physical Chemistry Chemical Physics 9 (2007) 4230-4244
+
+
+!R78
+NO+O(+M)=NO2(+M)	1.3E15	-0.75	0	
+LOW/9.44E24  -2.87  1551/	
+TROE/0.962  10.0  7962/		
+AR /0.6/ NO2 /6.2/ NO /1.8/ O2 /0.8/ N2O /4.4/ CO2/6.0/ H2O /10.0/	
+!Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+
+
+!R79
+NO+H=N+OH		2.17E14	0	49500	
+!D. Baulch, C. Cobos, R. Cox, P. Frank, G. Hayman, T. Just, J. Kerr, T. Murrells, M. Pilling, J. Troe, Evaluated kinetic data for combustion modeling. Supplement I, Journal of Physical and Chemical Reference Data 23 (1994) 847-848
+
+
+!R80
+NO+H=NH+O		9.9E14	-0.1	69900	
+!N. Cohen, K.J.J.o.p. Westberg, c.r. data, Chemical Kinetic Data Sheets for High-Temperature Reactions. Part II, 20 (1991) 1211-1311
+
+
+!R81
+NO+H+M=HNO+M		3.0E20	-1.75	0	
+!R. Sivaramakrishnan, K. Brezinsky, G. Dayma, P. Dagaut, High pressure effects on the mutual sensitization of the oxidation of NO and CH4–C2H6 blends, Physical Chemistry Chemical Physics 9 (2007) 4230-4244
+
+
+!R82
+NO+HO2=NO2+OH        2.1E12   0.00    -497.0   
+!D. Baulch, C.T. Bowman, C. Cobos, R. Cox, T. Just, J. Kerr, M. Pilling, D. Stocker, J. Troe, W.J.J.o.p. Tsang, c.r. data, Evaluated kinetic data for combustion modeling: supplement II, 34 (2005) 757-1397
+
+
+!R83
+N2O+H=N2+OH		6.4E07	1.835	13492	
+!S.J. Klippenstein, L.B. Harding, P. Glarborg, J.A. Miller, The role of NNH in NO formation and control, Combustion and Flame 158 (2011) 774-789
+
+!R84
+N2O(+M)=N2+O(+M)          1.69E+11   0.00      57653       !\AUTHOR: YJZ !\REF: Zuev and Starikovskii, Khim. Fiz, 1991, 10: 52-63 !\OMMENT: 
+LOW /7.2E+14 0 57410/                                      !\AUTHOR: YJZ !\REF:Javoy et al., IJCK, 2009, 41(5): 357-375 !\OMMENT:
+O2/1.4/ N2/1.7/ H2O/12.0/ NO/3.0/ N2O/3.5/  
+!Zhang
+
+
+!R85
+NO2+H=NO+OH		1.507E14  0	362	
+! Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+
+
+!R86
+NO2+O=NO+O2		5.86E12	0	-238	
+! Y. Zhang, O. Mathieu, E.L. Petersen, G. Bourque, H.J. Curran, Assessing the predictions of a NOx kinetic mechanism on recent hydrogen and syngas experimental data, Combustion and Flame 182 (2017) 122-141
+
+
+!**************************************************************************************************
+! The following HONO, HON, H2NO,HONO,HNO2,HONO2,HNO3,NO3,HNO3 and HON species reactions
+! are selected from Shrestha et al. mechanism (),
+! these reactions have NEGELIGEBLE influence on the global combustion parameters of NH3,
+! they can be deleted TO INCREASE THE CPU TIME when needed.
+!**************************************************************************************************
+
+!R87-R130
+NH2+HONO=NH3+NO2                     7.1E01   3.020   -4940 ! 
+! Mebel AM, Diau EWG, Lin MC, Morokuma K. J Phys Chem 1996;100:7517-7525.
+
+
+HNOH+NO2=HONO+HNO                    6.0E11   0.000    2000 ! 
+! JAM est
+
+HNO+NO2=HONO+NO                      4.4E04   2.640    4040 ! 
+! Mebel AM Lin MC Morokuma K IJCK 30:729-736 1998
+
+NO2+HO2=HONO+O2                      1.9E00   3.320    3044 ! 
+! CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008)
+
+NO+OH(+M)=HONO(+M)                   1.1E14  -0.300       0 ! 
+ LOW  /3.392E23 -2.5 0/                                     ! He
+ TROE /0.75 1E-30 1E30 1E30/  
+! Fulle D Hamann HF Hippler H Troe J JCP 108:5391 1998
+
+NO2+H2=HONO+H                        1.8E01   3.510   26300 ! 
+  DUP
+NO2+H2=HONO+H                        2.4E01   3.620   35800 ! 
+  DUP
+! J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
+
+HONO+H=HNO+OH                        5.6E10   0.860    5000 ! 
+! Hsu CC Lin MC Mebel AM Melius CF JPCA 101:60 1997
+
+HONO+H=NO+H2O                        8.1E06   1.890    3850 ! 
+! Hsu CC Lin MC Mebel AM Melius CF JPCA 101:60 1997
+
+HONO+O=NO2+OH                        1.2E13   0.000    5960 ! 
+! NBS91      Tsang W JPCRD 20:221 1991
+
+HONO+OH=NO2+H2O                      1.7E12   0.000    -520 ! 
+! Burkholder JB Mellouki A Talukdar R Ravishankara AR IJCK 24:711 1992
+
+NO2+H2=HNO2+H                        2.4E02   3.150   31100 ! 
+! J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
+
+HNO2+OH=NO2+H2O                      4.0E13   0.000       0 ! 
+! CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008)
+
+H2NO+M=HNOH+M                        1.1E29  -4.000   44000 ! 
+ H2O/10/
+! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+
+HNOH+O=HNO+OH                        7.0E13   0.000       0 ! 
+ DUP
+HNOH+O=HNO+OH                        3.3E08   1.500    -358 ! 
+ DUP
+! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+
+HNOH+NH2=N2H3+OH                     1.0E01   3.460    -467 ! 
+! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+
+NH2+HO2=HON+H2O                      2.1E07   0.640     811 ! 
+! Sumathi R, Peyerimhoff SD. Chem Phys Lett 1996;263:742-748.
+ 
+HONO2+H=H2+NO3                       5.6E08   1.500   16400 !
+! Boughton JW Kristyan S Lin MC Chem. Phys 214:219 1997
+
+NO2+NO2=NO3+NO                       9.6E09   0.730   20900 ! 
+! Tsang W JPCRD 20:221 1991
+
+NO2+O(+M)=NO3(+M)                    3.5E12   0.240       0 ! 
+ LOW  /2.5E20 -1.50 0/                                      !
+ TROE /0.71 1E-30 1700 1E30/                                !
+! Hahn J Luther K Troe J PCCP 2:5098 2000
+
+NO3+H=NO2+OH                         6.0E13   0.000       0 ! 
+! Becker E Rahman MM Schindler RN BBPC 96:776 1992
+
+NO3+O=NO2+O2                         1.0E13   0.000       0 ! 
+! Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC Ref Data 1992, 21, 1125?1568.
+
+!*****************************************************************
+
+! C / N interaction from Konnov mechanism
+!
+! with N
+N+CO2=NO+CO                    1.900E+11      0.0      3400.0 
+CH3+N=H2CN+H                   7.100E+13      0.0         0.0 
+CH3+N=HCNH+H                   1.200E+11      0.52      367.6
+
+!with N2
+CH+N2=H+NCN 		1.95E12		0	16950
+T-CH2+N2=HCN+NH                         1.0E13   0.000   74000 ! 
+
+! with NO
+CH+NO=HCN+O                    7.870E+13      0.0         0.0 ! konnov 20160514
+CH+NO=NCO+H                    1.670E+13      0.0         0.0 
+T-CH2+NO=HCNO+H                  3.800E+13     -0.36      576.0 ! konnov 20160514
+CH3+NO=HCN+H2O                 2.410E+12      0.0     15700.0 ! konnov 20160514
+HCO+NO=HNO+CO                  1.030E+08      1.47    -1765.0 ! konnov 20160514
+HCCO+NO=HCNO+CO                4.640E+13      0.0       700.0 
+HCCO+NO=HCN+CO2                1.390E+13      0.0       700.0
+S-CH2+NO=HCN+OH                 1.000E+14      0.0         0.0 
+C2H+NO=HCN+CO                  6.000E+13      0.0       570.0
+
+! with HNO
+CH3+HNO=NO+CH4                 1.470E+11      0.76      348.0 ! konnov 20160514
+
+! with NO2
+CH3+NO2=CH3O+NO                4.000E+13     -0.2         0.0 ! konnov 20160614
+
+! other interaction
+NH+CO2=HNO+CO                  1.000E+13      0.0     14350.0  
+CH3+N=HCN+H2                   7.100E+12      0.0         0.0 
+CH4+NH2=CH3+NH3                1.200E+13      0.0     15150.0 
+H2NO+CH3=CH3O+NH2              2.000E+13      0.0         0.0 
+
+
+
+
+! reactions of   CN    
+CN+H2=HCN+H                    1.100E+05      2.6      1908.0 ! konnov 20160514 
+CN+O=CO+N                      1.900E+12      0.46      720.0 
+CN+O2=NCO+O                    7.200E+12      0.0      -400.0 
+CN+OH=NCO+H                    4.000E+13      0.0         0.0 
+CN+CH4=HCN+CH3                 9.000E+04      2.64     -300.0 
+CN+H2O=HOCN+H                  4.000E+12      0.0      7400.0 
+
+! reactions of   HCN   
+HCN+O=NCO+H                    1.380E+04      2.64     4980.0 ! konnov 20160514
+HCN+O=NH+CO                    3.450E+03      2.64     4980.0 ! konnov 20160514
+HCN+OH=CN+H2O                  3.900E+06      1.83    10300.0 ! konnov 20160514
+HCN+OH=HOCN+H                  5.900E+04      2.4     12500.0 ! konnov 20160514
+HCN+OH=HNCO+H                  2.000E-03      4.0      1000.0 ! konnov 20160514
+
+! reactions of   HNC   
+HCN=HNC                        1.900E+24     -4.23    49575.0 ! konnov 20160514
+   PLOG / 0.1 1.5E+23 -4.2 49456.0 /
+   PLOG / 1.0 1.9E+24 -4.23 49575.0 /
+   PLOG / 10.0 5.3E+25 -4.34 50191.0 /
+HNC+H=HCN+H                    7.800E+13      0.0      3600.0 ! konnov 20160514
+HNC+O=NH+CO                    4.600E+12      0.0      2200.0 ! konnov 20160514
+HNC+OH=HNCO+H                  2.800E+13      0.0      3700.0 ! konnov 20160514
+
+! reactions of   H2CN  
+H2CN+H=HCN+H2                  2.400E+08      1.5      -894.0
+H2CN+M=HCN+H+M                 3.000E+14      0.0     22000.0 
+
+! reactions of   HCNH  
+HCNH=HCN+H                     6.100E+28     -5.69    24270.0
+
+! reactions of   NCN  
+NCN+H=HCN+N                    1.890E+14      0.0      8425.0 ! 09KON2093
+NCN+O=CN+NO                    2.540E+13      0.15      -34.0 ! 09KON2093
+
+! reactions of   HCNN 
+CH+N2(+M)=HCNN(+M)             3.100E+12      0.15        0.0
+     LOW / 1.30E+25 -3.16 740.0 /
+     TROE /0.667 235.0 2117.0 4536.0 /
+     H2O/10.0/ O2/2.0/ AR/0.75/ H2/2.0/  
+
+
+! reactions of HNCN
+CH+N2=HNCN                     1.650E+21     -3.62    14196.0 ! 09KON2093
+HNCN+O=NO+HCN                  1.220E+14      0.05       73.5 ! 09KON2093
+HNCN+OH=NCN+H2O                8.280E+03      2.78     3135.0 ! 09KON2093
+
+! reactions of   NCO  
+NCO+H=NH+CO                    5.360E+13      0.0         0.0 
+NCO+O=NO+CO                    4.200E+13      0.0         0.0 
+
+! reactions of   HNCO 
+HNCO+OH=NCO+H2O                3.450E+07      1.5      3600.0 
+
+
+! reactions of   HOCN 
+HOCN+H=NCO+H2                  2.000E+07      2.0      2000.0
+HOCN+H=NH2+CO                  1.200E+08      0.61     2080.0 
+
+! reactions of   HCNO 
+HCNO+H=HCN+OH                  1.000E+14      0.0     12000.0 
+HCNO+H=HNCO+H                  2.100E+15     -0.69     2850.0
+HCNO+O=HCO+NO                  7.000E+13      0.0         0.0
+HCNO+OH=NO+CH2O                4.000E+13      0.000       0.0
+
+
+
+END
+
+
+END
+
+
+
+
+
+
+
