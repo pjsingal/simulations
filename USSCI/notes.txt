@@ -33,3 +33,17 @@ ADDeD FOR THE SABIA JSR SIMS;
 Wang-2021
 Okafor-2019
 Arunthanayothin-2021
+
+
+Interesting fuels:
+propane, propanol, methanol, ethanol, DME, acetone, and methylamine
+
+Mechanisms suited to these fuels:
+Zhang-2018: ethanol, DME
+Zhang-2016, n-heptane
+Zhang-2015: n-hexane
+
+Data sources:
+Zhang-2019 (a different person): n-heptane
+Hu: syngas in JSR under high CO2 diluent
+Fedyaeva 2018-2019: no data points, but can use her conditions

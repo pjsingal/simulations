@@ -140,7 +140,6 @@ for j,model in enumerate(models):
         delayed(getTemperatureDependence)(model,m)
         for m in models[model]['submodels']
         )
-
     for z, species in enumerate(Xspecies):
         for k,m in enumerate(models[model]['submodels']):
             tempDependence=tempDependences[k]
@@ -159,8 +158,7 @@ for j,model in enumerate(models):
         ax[z].set_xlabel('Temperature [K]')
 plt.suptitle(r'Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)',fontsize=10)
 ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
-
-path=f'USSCI/data/'+args.date+'/Zhang-2018'
+path=f'USSCI/figures/'+args.date+'/Zhang-2018'
 os.makedirs(path,exist_ok=True)
 name=f'Fig8.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')

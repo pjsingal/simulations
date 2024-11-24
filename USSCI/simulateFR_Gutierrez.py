@@ -56,31 +56,113 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    'Gutierrez-2025': {
+    # 'Stagni-2023': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Alzueta-2023': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Glarborg-2018': {
         'submodels': {
-            'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
                     },
     },
+    # 'Merchant-2015': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Cornell-2024': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Gutierrez-2025': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Arunthanayothin-2021': { #bad
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Bugler-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {  #bad
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Mei-2019': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+
+    # 'Aramco-3.0': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #                 },
+    # },
 }
 
 P=1
-# X_NH3=923e-6
-X_NH3=1012e-6
-# X_CH3OCH3=943e-6
-X_CH3OCH3=997e-6
-# X_O2=3855e-6,
-X_O2=3729e-6
-X_Ar=1-X_NH3-X_CH3OCH3-X_O2
-X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
-# T_list = np.linspace(999,1001,gridsz)
+# # X_NH3=923e-6
+# X_NH3=1012e-6
+# # X_CH3OCH3=943e-6
+# X_CH3OCH3=997e-6
+# # X_O2=3855e-6,
+# X_O2=3729e-6
+# X_Ar=1-X_NH3-X_CH3OCH3-X_O2
+# X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
+
+name=f'Fig10_methylamine.png'
+# X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propane
+# X={'IC3H7OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propanol
+# X={'CH3OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methanol
+# X={'C2H5OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #ethanol
+# X={'CH3OCH3':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #DME
+# X={'C3H6O':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #acetone
+X={'CH3NH2':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methylamine
+
+Xspecies=['CH4','CO2','CO']
+
 T_list = np.linspace(900,1300,gridsz)
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","r"]*3
 
-Xspecies=['NH3','CH3OCH3']
+# Xspecies=['NH3','CH3OCH3']
 
 ########################################################################################
 
@@ -153,7 +235,6 @@ plt.suptitle(r'Jet-stirred reactor: (90% CH4/10% NH3)/O2/N2, (1.16atm, phi=0.8)'
 ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
 path=f'USSCI/figures/'+args.date+'/Gutierrez-2025'
 os.makedirs(path,exist_ok=True)
-name=f'Fig10.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
 toc = time.time()
 print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')

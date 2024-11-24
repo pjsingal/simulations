@@ -50,7 +50,16 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 
 ########################################################################################
-X={'CH3OCH3':0.06545,'O2':0.19634,'N2':0.73821}
+# X={'CH3OCH3':0.06545,'O2':0.19634,'N2':0.73821}
+
+name=f'Fig20_methylamine.png'
+# X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
+# X={'IC3H7OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propanol
+# X={'CH3OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methanol
+# X={'C2H5OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #ethanol
+X={'CH3OCH3':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #DME
+# X={'C3H6O':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #acetone
+# X={'CH3NH2':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methylamine
 P=10
 T_list = np.linspace(630,1390,gridsz)
 data='DME_1phi.csv'
@@ -62,20 +71,41 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Gutierrez-2025': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Bugler-2016': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Gutierrez-2025': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Arunthanayothin-2021': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Bugler-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Aramco-3.0': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -129,9 +159,9 @@ for j,model in enumerate(models):
         else:
             label=None
         ax.semilogy(T_list, IDT*1e3, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-    if j==len(list(models.keys()))-1:
-        dat = pd.read_csv(f'USSCI/graph-reading/UBurke-2015/{data}',header=None)
-        ax.plot(np.divide(1000,dat.iloc[:,0]),dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='UBurke et al.')
+    # if j==len(list(models.keys()))-1:
+    #     dat = pd.read_csv(f'USSCI/graph-reading/UBurke-2015/{data}',header=None)
+    #     ax.plot(np.divide(1000,dat.iloc[:,0]),dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='UBurke et al.')
 ax.set_title(r'Ignition Delay Time: 6.545% DME/19.634% O2/73.821% N2 (10atm)',fontsize=10)
 ax.set_xlim([600,1400])
 ax.tick_params(axis='both',direction='in')
@@ -140,7 +170,6 @@ ax.set_ylabel(r'Ignition delay [ms]')
 ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=2)  
 path=f'USSCI/figures/'+args.date+'/UBurke-2015'
 os.makedirs(path,exist_ok=True)
-name=f'Fig20.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
 toc = time.time()
 print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')
