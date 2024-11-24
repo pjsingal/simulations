@@ -55,11 +55,11 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    # 'Stagni-2023': {
-    #     # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
-    #             },
+    'Stagni-2023': {
+        # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+        'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
+                },
     # 'Alzueta-2023': {
     #     # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
     #     'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
@@ -70,26 +70,96 @@ models = {
     #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
     #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
     #             },
-    'Aramco-3.0': {
-        # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-        'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-        'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
-                },
+    # 'Aramco-3.0': {
+    #     # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #     'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #     'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+    #             },
 }
 
-T_list = [np.linspace(800,1100,gridsz),np.linspace(750,850,gridsz),np.linspace(750,825,gridsz),np.linspace(750,800,gridsz)]
-dilution = 0.94
-codiluentList = ['NH3', 'H2O']
-codiluentPercentList = [0, 0.20, 0.40]
-H2Percent = 0.3
-O2Percent = 0.3
-Tin_list = [600, 750, 850, 1000] # Kelvin
-P_list = [1.2, 25, 50, 100] # [atm]
+# fuels = {
+#     'Stagni-2023':['H2','NH3'],
+#     # 'Alzueta-2023': ['H2','NH3'],
+#     # 'Glarborg-2018':['H2','NH3'],
+#     # 'Aramco-3.0':['C2H2','CH3OH','C4H10']
+# }
+
+models = {
+    'Stagni-2023': {
+        'submodels': {
+            # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
+                    },
+        'fuels': ['H2','NH3'],
+        'oxidizer':'O2',
+        'diluent':'He:1',
+        'fraction':'diluent:0.9795',
+        'phi_list':[0.01, 0.08],
+        'QOI':['NO','NH3'],
+        'tau': 1.5,
+        'V': 85e-6, #[m3]
+        'P_list':[800/750,10],
+        'T_range': np.linspace(500,1210,gridsz),
+        'xlim':[[600,1300],[600,1300],[600,1300],[600,1300]],
+        't_max':1,
+    },
+    # 'Alzueta-2023': {
+    #     'submodels': {
+    #         # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #         'LMRR': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml',
+    #         'LMRR-allP': f'USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml',
+    #                 },
+    #     'fuels': ['H2','NH3'],
+    #     'oxidizer':'O2:1.0, N2:3.76',
+    #     'phi_list':[0.5, 2],
+    #     'P_list':[20,40],
+    #     'T_range':[[600,2500],
+                #    [600,2500]],
+    #     't_max':23200e-6,
+    #     'xlim': [[60,160], [12500,23000],[60,160], [5000,9500]]
+    # },
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
+    #                 },
+    #     'fuels': ['H2','NH3'],
+    #     'oxidizer':'O2:1.0, N2:3.76',
+    #     'phi_list':[0.5, 2],
+    #     'P_list':[20,40],
+    #     'T_range':[[600,2500],
+                #    [600,2500]],
+    #     't_max':9100e-6,
+    #     'xlim': [[60,200], [6000,9000],[60,200], [3400,4800]]
+    # },
+    # 'Aramco-3.0': {
+    #     'submodels': {
+    #         # 'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+    #                 },
+    #     'fuels': ['C2H2','CH3OH','C4H10'],
+    #     'oxidizer':'O2:1.0, N2:3.76',
+    #     'phi_list':[0.5, 2],
+    #     'P_list':[20,40],
+    #     'T_range':[[600,2500],
+                #    [600,2500]],
+    #     't_max':410e-6,
+    #     'xlim': [[-10,200], [-10,180],[100,380], [0,300], [0,100], [0,220]],
+    # }
+}
+
+reactorTemperature = 1000
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
+
 ########################################################################################
 
-def getStirredReactor(gas,V,tau,K,h):
+def getStirredReactor(gas,tau,V):
+    h = 79.5 # heat transfer coefficient W/m2/K
+    K = 0.01 # pressureValveCoefficient
     reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
     reactorSurfaceArea =4*np.pi*reactorRadius**2 # [m3]
     fuelAirMixtureTank = ct.Reservoir(gas)
@@ -105,8 +175,14 @@ def getStirredReactor(gas,V,tau,K,h):
     ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
     return reactor
 
-def getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max):
-    stirredReactor = getStirredReactor(gas,V,tau,K,h)
+def getTemperatureDependence(gas,T_list,P,phi,oxidizer,fuel,t_max,tau,V,diluent=None,fraction=None):
+    gas.TP = reactorTemperature, P*ct.one_atm
+    if diluent:
+        gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction,basis='mole')
+    else:
+        gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
+    # gas.TPX=reactorTemperature, P*ct.one_atm, {'NH3':500e-6,'O2':0.03,'He':0.9795}
+    stirredReactor = getStirredReactor(gas,tau,V)
     columnNames = (
         ['pressure'] +
         [stirredReactor.component_name(item)
@@ -114,77 +190,90 @@ def getTemperatureDependence(gas,V,tau,K,h,T_list,P,X,t_max):
     )
     tempDependence = pd.DataFrame(columns=columnNames)
     for T in T_list:
-        gas.TPX = T, P*ct.one_atm, X
-        stirredReactor = getStirredReactor(gas,V,tau,K,h)
+        gas.TP = T, P*ct.one_atm
+        if diluent:
+            gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction,basis='mole')
+        else:
+            gas.set_equivalence_ratio(phi,fuel,oxidizer,basis='mole')
+        # gas.TPX=reactorTemperature, P*ct.one_atm, {'NH3':500e-6,'O2':0.03,'He':0.9795}
+        stirredReactor = getStirredReactor(gas,tau,V)
         reactorNetwork = ct.ReactorNet([stirredReactor])
+        # reactorNetwork.max_time_step=1e-4  # Set a smaller maximum time step
+        # reactorNetwork.rtol = 1e-6             # Reduce relative tolerance
+        # reactorNetwork.atol = 1e-12            # Reduce absolute tolerance
         t = 0
+        counter=1
         while t < t_max:
             t = reactorNetwork.step()
-        state = np.hstack([stirredReactor.thermo.P,
-                        stirredReactor.mass,
-                        stirredReactor.volume,
-                        stirredReactor.T,
-                        stirredReactor.thermo.X])
+            # if not counter % 50:
+            state = np.hstack([
+                    stirredReactor.thermo.P,
+                    stirredReactor.mass,
+                    stirredReactor.volume,
+                    stirredReactor.T,
+                    stirredReactor.thermo.X,
+                    ])
+            counter+=1
         tempDependence.loc[T] = state
     return tempDependence
 
-def generatePlot(model,codiluent,TP_list,val1,option):
-    f, ax = plt.subplots(len(P_list), 3, figsize=(args.figwidth,args.figheight))
-    plt.subplots_adjust(wspace=0.3)
-    plt.subplots_adjust(hspace=0.3)
-    for z, val2 in enumerate(TP_list):
-        if option=='P':
-            print(f'Pressure: {val2}atm')
-        if option=='T':
-            print(f'Temperature: {val2}K')
-        for k,m in enumerate(models[model]):
-            print(f'Submodel: {m}')
-            for i, codiluentPercent in enumerate(codiluentPercentList):
-                print(f'{codiluent}: {codiluentPercent}%')
-                X = {'H2': H2Percent, 'O2': O2Percent, 'AR': dilution*(1-codiluentPercent), codiluent: dilution*codiluentPercent}
-                gas = ct.Solution(list(models[model].values())[k])
-                if option=='P': # TP_list contains pressures and TP is a temperature
-                    newT_list = T_list[z]
-                    T, P = val1, val2
-                if option=='T': # TP_list contains temperatures and TP is a pressure
-                    newT_list = T_list[0]
-                    T, P = val2, val1
-                gas.TPX = T, P*ct.one_atm, X
-                tau = 0.5 # residence time [s]
-                V = 0.000113 #30.5*(1e-2)**3 reactor volume [m3]
-                h = 79.5 # heat transfer coefficient W/m2/K
-                K = 2e-5 # pressureValveCoefficient
-                t_max = 50  # max simulation time [s]
-                tempDependence = getTemperatureDependence(gas,V,tau,K,h,newT_list,P,X,t_max)
-                ax[z,0].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                ax[z,1].plot(tempDependence.index,tempDependence['O2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')   
-                ax[z,2].plot(tempDependence.index,tempDependence['H2']*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} {codiluentPercent}% {codiluent}')
-        ax[z,1].set_title(f"JSR {model} ({P}atm, {T}K, {H2Percent}% H2/{O2Percent}% O2, {dilution}% {codiluent}/Ar)",fontsize=args.fsz)
-        ax[z,0].tick_params(axis='both',direction='in')
-        ax[z,1].tick_params(axis='both',direction='in')
-        ax[z,2].tick_params(axis='both',direction='in')
-        ax[z,0].set_ylabel(r'$\Delta$ T [K]')
-        ax[z,1].set_ylabel('O$_2$ mole fraction [%]')
-        ax[z,2].set_ylabel('H$_2$ mole fraction [%]')
-        print('Subplot added to figure!')
-    ax[len(P_list)-1,2].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
-    ax[len(P_list)-1,1].set_xlabel('Temperature [K]')
-    path=f'USSCI/figures/'+args.date+'/JSR'
-    os.makedirs(path,exist_ok=True)
-    if option=='P':
-        plt.savefig(path+f'/{model}_{codiluent}_P_dependence.png', dpi=500, bbox_inches='tight')
-        print(f'Simulation has been stored at {path}/{model}_{codiluent}_P_dependence.png\n')
-    if option=='T':
-        plt.savefig(path+f'/{model}_{codiluent}_Tin_dependence.png', dpi=500, bbox_inches='tight')
-        print(f'Simulation has been stored at {path}/{model}_{codiluent}_Tin_dependence.png\n')
 
 for model in models:
     print(f'Model: {model}')
-    if model == 'Aramco-3.0':
-        newCodiluentList=['H2O']
-    else:
-        newCodiluentList=codiluentList
-    for codiluent in newCodiluentList:
-        print(f'Codiluent: {codiluent}')
-        generatePlot(model,codiluent,P_list,1000,'P')
-        generatePlot(model,codiluent,Tin_list,1.2,'T')
+    f1, ax1 = plt.subplots(len(models[model]['P_list']), len(models[model]['fuels']), figsize=(args.figwidth,args.figheight))
+    f2, ax2 = plt.subplots(len(models[model]['P_list']), len(models[model]['fuels']), figsize=(args.figwidth,args.figheight))
+    f3, ax3 = plt.subplots(len(models[model]['P_list']), len(models[model]['fuels']), figsize=(args.figwidth,args.figheight))
+    plt.subplots_adjust(wspace=0.3)
+    plt.subplots_adjust(hspace=0.3)
+    QOI1=models[model]['QOI'][0]
+    QOI2=models[model]['QOI'][1]
+    f1.suptitle(f'JSR '+r'$\Delta$T [K]'+f': {model}', fontsize=10)
+    f2.suptitle(f'JSR '+f'X$_{QOI1}$ [%]'+f': {model}', fontsize=10)
+    f3.suptitle(f'JSR '+f'X$_{QOI2}$ [%]'+f': {model}', fontsize=10)
+    counter=0
+    for z, P in enumerate(models[model]['P_list']):
+        print(f'Pressure: {P}atm')
+        for w, fuel in enumerate(models[model]['fuels']):
+            print(f'Fuel: {fuel}')
+            # T_list = np.linspace(models[model]['T_range'][z+w+counter][0],models[model]['T_range'][z+w+counter][1],gridsz)
+            T_list=models[model]['T_range']  #THIS MIGHT BE INCORRECT PLEASE REVIEW
+            for k,m in enumerate(models[model]['submodels']):
+                print(f'Submodel: {m}')
+                gas = ct.Solution(list(models[model]['submodels'].values())[k])
+                for i, phi in enumerate(models[model]['phi_list']):
+                    print(r'$\phi$: '+f'{phi}')
+                    if models[model].get('diluent') is not None:
+                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'],models[model]['V'],diluent=models[model]['diluent'],fraction=models[model]['fraction'])
+                    else:
+                        tempDependence = getTemperatureDependence(gas,T_list,P,phi,models[model]['oxidizer'],fuel,models[model]['t_max'],models[model]['tau'],models[model]['V'],)
+                    ax1[z,w].plot(tempDependence.index,np.subtract(tempDependence['temperature'],tempDependence.index),color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')   
+                    ax2[z,w].plot(tempDependence.index,tempDependence[QOI1]*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')   
+                    ax3[z,w].plot(tempDependence.index,tempDependence[QOI2]*100, color=colors[i], linestyle=lstyles[k], linewidth=lw, label=f'{m} '+r'$\phi$='+f'{phi}')
+                ax1[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
+                ax1[z,w].tick_params(axis='both',direction='in')
+                ax1[len(models[model]['P_list'])-1,w].set_xlabel('Temperature [K]')
+                ax2[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
+                ax2[z,w].tick_params(axis='both',direction='in')
+                ax2[len(models[model]['P_list'])-1,w].set_xlabel('Temperature [K]')
+                ax3[z,w].set_title(f"{fuel}/air ({P}atm)",fontsize=8)
+                ax3[z,w].tick_params(axis='both',direction='in')
+                ax3[len(models[model]['P_list'])-1,w].set_xlabel('Temperature [K]')
+            ax1[z,0].set_ylabel(r'$\Delta$ T [K]')
+            ax1[z,w].set_xlim(models[model]['xlim'][z+w+counter])
+            ax2[z,0].set_ylabel(f'{QOI1} mole fraction [%]')
+            ax2[z,w].set_xlim(models[model]['xlim'][z+w+counter])
+            ax3[z,0].set_ylabel(f'{QOI2} mole fraction [%]')
+            ax3[z,w].set_xlim(models[model]['xlim'][z+w+counter])
+        counter+=len(models[model]['fuels'])-1
+    ax1[len(models[model]['P_list'])-1,len(models[model]['fuels'])-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
+    ax2[len(models[model]['P_list'])-1,len(models[model]['fuels'])-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
+    ax3[len(models[model]['P_list'])-1,len(models[model]['fuels'])-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw)
+    path=f'USSCI/figures/'+args.date+'/JSR'
+    os.makedirs(path,exist_ok=True)
+    f1.savefig(path+f'/{model}_deltaT.png', dpi=500, bbox_inches='tight')
+    f2.savefig(path+f'/{model}_XO2.png', dpi=500, bbox_inches='tight')
+    f3.savefig(path+f'/{model}_XH2.png', dpi=500, bbox_inches='tight')
+    plt.close(f1)
+    plt.close(f2)
+    plt.close(f3)
+    print(f'Simulations have been stored in {path}\n')
