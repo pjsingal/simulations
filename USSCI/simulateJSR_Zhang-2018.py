@@ -15,7 +15,9 @@ from joblib import Parallel, delayed
 import matplotlib as mpl
 import argparse
 import csv
+import warnings
 
+warnings.filterwarnings("ignore", message="NasaPoly2::validate")
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -61,45 +63,29 @@ folder='Zhang-2018'
 name='Fig8'
 exp=False
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-# observables=['CO2','CH2O','CH4']
-observables=['NH3','H2O']
+observables=['CO2','CH2O','CH4']
 
-# X={'C2H5OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
-X={'H2':0.04,'O2':0.12,'N2':1-0.04-0.12} #ethanol mixed with o2 and n2 bath
+X={'C2H5OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
 P=10
 T_list = np.linspace(825,1075,gridsz)
 Xlim=[700,1200]
 tau=0.07
 diameter=0.04 #m
-V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 t_max=20
 
 models = {
-    # 'Zhang-2018': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    'Stagni-2023': {
+    'Zhang-2018': {
         'submodels': {
-            'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Alzueta-2023': {
-        'submodels': {
-            'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
                     },
     },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","r"]*3
+V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
@@ -124,54 +110,49 @@ def getStirredReactor(gas):
     ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
     return reactor
 
-def generateData(model,m,species):
-    print(f'  Generating {species} data')
+def getTemperatureDependence(gas,T):
+    gas.TPX = T, P*ct.one_atm, X
+    stirredReactor = getStirredReactor(gas)
+    reactorNetwork = ct.ReactorNet([stirredReactor])
+    states = ct.SolutionArray(stirredReactor.thermo)
+    t = 0
+    while t < t_max:
+        t = reactorNetwork.step()
+    states.append(stirredReactor.thermo.state)
+    return [states(species).X.flatten()[0] for species in observables]
+
+def generateData(model,m):
+    print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    stirredReactor = getStirredReactor(gas)
-    columnNames = (
-        ['pressure'] +
-        [stirredReactor.component_name(item)
-         for item in range(stirredReactor.n_vars)]
-    )
-    tempDependence = pd.DataFrame(columns=columnNames)
-    concentrations = X
-    for T in T_list:
-        gas.TPX = T, P*ct.one_atm, concentrations
-        stirredReactor = getStirredReactor(gas)
-        reactorNetwork = ct.ReactorNet([stirredReactor])
-        t = 0
-        while t < t_max:
-            t = reactorNetwork.step()
-        state = np.hstack([stirredReactor.thermo.P,
-                        stirredReactor.mass,
-                        stirredReactor.volume,
-                        stirredReactor.T,
-                        stirredReactor.thermo.X])
-        concentrations = stirredReactor.thermo.X
-        tempDependence.loc[T] = state
+    X_history=[getTemperatureDependence(gas,T) for T in T_list]
+    for z, species in enumerate(observables):
+        Xi_history = [item[z] for item in X_history]
+        data = zip(T_list,Xi_history)
+        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}'
+        os.makedirs(simOutPath,exist_ok=True)
+        save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
-    data = zip(tempDependence.index,tempDependence[species])
-    simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}'
-    os.makedirs(simOutPath,exist_ok=True)
-    save_to_csv(f'{simOutPath}/{name}.csv', data)
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
-    return tempDependence
+    return X_history
 
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
-    print(f'\nModel: {model}')
+    print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
-        for z, species in enumerate(observables):
-            simFile=f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}/{name}.csv'
-            if os.path.exists(simFile): #plot the data
-                print(f'  {species} data already exists')
-                sims=pd.read_csv(simFile)
-            else:
-                sims=generateData(model,m,species)
+        flag=False
+        while not flag:
+            for z, species in enumerate(observables):
+                simFile=f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}/{name}.csv'
+                if not os.path.exists(simFile):
+                    sims=generateData(model,m) 
+                    flag=True
+            flag=True
+        for z, species in enumerate(observables):   
+            sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
@@ -181,7 +162,7 @@ for j,model in enumerate(models):
             ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
-        print(' Data added to plot')
+        print('  > Data added to plot')
 plt.suptitle(f'{title}',fontsize=10)
 ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
 toc1=time.time()

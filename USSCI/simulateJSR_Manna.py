@@ -14,7 +14,10 @@ plt.rcParams.update(plt.rcParamsDefault)
 from joblib import Parallel, delayed
 import matplotlib as mpl
 import argparse
+import csv
+import warnings
 
+warnings.filterwarnings("ignore", message="NasaPoly2::validate")
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -55,21 +58,42 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
+title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
+folder='Manna-2024'
+name='Fig1'
+exp=False
+# data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+# observables=['CH4','NO']
+observables=['NO2','NO']
+
+P=1.16
+# fuel={'CH4':0.9,'NH3':0.1}
+fuel={'H2':0.9,'NH3':0.1}
+oxidizer='O2'
+diluent='N2'
+phi=0.8
+fraction={'diluent':0.9}
+T_list = np.linspace(900,1180,gridsz)
+Xlim=[700,1200]
+tau=0.4
+V=113e-6
+t_max=50
+
 models = {
-    'Gutierrez-2025': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Arunthanayothin-2021': {
-        'submodels': {
-            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Gutierrez-2025': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Arunthanayothin-2021': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     'Song-2019': {
         'submodels': {
             'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
@@ -85,25 +109,15 @@ models = {
                     },
     },
 }
-
-P=1.16
-fuel={'CH4':0.9,'NH3':0.1}
-oxidizer='O2'
-diluent='N2'
-phi=0.8
-fraction={'diluent':0.9}
-T_list = np.linspace(900,1180,gridsz)
-data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
-tau=0.4
-t_max=50
-V=113e-6
-reactorTemperature = 900
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r",'orange']*3
-
-Xspecies=['CH4','NO']
-
 ########################################################################################
+lstyles = ["solid","dashed","dotted"]*6
+colors = ["xkcd:purple","xkcd:teal","r"]*3
+# V = 4/3*np.pi*(diameter/2)**2 #JSR volume
+
+def save_to_csv(filename, data):
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(data)
 
 def getStirredReactor(gas):
     h = 79.5 # heat transfer coefficient W/m2/K
@@ -133,56 +147,55 @@ def getTemperatureDependence(gas,T):
     while t < t_max:
         t = reactorNetwork.step()
     states.append(stirredReactor.thermo.state)
-    Xvec=[]
-    for species in Xspecies:
-        Xvec.append(states(species).X.flatten()[0])
-    return Xvec
+    return [states(species).X.flatten()[0] for species in observables]
 
-def simulateModel(model):
-    print(f'\nModel: {model}')
-    X_histories=[]
-    for k,m in enumerate(models[model]['submodels']):
-        print(f'Submodel: {m}')
-        gas = ct.Solution(models[model]['submodels'][m])
-        X_history=[]
-        for i,T in enumerate(T_list):
-            X_history.append(getTemperatureDependence(gas,T))
-        X_histories.append(X_history)
-    return X_histories
+def generateData(model,m):
+    print(f'  Generating species data')
+    tic2 = time.time()
+    gas = ct.Solution(models[model]['submodels'][m])
+    X_history=[getTemperatureDependence(gas,T) for T in T_list]
+    for z, species in enumerate(observables):
+        Xi_history = [item[z] for item in X_history]
+        data = zip(T_list,Xi_history)
+        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}'
+        os.makedirs(simOutPath,exist_ok=True)
+        save_to_csv(f'{simOutPath}/{name}.csv', data)
+    toc2 = time.time()
+    print(f'  > Simulated in {round(toc2-tic2,2)}s')
+    return X_history
 
-
-
-
-allXhistories=Parallel(n_jobs=len(models))(delayed(simulateModel)(model) for model in models)
-
-f, ax = plt.subplots(1,len(Xspecies), figsize=(args.figwidth, args.figheight))
+tic1=time.time()
+f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
-tic = time.time()
 for j,model in enumerate(models):
+    print(f'\nModel: {model}')
     for k,m in enumerate(models[model]['submodels']):
-        for z, species in enumerate(Xspecies):
-            Xi_history = [item[z] for item in allXhistories[j][k]]
-            if k==0:
-                label=f'{model}'
-            else:
-                label=None
-            if species=='NO':
-                ax[z].plot(T_list,np.array(Xi_history)*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-                ax[z].set_ylabel(f'X-{species} [ppm]')
-            else:
-                ax[z].plot(T_list,np.array(Xi_history)*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-                ax[z].set_ylabel(f'X-{species} [%]')
-            ax[z].set_xlim([900,1250])
+        print(f' Submodel: {m}')
+        flag=False
+        while not flag:
+            for z, species in enumerate(observables):
+                simFile=f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}/{name}.csv'
+                if not os.path.exists(simFile):
+                    sims=generateData(model,m) 
+                    flag=True
+            flag=True
+        for z, species in enumerate(observables):   
+            sims=pd.read_csv(simFile)
+            label = f'{model}' if k == 0 else None
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [%]')
+            if exp and j==len(list(models.keys()))-1:
+                dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
+            ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
-dat = pd.read_csv(f'USSCI/graph-reading/Manna-2024/{data[z]}',header=None)
-ax[0].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Manna et al.')
-ax[1].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Manna et al.')
-plt.suptitle(r'Jet-stirred reactor: (90% CH4/10% NH3)/O2/N2, (1.16atm, phi=0.8)',fontsize=10)
-ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
-path=f'USSCI/figures/'+args.date+'/Manna-2024'
-os.makedirs(path,exist_ok=True)
-name=f'Fig1.png'
-plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
-toc = time.time()
-print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')
+        print('  > Data added to plot')
+plt.suptitle(f'{title}',fontsize=10)
+ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+toc1=time.time()
+outPath=f'USSCI/figures/{args.date}/{folder}'
+os.makedirs(outPath,exist_ok=True)
+name=f'{name}.png'
+plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
+print(f'Figure generated in {round(toc1-tic1,3)}s')
