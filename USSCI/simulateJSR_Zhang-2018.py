@@ -62,6 +62,7 @@ title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
 folder='Zhang-2018'
 name='Fig8'
 exp=False
+dataLabel='Zhang et al. (2018)'
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
 observables=['CO2','CH2O','CH4']
 
@@ -129,7 +130,7 @@ def generateData(model,m):
     for z, species in enumerate(observables):
         Xi_history = [item[z] for item in X_history]
         data = zip(T_list,Xi_history)
-        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}'
+        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}'
         os.makedirs(simOutPath,exist_ok=True)
         save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
@@ -146,7 +147,7 @@ for j,model in enumerate(models):
         flag=False
         while not flag:
             for z, species in enumerate(observables):
-                simFile=f'USSCI/data/{args.date}/{folder}/{model}/{m}/{species}/{name}.csv'
+                simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
                 if not os.path.exists(simFile):
                     sims=generateData(model,m) 
                     flag=True
@@ -158,7 +159,7 @@ for j,model in enumerate(models):
             ax[z].set_ylabel(f'X-{species} [%]')
             if exp and j==len(list(models.keys()))-1:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
@@ -166,7 +167,7 @@ for j,model in enumerate(models):
 plt.suptitle(f'{title}',fontsize=10)
 ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
 toc1=time.time()
-outPath=f'USSCI/figures/{args.date}/{folder}'
+outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)
 name=f'{name}.png'
 plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')

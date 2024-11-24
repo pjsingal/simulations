@@ -1,13 +1,25 @@
-import os
+from __future__ import division
+from __future__ import print_function
 import cantera as ct
 import matplotlib.pyplot as plt
-import pandas as pd 
+import pandas as pd
 import time
+import os
 import numpy as np
+import pandas as pd
+import numpy as np
+import time
+import matplotlib.pyplot as plt
+plt.rcParams.update(plt.rcParamsDefault)
 from joblib import Parallel, delayed
 import matplotlib as mpl
 import argparse
+import csv
+import warnings
 
+warnings.filterwarnings("ignore", message="NasaPoly2::validate")
+warnings.filterwarnings("ignore", message=".*discontinuity.*detected.*")
+warnings.filterwarnings("ignore", message=".*return _ForkingPickler.loads.*")
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -21,41 +33,48 @@ parser.add_argument('--msz', type=float, help="msz = ", default=2.5)
 parser.add_argument('--lgdw', type=float, help="lgdw = ", default=0.6)
 parser.add_argument('--lgdfsz', type=float, help="lgdw = ", default=5)
 parser.add_argument('--gridsz', type=int, help="gridsz = ", default=10)
-parser.add_argument('--dpi', type=int, help="dpi = ", default=500)
-parser.add_argument('--date', type=str)
-
+parser.add_argument('--dpi', type=int, help="dpi = ", default=1000)
+parser.add_argument('--date', type=str, help="sim date = ")
 args = parser.parse_args()
 lw=args.lw
 mw=args.mw
 msz=args.msz
+dpi=args.dpi
 lgdw=args.lgdw
 lgdfsz=args.lgdfsz
 gridsz=args.gridsz
-
+from matplotlib.legend_handler import HandlerTuple
 mpl.rc('font',family='Times New Roman')
 mpl.rcParams['mathtext.fontset'] = 'stix'
 mpl.rcParams['font.size'] = args.fsz
 mpl.rcParams['xtick.labelsize'] = args.fszxtick
 mpl.rcParams['ytick.labelsize'] = args.fszytick
-from matplotlib.legend_handler import HandlerTuple
 plt.rcParams['axes.labelsize'] = args.fszaxlab
-# mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
-# mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
-# mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
-# mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
-# mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
-# mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
-# mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
-# mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
-
+mpl.rcParams['xtick.major.width'] = 0.5  # Width of major ticks on x-axis
+mpl.rcParams['ytick.major.width'] = 0.5  # Width of major ticks on y-axis
+mpl.rcParams['xtick.minor.width'] = 0.5  # Width of minor ticks on x-axis
+mpl.rcParams['ytick.minor.width'] = 0.5  # Width of minor ticks on y-axis
+mpl.rcParams['xtick.major.size'] = 2.5  # Length of major ticks on x-axis
+mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
+mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
+mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
+title='Shao et al.'
+folder='Shao-2019'
+name='Fig8'
+exp=False
+dataLabel='Shao et al. (2019)'
+# data=['4H2_45H2O_Ar_2pt5bar.csv']
+
 # X={'CH4':0.0391,'O2':0.0992,'CO2':1-0.0391-0.0992}
-# P=33
 X={'H2':0.1,'O2':0.05,'CO2':1-0.1-0.05}
+# P=33
 P=110
 T_list = np.linspace(1000,1538,gridsz)
-# data=['4H2_45H2O_Ar_2pt5bar.csv']
+Xlim=[700,1200]
+indicator='o' # oh, oh*, h, o, pressure
+
 models = {
     # 'Stagni-2023': {
     #     'submodels': {
@@ -71,20 +90,20 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Glarborg-2018': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    'Merchant-2015': {
+    'Glarborg-2018': {
         'submodels': {
-            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
                     },
     },
+    # 'Merchant-2015': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Cornell-2024': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
@@ -120,6 +139,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
     #                 },
     # },
+    # 'Mei-2019': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Aramco-3.0': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -128,22 +154,19 @@ models = {
     #                 },
     # },
 }
+########################################################################################
+lstyles = ["solid","dashed","dotted"]*6
+colors = ["xkcd:purple","xkcd:teal","r"]*3
 
+def save_to_csv(filename, data):
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(data)
 
-# fuelList=['H2','NH3']
-# # fuelList=['C2H2','CH3OH','C4H10']
-# oxidizer={'O2':1, 'N2': 3.76}
-# T_list = np.linspace(2000,2500,gridsz)
-# phi_list = [1,4]
-# P_list = [1,10]
-lstyles = ["solid","dashed","dotted"]
-colors = ["xkcd:grey","xkcd:purple", "xkcd:teal", "orange", "r", "b", "xkcd:lime green", "xkcd:magenta", "xkcd:navy blue","xkcd:grey","cyan"]*2
-
-def getTimeHistory(X,T,P):
+def getTimeHistory(gas,T):
     def ignitionDelay(states, species):
         i_ign = np.gradient(states(species).Y.T[0]).argmax()
         # i_ign = states(species).Y.T[0].argmax()
-        # print(np.gradient(states(species).Y.T[0]).argmax())
         return states.t[i_ign]   
     gas.TPX = T, P*ct.one_atm, X
     r = ct.Reactor(contents=gas)
@@ -154,43 +177,49 @@ def getTimeHistory(X,T,P):
     while t < t_end:
         t=reactorNetwork.step()
         timeHistory.append(r.thermo.state, t=t)
-    # # print(timeHistory('o').Y)
-    # # oh, oh*, h, o, pressure
-    # # max gradient of Xoh, max gradient of Yoh, max value of Xoh, max gradient of Yog
-    return ignitionDelay(timeHistory, 'oh')
+    return ignitionDelay(timeHistory, indicator)
 
-
-# def getIDT(gas,T_list,P):
-def getTempHistory(X,T_list,P):
-    IDT_list = Parallel(n_jobs=-1)(  # Use all available cores; adjust n_jobs if needed
-        delayed(getTimeHistory)(X,T,P)
+def generateData(model,m):
+    print(f'  Generating species data')
+    tic2 = time.time()
+    gas = ct.Solution(models[model]['submodels'][m])
+    IDT_list = Parallel(n_jobs=len(T_list))(
+        delayed(getTimeHistory)(gas,T)
         for T in T_list
     )
-    return np.array(IDT_list)
+    data = zip(T_list,IDT_list)
+    simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/IDT/{m}'
+    os.makedirs(simOutPath,exist_ok=True)
+    save_to_csv(f'{simOutPath}/{name}.csv', data)
+    toc2 = time.time()
+    print(f'  > Simulated in {round(toc2-tic2,2)}s')
+
+tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
-tic = time.time()
+plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
-        print(f'Submodel: {m}')
-        gas = ct.Solution(list(models[model]['submodels'].values())[k])
-        IDT = getTempHistory(X, T_list, P)
-        ax.semilogy(T_list, IDT*1e3, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=f'{model}-{m}')#label=f'{m} '+r'$\phi$='+f'{phi}')
-        # if fuel in models[model]['data']:
-        #     dat = pd.read_csv(f'USSCI/graph-reading/{model}/IDT/{P}bar_{phi}phi.csv',header=None)
-        #     ax.semilogy(dat.iloc[:,0],dat.iloc[:,1],mkrs[i],fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=r'$\phi$='+f'{phi}')
-ax.set_title(r'Beigzadeh et al.',fontsize=8)
-# ax.set_ylim([60,6000])
-ax.tick_params(axis='both',direction='in')
-ax.set_xlabel('Temperature [K]')
-ax.set_ylabel(r'Ignition delay [ms]')
-ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=2)  
-path=f'USSCI/figures/'+args.date+'/Shao-2019'
-os.makedirs(path,exist_ok=True)
-plt.savefig(path+f'/Fig8.png', dpi=500, bbox_inches='tight')
-toc = time.time()
-print(f'Simulation completed in {toc-tic}s and stored at {path}/Fig8.png\n')
-
-#     /home/pjs/simulations/USSCI/graph-reading/Stagni-2023/20bar_0,5phi.csv
-# 'USSCI/graph-reading/Stagni-2023/20bar_0.5phi.csv
-
+        print(f' Submodel: {m}')
+        simFile=f'USSCI/data/{args.date}/{folder}/{model}/IDT/{m}/{name}.csv'
+        if not os.path.exists(simFile):
+            sims=generateData(model,m)  
+        sims=pd.read_csv(simFile)
+        label = f'{model}' if k == 0 else None
+        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+        if exp and j==len(list(models.keys()))-1:
+            dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
+            ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+        ax.set_xlim(Xlim)
+        ax.tick_params(axis='both',direction='in')
+        ax.set_xlabel('Temperature [K]')
+        ax.set_ylabel(f'Ignition delay [ms]')
+        print('  > Data added to plot')
+plt.suptitle(f'{title}',fontsize=10)
+ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+toc1=time.time()
+outPath=f'USSCI/figures/{args.date}/{folder}/IDT'
+os.makedirs(outPath,exist_ok=True)
+name=f'{name}.png'
+plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
+print(f'Figure generated in {round(toc1-tic1,3)}s')

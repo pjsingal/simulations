@@ -14,7 +14,12 @@ plt.rcParams.update(plt.rcParamsDefault)
 from joblib import Parallel, delayed
 import matplotlib as mpl
 import argparse
+import csv
+import warnings
 
+warnings.filterwarnings("ignore", message="NasaPoly2::validate")
+warnings.filterwarnings("ignore", message=".*discontinuity.*detected.*")
+warnings.filterwarnings("ignore", message=".*return _ForkingPickler.loads.*")
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -55,6 +60,25 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
+title='Flow reactor'
+folder='Cornell-2024'
+name='Figs1-2'
+exp=False
+dataLabel='Cornell (2024)'
+# data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+observables=['CF3-CF3','CF2O']
+
+fuel={'C2H6':0.9,'CHF3':0.1}
+oxidizer={'O2':0.21,'N2':0.79}
+phi=2
+P=1
+T_list = np.linspace(850,950,gridsz)
+Xlim=[850,950]
+length = 20e-2  # [m]
+diameter=0.0087 # [m]
+n_steps = 2000
+Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
+
 models = {
     'Cornell-2024': {
         'submodels': {
@@ -64,78 +88,79 @@ models = {
                     },
     },
 }
-
-P=1
-fuel={'C2H6':0.9,'CHF3':0.1}
-oxidizer={'O2':0.21,'N2':0.79}
-phi=2
-T_list = np.linspace(850,950,gridsz)
-data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","r"]*3
 
-Xspecies=['CF3-CF3','CF2O']
+def save_to_csv(filename, data):
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(data)
 
-########################################################################################
-
-# length = 200e-3  # *approximate* PFR length [m]
-length = 20e-2  # *approximate* PFR length [m]
-diameter=0.0087 # PFR diameter [m]
-n_steps = 2000
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","k"]*3
-Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
-
-def getXvsT(T,model,m):
-    gas = ct.Solution(models[model]['submodels'][m])
-    gas.set_equivalence_ratio(phi, fuel, oxidizer)
+def getTemperatureDependence(gas,T):
     gas.TP = T, P*ct.one_atm
+    gas.set_equivalence_ratio(phi,fuel,oxidizer)
     area = np.pi*(diameter/2)**2
     u0 = Q_tn*1e-6/60/area
-    n_steps=2000
     mass_flow_rate = u0 * gas.density * area
     flowReactor = ct.IdealGasConstPressureReactor(gas)
     reactorNetwork = ct.ReactorNet([flowReactor])
-    # tau=192.097*P*ct.one_atm/1e5*1000/Q_tn/T #residence time formula from Gutierrez-2025
     tau=length/u0
     dt = tau/n_steps
     t1 = (np.arange(n_steps) + 1) * dt
     states = ct.SolutionArray(flowReactor.thermo)
     for n, t_i in enumerate(t1):
         reactorNetwork.advance(t_i)
-    # print(f'{t1[-1]}={tau}')
     states.append(flowReactor.thermo.state)
-    Xvec=[]
-    for species in Xspecies:
-        Xvec.append(states(species).X.flatten()[0])
-    # print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
-    return Xvec
+    return [states(species).X.flatten()[0] for species in observables]
 
-f, ax = plt.subplots(1,len(Xspecies), figsize=(args.figwidth, args.figheight))
+def generateData(model,m):
+    print(f'  Generating species data')
+    tic2 = time.time()
+    gas = ct.Solution(models[model]['submodels'][m])
+    X_history=[getTemperatureDependence(gas,T) for T in T_list]
+    for z, species in enumerate(observables):
+        Xi_history = [item[z] for item in X_history]
+        data = zip(T_list,Xi_history)
+        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}'
+        os.makedirs(simOutPath,exist_ok=True)
+        save_to_csv(f'{simOutPath}/{name}.csv', data)
+    toc2 = time.time()
+    print(f'  > Simulated in {round(toc2-tic2,2)}s')
+    return X_history
+
+tic1=time.time()
+f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
-tic = time.time()
 for j,model in enumerate(models):
-    print(f'\nModel: {model}')
+    print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
-        print(f'Submodel: {m}')
-        X_history=[]
-        for T in T_list:
-            X_history.append(getXvsT(T,model,m))
-        for z, species in enumerate(Xspecies):
-            Xi_history = [item[z]*1e6 for item in X_history]
-            if k==0:
-                label=f'{model}'
-            else:
-                label=None
-            ax[z].plot(T_list,np.array(Xi_history)*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [ppm]')
+        print(f' Submodel: {m}')
+        flag=False
+        while not flag:
+            for z, species in enumerate(observables):
+                simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv'
+                if not os.path.exists(simFile):
+                    sims=generateData(model,m) 
+                    flag=True
+            flag=True
+        for z, species in enumerate(observables):   
+            sims=pd.read_csv(simFile)
+            label = f'{model}' if k == 0 else None
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [-]')
+            if exp and j==len(list(models.keys()))-1:
+                dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+            ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
-plt.suptitle(r'Plug-flow reactor: (90% C2H6/10% CHF3)/air, (1atm, phi=1.0)',fontsize=10)
-ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
-path=f'USSCI/figures/'+args.date+'/Cornell-2024'
-os.makedirs(path,exist_ok=True)
-name=f'Fig1_2.png'
-plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
-toc = time.time()
-print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')
+        print('  > Data added to plot')
+plt.suptitle(f'{title}',fontsize=10)
+ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+toc1=time.time()
+outPath=f'USSCI/figures/{args.date}/{folder}/FR'
+os.makedirs(outPath,exist_ok=True)
+name=f'{name}.png'
+plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
+print(f'Figure generated in {round(toc1-tic1,3)}s')
