@@ -91,13 +91,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Merchant-2015': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Merchant-2015': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Bugler-2016': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
@@ -105,13 +105,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Song-2019': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Song-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Aramco-3.0': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -141,145 +141,45 @@ lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","k"]*3
 Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
 
-# def getXvsT(gas,T):
-#     gas.TPX = T, P, X
-#     # mass_flow_rate = u_0 * gas.density * area
-#     mass_flow_rate = Q_tn*gas.density/60000 #[kg/s]
-#     r = ct.IdealGasConstPressureReactor(gas)
-#     sim = ct.ReactorNet([r])
-#     t_total = 192.097*P/Q_tn/T #residence time formula from Gutierrez-2025
-#     dt = t_total / n_steps
-#     t = (np.arange(n_steps) + 1) * dt #time vector
-#     z = np.zeros_like(t) #spatial vector
-#     y = np.zeros_like(t) #vector of [unsure]
-#     states = ct.SolutionArray(r.thermo)
-#     for n, t_i in enumerate(t):
-#         sim.advance(t_i)
-#         y[n] = mass_flow_rate / area / r.thermo.density
-#         z[n] = z[n - 1] + y[n] * dt
-#         states.append(r.thermo.state)
-#     ## time history of species X='H2', for example
-#     # timeHistory=t
-#     # states.X[:, gas.species_index('H2')]
-#     # find the point where t equals the residence time
-#     idx = np.argmin(np.abs(t-tau))
-#     # return T, states
-#     Xvec=[]
-#     for species in Xspecies:
-#         Xvec.append(states.X[:, gas.species_index(species)][idx])
-#     return Xvec
-
-# import the gas model and set the initial conditions
-
-
-def getXvsT(gas,T):
+def getXvsT(T):
+    gas = ct.Solution(list(models[model]['submodels'].values())[k])
     gas.TPX = T, P*ct.one_atm, X
-    # print(f"Initial conditions: T={gas.T}, P={gas.P}, X={gas.X}")
-    mass_flow_rate=Q_tn*1e-6/60*gas.density_mass #[kg/s]
-    n_steps=5000
     area = np.pi*(diameter/2)**2
-    dz = length/n_steps
-    flowReactor=ct.IdealGasReactor(gas,energy='off')
-    flowReactor.volume=area*dz
-    upstream = ct.Reservoir(gas, name='upstream')
-    downstream = ct.Reservoir(gas, name='downstream')
-    m = ct.MassFlowController(upstream, flowReactor, mdot=mass_flow_rate)
-    v = ct.PressureController(flowReactor, downstream, primary=m, K=1e-5)
+    u0 = Q_tn*1e-6/60/area
+    n_steps=2000
+    mass_flow_rate = u0 * gas.density * area
+    flowReactor = ct.IdealGasConstPressureReactor(gas)
     reactorNetwork = ct.ReactorNet([flowReactor])
-    tau=192.097*P*ct.one_atm/1e5*1000/Q_tn/T #residence time formula from Gutierrez-2025
+    # tau=192.097*P*ct.one_atm/1e5*1000/Q_tn/T #residence time formula from Gutierrez-2025
+    tau=length/u0
     dt = tau/n_steps
     t1 = (np.arange(n_steps) + 1) * dt
     states = ct.SolutionArray(flowReactor.thermo)
     for n, t_i in enumerate(t1):
         reactorNetwork.advance(t_i)
-    print(f'{t1[-1]}={tau}')
+    # print(f'{t1[-1]}={tau}')
     states.append(flowReactor.thermo.state)
     Xvec=[]
     for species in Xspecies:
         Xvec.append(states(species).X.flatten()[0])
-    print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
+    # print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
     return Xvec
-
-# def getXvsT(gas,T):
-#     gas.TPX = T, P*ct.one_atm, X
-#     # print(f"Initial conditions: T={gas.T}, P={gas.P}, X={gas.X}")
-#     mass_flow_rate=Q_tn*1e-6/60*gas.density_mass #[kg/s]
-#     n_steps=3000
-#     area = np.pi*(diameter/2)**2
-#     dz = length/n_steps
-#     flowReactor=ct.IdealGasReactor(gas)
-#     flowReactor.volume=area*dz
-#     upstream = ct.Reservoir(gas, name='upstream')
-#     downstream = ct.Reservoir(gas, name='downstream')
-#     m = ct.MassFlowController(upstream, flowReactor, mdot=mass_flow_rate)
-#     v = ct.PressureController(flowReactor, downstream, primary=m, K=1e-5)
-#     reactorNetwork = ct.ReactorNet([flowReactor])
-#     tau=192.097*P*ct.one_atm/Q_tn/T #residence time formula from Gutierrez-2025
-#     states = ct.SolutionArray(flowReactor.thermo)
-#     t=0
-#     for n in range(n_steps):
-#         gas.TDY = flowReactor.thermo.TDY
-#         upstream.syncState()
-#         reactorNetwork.reinitialize()
-#         reactorNetwork.advance_to_steady_state()
-#         t+=flowReactor.mass / mass_flow_rate
-#     print(f'{t}={tau}')
-#     states.append(flowReactor.thermo.state)
-#     Xvec=[]
-#     for species in Xspecies:
-#         Xvec.append(states(species).X.flatten()[0])
-#     print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
-#     return Xvec
-
-# def getXvsT(gas,T):
-#     gas.TPX = T, P*ct.one_atm, X
-#     mass_flow_rate=Q_tn*gas.density/60000 #[kg/s]
-#     n_steps=2000
-#     area = np.pi*(diameter/2)**2
-#     flowReactor=ct.IdealGasReactor(gas)
-#     flowReactor.volume=area*length
-#     upstream = ct.Reservoir(gas, name='upstream')
-#     downstream = ct.Reservoir(gas, name='downstream')
-#     m = ct.MassFlowController(upstream, flowReactor, mdot=mass_flow_rate)
-#     v = ct.PressureController(flowReactor, downstream, primary=m, K=1e-5)
-#     reactorNetwork = ct.ReactorNet([flowReactor])
-#     tau=192.097*P*ct.one_atm/Q_tn/T #residence time formula from Gutierrez-2025
-#     states = ct.SolutionArray(flowReactor.thermo)
-#     t=0
-#     while t<tau:
-#         # gas.TDY = flowReactor.thermo.TDY
-#         t=reactorNetwork.step()
-#         # upstream.syncState()
-#         # reactorNetwork.reinitialize()
-#         # reactorNetwork.advance_to_steady_state()
-#         # t+=flowReactor.mass / mass_flow_rate
-#     print(f'{t}={tau}')
-#     states.append(flowReactor.thermo.state)
-#     Xvec=[]
-#     for species in Xspecies:
-#         Xvec.append(states(species).X.flatten()[0])
-#     print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
-#     return Xvec
 
 f, ax = plt.subplots(1,len(Xspecies), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 tic = time.time()
 for j,model in enumerate(models):
     print(f'\nModel: {model}')
-    # tempDependences = Parallel(n_jobs=3)(
-    #     delayed(getTemperatureDependence)(model,m)
-    #     for m in models[model]['submodels']
-    #     )
     for k,m in enumerate(models[model]['submodels']):
         print(f'Submodel: {m}')
-        gas = ct.Solution(list(models[model]['submodels'].values())[k])
+        # gas = ct.Solution(list(models[model]['submodels'].values())[k])
         # X_history = Parallel(n_jobs=-1)(
         #     delayed(getXvsT)(gas,T)
         #     for T in T_list
         # )
         X_history=[]
         for T in T_list:
-            X_history.append(getXvsT(gas,T))
+            X_history.append(getXvsT(T))
         for z, species in enumerate(Xspecies):
             Xi_history = [item[z]*1e6 for item in X_history]
             if k==0:
