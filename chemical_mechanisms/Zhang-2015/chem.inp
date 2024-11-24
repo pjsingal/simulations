@@ -5,10 +5,10 @@
 !                                                                                     !
 !         An experimental and kinetic modeling study of n-hexane oxidation            !
 !                                                                                     !
-!    K. Zhang 1, C. Banyon 1, C. Togbé 2, P. Dagaut 2, J. Bugler 1, H.J. Curran 1     !
+!    K. Zhang 1, C. Banyon 1, C. Togbï¿½ 2, P. Dagaut 2, J. Bugler 1, H.J. Curran 1     !
 !                                                                                     !
 ! 1 School of Chemistry, National University of Ireland Galway, Ireland               !
-! 2 CNRS-INSIS, 1C avenue de la recherché scientifique, 45071 Orléans cedex 2, France !
+! 2 CNRS-INSIS, 1C avenue de la recherchï¿½ scientifique, 45071 Orlï¿½ans cedex 2, France !
 !                                                                                     !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -314,15 +314,15 @@ IC4H8CHO-I          IC5Y3-1J            C5H9O2-1            IC5O34-1J
 C5Y2                C5Y2-3J             C5H9O15-3           AC5H9O-D            
 IC5D1Y3             SC4H9CHO            SC4H9CO             SC4H8CHO-1          
 SC4H8CHO-2          SC4H8CHO-3          SC4H8CHO-4          C5Y3                
-C5Y3-1J             C5Y3-2J             IC5H8D13            IC5H8D13-1A         
-IC5H8D13-1A         I3C6KET1-2O         I3C6KET1-3O         I3C6KET1-4O         
+C5Y3-1J             C5Y3-2J                     
+I3C6KET1-2O         I3C6KET1-3O         I3C6KET1-4O         
 I3C6KET1-5O         I3C6KET1-6O         I3C6KET2-1O         I3C6KET2-3O         
 I3C6KET2-4O         I3C6KET2-5O         I3C6KET2-6O         I3C6KET4-1O         
 I3C6KET4-2O         I3C6KET4-3O         
 END
 !-------------------------------------------------------------------------------!
 REACTIONS
-!REF:2 PARAMETER FIT TO HONG ET AL.PROC. OF THE COMB. INST. 33 (2011) 309–316
+!REF:2 PARAMETER FIT TO HONG ET AL.PROC. OF THE COMB. INST. 33 (2011) 309ï¿½316
 H+O2<=>O+OH                                       1.040E+014     0.000   15286.0
 !REF:SUTHERLAND ET AL., 21ST SYMPOSIUM, P. 929 (1986)
 O+H2<=>H+OH                                       5.080E+004     2.670    6292.0
@@ -338,7 +338,7 @@ O+O+M<=>O2+M                                      6.165E+015    -0.500       0.0
 H2/ 2.50/ H2O/ 12.00/ AR/ 0.83/ CO/ 1.90/ CO2/ 3.80/ HE/ 0.83/ CH4/ 2.00/ C2H6/ 3.00/
 O+H+M<=>OH+M                                      4.714E+018    -1.000       0.0
 H2/ 2.50/ H2O/ 12.00/ AR/ 0.75/ CO/ 1.50/ CO2/ 2.00/ HE/ 0.75/ CH4/ 2.00/ C2H6/ 3.00/
-!REF: LI IJCK 36: 566–575, 2004
+!REF: LI IJCK 36: 566ï¿½575, 2004
 !REF:OPTIMISED TO FIT H2 AND CH4 FLAMES DATA
 H+OH+M<=>H2O+M                                    3.500E+022    -2.000       0.0
 !REF:EFFICIENCIES FROM GRI 3.0
@@ -715,7 +715,7 @@ HCOH+O=>CO+OH+H                                   3.000E+013     0.000       0.0
 HCOH+O2=>CO2+H+OH                                 5.000E+012     0.000       0.0
 HCOH+O2<=>CO2+H2O                                 3.000E+013     0.000       0.0
 
-!REF: JASPER/ KLIPPENSTEIN PROC COMBUST INST 32 (2009) 279–286
+!REF: JASPER/ KLIPPENSTEIN PROC COMBUST INST 32 (2009) 279ï¿½286
 CH3+HO2<=>CH3O+OH                                 1.000E+012     0.269    -687.5
 CH3+HO2<=>CH4+O2                                  1.160E+005     2.230   -3022.0
 
@@ -840,7 +840,7 @@ C2H6+CH3<=>C2H5+CH4                               5.550E-004     4.720    3231.0
 !REF:J. AGUILERA-IPARRAGUIRRE ET AL. J PHYS CHEM A (2008) 112(30): 7047-7054.
 C2H6+HO2<=>C2H5+H2O2                              3.460E+001     3.610   16920.0
 
-!REF:CARSTENSEN AND DEAN PROC COMBUST INST 30 (2005) 995–1003
+!REF:CARSTENSEN AND DEAN PROC COMBUST INST 30 (2005) 995ï¿½1003
 C2H6+CH3O2<=>C2H5+CH3O2H                          1.940E+001     3.640   17100.0
 
 !REF:TSANG AND HAMPSON, J. PHYS. CHEM. REF. DATA, 15:1087 (1986)
@@ -909,7 +909,7 @@ CH4+C2H5O2<=>CH3+C2H5O2H                          1.810E+011     0.000   18480.0
 CH3OH+C2H5O2<=>CH2OH+C2H5O2H                      1.810E+012     0.000   13710.0
 C2H5O2+HO2<=>C2H5O2H+O2                           1.750E+010     0.000   -3275.0
 
-!REF:CARSTENSEN AND DEAN PROC COMBUST INST 30 (2005) 995–1003
+!REF:CARSTENSEN AND DEAN PROC COMBUST INST 30 (2005) 995ï¿½1003
 C2H6+C2H5O2<=>C2H5+C2H5O2H                        8.600E+000     3.760   17200.0
 C2H5O2H<=>C2H5O+OH                                6.310E+014     0.000   42300.0
 C2H5+O2<=>C2H5O2                                  3.398E+053   -13.900    9279.0
@@ -1009,7 +1009,7 @@ CH3CHO+OH<=>CH3CO+H2O                             3.370E+012     0.000    -619.0
 !REF:BAULCH ET AL., J. PHYS. CHEM. REF DATA, 21:411 (1992)
 CH3CHO+O2<=>CH3CO+HO2                             3.010E+013     0.000   39150.0
 
-!REF: GUPTE ET AL.,PROC COMBUST INST 31 (2007) 167–174
+!REF: GUPTE ET AL.,PROC COMBUST INST 31 (2007) 167ï¿½174
 CH3CHO+CH3<=>CH3CO+CH4                            7.080E-004     4.580    1966.0
 
 !REF:BAULCH ET AL., J. PHYS. CHEM. REF DATA, 21:411 (1992)
@@ -1965,7 +1965,7 @@ CH3COCH3+H<=>CH3COCH2+H2                          9.800E+005     2.430    5160.0
 !REF:FIT TO DATA ON NIST STANDARD REFERENCE DATABASE 17 -2Q98
 CH3COCH3+O<=>CH3COCH2+OH                          5.130E+011     0.211    4890.0
 
-!REF:S. Pichon, Combustion and Flame (2009) 156(2) 494–504. 
+!REF:S. Pichon, Combustion and Flame (2009) 156(2) 494ï¿½504. 
 CH3COCH3+CH3<=>CH3COCH2+CH4                       3.960E+011     0.000    9784.0
 
 !REF:ESTIMATE
@@ -2332,7 +2332,7 @@ H+C3H8<=>H2+IC3H7                                 1.300E+006     2.400    4471.0
 H+C3H8<=>H2+NC3H7                                 3.490E+005     2.690    6450.0
 C3H8+O<=>IC3H7+OH                                 5.490E+005     2.500    3140.0
 C3H8+O<=>NC3H7+OH                                 3.710E+006     2.400    5505.0
-!REF: Droege, A. T. and Tully, F. P.: Hydrogen-atom abstraction from alkanes by OH. 3. Propane, J. Phys. Chem., 90, 1949–1954
+!REF: Droege, A. T. and Tully, F. P.: Hydrogen-atom abstraction from alkanes by OH. 3. Propane, J. Phys. Chem., 90, 1949ï¿½1954
 C3H8+OH<=>NC3H7+H2O                               1.054E+010     0.970    1586.0
 C3H8+OH<=>IC3H7+H2O                               4.670E+007     1.610     -35.0
 
@@ -2393,7 +2393,7 @@ C3H8+CH3CO3<=>NC3H7+CH3CO3H                       1.700E+013     0.000   20460.0
 C3H8+O2CHO<=>NC3H7+HO2CHO                         5.520E+004     2.550   16480.0
 C3H8+O2CHO<=>IC3H7+HO2CHO                         1.475E+004     2.600   13910.0
 
-!REF:CURRAN INC. INT J CHEM KINET 38: 250–275, 2006
+!REF:CURRAN INC. INT J CHEM KINET 38: 250ï¿½275, 2006
 
 !REF:GLAUDE,P.A. ET AL,PROC. COMBUST. INST
 IC3H7+H<=>C2H5+CH3                                2.000E+013     0.000       0.0
@@ -2403,7 +2403,7 @@ IC3H7+OH<=>C3H6+H2O                               2.410E+013     0.000       0.0
 IC3H7+O<=>CH3COCH3+H                              4.818E+013     0.000       0.0
 IC3H7+O<=>CH3CHO+CH3                              4.818E+013     0.000       0.0
 
-!REF:REF:CURRAN INC. INT J CHEM KINET 38: 250–275, 2006
+!REF:REF:CURRAN INC. INT J CHEM KINET 38: 250ï¿½275, 2006
 NC3H7+O2<=>C3H6+HO2                               3.000E-019     0.000    3000.0
 
 !REF:ANALOGY WITH ACETALDEHYDE
@@ -2926,7 +2926,7 @@ C2H4+CH3<=>C2H3+CH4                               8.130E-005     4.417    8835.8
 DUP
 !REF:LASKIN ET AL IJCK 32 589-614 2000
 !REF:ORIGINAL:TSANG, W. J.PHYS.CHEM.REF.DATA 1991, 20, 221.
-!REF: KINETICS FROM FRANKLIN C GOLDSMITH J. PHYS. CHEM. A, 2012, 116 (13), PP 3325–3346
+!REF: KINETICS FROM FRANKLIN C GOLDSMITH J. PHYS. CHEM. A, 2012, 116 (13), PP 3325ï¿½3346
 C3H5-A+HO2<=>C3H5O+OH                             1.000E+011     0.000       0.0
 PLOG/      0.0100     1.020E+013    -0.158     -1417.0/
 PLOG/      0.1000     4.980E+014    -0.642      -349.1/
@@ -3087,7 +3087,7 @@ C3H6+CH3CO3<=>C3H5-A+CH3CO3H                      7.680E-002     4.403   13547.2
 C3H6+C2H5O2<=>C3H5-A+C2H5O2H                      7.680E-002     4.403   13547.2
 C3H6+NC3H7O2<=>C3H5-A+NC3H7O2H                    7.680E-002     4.403   13547.2
 C3H6+IC3H7O2<=>C3H5-A+IC3H7O2H                    7.680E-002     4.403   13547.2
-!REF: ZADOR PHYS. CHEM. CHEM. PHYS., 2009, 11, 11040–11053
+!REF: ZADOR PHYS. CHEM. CHEM. PHYS., 2009, 11, 11040ï¿½11053
 C3H6+OH<=>C3H5OH+H                                2.290E+013     0.070   10580.0
 PLOG/      0.0013     2.670E+013     0.050     10611.0/
 PLOG/      0.0100     2.750E+013     0.050     10623.0/
@@ -3669,9 +3669,9 @@ SC3H5OH+CH3O2=>C2H3CHO+H+CH3O2H                   9.600E+003     2.600   13900.0
 !REF: EST. F IS LARGER THAN OH WHICH IS 0.1. REDUCED A FACTOR BY 2.6 FOR TYING UP ROTOR (USED SCOTT AND WALKERS, C&F2002 A-FACTORS TO GET 2.6)
 SC3H5OH+CH3O=>C2H3CHO+H+CH3OH                     8.300E+010     0.000    2600.0
 !REF: FROM PROPANOL, MAN ET AL. CNF2013:
-!REF: !DASILVA, BOZZELLI, CHEM. PHYS. LETT. 483 (2009) 25–29.
+!REF: !DASILVA, BOZZELLI, CHEM. PHYS. LETT. 483 (2009) 25ï¿½29.
 SC3H5OH+HO2<=>C2H5CHO+HO2                         1.490E+005     1.670    6810.0
-!REF: !DASILVA, ANGEW. CHEM. 122 (2010) 7685–7687
+!REF: !DASILVA, ANGEW. CHEM. 122 (2010) 7685ï¿½7687
 SC3H5OH+HOCHO<=>C2H5CHO+HOCHO                     2.810E-002     3.286   -4509.0
 !REF:SARATHY ET AL. CNF2012
 SC3H5OH<=>C2H5CHO                                 8.590E+011     0.318   55900.0
@@ -3922,7 +3922,7 @@ C3H2(S)+M<=>C3H2+M                                1.000E+013     0.000       0.0
 H2CCC(S)+O2<=>CO2+C2H2                            1.000E+013     0.000       0.0
 C3H2(S)+H<=>H2CCC(S)+H                            1.000E+013     0.000       0.0
 C3H2C+O2<=>C2H2+CO2                               1.000E+013     0.000       0.0
-!REF: MILLER ET AL. J. PHYS. CHEM. A 2008, 112, 9429–9438
+!REF: MILLER ET AL. J. PHYS. CHEM. A 2008, 112, 9429ï¿½9438
 C3H4-A+H<=>C3H5-A                                 2.210E+061   -15.250   20076.0
 PLOG/      0.0010     2.210E+061   -15.250     20076.0/
 PLOG/      0.0390     1.240E+052   -12.020     17839.0/
@@ -4036,7 +4036,7 @@ C3H3+OH<=>C2H4+CO                                 1.000E+013     0.000       0.0
 C3H3+OH<=>C3H2(S)+H2O                             1.000E+012     0.000       0.0
 C3H3+OH<=>H2CCC(S)+H2O                            1.000E+012     0.000       0.0
 C3H3+O2<=>CH2CO+HCO                               1.700E+005     1.700    1500.0
-!REF: ANALOGY WITH C3H5-A+HO2 !KINETICS FROM FRANKLIN C GOLDSMITH !J. PHYS. CHEM. A, 2012, 116 (13), PP 3325–3346
+!REF: ANALOGY WITH C3H5-A+HO2 !KINETICS FROM FRANKLIN C GOLDSMITH !J. PHYS. CHEM. A, 2012, 116 (13), PP 3325ï¿½3346
 C3H3+HO2<=>C3H3O+OH                               1.000E+011     0.000       0.0
 PLOG/      0.0100     1.020E+013    -0.158     -1417.0/
 PLOG/      0.1000     4.980E+014    -0.642      -349.1/
@@ -4139,7 +4139,7 @@ NC3H7O2+C3H5-A<=>NC3H7O+C3H5O                     7.000E+012     0.000   -1000.0
 NC3H7O2H<=>NC3H7O+OH                              1.500E+016     0.000   42500.0
 !REF:PITZ ESTIMATE
 IC3H7O+OH<=>IC3H7O2H                              1.000E+015    -0.800       0.0
-!REF: H.J. Curran,  International Journal of Chemical Kinetics (2006) 38: 250–275. 
+!REF: H.J. Curran,  International Journal of Chemical Kinetics (2006) 38: 250ï¿½275. 
 C2H5+CH2O<=>NC3H7O                                1.000E+011     0.000    3496.0
 C2H5CHO+H<=>NC3H7O                                4.000E+012     0.000    6260.0
 CH3+CH3CHO<=>IC3H7O                               1.000E+011     0.000    9256.0
@@ -4187,7 +4187,7 @@ C4H10+CH3<=>PC4H9+CH4                             9.040E-001     3.650    7154.0
 C4H10+CH3<=>SC4H9+CH4                             3.020E+000     3.460    5481.0
 C4H10+H<=>PC4H9+H2                                3.490E+005     2.690    6450.0
 C4H10+H<=>SC4H9+H2                                2.600E+006     2.400    4471.0
-!REF: Droege, A. T. and Tully, F. P.: Hydrogen-atom abstraction from alkanes by OH. 3. Propane, J. Phys. Chem., 90, 1949–1955
+!REF: Droege, A. T. and Tully, F. P.: Hydrogen-atom abstraction from alkanes by OH. 3. Propane, J. Phys. Chem., 90, 1949ï¿½1955
 C4H10+OH<=>PC4H9+H2O                              1.054E+010     0.970    1586.0
 C4H10+OH<=>SC4H9+H2O                              9.340E+007     1.610     -35.0
 !REF:MICHAEL, KEIL AND KLEM, INT. J. CHEM. KIN. 15, 705 (1983)
@@ -4543,7 +4543,7 @@ TC4H9+HO2<=>TC4H9O+OH                             7.000E+012     0.000   -1000.0
 CH3O2+IC4H9<=>CH3O+IC4H9O                         7.000E+012     0.000   -1000.0
 CH3O2+TC4H9<=>CH3O+TC4H9O                         7.000E+012     0.000   -1000.0
 
-!REF:D.M. Matheu, W.H. Green, J.M. Grenda, Int. J. Chem. Kin. 2003 Volume 35, Issue 3, 2003, Pages: 95–119
+!REF:D.M. Matheu, W.H. Green, J.M. Grenda, Int. J. Chem. Kin. 2003 Volume 35, Issue 3, 2003, Pages: 95ï¿½119
 IC4H9<=>TC4H9                                     3.560E+010     0.880   34600.0
 
 !REF:CURRAN INT J CHEM KINET 38:250?275, 2006
@@ -6745,7 +6745,7 @@ TC3H6OCHO+OH<=>TC3H6CHO+HO2                       2.018E+017    -1.200   21010.0
 !REF:CURRAN AND GAFFURI, 1995.
 TC3H6OCHO<=>CH3COCH3+HCO                          3.980E+013     0.000    9700.0
 
-!REF:H.J. Curran,  International Journal of Chemical Kinetics (2006) 38: 250–275. 
+!REF:H.J. Curran,  International Journal of Chemical Kinetics (2006) 38: 250ï¿½275. 
 IC3H5CHO+H<=>TC3H6CHO                             1.300E+013     0.000    1200.0
 IC3H6CO+H<=>TC3H6CHO                              1.300E+013     0.000    4800.0
 
@@ -6849,7 +6849,7 @@ C-2-C4H8<=>C4H6+H2                                1.000E+13       0.0000       6
 !--------------------------------------------------------------------------------
 !\REACTIONCLASS: \RH_R_ABSTRACTION                   \A             \N        \EA  
 !--------------------------------------------------------------------------------
-!REF:Subith S. Vasu ET AL. J. Phys. Chem. A 2011, 115, 2549¨C2556
+!REF:Subith S. Vasu ET AL. J. Phys. Chem. A 2011, 115, 2549ï¿½C2556
 !C4H8-1+OH<=>C4H71-3+H2O                           2.020E+006     2.200    -437.2
 C4H8-1+OH<=>C4H71-3+H2O                           4.040E+005     2.200    -437.2      !/5
 C4H8-1+OH<=>C4H71-4+H2O                           4.300E+006     2.030    2621.5
@@ -6857,13 +6857,13 @@ C4H8-1+OH<=>C4H71-2+H2O                           3.000E+006     1.970    2845.9
 C4H8-1+OH<=>C4H71-1+H2O                           6.930E+006     1.920    4959.0
 !C4H8-2+OH<=>C4H71-3+H2O                          4.04E+06      2.200      -436.92
 
-!REF: IVAN O. ANTONOV, JUSTIN KWOK, JUDIT Z¨¢DOR, AND LEONID SHEPS J. PHYS. CHEM. A
+!REF: IVAN O. ANTONOV, JUSTIN KWOK, JUDIT Zï¿½ï¿½DOR, AND LEONID SHEPS J. PHYS. CHEM. A
 C4H8-2+OH<=>C4H71-3+H2O                              2.65E+014      0.000    6269.62
 
 !REF:IN ARAMCO (ANALOGY WITH C2H4)
 C4H8-2+OH<=>C4H72-2+H2O                              3.600E+006     1.979    2235.2    !*2
 
-!REF:Judit Zador,Stephen J. Klippenstein,and James A. Miller J. Phys. Chem. A 2011, 115, 10218¨C10225
+!REF:Judit Zador,Stephen J. Klippenstein,and James A. Miller J. Phys. Chem. A 2011, 115, 10218ï¿½C10225
 C4H8-1+HO2<=>C4H71-3+H2O2                          3.91E-01       3.97     11702
 C4H8-2+HO2<=>C4H71-3+H2O2                          3.45E-01       4.00       12103
 
@@ -7176,7 +7176,7 @@ PLOG/     10.0000     3.450E+013    -0.726      6944.3/
 PLOG/    100.0000     3.310E+014    -0.866     10965.7/
 PLOG/   1000.0000     1.650E+001     3.170      9399.8/
 
-!REF:P. ZHAO ET AL. / PROCEEDINGS OF THE COMBUSTION INSTITUTE 35 (2015) 309¨C316
+!REF:P. ZHAO ET AL. / PROCEEDINGS OF THE COMBUSTION INSTITUTE 35 (2015) 309ï¿½C316
 C4H71-4(+M)<=>C4H71-3(+M)                         5.750E+012     0.000   30400.0
 LOW/                                              1.170E+015     0.000    8170.0/
 TROE/  3.100E-002  5.000E+001  1.000E+005  5.000E+004/
@@ -7434,7 +7434,7 @@ PLOG  / 1.000E+002 2.430E+077 -20.02  51957. / !FIT FROM: 500-2000 K ERROR IN FI
 !C4H8-1+H<=>C3H6+CH3                              3.93E+013       0.000    2289.26
 !C4H8-1+H<=>C2H4+C2H5                             3.44E+013       0.000    3916.78
 
-!REF: ZADOR PHYS. CHEM. CHEM. PHYS., 2009, 11, 11040¨C11053
+!REF: ZADOR PHYS. CHEM. CHEM. PHYS., 2009, 11, 11040ï¿½C11053
 C4H8-1+OH<=>PC4H8OH-2                               5.100E+054   -20.700   32402.0
 PLOG/      0.0013     3.07E+78       -20.7    32402/
 PLOG/      0.0100     3.65E+77       -20      33874/
@@ -7536,7 +7536,7 @@ SC4H8OH-3+O2<=>C4H8OH-2O2                           2.000E+012     0.000       0
 C4H8OH-1O2=>C2H5CHO+CH2O+OH                       1.000E+016     0.000   25000.0
 C4H8OH-2O2=>OH+CH3CHO+CH3CHO                      1.000E+016     0.000   25000.0
 
-!REF: IVAN O. ANTONOV, JUSTIN KWOK, JUDIT Z¨¢DOR, AND LEONID SHEPS J. PHYS. CHEM. A
+!REF: IVAN O. ANTONOV, JUSTIN KWOK, JUDIT Zï¿½ï¿½DOR, AND LEONID SHEPS J. PHYS. CHEM. A
 SC4H8OH-3<=>C4H8-2+OH                              3.57E+012       0.000    1398.99
 PLOG/      0.1000     7.08E+27   -5.66    27148/
 PLOG/      1.0000     1.72E+32   -6.54    31378/
@@ -7565,7 +7565,7 @@ C4H8OOH2-4<=>C4H8O1-3+OH                          2.440E+009     0.780   18000.0
 C4H8OOH1-3=>OH+CH2O+C3H6                          1.230E+009     1.300   24900.0
 C4H8OOH2-4=>OH+CH3CHO+C2H4                        3.080E+008     1.500   23500.0
 
-!REF:Judit Zador,Stephen J. Klippenstein,and James A. Miller J. Phys. Chem. A 2011, 115, 10218¨C10225
+!REF:Judit Zador,Stephen J. Klippenstein,and James A. Miller J. Phys. Chem. A 2011, 115, 10218ï¿½C10225
 !C4H8-1+HO2<=>SC4H9O2                               1.46E-01      3.45       5798
 C4H8-1+HO2<=>C4H8OOH2-1                            1.46E-01      3.45       5798
 PLOG/      0.0133     9.74E+05      0.41      7570/
@@ -7602,7 +7602,7 @@ PLOG/    100.0000     1.54E+27      -4.69      17832/
 !REF:IN ARAMCO
 C4H8-1+HO2<=>C4H8OOH1-2                           1.000E+011     0.000   11000.0
 
-!REF:P. ZHAO ET AL. / PROCEEDINGS OF THE COMBUSTION INSTITUTE 35 (2015) 309¨C316
+!REF:P. ZHAO ET AL. / PROCEEDINGS OF THE COMBUSTION INSTITUTE 35 (2015) 309ï¿½C316
 C4H8-1+O<=>NC3H7+HCO                              3.300E+008     1.450    -402.0
 C4H8-1+O<=>C2H5+CH2CHO                            1.390E+007     1.950    -596.0
 C4H8-1+O<=>C3H6+CH2O                              7.230E+005     2.340   -1050.0
@@ -7786,7 +7786,7 @@ CH3O2+SC4H9<=>CH3O+SC4H9O                         7.000E+012     0.000   -1000.0
 PC4H9O2H<=>PC4H9O+OH                              1.500E+016     0.000   42500.0
 !REF:PITZ ESTIMATE
 SC4H9O+OH<=>SC4H9O2H                              1.000E+015    -0.800       0.0
-!REF:Henry J. Curran International Journal of Chemical Kinetics (2006) 38: 250–275. 
+!REF:Henry J. Curran International Journal of Chemical Kinetics (2006) 38: 250ï¿½275. 
 NC3H7+CH2O<=>PC4H9O                               5.000E+010     0.000    3457.0
 CH3+C2H5CHO<=>SC4H9O                              5.000E+010     0.000    9043.0
 C2H5+CH3CHO<=>SC4H9O                              3.330E+010     0.000    6397.0
