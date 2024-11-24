@@ -3443,14 +3443,26 @@ reactions:
     efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
     note: JOM-2015
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
-    HE: 0.7}
-  note: "LOW-PRESSURE-LIMIT\nTROE PARAMETERS\n3RD BODY COLLIDER EFFICIENCIES\n\\AUTHOR:\
-    \ !\\REF:WANG ET AL., JPC A 107:11414 (2003) !\\COMMENT: \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  - name: HE
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: C2H6 + O2 <=> C2H5 + HO2
   rate-constant: {A: 60300000000000.0, b: 0.0, Ea: 51870.0}
   note: 'LOW-PRESSURE-LIMIT
@@ -14013,22 +14025,26 @@ reactions:
 - equation: SC4H9 + O2 <=> C4H8-2 + HO2
   rate-constant: {A: 500000000000.0, b: 0.0, Ea: 3000.0}
 - equation: IC4H10 (+M) <=> CH3 + IC3H7 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
-  high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
-  Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
-  note: "PC4H9+O2<=>C4H8-1+HO2                                        +8.3700000E-001\
-    \ +3.5900000E+000 +1.1960000E+004   !\\AUTHOR: !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN\
-    \ ET AL. N,IC3H7+O2) !\\COMMENT:\nSC4H9+O2<=>C4H8-1+HO2                      \
-    \                  +5.3500000E-001 +3.7100000E+000 +9.3220000E+003   !\\AUTHOR:\
-    \ !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN ET AL. N,IC3H7+O2) !\\COMMENT:\nSC4H9+O2<=>C4H8-2+HO2\
-    \                                        +1.0700000E+000 +3.7100000E+000 +9.3220000E+003\
-    \   !\\AUTHOR: !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN ET AL. N,IC3H7+O2) !\\\
-    COMMENT:\n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\ENDSUBMECH: \\NC4H10 \n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\SUBMECH: \\IC4H10 \n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\AUTHOR: !\\REF:OEHLSCHLAEGER ET AL. J. PHYS. CHEM. A 2004, 108:4247-4253\
-    \ !\\COMMENT: \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
+    high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
+    Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: IC4H10 <=> TC4H9 + H
   rate-constant: {A: 2.51e+98, b: -23.81, Ea: 145300.0}
   note: 'LOW-PRESSURE-LIMIT
@@ -22213,60 +22229,18 @@ reactions:
     - {P: 0.1 atm, A: 4.0e+44, b: -9.85, Ea: 71353.2}
     - {P: 1.0 atm, A: 5.3e+39, b: -8.35, Ea: 69306.6}
     - {P: 10.0 atm, A: 2.5e+39, b: -8.19, Ea: 69664.2}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
   - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
+    efficiency: {A: 14.68477648, b: -0.30096166, Ea: 165.14610502}
     note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
+  - name: O2
+    efficiency: {A: 1.53607628, b: -0.03908567, Ea: 4.43752035}
     note: Jasper-2022
   - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
+    efficiency: {A: 16.41958948, b: -0.07296362, Ea: 366.09891308}
     note: Jasper-2022
   - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
+    efficiency: {A: 21.76578656, b: -0.11471476, Ea: 419.21606823}
     note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
 - equation: N2H4 + H <=> N2H3 + H2
   rate-constant: {A: 960000000.0, b: 1.5, Ea: 4838.3}
   note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion

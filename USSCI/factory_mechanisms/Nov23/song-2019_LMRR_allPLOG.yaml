@@ -3278,14 +3278,26 @@ reactions:
     efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
     note: JOM-2015
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
-    HE: 0.7}
-  note: "LOW-PRESSURE-LIMIT\nTROE PARAMETERS\n3RD BODY COLLIDER EFFICIENCIES\n\\AUTHOR:\
-    \ !\\REF:WANG ET AL., JPC A 107:11414 (2003) !\\COMMENT: \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  - name: HE
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: C2H6 + O2 <=> C2H5 + HO2
   rate-constant: {A: 60300000000000.0, b: 0.0, Ea: 51870.0}
   note: 'LOW-PRESSURE-LIMIT
@@ -14030,22 +14042,26 @@ reactions:
 - equation: SC4H9 + O2 <=> C4H8-2 + HO2
   rate-constant: {A: 500000000000.0, b: 0.0, Ea: 3000.0}
 - equation: IC4H10 (+M) <=> CH3 + IC3H7 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
-  high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
-  Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
-  note: "PC4H9+O2<=>C4H8-1+HO2                                        +8.3700000E-001\
-    \ +3.5900000E+000 +1.1960000E+004   !\\AUTHOR: !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN\
-    \ ET AL. N,IC3H7+O2) !\\COMMENT:\nSC4H9+O2<=>C4H8-1+HO2                      \
-    \                  +5.3500000E-001 +3.7100000E+000 +9.3220000E+003   !\\AUTHOR:\
-    \ !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN ET AL. N,IC3H7+O2) !\\COMMENT:\nSC4H9+O2<=>C4H8-2+HO2\
-    \                                        +1.0700000E+000 +3.7100000E+000 +9.3220000E+003\
-    \   !\\AUTHOR: !\\REF:IN ARAMCO (BASED ON KLIPPENSTEIN ET AL. N,IC3H7+O2) !\\\
-    COMMENT:\n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\ENDSUBMECH: \\NC4H10 \n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\SUBMECH: \\IC4H10 \n----------------------------------------------------------------------------------------------------------------------------------\
-    \ \n\\AUTHOR: !\\REF:OEHLSCHLAEGER ET AL. J. PHYS. CHEM. A 2004, 108:4247-4253\
-    \ !\\COMMENT: \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
+    high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
+    Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: IC4H10 <=> TC4H9 + H
   rate-constant: {A: 2.51e+98, b: -23.81, Ea: 145300.0}
   note: 'LOW-PRESSURE-LIMIT

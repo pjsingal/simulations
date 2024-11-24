@@ -2351,38 +2351,26 @@ reactions:
     \ WESTBROOK,C.K.,\n\"CHEMICAL KINETICS OF ORGANOPHOSPHORUS COMPOUNDS\", PROCEEDINGS\
     \ OF THE\n"
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
-    HE: 0.7}
-  note: "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n CFG:  NO HCOOH\n\
-    !!!!!!!!!!!!!!! HCOOH REACTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!\nFORMIC ACID REACTIONS,\
-    \ FROM LI DME\nHOCH2O = HCOOH+H                            1.000E+14  0.00  1.490E+04\n\
-    CH2O+OH = HOCH2O                            4.500E+15 -1.11  0.000E+00\nHCOOH+M\
-    \ = CO+H2O+M                          2.300E+13  0.00  5.000E+04\nHCOOH+M = CO2+H2+M\
-    \                          1.500E+16  0.00  5.700E+04\nHCOOH = HCO+OH        \
-    \                      4.593E+18 -0.46  1.083E+05\nHCOOH+OH = H2O+CO2+H      \
-    \                  2.620E+06  2.06  9.160E+02\nHCOOH+OH = H2O+CO+OH          \
-    \              1.850E+07  1.51 -9.620E+02\nHCOOH+H = H2+CO2+H                \
-    \          4.240E+06  2.10  4.868E+03\nHCOOH+H = H2+CO+OH                    \
-    \      6.030E+13 -0.35  2.988E+03\nHCOOH+CH3 = CH4+CO+OH                     \
-    \  3.900E-07  5.80  2.200E+03\nHCOOH+HO2 = H2O2+CO+OH                      1.000E+12\
-    \  0.00  1.192E+04\nHCOOH+O = CO+OH+OH                          1.770E+18 -1.90\
-    \  2.975E+03\nWKM\nREACTION AND RATE TAKEN FROM NUIG BUT NAMING SCHEME CHANGED\n\
-    HOCHO CHANGED TO HCOOH\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM TAYLOR ET\
-    \ AL. 1996.\nacetaldehyde+OH = CH3+HCOOH 3.000E+15 -1.08 0.000E+00\nHEALY ET AL\
-    \ C&F, 155: 451 461 (2008) \nCH3OCH3+formyloxy = CH3OCH2+HCOOH 1.000E+13 0.00\
-    \ 1.769E+04\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\
-    ! CFG:  NO C2H\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH 3.0\nC2H+H(+M)\
-    \ = C2H2(+M) 1.000E+17 0.00 0.000E+00\nLOW / 3.7500E+33 -4.8000E+00 1.9000E+03\
-    \ / \nTROE / 6.4600E-01 1.3200E+02 1.3150E+03 5.5660E+03 / !TROE FALL-OFF REACTION\n\
-    H2/2/ H2O/6/ AR/.7/ CO/1.5/ CO2/2/ CH4/2/ C2H6/3/ HE/.7/ \nHEALY ET AL C&F, 155:\
-    \ 451 461 (2008) \nFROM GRI MECH 3.0\nO+C2H2 = C2H+OH 4.600E+19 -1.40 2.895E+04\n\
-    HEALY ET AL C&F, 155: 451 461 (2008) \nC2H2+OH = C2H+H2O 3.370E+07 2.00 1.400E+04\n\
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nHEALY ET\
-    \ AL C&F, 155: 451 461 (2008) \nFROM GRI MECH 3.0\n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  - name: HE
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: C2H6 + H <=> C2H5 + H2
   rate-constant: {A: 115000000.0, b: 1.9, Ea: 7530.0}
   note: "TROE FALL-OFF REACTION\nHEALY ET AL C&F, 155: 451 461 (2008) \nFROM GRI MECH\

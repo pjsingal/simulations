@@ -7474,53 +7474,17 @@ reactions:
     high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
     Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
   - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
   - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: CH4
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022 (generic)
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
   - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: C2H6
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: CH3OH
-    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
-    note: Glarborg-2018
-  - name: CH3OCH3
-    efficiency: {A: 6.77080369, b: -0.03820483, Ea: 50.82952241}
-    note: Sivaramakrishnan-CNF2011 via Bugler-2016
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: CH3 + CH3 <=> H + C2H5
   type: linear-Burke
   reference-collider: AR

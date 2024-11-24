@@ -6732,21 +6732,26 @@ reactions:
     efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
     note: JOM-2015
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
-    HE: 0.7}
-  note: 'LOW-PRESSURE-LIMIT
-
-    TROE PARAMETERS
-
-    3RD BODY COLLIDER EFFICIENCIES
-
-    \AUTHOR: !\REF:WANG ET AL., JP
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  - name: HE
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: CH3 + CH3 <=> H + C2H5
   type: pressure-dependent-Arrhenius
   rate-constants:

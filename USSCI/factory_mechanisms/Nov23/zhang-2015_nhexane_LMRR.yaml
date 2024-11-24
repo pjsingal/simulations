@@ -14893,15 +14893,26 @@ reactions:
     efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
     note: JOM-2015
 - equation: C2H5 + H (+M) <=> C2H6 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
-  high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
-  Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
-  efficiencies: {H2: 2.0, H2O: 6.0, AR: 0.7, CO: 1.5, CO2: 2.0, CH4: 2.0, C2H6: 3.0,
-    HE: 0.7}
-  note: 'REF:GRI 3.0
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 1.99e+41, b: -7.08, Ea: 6685.0}
+    high-P-rate-constant: {A: 5.21e+17, b: -0.99, Ea: 1580.0}
+    Troe: {A: 0.842, T3: 125.0, T1: 2219.0, T2: 6882.0}
+  - name: HE
+    efficiency: {A: 0.73864886, b: 0.12173385, Ea: 50.02835916}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 6.60408213, b: -0.11262458, Ea: 50.83600215}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.22939218, b: 0.00900316, Ea: 50.02389029}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.72571516, b: -0.04182973, Ea: 50.01891673}
+    note: JOM-2015
 - equation: C2H6 + H <=> C2H5 + H2
   rate-constant: {A: 115000000.0, b: 1.9, Ea: 7530.0}
 - equation: C2H6 + O <=> C2H5 + OH
@@ -19763,42 +19774,74 @@ reactions:
     efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
     note: JOM-2015
 - equation: C4H10 (+M) <=> NC3H7 + CH3 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 5.34e+17, b: 0.0, Ea: 42959.0}
-  high-P-rate-constant: {A: 6.6e+52, b: -10.626, Ea: 100330.0}
-  Troe: {A: 0.09502, T3: 1.0e-20, T1: 5348.0, T2: 4326.0}
-  note: 'REF:NEW TROE FIT FROM TIBOR NAGY
-
-    REF:BASED ON OEHLSCHLAEGER ET AL. J. PHYS. CHEM. A 2004, 108:4247-4253
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 5.34e+17, b: 0.0, Ea: 42959.0}
+    high-P-rate-constant: {A: 6.6e+52, b: -10.626, Ea: 100330.0}
+    Troe: {A: 0.09502, T3: 1.0e-20, T1: 5348.0, T2: 4326.0}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: C4H10 <=> PC4H9 + H
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 4.45e+90, b: -21.91, Ea: 140564.0}
-  - {P: 0.1 atm, A: 4.63e+76, b: -17.64, Ea: 134669.0}
-  - {P: 1.0 atm, A: 4.94e+58, b: -12.32, Ea: 125435.0}
-  - {P: 10.0 atm, A: 4.8e+40, b: -7.06, Ea: 115302.0}
-  - {P: 100.0 atm, A: 1.49e+27, b: -3.15, Ea: 107323.0}
-  note: 'PC4H9+H<=>C4H10                                   3.610E+013     0.000       0.0
-
-    SC4H9+H<=>C4H10                                   3.610E+013     0.000       0.0
-
-    REF:ESTIMATE FROM RECOMBINATION (1E14 0 0)
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 4.45e+90, b: -21.91, Ea: 140564.0}
+    - {P: 0.1 atm, A: 4.63e+76, b: -17.64, Ea: 134669.0}
+    - {P: 1.0 atm, A: 4.94e+58, b: -12.32, Ea: 125435.0}
+    - {P: 10.0 atm, A: 4.8e+40, b: -7.06, Ea: 115302.0}
+    - {P: 100.0 atm, A: 1.49e+27, b: -3.15, Ea: 107323.0}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: C4H10 <=> SC4H9 + H
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 3.1e+88, b: -21.24, Ea: 136355.0}
-  - {P: 0.1 atm, A: 4.34e+73, b: -16.76, Ea: 129590.0}
-  - {P: 1.0 atm, A: 7.39e+55, b: -11.52, Ea: 120199.0}
-  - {P: 10.0 atm, A: 8.52e+38, b: -6.58, Ea: 110556.0}
-  - {P: 100.0 atm, A: 5.4e+26, b: -3.05, Ea: 103313.0}
-  note: "1.00E-02 (1.00E-02) atm,  800-2000 K,   9% err, 1.00 x !N2 \n1.00E-01 (1.00E-01)\
-    \ atm,  800-2000 K,  12% err, 1.00 x !N2 \n1.00E+00 (1.00E+00) atm,  800-2000\
-    \ K,  12% err, 1.00 x !N2 \n1.00E+01 (1.00E+01) atm,  800-2000 K,   9% err, 1.00\
-    \ x !N2 \n1.00E+02 (1.00E+02) atm,  800-2000 K,   5% err, 1.00 x !N2 \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 3.1e+88, b: -21.24, Ea: 136355.0}
+    - {P: 0.1 atm, A: 4.34e+73, b: -16.76, Ea: 129590.0}
+    - {P: 1.0 atm, A: 7.39e+55, b: -11.52, Ea: 120199.0}
+    - {P: 10.0 atm, A: 8.52e+38, b: -6.58, Ea: 110556.0}
+    - {P: 100.0 atm, A: 5.4e+26, b: -3.05, Ea: 103313.0}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: C4H10 + O2 <=> PC4H9 + HO2
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 52340.0}
   note: "  1.00E-02 (1.00E-02) atm,  800-2000 K,  10% err, 1.00 x !N2 \n  1.00E-01\
@@ -20358,15 +20401,26 @@ reactions:
 - equation: H2CC + C2H4 <=> C4H6
   rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 0.0}
 - equation: IC4H10 (+M) <=> CH3 + IC3H7 (+M)
-  type: falloff
-  low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
-  high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
-  Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
-  note: '********************iso butane*************************************************
-
-    REF:OEHLSCHLAEGER ET AL. J. PHYS. CHEM. A 2004, 108:4247-4253
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: falloff
+    low-P-rate-constant: {A: 2.41e+19, b: 0.0, Ea: 52576.0}
+    high-P-rate-constant: {A: 2.52e+31, b: -4.102, Ea: 91495.0}
+    Troe: {A: 0.3662, T3: 815.3, T1: 60.79, T2: 1.0e+20}
+  - name: HE
+    efficiency: {A: 1.85248046, b: -0.07176966, Ea: 50.63834253}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 11.35227593, b: -0.26199738, Ea: 50.60383646}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.12823953, b: 0.00866776, Ea: 50.02458819}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.79732772, b: -0.05593258, Ea: 50.63999997}
+    note: JOM-2015
 - equation: IC4H10 <=> TC4H9 + H
   rate-constant: {A: 2.51e+98, b: -23.81, Ea: 145300.0}
   note: 'REF:OEHLSCHLAEGER ET AL. J. PHYS. CHEM. A 2004, 108:4247-4253.
@@ -28846,83 +28900,155 @@ reactions:
 - equation: NEO-C5H10O <=> IC4H8 + CH2O
   rate-constant: {A: 3800000000000000.0, b: 0.0, Ea: 60700.0}
 - equation: NC6H14 <=> CH3 + C5H11-1
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 1.92e+94, b: -23.05, Ea: 124349.0}
-  - {P: 0.1 atm, A: 7.1e+83, b: -19.75, Ea: 121206.0}
-  - {P: 1.0 atm, A: 3.98e+68, b: -15.14, Ea: 114401.0}
-  - {P: 2.0 atm, A: 2.52e+63, b: -13.59, Ea: 111809.0}
-  - {P: 5.0 atm, A: 2.51e+56, b: -11.52, Ea: 108177.0}
-  - {P: 10.0 atm, A: 1.45e+51, b: -9.98, Ea: 105372.0}
-  - {P: 20.0 atm, A: 1.3e+46, b: -8.5, Ea: 102608.0}
-  - {P: 50.0 atm, A: 8.78e+39, b: -6.7, Ea: 99154.0}
-  note: "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\
-    \ !\n                 NEOC5 SUBMECHANISM END                               !\n\
-    \ !\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n !\n\
-    \                   NC6 SUBMECHANISM BEGIN                             !\n !\n\
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n===================================================================================================================================================================\n\
-    \\MODULE\n\\MODNAME: \\C6\n\\SUBMECHS: \\NC6H14\n\\ESSENTIAL_COMPONENTS: \n===================================================================================================================================================================\n\
-    -----------------------------------------------------------------------------------\n\
-    \\REACTIONCLASS: \\1. F_UNIMOLECULAR_DECOMPOSITION    \\A             \\N    \
-    \    \\EA   \n-----------------------------------------------------------------------------------\n\
-    CALCULATED BASED ON LJ PARAMETERS FROM A. W. JASPER, J. A. MILLER. COMBUST. FLAME\
-    \ (2013)\n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 1.92e+94, b: -23.05, Ea: 124349.0}
+    - {P: 0.1 atm, A: 7.1e+83, b: -19.75, Ea: 121206.0}
+    - {P: 1.0 atm, A: 3.98e+68, b: -15.14, Ea: 114401.0}
+    - {P: 2.0 atm, A: 2.52e+63, b: -13.59, Ea: 111809.0}
+    - {P: 5.0 atm, A: 2.51e+56, b: -11.52, Ea: 108177.0}
+    - {P: 10.0 atm, A: 1.45e+51, b: -9.98, Ea: 105372.0}
+    - {P: 20.0 atm, A: 1.3e+46, b: -8.5, Ea: 102608.0}
+    - {P: 50.0 atm, A: 8.78e+39, b: -6.7, Ea: 99154.0}
+  - name: HE
+    efficiency: {A: 4.6139887, b: -0.22887472, Ea: 50.0003653}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 32.51068139, b: -0.4604667, Ea: 47.94971031}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.66455915, b: -0.05165355, Ea: 50.01961095}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 2.22029143, b: -0.0931577, Ea: 50.05194323}
+    note: JOM-2015
 - equation: NC6H14 <=> C2H5 + PC4H9
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 3.84e+96, b: -23.49, Ea: 123675.0}
-  - {P: 0.1 atm, A: 3.95e+85, b: -20.04, Ea: 120116.0}
-  - {P: 1.0 atm, A: 1.16e+70, b: -15.35, Ea: 113057.0}
-  - {P: 2.0 atm, A: 6.94e+64, b: -13.8, Ea: 110428.0}
-  - {P: 5.0 atm, A: 7.03e+57, b: -11.74, Ea: 106773.0}
-  - {P: 10.0 atm, A: 4.38e+52, b: -10.21, Ea: 103971.0}
-  - {P: 20.0 atm, A: 4.45e+47, b: -8.74, Ea: 101224.0}
-  - {P: 50.0 atm, A: 3.73e+41, b: -6.97, Ea: 97811.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 3.84e+96, b: -23.49, Ea: 123675.0}
+    - {P: 0.1 atm, A: 3.95e+85, b: -20.04, Ea: 120116.0}
+    - {P: 1.0 atm, A: 1.16e+70, b: -15.35, Ea: 113057.0}
+    - {P: 2.0 atm, A: 6.94e+64, b: -13.8, Ea: 110428.0}
+    - {P: 5.0 atm, A: 7.03e+57, b: -11.74, Ea: 106773.0}
+    - {P: 10.0 atm, A: 4.38e+52, b: -10.21, Ea: 103971.0}
+    - {P: 20.0 atm, A: 4.45e+47, b: -8.74, Ea: 101224.0}
+    - {P: 50.0 atm, A: 3.73e+41, b: -6.97, Ea: 97811.0}
+  - name: HE
+    efficiency: {A: 4.6139887, b: -0.22887472, Ea: 50.0003653}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 32.51068139, b: -0.4604667, Ea: 47.94971031}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.66455915, b: -0.05165355, Ea: 50.01961095}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 2.22029143, b: -0.0931577, Ea: 50.05194323}
+    note: JOM-2015
 - equation: NC6H14 <=> NC3H7 + NC3H7
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 8.73e+97, b: -23.89, Ea: 124152.0}
-  - {P: 0.1 atm, A: 1.93e+87, b: -20.53, Ea: 120839.0}
-  - {P: 1.0 atm, A: 8.22e+71, b: -15.89, Ea: 113924.0}
-  - {P: 2.0 atm, A: 5.07e+66, b: -14.34, Ea: 111315.0}
-  - {P: 5.0 atm, A: 5.06e+59, b: -12.27, Ea: 107672.0}
-  - {P: 10.0 atm, A: 3.0e+54, b: -10.74, Ea: 104866.0}
-  - {P: 20.0 atm, A: 2.82e+49, b: -9.26, Ea: 102108.0}
-  - {P: 50.0 atm, A: 2.07e+43, b: -7.47, Ea: 98669.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 8.73e+97, b: -23.89, Ea: 124152.0}
+    - {P: 0.1 atm, A: 1.93e+87, b: -20.53, Ea: 120839.0}
+    - {P: 1.0 atm, A: 8.22e+71, b: -15.89, Ea: 113924.0}
+    - {P: 2.0 atm, A: 5.07e+66, b: -14.34, Ea: 111315.0}
+    - {P: 5.0 atm, A: 5.06e+59, b: -12.27, Ea: 107672.0}
+    - {P: 10.0 atm, A: 3.0e+54, b: -10.74, Ea: 104866.0}
+    - {P: 20.0 atm, A: 2.82e+49, b: -9.26, Ea: 102108.0}
+    - {P: 50.0 atm, A: 2.07e+43, b: -7.47, Ea: 98669.0}
+  - name: HE
+    efficiency: {A: 4.6139887, b: -0.22887472, Ea: 50.0003653}
+    note: JOM-2015
+  - name: H2
+    efficiency: {A: 32.51068139, b: -0.4604667, Ea: 47.94971031}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 1.66455915, b: -0.05165355, Ea: 50.01961095}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 2.22029143, b: -0.0931577, Ea: 50.05194323}
+    note: JOM-2015
 - equation: NC6H14 <=> C6H13-1 + H
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 1.14e+82, b: -20.07, Ea: 128443.0}
-  - {P: 0.1 atm, A: 4.84e+78, b: -18.72, Ea: 130156.0}
-  - {P: 1.0 atm, A: 1.57e+68, b: -15.39, Ea: 127126.0}
-  - {P: 2.0 atm, A: 5.74e+63, b: -14.04, Ea: 125268.0}
-  - {P: 5.0 atm, A: 1.75e+57, b: -12.08, Ea: 122267.0}
-  - {P: 10.0 atm, A: 9.88e+51, b: -10.51, Ea: 119684.0}
-  - {P: 20.0 atm, A: 4.44e+46, b: -8.93, Ea: 116936.0}
-  - {P: 50.0 atm, A: 5.14e+39, b: -6.89, Ea: 113232.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 1.14e+82, b: -20.07, Ea: 128443.0}
+    - {P: 0.1 atm, A: 4.84e+78, b: -18.72, Ea: 130156.0}
+    - {P: 1.0 atm, A: 1.57e+68, b: -15.39, Ea: 127126.0}
+    - {P: 2.0 atm, A: 5.74e+63, b: -14.04, Ea: 125268.0}
+    - {P: 5.0 atm, A: 1.75e+57, b: -12.08, Ea: 122267.0}
+    - {P: 10.0 atm, A: 9.88e+51, b: -10.51, Ea: 119684.0}
+    - {P: 20.0 atm, A: 4.44e+46, b: -8.93, Ea: 116936.0}
+    - {P: 50.0 atm, A: 5.14e+39, b: -6.89, Ea: 113232.0}
+  - &id001
+    name: HE
+    efficiency: {A: 4.6139887, b: -0.22887472, Ea: 50.0003653}
+    note: JOM-2015
+  - &id002
+    name: H2
+    efficiency: {A: 32.51068139, b: -0.4604667, Ea: 47.94971031}
+    note: JOM-2015
+  - &id003
+    name: N2
+    efficiency: {A: 1.66455915, b: -0.05165355, Ea: 50.01961095}
+    note: JOM-2015
+  - &id004
+    name: O2
+    efficiency: {A: 2.22029143, b: -0.0931577, Ea: 50.05194323}
+    note: JOM-2015
 - equation: NC6H14 <=> C6H13-2 + H
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 7.12e+85, b: -21.09, Ea: 127902.0}
-  - {P: 0.1 atm, A: 2.57e+80, b: -19.16, Ea: 128267.0}
-  - {P: 1.0 atm, A: 2.05e+68, b: -15.39, Ea: 124032.0}
-  - {P: 2.0 atm, A: 3.71e+63, b: -13.95, Ea: 121912.0}
-  - {P: 5.0 atm, A: 6.39e+56, b: -11.93, Ea: 118663.0}
-  - {P: 10.0 atm, A: 3.07e+51, b: -10.35, Ea: 115970.0}
-  - {P: 20.0 atm, A: 1.46e+46, b: -8.78, Ea: 113177.0}
-  - {P: 50.0 atm, A: 2.41e+39, b: -6.79, Ea: 109502.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 7.12e+85, b: -21.09, Ea: 127902.0}
+    - {P: 0.1 atm, A: 2.57e+80, b: -19.16, Ea: 128267.0}
+    - {P: 1.0 atm, A: 2.05e+68, b: -15.39, Ea: 124032.0}
+    - {P: 2.0 atm, A: 3.71e+63, b: -13.95, Ea: 121912.0}
+    - {P: 5.0 atm, A: 6.39e+56, b: -11.93, Ea: 118663.0}
+    - {P: 10.0 atm, A: 3.07e+51, b: -10.35, Ea: 115970.0}
+    - {P: 20.0 atm, A: 1.46e+46, b: -8.78, Ea: 113177.0}
+    - {P: 50.0 atm, A: 2.41e+39, b: -6.79, Ea: 109502.0}
+  - *id001
+  - *id002
+  - *id003
+  - *id004
 - equation: NC6H14 <=> C6H13-3 + H
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 7.12e+85, b: -21.09, Ea: 127902.0}
-  - {P: 0.1 atm, A: 2.57e+80, b: -19.16, Ea: 128267.0}
-  - {P: 1.0 atm, A: 2.05e+68, b: -15.39, Ea: 124032.0}
-  - {P: 2.0 atm, A: 3.71e+63, b: -13.95, Ea: 121912.0}
-  - {P: 5.0 atm, A: 6.39e+56, b: -11.93, Ea: 118663.0}
-  - {P: 10.0 atm, A: 3.07e+51, b: -10.35, Ea: 115970.0}
-  - {P: 20.0 atm, A: 1.46e+46, b: -8.78, Ea: 113177.0}
-  - {P: 50.0 atm, A: 2.41e+39, b: -6.79, Ea: 109502.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 7.12e+85, b: -21.09, Ea: 127902.0}
+    - {P: 0.1 atm, A: 2.57e+80, b: -19.16, Ea: 128267.0}
+    - {P: 1.0 atm, A: 2.05e+68, b: -15.39, Ea: 124032.0}
+    - {P: 2.0 atm, A: 3.71e+63, b: -13.95, Ea: 121912.0}
+    - {P: 5.0 atm, A: 6.39e+56, b: -11.93, Ea: 118663.0}
+    - {P: 10.0 atm, A: 3.07e+51, b: -10.35, Ea: 115970.0}
+    - {P: 20.0 atm, A: 1.46e+46, b: -8.78, Ea: 113177.0}
+    - {P: 50.0 atm, A: 2.41e+39, b: -6.79, Ea: 109502.0}
+  - *id001
+  - *id002
+  - *id003
+  - *id004
 - equation: NC6H14 + H <=> C6H13-1 + H2
   rate-constant: {A: 349000.0, b: 2.7, Ea: 6450.0}
   note: '-----------------------------------------------------------------------------------

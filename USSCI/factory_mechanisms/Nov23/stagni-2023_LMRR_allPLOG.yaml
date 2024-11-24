@@ -1023,36 +1023,18 @@ reactions:
     - {P: 0.1 atm, A: 4.0e+44, b: -9.85, Ea: 71353.2}
     - {P: 1.0 atm, A: 5.3e+39, b: -8.35, Ea: 69306.6}
     - {P: 10.0 atm, A: 2.5e+39, b: -8.19, Ea: 69664.2}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
   - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
+    efficiency: {A: 14.68477648, b: -0.30096166, Ea: 165.14610502}
     note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+  - name: O2
+    efficiency: {A: 1.53607628, b: -0.03908567, Ea: 4.43752035}
     note: Jasper-2022
   - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
+    efficiency: {A: 16.41958948, b: -0.07296362, Ea: 366.09891308}
     note: Jasper-2022
   - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
+    efficiency: {A: 21.76578656, b: -0.11471476, Ea: 419.21606823}
     note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
 - equation: N2H4 + H <=> N2H3 + H2
   rate-constant: {A: 960000000.0, b: 1.5, Ea: 4838.3}
   note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
