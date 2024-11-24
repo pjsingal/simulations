@@ -50,10 +50,12 @@ plt.rcParams['axes.labelsize'] = args.fszaxlab
 
 
 ########################################################################################
-X={'H2':0.04,'H2O':0.45,'AR':0.51}
-P=2.5
-T_list = np.linspace(1060,1280,gridsz)
-data=['4H2_45H2O_Ar_2pt5bar.csv']
+# X={'CH4':0.0391,'O2':0.0992,'CO2':1-0.0391-0.0992}
+# P=33
+X={'H2':0.1,'O2':0.05,'CO2':1-0.1-0.05}
+P=110
+T_list = np.linspace(1000,1538,gridsz)
+# data=['4H2_45H2O_Ar_2pt5bar.csv']
 models = {
     # 'Stagni-2023': {
     #     'submodels': {
@@ -76,13 +78,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Merchant-2015': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Merchant-2015': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Cornell-2024': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
@@ -104,13 +106,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Bugler-2016': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Bugler-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Song-2019': {  #bad
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
@@ -118,14 +120,6 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Mei-2019': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-
     # 'Aramco-3.0': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -163,7 +157,7 @@ def getTimeHistory(X,T,P):
     # # print(timeHistory('o').Y)
     # # oh, oh*, h, o, pressure
     # # max gradient of Xoh, max gradient of Yoh, max value of Xoh, max gradient of Yog
-    return ignitionDelay(timeHistory, 'oh*')
+    return ignitionDelay(timeHistory, 'oh')
 
 
 # def getIDT(gas,T_list,P):
@@ -191,11 +185,11 @@ ax.tick_params(axis='both',direction='in')
 ax.set_xlabel('Temperature [K]')
 ax.set_ylabel(r'Ignition delay [ms]')
 ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=2)  
-path=f'USSCI/figures/'+args.date+'/Beigzadeh-2023'
+path=f'USSCI/figures/'+args.date+'/Shao-2019'
 os.makedirs(path,exist_ok=True)
-plt.savefig(path+f'/4H2_45CO2_Ar_2pt5bar.png', dpi=500, bbox_inches='tight')
+plt.savefig(path+f'/Fig8.png', dpi=500, bbox_inches='tight')
 toc = time.time()
-print(f'Simulation completed in {toc-tic}s and stored at {path}/4H2_45CO2_Ar_2pt5bar.png\n')
+print(f'Simulation completed in {toc-tic}s and stored at {path}/Fig8.png\n')
 
 #     /home/pjs/simulations/USSCI/graph-reading/Stagni-2023/20bar_0,5phi.csv
 # 'USSCI/graph-reading/Stagni-2023/20bar_0.5phi.csv

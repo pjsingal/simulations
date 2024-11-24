@@ -14,7 +14,7 @@ lgdfsz=7
 
 date='Nov23'
 
-python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
+# python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
 # python USSCI/simulateFR_phi_USSCI.py \
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -40,14 +40,29 @@ python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
 
-# python USSCI/simulateJSR_Lavadera.py \
-# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
+python USSCI/simulateJSR_Lavadera.py \
+--figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
 
 # python USSCI/simulateJSR_Manna.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
+
+# python USSCI/simulateIDT_UBurke.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 10 --date $date
+
+# python USSCI/simulateIDT_Shao.py \
+# --figwidth 4 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 10 --date $date
+
+# python USSCI/simulateFR_Gutierrez.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
 
+# python USSCI/simulateFR_Cornell.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 25 --date $date
 
 
 # screen -S Alzueta -dm

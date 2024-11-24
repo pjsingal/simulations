@@ -56,6 +56,13 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
+    'Arunthanayothin-2021': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Stagni-2023': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
@@ -70,34 +77,41 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Glarborg-2018': {
+    'Glarborg-2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Merchant-2015': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Merchant-2015': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Bugler-2016': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Song-2019': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Gutierrez-2025': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Bugler-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Aramco-3.0': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -107,7 +121,13 @@ models = {
     # },
 }
 
-X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
+# X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
+# X={'IC3H7OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propanol
+# X={'CH3OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methanol
+# X={'C2H5OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #ethanol
+# X={'CH3OCH3':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #DME
+# X={'C3H6O':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #acetone
+X={'CH3NH2':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methylamine
 P=1.1
 T_list = np.linspace(725,1190,gridsz)
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
@@ -186,9 +206,9 @@ for j,model in enumerate(models):
                 label=None
             ax[z].plot(tempDependence.index,tempDependence[species]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
-        if j==len(list(models.keys()))-1:
-            dat = pd.read_csv(f'USSCI/graph-reading/Lavadera-2018/{data[z]}',header=None)
-            ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
+        # if j==len(list(models.keys()))-1:
+        #     dat = pd.read_csv(f'USSCI/graph-reading/Lavadera-2018/{data[z]}',header=None)
+        #     ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
         ax[z].set_xlim([700,1200])
         ax[z].tick_params(axis='both',direction='in')
         ax[z].set_xlabel('Temperature [K]')
@@ -196,7 +216,7 @@ plt.suptitle(r'Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1a
 ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
 path=f'USSCI/figures/'+args.date+'/Lavadera-2018'
 os.makedirs(path,exist_ok=True)
-name=f'Fig3.png'
+name=f'Fig3_methylamine.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
 toc = time.time()
 print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')

@@ -60,100 +60,129 @@ models = {
         'submodels': {
             'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Arunthanayothin-2021': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Song-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Mei-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
                     },
     },
 }
 
-P=1
-# X_NH3=923e-6
-X_NH3=1012e-6
-# X_CH3OCH3=943e-6
-X_CH3OCH3=997e-6
-# X_O2=3855e-6,
-X_O2=3729e-6
-X_Ar=1-X_NH3-X_CH3OCH3-X_O2
-X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
-# T_list = np.linspace(999,1001,gridsz)
-T_list = np.linspace(900,1300,gridsz)
+P=1.16
+fuel={'CH4':0.9,'NH3':0.1}
+oxidizer='O2'
+diluent='N2'
+phi=0.8
+fraction={'diluent':0.9}
+T_list = np.linspace(900,1180,gridsz)
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+tau=0.4
+t_max=50
+V=113e-6
+reactorTemperature = 900
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r"]*3
+colors = ["xkcd:purple","xkcd:teal","r",'orange']*3
 
-Xspecies=['NH3','CH3OCH3']
+Xspecies=['CH4','NO']
 
 ########################################################################################
 
-# length = 200e-3  # *approximate* PFR length [m]
-length = 20e-2  # *approximate* PFR length [m]
-diameter=0.0087 # PFR diameter [m]
-n_steps = 2000
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","k"]*3
-Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
+def getStirredReactor(gas):
+    h = 79.5 # heat transfer coefficient W/m2/K
+    K = 2e-5 # pressureValveCoefficient
+    reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
+    reactorSurfaceArea =4*np.pi*reactorRadius**2 # [m3]
+    fuelAirMixtureTank = ct.Reservoir(gas)
+    exhaust = ct.Reservoir(gas)
+    env = ct.Reservoir(gas)
+    reactor = ct.IdealGasReactor(gas, energy='on', volume=V)
+    ct.MassFlowController(upstream=fuelAirMixtureTank,
+                          downstream=reactor,
+                          mdot=reactor.mass/tau)
+    ct.Valve(upstream=reactor,
+             downstream=exhaust,
+             K=K)
+    ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
+    return reactor
 
-def getXvsT(T,model,m):
-    gas = ct.Solution(models[model]['submodels'][m])
-    gas.TPX = T, P*ct.one_atm, X
-    area = np.pi*(diameter/2)**2
-    u0 = Q_tn*1e-6/60/area
-    n_steps=2000
-    mass_flow_rate = u0 * gas.density * area
-    flowReactor = ct.IdealGasConstPressureReactor(gas)
-    reactorNetwork = ct.ReactorNet([flowReactor])
-    # tau=192.097*P*ct.one_atm/1e5*1000/Q_tn/T #residence time formula from Gutierrez-2025
-    tau=length/u0
-    dt = tau/n_steps
-    t1 = (np.arange(n_steps) + 1) * dt
-    states = ct.SolutionArray(flowReactor.thermo)
-    for n, t_i in enumerate(t1):
-        reactorNetwork.advance(t_i)
-    # print(f'{t1[-1]}={tau}')
-    states.append(flowReactor.thermo.state)
+def getTemperatureDependence(gas,T):
+    gas.TP = T, P*ct.one_atm
+    gas.set_equivalence_ratio(phi,fuel,oxidizer,diluent=diluent,fraction=fraction)
+    stirredReactor = getStirredReactor(gas)
+    reactorNetwork = ct.ReactorNet([stirredReactor])
+    states = ct.SolutionArray(stirredReactor.thermo)
+    t = 0
+    while t < t_max:
+        t = reactorNetwork.step()
+    states.append(stirredReactor.thermo.state)
     Xvec=[]
     for species in Xspecies:
         Xvec.append(states(species).X.flatten()[0])
-    # print(f'{Xspecies[0]}:{Xvec[0]:.8e}, {Xspecies[1]}:{Xvec[1]:.8e}')
     return Xvec
+
+def simulateModel(model):
+    print(f'\nModel: {model}')
+    X_histories=[]
+    for k,m in enumerate(models[model]['submodels']):
+        print(f'Submodel: {m}')
+        gas = ct.Solution(models[model]['submodels'][m])
+        X_history=[]
+        for i,T in enumerate(T_list):
+            X_history.append(getTemperatureDependence(gas,T))
+        X_histories.append(X_history)
+    return X_histories
+
+
+
+
+allXhistories=Parallel(n_jobs=len(models))(delayed(simulateModel)(model) for model in models)
 
 f, ax = plt.subplots(1,len(Xspecies), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 tic = time.time()
 for j,model in enumerate(models):
-    print(f'\nModel: {model}')
     for k,m in enumerate(models[model]['submodels']):
-        print(f'Submodel: {m}')
-        # gas = ct.Solution(list(models[model]['submodels'].values())[k])
-        # X_history = Parallel(n_jobs=-1)(
-        #     delayed(getXvsT)(gas,T)
-        #     for T in T_list
-        # )
-        X_history=[]
-        for T in T_list:
-            X_history.append(getXvsT(T,model,m))
         for z, species in enumerate(Xspecies):
-            Xi_history = [item[z]*1e6 for item in X_history]
+            Xi_history = [item[z] for item in allXhistories[j][k]]
             if k==0:
                 label=f'{model}'
             else:
                 label=None
             if species=='NO':
-                ax[z].plot(T_list,Xi_history, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+                ax[z].plot(T_list,np.array(Xi_history)*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
                 ax[z].set_ylabel(f'X-{species} [ppm]')
             else:
-                ax[z].plot(T_list,Xi_history, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-                ax[z].set_ylabel(f'X-{species} [ppm]')
-        # if j==len(list(models.keys()))-1:
-        #     dat = pd.read_csv(f'USSCI/graph-reading/Manna-2024/{data[z]}',header=None)
-        #     ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
-        # ax[z].set_xlim([700,1200])
-        ax[z].tick_params(axis='both',direction='in')
-        ax[z].set_xlabel('Temperature [K]')
+                ax[z].plot(T_list,np.array(Xi_history)*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+                ax[z].set_ylabel(f'X-{species} [%]')
+            ax[z].set_xlim([900,1250])
+            ax[z].tick_params(axis='both',direction='in')
+            ax[z].set_xlabel('Temperature [K]')
+dat = pd.read_csv(f'USSCI/graph-reading/Manna-2024/{data[z]}',header=None)
+ax[0].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Manna et al.')
+ax[1].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Manna et al.')
 plt.suptitle(r'Jet-stirred reactor: (90% CH4/10% NH3)/O2/N2, (1.16atm, phi=0.8)',fontsize=10)
 ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
-path=f'USSCI/figures/'+args.date+'/Gutierrez-2025'
+path=f'USSCI/figures/'+args.date+'/Manna-2024'
 os.makedirs(path,exist_ok=True)
-name=f'Fig10.png'
+name=f'Fig1.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
 toc = time.time()
 print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')

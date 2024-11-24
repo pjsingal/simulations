@@ -16,6 +16,7 @@ models = {
     # 'Song-2019': "chemical_mechanisms/Song-2019/song-2019.yaml",
     # 'Arunthanayothin-2021': "chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml",
     # 'Gutierrez-2025': "chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
+    'Cornell-2024': "chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
     # 'AramcoMech30': 'chemical_mechanisms/AramcoMech30/aramco30.yaml',
     # 'Alzueta': 'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
     # 'Mei': 'chemical_mechanisms/Mei-2019/mei-2019.yaml',

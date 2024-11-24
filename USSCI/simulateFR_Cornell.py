@@ -56,31 +56,25 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 models = {
-    'Gutierrez-2025': {
+    'Cornell-2024': {
         'submodels': {
-            'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
                     },
     },
 }
 
 P=1
-# X_NH3=923e-6
-X_NH3=1012e-6
-# X_CH3OCH3=943e-6
-X_CH3OCH3=997e-6
-# X_O2=3855e-6,
-X_O2=3729e-6
-X_Ar=1-X_NH3-X_CH3OCH3-X_O2
-X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
-# T_list = np.linspace(999,1001,gridsz)
-T_list = np.linspace(900,1300,gridsz)
+fuel={'C2H6':0.9,'CHF3':0.1}
+oxidizer={'O2':0.21,'N2':0.79}
+phi=2
+T_list = np.linspace(850,950,gridsz)
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","r"]*3
 
-Xspecies=['NH3','CH3OCH3']
+Xspecies=['CF3-CF3','CF2O']
 
 ########################################################################################
 
@@ -94,7 +88,8 @@ Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
 
 def getXvsT(T,model,m):
     gas = ct.Solution(models[model]['submodels'][m])
-    gas.TPX = T, P*ct.one_atm, X
+    gas.set_equivalence_ratio(phi, fuel, oxidizer)
+    gas.TP = T, P*ct.one_atm
     area = np.pi*(diameter/2)**2
     u0 = Q_tn*1e-6/60/area
     n_steps=2000
@@ -123,11 +118,6 @@ for j,model in enumerate(models):
     print(f'\nModel: {model}')
     for k,m in enumerate(models[model]['submodels']):
         print(f'Submodel: {m}')
-        # gas = ct.Solution(list(models[model]['submodels'].values())[k])
-        # X_history = Parallel(n_jobs=-1)(
-        #     delayed(getXvsT)(gas,T)
-        #     for T in T_list
-        # )
         X_history=[]
         for T in T_list:
             X_history.append(getXvsT(T,model,m))
@@ -137,23 +127,15 @@ for j,model in enumerate(models):
                 label=f'{model}'
             else:
                 label=None
-            if species=='NO':
-                ax[z].plot(T_list,Xi_history, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-                ax[z].set_ylabel(f'X-{species} [ppm]')
-            else:
-                ax[z].plot(T_list,Xi_history, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-                ax[z].set_ylabel(f'X-{species} [ppm]')
-        # if j==len(list(models.keys()))-1:
-        #     dat = pd.read_csv(f'USSCI/graph-reading/Manna-2024/{data[z]}',header=None)
-        #     ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label='Lavadera et al.')
-        # ax[z].set_xlim([700,1200])
-        ax[z].tick_params(axis='both',direction='in')
-        ax[z].set_xlabel('Temperature [K]')
-plt.suptitle(r'Jet-stirred reactor: (90% CH4/10% NH3)/O2/N2, (1.16atm, phi=0.8)',fontsize=10)
+            ax[z].plot(T_list,np.array(Xi_history)*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [ppm]')
+            ax[z].tick_params(axis='both',direction='in')
+            ax[z].set_xlabel('Temperature [K]')
+plt.suptitle(r'Plug-flow reactor: (90% C2H6/10% CHF3)/air, (1atm, phi=1.0)',fontsize=10)
 ax[len(Xspecies)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1)  
-path=f'USSCI/figures/'+args.date+'/Gutierrez-2025'
+path=f'USSCI/figures/'+args.date+'/Cornell-2024'
 os.makedirs(path,exist_ok=True)
-name=f'Fig10.png'
+name=f'Fig1_2.png'
 plt.savefig(f'{path}/{name}', dpi=500, bbox_inches='tight')
 toc = time.time()
 print(f'Simulation completed in {toc-tic}s and stored at {path}/{name}\n')
