@@ -58,21 +58,21 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
+title=r'JSR: 0.2% ethanol/2% O2/N2 (10atm)'
 folder='Zhang-2018'
-name='Fig8'
+name='Fig10'
 exp=False
 dataLabel='Zhang et al. (2018)'
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-observables=['CO2','CH2O','CH4']
+observables=['O2','CO','CO2','C2H4','CH4']
 
 X={'C2H5OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
 P=10
 T_list = np.linspace(825,1075,gridsz)
-Xlim=[700,1200]
+Xlim=[775,1075]
 tau=0.07
 diameter=0.04 #m
-t_max=20
+t_max=50
 
 models = {
     'Zhang-2018': {
@@ -153,11 +153,12 @@ for j,model in enumerate(models):
                     flag=True
             flag=True
         for z, species in enumerate(observables):   
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
-            if exp and j==len(list(models.keys()))-1:
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)

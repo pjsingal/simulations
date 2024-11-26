@@ -58,19 +58,20 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
+title='JSR: 0.095% n-heptane/0.005% 3-methylpentane/1.9% O2/N2 (1.06bar)'
 folder='Zhang-2015'
-name='Fig8'
+name='Fig13'
 exp=False
 dataLabel='Zhang et al. (2015)'
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-observables=['CH4','CO2','CO']
+observables=['O2','CO','CO2','C2H4','CH4','C3H6']
 
 X={'NC6H14':0.00095,'NC6H14':0.00005,'O2':0.019,'N2':0.98} #n-hexane mixed with 3-methylpentane (fio what correct name of the latter species is in mech)
 P=10
 T_list = np.linspace(500,1100,gridsz)
-Xlim=[700,1200]
-tau=0.7 # might actually be 0.07s
+Xlim=[475,1125]
+# tau=0.7 # might actually be 0.07s
+tau=0.07
 diameter=0.04 #m
 t_max=20
 
@@ -152,12 +153,13 @@ for j,model in enumerate(models):
                     sims=generateData(model,m) 
                     flag=True
             flag=True
-        for z, species in enumerate(observables):   
+        for z, species in enumerate(observables):  
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv' 
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
-            if exp and j==len(list(models.keys()))-1:
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)

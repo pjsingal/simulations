@@ -58,61 +58,123 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
+title='Jet-stirred reactor: 90% CH4/10% NH3/N2 (1.16atm, phi=0.8)'
 folder='Manna-2024'
 name='Fig1'
 exp=False
 dataLabel='Manna et al. (2024)'
 # data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
-# observables=['CH4','NO']
-observables=['NO2','NO']
+observables=['NO2','NO','H2','CH4']
 
 P=1.16
-# fuel={'CH4':0.9,'NH3':0.1}
-fuel={'H2':0.9,'NH3':0.1}
+fuel={'CH4':0.9,'NH3':0.1}
 oxidizer='O2'
 diluent='N2'
 phi=0.8
 fraction={'diluent':0.9}
 T_list = np.linspace(900,1180,gridsz)
-Xlim=[700,1200]
+Xlim=[900,1250]
+Ylim=[0,0.3]
 tau=0.4
 V=113e-6
 t_max=50
 
 models = {
-    # 'Gutierrez-2025': {
+    # 'Stagni-2023': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Alzueta-2023': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Glarborg-2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Merchant-2015': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Cornell-2024': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Arunthanayothin-2021': { #bad
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Song-2019': {  #can be used for this sim, but the results are unstable
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Gutierrez-2025': { # results are unstable, don't use it
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Arunthanayothin-2021': {
+    # 'Aramco-3.0': {
     #     'submodels': {
-    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Song-2019': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Mei-2019': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Zhang-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Zhang-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2016/zhang-2016_nheptane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Bugler-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Zhang-2015': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2015/zhang-2015_nhexane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR_allPLOG.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r"]*3
+colors = ['goldenrod',"xkcd:teal","r",'orange','xkcd:grey',"xkcd:purple"]*12
 # V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
@@ -164,7 +226,7 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
     return X_history
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
@@ -181,14 +243,16 @@ for j,model in enumerate(models):
                     flag=True
             flag=True
         for z, species in enumerate(observables):   
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
-            if exp and j==len(list(models.keys()))-1:
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
-            ax[z].set_xlim(Xlim)
+            # ax[z].set_xlim(Xlim)
+            # ax[z].set_ylim(Ylim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')

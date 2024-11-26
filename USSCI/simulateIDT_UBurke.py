@@ -60,23 +60,18 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='UBurke et al.'
+title=r'12.285% DME/18.428% O$_2$/Ar'+f'\n~8 atm'
 folder='UBurke-2015'
-name='Fig20_methylamine'
-exp=False
+name='Fig20d'
+exp=True
 dataLabel='UBurke et al. (2015)'
 data=['DME_1phi.csv']
 
-# X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
-# X={'IC3H7OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propanol
-# X={'CH3OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methanol
-# X={'C2H5OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #ethanol
-X={'CH3OCH3':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #DME
-# X={'C3H6O':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #acetone
-# X={'CH3NH2':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methylamine
-P=10
-T_list = np.linspace(630,1390,gridsz)
-Xlim=[700,1200]
+X={'CH3OCH3':0.12285,'O2':0.18428,'AR':0.69287} #DME phi=2
+P=8 #7-10 atm
+T_list = np.linspace(760,580,gridsz)
+Xlim=[1000/1650,1000/600]
+Ylim=[0.035,75]
 indicator='o' # oh, oh*, h, o, pressure
 
 models = {
@@ -94,14 +89,14 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Glarborg-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-                    },
-    },
-    # 'Merchant-2015': {
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Merchant-2015': { #can use for this sim but results are unstable
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
@@ -115,7 +110,7 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Gutierrez-2025': {
+    # 'Gutierrez-2025': { #it has DME, but the sim keeps breaking
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
@@ -129,13 +124,6 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Bugler-2016': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
-    #                 },
-    # },
     # 'Song-2019': {  #bad
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
@@ -143,18 +131,40 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Mei-2019': {
+    'Aramco-3.0': {
+        'submodels': {
+            'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Zhang-2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Bugler-2016': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/mei-2019_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Aramco-3.0': {
+    #### THE MECHS BELOW HAVE THE RIGHT SPECIES BUT THEY ALWAYS BREAK
+    # 'Zhang-2016': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/Zhang-2016/zhang-2016_nheptane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Zhang-2015': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2015/zhang-2015_nhexane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR_allPLOG.yaml",
     #                 },
     # },
 }
@@ -187,17 +197,18 @@ def generateData(model,m):
     print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    IDT_list = Parallel(n_jobs=len(T_list))(
-        delayed(getTimeHistory)(gas,T)
-        for T in T_list
-    )
+    # IDT_list = Parallel(n_jobs=len(T_list))(
+    #     delayed(getTimeHistory)(gas,T)
+    #     for T in T_list
+    # )
+    IDT_list=[getTimeHistory(gas,T) for T in T_list]
     data = zip(T_list,IDT_list)
     simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/IDT/{m}'
     os.makedirs(simOutPath,exist_ok=True)
     save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
@@ -210,17 +221,18 @@ for j,model in enumerate(models):
             sims=generateData(model,m)  
         sims=pd.read_csv(simFile)
         label = f'{model}' if k == 0 else None
-        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-        if exp and j==len(list(models.keys()))-1:
-            dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-            ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+        ax.semilogy(np.divide(1000,sims.iloc[:,0]),sims.iloc[:,1]*1e3, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+        if exp and j==len(models)-1 and k==2:
+            dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[0]}',header=None)
+            ax.semilogy(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
         ax.set_xlim(Xlim)
+        ax.set_ylim(Ylim)
         ax.tick_params(axis='both',direction='in')
         ax.set_xlabel('Temperature [K]')
         ax.set_ylabel(f'Ignition delay [ms]')
         print('  > Data added to plot')
-plt.suptitle(f'{title}',fontsize=10)
-ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+ax.annotate(f'{title}', xy=(0.97, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+1)
+ax.legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/IDT'
 os.makedirs(outPath,exist_ok=True)

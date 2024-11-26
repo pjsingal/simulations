@@ -58,24 +58,19 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='Jet-stirred reactor: 2.31% C3H8/7.69% O2/67.5% N2/22.5% H2O (1.1atm)'
+title=r'2.31% C$_3$H$_8$/7.69% O$_2$/'+f'\n'+r'49.5% N$_2$/40.5% H$_2$O'+f'\n1.1 atm'
 folder='Lavadera-2018'
 name='Fig3'
-exp=False
-dataLabel='Zhang et al. (2018)'
-data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-observables=['CH4','CO2','CO']
+exp=True
+dataLabel='Lavadera et al. (2018)'
+data=['XCH4_55N2_45H2O.csv','XC2H2_55N2_45H2O.csv','XC2H4_55N2_45H2O.csv','XC2H6_55N2_45H2O.csv']
+# observables=['O2','H2','CO','CO2','CH4','C2H4','C2H2']
+observables=['CH4','C2H2','C2H4','C2H6']
 
-# X={'C3H8':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225}
-# X={'IC3H7OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #propanol
-# X={'CH3OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methanol
-# X={'C2H5OH':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #ethanol
-# X={'CH3OCH3':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #DME
-# X={'C3H6O':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #acetone
-X={'CH3NH2':0.0231,'O2':0.0769,'N2':0.675,'H2O':0.225} #methylamine
+X={'C3H8':0.0231,'O2':0.0769,'N2':0.495,'H2O':0.405} #phi=1.5, circle symbols
 P=1.1
-T_list = np.linspace(725,1190,gridsz)
-Xlim=[700,1200]
+T_list = np.linspace(775,1100,gridsz)
+Xlim=[773,1100]
 tau=0.5
 V=113e-6
 t_max=50
@@ -102,20 +97,20 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Glarborg-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-                    },
-    },
-    # 'Merchant-2015': {
+    # 'Glarborg-2018': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
     #                 },
     # },
+    'Merchant-2015': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Gutierrez-2025': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
@@ -130,24 +125,24 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Song-2019': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Aramco-3.0': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Song-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Aramco-3.0': {
+        'submodels': {
+            'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r"]*3
+colors = ['goldenrod',"xkcd:teal","r",'orange','xkcd:grey',"xkcd:purple"]*12
 # V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
@@ -198,10 +193,10 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
     return X_history
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
-plt.subplots_adjust(wspace=0.3)
+plt.subplots_adjust(wspace=0.25)
 for j,model in enumerate(models):
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
@@ -215,19 +210,25 @@ for j,model in enumerate(models):
                     flag=True
             flag=True
         for z, species in enumerate(observables):   
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [%]')
-            if exp and j==len(list(models.keys()))-1:
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')
-plt.suptitle(f'{title}',fontsize=10)
-ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+ax[0].set_ylabel(f'Mole fraction [%]')
+ax[0].annotate(f'{title}', xy=(0.07, 0.96), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz)
+ax[0].annotate(r'CH$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[1].annotate(r'C$_2$H$_2$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[2].annotate(r'C$_2$H$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[3].annotate(r'C$_2$H$_6$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[1].legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1)
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)

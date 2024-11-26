@@ -207,7 +207,7 @@ for j,model in enumerate(models):
         sims=pd.read_csv(simFile)
         label = f'{model}' if k == 0 else None
         ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-        if exp and j==len(list(models.keys()))-1:
+        if exp and j==len(models)-1 and k==2:
             dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
             ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
         ax.set_xlim(Xlim)

@@ -64,9 +64,11 @@ title='Flow reactor'
 folder='Gutierrez-2025'
 name='Fig10'
 exp=False
+override=False
 dataLabel='Gutierrez et al. (2025)'
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
 observables=['NH3','CH3OCH3']
+
 
 # X_NH3=923e-6
 X_NH3=1012e-6
@@ -78,20 +80,14 @@ X_Ar=1-X_NH3-X_CH3OCH3-X_O2
 X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
 P=1
 T_list = np.linspace(900,1400,gridsz)
-Xlim=[900,1400]
+Xlim=[800,1500]
+Ylim=[0,1.4]
 length = 20e-2  # [m]
 diameter=0.0087 # [m]
 n_steps = 2000
 Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
 
 models = {
-    # 'Arunthanayothin-2021': {
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
-    #                 },
-    # },
     # 'Stagni-2023': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
@@ -120,13 +116,55 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Gutierrez-2025': {
+    # 'Cornell-2024': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Arunthanayothin-2021': { #bad
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {  #bad
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Gutierrez-2025': { #it has DME, but the sim keeps breaking
         'submodels': {
             'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
                     },
     },
+    # 'Aramco-3.0': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Zhang-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Zhang-2016': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2016/zhang-2016_nheptane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2016_nheptane_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Bugler-2016': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
@@ -134,18 +172,11 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Song-2019': {
+    # 'Zhang-2015': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Aramco-3.0': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/Zhang-2015/zhang-2015_nhexane.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2015_nhexane_LMRR_allPLOG.yaml",
     #                 },
     # },
 }
@@ -188,7 +219,7 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
     return X_history
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
@@ -200,19 +231,21 @@ for j,model in enumerate(models):
         while not flag:
             for z, species in enumerate(observables):
                 simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv'
-                if not os.path.exists(simFile):
+                if not os.path.exists(simFile) or override:
                     sims=generateData(model,m) 
                     flag=True
             flag=True
-        for z, species in enumerate(observables):   
+        for z, species in enumerate(observables):  
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv' 
             sims=pd.read_csv(simFile)
-            label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            label = f'{model}-{m}'
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [-]')
-            if exp and j==len(list(models.keys()))-1:
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
+            # ax[z].set_ylim(Ylim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')

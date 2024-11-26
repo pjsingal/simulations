@@ -29,6 +29,8 @@ GLARBORG, STAGNI
 
 
 
+
+
 ADDeD FOR THE SABIA JSR SIMS;
 Wang-2021
 Okafor-2019
@@ -47,3 +49,16 @@ Data sources:
 Zhang-2019 (a different person): n-heptane
 Hu: syngas in JSR under high CO2 diluent
 Fedyaeva 2018-2019: no data points, but can use her conditions
+
+
+Finally found some papers on large HC mixed with large amounts of H2:
+Liu-2019: ethane and CO2 (IDT)
+Xia-2020: propane and CO2 (IDT)
+Zhao-2021: butane and CO2 (JSR and IDT)
+Dong-2021: pentene and air (less promising) 
+
+Need to add N- and I- forms (and maybe other isomers too) to LMRRfactory as alternatives
+
+
+need to regenerate Liu because I was using 2bar instead of 2atm
+also need to resim Lavadera, and this time it's crucial

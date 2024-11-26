@@ -60,20 +60,20 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='Dai et al.'
+title='18.8% NH3/2.1% CH4/9.1% O2/70% Ar'
 folder='Dai-2020'
-name='Mixture2'
-exp=False
+name='Fig6'
+exp=True
 dataLabel='Dai et al. (2020)'
-data=['4H2_45CO2_Ar_2pt5bar.csv']
+data=['6a_2phi.csv']
 
-X={'NH3':0.04,'CH4':0.04,'O2':0.22,'N2':0.2,'AR':0.5}
+X={'NH3':0.188,'CH4':0.021,'O2':0.091,'N2':0,'AR':0.7} #mixture6
 # X={'NH3':0.118,'CH4':0,'O2':0.176,'N2':0,'AR':0.706} #m1
 # X={'NH3':0.104,'CH4':0.006,'O2':0.178,'N2':0,'AR':0.712} #m2
 # X={'NH3':0.04,'CH4':0.04,'O2':0.22,'N2':0.2,'AR':0.5} #m4
-P=60
-T_list = np.linspace(925,1025,gridsz)
-Xlim=[700,1200]
+P=59.215396 #60bar
+T_list = np.linspace(940,1060,gridsz)
+Xlim=[940,1060]
 indicator='o' # oh, oh*, h, o, pressure
 
 models = {
@@ -112,18 +112,18 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Gutierrez-2025': {
+    'Arunthanayothin-2021': { #bad
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Gutierrez-2025': { #don't use this here because sims keep breaking
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
     #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Arunthanayothin-2021': { #bad
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
     #                 },
     # },
     # 'Bugler-2016': {
@@ -133,13 +133,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Song-2019': {  #bad
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Song-2019': {  #bad
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Mei-2019': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Mei-2019/mei-2019.yaml",
@@ -184,17 +184,18 @@ def generateData(model,m):
     print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    IDT_list = Parallel(n_jobs=len(T_list))(
-        delayed(getTimeHistory)(gas,T)
-        for T in T_list
-    )
+    # IDT_list = Parallel(n_jobs=len(T_list))(
+    #     delayed(getTimeHistory)(gas,T)
+    #     for T in T_list
+    # )
+    IDT_list=[getTimeHistory(gas,T) for T in T_list]
     data = zip(T_list,IDT_list)
     simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/IDT/{m}'
     os.makedirs(simOutPath,exist_ok=True)
     save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
@@ -207,17 +208,17 @@ for j,model in enumerate(models):
             sims=generateData(model,m)  
         sims=pd.read_csv(simFile)
         label = f'{model}' if k == 0 else None
-        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-        if exp and j==len(list(models.keys()))-1:
-            dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-            ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+        ax.semilogy(sims.iloc[:,0],sims.iloc[:,1]*1e3, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+        if exp and j==len(models)-1 and k==2:
+            dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[0]}',header=None)
+            ax.semilogy(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
         ax.set_xlim(Xlim)
         ax.tick_params(axis='both',direction='in')
         ax.set_xlabel('Temperature [K]')
         ax.set_ylabel(f'Ignition delay [ms]')
         print('  > Data added to plot')
-plt.suptitle(f'{title}',fontsize=10)
-ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+ax.annotate(f'{title}\n60bar', xy=(0.97, 0.95), xycoords='axes fraction',ha='right', va='top',fontsize=lgdfsz)
+ax.legend(fontsize=lgdfsz,frameon=False,loc='lower left', handlelength=lgdw,ncol=1) 
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/IDT'
 os.makedirs(outPath,exist_ok=True)

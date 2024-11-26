@@ -16,64 +16,71 @@ date='Nov24'
 
 # python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
-# python USSCI/simulateFR_phi_USSCI.py \
+# python USSCI/simulateIDT_Beigzadeh_H2O.py \
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
 
-# python USSCI/simulateST_USSCI.py \
+# python USSCI/simulateIDT_Beigzadeh_CO2.py \
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --date $date
-
-# python USSCI/simulateIDT_USSCI.py \
-# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
-
-# python USSCI/simulateIDT_USSCI_diluent.py \
-# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
-
-# python USSCI/simulateIDT_Beigzadeh.py \
-# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
-
-# python USSCI/simulateIDT_Dai.py \
-# --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 30 --date $date
-
-# python USSCI/simulateJSR_Lavadera.py \
-# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
-
-# python USSCI/simulateJSR_Manna.py \
-# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 20 --date $date
-
-# python USSCI/simulateIDT_UBurke.py \
-# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 10 --date $date
-
-# python USSCI/simulateIDT_Shao.py \
-# --figwidth 4 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 10 --date $date
-
-python USSCI/simulateFR_Gutierrez.py \
---figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
 
 # python USSCI/simulateFR_Cornell.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 25 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 # python USSCI/simulateJSR_Zhang-2015.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
 
 # python USSCI/simulateJSR_Zhang-2016.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
 
 # python USSCI/simulateJSR_Zhang-2018.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 7 --gridsz 15 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+
+# python USSCI/simulateIDT_Shao.py \
+# --figwidth 4 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
+
+
+
+# python USSCI/simulateIDT_Dai.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
+
+# python USSCI/simulateJSR_Lavadera.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
+
+python USSCI/simulateJSR_Manna.py \
+--figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
+
+# python USSCI/simulateIDT_UBurke.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 6 --date $date
+
+# python USSCI/simulateFR_Gutierrez.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+ 
+# python USSCI/simulateIDT_Liu.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
+
+# python USSCI/simulateIDT_Xia.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
+
+# python USSCI/simulateIDT_Zhao.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 16 --date $date
+
+# python USSCI/simulateJSR_Zhao.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+
 
 # screen -S Alzueta -dm
