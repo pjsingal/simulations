@@ -67,7 +67,9 @@ exp=False
 override=False
 dataLabel='Gutierrez et al. (2025)'
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
-observables=['NH3','CH3OCH3']
+# observables=['NH3','CH3OCH3']
+# observables=['NH3','CH3OCH3']
+observables=['CH4', 'C2H2', 'C2H4', 'C2H6']
 
 
 # X_NH3=923e-6

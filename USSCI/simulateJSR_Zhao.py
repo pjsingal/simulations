@@ -181,21 +181,27 @@ def generateData(model,m):
     return X_history
 print(folder)
 tic1=time.time()
-observables_default=['C4H10','CO','CO2']
+# observables_default=['C4H10','CO','CO2']
+# observables_default=['CH4', 'C2H2','C2H4','C2H6']
+# observables_default=['C3H8']
+# observables_default=['CH4','C2H6','C3H8','C4H10']
+observables_default=['C2H6','C3H8','C4H10']
 X_default={'C4H10':0.002,'O2':0.13,'N2':0.668,'CO2':0.2} #case 3
 f, ax = plt.subplots(1,len(observables_default), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
-    if model=='Arunthanayothin-2021' or model=='Song-2019':
-        X={'NC4H10':0.002,'O2':0.13,'N2':0.668,'CO2':0.2} #case 3
-        observables=['NC4H10','CO','CO2']
-    else:
-        X=X_default
-        observables=observables_default
+    # if model=='Arunthanayothin-2021' or model=='Song-2019':
+    #     X={'NC4H10':0.002,'O2':0.13,'N2':0.668,'CO2':0.2} #case 3
+    #     # observables=['CH4','C2H6','C3H8','NC4H10']
+    #     observables=['C2H6','C3H8','NC4H10']
+    # else:
+    X=X_default
+    observables=observables_default
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
-        flag=False
+        # flag=False
+        flag=True
         while not flag:
             for z, species in enumerate(observables):
                 simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
@@ -207,8 +213,8 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [%]')
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [ppm]')
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)

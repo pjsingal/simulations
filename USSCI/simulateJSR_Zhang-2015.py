@@ -137,7 +137,7 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
     return X_history
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
@@ -153,16 +153,17 @@ for j,model in enumerate(models):
                     sims=generateData(model,m) 
                     flag=True
             flag=True
-        for z, species in enumerate(observables):  
-            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv' 
+        for z, species in enumerate(observables):   
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [%]')
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
-            ax[z].set_xlim(Xlim)
+            # ax[z].set_xlim(Xlim)
+            # ax[z].set_ylim(Ylim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')

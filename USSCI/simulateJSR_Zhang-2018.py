@@ -58,13 +58,15 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title=r'JSR: 0.2% ethanol/2% O2/N2 (10atm)'
+title=r'0.2% C$_2$H$_5$OH/2% O$_2$/N$_2$'+f'\n10 atm'
 folder='Zhang-2018'
 name='Fig10'
 exp=False
 dataLabel='Zhang et al. (2018)'
 data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-observables=['O2','CO','CO2','C2H4','CH4']
+# observables=['O2','CO','CO2','C2H4','CH4']
+# observables=['C2H5OH','CH3OH', 'C2H6','C2H2','CH3OCH3']
+observables=['CH4', 'C2H2','C2H4','C2H6']
 
 X={'C2H5OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
 P=10
@@ -82,11 +84,32 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
                     },
     },
+    'Aramco-3.0': {
+        'submodels': {
+            'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Arunthanayothin-2021': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Song-2019': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r"]*3
-V = 4/3*np.pi*(diameter/2)**2 #JSR volume
+colors = ["xkcd:purple","xkcd:teal","r",'orange','xkcd:grey','goldenrod']*12
+# V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
@@ -136,10 +159,10 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
     return X_history
-
+print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
-plt.subplots_adjust(wspace=0.3)
+plt.subplots_adjust(wspace=0.25)
 for j,model in enumerate(models):
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
@@ -156,8 +179,8 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [%]')
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
@@ -165,8 +188,13 @@ for j,model in enumerate(models):
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')
-plt.suptitle(f'{title}',fontsize=10)
-ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+ax[0].set_ylabel(f'Mole fraction [ppm]')
+ax[0].annotate(f'{title}', xy=(0.07, 0.96), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz)
+ax[0].annotate(r'CH$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[1].annotate(r'C$_2$H$_2$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[2].annotate(r'C$_2$H$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[3].annotate(r'C$_2$H$_6$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
+ax[1].legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1)
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)

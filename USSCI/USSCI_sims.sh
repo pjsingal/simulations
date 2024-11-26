@@ -12,7 +12,7 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Nov24'
+date='Nov26'
 
 # python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
@@ -54,9 +54,9 @@ date='Nov24'
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
-python USSCI/simulateJSR_Manna.py \
---figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
+# python USSCI/simulateJSR_Manna.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
 
 # python USSCI/simulateIDT_UBurke.py \
 # --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -78,9 +78,9 @@ python USSCI/simulateJSR_Manna.py \
 # --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 16 --date $date
 
-# python USSCI/simulateJSR_Zhao.py \
-# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+python USSCI/simulateJSR_Zhao.py \
+--figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 
 # screen -S Alzueta -dm
