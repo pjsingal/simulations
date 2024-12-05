@@ -26,14 +26,14 @@
 !  
 !
 !
-ELEMENTS
-O  H  C  N HE AR
-END  
+ ELEMENTS
+O  H  C  N HE AR  
+ END  
 !
-SPECIES    
-H2 O2 O3 H O OH HO2 H2O H2O2
+ SPECIES    
+H2 O2 O3 H O OH HO2 H2O H2O2 
 !
-CO CO2
+CO CO2 
 !
 CH4 CH3 CH2 CH2(S) CH C
 CH3OH CH3O CH2OH CH2O HCOH HCO CO HOCO CO2 HOCHO OCHO HOCH2O    
@@ -66,7 +66,7 @@ AR HE N2
 END
 !
 !
-REACTIONS
+ REACTIONS
 !
 ! *****************************************************************************
 !    H2/O2 subset                                                             *
@@ -268,8 +268,11 @@ CH2O(+M)=CO+H2(+M)                   3.7E13   0.000   71969 !
 ! applying prompt HCO dissociation - Labbe et al., J. Phys. Chem. Lett. 2016:
 CH2O+H=HCO+H2 	                     1.4E23  -2.355   17519 ! 1 atm
  PLOG/0.04                           7.4E23  -2.732   16379/ 
+ PLOG/0.04                           2.1E10   1.057    3720/ !
  PLOG/1	                             1.4E23  -2.355   17519/
- PLOG/10                             7.3E23  -2.665   17634/                                          !
+ PLOG/1                              1.6E15  -0.444    5682/ !
+ PLOG/10                             7.3E23  -2.665   17634/  
+ PLOG/10                             4.2E09   1.294    3591/ !    !
 CH2O+H=H+CO+H2                       5.1E07   2.182   11524	
  PLOG/0.04                           7.2E08   1.903   11733/
  PLOG/1                              5.1E07   2.182   11524/
@@ -1175,13 +1178,18 @@ C2H4+OH=CH2CHOH+H 	             3.2E05   2.19     5256 ! 1 atm
  PLOG /100.                          8.6E10   0.75    11491./
 ! Senosiain JP Klippenstein SJ Miller JA JPCA 110:6960-6970 2006
 !
-C2H4+OH=CH2CH2OH                     7.3E31  -6.91     2855 ! 1 atm
+C2H4+OH=CH2CH2OH                     6.0E37  -8.14     8043 ! 1 atm
  PLOG /0.01                          1.4E47 -11.64    11099./
+ PLOG /0.025                         6.0E37  -9.76     1995./
  PLOG /0.025                         5.0E37  -8.68     5355./
+ PLOG /0.1                           6.0E37  -9.65     2363./
  PLOG /0.1                           2.6E35  -7.79     5017./
+ PLOG /1.                            6.0E37  -8.14     8043./ ! dominating
  PLOG /1.                            7.3E31  -6.91     2855./
+ PLOG /10.                           6.0E37  -7.77    10736./
  PLOG /10.                           3.0E26  -4.87     2297./
- PLOG /100.                          2.8E19  -2.41     1011./
+ PLOG /100.                          6.0E37  -7.44    14269./
+ PLOG /100.                          2.8E19  -2.41     1011./                          !
 ! Senosiain JP Klippenstein SJ Miller JA JPCA 110:6960-6970 2006
 !
 C2H4+HO2=CH2CH2OOH                   2.7E29  -6.27    17530 ! 1 atm
@@ -1225,11 +1233,16 @@ C2H4+CH3=C2H3+CH4                    8.1E-5   4.417    8836 !
  DUPLICATE
 ! Miller and Klippenstein, J. Phys. Chem. A 2013, 117, 2718–2727
 !
-C2H4+CH2(S)=C2H3+CH3                 4.9E09    1.02     600 ! 1 atm
+C2H4+CH2(S)=C2H3+CH3                 4.2E24   -3.19    9759 ! 1 atm
+ PLOG / 0.01                         1.8E19   -1.95    6787/
  PLOG / 0.01                         4.3E12    0.19    -110/
+ PLOG / 0.1                          1.7E19   -1.80    4310/
  PLOG / 0.1                          2.3E11    0.54      48/
+ PLOG / 1                            4.2E24   -3.19    9759/
  PLOG / 1                            4.9E09    1.02     600/
+ PLOG / 10                           7.9E24   -3.08   13894/
  PLOG / 10                           1.5E08    1.33    1228/
+ PLOG / 100                          7.4E29   -4.28   23849/
  PLOG / 100                          8.1E10    0.55    5507/
 ! Ye, Georgievskii, Klippenstein, Proc. Combust. Inst. 35 (2015) 223–230
 !
@@ -1252,125 +1265,213 @@ C2H3+OH=C2H2+H2O                     2.0E13   0.000       0 !
 C2H3+HO2=CH2CHO+OH                   3.0E13   0.000       0 ! 
 ! Tsang W Hampson RF JPCRD 15:1087 1986  
 !
-C2H3+O2=CH2CHOO                      6.1E28  -5.890    3154 ! 1 atm
- PLOG/1.00E-02                       1.8E-9   4.150   -4707/                            
+C2H3+O2=CH2CHOO                      3.3E61 -15.790   20150 ! 1 atm
+ PLOG/1.00E-02                       1.6E24  -5.450    9662/
+ PLOG/1.00E-02                       1.8E-9   4.150   -4707/    
+ PLOG/1.00E-01                       3.5E56 -15.010   19160/                        
  PLOG/1.00E-01                       2.4E22  -4.520    2839/
+ PLOG/3.16E-01                       1.3E64 -16.970   21290/
  PLOG/3.16E-01                       2.0E26  -5.430    2725/
+ PLOG/1.00E00                       3.3E61 -15.790   20150/
  PLOG/1.00E00                       6.1E28  -5.890    3154/
+ PLOG/3.16E00                       7.3E53 -13.110   17300/
  PLOG/3.16E00                       2.1E29  -5.800    3520/
+ PLOG/1.00E01                       4.2E48 -11.210   16000/
  PLOG/1.00E01                       3.5E28  -5.370    3636/
+ PLOG/3.16E01                       2.3E43  -9.380   14810/
  PLOG/3.16E01                       3.3E27  -4.950    3610/
+ PLOG/1.00E02                       3.4E39  -8.040   14360/
  PLOG/1.00E02                       1.0E27  -4.720    3680/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 !
-C2H3+O2=CHCHO+OH                     5.0E11  -0.140    1995 ! 1 atm
+C2H3+O2=CHCHO+OH                     2.8E14  -1.830       5 ! 1 atm
+ PLOG/1.00E-02                       3.9E11  -0.110    2131/
  PLOG/1.00E-02                       9.9E11  -0.660      -1/
+ PLOG/1.00E-01                       1.1E09   0.550      46/
  PLOG/1.00E-01                       6.9E14  -1.160    4542/
+ PLOG/3.16E-01                       8.5E08   0.560       1/
  PLOG/3.16E-01                       2.8E13  -0.720    3479/
+ PLOG/1.00E00                       2.8E14  -1.830       5/
  PLOG/1.00E00                       5.0E11  -0.140    1995/
+ PLOG/3.16E00                       2.6E20  -2.840    7530/
  PLOG/3.16E00                       2.4E10   0.230    1573/
+ PLOG/1.00E01                       9.2E14  -2.260       0/
  PLOG/1.00E01                       1.7E14  -0.820    4450/
+ PLOG/3.16E01                       6.1E25  -4.210   13050/
  PLOG/3.16E01                       1.4E11   0.050    3774/
- PLOG/1.00E02                       3.2E11  -0.020    5338/     
+ PLOG/1.00E02                       1.7E30  -5.350   18430/
+ PLOG/1.00E02                       3.2E11  -0.020    5338/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=CH2CO+OH                     5.3E-1   3.01    1777 ! 1 atm
- PLOG/1.00E-02                       1.8E-1   3.12    1331/                            
+C2H3+O2=CH2CO+OH                     1.1E03   2.39    6180 ! 1 atm
+ PLOG/1.00E-02                       8.7E02   2.41    6061/
+ PLOG/1.00E-02                       1.8E-1   3.12    1331/
+ PLOG/1.00E-01                       8.9E02   2.41    6078/                            
  PLOG/1.00E-01                       2.1E-1   3.11    1383/
+ PLOG/3.16E-01                       9.4E02   2.40    6112/
  PLOG/3.16E-01                       2.7E-1   3.08    1496/
+ PLOG/1.00E00                       1.1E03   2.39    6180/
  PLOG/1.00E00                       5.3E-1   3.01    1777/
+ PLOG/3.16E00                       1.1E03   2.38    6179/
  PLOG/3.16E00                       1.4E00   2.90    2225/
+ PLOG/1.00E01                       1.4E03   2.36    6074/
  PLOG/1.00E01                       4.2E-1   2.93    2052/
+ PLOG/3.16E01                       2.5E06   1.42    8480/
  PLOG/3.16E01                       1.2E-4   4.21    2043/
+ PLOG/1.00E02                       1.7E10   0.36   12010/
  PLOG/1.00E02                       1.3E-3   3.97    3414/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=CH2CHO+O                     1.8E10   0.580      38 ! 1 atm
+C2H3+O2=CH2CHO+O                     6.5E20  -2.650    6489 ! 1 atm
+ PLOG/1.00E-02                       7.2E20  -2.670    6742/
  PLOG/1.00E-02                       1.2E10   0.620    -278/
+ PLOG/1.00E-01                       7.0E20  -2.670    6713/
  PLOG/1.00E-01                       1.3E10   0.620    -248/
+ PLOG/3.16E-01                       9.0E20  -2.700    6724/
  PLOG/3.16E-01                       1.5E10   0.600    -163/
+ PLOG/1.00E00                       6.5E20  -2.650    6489/
  PLOG/1.00E00                       1.8E10   0.580      38/
+ PLOG/3.16E00                       4.1E20  -2.530    6406/
  PLOG/3.16E00                       8.9E09   0.670     248/
+ PLOG/1.00E01                       1.6E23  -3.220    8697/
  PLOG/1.00E01                       6.7E09   0.720     778/
+ PLOG/3.16E01                       2.9E25  -3.770   11530/
  PLOG/3.16E01                       1.4E09   0.920    1219/
+ PLOG/1.00E02                       9.3E25  -3.800   13910/
  PLOG/1.00E02                       7.1E07   1.280    1401/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=C2H2+HO2                     4.6E01   2.76    -493 ! 1 atm
+C2H3+O2=C2H2+HO2                     2.2E07   1.19    3367 ! 1 atm
+ PLOG/1.00E-02                       1.1E07   1.28    3322/
  PLOG/1.00E-02                       4.8E01   2.75    -796/
+ PLOG/1.00E-01                       7.8E06   1.33    3216/
  PLOG/1.00E-01                       5.2E01   2.73    -768/
+ PLOG/3.16E-01                       1.2E07   1.27    3311/
  PLOG/3.16E-01                       5.6E01   2.73    -659/
+ PLOG/1.00E00                       2.2E07   1.19    3367/
  PLOG/1.00E00                       4.6E01   2.76    -493/
+ PLOG/3.16E00                       1.1E08   1.00    3695/
  PLOG/3.16E00                       3.8E00   3.07    -601/
+ PLOG/1.00E01                       1.3E11   0.12    5872/
  PLOG/1.00E01                       5.5E00   3.07      86/
+ PLOG/3.16E01                       1.2E09   0.82    5617/
  PLOG/3.16E01                       4.5E08  -0.00     955/
+ PLOG/1.00E02                       1.1E17  -1.45   12230/
  PLOG/1.00E02                       2.0E01   2.94    1847/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=OCHCHO+H                     5.0E-1   3.15   -5496 ! 1 atm
+C2H3+O2=OCHCHO+H                     3.7E15  -1.29    1441 ! 1 atm
+ PLOG/1.00E-02                       4.8E14  -1.03     912/
  PLOG/1.00E-02                       2.8E-4   4.04   -7019/
+ PLOG/1.00E-01                       5.0E14  -1.04     923/
  PLOG/1.00E-01                       3.5E-4   4.01   -6978/
+ PLOG/3.16E-01                       6.4E14  -1.07     983/
  PLOG/3.16E-01                       9.7E-4   3.89   -6768/
+ PLOG/1.00E00                       3.7E15  -1.29    1441/
  PLOG/1.00E00                       5.0E-1   3.15   -5496/
+ PLOG/3.16E00                       2.4E18  -2.13    3234/
  PLOG/3.16E00                       1.3E05   1.67   -2931/
+ PLOG/1.00E01                       1.3E15  -1.09    2393/
  PLOG/1.00E01                       4.5E15  -3.08   -4836/
+ PLOG/3.16E01                       3.6E33  -6.50   14910/
  PLOG/3.16E01                       3.8E10   0.22     941/
+ PLOG/1.00E02                       3.3E31  -5.76   16250/
  PLOG/1.00E02                       2.8E08   0.83     858/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=CH2O+HCO                     6.8E15  -1.31     646 ! 1 atm
+C2H3+O2=CH2O+HCO                     3.0E35  -7.32   11820 ! 1 atm
  PLOG/1.00E-02                       1.4E36  -7.60   12610/
+ PLOG/1.00E-02                       1.4E36  -7.60   12610/
+ PLOG/1.00E-01                       2.6E15  -1.28     513/
  PLOG/1.00E-01                       2.5E15  -1.28     513/
+ PLOG/3.16E-01                       2.2E36  -7.57   12490/
  PLOG/3.16E-01                       5.3E15  -1.29     521/
+ PLOG/1.00E00                       3.0E35  -7.32   11820/
  PLOG/1.00E00                       6.8E15  -1.31     646/
+ PLOG/3.16E00                       1.6E36  -7.47   12460/
  PLOG/3.16E00                       1.1E16  -1.36    1066/
+ PLOG/1.00E01                       5.8E35  -7.20   13430/
  PLOG/1.00E01                       2.8E15  -1.18    1429/
+ PLOG/3.16E01                       3.5E20  -2.57    5578/
  PLOG/3.16E01                       1.1E69 -19.23   14760/
+ PLOG/1.00E02                       3.0E33  -6.28   16000/
  PLOG/1.00E02                       4.7E10   0.19     831/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=CH2O+H+CO                    1.6E16  -1.31     646 ! 1 atm
+C2H3+O2=CH2O+H+CO                    7.1E35  -7.32   11820 ! 1 atm
+ PLOG/1.00E-02                       6.5E36  -7.60   12640/
  PLOG/1.00E-02                       1.2E16  -1.28     515/
+ PLOG/1.00E-01                       6.3E36  -7.60   12610/
  PLOG/1.00E-01                       1.2E16  -1.28     513/
+ PLOG/3.16E-01                       5.1E36  -7.57   12490/
  PLOG/3.16E-01                       1.3E16  -1.29     521/
+ PLOG/1.00E00                       7.1E35  -7.32   11820/
  PLOG/1.00E00                       1.6E16  -1.31     646/
+ PLOG/3.16E00                       3.7E36  -7.47   12460/
  PLOG/3.16E00                       2.4E16  -1.36    1066/
+ PLOG/1.00E01                       1.3E36  -7.20   13430/
  PLOG/1.00E01                       6.6E15  -1.18    1429/
+ PLOG/3.16E01                       8.3E20  -2.57    5578/
  PLOG/3.16E01                       2.7E69 -19.23   14760/
+ PLOG/1.00E02                       7.1E33  -6.28   16000/
  PLOG/1.00E02                       1.1E11   0.19     831/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
-!
-C2H3+O2=CO+CH3O                      5.8E21  -3.54    4772 ! 1 atm
+! 
+C2H3+O2=CO+CH3O                      1.0E11  -0.33    -748 ! 1 atm
+ PLOG/1.00E-02                       8.2E18  -2.66    3201/
  PLOG/1.00E-02                       1.3E09   0.18   -1717/
+ PLOG/1.00E-01                       4.1E14  -1.32     886/
  PLOG/1.00E-01                       6.0E11  -2.93   -9564/
+ PLOG/3.16E-01                       4.3E14  -1.33     901/
  PLOG/3.16E-01                       2.9E11  -2.93  -10120/
+ PLOG/1.00E00                       1.0E11  -0.33    -748/
  PLOG/1.00E00                       5.8E21  -3.54    4772/
+ PLOG/3.16E00                       1.9E12  -3.00   -8995/
  PLOG/3.16E00                       5.0E15  -1.62    1849/
+ PLOG/1.00E01                       1.9E24  -5.63       2/
  PLOG/1.00E01                       9.3E16  -1.96    3324/
+ PLOG/3.16E01                       1.1E18  -2.22    5178/
  PLOG/3.16E01                       1.0E72 -20.69   15860/
+ PLOG/1.00E02                       5.8E32  -6.45   16810/
  PLOG/1.00E02                       1.1E09   0.31    1024/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
 ! 
-C2H3+O2=CO2+CH3                      5.3E13  -1.14     447 ! 1 atm
+C2H3+O2=CO2+CH3                      7.3E31  -6.70   10440 ! 1 atm
+ PLOG/1.00E-02                       2.4E35  -7.76   12630/
  PLOG/1.00E-02                       6.3E13  -1.16     406/
+ PLOG/1.00E-01                       1.7E35  -7.72   12520/
  PLOG/1.00E-01                       6.2E13  -1.16     401/
+ PLOG/3.16E-01                       4.5E34  -7.55   12140/
  PLOG/3.16E-01                       6.1E13  -1.16     397/
+ PLOG/1.00E00                       7.3E31  -6.70   10440/
  PLOG/1.00E00                       5.3E13  -1.14     447/
+ PLOG/3.16E00                       3.6E35  -7.75   12830/
  PLOG/3.16E00                       1.5E14  -1.26     988/
+ PLOG/1.00E01                       2.1E35  -7.53   14050/
  PLOG/1.00E01                       5.0E13  -1.11    1409/
+ PLOG/3.16E01                       3.8E18  -2.44    5408/
  PLOG/3.16E01                       1.4E70 -20.11   15430/
+ PLOG/1.00E02                       1.2E32  -6.32   16190/
  PLOG/1.00E02                       9.2E08   0.25     855/
 ! C.F. Goldsmith, L.B. Harding, Y. Georgievskii, J.A. Miller, S.J. Klippenstein, J Phys Chem A 2015, 119, 7766-7779 (400-2200).
-!
+! 
 C2H3+CH2O=C2H4+HCO                   1.4E10   0.209    3934 ! 1 atm
  PLOG/ 0.001                         1.1E07   1.090    1807/
+ PLOG/ 1.000E-03                    -2.3E16  -1.269   20617 /
  PLOG/ 0.01                          2.5E07   0.993    1995/
+ PLOG/ 1.000E-02                    -5.2E16  -1.366   20805 /
  PLOG/ 0.1                           2.5E08   0.704    2596/
+ PLOG/ 1.000E-01                    -1.5E18  -1.769   22524 /
  PLOG/ 1                             1.4E10   0.209    3934/
+ PLOG/ 1.000E00                    -8.5E19  -2.264   23862 /
  PLOG/ 10                            3.5E13  -0.726    6944/
+ PLOG/ 1.000E01                    -4.4E23  -3.278   27795 /
  PLOG/ 100                           3.3E14  -0.866   10966/
+ PLOG/ 1.000E02                    -4.2E24  -3.418   31817 /
  PLOG/ 1000                          1.7E01   3.170    9400/
-
+ PLOG/ 1.000E03                    -2.1E11   0.618   30251 /
+! C.F. Goldsmith et al., J. Phys. Chem. A 116 (2012) 3325–3346.
+!
 C2H3+CH2O=C2H4+H+CO                  8.5E19  -2.264   23862 ! 1 atm
  PLOG/ 1.000E-03                     2.3E16  -1.269   20617 /
  PLOG/ 1.000E-02                     5.2E16  -1.366   20805 /
@@ -1440,12 +1541,18 @@ C2H2+OH=HCCOH+H                      2.4E06   2.000   12713 ! 1 atm
  PLOG  / 100.                        7.4E06   1.890   13603./ 
 ! Senosiain JP Klippenstein SJ Miller JA JPCA 109:6045-6055 2005
 !
-C2H2+OH=CHCHOH                       3.5E31  -6.200    6635  ! 1 atm 
+C2H2+OH=CHCHOH                       1.9E44 -11.380    6299  ! 1 atm 
+ PLOG   / .01                        2.9E64 -18.570   10009. / 
  PLOG   / .01                        2.6E33  -7.360    6392. /
+ PLOG   / .025                       4.7E59 -16.870    9087. /
  PLOG   / .025                       4.4E32  -7.020    5933. /
+ PLOG   / 0.1                        1.2E28  -5.560    3724. /
  PLOG   / 0.1                        6.4E42  -9.960   11737. /
+ PLOG   / 1.0                        1.9E44 -11.380    6299. /
  PLOG   / 1.0                        3.5E31  -6.200    6635. / 
+ PLOG   / 10.0                       1.5E24  -4.060    3261. /
  PLOG   / 10.0                       4.5E31  -5.920    8761. /
+ PLOG   / 100.                       6.2E20  -2.800    2831. /
  PLOG   / 100.                       1.6E29  -4.910    9734. /
 ! Senosiain JP Klippenstein SJ Miller JA JPCA 109:6045-6055 2005
 !
@@ -1461,43 +1568,83 @@ C2H2+OH=CH2CO+H                      7.5E06   1.550    2106 ! 1 atm
 C2H2+OH=C2H+H2O                      2.6E06   2.140   17060. !
 !Senosiain JP Klippenstein SJ Miller JA JPCA 109:6045-6055 2005
 !
-C2H2+HO2=CH2CHOO                     4.9E21  -4.37    12220 ! 1 atm
+C2H2+HO2=CH2CHOO                     4.1E50 -13.07    27220 ! 1 atm
+  PLOG/1.000E-02                     5.0E06  -1.020    9152/
   PLOG/1.000E-02                     1.9E26  -8.34     9249/                             ! fit btw. 400 and 1250 K with MAE of 0.2%, 0.6%
+  PLOG/1.000E-01                     6.0E17  -3.82    10790/
   PLOG/1.000E-01                    5.3E129 -41.74    35930/                           ! fit btw. 400 and 1350 K with MAE of 0.5%, 1.1%
+  PLOG/3.160E-01                     2.5E48 -12.82    25220/
   PLOG/3.160E-01                     2.0E18  -3.67    10480/                            ! fit btw. 400 and 1450 K with MAE of 0.2%, 0.6%
+  PLOG/1.000E00                     4.1E50 -13.07    27220/
   PLOG/1.000E00                     4.9E21  -4.37    12220/                            ! fit btw. 400 and 1550 K with MAE of 0.3%, 1.4%
+  PLOG/3.160E00                     9.1E46 -11.57    26880/
   PLOG/3.160E00                     1.9E22  -4.28    13080/                            ! fit btw. 400 and 1650 K with MAE of 0.5%, 2.0%
+  PLOG/1.000E01                     4.6E43 -10.24    26930/
   PLOG/1.000E01                     2.1E21  -3.78    13380/                            ! fit btw. 400 and 1750 K with MAE of 0.7%, 3.0%
+  PLOG/3.160E01                     5.6E38  -8.49    26210/
   PLOG/3.160E01                     1.4E20  -3.30    13410/                            ! fit btw. 400 and 1900 K with MAE of 1.1%, 4.1%
+  PLOG/1.000E02                     2.5E35  -7.26    26390/
   PLOG/1.000E02                     1.4E19  -2.91    13420/                            ! fit btw. 400 and 2100 K with MAE of 1.6%, 5.4%
-C2H2+HO2=CHCHO+OH                    2.5E07   1.56    14790 ! 1 atm
+C2H2+HO2=CHCHO+OH                    1.6E10   0.77    19040 ! 1 atm
+  PLOG/1.000E-02                     5.5E09   0.91    18500/
   PLOG/1.000E-02                     2.4E07   1.54    14690/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/1.000E-01                     5.9E09   0.90    18550/
   PLOG/1.000E-01                     2.5E07   1.54    14700/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/3.160E-01                     6.8E09   0.88    18640/
   PLOG/3.160E-01                     2.6E07   1.54    14730/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.3%
+  PLOG/1.000E00                     1.6E10   0.77    19040/
   PLOG/1.000E00                     2.5E07   1.56    14790/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/3.160E00                     3.5E09   0.99    18810/
   PLOG/3.160E00                     1.5E08   1.32    15090/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/1.000E01                     5.4E10   0.61    20740/
   PLOG/1.000E01                     1.6E08   1.36    15420/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/3.160E01                     3.7E08   1.23    15960/
   PLOG/3.160E01                     1.7E07   1.59    15910/                            ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.7%
+  PLOG/1.000E02                     1.5E11   0.48    17730/
   PLOG/1.000E02                     7.2E06   1.73    16020/                            ! fit btw. 400 and 2200 K with MAE of 0.4%, 1.7%
-C2H2+HO2=CH2CO+OH                   3.3E-15   6.70    10090 ! 1 atm
+C2H2+HO2=CH2CO+OH                    5.3E-7   4.78    15460 ! 1 atm
+  PLOG/1.000E-02                     6.3E-7   4.75    15530/
   PLOG/1.000E-02                    1.3E-14   6.58    10270/                            ! fit btw. 400 and 2200 K with MAE of 0.0%, 0.1%
+  PLOG/1.000E-01                     6.7E-7   4.74    15550/
   PLOG/1.000E-01                    1.3E-14   6.59    10330/                            ! fit btw. 400 and 2200 K with MAE of 0.0%, 0.1%
+  PLOG/3.160E-01                     4.2E-7   4.81    15410/
   PLOG/3.160E-01                    4.0E-14   6.36    10270/                            ! fit btw. 400 and 2200 K with MAE of 0.0%, 0.1%
+  PLOG/1.000E00                     5.3E-7   4.78    15460/
   PLOG/1.000E00                    3.3E-15   6.70    10090/                            ! fit btw. 400 and 2200 K with MAE of 0.0%, 0.1%
+  PLOG/3.160E00                     1.0E-6   4.69    15640/
   PLOG/3.160E00                    8.7E-21   8.30     8107/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/1.000E01                     4.7E-5   4.22    16780/
   PLOG/1.000E01                    8.4E-22   8.76     8804/                             ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.5%
+  PLOG/3.160E01                     9.0E-1   2.97    19730/
   PLOG/3.160E01                    6.9E-14   6.67    13130/                            ! fit btw. 400 and 2200 K with MAE of 0.3%, 0.7%
+  PLOG/1.000E02                     3.6E03   1.97    23010/
   PLOG/1.000E02                    6.6E-12   6.15    14730/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.3%
-C2H2+HO2=CH2CHO+O                    2.5E-4   4.19     8203 ! 1 atm
+C2H2+HO2=CH2CHO+O                    3.0E07   0.98    13310 ! 1 atm
+  PLOG/1.000E-02                     5.5      1.19    12880/
   PLOG/1.000E-02                     2.9E-4   4.16     7736/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.3%
+  PLOG/1.000E-01                     1.1E08   0.77    13600/
   PLOG/1.000E-01                     6.1E03   3.81     8394/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/3.160E-01                     1.2E07   1.09    13050/
   PLOG/3.160E-01                     5.4E-4   4.09     8044/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.3%
+  PLOG/1.000E00                     3.0E07   0.98    13310/
   PLOG/1.000E00                     2.5E-4   4.19     8203/                             ! fit btw. 400 and 2200 K with MAE of 0.0%, 0.2%
+  PLOG/3.160E00                     2.0E74 -16.33   109200/
   PLOG/3.160E00                     6.6E04   1.85    12360/                            ! fit btw. 400 and 2200 K with MAE of 0.5%, 3.0%
+  PLOG/1.000E01                     7.5E14  -1.17    18350/
   PLOG/1.000E01                     2.9E-1   3.38    10590/                            ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.2%
+  PLOG/3.160E01                     8.6E18  -2.27    22230/
   PLOG/3.160E01                     2.0E00   3.17    11740/                            ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.4%
+  PLOG/1.000E02                     5.8E18  -2.09    24350/
   PLOG/1.000E02                     1.1E-1   3.52    11980/                            ! fit btw. 400 and 2200 K with MAE of 0.5%, 1.3%
-C2H2+HO2=OCHCHO+H                    2.2E-5   4.17     6416 ! 1 atm
+C2H2+HO2=OCHCHO+H                    2.2E09   0.06    12470 ! 1 atm
+  PLOG/1.000E-02                     8.5E07   0.48    11720/
+  PLOG/1.000E-01                     7.4E07   0.50    11690/
+  PLOG/3.160E-01                     7.9E07   0.49    11700/
+  PLOG/1.000E00                     2.2E09   0.06    12470/
+  PLOG/3.160E00                     7.0E49 -10.18    77110/
+  PLOG/1.000E01                     4.1E16  -2.03    17630/
+  PLOG/3.160E01                     9.4E16  -2.03    19590/
+  PLOG/1.000E02                     5.9E21  -3.32    25030/
   PLOG/1.000E-02                     2.4E-6   4.43     5578/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.5%
   PLOG/1.000E-01                     2.0E-6   4.45     5564/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.6%
   PLOG/3.160E-01                     1.8E-6   4.46     5654/                             ! fit btw. 400 and 2200 K with MAE of 0.1%, 0.5%
@@ -1507,7 +1654,15 @@ C2H2+HO2=OCHCHO+H                    2.2E-5   4.17     6416 ! 1 atm
   PLOG/3.160E01                     6.1E-3   3.53     9217/                             ! fit btw. 400 and 2200 K with MAE of 0.7%, 1.4%
   PLOG/1.000E02                     6.8E-2   3.27    10760/                            ! fit btw. 400 and 2200 K with MAE of 0.8%, 2.4%
 ! Replace HCO with 70% H + CO
-C2H2+HO2=CH2O+HCO                    8.1E07   0.60    10850 ! 1 atm
+C2H2+HO2=CH2O+HCO                   3.3E102 -24.18   138600 ! 1 atm
+  PLOG/1.000E-02                     3.9E13  -1.17    13750/
+  PLOG/1.000E-01                     4.3E00   2.64     7253/
+  PLOG/3.160E-01                     2.6E-6   4.34     4525/
+  PLOG/1.000E00                    3.3E102 -24.18   138600/
+  PLOG/3.160E00                     5.2E15  -1.75    15180/
+  PLOG/1.000E01                     7.3E35  -7.77    26970/
+  PLOG/3.160E01                     1.8E28  -5.30    25130/
+  PLOG/1.000E02                     2.5E16  -1.70    20030/
   PLOG/1.000E-02                     8.4E00   2.56     7382/                             ! fit btw. 400 and 2200 K with MAE of 0.3%, 0.6%
   PLOG/1.000E-01                     1.6E13  -1.05    13520/                            ! fit btw. 400 and 2200 K with MAE of 0.3%, 0.6%
   PLOG/3.160E-01                     6.9E09  -0.00    11720/                            ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.9%
@@ -1516,7 +1671,15 @@ C2H2+HO2=CH2O+HCO                    8.1E07   0.60    10850 ! 1 atm
   PLOG/1.000E01                     9.8E06   0.91    11710/                            ! fit btw. 400 and 2200 K with MAE of 0.6%, 1.4%
   PLOG/3.160E01                     1.8E04   1.70    11250/                            ! fit btw. 400 and 2200 K with MAE of 0.8%, 2.2%
   PLOG/1.000E02                     4.3E-6   4.31     6829/                             ! fit btw. 400 and 2200 K with MAE of 2.3%, 8.9%
-C2H2+HO2=CH2O+H+CO                   1.9E08   0.60    10850 ! 1 atm
+C2H2+HO2=CH2O+H+CO                  7.8E102 -24.18   138600 ! 1 atm
+  PLOG/1.000E-02                     9.1E13  -1.17    13750/
+  PLOG/1.000E-01                     9.9E00   2.64     7253/
+  PLOG/3.160E-01                     6.1E-6   4.34     4525/
+  PLOG/1.000E00                    7.8E102 -24.18   138600/
+  PLOG/3.160E00                     1.2E16  -1.75    15180/
+  PLOG/1.000E01                     1.7E36  -7.77    26970/
+  PLOG/3.160E01                     4.1E28  -5.30    25130/
+  PLOG/1.000E02                     5.8E16  -1.70    20030/
   PLOG/1.000E-02                     2.0E01   2.56     7382/                             ! fit btw. 400 and 2200 K with MAE of 0.3%, 0.6%
   PLOG/1.000E-01                     3.6E13  -1.05    13520/                            ! fit btw. 400 and 2200 K with MAE of 0.3%, 0.6%
   PLOG/3.160E-01                     1.6E10  -0.00    11720/                            ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.9%
@@ -1525,7 +1688,15 @@ C2H2+HO2=CH2O+H+CO                   1.9E08   0.60    10850 ! 1 atm
   PLOG/1.000E01                     2.3E07   0.91    11710/                            ! fit btw. 400 and 2200 K with MAE of 0.6%, 1.4%
   PLOG/3.160E01                     4.2E04   1.70    11250/                            ! fit btw. 400 and 2200 K with MAE of 0.8%, 2.2%
   PLOG/1.000E02                     1.0E-5   4.31     6829/                             ! fit btw. 400 and 2200 K with MAE of 2.3%, 8.9%
-C2H2+HO2=CO+CH3O                     5.4E05   0.86    10700 ! 1 atm
+C2H2+HO2=CO+CH3O                     8.9E69 -15.85   102500 ! 1 atm
+  PLOG/1.000E-02                     3.5E11   0.00    49510/
+  PLOG/1.000E-01                     2.8E08   0.01    11920/
+  PLOG/3.160E-01                     8.1E07   0.18    11650/
+  PLOG/1.000E00                     8.9E69 -15.85   102500/
+  PLOG/3.160E00                     5.7E12  -1.25    14570/
+  PLOG/1.000E01                     3.3E23  -4.45    21210/
+  PLOG/3.160E01                     2.4E22  -3.96    22650/
+  PLOG/1.000E02                     1.2E18  -2.57    22360/
   PLOG/1.000E-02                     2.9E04   1.23     9903/                             ! fit btw. 400 and 2200 K with MAE of 0.8%, 3.8%
   PLOG/1.000E-01                     9.7E-7   4.15     5173/                             ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.8%
   PLOG/3.160E-01                     1.8E-8   4.62     4517/                             ! fit btw. 400 and 2200 K with MAE of 0.2%, 0.8%
@@ -1534,7 +1705,15 @@ C2H2+HO2=CO+CH3O                     5.4E05   0.86    10700 ! 1 atm
   PLOG/1.000E01                     2.9E02   1.84    10460/                            ! fit btw. 400 and 2200 K with MAE of 0.5%, 1.2%
   PLOG/3.160E01                     8.1E00   2.30    10560/                            ! fit btw. 400 and 2200 K with MAE of 0.8%, 1.8%
   PLOG/1.000E02                     6.9E-4   3.42     9329/                             ! fit btw. 400 and 2200 K with MAE of 1.6%, 5.8%
-C2H2+HO2=CO2+CH3                     1.4E06   0.68    10810 ! 1 atm
+C2H2+HO2=CO2+CH3                     4.0E84 -19.80   119800 ! 1 atm
+  PLOG/1.000E-02                     1.2E-7   4.31     4614/
+  PLOG/1.000E-01                     1.1E-7   4.32     4622/
+  PLOG/3.160E-01                    1.8E142 -35.04   188700/
+  PLOG/1.000E00                     4.0E84 -19.80   119800/
+  PLOG/3.160E00                     5.0E13  -1.60    14980/
+  PLOG/1.000E01                     8.6E28  -6.15    24030/
+  PLOG/3.160E01                     1.3E27  -5.42    25380/
+  PLOG/1.000E02                     1.7E15  -1.80    20370/
   PLOG/1.000E-02                     2.0E08   0.00    11790/                            ! fit btw. 400 and 2200 K with MAE of 0.3%, 1.0%
   PLOG/1.000E-01                     2.0E08   0.00    11780/                            ! fit btw. 400 and 2200 K with MAE of 0.3%, 1.0%
   PLOG/3.160E-01                     1.6E05   0.95    10200/                            ! fit btw. 400 and 2200 K with MAE of 0.7%, 3.5%
@@ -1831,12 +2010,17 @@ CH2CH2OH+O2=HOCH2CH2OO               6.4E38  -8.770    5859 ! 1 atm
  PLOG/  1.00E02                     4.2E26  -4.460    3940/	
 ! Zador J Fernandes RX Georgievskii Y Meloni G Taatjes CA Miller JA Proc Combust Inst 2009 32 271-277
 !
-CH2CH2OH+O2=CH2CHOH+HO2              6.0E03 -10.000     199.0 ! 1 atm
+CH2CH2OH+O2=CH2CHOH+HO2              3.6E13  -0.880    3074.0 ! 1 atm
+ PLOG/  1.30E-02                     1.3E53 -11.880   35927/	
+ PLOG/  1.00E-01                     5.0E12  -0.790     877/	
+ PLOG/  1.00E00                     3.6E13  -0.880    3074/	
+ PLOG/  1.00E01                     4.4E20  -2.850    8516/	
+ PLOG/  1.00E02                     1.9E30  -5.510   16616/
  PLOG/  1.30E-02                     2.3E10  -0.150    -791/	
  PLOG/  1.00E-01                     2.8E61 -14.170   43492/	
  PLOG/  1.00E00                     6.0E03 -10.000     199/	
  PLOG/  1.00E01                     6.0E03 -10.000     199/	
- PLOG/  1.00E02                     6.0E03 -10.000     199/	
+ PLOG/  1.00E02                     6.0E03 -10.000     199/
 ! Zador J Fernandes RX Georgievskii Y Meloni G Taatjes CA Miller JA Proc Combust Inst 2009 32 271-277
 !
 CH2CH2OH+O2=CH2O+CH2O+OH             4.4E24  -4.360    4396 ! 1 atm
@@ -2181,23 +2365,12 @@ CH2CHO=CH3+CO                        6.5E34  -6.870   47191 ! 1 atm
  PLOG /100.                          2.2E33  -5.970   50448./
 ! Senosiain JP Klippenstein SJ Miller JA JPCA 110:5772-5781 2006
 !
-!CH2CHO+H=CH3+HCO                     1.9E22  -2.300    7693 ! 1 atm
-! PLOG/   0.001                       1.0E17  -0.903    3024 /
-! PLOG/   0.010                       1.9E17  -0.935    3120 /
-! PLOG/   0.100                       2.5E18  -1.243    4062 /
-! PLOG/   1.000                       1.9E22  -2.300    7693 /
-! PLOG/   10.00                       2.8E25  -3.100   12454 /
-! PLOG/   100.0                       7.5E20  -1.693   13429 /
-! DUPLICATE
-!CH2CHO+H=CH3+HCO                    -1.1E32  -4.773   27620 ! 1 atm
-! PLOG/   0.001                       0.5E17  -0.903    3024 /
-! PLOG/   1.000E-02                  -1.1E27  -3.408   23047 /
-! PLOG/   1.000E-01                  -1.5E28  -3.716   23989 /
-! PLOG/   1.000E00                   -1.1E32  -4.773   27620 /
-! PLOG/   1.000E01                   -1.7E35  -5.573   32381 /
-! PLOG/   1.000E02                   -4.5E30  -4.166   33356 /
-! DUPLICATE
-CH2CHO+H=CH3+HCO                      1.2E27 -3.851   9085 ! 1 atm (refit)
+CH2CHO+H=CH3+HCO                      1.0E33 -5.363  17064 ! 1 atm (refit)
+PLOG/  0.01                           5.0E20 -2.063   3994 /
+PLOG/  0.10                           6.5E21 -2.371   4936 /
+PLOG/  1.00                           1.0E33 -5.363  17064 /
+PLOG/  10.00                          1.8E40 -7.368  24518 /
+PLOG/  100.00                         1.2E32 -4.930  22682 /
 PLOG/  0.01                           3.0E28 -4.169  12362 /
 PLOG/  0.10                           4.0E29 -4.477  13304 /
 PLOG/  1.00                           1.2E27 -3.851   9085 /
@@ -2325,7 +2498,13 @@ HCCO+OH=C2O+H2O	                     1.4E04   2.650    1472 !
 HCCO+OH=CH2CO+O	                     1.3E06   1.990   11280 !	
 ! Xiong et al., Combust. Flame 161 (2014) 885–897
 !
-HCCO+OH=HCOH+CO		             8.7E19  -1.792    5994 ! 1 atm 
+HCCO+OH=HCOH+CO	                     3.0E16  -0.935     659 ! 1 atm
+PLOG / 1                             3.0E16  -0.935     659/ !refit to avoid convergence problems
+!PLOG / 1                             2.8E13   0.090     -20/
+PLOG / 10                            1.1E18  -1.392    1395/
+!PLOG / 10                            5.7E12   0.310    -232/
+PLOG / 100                           3.2E18   -1.523   1627/
+!PLOG / 100                           3.8E13   0.050      70/
 PLOG / 1                             8.7E19  -1.792    5994/ !Average (max) fitting error: 0.7% (3.8%) over T of 250--3000 [K] 
 !PLOG / 1                            -1.4E15  -0.280   10792/
 PLOG / 10                            3.5E22  -2.475    9163/ !Average (max) fitting error: 0.8% (3.2%) over T of 400--3000 [K] 
@@ -2334,7 +2513,6 @@ PLOG / 100                           1.3E24   -2.902  10522/     !Average (max) 
 !PLOG / 100                          -6.8E13   0.100   10302/
 ! Xiong et al., Combust. Flame 161 (2014) 885–897
 ! assuming 3-HCOH=1-HCOH=HCOH
-!
 !
 HCCO+OH=CH2O+CO		             1.2E21   -2.459   2528 ! 1 atm
 !PLOG / 1                             3.8E13  -0.060     156/
@@ -2355,13 +2533,22 @@ PLOG / 10                            3.0E08   1.400	917/
 PLOG / 100                           8.2E08   1.280    1531/
 ! Xiong et al., Combust. Flame 161 (2014) 885–897
 !
-
-HCCO+OH=CO2+CH2		             7.1E19  -2.300     824 ! 1 atm
+HCCO+OH=CO2+CH2		             7.2E27   -5.023   2468 ! 1 atm
+PLOG / 0.1                           1.7E15  -1.190    -521 / 
+PLOG/  1.00                          7.2E27   -5.023   2468 / !refit 
+PLOG/  10.00                         1.0E91  -20.137 114841 / !refit 
+PLOG / 0.1                          -7.4E17  -1.920    1686 /
+PLOG/  1.00                          1.1E21   -2.280  16960 / !Average (max) fitting error: 0.6% (3.2%) over T of 400--3000 [K] 
+PLOG/  10.00                         2.3E65  -16.078  19592 / 
 PLOG / 0.01                          1.0E19  -2.080      44  /
 PLOG / 0.1                           1.4E19  -2.120      88  /
 PLOG / 1                             7.1E19  -2.300     824  /
 PLOG / 10                            1.8E20  -2.340    2421  /
-
+!PLOG / 100                           8.2E02   2.870      -3  / !results in negative rate constant
+!PLOG / 100                          -2.3E24  -2.700   20416 /
+! Xiong et al., Combust. Flame 161 (2014) 885–897
+! ASSUMING 3-CHCOOH = 1-CHCOOH ==fast==> CO2+CH2
+!
 HCCO+O2=CO2+CO+H                     4.9E12  -0.142    1150 ! 
 ! Klippenstein SJ Miller JA Harding LB PCI 29:1209-1217 2002
 !
@@ -2578,7 +2765,15 @@ CH2CHOOH+OH=CH2CHOO+H2O              1.1E12   0.000    -437
 CH2CHOOH+HO2=CH2CHOO+H2O2            4.1E04   2.500   10206
 ! est CH2O+HO2
 
-CH2CHOO=CHCHO+OH                    2.3E124 -36.77    70100.0 ! 1 atm
+CH2CHOO=CHCHO+OH                     3.8E46 -10.72    51900.0 ! 1 atm
+ PLOG/1.000E-02                      3.6E49 -12.13    67420/
+ PLOG/1.000E-01                      1.4E36  -9.92    41220/
+ PLOG/3.160E-01                      4.2E40 -10.53    43670/
+ PLOG/1.000E00                      3.8E46 -10.72    51900/
+ PLOG/3.160E00                      1.6E49 -11.24    54150/
+ PLOG/1.000E01                      2.4E51 -11.64    56980/
+ PLOG/3.160E01                      2.0E54 -12.22    61840/
+ PLOG/1.000E02                     9.5E195 -52.27    163500/
  PLOG/1.000E-02                      1.2E56 -14.81    60700/
  PLOG/1.000E-01                      2.3E40  -9.39    50420/
  PLOG/3.160E-01                      1.6E43  -9.99    50290/
@@ -2589,7 +2784,15 @@ CH2CHOO=CHCHO+OH                    2.3E124 -36.77    70100.0 ! 1 atm
  PLOG/1.000E02                      1.8E34  -6.40    50000/
   ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 !
-CH2CHOO=CH2CHO+O                     2.4E33  -6.62    41280.0 ! 1 atm
+CH2CHOO=CH2CHO+O                     7.6E81 -21.28    65080.0 ! 1 atm
+  PLOG/1.000E-02                    2.7E180 -48.19    169300/
+  PLOG/1.000E-01                     3.9E38  -8.69    42770/
+  PLOG/3.160E-01                     4.6E47 -11.21    47050/
+  PLOG/1.000E00                     7.6E81 -21.28    65080/
+  PLOG/3.160E00                     1.9E68 -16.83    60680/
+  PLOG/1.000E01                     2.0E55 -12.69    55840/
+  PLOG/3.160E01                     1.1E53 -11.79    56690/
+  PLOG/1.000E02                     4.3E48 -10.31    56090/
   PLOG/1.000E-02                     1.5E30  -6.64    41110/
   PLOG/1.000E-01                    9.7E-12   5.96    22890/
   PLOG/3.160E-01                     4.0E22  -3.71    36270/
@@ -2600,7 +2803,15 @@ CH2CHOO=CH2CHO+O                     2.4E33  -6.62    41280.0 ! 1 atm
   PLOG/1.000E02                     6.0E25  -3.85    40120/
 ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 !
-CH2CHOO=OCHCHO+H                     1.6E19  -2.82    27620.0 ! 1 atm
+CH2CHOO=OCHCHO+H                     1.5E44 -10.12    40790.0 ! 1 atm
+  PLOG/1.000E-02                     6.4E80 -22.20    51750/
+  PLOG/1.000E-01                     3.3E65 -17.01    48090/
+  PLOG/3.160E-01                     6.0E51 -12.62    43000/
+  PLOG/1.000E00                     1.5E44 -10.12    40790/
+  PLOG/3.160E00                     1.3E59 -14.33    51390/
+  PLOG/1.000E01                     4.9E26  -4.67    34320/
+  PLOG/3.160E01                     2.1E33  -6.38    39520/
+  PLOG/1.000E02                     1.3E32  -5.92    40660/
   PLOG/1.000E-02                     1.2E28  -6.01    28740/
   PLOG/1.000E-01                     1.4E25  -4.80    28940/
   PLOG/3.160E-01                     2.9E20  -3.29    27550/
@@ -2611,7 +2822,15 @@ CH2CHOO=OCHCHO+H                     1.6E19  -2.82    27620.0 ! 1 atm
   PLOG/1.000E02                     1.1E19  -2.56    29670/
   ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 !
-CH2CHOO=CH2CO+OH                     3.2E27  -7.76    37230.0 ! 1 atm
+CH2CHOO=CH2CO+OH                     1.5E19  -3.61    43060.0 ! 1 atm
+  PLOG/1.000E-02                     1.2E47 -12.28    75330/ !#correct typo#
+  PLOG/1.000E-01                     8.4E09  -2.06    33720/
+  PLOG/3.160E-01                     6.1E04   0.17    34220/
+  PLOG/1.000E00                     1.5E19  -3.61    43060/
+  PLOG/3.160E00                     2.1E33  -7.39    51610/
+  PLOG/1.000E01                     4.4E36  -7.99    54680/
+  PLOG/3.160E01                     1.2E37  -7.80    56460/
+  PLOG/1.000E02                     9.1E35  -7.21    57550/
   PLOG/1.000E-02                     2.3E02  -0.73    25710/
   PLOG/1.000E-01                    1.8E-23   7.84    20190/
   PLOG/3.160E-01                     3.8E63 -20.44    43420/
@@ -2622,7 +2841,15 @@ CH2CHOO=CH2CO+OH                     3.2E27  -7.76    37230.0 ! 1 atm
   PLOG/1.000E02                     1.1E07   0.52    38670/
 ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 !
-CH2CHOO=CH2O+HCO                    1.1E130 -39.38    54700.0 ! 1 atm
+CH2CHOO=CH2O+HCO                     8.6E33  -6.88    34370.0 ! 1 atm
+  PLOG/1.000E-02                    1.7E174 -55.52    60320/
+  PLOG/1.000E-01                     9.0E66 -17.25    48120/
+  PLOG/3.160E-01                     1.8E43  -9.87    37960/
+  PLOG/1.000E00                     8.6E33  -6.88    34370/
+  PLOG/3.160E00                    7.3E171 -43.53    191900/
+  PLOG/1.000E01                     1.0E32  -6.06    35500/
+  PLOG/3.160E01                     1.9E34  -6.57    38510/
+  PLOG/1.000E02                     5.7E29  -5.19    36800/
   PLOG/1.000E-02                     2.3E35  -7.97    31280/
   PLOG/1.000E-01                     2.1E26  -4.96    28780/
   PLOG/3.160E-01                     1.5E20  -3.08    26630/
@@ -2634,7 +2861,15 @@ CH2CHOO=CH2O+HCO                    1.1E130 -39.38    54700.0 ! 1 atm
 ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 ! assume 70% HCO
 !
-CH2CHOO=CH2O+H+CO                   2.5E130 -39.38    54700.0 ! 1 atm
+CH2CHOO=CH2O+H+CO                    2.0E34  -6.88    34370.0 ! 1 atm
+  PLOG/1.000E-02                    3.9E174 -55.52    60320/
+  PLOG/1.000E-01                     2.1E67 -17.25    48120/
+  PLOG/3.160E-01                     4.3E43  -9.87    37960/
+  PLOG/1.000E00                     2.0E34  -6.88    34370/
+  PLOG/3.160E00                    1.7E172 -43.53    191900/
+  PLOG/1.000E01                     2.4E32  -6.06    35500/
+  PLOG/3.160E01                     4.3E34  -6.57    38510/
+  PLOG/1.000E02                     1.3E30  -5.19    36800/
   PLOG/1.000E-02                     5.3E35  -7.97    31280/
   PLOG/1.000E-01                     4.9E26  -4.96    28780/
   PLOG/3.160E-01                     3.4E20  -3.08    26630/
@@ -2646,7 +2881,16 @@ CH2CHOO=CH2O+H+CO                   2.5E130 -39.38    54700.0 ! 1 atm
 ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 ! assume 30% H+CO
 !
- CH2CHOO=CO+CH3O                    1.2E-39  13.61    -1317.0 ! 1 atm
+ CH2CHOO=CO+CH3O                     3.8E33  -7.20    35100.0 ! 1 atm
+  PLOG/1.000E-02                     5.2E33  -7.92    31320/
+  PLOG/1.000E-01                     1.3E98 -27.09    64060/
+  PLOG/3.160E-01                     1.8E33  -7.27    33760/
+  PLOG/1.000E00                     3.8E33  -7.20    35100/
+  PLOG/3.160E00                     1.3E79 -19.61    74870/
+  PLOG/1.000E01                     4.1E32  -6.62    37210/
+  PLOG/3.160E01                     6.9E44 -10.04    47030/
+!  PLOG/1.000E02                    -1.1E04   1.33    15620/ # convergence trouble
+  PLOG/  100.00                      2.9E01   2.492   21710/ !Average (max) fitting error: 10.4% (37.5%) over T of 500--3000 [K] 
   PLOG/1.000E-02                    2.3E129 -41.86    45850/
   PLOG/1.000E-01                     2.4E28  -5.99    30540/
   PLOG/3.160E-01                    8.7E-50  16.63    -3900/
@@ -2656,10 +2900,19 @@ CH2CHOO=CH2O+H+CO                   2.5E130 -39.38    54700.0 ! 1 atm
   PLOG/3.160E01                     2.0E17  -2.23    28590/
 !  PLOG/1.000E02                    -1.1E04   1.33    15620/ #trouble
 !  PLOG/1.000E02                     1.2E-7   4.81    12010/
-  PLOG/  100.00                      2.9E01   2.492   21710/ !Average (max) fitting error: 10.4% (37.5%) over T of 500--3000 [K] 
+  PLOG/  100.00                      2.9E01   2.492   21710/ !Average (max) fitting error: 10.4% (37.5%) over T of 500--3000 [K]
 ! Goldsmith et al., 2015, J. Phys. Chem. A 2015, 119, 7766-7779 (DOI: 10.1021/acs.jpca.5b01088)
 !
-CH2CHOO=CO2+CH3                      1.8E-47  15.85    -5283.0 ! 1 atm
+CH2CHOO=CO2+CH3                      3.3E33  -7.22    34990.0 ! 1 atm
+  PLOG/1.000E-02                     5.1E33  -7.95    31290/
+  PLOG/1.000E-01                    1.2E118 -33.13    73790/
+  PLOG/3.160E-01                     8.6E32  -7.21    33550/
+  PLOG/1.000E00                     3.3E33  -7.22    34990/
+  PLOG/3.160E00                    3.5E-79  25.01    -21020/
+  PLOG/1.000E01                     8.2E32  -6.76    37270/
+  PLOG/3.160E01                     7.0E37  -8.06    42200/
+!  PLOG/1.000E02                    -2.5E03   1.41    14420/
+ PLOG/  100.00                       6.7E48 -11.657   44080 /
   PLOG/1.000E-02                    4.2E122 -39.75    43640/
   PLOG/1.000E-01                     2.0E29  -6.29    30920/
   PLOG/3.160E-01                    5.1E-66  21.37    -11110/
@@ -4914,7 +5167,10 @@ H2CN+H=HCN+H2                         2.4E08   1.500    -894 !
 H2CN+O=HCN+OH                         1.7E08   1.500    -894 !  
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
-H2CN+OH=HCN+H2O                       1.2E06   2.000   -1192 ! 1 atm 
+H2CN+OH=HCN+H2O                       1.5E19  -2.180    2166 ! 1 atm 
+ PLOG /0.1                            2.1E17  -1.680     318./
+ PLOG /1.0                            1.5E19  -2.180    2166./
+ PLOG /10.                            9.5E21  -2.910    5633./
  PLOG /0.1                            1.2E06   2.000   -1192./
  PLOG /1.0                            1.2E06   2.000   -1192./
  PLOG /10.                            1.2E06   2.000   -1192./
