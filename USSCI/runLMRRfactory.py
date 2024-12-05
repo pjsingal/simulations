@@ -26,7 +26,8 @@ models = {
     # 'Zhang-2018': "chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
     # 'Otomo': "chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
     # 'Stagni': "chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-    'Klippenstein-CNF2018': "chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml"
+    # 'Klippenstein-CNF2018': "chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+    'Glarborg-2025-HNNO': "chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
     ## 'Shrestha': "chemical_mechanisms/Shrestha-2021/shrestha-2021.yaml",
     ## 'Han': "chemical_mechanisms/Han-2021/han-2021.yaml"
     }

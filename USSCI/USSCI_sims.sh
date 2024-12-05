@@ -12,7 +12,7 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Nov26'
+date='Dec04'
 
 # python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
@@ -82,7 +82,11 @@ date='Nov26'
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
-python USSCI/simulateJSR_Klippenstein-CNF2018.py \
+# python USSCI/simulatePSR_Klippenstein-CNF2018.py \
+# --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
+
+python USSCI/simulateJSR_Klippenstein-JPCA2023.py \
 --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
