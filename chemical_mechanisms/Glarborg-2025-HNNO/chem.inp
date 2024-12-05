@@ -545,14 +545,11 @@ CH2O(+M)=CO+H2(+M)                   3.7E13   0.000   71969 !
 ! applying prompt HCO dissociation - Labbe et al., J. Phys. Chem. Lett. 2016:
 CH2O+H=HCO+H2                        1.4E23  -2.355   17519 ! 1 atm
  PLOG/0.04                           7.4E23  -2.732   16379/
- PLOG/1                              1.4E23  -2.355   17519/
- PLOG/10                             7.3E23  -2.665   17634/
- DUPLICATE                                                  !
-CH2O+H=HCO+H2                        1.6E15  -0.444    5682 ! 1 atm
  PLOG/0.04                           2.1E10   1.057    3720/ !
+ PLOG/1                              1.4E23  -2.355   17519/
  PLOG/1                              1.6E15  -0.444    5682/ !
+ PLOG/10                             7.3E23  -2.665   17634/
  PLOG/10                             4.2E09   1.294    3591/ !
- DUPLICATE                                                  !
 CH2O+H=H+CO+H2                       5.1E07   2.182   11524
  PLOG/0.04                           7.2E08   1.903   11733/
  PLOG/1                              5.1E07   2.182   11524/
