@@ -2256,6 +2256,18 @@ reactions:
     #
 
     '
+- equation: HNOH <=> H2 + NO
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.49e+25, b: -4.99, Ea: 53140.0}
+  - {P: 0.1 atm, A: 4.21e+27, b: -5.2, Ea: 55170.0}
+  - {P: 1.0 atm, A: 1.47e+28, b: -5.12, Ea: 56560.0}
+  - {P: 10.0 atm, A: 3.29e+27, b: -4.69, Ea: 57520.0}
+  - {P: 100.0 atm, A: 5.76e+25, b: -3.95, Ea: 58190.0}
+  note: " A. Stagni, C. Cavallotti, Proc Combust Inst 39 (2023) 633-641\nH2NO+NO2=HONO+HNO\
+    \                    8.0E11   0.000    6000 ! # \n P. Glarborg, \"The NH3/NO2/O2\
+    \ system: Constraining key steps in ammonia ignition and N2O formation\", Combust.\
+    \ Flame (2022).\n (within x2 of STACAV23 1000-2500 K)\n #\n"
 - equation: HNO + H <=> HNOH
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -2264,16 +2276,13 @@ reactions:
   - {P: 1.0 atm, A: 4.9e+24, b: -4.14, Ea: 3141.0}
   - {P: 10.0 atm, A: 3.6e+24, b: -3.79, Ea: 3702.0}
   - {P: 100.0 atm, A: 1.0e+24, b: -3.36, Ea: 4710.0}
-  note: " A. Stagni, C. Cavallotti, Proc Combust Inst 39 (2023) 633-641\nH2NO+NO2=HONO+HNO\
-    \                    8.0E11   0.000    6000 ! # \n P. Glarborg, \"The NH3/NO2/O2\
-    \ system: Constraining key steps in ammonia ignition and N2O formation\", Combust.\
-    \ Flame (2022).\n (within x2 of STACAV23 1000-2500 K)\nHNO+H(+M)=HNOH(+M)    \
-    \               2.2E19  -1.920    2980 ! #\n LOW                             \
-    \   /2.6E25  -2.816    2360/                                  !\n TROE /0.442\
-    \  3.480E-03  1.645E+00  8.795E-13/\n H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ NH3/5/\
-    \                           !\n S. J. Klippenstein, C. Mulvihill, P. Glarborg,\
-    \ J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi 2023)          \
-    \                      !\n 1 atm\n"
+  note: " S. J. Klippenstein, C. Mulvihill, P. Glarborg, J. Phys. Chem. A (2023)\n\
+    HNO+H(+M)=HNOH(+M)                   2.2E19  -1.920    2980 ! #\n LOW        \
+    \                        /2.6E25  -2.816    2360/                            \
+    \      !\n TROE /0.442  3.480E-03  1.645E+00  8.795E-13/\n H2/2.5/ H2O/12/ CO/1.9/\
+    \ CO2/3.8/ NH3/5/                           !\n S. J. Klippenstein, C. Mulvihill,\
+    \ P. Glarborg, J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi 2023)\
+    \                                !\n 1 atm\n"
 - equation: HNOH <=> H2NO
   type: pressure-dependent-Arrhenius
   rate-constants:

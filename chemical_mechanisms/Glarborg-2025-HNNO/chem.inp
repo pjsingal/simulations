@@ -921,6 +921,13 @@ H2NO+NO2=HONO+HNO                    8.0E00   2.950   -3293 ! #
 ! P. Glarborg, "The NH3/NO2/O2 system: Constraining key steps in ammonia ignition and N2O formation", Combust. Flame (2022).
 ! (within x2 of STACAV23 1000-2500 K)
 !
+HNOH=H2+NO		             1.47E28  -5.12   56560 ! #
+PLOG / 0.01		             8.49E25  -4.99   53140 /
+PLOG / 0.1		             4.21E27  -5.20   55170 /
+PLOG / 1.0			     1.47E28  -5.12   56560 /
+PLOG / 10.0			     3.29E27  -4.69   57520 /
+PLOG / 100.0		             5.76E25  -3.95   58190 /
+! S. J. Klippenstein, C. Mulvihill, P. Glarborg, J. Phys. Chem. A (2023)
 !HNO+H(+M)=HNOH(+M)                   2.2E19  -1.920    2980 ! #
 ! LOW                                /2.6E25  -2.816    2360/                                  !
 ! TROE /0.442  3.480E-03  1.645E+00  8.795E-13/
