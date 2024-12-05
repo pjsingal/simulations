@@ -87,7 +87,7 @@ date='Dec04'
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 python USSCI/simulateJSR_Klippenstein-JPCA2023.py \
---figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 

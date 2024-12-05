@@ -61,15 +61,15 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 title='JSR: 1000ppm NH3/12500ppm O2/N2'
 folder='Klippenstein-JPCA2023'
 name='Fig4'
-exp=False
-dataLabel='Zhang et al. (2015)'
-data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
-observables=['NO','NH3','H2']
+exp=True
+dataLabel='Dagaut (2020)'
+data=['dagaut.csv']
+observables=['NO']
 
 X={'NH3':1000e-6,'O2':12500e-6,'N2':1-1000e-6-12500e-6}
 P=1
-T_list = np.linspace(1200,1375,gridsz)
-Xlim=[1200,1400]
+T_list = np.linspace(1100,1390,gridsz)
+Xlim=[1100,1400]
 tau=0.1
 V=27.5e-6 #m3
 t_max=20
@@ -141,7 +141,7 @@ f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight)
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
     print(f'Model: {model}')
-    ax[2].plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
+    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
         flag=False
@@ -156,18 +156,18 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [ppm]')
+            ax.plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax.set_ylabel(f'X-{species} [ppm]')
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
-            ax[z].set_xlim(Xlim)
-            # ax[z].set_ylim(Ylim)
-            ax[z].tick_params(axis='both',direction='in')
-            ax[z].set_xlabel('Temperature [K]')
+                ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+            ax.set_xlim(Xlim)
+            # ax.set_ylim(Ylim)
+            ax.tick_params(axis='both',direction='in')
+            ax.set_xlabel('Temperature [K]')
         print('  > Data added to plot')
 plt.suptitle(f'{title}',fontsize=10)
-ax[len(observables)-1].legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
+ax.legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)
