@@ -1146,20 +1146,11 @@ reactions:
 
     '
 - equation: N2H2 <=> NNH + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 5.6e+36, b: -7.75, Ea: 70215.0}
   - {P: 1.0 atm, A: 1.8e+40, b: -8.41, Ea: 73353.0}
   - {P: 10.0 atm, A: 3.1e+41, b: -8.42, Ea: 76004.2}
-  note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
-    Chemistry, Springer 2000. !\COMMENT: N2 as bath gas
-
-    '
-- equation: N2H2 <=> NNH + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.1 atm, A: 1.6e+37, b: -7.94, Ea: 70721.5}
   - {P: 1.0 atm, A: 2.6e+40, b: -8.53, Ea: 72886.2}
   - {P: 10.0 atm, A: 1.3e+44, b: -9.22, Ea: 77036.9}
@@ -1214,20 +1205,11 @@ reactions:
 
     '
 - equation: H2NN <=> NNH + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 5.9e+32, b: -6.99, Ea: 51791.2}
   - {P: 1.0 atm, A: 9.6e+35, b: -7.57, Ea: 54841.2}
   - {P: 10.0 atm, A: 5.0e+36, b: -7.43, Ea: 57295.1}
-  note: '\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion
-    Chemistry, Springer 2000. !\COMMENT:
-
-    '
-- equation: H2NN <=> NNH + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.1 atm, A: 7.2e+28, b: -7.77, Ea: 50757.9}
   - {P: 1.0 atm, A: 3.2e+31, b: -6.22, Ea: 52317.7}
   - {P: 10.0 atm, A: 5.1e+33, b: -6.52, Ea: 54215.3}
