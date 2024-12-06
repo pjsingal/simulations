@@ -107,6 +107,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
                     },
     },
+    'Klippenstein-CNF2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Zhang-2018': { #results are very wrong
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",

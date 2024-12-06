@@ -967,10 +967,10 @@ reactions:
   rate-constant: {A: 1.9e+13, b: 0.0, Ea: -1788.0}
   efficiencies: {H2: 2.5, H2O: 12.0, AR: 1.0, CO: 1.9, CO2: 3.8}
 - equation: H + OH (+M) <=> H2O (+M)  # Reaction 13
-  type: LMR_R
-  collider-list: 
-  - collider: "M" # N2 is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke
+  colliders: 
+  - name: "M" # N2 is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 1.000e-04 atm, A: 5.30514e+12, b: -2.80725e+00, Ea: 4.99267e+02}
@@ -982,100 +982,100 @@ reactions:
     - {P: 1.000e+02 atm, A: 6.24786e+18, b: -2.80241e+00, Ea: 1.43320e+03}
     - {P: 1.000e+03 atm, A: 4.28006e+15, b: -1.57172e+00, Ea: 9.80056e+02}
     - {P: 1.000e+04 atm, A: 6.79586e+12, b: -5.77830e-01, Ea: 4.56911e+02}
-  - collider: 'NH3'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NO2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'N2O'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'O2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'O3'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'O'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'OH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HO2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2O'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2O2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'CO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'CO2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HOCO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'CH2O'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HCO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NH2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'N'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NNH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'N2H4'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'N2H3'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'tHNNH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'cHNNH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2NN'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NH2OH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2NO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HNOH'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HNO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HON'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HONO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HNO2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NO3'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HONO2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'H2NCO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HNCO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'NCO'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'AR'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'HE'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
-  - collider: 'N2'
-    eps: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NH3'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NO2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'N2O'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'O2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'O3'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'O'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'OH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HO2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2O'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2O2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'CO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'CO2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HOCO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'CH2O'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HCO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NH2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'N'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NNH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'N2H4'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'N2H3'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'tHNNH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'cHNNH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2NN'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NH2OH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2NO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HNOH'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HNO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HON'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HONO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HNO2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NO3'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HONO2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'H2NCO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HNCO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'NCO'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'AR'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'HE'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
+  - name: 'N2'
+    efficiency: {A: 2.20621e-02, b: 4.74036e-01, Ea: -1.13148e+02}
 - equation: H2O + O2 <=> H + OH + O2  # Reaction 14
   duplicate: true
   rate-constant: {A: 9.15e+27, b: -3.322, Ea: 1.2079e+05}
 - equation: H2O + H2O <=> H + OH + H2O  # Reaction 15
   rate-constant: {A: 1.0e+26, b: -2.44, Ea: 1.2018e+05}
 - equation: H + O2 (+M) <=> HO2 (+M)  # Reaction 16
-  type: LMR_R
-  collider-list: 
-  - collider: "M" # Ar is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke
+  colliders: 
+  - name: "M" # Ar is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 1.316e-02 atm, A: 9.39968e+14, b: -2.14348e+00, Ea: 7.72730e+01}
@@ -1105,10 +1105,10 @@ reactions:
 - equation: HO2 + HO2 <=> O2 + OH + OH  # Reaction 24
   rate-constant: {A: 6.4e+17, b: -1.54, Ea: 8540.0}
 - equation: H2O2 (+M) <=> OH + OH (+M)  # Reaction 25
-  type: LMR_R
-  collider-list: 
-  - collider: "M" # Ar is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke
+  colliders: 
+  - name: "M" # Ar is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 1.000e-04 atm, A: 2.71622e+18, b: -3.29277e+00, Ea: 4.87751e+04}
@@ -1266,10 +1266,10 @@ reactions:
 - equation: HCO + HCO <=> CO + CH2O  # Reaction 71
   rate-constant: {A: 2.7e+13, b: 0.0, Ea: 0.0}
 - equation: NH3 (+M) <=> H + NH2 (+M)  # Reaction 72
-  type: LMR_R                          # Rxn direction is reversed
-  collider-list: 
-  - collider: "M" # Ar is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke                          # Rxn direction is reversed
+  colliders: 
+  - name: "M" # Ar is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 0.1 atm, A: 7.23e+29, b: -5.316, Ea: 110862.4}
@@ -1316,10 +1316,10 @@ reactions:
 - equation: NH2 + NH2 <=> NH3 + NH  # Reaction 89
   rate-constant: {A: 5.6, b: 3.53, Ea: 552.0}
 - equation: 2 NH2 (+M) <=> N2H4 (+M)  # Reaction 90
-  type: LMR_R
-  collider-list: 
-  - collider: "M" # Ar is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke
+  colliders: 
+  - name: "M" # Ar is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 1.000e-04 atm, A: 1.20024e+25, b: -6.43982e+00, Ea: 2.05356e+03}
@@ -1502,10 +1502,10 @@ reactions:
 - equation: HNOH + NO2 <=> HONO + HNO  # Reaction 166
   rate-constant: {A: 8.0e+11, b: 0.0, Ea: 6000.0}
 - equation: HNO (+M) <=> H + NO (+M)  # Reaction 167
-  type: LMR_R                         # Rxn direction has been reversed
-  collider-list: 
-  - collider: "M" # Ar is reference collider
-    eps: {A: 1, b: 0, Ea: 0}
+  type: linear-Burke                         # Rxn direction has been reversed
+  colliders: 
+  - name: "M" # Ar is reference collider
+    efficiency: {A: 1, b: 0, Ea: 0}
     type: pressure-dependent-Arrhenius
     rate-constants:
     - {P: 0.1 atm, A: 2.0121e+19, b: -3.021, Ea: 47792.0}

@@ -65,7 +65,7 @@ exp=False
 dataLabel='Manna et al. (2024)'
 # data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
 # observables=['NO2','NO','H2','CH4']
-observables=['CH3OH', 'C2H6','C2H4','C2H2', 'CH3CH2OH']
+observables=['CH3OH', 'C2H6','C2H4','C2H2', 'NO']
 
 P=1.16
 fuel={'CH4':0.9,'NH3':0.1}
@@ -95,11 +95,18 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Glarborg-2018': {
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Klippenstein-CNF2018': {
         'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
                     },
     },
     # 'Merchant-2015': {
@@ -116,20 +123,20 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/cornell-2024_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Arunthanayothin-2021': { #bad
-        'submodels': {
-            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Song-2019': {  #can be used for this sim, but the results are unstable
-        'submodels': {
-            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Arunthanayothin-2021': { #bad
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {  #can be used for this sim, but the results are unstable
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Gutierrez-2025': { # results are unstable, don't use it
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",

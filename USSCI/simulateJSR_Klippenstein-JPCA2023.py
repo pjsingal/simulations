@@ -64,7 +64,7 @@ name='Fig4'
 exp=True
 dataLabel='Dagaut (2020)'
 data=['dagaut.csv']
-observables=['NO']
+observables=['NO','NH3','H2']
 
 X={'NH3':1000e-6,'O2':12500e-6,'N2':1-1000e-6-12500e-6}
 P=1
@@ -82,6 +82,49 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
                     },
     },
+    'Alzueta-2023': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Klippenstein-CNF2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Stagni-2023': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+                    },
+    },
+    # 'Song-2019': {  #bad
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    
+    # 'Glarborg-2025_NH3PLOG': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO_NH3PLOG.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_NH3PLOG_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_NH3PLOG_LMRR_allPLOG.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
@@ -141,7 +184,7 @@ f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight)
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
     print(f'Model: {model}')
-    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
+    ax[0].plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
         flag=False
@@ -156,18 +199,18 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax.plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax.set_ylabel(f'X-{species} [ppm]')
-            if exp and j==len(models)-1 and k==2:
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].set_ylabel(f'X-{species} [ppm]')
+            if exp and j==len(models)-1 and k==2 and z==0:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-                ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
-            ax.set_xlim(Xlim)
-            # ax.set_ylim(Ylim)
-            ax.tick_params(axis='both',direction='in')
-            ax.set_xlabel('Temperature [K]')
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+            ax[z].set_xlim(Xlim)
+            # ax[z].set_ylim(Ylim)
+            ax[z].tick_params(axis='both',direction='in')
+            ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')
 plt.suptitle(f'{title}',fontsize=10)
-ax.legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
+ax[0].legend(fontsize=lgdfsz-2,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)

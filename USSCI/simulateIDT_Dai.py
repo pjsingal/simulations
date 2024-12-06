@@ -77,6 +77,13 @@ Xlim=[940,1060]
 indicator='o' # oh, oh*, h, o, pressure
 
 models = {
+    'Klippenstein-CNF2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Stagni-2023': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",

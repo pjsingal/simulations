@@ -66,7 +66,7 @@ exp=False
 # data=['XCH4_55N2_45H2O.csv','XC2H2_55N2_45H2O.csv','XC2H4_55N2_45H2O.csv','XC2H6_55N2_45H2O.csv']
 observable='NO'
 
-P=10
+P=1
 fuel='CH4'
 oxidizerList=['O2:0.21,N2:0.79', 'O2:0.21,N2:0.4,H2O:0.39']
 phiList = np.linspace(0.7,1.5,gridsz)
@@ -77,34 +77,6 @@ V=113e-6 #value wasn't reported in his paper
 t_max=50
 
 models = {
-    # 'Arunthanayothin-2021': {
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Stagni-2023': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Alzueta-2023': {
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Glarborg-2018': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-    #                 },
-    # },
     'Klippenstein-CNF2018': {
         'submodels': {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
@@ -112,41 +84,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
                     },
     },
-    # 'Merchant-2015': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Merchant-2015/merchant-2015.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/merchant-2015_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Gutierrez-2025': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Bugler-2016': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/bugler-2016_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Song-2019': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Aramco-3.0': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Glarborg-2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
@@ -227,7 +171,7 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/PSR/{m}/{oxidizer}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             
             # if exp and j==len(models)-1 and k==2:
             #     dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)

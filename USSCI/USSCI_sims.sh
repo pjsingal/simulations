@@ -14,7 +14,7 @@ lgdfsz=7
 
 date='Dec05'
 
-python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
+# python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
 # python USSCI/simulateIDT_Beigzadeh_H2O.py \
 # --figwidth 6 --figheight 6 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -40,9 +40,9 @@ python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
 
-# python USSCI/simulateIDT_Shao.py \
-# --figwidth 4 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
+python USSCI/simulateIDT_Shao.py \
+--figwidth 4 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
 
 
 
@@ -82,16 +82,18 @@ python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
+
+
 # python USSCI/simulatePSR_Klippenstein-CNF2018.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 # python USSCI/simulateJSR_Klippenstein-JPCA2023.py \
-# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
+# --figwidth 7 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 45 --date $date
 
 # python USSCI/simulateJSR_Cornell2022.py \
-# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --figwidth 7 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 # python USSCI/simulateResidenceTime_Gubbi_oneModel.py \
@@ -109,5 +111,9 @@ python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 # python USSCI/simulateJSR_Zhao2024.py \
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
+
+# python USSCI/simulateIDT_Glarborg2025.py \ #SANDBOX PARAMETERS, NOT REAL
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
 
 # screen -S Alzueta -dm

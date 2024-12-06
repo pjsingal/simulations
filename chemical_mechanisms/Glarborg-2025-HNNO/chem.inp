@@ -39,6 +39,7 @@ H2NCO HNCO NCO
 !
 AR HE N2 ! KR
 !
+OH* !added by PSingal
 END
 !
 !
@@ -1441,4 +1442,16 @@ HNCO+H2O=NH3+CO2                     2.0E13   0.000   48500 !
 HNCO+NH=NH2+NCO                      3.0E13   0.000   23700 ! 
 ! JAM est
 !
+
+H+O+M=OH*+M       3.1E14   0.000  10000 !
+OH*+M=OH+M        2.2E10   0.5     2060 !
+OH*+H2O=OH+H2O    5.9E12   0.5     -861 !
+OH*+O2=OH+O2      2.1E12   0.5     -482 !
+OH*+H2=OH+H2      3.0E12   0.5     -444 !
+OH*+OH=OH+OH      1.5E12   0.5        0 !
+OH*+H=OH+H        1.5E12   0.5        0 !
+OH*+O=OH+O        1.5E12   0.5        0 !
+OH*=OH            1.0E06   0.0        0 !
+N2O+H=N2+OH*      1.6E14   0.0    50300 !
+
 END

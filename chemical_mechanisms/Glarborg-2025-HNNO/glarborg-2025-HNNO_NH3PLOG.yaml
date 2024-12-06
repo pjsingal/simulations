@@ -1847,7 +1847,7 @@ reactions:
 #       NH3 subset                                                           *
 #     ************************************************************************
     #
-- equation: NH3 (+M) <=> H + NH2 (+M)  # Reaction 72
+- equation: NH3 <=> H + NH2  # Reaction 72
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 7.23e+29, b: -5.316, Ea: 110862.4}

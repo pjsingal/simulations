@@ -71,8 +71,8 @@ dataLabel='Shao et al. (2019)'
 X={'H2':0.1,'O2':0.05,'CO2':1-0.1-0.05}
 # P=33
 P=110
-T_list = np.linspace(1000,1538,gridsz)
-Xlim=[700,1200]
+T_list = np.linspace(1000,1430,gridsz)
+Xlim=[1000,1430]
 indicator='o' # oh, oh*, h, o, pressure
 
 models = {
@@ -90,11 +90,25 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Glarborg-2018': {
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Klippenstein-CNF2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Glarborg-2025': {
         'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
                     },
     },
     # 'Merchant-2015': {
@@ -206,14 +220,14 @@ for j,model in enumerate(models):
             sims=generateData(model,m)  
         sims=pd.read_csv(simFile)
         label = f'{model}' if k == 0 else None
-        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+        ax.plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
         if exp and j==len(models)-1 and k==2:
             dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
             ax.plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
         ax.set_xlim(Xlim)
         ax.tick_params(axis='both',direction='in')
         ax.set_xlabel('Temperature [K]')
-        ax.set_ylabel(f'Ignition delay [ms]')
+        ax.set_ylabel(f'Ignition delay [mu-s]')
         print('  > Data added to plot')
 plt.suptitle(f'{title}',fontsize=10)
 ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 

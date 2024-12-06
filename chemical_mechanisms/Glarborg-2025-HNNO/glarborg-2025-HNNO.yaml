@@ -23,7 +23,7 @@ description: |-
 generator: ck2yaml
 input-files: [chem.inp, therm.dat, tran.dat]
 cantera-version: 3.1.0a4
-date: Thu, 05 Dec 2024 03:13:13 +0000
+date: Fri, 06 Dec 2024 05:32:03 +0000
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -34,7 +34,7 @@ phases:
   species: [NH3, H2, NO2, NO, N2O, tHNNO, cHNNO, NHNO, H2NNO2, tHNN(O)OH,
     cHNN(O)OH, O2, O3, H, O, OH, HO2, H2O, H2O2, CO, CO2, HOCO, CH2O, HCO,
     NH2, NH, N, NNH, N2H4, N2H3, tHNNH, cHNNH, H2NN, NH2OH, H2NO, HNOH,
-    HNO, HON, HONO, HNO2, NO3, HONO2, H2NCO, HNCO, NCO, AR, HE, N2]
+    HNO, HON, HONO, HNO2, NO3, HONO2, H2NCO, HNCO, NCO, AR, HE, N2, OH*]
   kinetics: gas
   transport: mixture-averaged
   state: {T: 300.0, P: 1 atm}
@@ -1050,6 +1050,24 @@ species:
     diameter: 3.621
     polarizability: 1.76
     rotational-relaxation: 4.0
+- name: OH*
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.46084428, 5.01872172e-04, -2.00254474e-06, 3.18901984e-09, -1.35451838e-12,
+      5.07349466e+04, 1.73976415]
+    - [2.7558292, 1.39848756e-03, -4.19428493e-07, 6.33453282e-11, -3.56042218e-15,
+      5.09751756e+04, 5.62581429]
+    note: ATcT3E
+  transport:
+    model: gas
+    geometry: linear
+    well-depth: 80.0
+    diameter: 2.75
+    note: added by Psingal
+  note: added by PSingal
 
 reactions:
 - equation: N2O (+M) <=> N2 + O (+M)  # Reaction 1
@@ -3044,10 +3062,32 @@ reactions:
 
 - equation: HNCO + NH <=> NH2 + NCO  # Reaction 334
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 2.37e+04}
-  note: |
+  note: |+
     X.-G. Wei, X.-M. Sun, X.-P. Wu, S. Geng, Y. Ren, N.-B. Wong, and W.-K. Li. J Mol Model 17:2069--2082, 2011.
     X. Cheng, Y. Zhao, W. Zhu, and Y. Liu. J Mol Model, 19:5037-5043, 2013.
     P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68. 
 
-
-    JAM est
+# - equation: H + O + M <=> OH* + M  # Reaction 335
+#   type: three-body
+#   rate-constant: {A: 3.1e+14, b: 0.0, Ea: 1.0e+04}
+#   note: |
+#     JAM est
+# - equation: OH* + M <=> OH + M  # Reaction 336
+#   type: three-body
+#   rate-constant: {A: 2.2e+10, b: 0.5, Ea: 2060.0}
+# - equation: OH* + H2O <=> OH + H2O  # Reaction 337
+#   rate-constant: {A: 5.9e+12, b: 0.5, Ea: -861.0}
+# - equation: OH* + O2 <=> OH + O2  # Reaction 338
+#   rate-constant: {A: 2.1e+12, b: 0.5, Ea: -482.0}
+# - equation: OH* + H2 <=> OH + H2  # Reaction 339
+#   rate-constant: {A: 3.0e+12, b: 0.5, Ea: -444.0}
+# - equation: OH* + OH <=> OH + OH  # Reaction 340
+#   rate-constant: {A: 1.5e+12, b: 0.5, Ea: 0.0}
+# - equation: OH* + H <=> OH + H  # Reaction 341
+#   rate-constant: {A: 1.5e+12, b: 0.5, Ea: 0.0}
+# - equation: OH* + O <=> OH + O  # Reaction 342
+#   rate-constant: {A: 1.5e+12, b: 0.5, Ea: 0.0}
+# - equation: OH* <=> OH  # Reaction 343
+#   rate-constant: {A: 1.0e+06, b: 0.0, Ea: 0.0}
+# - equation: N2O + H <=> N2 + OH*  # Reaction 344
+#   rate-constant: {A: 1.6e+14, b: 0.0, Ea: 5.03e+04}
