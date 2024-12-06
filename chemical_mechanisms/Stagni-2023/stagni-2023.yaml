@@ -32,7 +32,7 @@ description: |2-
 generator: ck2yaml
 input-files: [chem.dat, therm.dat, tran.dat]
 cantera-version: 3.1.0a4
-date: Fri, 22 Nov 2024 08:16:49 +0000
+date: Fri, 06 Dec 2024 03:52:12 +0000
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -1093,48 +1093,41 @@ reactions:
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
 - equation: N2H2 <=> NNH + H  # Reaction 111
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 5.6e+36, b: -7.75, Ea: 7.0215e+04}
   - {P: 1.0 atm, A: 1.8e+40, b: -8.41, Ea: 7.3353e+04}
   - {P: 10.0 atm, A: 3.1e+41, b: -8.42, Ea: 7.60042e+04}
-  note: |
-    \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT: N2 as bath gas
-- equation: N2H2 <=> NNH + H  # Reaction 112
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.1 atm, A: 1.6e+37, b: -7.94, Ea: 7.07215e+04}
   - {P: 1.0 atm, A: 2.6e+40, b: -8.53, Ea: 7.28862e+04}
   - {P: 10.0 atm, A: 1.3e+44, b: -9.22, Ea: 7.70369e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT: N2 as bath gas
-- equation: N2H2 + H <=> NNH + H2  # Reaction 113
+- equation: N2H2 + H <=> NNH + H2  # Reaction 112
   rate-constant: {A: 4.82e+08, b: 1.76, Ea: 739.2}
   note: |
     \AUTHOR: AS !\REF: Li, Y. and Sarathy, S.M., Int. J. Hydrogen Energy 45 23624-23637 (2020) !\COMMENT:
-- equation: N2H2 + O <=> NNH + OH  # Reaction 114
+- equation: N2H2 + O <=> NNH + OH  # Reaction 113
   rate-constant: {A: 1.11e+08, b: 1.62, Ea: 804.8}
   note: |
     \AUTHOR: AS !\REF: Li, Y. and Sarathy, S.M., Int. J. Hydrogen Energy 45 23624-23637 (2020) !\COMMENT:
-- equation: N2H2 + OH <=> NNH + H2O  # Reaction 115
+- equation: N2H2 + OH <=> NNH + H2O  # Reaction 114
   rate-constant: {A: 59.23, b: 3.4, Ea: -1363.7}
   note: |
     \AUTHOR: AS !\REF: Linder, D.P.; Duan, X.; Page, M.  J. Chem. Phys. 104 6298 - 6306 (1996) !\COMMENT:
-- equation: N2H2 + NO <=> N2O + NH2  # Reaction 116
+- equation: N2H2 + NO <=> N2O + NH2  # Reaction 115
   rate-constant: {A: 4.0e+12, b: 0.0, Ea: 1.1916e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: N2H2 + NH <=> NNH + NH2  # Reaction 117
+- equation: N2H2 + NH <=> NNH + NH2  # Reaction 116
   rate-constant: {A: 2.4e+06, b: 2.0, Ea: -1191.6}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: N2H2 + NH2 <=> NNH + NH3  # Reaction 118
+- equation: N2H2 + NH2 <=> NNH + NH3  # Reaction 117
   rate-constant: {A: 0.088, b: 4.05, Ea: -1610.0}
   note: |
     \AUTHOR: AS !\REF:  Linder, D.P.; Duan, X.; Page, M.  J. Chem. Phys. 104 6298 - 6306 (1996)  !\COMMENT:
-- equation: N2H2 <=> H2NN  # Reaction 119
+- equation: N2H2 <=> H2NN  # Reaction 118
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 9.2e+38, b: -9.01, Ea: 6.77269e+04}
@@ -1142,102 +1135,95 @@ reactions:
   - {P: 10.0 atm, A: 1.3e+45, b: -10.13, Ea: 7.07571e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN <=> NNH + H  # Reaction 120
-  duplicate: true
+- equation: H2NN <=> NNH + H  # Reaction 119
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 5.9e+32, b: -6.99, Ea: 5.17912e+04}
   - {P: 1.0 atm, A: 9.6e+35, b: -7.57, Ea: 5.48412e+04}
   - {P: 10.0 atm, A: 5.0e+36, b: -7.43, Ea: 5.72951e+04}
-  note: |
-    \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN <=> NNH + H  # Reaction 121
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.1 atm, A: 7.2e+28, b: -7.77, Ea: 5.07579e+04}
   - {P: 1.0 atm, A: 3.2e+31, b: -6.22, Ea: 5.23177e+04}
   - {P: 10.0 atm, A: 5.1e+33, b: -6.52, Ea: 5.42153e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + O2 <=> NH2 + NO2  # Reaction 122
+- equation: H2NN + O2 <=> NH2 + NO2  # Reaction 120
   rate-constant: {A: 1.5e+12, b: 0.0, Ea: 5961.0}
   note: |2
      H2NN
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + H <=> N2H2 + H  # Reaction 123
+- equation: H2NN + H <=> N2H2 + H  # Reaction 121
   rate-constant: {A: 1.8e+10, b: 0.97, Ea: 4470.8}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + H <=> NNH + H2  # Reaction 124
+- equation: H2NN + H <=> NNH + H2  # Reaction 122
   rate-constant: {A: 4.8e+08, b: 1.5, Ea: -894.2}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + O <=> NH2 + NO  # Reaction 125
+- equation: H2NN + O <=> NH2 + NO  # Reaction 123
   rate-constant: {A: 3.2e+09, b: 1.03, Ea: 2702.3}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + O <=> OH + NNH  # Reaction 126
+- equation: H2NN + O <=> OH + NNH  # Reaction 124
   rate-constant: {A: 3.3e+08, b: 1.5, Ea: -894.2}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + OH <=> NNH + H2O  # Reaction 127
+- equation: H2NN + OH <=> NNH + H2O  # Reaction 125
   rate-constant: {A: 2.4e+06, b: 2.0, Ea: -1192.2}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + NH2 <=> NH3 + NNH  # Reaction 128
+- equation: H2NN + NH2 <=> NH3 + NNH  # Reaction 126
   rate-constant: {A: 1.8e+06, b: 1.94, Ea: -1152.5}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NN + HO2 <=> NNH + H2O2  # Reaction 129
+- equation: H2NN + HO2 <=> NNH + H2O2  # Reaction 127
   rate-constant: {A: 2.9e+04, b: 2.69, Ea: -1599.5}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: NNH <=> N2 + H  # Reaction 130
+- equation: NNH <=> N2 + H  # Reaction 128
   rate-constant: {A: 1.0e+09, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT:
-- equation: NNH + H <=> N2 + H2  # Reaction 131
+- equation: NNH + H <=> N2 + H2  # Reaction 129
   rate-constant: {A: 2.4e+08, b: 1.5, Ea: -893.7}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: NNH + O <=> N2O + H  # Reaction 132
+- equation: NNH + O <=> N2O + H  # Reaction 130
   rate-constant: {A: 1.9e+14, b: -0.274, Ea: -22.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT:
-- equation: NNH + O <=> NH + NO  # Reaction 133
+- equation: NNH + O <=> NH + NO  # Reaction 131
   rate-constant: {A: 5.2e+11, b: 0.388, Ea: -409.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT:
-- equation: NNH + O <=> N2 + OH  # Reaction 134
+- equation: NNH + O <=> N2 + OH  # Reaction 132
   rate-constant: {A: 1.2e+13, b: 0.145, Ea: -217.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT:
-- equation: NNH + OH <=> N2 + H2O  # Reaction 135
+- equation: NNH + OH <=> N2 + H2O  # Reaction 133
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT: Ref 92
-- equation: NNH + O2 <=> N2 + HO2  # Reaction 136
+- equation: NNH + O2 <=> N2 + HO2  # Reaction 134
   rate-constant: {A: 5.6e+14, b: -0.385, Ea: -13.0}
   note: |
     \AUTHOR: AS !\REF: SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789. !\COMMENT:
-- equation: NNH + NH2 <=> N2 + NH3  # Reaction 137
+- equation: NNH + NH2 <=> N2 + NH3  # Reaction 135
   rate-constant: {A: 9.2e+05, b: 1.94, Ea: -1151.9}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: NNH + HO2 <=> N2 + H2O2  # Reaction 138
+- equation: NNH + HO2 <=> N2 + H2O2  # Reaction 136
   rate-constant: {A: 1.4e+04, b: 2.69, Ea: -1599.5}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: NNH + NO <=> N2 + HNO  # Reaction 139
+- equation: NNH + NO <=> N2 + HNO  # Reaction 137
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Skreiberg, O., Kilpinen, P., & Glarborg, P. (2004). Combustion and Flame, 136(4), 501-518. !\COMMENT:
-- equation: NO + HO2 <=> NO2 + OH  # Reaction 140
+- equation: NO + HO2 <=> NO2 + OH  # Reaction 138
   rate-constant: {A: 2.11e+12, b: 0.0, Ea: -480.0}
   note: |
     \AUTHOR: AS !\REF: Howard, C.J. J. Am. Chem. Soc. 102 (1980) !\COMMENT:
-- equation: NO + O (+M) <=> NO2 (+M)  # Reaction 141
+- equation: NO + O (+M) <=> NO2 (+M)  # Reaction 139
   type: falloff
   low-P-rate-constant: {A: 4.72e+24, b: -2.87, Ea: 1550.0}
   high-P-rate-constant: {A: 1.3e+15, b: -0.75, Ea: 0.0}
@@ -1245,7 +1231,7 @@ reactions:
   efficiencies: {N2: 1.7, O2: 1.5, H2O: 10.0}
   note: |
     \AUTHOR: AS !\REF: Allen MT Yetter RA Dryer FL Combust Flame  109 449 (1997) !\COMMENT:
-- equation: OH + NO <=> HONO  # Reaction 142
+- equation: OH + NO <=> HONO  # Reaction 140
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.02e+21, b: -4.24, Ea: 898.9}
@@ -1259,7 +1245,7 @@ reactions:
   note: |2
      N2
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: HNO <=> H + NO  # Reaction 143
+- equation: HNO <=> H + NO  # Reaction 141
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 2.0121e+19, b: -3.021, Ea: 4.7792e+04}
@@ -1269,15 +1255,15 @@ reactions:
   - {P: 1000.0 atm, A: 9.7111e+21, b: -2.642, Ea: 4.894e+04}
   note: |
     \AUTHOR: AS !\REF: Stagni, A. et al. React. Chem. Eng. (2020). !\COMMENT: T = 500-2500 K fitted
-- equation: HNO + H <=> NO + H2  # Reaction 144
+- equation: HNO + H <=> NO + H2  # Reaction 142
   rate-constant: {A: 9.68e+11, b: 0.62, Ea: 360.0}
   note: |
     \AUTHOR: AS !\REF: Nguyen, H.MT. et al. Chem. Phys. Lett. 388 94-99 (2004) !\COMMENT: CVT method
-- equation: HNO + O <=> NO + OH  # Reaction 145
+- equation: HNO + O <=> NO + OH  # Reaction 143
   rate-constant: {A: 2.29e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Inomata, S.; Washida, N. J. Phys. Chem. A 103 5023 - 5031 (1999) !\COMMENT:
-- equation: HNO + OH <=> H + HONO  # Reaction 146
+- equation: HNO + OH <=> H + HONO  # Reaction 144
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1060.0, b: 2.76, Ea: 4439.0}
@@ -1290,7 +1276,7 @@ reactions:
   - {P: 100.0 atm, A: 1.03e+05, b: 2.24, Ea: 6951.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: HNO + OH <=> NO + H2O  # Reaction 147
+- equation: HNO + OH <=> NO + H2O  # Reaction 145
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.82e+10, b: 0.4, Ea: 3762.0}
@@ -1303,43 +1289,43 @@ reactions:
   - {P: 100.0 atm, A: 4.18e+10, b: 0.51, Ea: 5532.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: HNO + O2 <=> NO + HO2  # Reaction 148
+- equation: HNO + O2 <=> NO + HO2  # Reaction 146
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 1.4896e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: HNO + NH2 <=> NO + NH3  # Reaction 149
+- equation: HNO + NH2 <=> NO + NH3  # Reaction 147
   rate-constant: {A: 3.67e+07, b: 1.63, Ea: -1250.0}
   note: |
     \AUTHOR: AS !\REF: Mebel, A.M. et al. J. Phys. Chem. 100 7517 - 7525 (1996)  !\COMMENT:
-- equation: HNO + NO <=> N2O + OH  # Reaction 150
+- equation: HNO + NO <=> N2O + OH  # Reaction 148
   rate-constant: {A: 8.51e+12, b: 0.0, Ea: 2.961e+04}
   note: |
     \AUTHOR: AS !\REF: Diau, E.W.; Halbgewachs, M.J.; Smith, A.R.; Lin, M.C.  Int. J. Chem. Kinet. 27 867-881 (1995) !\COMMENT:
-- equation: HNO + NO2 <=> HONO + NO  # Reaction 151
+- equation: HNO + NO2 <=> HONO + NO  # Reaction 149
   rate-constant: {A: 4.42e+04, b: 2.64, Ea: 4041.6}
   note: |
     \AUTHOR: AS !\REF: Mebel, A.M.; Lin, M.C.; Morokuma, K. Int. J. Chem. Kinet. 30 729-736 (1998) !\COMMENT:
-- equation: HNO + NO2 <=> HNO2 + NO  # Reaction 152
+- equation: HNO + NO2 <=> HNO2 + NO  # Reaction 150
   rate-constant: {A: 6.03e+11, b: 0.0, Ea: 1990.0}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT: 
-- equation: HNO + HNO <=> N2O + H2O  # Reaction 153
+- equation: HNO + HNO <=> N2O + H2O  # Reaction 151
   rate-constant: {A: 8.43e+08, b: 0.0, Ea: 3100.0}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T. J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT:
-- equation: HNO + HO2 <=> HNO2 + OH  # Reaction 154
+- equation: HNO + HO2 <=> HNO2 + OH  # Reaction 152
   rate-constant: {A: 2000.0, b: 2.36, Ea: 8980.0}
   note: |
     \AUTHOR: AS !\REF: Mousavipour, S. H., & Asemani, S. S. J Phys Chem A, 119(22), 5553-5565 (2015). !\COMMENT: 
-- equation: H + HONO <=> H2 + NO2  # Reaction 155
+- equation: H + HONO <=> H2 + NO2  # Reaction 153
   rate-constant: {A: 1890.0, b: 2.83, Ea: 1422.7}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: H + HNO2 <=> H2 + NO2  # Reaction 156
+- equation: H + HNO2 <=> H2 + NO2  # Reaction 154
   rate-constant: {A: 2.33e+04, b: 2.77, Ea: -2021.9}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: H + HONO <=> NO + H2O  # Reaction 157
+- equation: H + HONO <=> NO + H2O  # Reaction 155
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.91e+09, b: 0.99, Ea: 4049.0}
@@ -1352,27 +1338,27 @@ reactions:
   - {P: 100.0 atm, A: 2.79e+10, b: 0.8, Ea: 6146.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: HONO + O <=> NO2 + OH  # Reaction 158
+- equation: HONO + O <=> NO2 + OH  # Reaction 156
   rate-constant: {A: 1.21e+13, b: 0.0, Ea: 5960.0}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT: 
-- equation: HONO + OH <=> NO2 + H2O  # Reaction 159
+- equation: HONO + OH <=> NO2 + H2O  # Reaction 157
   rate-constant: {A: 1.7e+12, b: 0.0, Ea: -520.0}
   note: |
     \AUTHOR: AS !\REF: Burkholder JB Mellouki A Talukdar R Ravishankara AR IJCK 24:711 1992 !\COMMENT:
-- equation: HONO + NH <=> NH2 + NO2  # Reaction 160
+- equation: HONO + NH <=> NH2 + NO2  # Reaction 158
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Park, J., & Lin, M. C. (1997). The Journal of Physical Chemistry A, 101(14), 2643-2647 !\COMMENT:
-- equation: HONO + NH2 <=> NH3 + NO2  # Reaction 161
+- equation: HONO + NH2 <=> NH3 + NO2  # Reaction 159
   rate-constant: {A: 317.0, b: 2.83, Ea: -3570.0}
   note: |
     \AUTHOR: AS !\REF: S. Xu, M.C. Lin, Int J Chem Kinet 41: 667-677, 2009 !\COMMENT:
-- equation: HONO + HONO => NO + NO2 + H2O  # Reaction 162
+- equation: HONO + HONO => NO + NO2 + H2O  # Reaction 160
   rate-constant: {A: 0.349, b: 3.64, Ea: 1.21386e+04}
   note: |
     \AUTHOR: AS !\REF: Mebel, A.M.; Lin, M.C.; Melius, C.F. J. Phys. Chem. A 102 1803-1807 (1998) !\COMMENT:
-- equation: H2NO <=> HNOH  # Reaction 163
+- equation: H2NO <=> HNOH  # Reaction 161
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 8.2e+25, b: -4.94, Ea: 4.37935e+04}
@@ -1380,152 +1366,152 @@ reactions:
   - {P: 10.0 atm, A: 2.6e+28, b: -5.06, Ea: 4.47671e+04}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + M <=> HNO + H + M  # Reaction 164
+- equation: H2NO + M <=> HNO + H + M  # Reaction 162
   type: three-body
   rate-constant: {A: 2.8e+24, b: -2.83, Ea: 6.49749e+04}
   efficiencies: {H2O: 10.0}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + H <=> HNO + H2  # Reaction 165
+- equation: H2NO + H <=> HNO + H2  # Reaction 163
   rate-constant: {A: 4.8e+08, b: 1.5, Ea: 1559.8}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + H <=> NH2 + OH  # Reaction 166
+- equation: H2NO + H <=> NH2 + OH  # Reaction 164
   rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + O <=> HNO + OH  # Reaction 167
+- equation: H2NO + O <=> HNO + OH  # Reaction 165
   rate-constant: {A: 3.3e+08, b: 1.5, Ea: 486.8}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + OH <=> HNO + H2O  # Reaction 168
+- equation: H2NO + OH <=> HNO + H2O  # Reaction 166
   rate-constant: {A: 2.4e+06, b: 2.0, Ea: 1192.2}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + NO <=> HNO + HNO  # Reaction 169
+- equation: H2NO + NO <=> HNO + HNO  # Reaction 167
   rate-constant: {A: 2.0e+04, b: 2.0, Ea: 1.3e+04}
   note: |
     \AUTHOR: AS !\REF: A El Bakali L Pillier P Desgroux B Lefort L Gasnot JF Pauwels I Da Costa Fuel 85 896-909 (2006) !\COMMENT:
-- equation: H2NO + NO2 <=> HONO + HNO  # Reaction 170
+- equation: H2NO + NO2 <=> HONO + HNO  # Reaction 168
   rate-constant: {A: 6.0e+11, b: 0.0, Ea: 2000.0}
   note: |
     \AUTHOR: AS !\REF: Glarborg, P., Kristensen, P. G., et al. Energy & Fuels, 14(4), 828-838 (2000) !\COMMENT:
-- equation: H2NO + NH2 <=> HNO + NH3  # Reaction 171
+- equation: H2NO + NH2 <=> HNO + NH3  # Reaction 169
   rate-constant: {A: 1.8e+06, b: 1.94, Ea: -1152.0}
   note: |
     \AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-- equation: H2NO + O2 <=> HNO + HO2  # Reaction 172
+- equation: H2NO + O2 <=> HNO + HO2  # Reaction 170
   rate-constant: {A: 230.0, b: 2.994, Ea: 1.65e+04}
   note: |
     \AUTHOR: AS !\REF: Glarborg, P., Miller, J. A., Ruscic, B., & Klippenstein, S. J. (2018). Progr Energy Combust Sci, 67, 31-68 !\COMMENT: Glarborg Eact = 16500 cal/mol - Original Eact is 18900
-- equation: H2NO + HO2 <=> HNO + H2O2  # Reaction 173
+- equation: H2NO + HO2 <=> HNO + H2O2  # Reaction 171
   rate-constant: {A: 3.36e+05, b: 2.0, Ea: -1434.0}
   note: |
     \AUTHOR: AS !\REF: Estimated via rate rules from O2 abstraction on H2NO !\COMMENT: Polimi recalculated
-- equation: NO3 + H <=> NO2 + OH  # Reaction 174
+- equation: NO3 + H <=> NO2 + OH  # Reaction 172
   rate-constant: {A: 6.61e+13, b: 0.0, Ea: 0.0}
   note: |2
      NO3
     \AUTHOR: AS !\REF: He, Y.; Liu, X.; Lin, M.C.; Melius, C.F. Int. J. Chem. Kinet. 25 845 - 863 (1993) !\COMMENT: T = 623 - 773 K
-- equation: NO3 + O <=> NO2 + O2  # Reaction 175
+- equation: NO3 + O <=> NO2 + O2  # Reaction 173
   rate-constant: {A: 1.024e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Atkinson, R.; Baulch, D.L.; et al. Atmos. Chem. Phys. 4 1461 - 1738 (2004) !\COMMENT:
-- equation: NO3 + OH <=> NO2 + HO2  # Reaction 176
+- equation: NO3 + OH <=> NO2 + HO2  # Reaction 174
   rate-constant: {A: 1.4e+13, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: He, Y.; Liu, X.; Lin, M.C.; Melius, C.F. Int. J. Chem. Kinet. 25 845 - 863  (1993) !\COMMENT: T = 623 - 773 K
-- equation: NO3 + HO2 => NO2 + O2 + OH  # Reaction 177
+- equation: NO3 + HO2 => NO2 + O2 + OH  # Reaction 175
   rate-constant: {A: 1.51e+12, b: 0.0, Ea: 0.0}
   note: |
     \AUTHOR: AS !\REF: Becker, E.; Rahman, M.M.; Schindler, R.N. Ber. Bunsenges. Phys. Chem. 96 776 - 783 (1992) !\COMMENT:
-- equation: NO3 + NO2 => NO + NO2 + O2  # Reaction 178
+- equation: NO3 + NO2 => NO + NO2 + O2  # Reaction 176
   rate-constant: {A: 5.73e+10, b: 0.0, Ea: 2800.0}
   note: |
     \AUTHOR: AS !\REF: Cantrell, C.A.; Davidson, J.A.; McDaniel, A.H.; Shetter, R.E.; Calvert, J.G.; J. Chem. Phys. 88 (1988) !\COMMENT: T = 298 - 396 K
-- equation: NO3 <=> NO + O2  # Reaction 179
+- equation: NO3 <=> NO + O2  # Reaction 177
   rate-constant: {A: 2.5e+06, b: 0.0, Ea: 1.212e+04}
   note: |
     \AUTHOR: AS !\REF: Johnston, H.S.; Cantrell, C.A.; Calvert, J.G. J. Geophys. Res. 91 (1986) !\COMMENT: T = 298 - 934 K
-- equation: NO3 + NO3 => NO2 + NO2 + O2  # Reaction 180
+- equation: NO3 + NO3 => NO2 + NO2 + O2  # Reaction 178
   rate-constant: {A: 5.12e+11, b: 0.0, Ea: 4870.0}
   note: |
     \AUTHOR: AS !\REF: Johnston, H.S.; Cantrell, C.A.; Calvert, J.G. J. Geophys. Res. 91 (1986) !\COMMENT: T = 298 - 329 K
-- equation: H + NO2 <=> OH + NO  # Reaction 181
+- equation: H + NO2 <=> OH + NO  # Reaction 179
   rate-constant: {A: 8.85e+13, b: 0.0, Ea: 0.0}
   note: |2
      NO2
     \AUTHOR: AS !\REF: Su, M.-C. et al. J. Phys. Chem. A 106 8261-8270 (2002) !\COMMENT: 
-- equation: NO2 + O <=> NO + O2  # Reaction 182
+- equation: NO2 + O <=> NO + O2  # Reaction 180
   rate-constant: {A: 3.92e+12, b: 0.0, Ea: -238.0}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT:
-- equation: NO2 + O (+M) <=> NO3 (+M)  # Reaction 183
+- equation: NO2 + O (+M) <=> NO3 (+M)  # Reaction 181
   type: falloff
   low-P-rate-constant: {A: 2.5e+20, b: -1.5, Ea: 0.0}
   high-P-rate-constant: {A: 3.5e+12, b: 0.24, Ea: 0.0}
   Troe: {A: 0.71, T3: 1.0e-30, T1: 1700.0, T2: 1.0e+30}
   note: |
     \AUTHOR: AS !\REF: Hahn, J.; Luther, K.; Troe, J. Phys. Chem. Chem. Phys. 5098 - 5104 (2000) !\COMMENT:
-- equation: NO2 + HO2 <=> HONO + O2  # Reaction 184
+- equation: NO2 + HO2 <=> HONO + O2  # Reaction 182
   rate-constant: {A: 1.9, b: 3.32, Ea: 3044.0}
   note: |
     \AUTHOR: AS !\REF: CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008) !\COMMENT:
-- equation: NO2 + HO2 <=> HNO2 + O2  # Reaction 185
+- equation: NO2 + HO2 <=> HNO2 + O2  # Reaction 183
   rate-constant: {A: 19.0, b: 3.26, Ea: 4983.0}
   note: |
     \AUTHOR: AS !\REF: CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008) !\COMMENT:
-- equation: NO2 + NO2 => NO + NO + O2  # Reaction 186
+- equation: NO2 + NO2 => NO + NO + O2  # Reaction 184
   rate-constant: {A: 1.63e+12, b: 0.0, Ea: 2.603e+04}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT:
-- equation: NO2 + NO2 <=> NO3 + NO  # Reaction 187
+- equation: NO2 + NO2 <=> NO3 + NO  # Reaction 185
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2.58e+04}
   note: |
     \AUTHOR: AS !\REF: Rohrig, M.; Petersen, E.L.; Davidson, D.F.; Hanson, R.K. !\COMMENT:
-- equation: N2O (+M) <=> N2 + O (+M)  # Reaction 188
+- equation: N2O (+M) <=> N2 + O (+M)  # Reaction 186
   type: falloff
   low-P-rate-constant: {A: 6.02e+14, b: 0.0, Ea: 5.7444e+04}
   high-P-rate-constant: {A: 9.9e+10, b: 0.0, Ea: 5.7901e+04}
   efficiencies: {N2: 1.7, O2: 1.4, H2O: 12.0}
   note: |
     \AUTHOR: AS !\REF: Baulch, D. L., Bowman, C. T., et al. J Phys Chem Ref Data, 34(3), 757-1397 (2005). !\COMMENT:
-- equation: N2O + H <=> N2 + OH  # Reaction 189
+- equation: N2O + H <=> N2 + OH  # Reaction 187
   duplicate: true
   rate-constant: {A: 2.53e+10, b: 0.0, Ea: 4550.0}
   note: |
     \AUTHOR: AS !\REF: Powell, O.A., et al. Combust Sci Technology, 182(3), 252-283. (2010) !\COMMENT: Modified Baulch rate
-- equation: N2O + H <=> N2 + OH  # Reaction 190
+- equation: N2O + H <=> N2 + OH  # Reaction 188
   duplicate: true
   rate-constant: {A: 5.0e+14, b: 0.0, Ea: 1.81e+04}
   note: |
     \AUTHOR: AS !\REF: Powell, O.A., et al. Combust Sci Technology, 182(3), 252-283. (2010) !\COMMENT: Modified Baulch rate
-- equation: N2O + O <=> NO + NO  # Reaction 191
+- equation: N2O + O <=> NO + NO  # Reaction 189
   rate-constant: {A: 6.62e+13, b: 0.0, Ea: 2.663e+04}
   note: |2
 
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT: 
-- equation: N2O + O <=> N2 + O2  # Reaction 192
+- equation: N2O + O <=> N2 + O2  # Reaction 190
   rate-constant: {A: 1.02e+14, b: 0.0, Ea: 2.802e+04}
   note: |
     \AUTHOR: AS !\REF: Tsang, W.; Herron, J.T.  J. Phys. Chem. Ref. Data 20 609-663 (1991) !\COMMENT: 
-- equation: N2O + OH <=> N2 + HO2  # Reaction 193
+- equation: N2O + OH <=> N2 + HO2  # Reaction 191
   rate-constant: {A: 0.01, b: 4.72, Ea: 3.656e+04}
   note: |
     \AUTHOR: AS !\REF: Mebel, A.M.; Lin, M.C.; Morokuma, K.; Melius, C.F. Int. J. Chem. Kinet. 28 693-703 (1996) !\COMMENT: 
-- equation: N2O + NO <=> N2 + NO2  # Reaction 194
+- equation: N2O + NO <=> N2 + NO2  # Reaction 192
   rate-constant: {A: 5.25e+05, b: 2.23, Ea: 4.63e+04}
   note: |
     \AUTHOR: AS !\REF: Mebel, A.M.; Lin, M.C.; Morokuma, K.; Melius, C.F. Int. J. Chem. Kinet. 28 693-703 (1996) !\COMMENT: 
-- equation: HNO2 + O <=> NO2 + OH  # Reaction 195
+- equation: HNO2 + O <=> NO2 + OH  # Reaction 193
   rate-constant: {A: 1.7e+08, b: 1.5, Ea: 2365.4}
   note: |
     \AUTHOR: AS !\REF: Dean, A. M., J. W. Bozzelli, and W. C. Gardiner. WC Gardiner, Jr., Ed (2000). !\COMMENT:
-- equation: HNO2 + OH <=> NO2 + H2O  # Reaction 196
+- equation: HNO2 + OH <=> NO2 + H2O  # Reaction 194
   rate-constant: {A: 1.2e+06, b: 2.0, Ea: -794.8}
   note: |
     \AUTHOR: AS !\REF: Dean, A. M., J. W. Bozzelli, and W. C. Gardiner. WC Gardiner, Jr., Ed (2000). !\COMMENT:
-- equation: HNO2 <=> HONO  # Reaction 197
+- equation: HNO2 <=> HONO  # Reaction 195
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.26e+34, b: -7.97, Ea: 4.549e+04}
@@ -1538,11 +1524,11 @@ reactions:
   - {P: 100.0 atm, A: 2.03e+22, b: -3.35, Ea: 4.443e+04}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: HNO2 + NH2 <=> NH3 + NO2  # Reaction 198
+- equation: HNO2 + NH2 <=> NH3 + NO2  # Reaction 196
   rate-constant: {A: 2.8e+10, b: 0.0, Ea: -5760.0}
   note: |
     \AUTHOR: AS !\REF: Thaxton, A.G.; Hsu, C.C.; Lin, M.C. Int. J. Chem. Kinet. 29 245-251 (1997) !\COMMENT:
-- equation: H + HNO2 <=> NO + H2O  # Reaction 199
+- equation: H + HNO2 <=> NO + H2O  # Reaction 197
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.39e+09, b: 1.07, Ea: 5568.0}
@@ -1555,7 +1541,7 @@ reactions:
   - {P: 100.0 atm, A: 1.27e+10, b: 0.91, Ea: 5968.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: H + HNO2 <=> HNO + OH  # Reaction 200
+- equation: H + HNO2 <=> HNO + OH  # Reaction 198
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.61e+07, b: 1.78, Ea: 5565.0}
@@ -1568,7 +1554,7 @@ reactions:
   - {P: 100.0 atm, A: 1.81e+08, b: 1.59, Ea: 6233.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: OH + NO <=> HNO2  # Reaction 201
+- equation: OH + NO <=> HNO2  # Reaction 199
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.16e+18, b: -3.74, Ea: 1405.0}
@@ -1581,14 +1567,14 @@ reactions:
   - {P: 100.0 atm, A: 1.95e+15, b: -1.64, Ea: 6099.0}
   note: |
     \AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-- equation: OH + NO2 (+M) <=> HONO2 (+M)  # Reaction 202
+- equation: OH + NO2 (+M) <=> HONO2 (+M)  # Reaction 200
   type: falloff
   low-P-rate-constant: {A: 2.938e+25, b: -3.0, Ea: 0.0}
   high-P-rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   Troe: {A: 0.4, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
   note: |
     \AUTHOR: AS !\REF: Troe, J. Int Journ Chem Kinet, 33(12), 878-889 (2001). !\COMMENT:
-- equation: HONO2 + OH <=> NO3 + H2O  # Reaction 203
+- equation: HONO2 + OH <=> NO3 + H2O  # Reaction 201
   rate-constant: {A: 9.04e+09, b: 0.0, Ea: -1240.0}
   note: |
     \AUTHOR: AS !\REF: Fritz, B.; Lorenz, K.; et al. Phys. Chem. Behav. Atmos. Pollut. Proc. Eur. Symp. (1982) !\COMMENT:

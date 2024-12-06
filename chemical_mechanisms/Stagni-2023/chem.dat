@@ -233,12 +233,9 @@ N2H2=NNH+H				 .1800E+41  -8.410  73353.0 !\AUTHOR: AS !\REF: Dean AM Bozzelli J
 PLOG /		       +1.0000000E-001   .5600E+37  -7.750  70215.0 /
 PLOG /		       +1.0000000E+000   .1800E+41  -8.410  73353.0 /
 PLOG /		       +1.0000000E+001   .3100E+42  -8.420  76004.2 /
-DUPLICATE
-N2H2=NNH+H				 .2600E+41  -8.530  72886.2 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT: N2 as bath gas
 PLOG /		       +1.0000000E-001   .1600E+38  -7.940  70721.5 /
 PLOG /		       +1.0000000E+000   .2600E+41  -8.530  72886.2 /
 PLOG /		       +1.0000000E+001   .1300E+45  -9.220  77036.9 /
-DUPLICATE
 N2H2+H=NNH+H2                            .4820E+09   1.760    739.2 !\AUTHOR: AS !\REF: Li, Y. and Sarathy, S.M., Int. J. Hydrogen Energy 45 23624-23637 (2020) !\COMMENT:
 N2H2+O=NNH+OH                            .1110E+09   1.620    804.8 !\AUTHOR: AS !\REF: Li, Y. and Sarathy, S.M., Int. J. Hydrogen Energy 45 23624-23637 (2020) !\COMMENT:
 N2H2+OH=NNH+H2O                          .5923E+02   3.400  -1363.7 !\AUTHOR: AS !\REF: Linder, D.P.; Duan, X.; Page, M.  J. Chem. Phys. 104 6298 - 6306 (1996) !\COMMENT:
@@ -253,12 +250,9 @@ H2NN=NNH+H				 .9600E+36  -7.570  54841.2 !\AUTHOR: AS !\REF: Dean AM Bozzelli J
 PLOG /		       +1.0000000E-001   .5900E+33  -6.990  51791.2 /
 PLOG /		       +1.0000000E+000   .9600E+36  -7.570  54841.2 /
 PLOG /		       +1.0000000E+001   .5000E+37  -7.430  57295.1 /
-DUPLICATE
-H2NN=NNH+H				 .3200E+32  -6.220  52317.7 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
 PLOG /		       +1.0000000E-001   .7200E+29  -7.770  50757.9 /
 PLOG /		       +1.0000000E+000   .3200E+32  -6.220  52317.7 /
 PLOG /		       +1.0000000E+001   .5100E+34  -6.520  54215.3 /
-DUPLICATE
 !
 ! H2NN
 !
