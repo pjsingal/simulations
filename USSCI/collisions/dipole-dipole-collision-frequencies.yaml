@@ -217,8 +217,8 @@ reactions:
     Z_LJ: [3.63, 4.94, 6.09]
     muA: None
     mA: 34.948 #g/mol
-    sigmaA: 3.33
-    epsAA: 136.5
+    sigmaA: 3.33 #diameter
+    epsAA: 136.5 #well-depth
     note: Jasper-2020
   - name: HE
     temperatures: [300, 1000, 2000]

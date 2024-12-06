@@ -21,3 +21,15 @@ def getZdd(inputs,T):
     mAM = inputs['mA']*inputs['mM']/(inputs['mA']+inputs['mM'])
     Z =f*math.gamma(1/3)*(muA*muM)**(2/3)*(kb*T)**(-1/6)*(8*np.pi/mAM)**(1/2)
     return Z
+
+# A is C2H6
+inputs = {
+    'sigmaA': 3.33,
+    'sigmaM':4.35,
+    'epsAA': 136.5,
+    'epsMM': 247.5,
+    'mA': 34.948,
+    'mM': 30.07,
+}
+
+print(getZLJ(inputs,1000))

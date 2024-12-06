@@ -1,0 +1,23 @@
+# All Z values have units [10^(-10)*cm^3*molec^-1*s^-1]
+# Params for well-depth, diameter, and dipole taken from AramcoMech 3.0
+
+# kb = 1.380649e-23 # J⋅K−1 boltzmann constant
+reactions:
+- equation: H + O2 (+M) <=> HO2 (+M)
+  reference-collider: AR
+  m: 33.006e-3 #kg/mol
+  eps: 365.56 # K/kb
+  sigma: 3.433e-10 #m
+  mu: 2.090 #Debye, dipole moment
+  Btot: 0.767 # cm-1
+  note: Lei-2020
+  colliders:
+  - name: H2O
+    temperatures: [300,1000,2000]
+    efficiency: [23.3,22.2,21.3]
+    m: 18.015 #g/mol
+    eps: 535.21 # K/kb
+    sigma: 2.673e-10 #m
+    mu: 1.847 #Debye, dipole moment
+    Btot: 7.530 # cm-1
+    note: Lei-2020
