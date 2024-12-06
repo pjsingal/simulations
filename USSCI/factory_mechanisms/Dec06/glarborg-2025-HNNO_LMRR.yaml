@@ -6,7 +6,7 @@ phases:
   species: [NH3, H2, NO2, 'NO', N2O, tHNNO, cHNNO, NHNO, H2NNO2, tHNN(O)OH, cHNN(O)OH,
     O2, O3, H, O, OH, HO2, H2O, H2O2, CO, CO2, HOCO, CH2O, HCO, NH2, NH, N, NNH, N2H4,
     N2H3, tHNNH, cHNNH, H2NN, NH2OH, H2NO, HNOH, HNO, HON, HONO, HNO2, NO3, HONO2,
-    H2NCO, HNCO, NCO, AR, HE, N2]
+    H2NCO, HNCO, NCO, AR, HE, N2, OH*]
   kinetics: gas
   transport: mixture-averaged
   state: {T: 300.0, P: 1 atm}
@@ -725,6 +725,20 @@ species:
       \ N2 <g> ATcT ver. 1.122, DHf298 = 0.000 \xB1 0.000 kJ/mol - fit JAN17"
   transport: {model: gas, geometry: linear, well-depth: 97.53, diameter: 3.621, polarizability: 1.76,
     rotational-relaxation: 4.0}
+- name: OH*
+  composition: {H: 1, O: 1}
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.0, 1000.0, 6000.0]
+    data:
+    - [3.46084428, 0.000501872172, -2.00254474e-06, 3.18901984e-09, -1.35451838e-12,
+      50734.9466, 1.73976415]
+    - [2.7558292, 0.00139848756, -4.19428493e-07, 6.33453282e-11, -3.56042218e-15,
+      50975.1756, 5.62581429]
+    note: ATcT3E
+  transport: {model: gas, geometry: linear, well-depth: 80.0, diameter: 2.75, note: added
+      by Psingal}
+  note: added by PSingal
 reactions:
 - equation: N2O (+M) <=> N2 + O (+M)
   type: falloff
@@ -809,114 +823,32 @@ reactions:
 
     '
 - equation: tHNNO <=> N2 + OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 5.5e+20, b: -4.92, Ea: 27957.0}
-    - {P: 0.01 atm, A: 7.2e+19, b: -4.47, Ea: 28290.0}
-    - {P: 0.1 atm, A: 1.4e+17, b: -3.44, Ea: 28122.0}
-    - {P: 1.0 atm, A: 190000000000000.0, b: -2.27, Ea: 28300.0}
-    - {P: 10.0 atm, A: 120000000000000.0, b: -1.76, Ea: 30057.0}
-    - {P: 100.0 atm, A: 6.5e+16, b: -2.06, Ea: 33255.0}
-    - {P: 1000.0 atm, A: 1.2e+18, b: -2.0, Ea: 35804.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 5.5e+20, b: -4.92, Ea: 27957.0}
+  - {P: 0.01 atm, A: 7.2e+19, b: -4.47, Ea: 28290.0}
+  - {P: 0.1 atm, A: 1.4e+17, b: -3.44, Ea: 28122.0}
+  - {P: 1.0 atm, A: 190000000000000.0, b: -2.27, Ea: 28300.0}
+  - {P: 10.0 atm, A: 120000000000000.0, b: -1.76, Ea: 30057.0}
+  - {P: 100.0 atm, A: 6.5e+16, b: -2.06, Ea: 33255.0}
+  - {P: 1000.0 atm, A: 1.2e+18, b: -2.0, Ea: 35804.0}
+  note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
+
+    1 atm  ##
+
+    '
 - equation: tHNNO <=> NHNO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 1.0 atm, A: 0.7, b: 0.403, Ea: 30406.0}
-    - {P: 10.0 atm, A: 7.6, b: 0.907, Ea: 33467.0}
-    - {P: 100.0 atm, A: 7.6, b: 0.907, Ea: 33467.0}
-    - {P: 1000.0 atm, A: 7800.0, b: 1.009, Ea: 38212.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 1.0 atm, A: 0.7, b: 0.403, Ea: 30406.0}
+  - {P: 10.0 atm, A: 7.6, b: 0.907, Ea: 33467.0}
+  - {P: 100.0 atm, A: 7.6, b: 0.907, Ea: 33467.0}
+  - {P: 1000.0 atm, A: 7800.0, b: 1.009, Ea: 38212.0}
+  note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
+
+    800-3000 K ##
+
+    '
 - equation: tHNNO + H <=> NH2 + NO
   rate-constant: {A: 18000000000000.0, b: 0.183, Ea: -45.0}
   note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
@@ -952,285 +884,60 @@ reactions:
 
     '
 - equation: tHNNO + OH <=> H2NNO2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 3.0e+24, b: -6.22, Ea: 12272.0}
-    - {P: 0.01 atm, A: 1.5e+22, b: -5.3, Ea: 10109.0}
-    - {P: 0.1 atm, A: 1.4e+21, b: -4.77, Ea: 6968.0}
-    - {P: 1.0 atm, A: 2.3e+23, b: -5.11, Ea: 3594.0}
-    - {P: 10.0 atm, A: 8.2e+28, b: -6.26, Ea: 3437.0}
-    - {P: 100.0 atm, A: 8.5e+31, b: -6.68, Ea: 5301.0}
-    - {P: 1000.0 atm, A: 6.8e+29, b: -5.71, Ea: 7282.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 3.0e+24, b: -6.22, Ea: 12272.0}
+  - {P: 0.01 atm, A: 1.5e+22, b: -5.3, Ea: 10109.0}
+  - {P: 0.1 atm, A: 1.4e+21, b: -4.77, Ea: 6968.0}
+  - {P: 1.0 atm, A: 2.3e+23, b: -5.11, Ea: 3594.0}
+  - {P: 10.0 atm, A: 8.2e+28, b: -6.26, Ea: 3437.0}
+  - {P: 100.0 atm, A: 8.5e+31, b: -6.68, Ea: 5301.0}
+  - {P: 1000.0 atm, A: 6.8e+29, b: -5.71, Ea: 7282.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: tHNNO + OH <=> tHNN(O)OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 1.4e+21, b: -5.39, Ea: 12576.0}
-    - {P: 0.01 atm, A: 1.3e+20, b: -4.83, Ea: 11019.0}
-    - {P: 0.1 atm, A: 1.0e+17, b: -3.74, Ea: 5875.0}
-    - {P: 1.0 atm, A: 3.0e+19, b: -4.15, Ea: 2539.0}
-    - {P: 10.0 atm, A: 7.8e+24, b: -5.25, Ea: 2310.0}
-    - {P: 100.0 atm, A: 1.3e+28, b: -5.63, Ea: 3641.0}
-    - {P: 1000.0 atm, A: 2.6e+27, b: -4.97, Ea: 5060.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 1.4e+21, b: -5.39, Ea: 12576.0}
+  - {P: 0.01 atm, A: 1.3e+20, b: -4.83, Ea: 11019.0}
+  - {P: 0.1 atm, A: 1.0e+17, b: -3.74, Ea: 5875.0}
+  - {P: 1.0 atm, A: 3.0e+19, b: -4.15, Ea: 2539.0}
+  - {P: 10.0 atm, A: 7.8e+24, b: -5.25, Ea: 2310.0}
+  - {P: 100.0 atm, A: 1.3e+28, b: -5.63, Ea: 3641.0}
+  - {P: 1000.0 atm, A: 2.6e+27, b: -4.97, Ea: 5060.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: tHNNO + OH <=> cHNN(O)OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 3.7e-56, b: 15.1, Ea: -44419.0}
-    - {P: 0.01 atm, A: 1.1e+23, b: -5.5, Ea: 34725.0}
-    - {P: 0.1 atm, A: 6900000000000000.0, b: -3.34, Ea: 17962.0}
-    - {P: 1.0 atm, A: 49000000000.0, b: -1.69, Ea: 2195.0}
-    - {P: 10.0 atm, A: 9.5e+21, b: -4.41, Ea: 1742.0}
-    - {P: 100.0 atm, A: 7.2e+27, b: -5.53, Ea: 3389.0}
-    - {P: 1000.0 atm, A: 4.6e+27, b: -5.01, Ea: 4132.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 3.7e-56, b: 15.1, Ea: -44419.0}
+  - {P: 0.01 atm, A: 1.1e+23, b: -5.5, Ea: 34725.0}
+  - {P: 0.1 atm, A: 6900000000000000.0, b: -3.34, Ea: 17962.0}
+  - {P: 1.0 atm, A: 49000000000.0, b: -1.69, Ea: 2195.0}
+  - {P: 10.0 atm, A: 9.5e+21, b: -4.41, Ea: 1742.0}
+  - {P: 100.0 atm, A: 7.2e+27, b: -5.53, Ea: 3389.0}
+  - {P: 1000.0 atm, A: 4.6e+27, b: -5.01, Ea: 4132.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: tHNNO + OH <=> NH2 + NO2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
-    - {P: 0.01 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
-    - {P: 0.1 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
-    - {P: 1.0 atm, A: 2.3e+16, b: -1.44, Ea: 1239.0}
-    - {P: 10.0 atm, A: 3.5e+16, b: -1.5, Ea: 1408.0}
-    - {P: 100.0 atm, A: 1.4e+18, b: -1.92, Ea: 3172.0}
-    - {P: 1000.0 atm, A: 8.2e+18, b: -2.06, Ea: 6656.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
+  - {P: 0.01 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
+  - {P: 0.1 atm, A: 2.2e+16, b: -1.44, Ea: 1234.0}
+  - {P: 1.0 atm, A: 2.3e+16, b: -1.44, Ea: 1239.0}
+  - {P: 10.0 atm, A: 3.5e+16, b: -1.5, Ea: 1408.0}
+  - {P: 100.0 atm, A: 1.4e+18, b: -1.92, Ea: 3172.0}
+  - {P: 1000.0 atm, A: 8.2e+18, b: -2.06, Ea: 6656.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: tHNNO + OH <=> H2O + N2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
-    - {P: 0.01 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
-    - {P: 0.1 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
-    - {P: 1.0 atm, A: 91000000000000.0, b: -0.55, Ea: 337.0}
-    - {P: 10.0 atm, A: 93000000000000.0, b: -0.55, Ea: 338.0}
-    - {P: 100.0 atm, A: 220000000000000.0, b: -0.65, Ea: 720.0}
-    - {P: 1000.0 atm, A: 220000000000000.0, b: -0.62, Ea: 1739.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
+  - {P: 0.01 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
+  - {P: 0.1 atm, A: 92000000000000.0, b: -0.55, Ea: 338.0}
+  - {P: 1.0 atm, A: 91000000000000.0, b: -0.55, Ea: 337.0}
+  - {P: 10.0 atm, A: 93000000000000.0, b: -0.55, Ea: 338.0}
+  - {P: 100.0 atm, A: 220000000000000.0, b: -0.65, Ea: 720.0}
+  - {P: 1000.0 atm, A: 220000000000000.0, b: -0.62, Ea: 1739.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: tHNNO + OH <=> HNOH + NO
   rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
   note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n## \n"
@@ -1252,113 +959,27 @@ reactions:
 
     '
 - equation: cHNNO <=> N2 + OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 27000000.0, b: -0.96, Ea: 17410.0}
-    - {P: 0.01 atm, A: 13000000.0, b: -0.71, Ea: 17789.0}
-    - {P: 0.1 atm, A: 270000.0, b: -0.01, Ea: 17748.0}
-    - {P: 1.0 atm, A: 1000.0, b: 1.0, Ea: 17830.0}
-    - {P: 10.0 atm, A: 470.0, b: 1.52, Ea: 19263.0}
-    - {P: 100.0 atm, A: 96000.0, b: 1.32, Ea: 21935.0}
-    - {P: 1000.0 atm, A: 880000.0, b: 1.43, Ea: 23724.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 27000000.0, b: -0.96, Ea: 17410.0}
+  - {P: 0.01 atm, A: 13000000.0, b: -0.71, Ea: 17789.0}
+  - {P: 0.1 atm, A: 270000.0, b: -0.01, Ea: 17748.0}
+  - {P: 1.0 atm, A: 1000.0, b: 1.0, Ea: 17830.0}
+  - {P: 10.0 atm, A: 470.0, b: 1.52, Ea: 19263.0}
+  - {P: 100.0 atm, A: 96000.0, b: 1.32, Ea: 21935.0}
+  - {P: 1000.0 atm, A: 880000.0, b: 1.43, Ea: 23724.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: cHNNO <=> NHNO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 1.0 atm, A: 3.9e-06, b: 1.913, Ea: 23095.0}
-    - {P: 10.0 atm, A: 0.001, b: 1.987, Ea: 26556.0}
-    - {P: 100.0 atm, A: 0.001, b: 1.987, Ea: 26556.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 1.0 atm, A: 3.9e-06, b: 1.913, Ea: 23095.0}
+  - {P: 10.0 atm, A: 0.001, b: 1.987, Ea: 26556.0}
+  - {P: 100.0 atm, A: 0.001, b: 1.987, Ea: 26556.0}
+  note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
+
+    1 atm ##
+
+    '
 - equation: cHNNO + H <=> NH2 + NO
   rate-constant: {A: 58000000000.0, b: 0.313, Ea: -182.0}
   note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560 (800-3000 K).\n\
@@ -1380,338 +1001,76 @@ reactions:
 - equation: cHNNO + O <=> N2O + OH
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
 - equation: cHNNO + OH <=> H2NNO2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 66000000.0, b: -1.75, Ea: 12568.0}
-    - {P: 0.01 atm, A: 9300000000000.0, b: -2.89, Ea: 16148.0}
-    - {P: 0.1 atm, A: 1.7e+18, b: -4.09, Ea: 18328.0}
-    - {P: 1.0 atm, A: 1100000000000000.0, b: -2.98, Ea: 8984.0}
-    - {P: 10.0 atm, A: 6.6e+19, b: -4.01, Ea: 3295.0}
-    - {P: 100.0 atm, A: 1.3e+28, b: -5.85, Ea: 3491.0}
-    - {P: 1000.0 atm, A: 5.6e+29, b: -5.79, Ea: 5235.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 66000000.0, b: -1.75, Ea: 12568.0}
+  - {P: 0.01 atm, A: 9300000000000.0, b: -2.89, Ea: 16148.0}
+  - {P: 0.1 atm, A: 1.7e+18, b: -4.09, Ea: 18328.0}
+  - {P: 1.0 atm, A: 1100000000000000.0, b: -2.98, Ea: 8984.0}
+  - {P: 10.0 atm, A: 6.6e+19, b: -4.01, Ea: 3295.0}
+  - {P: 100.0 atm, A: 1.3e+28, b: -5.85, Ea: 3491.0}
+  - {P: 1000.0 atm, A: 5.6e+29, b: -5.79, Ea: 5235.0}
+  note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
+
+    1 atm ##
+
+    '
 - equation: cHNNO + OH <=> tHNN(O)OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 1.5e+30, b: -7.88, Ea: 36355.0}
-    - {P: 0.01 atm, A: 1.6e+31, b: -7.86, Ea: 37492.0}
-    - {P: 0.1 atm, A: 2.0e+17, b: -3.91, Ea: 20340.0}
-    - {P: 1.0 atm, A: 9600000000.0, b: -1.69, Ea: 7400.0}
-    - {P: 10.0 atm, A: 4100000000000000.0, b: -2.94, Ea: 2092.0}
-    - {P: 100.0 atm, A: 1.7e+24, b: -4.8, Ea: 2307.0}
-    - {P: 1000.0 atm, A: 1.2e+27, b: -5.0, Ea: 3790.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 1.5e+30, b: -7.88, Ea: 36355.0}
+  - {P: 0.01 atm, A: 1.6e+31, b: -7.86, Ea: 37492.0}
+  - {P: 0.1 atm, A: 2.0e+17, b: -3.91, Ea: 20340.0}
+  - {P: 1.0 atm, A: 9600000000.0, b: -1.69, Ea: 7400.0}
+  - {P: 10.0 atm, A: 4100000000000000.0, b: -2.94, Ea: 2092.0}
+  - {P: 100.0 atm, A: 1.7e+24, b: -4.8, Ea: 2307.0}
+  - {P: 1000.0 atm, A: 1.2e+27, b: -5.0, Ea: 3790.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: cHNNO + OH <=> cHNN(O)OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 1.0 atm, A: 1400000.0, b: -0.76, Ea: 8238.0}
-    - {P: 10.0 atm, A: 43000000000000.0, b: -2.42, Ea: 1857.0}
-    - {P: 100.0 atm, A: 2.8e+24, b: -4.87, Ea: 2369.0}
-    - {P: 1000.0 atm, A: 6.3e+27, b: -5.23, Ea: 4346.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 1.0 atm, A: 1400000.0, b: -0.76, Ea: 8238.0}
+  - {P: 10.0 atm, A: 43000000000000.0, b: -2.42, Ea: 1857.0}
+  - {P: 100.0 atm, A: 2.8e+24, b: -4.87, Ea: 2369.0}
+  - {P: 1000.0 atm, A: 6.3e+27, b: -5.23, Ea: 4346.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: cHNNO + OH <=> NH2 + NO2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 0.01 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 0.1 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 1.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 10.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 100.0 atm, A: 230000000000000.0, b: -0.7, Ea: 784.0}
-    - {P: 1000.0 atm, A: 2900000000000000.0, b: -0.98, Ea: 2546.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 0.01 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 0.1 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 1.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 10.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 100.0 atm, A: 230000000000000.0, b: -0.7, Ea: 784.0}
+  - {P: 1000.0 atm, A: 2900000000000000.0, b: -0.98, Ea: 2546.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: cHNNO + OH <=> tHNNO + OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
-    - {P: 0.01 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
-    - {P: 0.1 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
-    - {P: 1.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
-    - {P: 10.0 atm, A: 8700000000000.0, b: -0.31, Ea: 1190.0}
-    - {P: 100.0 atm, A: 17000000000000.0, b: -0.38, Ea: 1502.0}
-    - {P: 1000.0 atm, A: 180000000000000.0, b: -0.65, Ea: 3175.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
+  - {P: 0.01 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
+  - {P: 0.1 atm, A: 8200000000000.0, b: -0.3, Ea: 1159.0}
+  - {P: 1.0 atm, A: 150000000000000.0, b: -0.65, Ea: 626.0}
+  - {P: 10.0 atm, A: 8700000000000.0, b: -0.31, Ea: 1190.0}
+  - {P: 100.0 atm, A: 17000000000000.0, b: -0.38, Ea: 1502.0}
+  - {P: 1000.0 atm, A: 180000000000000.0, b: -0.65, Ea: 3175.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n1 atm ## \n"
 - equation: cHNNO + OH <=> N2O + H2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
-    - {P: 0.01 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
-    - {P: 0.1 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
-    - {P: 1.0 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
-    - {P: 10.0 atm, A: 600000000000000.0, b: -0.91, Ea: 666.0}
-    - {P: 100.0 atm, A: 750000000000000.0, b: -0.94, Ea: 711.0}
-    - {P: 1000.0 atm, A: 6800000000000000.0, b: -1.18, Ea: 2089.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
+  - {P: 0.01 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
+  - {P: 0.1 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
+  - {P: 1.0 atm, A: 600000000000000.0, b: -0.91, Ea: 668.0}
+  - {P: 10.0 atm, A: 600000000000000.0, b: -0.91, Ea: 666.0}
+  - {P: 100.0 atm, A: 750000000000000.0, b: -0.94, Ea: 711.0}
+  - {P: 1000.0 atm, A: 6800000000000000.0, b: -1.18, Ea: 2089.0}
+  note: 'Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.
+
+    1 atm  ##
+
+    '
 - equation: cHNNO + OH <=> HNOH + NO
   rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
   note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n## \n"
@@ -1728,61 +1087,16 @@ reactions:
 
     '
 - equation: NHNO <=> N2 + OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.001 atm, A: 260000.0, b: -0.51, Ea: 10529.0}
-    - {P: 0.01 atm, A: 1200000.0, b: -0.4, Ea: 11592.0}
-    - {P: 0.1 atm, A: 1000000.0, b: -0.06, Ea: 12507.0}
-    - {P: 1.0 atm, A: 660000.0, b: 0.36, Ea: 13590.0}
-    - {P: 10.0 atm, A: 26000000.0, b: 0.33, Ea: 15729.0}
-    - {P: 100.0 atm, A: 370000000000.0, b: -0.41, Ea: 19036.0}
-    - {P: 1000.0 atm, A: 430000000000000.0, b: -0.89, Ea: 21729.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.001 atm, A: 260000.0, b: -0.51, Ea: 10529.0}
+  - {P: 0.01 atm, A: 1200000.0, b: -0.4, Ea: 11592.0}
+  - {P: 0.1 atm, A: 1000000.0, b: -0.06, Ea: 12507.0}
+  - {P: 1.0 atm, A: 660000.0, b: 0.36, Ea: 13590.0}
+  - {P: 10.0 atm, A: 26000000.0, b: 0.33, Ea: 15729.0}
+  - {P: 100.0 atm, A: 370000000000.0, b: -0.41, Ea: 19036.0}
+  - {P: 1000.0 atm, A: 430000000000000.0, b: -0.89, Ea: 21729.0}
+  note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n\n1 atm ## \n"
 - equation: NHNO + H <=> NH2 + NO
   rate-constant: {A: 60000000000000.0, b: 0.0, Ea: 0.0}
   note: "Meng, Lei, Lee, Burke, Proc Combust Inst 39 (2023) 551-560.\n## \n"
@@ -2059,113 +1373,28 @@ reactions:
     \   CO/CO2 subset                                                            *\n\
     *****************************************************************************\n"
 - equation: CO + OH <=> CO2 + H
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01315 atm, A: 210000.0, b: 1.9, Ea: -1064.0}
-    - {P: 0.1315 atm, A: 250000.0, b: 1.88, Ea: -1043.0}
-    - {P: 1.315 atm, A: 870000.0, b: 1.73, Ea: -685.0}
-    - {P: 13.158 atm, A: 6800000.0, b: 1.48, Ea: 48.0}
-    - {P: 131.58 atm, A: 23000000.0, b: 1.35, Ea: 974.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01315 atm, A: 210000.0, b: 1.9, Ea: -1064.0}
+  - {P: 0.1315 atm, A: 250000.0, b: 1.88, Ea: -1043.0}
+  - {P: 1.315 atm, A: 870000.0, b: 1.73, Ea: -685.0}
+  - {P: 13.158 atm, A: 6800000.0, b: 1.48, Ea: 48.0}
+  - {P: 131.58 atm, A: 23000000.0, b: 1.35, Ea: 974.0}
+  note: 'Mueller MA Yetter RA Dryer FL IJCK 31:705 1999
+
+    1 atm
+
+    '
 - equation: CO + OH <=> HOCO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.013158 atm, A: 1700000000000000.0, b: -2.68, Ea: 859.0}
-    - {P: 0.13158 atm, A: 5.9e+18, b: -3.35, Ea: 887.0}
-    - {P: 1.3158 atm, A: 2.6e+20, b: -3.5, Ea: 1309.0}
-    - {P: 13.158 atm, A: 7.1e+20, b: -3.32, Ea: 1763.0}
-    - {P: 131.58 atm, A: 1.1e+20, b: -2.78, Ea: 2056.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.013158 atm, A: 1700000000000000.0, b: -2.68, Ea: 859.0}
+  - {P: 0.13158 atm, A: 5.9e+18, b: -3.35, Ea: 887.0}
+  - {P: 1.3158 atm, A: 2.6e+20, b: -3.5, Ea: 1309.0}
+  - {P: 13.158 atm, A: 7.1e+20, b: -3.32, Ea: 1763.0}
+  - {P: 131.58 atm, A: 1.1e+20, b: -2.78, Ea: 2056.0}
+  note: "J.P. Senosiain, S.J. Klippenstein, J.A. Miller, Proc. Combust. Inst. 30 (2005)\
+    \ 945-953.\n 1.0 atm interpolation - LPL (JPS,SJK,&JAM 30th Symp)\n"
 - equation: CO + HO2 <=> CO2 + OH
   rate-constant: {A: 160000.0, b: 2.18, Ea: 17943.0}
   note: 'J.P. Senosiain, S.J. Klippenstein, J.A. Miller, Proc. Combust. Inst. 30 (2005)
@@ -2255,112 +1484,24 @@ reactions:
 
     '
 - equation: CH2O + H <=> HCO + H2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.04 atm, A: 7.4e+23, b: -2.732, Ea: 16379.0}
-    - {P: 0.04 atm, A: 21000000000.0, b: 1.057, Ea: 3720.0}
-    - {P: 1.0 atm, A: 1.4e+23, b: -2.355, Ea: 17519.0}
-    - {P: 1.0 atm, A: 1600000000000000.0, b: -0.444, Ea: 5682.0}
-    - {P: 10.0 atm, A: 7.3e+23, b: -2.665, Ea: 17634.0}
-    - {P: 10.0 atm, A: 4200000000.0, b: 1.294, Ea: 3591.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.04 atm, A: 7.4e+23, b: -2.732, Ea: 16379.0}
+  - {P: 0.04 atm, A: 21000000000.0, b: 1.057, Ea: 3720.0}
+  - {P: 1.0 atm, A: 1.4e+23, b: -2.355, Ea: 17519.0}
+  - {P: 1.0 atm, A: 1600000000000000.0, b: -0.444, Ea: 5682.0}
+  - {P: 10.0 atm, A: 7.3e+23, b: -2.665, Ea: 17634.0}
+  - {P: 10.0 atm, A: 4200000000.0, b: 1.294, Ea: 3591.0}
+  note: " Troe J JPCA 109:8320-8328 2005\n J. Troe, J. Phys. Chem. A 111 (2007) 3862-3867.\n\
+    CH2O+H=HCO+H2                        5.9E03   3.130    1510 !\n Wang SK Dames\
+    \ EE Davidson DF Hanson RK, J. Phys. Chem. A  118 10201-10209 2014\n applying\
+    \ prompt HCO dissociation - Labbe et al., J. Phys. Chem. Lett. 2016:\n 1 atm\n"
 - equation: CH2O + H <=> H + CO + H2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.04 atm, A: 720000000.0, b: 1.903, Ea: 11733.0}
-    - {P: 1.0 atm, A: 51000000.0, b: 2.182, Ea: 11524.0}
-    - {P: 10.0 atm, A: 1100000000.0, b: 1.812, Ea: 13163.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.04 atm, A: 720000000.0, b: 1.903, Ea: 11733.0}
+  - {P: 1.0 atm, A: 51000000.0, b: 2.182, Ea: 11524.0}
+  - {P: 10.0 atm, A: 1100000000.0, b: 1.812, Ea: 13163.0}
 - equation: CH2O + O <=> HCO + OH
   duplicate: true
   rate-constant: {A: 5.6e+31, b: -5.189, Ea: 19968.0}
@@ -2374,109 +1515,20 @@ reactions:
 - equation: CH2O + O <=> H + CO + OH
   rate-constant: {A: 2.5e+21, b: -1.903, Ea: 22674.0}
 - equation: CH2O + OH <=> HCO + H2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.04 atm, A: 3600000000.0, b: 1.167, Ea: -206.0}
-    - {P: 1.0 atm, A: 1900000000.0, b: 1.256, Ea: -302.0}
-    - {P: 10.0 atm, A: 1100000000.0, b: 1.33, Ea: -392.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.04 atm, A: 3600000000.0, b: 1.167, Ea: -206.0}
+  - {P: 1.0 atm, A: 1900000000.0, b: 1.256, Ea: -302.0}
+  - {P: 10.0 atm, A: 1100000000.0, b: 1.33, Ea: -392.0}
+  note: "CH2O+OH=HCO+H2O                      2.4E07   1.830   -1116 !\n S. Wang,\
+    \ D. F. Davidson, R. K. Hanson, Proc. Combust. Inst. 35 473-480 2015\n applying\
+    \ prompt HCO dissociation - Labbe et al., J. Phys. Chem. Lett. 2016:\n"
 - equation: CH2O + OH <=> H + CO + H2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.04 atm, A: 70000000000.0, b: 0.911, Ea: 8646.0}
-    - {P: 1.0 atm, A: 72000000000.0, b: 0.892, Ea: 9310.0}
-    - {P: 10.0 atm, A: 84000000000.0, b: 0.879, Ea: 9843.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.04 atm, A: 70000000000.0, b: 0.911, Ea: 8646.0}
+  - {P: 1.0 atm, A: 72000000000.0, b: 0.892, Ea: 9310.0}
+  - {P: 10.0 atm, A: 84000000000.0, b: 0.879, Ea: 9843.0}
 - equation: CH2O + HO2 <=> HCO + H2O2
   rate-constant: {A: 440000000.0, b: 1.298, Ea: 12129.0}
   note: "CH2O+HO2=HCO+H2O2                    4.1E04   2.500   10206 !\n Eiteneer\
@@ -3134,113 +2186,34 @@ reactions:
 
     '
 - equation: HNO + H <=> H2NO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 5.7e+23, b: -4.59, Ea: 5690.0}
-    - {P: 0.1 atm, A: 5.7e+25, b: -4.8, Ea: 4233.0}
-    - {P: 1.0 atm, A: 2.7e+27, b: -4.94, Ea: 4849.0}
-    - {P: 10.0 atm, A: 2.6e+27, b: -4.63, Ea: 5539.0}
-    - {P: 100.0 atm, A: 4.8e+25, b: -3.87, Ea: 5867.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 5.7e+23, b: -4.59, Ea: 5690.0}
+  - {P: 0.1 atm, A: 5.7e+25, b: -4.8, Ea: 4233.0}
+  - {P: 1.0 atm, A: 2.7e+27, b: -4.94, Ea: 4849.0}
+  - {P: 10.0 atm, A: 2.6e+27, b: -4.63, Ea: 5539.0}
+  - {P: 100.0 atm, A: 4.8e+25, b: -3.87, Ea: 5867.0}
+  note: " Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer\
+    \ 2000\nHNO+H(+M)=H2NO(+M)                   1.9E21  -2.507    4305 ! #\n LOW\
+    \                                /6.1E28  -3.805    4308/                    \
+    \              !\n TROE /-1.000  4.585E-04  1.108E+01  3.015E+00/\n H2/2.5/ H2O/12/\
+    \ CO/1.9/ CO2/3.8/ NH3/5/                           !\n S. J. Klippenstein, C.\
+    \ Mulvihill, P. Glarborg, J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi\
+    \ 2023)                                !\n 1 atm \n"
 - equation: H2NO <=> H2 + NO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 1.6e+27, b: -5.28, Ea: 61560.0}
-    - {P: 0.1 atm, A: 1.8e+28, b: -5.32, Ea: 63290.0}
-    - {P: 1.0 atm, A: 1.4e+28, b: -5.05, Ea: 64350.0}
-    - {P: 10.0 atm, A: 4.7e+26, b: -4.39, Ea: 64830.0}
-    - {P: 100.0 atm, A: 1.7e+23, b: -3.18, Ea: 64220.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 1.6e+27, b: -5.28, Ea: 61560.0}
+  - {P: 0.1 atm, A: 1.8e+28, b: -5.32, Ea: 63290.0}
+  - {P: 1.0 atm, A: 1.4e+28, b: -5.05, Ea: 64350.0}
+  - {P: 10.0 atm, A: 4.7e+26, b: -4.39, Ea: 64830.0}
+  - {P: 100.0 atm, A: 1.7e+23, b: -3.18, Ea: 64220.0}
+  note: "H2NO(+M)=H2+NO(+M)                   7.0E22  -3.149   63663 ! #\n LOW   \
+    \                             /3.7E25  -2.820   59667/                       \
+    \           !\n TROE /-1.000  7.577E-02  8.843E-15  7.877E+00/\n H2/2.5/ H2O/12/\
+    \ CO/1.9/ CO2/3.8/ NH3/5/                           !\n S. J. Klippenstein, C.\
+    \ Mulvihill, P. Glarborg, J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi\
+    \ 2023)                                !\n 1 atm \n"
 - equation: H2NO + H <=> HNO + H2
   rate-constant: {A: 30000000.0, b: 2.0, Ea: 2000.0}
   note: 'SJK 2023
@@ -3298,167 +2271,46 @@ reactions:
 
     '
 - equation: HNOH <=> H2 + NO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 8.49e+25, b: -4.99, Ea: 53140.0}
-    - {P: 0.1 atm, A: 4.21e+27, b: -5.2, Ea: 55170.0}
-    - {P: 1.0 atm, A: 1.47e+28, b: -5.12, Ea: 56560.0}
-    - {P: 10.0 atm, A: 3.29e+27, b: -4.69, Ea: 57520.0}
-    - {P: 100.0 atm, A: 5.76e+25, b: -3.95, Ea: 58190.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 8.49e+25, b: -4.99, Ea: 53140.0}
+  - {P: 0.1 atm, A: 4.21e+27, b: -5.2, Ea: 55170.0}
+  - {P: 1.0 atm, A: 1.47e+28, b: -5.12, Ea: 56560.0}
+  - {P: 10.0 atm, A: 3.29e+27, b: -4.69, Ea: 57520.0}
+  - {P: 100.0 atm, A: 5.76e+25, b: -3.95, Ea: 58190.0}
+  note: " A. Stagni, C. Cavallotti, Proc Combust Inst 39 (2023) 633-641\nH2NO+NO2=HONO+HNO\
+    \                    8.0E11   0.000    6000 ! # \n P. Glarborg, \"The NH3/NO2/O2\
+    \ system: Constraining key steps in ammonia ignition and N2O formation\", Combust.\
+    \ Flame (2022).\n (within x2 of STACAV23 1000-2500 K)\n #\n"
 - equation: HNO + H <=> HNOH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 7.0e+18, b: -3.18, Ea: 2600.0}
-    - {P: 0.1 atm, A: 7.1e+22, b: -3.95, Ea: 2487.0}
-    - {P: 1.0 atm, A: 4.9e+24, b: -4.14, Ea: 3141.0}
-    - {P: 10.0 atm, A: 3.6e+24, b: -3.79, Ea: 3702.0}
-    - {P: 100.0 atm, A: 1.0e+24, b: -3.36, Ea: 4710.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 7.0e+18, b: -3.18, Ea: 2600.0}
+  - {P: 0.1 atm, A: 7.1e+22, b: -3.95, Ea: 2487.0}
+  - {P: 1.0 atm, A: 4.9e+24, b: -4.14, Ea: 3141.0}
+  - {P: 10.0 atm, A: 3.6e+24, b: -3.79, Ea: 3702.0}
+  - {P: 100.0 atm, A: 1.0e+24, b: -3.36, Ea: 4710.0}
+  note: " S. J. Klippenstein, C. Mulvihill, P. Glarborg, J. Phys. Chem. A (2023)\n\
+    HNO+H(+M)=HNOH(+M)                   2.2E19  -1.920    2980 ! #\n LOW        \
+    \                        /2.6E25  -2.816    2360/                            \
+    \      !\n TROE /0.442  3.480E-03  1.645E+00  8.795E-13/\n H2/2.5/ H2O/12/ CO/1.9/\
+    \ CO2/3.8/ NH3/5/                           !\n S. J. Klippenstein, C. Mulvihill,\
+    \ P. Glarborg, J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi 2023)\
+    \                                !\n 1 atm\n"
 - equation: HNOH <=> H2NO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 2.3e+25, b: -5.13, Ea: 39080.0}
-    - {P: 0.1 atm, A: 3.5e+26, b: -5.15, Ea: 41210.0}
-    - {P: 1.0 atm, A: 3.5e+27, b: -5.13, Ea: 43280.0}
-    - {P: 10.0 atm, A: 7.7e+27, b: -4.93, Ea: 45060.0}
-    - {P: 100.0 atm, A: 3.4e+26, b: -4.26, Ea: 45960.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 2.3e+25, b: -5.13, Ea: 39080.0}
+  - {P: 0.1 atm, A: 3.5e+26, b: -5.15, Ea: 41210.0}
+  - {P: 1.0 atm, A: 3.5e+27, b: -5.13, Ea: 43280.0}
+  - {P: 10.0 atm, A: 7.7e+27, b: -4.93, Ea: 45060.0}
+  - {P: 100.0 atm, A: 3.4e+26, b: -4.26, Ea: 45960.0}
+  note: "HNOH(+M)=H2NO(+M)                    1.1E26  -4.251   44695 ! #\n LOW   \
+    \                             /2.6E23  -2.433   38475/                       \
+    \           !\n TROE /-1.000  4.173E+00  9.166E-01  1.541E-08/\n H2/2.5/ H2O/12/\
+    \ CO/1.9/ CO2/3.8/ NH3/5/                           !\n S. J. Klippenstein, C.\
+    \ Mulvihill, P. Glarborg, J. Phys. Chem. A (2023).\n refitted to Troe format (Hashemi\
+    \ 2023)                                !\n 1 atm \n"
 - equation: HNOH + H <=> NH2 + OH
   rate-constant: {A: 40000000000000.0, b: 0.0, Ea: 0.0}
 - equation: HNOH + H <=> HNO + H2
@@ -3675,62 +2527,21 @@ reactions:
 
     '
 - equation: HONO + H <=> NO + H2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 3900000000.0, b: 0.99, Ea: 4049.0}
-    - {P: 0.1 atm, A: 3900000000.0, b: 0.99, Ea: 4049.0}
-    - {P: 0.316 atm, A: 4000000000.0, b: 0.99, Ea: 4051.0}
-    - {P: 1.0 atm, A: 4300000000.0, b: 0.98, Ea: 4070.0}
-    - {P: 3.16 atm, A: 7000000000.0, b: 0.92, Ea: 4225.0}
-    - {P: 10.0 atm, A: 26000000000.0, b: 0.76, Ea: 4736.0}
-    - {P: 31.6 atm, A: 79000000000.0, b: 0.64, Ea: 5519.0}
-    - {P: 100.0 atm, A: 28000000000.0, b: 0.8, Ea: 6146.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3900000000.0, b: 0.99, Ea: 4049.0}
+  - {P: 0.1 atm, A: 3900000000.0, b: 0.99, Ea: 4049.0}
+  - {P: 0.316 atm, A: 4000000000.0, b: 0.99, Ea: 4051.0}
+  - {P: 1.0 atm, A: 4300000000.0, b: 0.98, Ea: 4070.0}
+  - {P: 3.16 atm, A: 7000000000.0, b: 0.92, Ea: 4225.0}
+  - {P: 10.0 atm, A: 26000000000.0, b: 0.76, Ea: 4736.0}
+  - {P: 31.6 atm, A: 79000000000.0, b: 0.64, Ea: 5519.0}
+  - {P: 100.0 atm, A: 28000000000.0, b: 0.8, Ea: 6146.0}
+  note: 'Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng 4, 323-333 (2019).
+
+    1 atm #
+
+    '
 - equation: HONO + O <=> NO2 + OH
   rate-constant: {A: 12000000000000.0, b: 0.0, Ea: 5960.0}
   note: " Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333\
@@ -3756,237 +2567,79 @@ reactions:
 
     '
 - equation: HNO2 <=> HONO
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.1 atm, A: 1.1e+47, b: -11.48, Ea: 52140.0}
-    - {P: 0.2154 atm, A: 1.6e+44, b: -10.63, Ea: 50780.0}
-    - {P: 0.4641 atm, A: 2.0e+41, b: -9.74, Ea: 49460.0}
-    - {P: 1.0 atm, A: 1.7e+38, b: -8.79, Ea: 48160.0}
-    - {P: 2.154 atm, A: 7.5e+34, b: -7.73, Ea: 46880.0}
-    - {P: 4.641 atm, A: 2.3e+31, b: -6.6, Ea: 45680.0}
-    - {P: 10.0 atm, A: 9.1e+27, b: -5.47, Ea: 44660.0}
-    - {P: 21.54 atm, A: 8.5e+24, b: -4.44, Ea: 43880.0}
-    - {P: 46.41 atm, A: 2.7e+22, b: -3.55, Ea: 43380.0}
-    - {P: 100.0 atm, A: 2.7e+20, b: -2.8, Ea: 43120.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.1 atm, A: 1.1e+47, b: -11.48, Ea: 52140.0}
+  - {P: 0.2154 atm, A: 1.6e+44, b: -10.63, Ea: 50780.0}
+  - {P: 0.4641 atm, A: 2.0e+41, b: -9.74, Ea: 49460.0}
+  - {P: 1.0 atm, A: 1.7e+38, b: -8.79, Ea: 48160.0}
+  - {P: 2.154 atm, A: 7.5e+34, b: -7.73, Ea: 46880.0}
+  - {P: 4.641 atm, A: 2.3e+31, b: -6.6, Ea: 45680.0}
+  - {P: 10.0 atm, A: 9.1e+27, b: -5.47, Ea: 44660.0}
+  - {P: 21.54 atm, A: 8.5e+24, b: -4.44, Ea: 43880.0}
+  - {P: 46.41 atm, A: 2.7e+22, b: -3.55, Ea: 43380.0}
+  - {P: 100.0 atm, A: 2.7e+20, b: -2.8, Ea: 43120.0}
+  note: " Mebel AM Lin MC Melius CF JPCA 102:1803 1998\nHNO2(+M)=HONO(+M)        \
+    \            7.1E19  -2.758   42598 ! #\n LOW                                /2.9E42\
+    \  -8.442   48737/                                  !\n TROE /1.000  1.753E+01\
+    \  8.324E-04  5.293E+00/\n H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ NH3/5/        \n!\
+    \ Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019)\
+    \ (corrected).\n! refitted to Troe format (Hashemi 2023) difficult to achieve\
+    \ good fit                         !\n 1 atm\n"
 - equation: NO + OH <=> HNO2
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.1 atm, A: 2.0e+18, b: 3.29, Ea: 2792.0}
-    - {P: 0.2154 atm, A: 2.7e+17, b: -2.93, Ea: 2798.0}
-    - {P: 0.4641 atm, A: 3.1e+16, b: -2.56, Ea: 2791.0}
-    - {P: 1.0 atm, A: 3100000000000000.0, b: -2.17, Ea: 2775.0}
-    - {P: 2.154 atm, A: 290000000000000.0, b: -1.77, Ea: 2757.0}
-    - {P: 4.641 atm, A: 25000000000000.0, b: -1.37, Ea: 2751.0}
-    - {P: 10.0 atm, A: 2100000000000.0, b: -0.97, Ea: 2767.0}
-    - {P: 21.54 atm, A: 180000000000.0, b: -0.57, Ea: 2809.0}
-    - {P: 46.41 atm, A: 14000000000.0, b: -0.17, Ea: 2875.0}
-    - {P: 100.0 atm, A: 1100000000.0, b: 0.25, Ea: 2951.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.1 atm, A: 2.0e+18, b: 3.29, Ea: 2792.0}
+  - {P: 0.2154 atm, A: 2.7e+17, b: -2.93, Ea: 2798.0}
+  - {P: 0.4641 atm, A: 3.1e+16, b: -2.56, Ea: 2791.0}
+  - {P: 1.0 atm, A: 3100000000000000.0, b: -2.17, Ea: 2775.0}
+  - {P: 2.154 atm, A: 290000000000000.0, b: -1.77, Ea: 2757.0}
+  - {P: 4.641 atm, A: 25000000000000.0, b: -1.37, Ea: 2751.0}
+  - {P: 10.0 atm, A: 2100000000000.0, b: -0.97, Ea: 2767.0}
+  - {P: 21.54 atm, A: 180000000000.0, b: -0.57, Ea: 2809.0}
+  - {P: 46.41 atm, A: 14000000000.0, b: -0.17, Ea: 2875.0}
+  - {P: 100.0 atm, A: 1100000000.0, b: 0.25, Ea: 2951.0}
+  note: " Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333\
+    \ (2019) (corrected).\nNO+OH(+M)=HNO2(+M)                   2.5E02  2.341    \
+    \ 378 ! #\n LOW                                /1.0E01  3.107  -19146/       \
+    \                           !\n TROE /-0.186  2.224E+02  1.271E+03  1.545E+03/\n\
+    \ H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ NH3/5/                           !\n Chen,\
+    \ X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019) (corrected).\n\
+    \ refitted to Troe format (Hashemi 2023)                             !\n 1 atm\
+    \ \n"
 - equation: HNO2 + H <=> NO + H2O
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 3400000000.0, b: 1.07, Ea: 5568.0}
-    - {P: 0.1 atm, A: 3400000000.0, b: 1.07, Ea: 5567.0}
-    - {P: 0.316 atm, A: 3400000000.0, b: 1.07, Ea: 5567.0}
-    - {P: 1.0 atm, A: 3400000000.0, b: 1.07, Ea: 5565.0}
-    - {P: 3.16 atm, A: 3400000000.0, b: 1.07, Ea: 5560.0}
-    - {P: 10.0 atm, A: 3400000000.0, b: 1.07, Ea: 5546.0}
-    - {P: 31.6 atm, A: 4300000000.0, b: 1.04, Ea: 5591.0}
-    - {P: 100.0 atm, A: 13000000000.0, b: 0.91, Ea: 5968.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 3400000000.0, b: 1.07, Ea: 5568.0}
+  - {P: 0.1 atm, A: 3400000000.0, b: 1.07, Ea: 5567.0}
+  - {P: 0.316 atm, A: 3400000000.0, b: 1.07, Ea: 5567.0}
+  - {P: 1.0 atm, A: 3400000000.0, b: 1.07, Ea: 5565.0}
+  - {P: 3.16 atm, A: 3400000000.0, b: 1.07, Ea: 5560.0}
+  - {P: 10.0 atm, A: 3400000000.0, b: 1.07, Ea: 5546.0}
+  - {P: 31.6 atm, A: 4300000000.0, b: 1.04, Ea: 5591.0}
+  - {P: 100.0 atm, A: 13000000000.0, b: 0.91, Ea: 5968.0}
+  note: 'PLOG format creates convergence problems
+
+    0.01-10 atm ##
+
+    '
 - equation: HNO2 + H <=> HNO + OH
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.01 atm, A: 36000000.0, b: 1.78, Ea: 5565.0}
-    - {P: 0.1 atm, A: 36000000.0, b: 1.78, Ea: 5566.0}
-    - {P: 0.316 atm, A: 36000000.0, b: 1.78, Ea: 5567.0}
-    - {P: 1.0 atm, A: 37000000.0, b: 1.78, Ea: 5570.0}
-    - {P: 3.16 atm, A: 37000000.0, b: 1.77, Ea: 5580.0}
-    - {P: 10.0 atm, A: 41000000.0, b: 1.76, Ea: 5617.0}
-    - {P: 31.6 atm, A: 62000000.0, b: 1.71, Ea: 5770.0}
-    - {P: 100.0 atm, A: 180000000.0, b: 1.59, Ea: 6233.0}
-  - name: HE
-    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: N2
-    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: H2
-    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
-    note: Jasper-2022
-  - name: CO2
-    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: NH3
-    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O
-    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
-    note: Jasper-2022
-  - name: H2O2
-    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Glarborg-2018
-  - name: NO2
-    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
-    note: Zhang-2017
-  - name: N2O
-    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
-    note: Zhang-2017
-  - name: O
-    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
-    note: Han-2021
-  - name: O3
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Han-2021
+  type: pressure-dependent-Arrhenius
+  rate-constants:
+  - {P: 0.01 atm, A: 36000000.0, b: 1.78, Ea: 5565.0}
+  - {P: 0.1 atm, A: 36000000.0, b: 1.78, Ea: 5566.0}
+  - {P: 0.316 atm, A: 36000000.0, b: 1.78, Ea: 5567.0}
+  - {P: 1.0 atm, A: 37000000.0, b: 1.78, Ea: 5570.0}
+  - {P: 3.16 atm, A: 37000000.0, b: 1.77, Ea: 5580.0}
+  - {P: 10.0 atm, A: 41000000.0, b: 1.76, Ea: 5617.0}
+  - {P: 31.6 atm, A: 62000000.0, b: 1.71, Ea: 5770.0}
+  - {P: 100.0 atm, A: 180000000.0, b: 1.59, Ea: 6233.0}
+  note: 'Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333
+    (2019).
+
+    0.01-10 atm ##
+
+    '
 - equation: HNO2 + H <=> NO2 + H2
   rate-constant: {A: 23000.0, b: 2.77, Ea: -2022.0}
   note: 'Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333
@@ -4552,4 +3205,29 @@ reactions:
   note: "X.-G. Wei, X.-M. Sun, X.-P. Wu, S. Geng, Y. Ren, N.-B. Wong, and W.-K. Li.\
     \ J Mol Model 17:2069--2082, 2011.\nX. Cheng, Y. Zhao, W. Zhu, and Y. Liu. J Mol\
     \ Model, 19:5037-5043, 2013.\nP. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein,\
-    \ Prog. Energy Combust. Sci. 67 (2018) 31-68. \n\n\nJAM est\n"
+    \ Prog. Energy Combust. Sci. 67 (2018) 31-68. \n\n"
+# - equation: H + O + M <=> OH* + M
+#   type: three-body
+#   rate-constant: {A: 310000000000000.0, b: 0.0, Ea: 10000.0}
+#   note: 'JAM est
+
+#     '
+# - equation: OH* + M <=> OH + M
+#   type: three-body
+#   rate-constant: {A: 22000000000.0, b: 0.5, Ea: 2060.0}
+# - equation: OH* + H2O <=> OH + H2O
+#   rate-constant: {A: 5900000000000.0, b: 0.5, Ea: -861.0}
+# - equation: OH* + O2 <=> OH + O2
+#   rate-constant: {A: 2100000000000.0, b: 0.5, Ea: -482.0}
+# - equation: OH* + H2 <=> OH + H2
+#   rate-constant: {A: 3000000000000.0, b: 0.5, Ea: -444.0}
+# - equation: OH* + OH <=> OH + OH
+#   rate-constant: {A: 1500000000000.0, b: 0.5, Ea: 0.0}
+# - equation: OH* + H <=> OH + H
+#   rate-constant: {A: 1500000000000.0, b: 0.5, Ea: 0.0}
+# - equation: OH* + O <=> OH + O
+#   rate-constant: {A: 1500000000000.0, b: 0.5, Ea: 0.0}
+# - equation: OH* <=> OH
+#   rate-constant: {A: 1000000.0, b: 0.0, Ea: 0.0}
+# - equation: N2O + H <=> N2 + OH*
+#   rate-constant: {A: 160000000000000.0, b: 0.0, Ea: 50300.0}
