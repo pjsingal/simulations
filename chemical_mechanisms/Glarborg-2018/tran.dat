@@ -121,7 +121,7 @@ HOCH2OCO          2   496.000     5.200     0.000     0.000     1.000 ! *
 
 !!===============================================================
 ! Transport properties below are from
-! M. P. Burke, M. Chaos, Y. Ju, F. L. Dryer, S. J. Klippenstein, Int. J. Chem. Kinet. 44(2012) 444–474.
+! M. P. Burke, M. Chaos, Y. Ju, F. L. Dryer, S. J. Klippenstein, Int. J. Chem. Kinet. 44(2012) 444ï¿½474.
 
 AR                 0   136.500     3.330     0.000     0.000     0.000          
 C                  0    71.400     3.298     0.000     0.000     0.000 ! *      
@@ -201,7 +201,7 @@ OH                 1    80.000     2.750     0.000     0.000     0.000
 
 !!===============================================================
 ! Transport properties below are from
-! M. P. Burke, M. Chaos, Y. Ju, F. L. Dryer, S. J. Klippenstein, Int. J. Chem. Kinet. 44(2012) 444–474.
+! M. P. Burke, M. Chaos, Y. Ju, F. L. Dryer, S. J. Klippenstein, Int. J. Chem. Kinet. 44(2012) 444ï¿½474.
 
 HE                 0    10.200     2.576     0.000     0.000     0.000 ! *      
 C5H2               1   357.000     5.180     0.000     0.000     1.000          
