@@ -474,12 +474,26 @@ CO+O2=CO2+O                          4.7E12   0.000   60500 !
 CO+H2O2=HOCO+OH                      3.6E04   2.500   28660 !
 ! P Glarborg P Marshall CPL 475 (2009) 40-43
 !
-HOCO(+M)=CO2+H(+M)                   8.2E11   0.413   35335 !
- LOW  /                              6.0E26  -3.148   37116 /                               !
- TROE / 0.39 1.0E-30 1.0E30 /                               ! Fc = 0.39
- H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ NH3/5/                           !
+!HOCO(+M)=CO2+H(+M)                   8.2E11   0.413   35335 !
+! LOW  /                              6.0E26  -3.148   37116 /                               !
+! TROE / 0.39 1.0E-30 1.0E30 /                               ! Fc = 0.39
+! H2/2.5/ H2O/12/ CO/1.9/ CO2/3.8/ NH3/5/                           !
 ! DM Golden GP Smith AB McEwen C-L Yu B Eiteneer M Frenklach GL Vaghjiani AR Ravishankara FP Tully J Phys Chem. A 102 (1998) 8598-8606.
 !
+HOCO<=>CO2+H                                                 +1.8970000E+038 -8.0470000E+000 +3.4240000E+004   !\AUTHOR: ?? !\REF: JOHN R. BARKER CALCULATION 7/ 3/ 2013 !\COMMENT: WARNING: RATE CONSTANTS FROM PRIVATE COMMUNICATION WITH JOHN BARKER.
+PLOG /                                       +1.0000000E-003 +4.7580000E+018 -3.8170000E+000 +1.7676000E+004 / 
+PLOG /                                       +3.0000000E-003 +2.2250000E+020 -4.1490000E+000 +1.9037000E+004 / 
+PLOG /                                       +9.9000000E-003 +7.5640000E+021 -4.4340000E+000 +2.0325000E+004 / 
+PLOG /                                       +2.9600000E-002 +9.1070000E+024 -5.1890000E+000 +2.2419000E+004 / 
+PLOG /                                       +9.8700000E-002 +3.1440000E+029 -6.3760000E+000 +2.5233000E+004 / 
+PLOG /                                       +2.9610000E-001 +1.1500000E+032 -7.0370000E+000 +2.6662000E+004 / 
+PLOG /                                       +9.8690000E-001 +1.0690000E+036 -8.1070000E+000 +2.9064000E+004 / 
+PLOG /                                       +2.9607000E+000 +2.4380000E+036 -8.1530000E+000 +2.9336000E+004 / 
+PLOG /                                       +9.8690000E+000 +6.6630000E+035 -7.9190000E+000 +2.9217000E+004 / 
+PLOG /                                       +2.9607000E+001 +1.7230000E+038 -8.5060000E+000 +3.1273000E+004 / 
+PLOG /                                       +9.8690000E+001 +3.0070000E+041 -9.2900000E+000 +3.3966000E+004 / 
+PLOG /                                       +2.9607000E+002 +6.7670000E+036 -7.8320000E+000 +3.1613000E+004 / 
+PLOG /                                       +9.8690000E+002 +1.8970000E+038 -8.0470000E+000 +3.4240000E+004 / 
 HOCO+H=CO2+H2                        3.1E17  -1.3475    555 !
 ! H.G. Yu, J.S. Francisco, J. Chem. Phys. 128 (2008) 244315.
 ! P. Marshall, P. Glarborg, Proc. Combust. Inst. 35 (2015) 153-160 (300-1000 K, fit).
@@ -685,12 +699,16 @@ NH2+O2=HNO+OH                        2.9E-2   3.764   18185 !
 NH2+NH2=NH3+NH                       5.6E00   3.530     552 !
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
 !
-NH2+NH2(+M)=N2H4(+M)                 5.6E14  -0.414      66 ! #
- LOW                                /1.6E34  -5.490    1987/! AR                                   !
- TROE /0.31 1E-30 1E30 1E30/                                ! Fc=0.31
- N2/1.7/ AR/1/ NH3/8.5/
+!NH2+NH2(+M)=N2H4(+M)                 5.6E14  -0.414      66 ! #
+! LOW                                /1.6E34  -5.490    1987/! AR                                   !
+! TROE /0.31 1E-30 1E30 1E30/                                ! Fc=0.31
+! N2/1.7/ AR/1/ NH3/8.5/
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
 ! see also C.J. Cobos, P. Glarborg, P. Marshall, J. Troe, "Re-evaluation of rate constants for the reaction
+NH2+NH2=N2H4				 .5600E+49 -11.300  11882.3 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG / 0.1				 .2000E+47 -10.930   9994.6 /
+PLOG / 1.0				 .5600E+49 -11.300  11882.3 /
+PLOG / 10.0				 .3200E+50 -11.180  13988.5 /
 ! N2H4(+M)=NH2+NH2(+ M)", Combust. Flame (2023).
 ! P. Glarborg, H. Hashemi, P. Marshall, "Challenges in Kinetic Modeling of Ammonia Pyrolysis", Fuel Commun. 10 (2022) 100049.
 ! P. Glarborg, H. Hashemi, S. Cheskis, A.W. Jasper, J. Phys. Chem. A 125 (2021) 1505-1516
@@ -700,9 +718,13 @@ NH2+NH2=tHNNH+H2                     1.7E08   1.020   11783 ! #
 ! (assuming tHNNH to be the dominating product)
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
 !
-NH2+NH2=H2NN+H2                      7.2E04   1.880    8802 !
+!NH2+NH2=H2NN+H2                      7.2E04   1.880    8802 !
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
 !
+NH2+NH2=H2NN+H2			 	 .1200E+22  -3.080   3368.0 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG / 0.1				 .2400E+21  -2.910   2136.0 /
+PLOG / 1.0				 .1200E+22  -3.080   3368.0 /
+PLOG / 10.0				 .2300E+20  -2.540   4182.6 /
 NH2+NH=tHNNH+H                       1.2E15  -0.500       0 ! #
 ! DF Davidson K Kohse-Hoinghaus AY Chang RK Hanson. A pyrolysis mechanism for ammonia. Int J Chem Kin 22:513-535, 1990.
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
@@ -1307,9 +1329,13 @@ N2H3+H=cHNNH+H2                      2.7E02   3.180    6620 ! #
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
 N2H3+H=H2NN+H2                       3.1E06   2.110     288 ! #
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
-N2H3+H=NH2+NH2                       1.0E14   0.000       0 ! #
+!N2H3+H=NH2+NH2                       1.0E14   0.000       0 ! #
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
 !
+NH2+NH2=N2H3+H				 .1200E+13  -0.030  10084.0 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG / 0.1				 .9200E+12  -0.010  10014.5 /
+PLOG / 1.0				 .1200E+13  -0.030  10084.0 /
+PLOG / 10.0				 .4700E+13  -0.200  10620.5 /
 N2H3+O=tHNNH+OH                      1.7E08   1.500    -646 !
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !

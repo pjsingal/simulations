@@ -3707,9 +3707,13 @@ N2O+NO=NO2+N2                        5.3E05   2.230   46280 !
 NH2+NH2=N2H2+H2                      1.7E08   1.620   11783 !   
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.  
 !
-NH2+NH2=H2NN+H2                      7.2E04   1.880    8802 !  
+!NH2+NH2=H2NN+H2                      7.2E04   1.880    8802 !  
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.  
 !
+NH2+NH2=H2NN+H2			 	 .1200E+22  -3.080   3368.0 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG / 0.1				 .2400E+21  -2.910   2136.0 /
+PLOG / 1.0				 .1200E+22  -3.080   3368.0 /
+PLOG / 10.0				 .2300E+20  -2.540   4182.6 /
 NH2+NH=N2H2+H                        4.3E14  -0.272     -77 !  
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.  
 !
@@ -3719,11 +3723,15 @@ HNOH+NH2=N2H3+OH                     1.0E01   3.460    -467 !
 HNOH+NH2=H2NN+H2O                    8.8E16  -1.080    1113 ! 
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
-NH2+NH2(+M)=N2H4(+M)                 5.6E14  -0.414      66 !   
- LOW  /1.6E34 -5.49 1987/                                   !
- TROE /0.31 1E-30 1E30 1E30/                                ! Fc=0.31
+!NH2+NH2(+M)=N2H4(+M)                 5.6E14  -0.414      66 !   
+! LOW  /1.6E34 -5.49 1987/                                   !
+! TROE /0.31 1E-30 1E30 1E30/                                ! Fc=0.31
 ! SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.  
 !
+NH2+NH2=N2H4				 .5600E+49 -11.300  11882.3 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG / 0.1				 .2000E+47 -10.930   9994.6 /
+PLOG / 1.0				 .5600E+49 -11.300  11882.3 /
+PLOG / 10.0				 .3200E+50 -11.180  13988.5 /
 !N2H4=H2NN+H2                         1.4E14   0.000   74911 !  
 ! D.-Y. Hwang, A.M. Mebel, J. Phys. Chem. A 2003, 107, 2865-2874 
 ! 
@@ -4255,15 +4263,40 @@ HCO+NCO=HNCO+CO                       3.6E13   0.000       0 !
 CH4+NH2=CH3+NH3                       1.5E03   3.010    9940 !      
 ! Song S Golden DM Hanson RK Bowman CT Senosiain JP Musgrave CB Friedrichs G IJCK 35:304-309 2003
 !   
-CH4+NO2=CH3+HONO                      1.1E-1   4.280   26300 ! 
-  DUP
-CH4+NO2=CH3+HONO                      7.4E01   3.420   33100 ! 
-  DUP
+!CH4+NO2=CH3+HONO                      1.1E-1   4.280   26300 ! 
+!  DUP
+!CH4+NO2=CH3+HONO                      7.4E01   3.420   33100 ! 
+!  DUP
 ! J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
 !
-CH4+NO2=CH3+HNO2                      4.0E-1   4.180   31200 ! 
+CH3+HONO=CH4+NO2                         .3640E-03   4.410   -400.3 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+DUPLICATE
+CH3 + HONO <=> CH4 + NO2                 .3180E+05   2.140  11910.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+PLOG /                0.010              .2930E+05   2.150  11890.0   /
+PLOG /                0.100              .2930E+05   2.150  11890.0   /
+PLOG /                0.316              .2950E+05   2.150  11890.0   /
+PLOG /                1.000              .3180E+05   2.140  11910.0   /
+PLOG /                3.160              .5170E+05   2.080  12050.0   /
+PLOG /                10.00              .2640E+06   1.880  12530.0   /
+PLOG /                31.60              .6100E+07   1.500  13530.0    /
+PLOG /                100.0              .2330E+09   1.070  14930.0   /
+DUPLICATE
+!CH4+NO2=CH3+HNO2                      4.0E-1   4.180   31200 ! 
 ! J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
 !
+CH3+HNO2=CH4+NO2                         .2200E+04   2.760  -2946.6 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+DUPLICATE
+CH3+HNO2=CH4+NO2                         .6560E-02   4.060  18350.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+PLOG /                0.010              .6360E-03   4.350  17640.0   / 
+PLOG /                0.100              .8450E-03   4.310  17720.0   / 
+PLOG /                0.316              .1530E-02   4.240  17900.0   / 
+PLOG /                1.000              .6560E-02   4.060  18350.0   / 
+PLOG /                3.160              .9980E-01   3.730  19240.0   / 
+PLOG /                10.00              .2590E+01   3.340  20530.0   / 
+PLOG /                31.60              .1270E+02   3.180  21780.0   / 
+PLOG /                100.0              .4200E-00   3.650  22240.0   /
+DUPLICATE
+
 CH4+CN=CH3+HCN                        8.6E05   2.300     -32 ! 
 ! Herbert L Smith IWM Spencer-Smith RD IJCK 24:791-802 1992
 !
@@ -4808,10 +4841,19 @@ CH3NO+NH2=CH2NO+NH3                   2.8E06   1.94     1073 !
 CH3NO+O=CH3+NO2                       1.7E06   2.08        0 ! 
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
-CH3NO+OH=CH3+HONO                     2.5E12   0.00      994 ! 
+!CH3NO+OH=CH3+HONO                     2.5E12   0.00      994 ! 
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
 !
+CH3NO+OH=CH3+HONO                        .1520E+10    .950   4582.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+PLOG /                0.010              .2210E+07   1.750   2572.0     / 
+PLOG /                0.100              .7710E+07   1.590   2929.0     / 
+PLOG /                0.316              .6060E+08   1.340   3546.0     / 
+PLOG /                1.000              .1520E+10   0.950   4582.0     / 
+PLOG /                3.160              .6450E+11   0.500   5953.0     / 
+PLOG /                10.00              .1300E+13   0.150   7415.0     / 
+PLOG /                31.60              .2350E+13   0.120   8598.0     / 
+PLOG /                100.0              .9410E+11   0.580   9147.0     / 
 CH2NO=HNCO+H                          2.3E42  -9.11    53838 ! 1 atm 
  PLOG /0.1                            6.9E41  -9.30    51702./
  PLOG /1.0                            2.3E42  -9.11    53838./
