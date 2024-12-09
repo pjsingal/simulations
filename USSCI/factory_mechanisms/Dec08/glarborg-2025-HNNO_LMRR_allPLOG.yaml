@@ -2205,23 +2205,70 @@ reactions:
   note: 'Bacskay GB Mackie JC JPCA 109:2019-2025 2005
 
     '
-- equation: HOCO (+M) <=> CO2 + H (+M)
-  type: falloff
-  low-P-rate-constant: {A: 6.0e+26, b: -3.148, Ea: 37116.0}
-  high-P-rate-constant: {A: 820000000000.0, b: 0.413, Ea: 35335.0}
-  Troe: {A: 0.39, T3: 1.0e-30, T1: 1.0e+30}
-  efficiencies: {H2: 2.5, H2O: 12.0, CO: 1.9, CO2: 3.8, NH3: 5.0}
-  note: 'P Glarborg P Marshall CPL 475 (2009) 40-43
-
-    '
+- equation: HOCO <=> CO2 + H
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.001 atm, A: 4.758e+18, b: -3.817, Ea: 17676.0}
+    - {P: 0.003 atm, A: 2.225e+20, b: -4.149, Ea: 19037.0}
+    - {P: 0.0099 atm, A: 7.564e+21, b: -4.434, Ea: 20325.0}
+    - {P: 0.0296 atm, A: 9.107e+24, b: -5.189, Ea: 22419.0}
+    - {P: 0.0987 atm, A: 3.144e+29, b: -6.376, Ea: 25233.0}
+    - {P: 0.2961 atm, A: 1.15e+32, b: -7.037, Ea: 26662.0}
+    - {P: 0.9869 atm, A: 1.069e+36, b: -8.107, Ea: 29064.0}
+    - {P: 2.9607 atm, A: 2.438e+36, b: -8.153, Ea: 29336.0}
+    - {P: 9.869 atm, A: 6.663e+35, b: -7.919, Ea: 29217.0}
+    - {P: 29.607 atm, A: 1.723e+38, b: -8.506, Ea: 31273.0}
+    - {P: 98.69 atm, A: 3.007e+41, b: -9.29, Ea: 33966.0}
+    - {P: 296.07 atm, A: 6.767e+36, b: -7.832, Ea: 31613.0}
+    - {P: 986.9 atm, A: 1.897e+38, b: -8.047, Ea: 34240.0}
+  - name: HE
+    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: CO2
+    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CO
+    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
+    note: Matsugi-2021 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: HOCO + H <=> CO2 + H2
   rate-constant: {A: 3.1e+17, b: -1.3475, Ea: 555.0}
-  note: 'Fc = 0.39
-
-    DM Golden GP Smith AB McEwen C-L Yu B Eiteneer M Frenklach GL Vaghjiani AR Ravishankara
-    FP Tully J Phys Chem. A 102 (1998) 8598-8606.
-
-    '
 - equation: HOCO + H <=> CO + H2O
   rate-constant: {A: 6000000000000000.0, b: -0.525, Ea: 2125.0}
   note: 'H.G. Yu, J.S. Francisco, J. Chem. Phys. 128 (2008) 244315.
@@ -2727,15 +2774,16 @@ reactions:
   note: 'SJ Klippenstein LB Harding P Glarborg JA Miller CF 158 (2011) 774-789.
 
     '
-- equation: NH2 + NH2 (+M) <=> N2H4 (+M)
+- equation: NH2 + NH2 <=> N2H4
   type: linear-Burke
   reference-collider: AR
   colliders:
   - name: M
-    type: falloff
-    low-P-rate-constant: {A: 1.6e+34, b: -5.49, Ea: 1987.0}
-    high-P-rate-constant: {A: 560000000000000.0, b: -0.414, Ea: 66.0}
-    Troe: {A: 0.31, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 2.0e+46, b: -10.93, Ea: 9994.6}
+    - {P: 1.0 atm, A: 5.6e+48, b: -11.3, Ea: 11882.3}
+    - {P: 10.0 atm, A: 3.2e+49, b: -11.18, Ea: 13988.5}
   - name: N2
     efficiency: {A: 14.68477648, b: -0.30096166, Ea: 165.14610502}
     note: Jasper-2022
@@ -2750,30 +2798,65 @@ reactions:
     note: Jasper-2022
 - equation: NH2 + NH2 <=> tHNNH + H2
   rate-constant: {A: 170000000.0, b: 1.02, Ea: 11783.0}
-  note: "AR                                   !\nFc=0.31\nSJ Klippenstein LB Harding\
-    \ B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009)\
-    \ 10241-10259.\nsee also C.J. Cobos, P. Glarborg, P. Marshall, J. Troe, \"Re-evaluation\
-    \ of rate constants for the reaction\nN2H4(+M)=NH2+NH2(+ M)\", Combust. Flame\
-    \ (2023).\nP. Glarborg, H. Hashemi, P. Marshall, \"Challenges in Kinetic Modeling\
-    \ of Ammonia Pyrolysis\", Fuel Commun. 10 (2022) 100049.\nP. Glarborg, H. Hashemi,\
-    \ S. Cheskis, A.W. Jasper, J. Phys. Chem. A 125 (2021) 1505-1516\n# \n"
+  note: "N2H4(+M)=NH2+NH2(+ M)\", Combust. Flame (2023).\nP. Glarborg, H. Hashemi,\
+    \ P. Marshall, \"Challenges in Kinetic Modeling of Ammonia Pyrolysis\", Fuel Commun.\
+    \ 10 (2022) 100049.\nP. Glarborg, H. Hashemi, S. Cheskis, A.W. Jasper, J. Phys.\
+    \ Chem. A 125 (2021) 1505-1516\n# \n"
 - equation: NH2 + NH2 <=> H2NN + H2
-  rate-constant: {A: 72000.0, b: 1.88, Ea: 8802.0}
-  note: 'SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C
-    Su JV Michael JPCA 113 (2009) 10241-10259.
-
-    (assuming tHNNH to be the dominating product)
-
-    P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related
-    species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 2.4e+20, b: -2.91, Ea: 2136.0}
+    - {P: 1.0 atm, A: 1.2e+21, b: -3.08, Ea: 3368.0}
+    - {P: 10.0 atm, A: 2.3e+19, b: -2.54, Ea: 4182.6}
+  - name: HE
+    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: CO2
+    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CO
+    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
+    note: Matsugi-2021 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: NH2 + NH <=> tHNNH + H
   rate-constant: {A: 1200000000000000.0, b: -0.5, Ea: 0.0}
-  note: 'SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C
-    Su JV Michael JPCA 113 (2009) 10241-10259.
-
-    #
+  note: '#
 
     '
 - equation: NH2 + NH <=> cHNNH + H
@@ -4297,20 +4380,60 @@ reactions:
     #
 
     '
-- equation: N2H3 + H <=> NH2 + NH2
-  rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 0.0}
-  note: 'P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related
-    species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
-
-    #
-
-    '
+- equation: NH2 + NH2 <=> N2H3 + H
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.1 atm, A: 920000000000.0, b: -0.01, Ea: 10014.5}
+    - {P: 1.0 atm, A: 1200000000000.0, b: -0.03, Ea: 10084.0}
+    - {P: 10.0 atm, A: 4700000000000.0, b: -0.2, Ea: 10620.5}
+  - name: HE
+    efficiency: {A: 2.56, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: N2
+    efficiency: {A: 2.25, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: H2
+    efficiency: {A: 4.09, b: -0.0, Ea: 0.0}
+    note: Jasper-2022
+  - name: CO2
+    efficiency: {A: 14.3, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: NH3
+    efficiency: {A: 22.2, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O
+    efficiency: {A: 27.9, b: 0.0, Ea: -0.0}
+    note: Jasper-2022
+  - name: H2O2
+    efficiency: {A: 16.3, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CO
+    efficiency: {A: 3.33366162, b: -0.0242214, Ea: 50.0406715}
+    note: Matsugi-2021 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: -0.0, Ea: 0.0}
+    note: Jasper-2022 (generic)
+  - name: CH2O
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Glarborg-2018
+  - name: NO2
+    efficiency: {A: 8.37073142, b: -0.03782814, Ea: 50.32765425}
+    note: Zhang-2017
+  - name: N2O
+    efficiency: {A: 5.95934123, b: -0.03822673, Ea: 50.85831178}
+    note: Zhang-2017
+  - name: O
+    efficiency: {A: 5.40769089, b: -0.03799643, Ea: 50.55193736}
+    note: Han-2021
+  - name: O3
+    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
+    note: Han-2021
 - equation: N2H3 + O <=> tHNNH + OH
   rate-constant: {A: 170000000.0, b: 1.5, Ea: -646.0}
-  note: 'P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related
-    species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
-
-    '
 - equation: N2H3 + O <=> NH2 + HNO
   rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
   note: 'Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer
