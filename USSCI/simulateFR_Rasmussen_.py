@@ -18,6 +18,8 @@ import csv
 import warnings
 
 warnings.filterwarnings("ignore", message="NasaPoly2::validate")
+warnings.filterwarnings("ignore", message=".*discontinuity.*detected.*")
+warnings.filterwarnings("ignore", message=".*return _ForkingPickler.loads.*")
 parser = argparse.ArgumentParser()
 parser.add_argument('--figwidth', type=float, help="figwidth = ")
 parser.add_argument('--figheight', type=float, help="figheight = ")
@@ -58,40 +60,27 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='JSR: 214.8ppm NH3/197.4ppm NO2/396ppm O2/N2'
-folder='Cornell-2022'
-name='Fig2'
+title1='Jian-2024 using Model of Glarborg-2025'
+title2='FR: 890ppm NH3/10% O2/N2'
+folder='Jian-2024'
+name='Fig6_12'
 exp=False
-dataLabel='Dagaut (2020)'
-data=['dagaut.csv']
-# observables=['NO','NO2','NH3','O2']
-observables=['NO','NO2','NH3']
-# observables=['NO']
+override=False
+dataLabel='Gutierrez et al. (2025)'
+data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+observables=['NH3','NO']
 
-X={'NH3':214.8e-6,'NO2':197.4e-6,'O2':396e-6, 'N2':1-(214.8+197.4+396)*1e-6}
-# X={'NH3':547e-6,'NO2':285e-6,'NO':35e-6,'HONO':1e-6,'N2':1-(547+285+35+1)*1e-6}
-P=1.02
-T_list = np.linspace(700,1100,gridsz)
-Xlim=[700,1100]
-tau=1
-V=90e-6 #m3
-t_max=20
+X={'NH3':890e-6,'O2':0.1,'N2':1-890e-6-0.1}
+P=1.18
+T=1279
+Xlim=[0,0.3]
+Ylim=[0,15]
+length = 20e-2  # [m]
+diameter=0.0087 # [m]
+n_steps = 2000
+Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
 
 models = {
-    # 'Stagni-2023': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
-    #                 },
-    # },
-    # 'Alzueta-2023': {
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
-    #                 },
-    # },
     'Glarborg-2025': {
         'submodels': {
             'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
@@ -120,54 +109,60 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_NH3PLOG_LMRR_allPLOG.yaml",
     #                 },
     # },
+    'Stagni-2023': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+                    },
+    },
+    'Alzueta-2023': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r",'orange']
+colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(data)
 
-def getStirredReactor(gas):
-    h = 79.5 # heat transfer coefficient W/m2/K
-    K = 2e-5 # pressureValveCoefficient
-    reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]
-    reactorSurfaceArea =4*np.pi*reactorRadius**2 # [m3]
-    fuelAirMixtureTank = ct.Reservoir(gas)
-    exhaust = ct.Reservoir(gas)
-    env = ct.Reservoir(gas)
-    reactor = ct.IdealGasReactor(gas, energy='on', volume=V)
-    ct.MassFlowController(upstream=fuelAirMixtureTank,
-                          downstream=reactor,
-                          mdot=reactor.mass/tau)
-    ct.Valve(upstream=reactor,
-             downstream=exhaust,
-             K=K)
-    ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
-    return reactor
-
-def getTemperatureDependence(gas,T):
+def getTimeHistory(gas,T):
     gas.TPX = T, P*ct.one_atm, X
-    stirredReactor = getStirredReactor(gas)
-    reactorNetwork = ct.ReactorNet([stirredReactor])
-    states = ct.SolutionArray(stirredReactor.thermo)
-    t = 0
-    while t < t_max:
-        t = reactorNetwork.step()
-    states.append(stirredReactor.thermo.state)
-    return [states(species).X.flatten()[0] for species in observables]
+    area = np.pi*(diameter/2)**2
+    u0 = Q_tn*1e-6/60/area
+    mass_flow_rate = u0 * gas.density * area
+    flowReactor = ct.IdealGasConstPressureReactor(gas)
+    reactorNetwork = ct.ReactorNet([flowReactor])
+    tau=length/u0
+    dt = tau/n_steps
+    t1 = (np.arange(n_steps) + 1) * dt
+    Xlist=[]
+    tList=[]
+    for n, t_i in enumerate(t1):
+        states = ct.SolutionArray(flowReactor.thermo)
+        states.append(flowReactor.thermo.state)
+        reactorNetwork.advance(t_i)
+        Xvec=[states(species).X.flatten()[0] for species in observables]
+        Xlist.append(Xvec)
+        tList.append(t_i)
+    return tList,Xlist
 
 def generateData(model,m):
     print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    X_history=[getTemperatureDependence(gas,T) for T in T_list]
+    X_history=getTimeHistory(gas,T)
     for z, species in enumerate(observables):
-        Xi_history = [item[z] for item in X_history]
-        data = zip(T_list,Xi_history)
-        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}'
+        Xi_history = [item[z] for item in X_history[1]]
+        data = zip(X_history[0],Xi_history)
+        simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}'
         os.makedirs(simOutPath,exist_ok=True)
         save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
@@ -185,29 +180,29 @@ for j,model in enumerate(models):
         flag=False
         while not flag:
             for z, species in enumerate(observables):
-                simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
-                if not os.path.exists(simFile):
+                simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv'
+                if not os.path.exists(simFile) or override:
                     sims=generateData(model,m) 
                     flag=True
             flag=True
-        for z, species in enumerate(observables):   
-            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
+        for z, species in enumerate(observables):  
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv' 
             sims=pd.read_csv(simFile)
             label = f'{m}'
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            ax[z].set_ylabel(f'X-{species} [ppm]')
+            ax[z].set_ylabel(f'X-{species} [-]')
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1]*1e6,'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             # ax[z].set_ylim(Ylim)
             ax[z].tick_params(axis='both',direction='in')
-            ax[z].set_xlabel('Temperature [K]')
+            ax[z].set_xlabel('Time [s]')
         print('  > Data added to plot')
-ax[1].annotate(f'{title}', xy=(0.94, 0.05), xycoords='axes fraction',ha='right', va='top',fontsize=lgdfsz-1)
-ax[0].legend(fontsize=lgdfsz-1.5,frameon=False,loc='lower right', handlelength=lgdw,ncol=1) 
+ax[1].annotate(f'{title2}', xy=(0.97, 0.1), xycoords='axes fraction',ha='right', va='top',fontsize=lgdfsz+1)
+ax[0].legend(fontsize=lgdfsz-1,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
 toc1=time.time()
-outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
+outPath=f'USSCI/figures/{args.date}/{folder}/FR'
 os.makedirs(outPath,exist_ok=True)
 name=f'{name}.png'
 plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')

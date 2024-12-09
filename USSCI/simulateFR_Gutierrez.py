@@ -67,9 +67,9 @@ exp=False
 override=False
 dataLabel='Gutierrez et al. (2025)'
 data=['XCH4_90CH4_10NH3.csv','XNO_90CH4_10NH3.csv']
+observables=['NH3','CH3OCH3','NO']
 # observables=['NH3','CH3OCH3']
-# observables=['NH3','CH3OCH3']
-observables=['CH4', 'C2H2', 'C2H4', 'C2H6']
+# observables=['CH4', 'C2H2', 'C2H4', 'C2H6']
 
 
 # X_NH3=923e-6
@@ -81,13 +81,13 @@ X_O2=3729e-6
 X_Ar=1-X_NH3-X_CH3OCH3-X_O2
 X={'NH3':X_NH3,'CH3OCH3':X_CH3OCH3,'O2':X_O2,'Ar':X_Ar}
 P=1
-T_list = np.linspace(900,1400,gridsz)
+T_list = np.linspace(800,1200,gridsz)
 Xlim=[800,1500]
 Ylim=[0,1.4]
 length = 20e-2  # [m]
 diameter=0.0087 # [m]
 n_steps = 2000
-Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
+Q_std = 1000 #nominal gas flow rate @ STP [mL/min]
 
 models = {
     # 'Stagni-2023': {
@@ -143,7 +143,8 @@ models = {
         'submodels': {
             'base': r"chemical_mechanisms/Gutierrez-2025/gutierrez-2025.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+            # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
                     },
     },
     # 'Aramco-3.0': {
@@ -192,9 +193,11 @@ def save_to_csv(filename, data):
         writer.writerows(data)
 
 def getTemperatureDependence(gas,T):
+    # Get nonstandard volumetric flow rate:
+    Q = Q_std*(ct.one_atm/(P*ct.one_atm))*(273.15/T)
     gas.TPX = T, P*ct.one_atm, X
     area = np.pi*(diameter/2)**2
-    u0 = Q_tn*1e-6/60/area
+    u0 = Q*1e-6/60/area
     mass_flow_rate = u0 * gas.density * area
     flowReactor = ct.IdealGasConstPressureReactor(gas)
     reactorNetwork = ct.ReactorNet([flowReactor])

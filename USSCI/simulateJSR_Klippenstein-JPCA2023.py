@@ -82,13 +82,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
                     },
     },
-    'Alzueta-2023': {
-        'submodels': {
-            'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Alzueta-2023': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     'Klippenstein-CNF2018': {
         'submodels': {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
@@ -103,13 +103,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Stagni-2023': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Stagni-2023': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Song-2019': {  #bad
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",

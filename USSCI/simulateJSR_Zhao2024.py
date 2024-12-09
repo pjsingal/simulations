@@ -78,20 +78,20 @@ V=0.5e-6 #m3
 t_max=40
 
 models = {
-    'Aramco-3.0': {
-        'submodels': {
-            'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
-                    },
-    },
-    # 'Glarborg-2025': {
+    # 'Aramco-3.0': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
     #                 },
     # },
+    'Glarborg-2025': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+                    },
+    },
     # 'Stagni-2023': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
@@ -106,13 +106,6 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    # 'Glarborg-2025_NH3PLOG': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO_NH3PLOG.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_NH3PLOG_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_NH3PLOG_LMRR_allPLOG.yaml",
-    #                 },
-    # },
     'Klippenstein-CNF2018': {
         'submodels': {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
@@ -120,13 +113,6 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
                     },
     },
-    # 'Klippenstein-CNF2018-NH3PLOG': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018_NH3PLOG.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_NH3PLOG_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_NH3PLOG_LMRR_allPLOG.yaml",
-    #                 },
-    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6

@@ -66,7 +66,7 @@ exp=False
 # data=['XCH4_55N2_45H2O.csv','XC2H2_55N2_45H2O.csv','XC2H4_55N2_45H2O.csv','XC2H6_55N2_45H2O.csv']
 observable='NO'
 
-P=1
+P=10
 fuel='CH4'
 oxidizerList=['O2:0.21,N2:0.79', 'O2:0.21,N2:0.4,H2O:0.39']
 phiList = np.linspace(0.7,1.5,gridsz)
@@ -84,13 +84,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
                     },
     },
-    'Glarborg-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
