@@ -3844,7 +3844,7 @@ N2H2+O=NH2+NO                        1.0E13   0.000       0 !
 N2H2+OH=NNH+H2O                      5.9E01   3.400    1360 ! 
 ! Linder DP Duan X Page M JCP 104:6298 1996
 !
-+NH2=NNH+NH3N2H2                     8.8E-2   4.050    1610 ! 
+N2H2+NH2=NNH+NH3                     8.8E-2   4.050    1610 ! 
 ! Linder DP Duan X Page M JCP 104:6298 1996
 !
 N2H2+NH=NNH+NH2                      2.4E06   2.000   -1192 !  
