@@ -3401,10 +3401,12 @@ H2NO+M=HNO+H+M                       2.8E24  -2.830   64915 !
 ! H2O/10/
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
-H2NO=HNOH				 .1300E+28  -4.990  43982.2 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
-PLOG / 0.1				 .8200E+26  -4.940  43793.5 /
-PLOG / 1.0				 .1300E+28  -4.990  43982.2 /
-PLOG / 10.0				 .2600E+29  -5.060  44767.1 /
+HNOH=H2NO                       3.5E27  -5.130   43280 ! 1 atm 
+PLOG / 0.01                          2.3E25  -5.130   39080 /
+PLOG / 0.1                           3.5E26  -5.150   41210 /
+PLOG / 1.0                           3.5E27  -5.130   43280 /
+PLOG / 10.0                          7.7E27  -4.930   45060 /
+PLOG / 100.0                         3.4E26  -4.260   45960 /
 H2NO+H=HNO+H2                        3.0E07   2.000    2000 ! 
 ! JAM est
 !
@@ -3608,15 +3610,19 @@ HONO+HONO=NO+NO2+H2O                 3.5E-01  3.640   12140 !
 ! TROE /1.149 1E-30 3125 1E30/                               !
 ! CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008)
 !
-HNO2=HONO                                .3260E+35  -7.970  45490.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
-PLOG /                0.010              .3260e+35  -7.970  45490.0 /
-PLOG /                0.100              .2770e+34  -7.580  45250.0 /
-PLOG /                0.316              .1930e+33  -7.180  44940.0 /
-PLOG /                1.000              .1560e+31  -6.470  44360.0 /
-PLOG /                3.160              .2170e+28  -5.490  43670.0 /
-PLOG /                10.00              .4680e+25  -4.520  43320.0 /
-PLOG /                31.60              .1140e+24  -3.810  43640.0 /
-PLOG /                100.0              .2030e+23  -3.350  44430.0 /
+HNO2=HONO                            1.7E38  -8.79    48160 ! 1 atm
+ PLOG/1.000E-01                      1.1E47 -11.48    52140/
+ PLOG/2.154E-01                      1.6E44 -10.63    50780/
+ PLOG/4.641E-01                      2.0E41  -9.74    49460/
+ PLOG/1.000E+00                      1.7E38  -8.79    48160/
+ PLOG/2.154E+00                      7.5E34  -7.73    46880/
+ PLOG/4.641E+00                      2.3E31  -6.60    45680/
+ PLOG/1.000E+01                      9.1E27  -5.47    44660/
+ PLOG/2.154E+01                      8.5E24  -4.44    43880/
+ PLOG/4.641E+01                      2.7E22  -3.55    43380/
+ PLOG/1.000E+02                      2.7E20  -2.80    43120/
+! Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019) (corrected).
+!
 NO2+H2=HNO2+H                        2.4E02   3.150   31100 ! 
 ! J. Chai, CF Goldsmith Proc Combust Inst 36 2017 617-626
 !
@@ -3838,7 +3844,7 @@ N2H2+O=NH2+NO                        1.0E13   0.000       0 !
 N2H2+OH=NNH+H2O                      5.9E01   3.400    1360 ! 
 ! Linder DP Duan X Page M JCP 104:6298 1996
 !
-N2H2+NH2=NNH+NH3                     8.8E-2   4.050    1610 ! 
++NH2=NNH+NH3N2H2                     8.8E-2   4.050    1610 ! 
 ! Linder DP Duan X Page M JCP 104:6298 1996
 !
 N2H2+NH=NNH+NH2                      2.4E06   2.000   -1192 !  

@@ -344,21 +344,44 @@ O+O+M=O2+M                           1.9E13   0.000   -1788 !
  H2/2.5/ H2O/12/ AR/0/ CO/1.9/ CO2/3.8/  NH3/5/
 ! Tsang W Hampson RF JPCRD 15:1087 1986
 !
-H2O+M = H+OH+M                       6.1E27  -3.322  120790 !
- H2/3/ H2O/0/ N2/2/ O2/0/ CO/1.9/ CO2/3.8/  NH3/5/
+!H2O+M = H+OH+M                       6.1E27  -3.322  120790 !
+! H2/3/ H2O/0/ N2/2/ O2/0/ CO/1.9/ CO2/3.8/  NH3/5/
 ! Srinivasan and Michael, Int. J. Chem. Kinetic. 38 (2006)
 ! Rate constant is for Ar with efficiencies from Michael et al., J. Phys. Chem. A, 106 (2002)
 ! Efficiencies for CO and CO2 taken from Li et al., Int. J. Chem. Kinet. 36:566-575 (2004)
+H+OH=H2O                                 5.4746E+19 -2.8121  550.629 !Subbed in by PSingal from Sellevag
+PLOG /                1.000E-04          5.3051E+15 -2.8073  499.267  /
+PLOG /                1.000E-03          5.2558E+16 -2.8063  499.946  /
+PLOG /                1.000E-02          5.1880E+17 -2.8050  501.765  /
+PLOG /                1.000E-01          5.1304E+18 -2.8039  508.801  /
+PLOG /                1.000E+00          5.4746E+19 -2.8121  550.629  /
+PLOG /                1.000E+01          1.0467E+21 -2.8908  827.164  /
+PLOG /                1.000E+02          6.2479E+21 -2.8024  1433.200 /
+PLOG /                1.000E+03          4.2801E+18 -1.5717  980.056  /
+PLOG /                1.000E+04          6.7959E+15 -0.5778  456.911  /
+
+
+
 H2O+H2O = H+OH+H2O                   1.0E26  -2.440  120180 !
 ! Srinivasan and Michael, Int. J. Chem. Kinetic. 38 (2006)
 !                       
-H+O2(+M) = HO2(+M)                   1.2E12   0.580    -214 ! #
- LOW                                /4.6E20  -1.670     871/!
- TROE/0.5852 1.0E+30 1.0E-10/
- AR/1/ H2O/22.6/ N2/1.53/
- H2/3/ O2/1/ CO/3/ CO2/11/ NH3/19/
+!H+O2(+M) = HO2(+M)                   1.2E12   0.580    -214 ! #
+! LOW                                /4.6E20  -1.670     871/!
+! TROE/0.5852 1.0E+30 1.0E-10/
+! AR/1/ H2O/22.6/ N2/1.53/
+! H2/3/ O2/1/ CO/3/ CO2/11/ NH3/19/
 ! Lei, L. & Burke, M. P., Combust. Flame 213, 467-474 (2020).
 !
+H+O2=HO2                                 7.7259E+16 -2.1520  213.473 !Subbed in by PSingal from Klippenstein-2017 Fig. 4
+PLOG /                1.316E-02          9.3997E+14 -2.1435  77.2730   /
+PLOG /                1.316E-01          1.0725E+16 -2.1600  130.239   /
+PLOG /                3.947E-01          3.1783E+16 -2.1581  166.994   /
+PLOG /                1.000E+00          7.7259E+16 -2.1520  213.473   /
+PLOG /                3.000E+00          2.1169E+17 -2.1406  279.031   /
+PLOG /                1.000E+01          6.5309E+17 -2.1321  387.493   /
+PLOG /                3.000E+01          1.4978E+18 -2.1003  487.579   /
+PLOG /                1.000E+02          3.8222E+18 -2.0706  665.984   /
+
 HO2+H=H2+O2                          2.8E06   2.090   -1451 !
 ! Michael et al., Proc. Comb. Inst. 28:1471 (2000)
 ! Scaled by 0.75 Burke et al. (2012)
@@ -588,16 +611,21 @@ HCO+HCO=CO+CH2O                      2.7E13   0.000       0 !
 !   NH3 subset                                                           *
 ! ************************************************************************
 !
-NH2+H(+M)=NH3(+M)                    1.5E14   0.167       0 ! #
- LOW                                /2.6E23  -2.083       0/! N2
- N2/1.0/ O2/0.6/ CO2/5.5/ AR/0/ NH3/0/
- TROE /0.5 1E-30 1E30 1E30/                                 !
-NH2+H(+AR)=NH3(+AR)                  1.5E14   0.167       0 ! #
- LOW                                /3.0E22  -1.900       0/! AR
- TROE /0.5 1E-30 1E30 1E30/                                 !
-NH2+H(+NH3)=NH3(+NH3)                1.5E14   0.167       0 ! #
- LOW                                /1.0E23  -1.645       0/! NH3
- TROE /0.5 1E-30 1E30 1E30/                                 !
+!NH2+H(+M)=NH3(+M)                    1.5E14   0.167       0 ! #
+! LOW                                /2.6E23  -2.083       0/! N2
+! N2/1.0/ O2/0.6/ CO2/5.5/ AR/0/ NH3/0/
+! TROE /0.5 1E-30 1E30 1E30/    
+NH3=NH2+H				 				.3497E+31 -5.224  111163.3 !\AUTHOR: AS !\REF: Stagni, A. et al. React. Chem. Eng.  5 (4), 696-711  (2020) !\COMMENT: T = 800-2500 K fitted
+PLOG / 0.1				 				.7230E+30 -5.316  110862.4 /
+PLOG / 1				 				.3497E+31 -5.224  111163.3 /
+PLOG / 10				 				.1975E+32 -5.155  111887.8 /
+PLOG / 100				 				.2689E+32 -4.920  112778.7 /                             !
+!NH2+H(+AR)=NH3(+AR)                  1.5E14   0.167       0 ! #
+! LOW                                /3.0E22  -1.900       0/! AR
+! TROE /0.5 1E-30 1E30 1E30/                                 !
+!NH2+H(+NH3)=NH3(+NH3)                1.5E14   0.167       0 ! #
+! LOW                                /1.0E23  -1.645       0/! NH3
+! TROE /0.5 1E-30 1E30 1E30/                                 !
 ! P. Glarborg, H. Hashemi, P. Marshall, "Challenges in Kinetic Modeling of Ammonia Pyrolysis", Fuel Commun. 10 (2022) 100049.
 ! P. Glarborg, H. Hashemi, S. Cheskis, A.W. Jasper, J. Phys. Chem. A 125 (2021) 1505-1516: NH3/N2=0.37T^0.438 
 !
@@ -1009,10 +1037,19 @@ HNO+H=NO+H2                          1.7E10   1.180    -446 ! #
 HNO+O=NO+OH                          2.3E13   0.000       0 !
 ! Inomata S Washida N JPCA 103:5023-5031 1999
 !
-HNO+OH=NO+H2O                        3.0E13   0.000       0 ! #
+!HNO+OH=NO+H2O                        3.0E13   0.000       0 ! #
 ! Sun, F.; DeSain, J.D.; Scott, G.; Hung, P.Y.; Thompson, R.I.; Glass, G.P.; Curl, R.F.
 ! Reactions of NH2 with NO2 and of OH with NH2O, J. Phys. Chem. A 105, 6121-6128, 2001
 !
+HNO+OH=NO+H2O                            .6300E+11    .390   3782.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+PLOG /                0.010              .5820E+11    .400   3762.0    /
+PLOG /                0.100              .5850E+11    .400   3763.0    /
+PLOG /                0.316              .5920E+11    .400   3764.0    /
+PLOG /                1.000              .6300E+11    .390   3782.0    /
+PLOG /                3.160              .9530E+11    .340   3931.0    /
+PLOG /                10.00              .2600E+12    .230   4413.0    /
+PLOG /                31.60              .3830E+12    .200   5099.0    /
+PLOG /                100.0              .4180E+11    .510   5532.0    /
 HNO+HO2=HNO2+OH                      2.0E03   2.360    8980 !
 ! SH Mousavipour SS Asemani J Phys Chem A 2015 119 5553-5565
 !
@@ -1057,14 +1094,24 @@ NO2+NO2=NO+NO+O2                     4.5E12   0.000   27599 !
 NO2+NO2=NO3+NO                       9.6E09   0.730   20900 !
 ! Tsang W JPCRD 20:221 1991
 !
-NO+OH(+M)=HONO(+M)                   1.1E14  -0.300       0 ! #
- LOW  /3.392E23 -2.5 0/                                     ! He
- TROE /0.75 1E-30 1E30 1E30/
- N2/2/ AR/1.1/ ! # Howard, C.J.; Evenson, K.M. Laser Magnetic Resonance Study of the Gas Phase Reactions of OH with CO, NO, and NO2 J. Chem. Phys. 61 1974
- NH3/6/ ! # est from P. Glarborg, H. Hashemi, S. Cheskis, A.W. Jasper, "On the Rate Constant for NH2+HO2 and Third Body Collision Efficiencies for NH2+H (+M) and NH2+NH2 (+M)", J. Phys. Chem. A 125 (2021) 1505-1516.
- NO2/4/ NO/2/ ! est
+!NO+OH(+M)=HONO(+M)                   1.1E14  -0.300       0 ! #
+! LOW  /3.392E23 -2.5 0/                                     ! He
+! TROE /0.75 1E-30 1E30 1E30/
+! N2/2/ AR/1.1/ ! # Howard, C.J.; Evenson, K.M. Laser Magnetic Resonance Study of the Gas Phase Reactions of OH with CO, NO, and NO2 J. Chem. Phys. 61 1974
+! NH3/6/ ! # est from P. Glarborg, H. Hashemi, S. Cheskis, A.W. Jasper, "On the Rate Constant for NH2+HO2 and Third Body Collision Efficiencies for NH2+H (+M) and NH2+NH2 (+M)", J. Phys. Chem. A 125 (2021) 1505-1516.
+! NO2/4/ NO/2/ ! est
 ! Fulle D Hamann HF Hippler H Troe J JCP 108:5391 1998
 !
+OH+NO=HONO                               .3090E+24  -4.170   1621.0 !\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., & Goldsmith, C. F. React Chem Eng 4(2), 323-333 (2019). !\COMMENT:
+PLOG /                0.010              .5020E+22  -4.240    898.9   /
+PLOG /                0.100              .5310E+23  -4.240   1184.0   /
+PLOG /                0.316              .1380E+24  -4.220   1376.0   /
+PLOG /                1.000              .3090E+24  -4.170   1621.0   /
+PLOG /                3.160              .5450E+24  -4.090   1911.0   /
+PLOG /                10.00              .6350E+24  -3.970   2222.0   /
+PLOG /                31.60              .3680E+24  -3.750   2501.0   /
+PLOG /                100.0              .7290E+23  -3.410   2660.0   /
+
 HONO+H=H2+NO2                        1.9E03   2.830    1423 ! #
 ! Chen, X., Fuller, M. E., & Goldsmith, C. F. Reac Chem Eng 4, 323-333 (2019).
 !
@@ -1243,12 +1290,17 @@ N2H4+NO2=N2H3+HNO2                   2.4E-2   4.140    7946 !
 ! Ab initio chemical kinetics for the N2H4+NOx (x=1-3) reactions and related reverse processes,
 ! Comp. Theor. Chem. 1046, 73-80, 2014
 !
-N2H3(+M)=tHNNH+H(+M)                 1.3E11   0.819   48060 ! #
- LOW/                                3.8E40  -6.880   54460/! AR
- TROE/0.168 80000 28 7298/
- N2/2/ AR/1/ NH3/5/
+!N2H3(+M)=tHNNH+H(+M)                 1.3E11   0.819   48060 ! #
+! LOW/                                3.8E40  -6.880   54460/! AR
+! TROE/0.168 80000 28 7298/
+! N2/2/ AR/1/ NH3/5/
 ! P. Dievart and L. Catoire. J. Phys. Chem. A, 124:6214-6236, 2020.
 !
+N2H3=tHNNH+H				 .3600E+48 -10.380  68973.8 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG /                 +1.0000000E-001   .2300E+44  -9.550  64435.8 / 
+PLOG /                 +1.0000000E+000   .3600E+48 -10.380  68973.8 /
+PLOG /                 +1.0000000E+001   .1800E+46  -9.390  70105.8 /
+
 N2H3+H=tHNNH+H2                      4.6E01   3.530    3750 ! #
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
 N2H3+H=cHNNH+H2                      2.7E02   3.180    6620 ! #
@@ -1303,12 +1355,20 @@ tHNNH(+M)=cHNNH(+M)                  1.5E14   0.000   55000 ! #
 DUP
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
 !
-tHNNH(+M)=NNH+H(+M)                  6.3E16   0.000   63980 ! #
- LOW/                                8.7E39  -6.910   70400 /
-TROE/ 0.44 520 6150 /
- N2/1/ AR/0.5/ O2/0.6/ H2/1/ H2O/6/ CO/1.9/ CO2/3.8/ NH3/2.5/  ! 
+!tHNNH(+M)=NNH+H(+M)                  6.3E16   0.000   63980 ! #
+! LOW/                                8.7E39  -6.910   70400 /
+!TROE/ 0.44 520 6150 /
+! N2/1/ AR/0.5/ O2/0.6/ H2/1/ H2O/6/ CO/1.9/ CO2/3.8/ NH3/2.5/  ! 
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
 !
+tHNNH=NNH+H				 .1800E+41  -8.410  73353.0 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT: N2 as bath gas
+PLOG /		       +1.0000000E-001   .5600E+37  -7.750  70215.0 /
+PLOG /		       +1.0000000E+000   .1800E+41  -8.410  73353.0 /
+PLOG /		       +1.0000000E+001   .3100E+42  -8.420  76004.2 /
+PLOG /		       +1.0000000E-001   .1600E+38  -7.940  70721.5 /
+PLOG /		       +1.0000000E+000   .2600E+41  -8.530  72886.2 /
+PLOG /		       +1.0000000E+001   .1300E+45  -9.220  77036.9 /
+
 tHNNH+H=NNH+H2                       9.6E07   1.800     900 ! #
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.
 !
@@ -1340,15 +1400,26 @@ cHNNH+H=NNH+H2                       2.8E08   1.720     470 !
 cHNNH+H=tHNNH+H                      7.8E08   1.580    2180 !
 ! P. Marshall, G.R. Rawlins, P. Glarborg. "New reactions of diazene and related species for modeling combustion of amine fuels", Mol. Phys. 119 (2021) e1979674.!
 !
-H2NN=NNH+H                           3.4E26  -4.830   46228 !  1 atm
+!H2NN=NNH+H                           3.4E26  -4.830   46228 !  1 atm
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
+H2NN=NNH+H				 .9600E+36  -7.570  54841.2 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG /		       +1.0000000E-001   .5900E+33  -6.990  51791.2 /
+PLOG /		       +1.0000000E+000   .9600E+36  -7.570  54841.2 /
+PLOG /		       +1.0000000E+001   .5000E+37  -7.430  57295.1 /
+PLOG /		       +1.0000000E-001   .7200E+29  -7.770  50757.9 /
+PLOG /		       +1.0000000E+000   .3200E+32  -6.220  52317.7 /
+PLOG /		       +1.0000000E+001   .5100E+34  -6.520  54215.3 /
 H2NN=N2+H2                           2.5E14   0.000   52785 !
 ! D.-Y. Hwang, A.M. Mebel, J. Phys. Chem. A 2003, 107, 2865-2874
 !
-H2NN=tHNNH                           1.3E14   0.000   46931 !
+!H2NN=tHNNH                           1.3E14   0.000   46931 !
 ! D.-Y. Hwang, A.M. Mebel, J. Phys. Chem. A 2003, 107, 2865-2874
 !
+tHNNH=H2NN				 .2000E+42  -9.380  68452.2 !\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+PLOG /		       +1.0000000E-001   .9200E+39  -9.010  67726.9 /
+PLOG /		       +1.0000000E+000   .2000E+42  -9.380  68452.2 /
+PLOG /		       +1.0000000E+001   .1300E+46 -10.130  70757.1 /
 H2NN+H=NNH+H2                        4.8E08   1.500    -894 !
 ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
 !
