@@ -61,29 +61,29 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 title=r'0.2% C$_2$H$_5$OH/2% O$_2$/N$_2$'+f'\n10 atm'
 folder='Zhang-2018'
 name='Fig10'
-exp=False
+exp=True
 dataLabel='Zhang et al. (2018)'
-data=['XCH4_75N2_25H2O.csv','XCO2_75N2_25H2O.csv','XCO_75N2_25H2O.csv']
+data=['ch4.csv', 'c2h2.csv','c2h4.csv','c2h6.csv'] #'c2h2' is just a placeholder, no data exists
 # observables=['O2','CO','CO2','C2H4','CH4']
 # observables=['C2H5OH','CH3OH', 'C2H6','C2H2','CH3OCH3']
 observables=['CH4', 'C2H2','C2H4','C2H6']
 
 X={'C2H5OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
 P=10
-T_list = np.linspace(825,1075,gridsz)
-Xlim=[775,1075]
+T=950
+Xlim=[0,0.45]
 tau=0.07
 diameter=0.04 #m
 t_max=50
 
 models = {
-    'Zhang-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Zhang-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     'Aramco-3.0': {
         'submodels': {
             'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
@@ -91,25 +91,25 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
                     },
     },
-    'Arunthanayothin-2021': {
-        'submodels': {
-            'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
-                    },
-    },
-    'Song-2019': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Arunthanayothin-2021': {
+    #     'submodels': {
+    #         'base': r'chemical_mechanisms/Arunthanayothin-2021/arunthanayothin-2021.yaml',
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/arunthanayothin-2021_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    # 'Song-2019': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Song-2019/song-2019.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/song-2019_LMRR_allPLOG.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
 colors = ["xkcd:purple","xkcd:teal","r",'orange','xkcd:grey','goldenrod']*12
-# V = 4/3*np.pi*(diameter/2)**2 #JSR volume
+V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
@@ -134,25 +134,32 @@ def getStirredReactor(gas):
     ct.Wall(reactor, env, A=reactorSurfaceArea, U=h)
     return reactor
 
-def getTemperatureDependence(gas,T):
+def getTimeHistory(gas):
     gas.TPX = T, P*ct.one_atm, X
     stirredReactor = getStirredReactor(gas)
     reactorNetwork = ct.ReactorNet([stirredReactor])
     states = ct.SolutionArray(stirredReactor.thermo)
     t = 0
+    tvec=[]
+    Xvec=[]
     while t < t_max:
         t = reactorNetwork.step()
-    states.append(stirredReactor.thermo.state)
-    return [states(species).X.flatten()[0] for species in observables]
+        states.append(stirredReactor.thermo.state)
+        tvec.append(t)
+    Xvec=[states(species).X.flatten() for species in observables]
+    return tvec, Xvec
 
 def generateData(model,m):
     print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    X_history=[getTemperatureDependence(gas,T) for T in T_list]
+    X_history=getTimeHistory(gas)
+    # print(X_history)
     for z, species in enumerate(observables):
-        Xi_history = [item[z] for item in X_history]
-        data = zip(T_list,Xi_history)
+        # print(X_history[1])
+        Xi_history = X_history[1][z]
+        # print(len(X_history[0]))
+        data = zip(X_history[0],Xi_history)
         simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}'
         os.makedirs(simOutPath,exist_ok=True)
         save_to_csv(f'{simOutPath}/{name}.csv', data)
@@ -167,6 +174,7 @@ for j,model in enumerate(models):
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
+        sims=generateData(model,m) 
         flag=False
         while not flag:
             for z, species in enumerate(observables):
@@ -181,9 +189,9 @@ for j,model in enumerate(models):
             label = f'{model}' if k == 0 else None
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             
-            if exp and j==len(models)-1 and k==2:
+            if exp and j==len(models)-1 and z!=1:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
-                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
+                ax[z].plot(dat.iloc[:,0],dat.iloc[:,1]*1e6,'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')

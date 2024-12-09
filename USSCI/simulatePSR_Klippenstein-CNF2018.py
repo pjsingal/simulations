@@ -66,7 +66,7 @@ exp=False
 # data=['XCH4_55N2_45H2O.csv','XC2H2_55N2_45H2O.csv','XC2H4_55N2_45H2O.csv','XC2H6_55N2_45H2O.csv']
 observable='NO'
 
-P=10
+P=1
 fuel='CH4'
 oxidizerList=['O2:0.21,N2:0.79', 'O2:0.21,N2:0.4,H2O:0.39']
 phiList = np.linspace(0.7,1.5,gridsz)
@@ -152,7 +152,7 @@ def generateData(model,m):
     return X_history
 print(folder)
 tic1=time.time()
-f, ax = plt.subplots(1,len(oxidizerList), figsize=(args.figwidth, args.figheight))
+f, ax = plt.subplots(len(oxidizerList),1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.25)
 for j,model in enumerate(models):
     print(f'Model: {model}')

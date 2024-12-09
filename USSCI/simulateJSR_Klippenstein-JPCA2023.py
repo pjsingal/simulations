@@ -58,7 +58,7 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title='JSR: 1000ppm NH3/12500ppm O2/N2'
+title=f'JSR:\n1000ppm NH3/\n12500ppm O2/N2'
 folder='Klippenstein-JPCA2023'
 name='Fig4'
 exp=True
@@ -180,7 +180,7 @@ def generateData(model,m):
     return X_history
 print(folder)
 tic1=time.time()
-f, ax = plt.subplots(1,len(observables), figsize=(args.figwidth, args.figheight))
+f, ax = plt.subplots(len(observables),1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
     print(f'Model: {model}')
@@ -201,16 +201,17 @@ for j,model in enumerate(models):
             label = f'{m}'
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [ppm]')
-            if exp and j==len(models)-1 and k==2 and z==0:
+            if exp and j==len(models)-1 and k==len(models[model]['submodels'])-1 and z==0:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             # ax[z].set_ylim(Ylim)
             ax[z].tick_params(axis='both',direction='in')
-            ax[z].set_xlabel('Temperature [K]')
+            
         print('  > Data added to plot')
-plt.suptitle(f'{title}',fontsize=10)
-ax[0].legend(fontsize=lgdfsz-2,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
+ax[2].set_xlabel('Temperature [K]')
+# ax[1].annotate(f'{title}', xy=(0.05, 0.05), xycoords='axes fraction',ha='left', va='bottom',fontsize=lgdfsz+1)
+ax[0].legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1) 
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)

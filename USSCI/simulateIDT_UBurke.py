@@ -138,13 +138,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
                     },
     },
-    'Zhang-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Zhang-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/zhang-2018_ethanolDME_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Bugler-2016': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Bugler-2016/bugler-2016.yaml",

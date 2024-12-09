@@ -165,6 +165,7 @@ tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
+    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
     print(f'Model: {model}')
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
