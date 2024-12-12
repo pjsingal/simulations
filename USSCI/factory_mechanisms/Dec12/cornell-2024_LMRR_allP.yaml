@@ -13235,6 +13235,7 @@ reactions:
 - equation: HCCO + OH <=> CH2CO + O
   rate-constant: {A: 1300000.0, b: 1.99, Ea: 11280.0}
 - equation: HCCO + OH <=> HCOH + CO
+  duplicate: true
   type: linear-Burke
   reference-collider: AR
   colliders:

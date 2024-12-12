@@ -4954,6 +4954,7 @@ reactions:
 - equation: HCCO + OH <=> CH2CO + O
   rate-constant: {A: 1300000.0, b: 1.99, Ea: 11280.0}
 - equation: HCCO + OH <=> HCOH + CO
+  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 1.0 atm, A: 3.0e+16, b: -0.935, Ea: 659.0}
