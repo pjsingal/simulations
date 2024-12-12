@@ -58,9 +58,9 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title=f'T = 1800 K\nP = 1 atm\n'+r'$\tau$ = 3 ms'
+title=f'T = 1800 K\nP = 100 atm\n'+r'$\tau$ = 3 ms'
 folder='Klippenstein-CNF2018'
-name='Fig14'
+name='Fig14_1atm'
 exp=False
 # dataLabel='Lavadera et al. (2018)'
 # data=['XCH4_55N2_45H2O.csv','XC2H2_55N2_45H2O.csv','XC2H4_55N2_45H2O.csv','XC2H6_55N2_45H2O.csv']
@@ -84,13 +84,13 @@ models = {
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
                     },
     },
-    # 'Glarborg-2018': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Glarborg-2018': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted"]*6
