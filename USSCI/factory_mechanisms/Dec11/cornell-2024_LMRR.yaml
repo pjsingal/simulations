@@ -3032,16 +3032,11 @@ reactions:
   low-P-rate-constant: {A: 4.4e+38, b: -6.1, Ea: 93932.0}
   high-P-rate-constant: {A: 37000000000000.0, b: 0.0, Ea: 71969.0}
 - equation: CH2O + H <=> HCO + H2
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.04 atm, A: 7.4e+23, b: -2.732, Ea: 16379.0}
   - {P: 1.0 atm, A: 1.4e+23, b: -2.355, Ea: 17519.0}
   - {P: 10.0 atm, A: 7.3e+23, b: -2.665, Ea: 17634.0}
-- equation: CH2O + H <=> HCO + H2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.04 atm, A: 21000000000.0, b: 1.057, Ea: 3720.0}
   - {P: 1.0 atm, A: 1600000000000000.0, b: -0.444, Ea: 5682.0}
   - {P: 10.0 atm, A: 4200000000.0, b: 1.294, Ea: 3591.0}
@@ -3798,7 +3793,6 @@ reactions:
   - {P: 10.0 atm, A: 190000000.0, b: 1.43, Ea: 7829.0}
   - {P: 100.0 atm, A: 86000000000.0, b: 0.75, Ea: 11491.0}
 - equation: C2H4 + OH <=> CH2CH2OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.4e+47, b: -11.64, Ea: 11099.0}
@@ -3807,10 +3801,6 @@ reactions:
   - {P: 1.0 atm, A: 6.0e+37, b: -8.14, Ea: 8043.0}
   - {P: 10.0 atm, A: 6.0e+37, b: -7.77, Ea: 10736.0}
   - {P: 100.0 atm, A: 6.0e+37, b: -7.44, Ea: 14269.0}
-- equation: C2H4 + OH <=> CH2CH2OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.4e+47, b: -11.64, Ea: 11099.0}
   - {P: 0.025 atm, A: 5.0e+37, b: -8.68, Ea: 5355.0}
   - {P: 0.1 atm, A: 2.6e+35, b: -7.79, Ea: 5017.0}
@@ -3858,7 +3848,6 @@ reactions:
   duplicate: true
   rate-constant: {A: 8.1e-05, b: 4.417, Ea: 8836.0}
 - equation: C2H4 + CH2(S) <=> C2H3 + CH3
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.8e+19, b: -1.95, Ea: 6787.0}
@@ -3866,10 +3855,6 @@ reactions:
   - {P: 1.0 atm, A: 4.2e+24, b: -3.19, Ea: 9759.0}
   - {P: 10.0 atm, A: 7.9e+24, b: -3.08, Ea: 13894.0}
   - {P: 100.0 atm, A: 7.4e+29, b: -4.28, Ea: 23849.0}
-- equation: C2H4 + CH2(S) <=> C2H3 + CH3
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 4300000000000.0, b: 0.19, Ea: -110.0}
   - {P: 0.1 atm, A: 230000000000.0, b: 0.54, Ea: 48.0}
   - {P: 1.0 atm, A: 4900000000.0, b: 1.02, Ea: 600.0}
@@ -3890,7 +3875,6 @@ reactions:
 - equation: C2H3 + HO2 <=> CH2CHO + OH
   rate-constant: {A: 30000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C2H3 + O2 <=> CH2CHOO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.6e+24, b: -5.45, Ea: 9662.0}
@@ -3901,10 +3885,6 @@ reactions:
   - {P: 10.0 atm, A: 4.2e+48, b: -11.21, Ea: 16000.0}
   - {P: 31.6 atm, A: 2.3e+43, b: -9.38, Ea: 14810.0}
   - {P: 100.0 atm, A: 3.4e+39, b: -8.04, Ea: 14360.0}
-- equation: C2H3 + O2 <=> CH2CHOO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.8e-09, b: 4.15, Ea: -4707.0}
   - {P: 0.1 atm, A: 2.4e+22, b: -4.52, Ea: 2839.0}
   - {P: 0.316 atm, A: 2.0e+26, b: -5.43, Ea: 2725.0}
@@ -3914,7 +3894,6 @@ reactions:
   - {P: 31.6 atm, A: 3.3e+27, b: -4.95, Ea: 3610.0}
   - {P: 100.0 atm, A: 1.0e+27, b: -4.72, Ea: 3680.0}
 - equation: C2H3 + O2 <=> CHCHO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 390000000000.0, b: -0.11, Ea: 2131.0}
@@ -3925,10 +3904,6 @@ reactions:
   - {P: 10.0 atm, A: 920000000000000.0, b: -2.26, Ea: 0.0}
   - {P: 31.6 atm, A: 6.1e+25, b: -4.21, Ea: 13050.0}
   - {P: 100.0 atm, A: 1.7e+30, b: -5.35, Ea: 18430.0}
-- equation: C2H3 + O2 <=> CHCHO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 990000000000.0, b: -0.66, Ea: -1.0}
   - {P: 0.1 atm, A: 690000000000000.0, b: -1.16, Ea: 4542.0}
   - {P: 0.316 atm, A: 28000000000000.0, b: -0.72, Ea: 3479.0}
@@ -3938,7 +3913,6 @@ reactions:
   - {P: 31.6 atm, A: 140000000000.0, b: 0.05, Ea: 3774.0}
   - {P: 100.0 atm, A: 320000000000.0, b: -0.02, Ea: 5338.0}
 - equation: C2H3 + O2 <=> CH2CO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 870.0, b: 2.41, Ea: 6061.0}
@@ -3949,10 +3923,6 @@ reactions:
   - {P: 10.0 atm, A: 1400.0, b: 2.36, Ea: 6074.0}
   - {P: 31.6 atm, A: 2500000.0, b: 1.42, Ea: 8480.0}
   - {P: 100.0 atm, A: 17000000000.0, b: 0.36, Ea: 12010.0}
-- equation: C2H3 + O2 <=> CH2CO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 0.18, b: 3.12, Ea: 1331.0}
   - {P: 0.1 atm, A: 0.21, b: 3.11, Ea: 1383.0}
   - {P: 0.316 atm, A: 0.27, b: 3.08, Ea: 1496.0}
@@ -3962,7 +3932,6 @@ reactions:
   - {P: 31.6 atm, A: 0.00012, b: 4.21, Ea: 2043.0}
   - {P: 100.0 atm, A: 0.0013, b: 3.97, Ea: 3414.0}
 - equation: C2H3 + O2 <=> CH2CHO + O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 7.2e+20, b: -2.67, Ea: 6742.0}
@@ -3973,10 +3942,6 @@ reactions:
   - {P: 10.0 atm, A: 1.6e+23, b: -3.22, Ea: 8697.0}
   - {P: 31.6 atm, A: 2.9e+25, b: -3.77, Ea: 11530.0}
   - {P: 100.0 atm, A: 9.3e+25, b: -3.8, Ea: 13910.0}
-- equation: C2H3 + O2 <=> CH2CHO + O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 12000000000.0, b: 0.62, Ea: -278.0}
   - {P: 0.1 atm, A: 13000000000.0, b: 0.62, Ea: -248.0}
   - {P: 0.316 atm, A: 15000000000.0, b: 0.6, Ea: -163.0}
@@ -3986,7 +3951,6 @@ reactions:
   - {P: 31.6 atm, A: 1400000000.0, b: 0.92, Ea: 1219.0}
   - {P: 100.0 atm, A: 71000000.0, b: 1.28, Ea: 1401.0}
 - equation: C2H3 + O2 <=> C2H2 + HO2
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 11000000.0, b: 1.28, Ea: 3322.0}
@@ -3997,10 +3961,6 @@ reactions:
   - {P: 10.0 atm, A: 130000000000.0, b: 0.12, Ea: 5872.0}
   - {P: 31.6 atm, A: 1200000000.0, b: 0.82, Ea: 5617.0}
   - {P: 100.0 atm, A: 1.1e+17, b: -1.45, Ea: 12230.0}
-- equation: C2H3 + O2 <=> C2H2 + HO2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 48.0, b: 2.75, Ea: -796.0}
   - {P: 0.1 atm, A: 52.0, b: 2.73, Ea: -768.0}
   - {P: 0.316 atm, A: 56.0, b: 2.73, Ea: -659.0}
@@ -4010,7 +3970,6 @@ reactions:
   - {P: 31.6 atm, A: 450000000.0, b: 0.0, Ea: 955.0}
   - {P: 100.0 atm, A: 20.0, b: 2.94, Ea: 1847.0}
 - equation: C2H3 + O2 <=> OCHCHO + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 480000000000000.0, b: -1.03, Ea: 912.0}
@@ -4021,10 +3980,6 @@ reactions:
   - {P: 10.0 atm, A: 1300000000000000.0, b: -1.09, Ea: 2393.0}
   - {P: 31.6 atm, A: 3.6e+33, b: -6.5, Ea: 14910.0}
   - {P: 100.0 atm, A: 3.3e+31, b: -5.76, Ea: 16250.0}
-- equation: C2H3 + O2 <=> OCHCHO + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 0.00028, b: 4.04, Ea: -7019.0}
   - {P: 0.1 atm, A: 0.00035, b: 4.01, Ea: -6978.0}
   - {P: 0.316 atm, A: 0.00097, b: 3.89, Ea: -6768.0}
@@ -4034,7 +3989,6 @@ reactions:
   - {P: 31.6 atm, A: 38000000000.0, b: 0.22, Ea: 941.0}
   - {P: 100.0 atm, A: 280000000.0, b: 0.83, Ea: 858.0}
 - equation: C2H3 + O2 <=> CH2O + HCO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.4e+36, b: -7.6, Ea: 12610.0}
@@ -4045,10 +3999,6 @@ reactions:
   - {P: 10.0 atm, A: 5.8e+35, b: -7.2, Ea: 13430.0}
   - {P: 31.6 atm, A: 3.5e+20, b: -2.57, Ea: 5578.0}
   - {P: 100.0 atm, A: 3.0e+33, b: -6.28, Ea: 16000.0}
-- equation: C2H3 + O2 <=> CH2O + HCO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.4e+36, b: -7.6, Ea: 12610.0}
   - {P: 0.1 atm, A: 2500000000000000.0, b: -1.28, Ea: 513.0}
   - {P: 0.316 atm, A: 5300000000000000.0, b: -1.29, Ea: 521.0}
@@ -4058,7 +4008,6 @@ reactions:
   - {P: 31.6 atm, A: 1.1e+69, b: -19.23, Ea: 14760.0}
   - {P: 100.0 atm, A: 47000000000.0, b: 0.19, Ea: 831.0}
 - equation: C2H3 + O2 <=> CH2O + H + CO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 6.5e+36, b: -7.6, Ea: 12640.0}
@@ -4069,10 +4018,6 @@ reactions:
   - {P: 10.0 atm, A: 1.3e+36, b: -7.2, Ea: 13430.0}
   - {P: 31.6 atm, A: 8.3e+20, b: -2.57, Ea: 5578.0}
   - {P: 100.0 atm, A: 7.1e+33, b: -6.28, Ea: 16000.0}
-- equation: C2H3 + O2 <=> CH2O + H + CO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.2e+16, b: -1.28, Ea: 515.0}
   - {P: 0.1 atm, A: 1.2e+16, b: -1.28, Ea: 513.0}
   - {P: 0.316 atm, A: 1.3e+16, b: -1.29, Ea: 521.0}
@@ -4082,7 +4027,6 @@ reactions:
   - {P: 31.6 atm, A: 2.7e+69, b: -19.23, Ea: 14760.0}
   - {P: 100.0 atm, A: 110000000000.0, b: 0.19, Ea: 831.0}
 - equation: C2H3 + O2 <=> CO + CH3O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 8.2e+18, b: -2.66, Ea: 3201.0}
@@ -4093,10 +4037,6 @@ reactions:
   - {P: 10.0 atm, A: 1.9e+24, b: -5.63, Ea: 2.0}
   - {P: 31.6 atm, A: 1.1e+18, b: -2.22, Ea: 5178.0}
   - {P: 100.0 atm, A: 5.8e+32, b: -6.45, Ea: 16810.0}
-- equation: C2H3 + O2 <=> CO + CH3O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1300000000.0, b: 0.18, Ea: -1717.0}
   - {P: 0.1 atm, A: 600000000000.0, b: -2.93, Ea: -9564.0}
   - {P: 0.316 atm, A: 290000000000.0, b: -2.93, Ea: -10120.0}
@@ -4106,7 +4046,6 @@ reactions:
   - {P: 31.6 atm, A: 1.0e+72, b: -20.69, Ea: 15860.0}
   - {P: 100.0 atm, A: 1100000000.0, b: 0.31, Ea: 1024.0}
 - equation: C2H3 + O2 <=> CO2 + CH3
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.4e+35, b: -7.76, Ea: 12630.0}
@@ -4117,10 +4056,6 @@ reactions:
   - {P: 10.0 atm, A: 2.1e+35, b: -7.53, Ea: 14050.0}
   - {P: 31.6 atm, A: 3.8e+18, b: -2.44, Ea: 5408.0}
   - {P: 100.0 atm, A: 1.2e+32, b: -6.32, Ea: 16190.0}
-- equation: C2H3 + O2 <=> CO2 + CH3
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 63000000000000.0, b: -1.16, Ea: 406.0}
   - {P: 0.1 atm, A: 62000000000000.0, b: -1.16, Ea: 401.0}
   - {P: 0.316 atm, A: 61000000000000.0, b: -1.16, Ea: 397.0}
@@ -4197,7 +4132,6 @@ reactions:
   - {P: 10.0 atm, A: 3200000.0, b: 1.97, Ea: 12810.0}
   - {P: 100.0 atm, A: 7400000.0, b: 1.89, Ea: 13603.0}
 - equation: C2H2 + OH <=> CHCHOH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.9e+64, b: -18.57, Ea: 10009.0}
@@ -4206,10 +4140,6 @@ reactions:
   - {P: 1.0 atm, A: 1.9e+44, b: -11.38, Ea: 6299.0}
   - {P: 10.0 atm, A: 1.5e+24, b: -4.06, Ea: 3261.0}
   - {P: 100.0 atm, A: 6.2e+20, b: -2.8, Ea: 2831.0}
-- equation: C2H2 + OH <=> CHCHOH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 2.6e+33, b: -7.36, Ea: 6392.0}
   - {P: 0.025 atm, A: 4.4e+32, b: -7.02, Ea: 5933.0}
   - {P: 0.1 atm, A: 6.4e+42, b: -9.96, Ea: 11737.0}
@@ -4228,7 +4158,6 @@ reactions:
 - equation: C2H2 + OH <=> C2H + H2O
   rate-constant: {A: 2600000.0, b: 2.14, Ea: 17060.0}
 - equation: C2H2 + HO2 <=> CH2CHOO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5000000.0, b: -1.02, Ea: 9152.0}
@@ -4239,10 +4168,6 @@ reactions:
   - {P: 10.0 atm, A: 4.6e+43, b: -10.24, Ea: 26930.0}
   - {P: 31.6 atm, A: 5.6e+38, b: -8.49, Ea: 26210.0}
   - {P: 100.0 atm, A: 2.5e+35, b: -7.26, Ea: 26390.0}
-- equation: C2H2 + HO2 <=> CH2CHOO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.9e+26, b: -8.34, Ea: 9249.0}
   - {P: 0.1 atm, A: 5.3e+129, b: -41.74, Ea: 35930.0}
   - {P: 0.316 atm, A: 2.0e+18, b: -3.67, Ea: 10480.0}
@@ -4252,7 +4177,6 @@ reactions:
   - {P: 31.6 atm, A: 1.4e+20, b: -3.3, Ea: 13410.0}
   - {P: 100.0 atm, A: 1.4e+19, b: -2.91, Ea: 13420.0}
 - equation: C2H2 + HO2 <=> CHCHO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5500000000.0, b: 0.91, Ea: 18500.0}
@@ -4263,10 +4187,6 @@ reactions:
   - {P: 10.0 atm, A: 54000000000.0, b: 0.61, Ea: 20740.0}
   - {P: 31.6 atm, A: 370000000.0, b: 1.23, Ea: 15960.0}
   - {P: 100.0 atm, A: 150000000000.0, b: 0.48, Ea: 17730.0}
-- equation: C2H2 + HO2 <=> CHCHO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 24000000.0, b: 1.54, Ea: 14690.0}
   - {P: 0.1 atm, A: 25000000.0, b: 1.54, Ea: 14700.0}
   - {P: 0.316 atm, A: 26000000.0, b: 1.54, Ea: 14730.0}
@@ -4276,7 +4196,6 @@ reactions:
   - {P: 31.6 atm, A: 17000000.0, b: 1.59, Ea: 15910.0}
   - {P: 100.0 atm, A: 7200000.0, b: 1.73, Ea: 16020.0}
 - equation: C2H2 + HO2 <=> CH2CO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 6.3e-07, b: 4.75, Ea: 15530.0}
@@ -4287,10 +4206,6 @@ reactions:
   - {P: 10.0 atm, A: 4.7e-05, b: 4.22, Ea: 16780.0}
   - {P: 31.6 atm, A: 0.9, b: 2.97, Ea: 19730.0}
   - {P: 100.0 atm, A: 3600.0, b: 1.97, Ea: 23010.0}
-- equation: C2H2 + HO2 <=> CH2CO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.3e-14, b: 6.58, Ea: 10270.0}
   - {P: 0.1 atm, A: 1.3e-14, b: 6.59, Ea: 10330.0}
   - {P: 0.316 atm, A: 4.0e-14, b: 6.36, Ea: 10270.0}
@@ -4300,7 +4215,6 @@ reactions:
   - {P: 31.6 atm, A: 6.9e-14, b: 6.67, Ea: 13130.0}
   - {P: 100.0 atm, A: 6.6e-12, b: 6.15, Ea: 14730.0}
 - equation: C2H2 + HO2 <=> CH2CHO + O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.5, b: 1.19, Ea: 12880.0}
@@ -4311,10 +4225,6 @@ reactions:
   - {P: 10.0 atm, A: 750000000000000.0, b: -1.17, Ea: 18350.0}
   - {P: 31.6 atm, A: 8.6e+18, b: -2.27, Ea: 22230.0}
   - {P: 100.0 atm, A: 5.8e+18, b: -2.09, Ea: 24350.0}
-- equation: C2H2 + HO2 <=> CH2CHO + O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 0.00029, b: 4.16, Ea: 7736.0}
   - {P: 0.1 atm, A: 6100.0, b: 3.81, Ea: 8394.0}
   - {P: 0.316 atm, A: 0.00054, b: 4.09, Ea: 8044.0}
@@ -4324,7 +4234,6 @@ reactions:
   - {P: 31.6 atm, A: 2.0, b: 3.17, Ea: 11740.0}
   - {P: 100.0 atm, A: 0.11, b: 3.52, Ea: 11980.0}
 - equation: C2H2 + HO2 <=> OCHCHO + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 85000000.0, b: 0.48, Ea: 11720.0}
@@ -4335,10 +4244,6 @@ reactions:
   - {P: 10.0 atm, A: 4.1e+16, b: -2.03, Ea: 17630.0}
   - {P: 31.6 atm, A: 9.4e+16, b: -2.03, Ea: 19590.0}
   - {P: 100.0 atm, A: 5.9e+21, b: -3.32, Ea: 25030.0}
-- equation: C2H2 + HO2 <=> OCHCHO + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 2.4e-06, b: 4.43, Ea: 5578.0}
   - {P: 0.1 atm, A: 2.0e-06, b: 4.45, Ea: 5564.0}
   - {P: 0.316 atm, A: 1.8e-06, b: 4.46, Ea: 5654.0}
@@ -4348,7 +4253,6 @@ reactions:
   - {P: 31.6 atm, A: 0.0061, b: 3.53, Ea: 9217.0}
   - {P: 100.0 atm, A: 0.068, b: 3.27, Ea: 10760.0}
 - equation: C2H2 + HO2 <=> CH2O + HCO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 39000000000000.0, b: -1.17, Ea: 13750.0}
@@ -4359,10 +4263,6 @@ reactions:
   - {P: 10.0 atm, A: 7.3e+35, b: -7.77, Ea: 26970.0}
   - {P: 31.6 atm, A: 1.8e+28, b: -5.3, Ea: 25130.0}
   - {P: 100.0 atm, A: 2.5e+16, b: -1.7, Ea: 20030.0}
-- equation: C2H2 + HO2 <=> CH2O + HCO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 8.4, b: 2.56, Ea: 7382.0}
   - {P: 0.1 atm, A: 16000000000000.0, b: -1.05, Ea: 13520.0}
   - {P: 0.316 atm, A: 6900000000.0, b: 0.0, Ea: 11720.0}
@@ -4372,7 +4272,6 @@ reactions:
   - {P: 31.6 atm, A: 18000.0, b: 1.7, Ea: 11250.0}
   - {P: 100.0 atm, A: 4.3e-06, b: 4.31, Ea: 6829.0}
 - equation: C2H2 + HO2 <=> CH2O + H + CO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 91000000000000.0, b: -1.17, Ea: 13750.0}
@@ -4383,10 +4282,6 @@ reactions:
   - {P: 10.0 atm, A: 1.7e+36, b: -7.77, Ea: 26970.0}
   - {P: 31.6 atm, A: 4.1e+28, b: -5.3, Ea: 25130.0}
   - {P: 100.0 atm, A: 5.8e+16, b: -1.7, Ea: 20030.0}
-- equation: C2H2 + HO2 <=> CH2O + H + CO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 20.0, b: 2.56, Ea: 7382.0}
   - {P: 0.1 atm, A: 36000000000000.0, b: -1.05, Ea: 13520.0}
   - {P: 0.316 atm, A: 16000000000.0, b: 0.0, Ea: 11720.0}
@@ -4396,7 +4291,6 @@ reactions:
   - {P: 31.6 atm, A: 42000.0, b: 1.7, Ea: 11250.0}
   - {P: 100.0 atm, A: 1.0e-05, b: 4.31, Ea: 6829.0}
 - equation: C2H2 + HO2 <=> CO + CH3O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 350000000000.0, b: 0.0, Ea: 49510.0}
@@ -4407,10 +4301,6 @@ reactions:
   - {P: 10.0 atm, A: 3.3e+23, b: -4.45, Ea: 21210.0}
   - {P: 31.6 atm, A: 2.4e+22, b: -3.96, Ea: 22650.0}
   - {P: 100.0 atm, A: 1.2e+18, b: -2.57, Ea: 22360.0}
-- equation: C2H2 + HO2 <=> CO + CH3O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 29000.0, b: 1.23, Ea: 9903.0}
   - {P: 0.1 atm, A: 9.7e-07, b: 4.15, Ea: 5173.0}
   - {P: 0.316 atm, A: 1.8e-08, b: 4.62, Ea: 4517.0}
@@ -4420,7 +4310,6 @@ reactions:
   - {P: 31.6 atm, A: 8.1, b: 2.3, Ea: 10560.0}
   - {P: 100.0 atm, A: 0.00069, b: 3.42, Ea: 9329.0}
 - equation: C2H2 + HO2 <=> CO2 + CH3
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.2e-07, b: 4.31, Ea: 4614.0}
@@ -4431,10 +4320,6 @@ reactions:
   - {P: 10.0 atm, A: 8.6e+28, b: -6.15, Ea: 24030.0}
   - {P: 31.6 atm, A: 1.3e+27, b: -5.42, Ea: 25380.0}
   - {P: 100.0 atm, A: 1700000000000000.0, b: -1.8, Ea: 20370.0}
-- equation: C2H2 + HO2 <=> CO2 + CH3
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 200000000.0, b: 0.0, Ea: 11790.0}
   - {P: 0.1 atm, A: 200000000.0, b: 0.0, Ea: 11780.0}
   - {P: 0.316 atm, A: 160000.0, b: 0.95, Ea: 10200.0}
@@ -4685,7 +4570,6 @@ reactions:
   - {P: 10.0 atm, A: 5.6e+32, b: -6.58, Ea: 5046.0}
   - {P: 100.0 atm, A: 4.2e+26, b: -4.46, Ea: 3940.0}
 - equation: CH2CH2OH + O2 <=> CH2CHOH + HO2
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.013 atm, A: 1.3e+53, b: -11.88, Ea: 35927.0}
@@ -4693,10 +4577,6 @@ reactions:
   - {P: 1.0 atm, A: 36000000000000.0, b: -0.88, Ea: 3074.0}
   - {P: 10.0 atm, A: 4.4e+20, b: -2.85, Ea: 8516.0}
   - {P: 100.0 atm, A: 1.9e+30, b: -5.51, Ea: 16616.0}
-- equation: CH2CH2OH + O2 <=> CH2CHOH + HO2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.013 atm, A: 23000000000.0, b: -0.15, Ea: -791.0}
   - {P: 0.1 atm, A: 2.8e+61, b: -14.17, Ea: 43492.0}
   - {P: 1.0 atm, A: 6000.0, b: -10.0, Ea: 199.0}
@@ -4977,7 +4857,6 @@ reactions:
   - {P: 10.0 atm, A: 2.2e+35, b: -6.76, Ea: 49548.0}
   - {P: 100.0 atm, A: 2.2e+33, b: -5.97, Ea: 50448.0}
 - equation: CH2CHO + H <=> CH3 + HCO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.0e+20, b: -2.063, Ea: 3994.0}
@@ -4985,10 +4864,6 @@ reactions:
   - {P: 1.0 atm, A: 1.0e+33, b: -5.363, Ea: 17064.0}
   - {P: 10.0 atm, A: 1.8e+40, b: -7.368, Ea: 24518.0}
   - {P: 100.0 atm, A: 1.2e+32, b: -4.93, Ea: 22682.0}
-- equation: CH2CHO + H <=> CH3 + HCO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 3.0e+28, b: -4.169, Ea: 12362.0}
   - {P: 0.1 atm, A: 4.0e+29, b: -4.477, Ea: 13304.0}
   - {P: 1.0 atm, A: 1.2e+27, b: -3.851, Ea: 9085.0}
@@ -5079,16 +4954,11 @@ reactions:
 - equation: HCCO + OH <=> CH2CO + O
   rate-constant: {A: 1300000.0, b: 1.99, Ea: 11280.0}
 - equation: HCCO + OH <=> HCOH + CO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 1.0 atm, A: 3.0e+16, b: -0.935, Ea: 659.0}
   - {P: 10.0 atm, A: 1.1e+18, b: -1.392, Ea: 1395.0}
   - {P: 100.0 atm, A: 3.2e+18, b: -1.523, Ea: 1627.0}
-- equation: HCCO + OH <=> HCOH + CO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 1.0 atm, A: 8.7e+19, b: -1.792, Ea: 5994.0}
   - {P: 10.0 atm, A: 3.5e+22, b: -2.475, Ea: 9163.0}
   - {P: 100.0 atm, A: 1.3e+24, b: -2.902, Ea: 10522.0}
@@ -5279,7 +5149,6 @@ reactions:
 - equation: CH2CHOOH + HO2 <=> CH2CHOO + H2O2
   rate-constant: {A: 41000.0, b: 2.5, Ea: 10206.0}
 - equation: CH2CHOO <=> CHCHO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.6e+49, b: -12.13, Ea: 67420.0}
@@ -5290,10 +5159,6 @@ reactions:
   - {P: 10.0 atm, A: 2.4e+51, b: -11.64, Ea: 56980.0}
   - {P: 31.6 atm, A: 2.0e+54, b: -12.22, Ea: 61840.0}
   - {P: 100.0 atm, A: 9.5e+195, b: -52.27, Ea: 163500.0}
-- equation: CH2CHOO <=> CHCHO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.2e+56, b: -14.81, Ea: 60700.0}
   - {P: 0.1 atm, A: 2.3e+40, b: -9.39, Ea: 50420.0}
   - {P: 0.316 atm, A: 1.6e+43, b: -9.99, Ea: 50290.0}
@@ -5303,7 +5168,6 @@ reactions:
   - {P: 31.6 atm, A: 1.5e+57, b: -13.94, Ea: 55390.0}
   - {P: 100.0 atm, A: 1.8e+34, b: -6.4, Ea: 50000.0}
 - equation: CH2CHOO <=> CH2CHO + O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.7e+180, b: -48.19, Ea: 169300.0}
@@ -5314,10 +5178,6 @@ reactions:
   - {P: 10.0 atm, A: 2.0e+55, b: -12.69, Ea: 55840.0}
   - {P: 31.6 atm, A: 1.1e+53, b: -11.79, Ea: 56690.0}
   - {P: 100.0 atm, A: 4.3e+48, b: -10.31, Ea: 56090.0}
-- equation: CH2CHOO <=> CH2CHO + O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.5e+30, b: -6.64, Ea: 41110.0}
   - {P: 0.1 atm, A: 9.7e-12, b: 5.96, Ea: 22890.0}
   - {P: 0.316 atm, A: 4.0e+22, b: -3.71, Ea: 36270.0}
@@ -5327,7 +5187,6 @@ reactions:
   - {P: 31.6 atm, A: 4.7e+27, b: -4.5, Ea: 40530.0}
   - {P: 100.0 atm, A: 6.0e+25, b: -3.85, Ea: 40120.0}
 - equation: CH2CHOO <=> OCHCHO + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 6.4e+80, b: -22.2, Ea: 51750.0}
@@ -5338,10 +5197,6 @@ reactions:
   - {P: 10.0 atm, A: 4.9e+26, b: -4.67, Ea: 34320.0}
   - {P: 31.6 atm, A: 2.1e+33, b: -6.38, Ea: 39520.0}
   - {P: 100.0 atm, A: 1.3e+32, b: -5.92, Ea: 40660.0}
-- equation: CH2CHOO <=> OCHCHO + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.2e+28, b: -6.01, Ea: 28740.0}
   - {P: 0.1 atm, A: 1.4e+25, b: -4.8, Ea: 28940.0}
   - {P: 0.316 atm, A: 2.9e+20, b: -3.29, Ea: 27550.0}
@@ -5351,7 +5206,6 @@ reactions:
   - {P: 31.6 atm, A: 7.1e+61, b: -16.16, Ea: 43280.0}
   - {P: 100.0 atm, A: 1.1e+19, b: -2.56, Ea: 29670.0}
 - equation: CH2CHOO <=> CH2CO + OH
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.2e+47, b: -12.28, Ea: 75330.0}
@@ -5362,10 +5216,6 @@ reactions:
   - {P: 10.0 atm, A: 4.4e+36, b: -7.99, Ea: 54680.0}
   - {P: 31.6 atm, A: 1.2e+37, b: -7.8, Ea: 56460.0}
   - {P: 100.0 atm, A: 9.1e+35, b: -7.21, Ea: 57550.0}
-- equation: CH2CHOO <=> CH2CO + OH
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 230.0, b: -0.73, Ea: 25710.0}
   - {P: 0.1 atm, A: 1.8e-23, b: 7.84, Ea: 20190.0}
   - {P: 0.316 atm, A: 3.8e+63, b: -20.44, Ea: 43420.0}
@@ -5375,7 +5225,6 @@ reactions:
   - {P: 31.6 atm, A: 560.0, b: 1.7, Ea: 36450.0}
   - {P: 100.0 atm, A: 11000000.0, b: 0.52, Ea: 38670.0}
 - equation: CH2CHOO <=> CH2O + HCO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.7e+174, b: -55.52, Ea: 60320.0}
@@ -5386,10 +5235,6 @@ reactions:
   - {P: 10.0 atm, A: 1.0e+32, b: -6.06, Ea: 35500.0}
   - {P: 31.6 atm, A: 1.9e+34, b: -6.57, Ea: 38510.0}
   - {P: 100.0 atm, A: 5.7e+29, b: -5.19, Ea: 36800.0}
-- equation: CH2CHOO <=> CH2O + HCO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 2.3e+35, b: -7.97, Ea: 31280.0}
   - {P: 0.1 atm, A: 2.1e+26, b: -4.96, Ea: 28780.0}
   - {P: 0.316 atm, A: 1.5e+20, b: -3.08, Ea: 26630.0}
@@ -5399,7 +5244,6 @@ reactions:
   - {P: 31.6 atm, A: 1.1e+185, b: -54.22, Ea: 88990.0}
   - {P: 100.0 atm, A: 470.0, b: 1.81, Ea: 18100.0}
 - equation: CH2CHOO <=> CH2O + H + CO
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.9e+174, b: -55.52, Ea: 60320.0}
@@ -5410,10 +5254,6 @@ reactions:
   - {P: 10.0 atm, A: 2.4e+32, b: -6.06, Ea: 35500.0}
   - {P: 31.6 atm, A: 4.3e+34, b: -6.57, Ea: 38510.0}
   - {P: 100.0 atm, A: 1.3e+30, b: -5.19, Ea: 36800.0}
-- equation: CH2CHOO <=> CH2O + H + CO
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 5.3e+35, b: -7.97, Ea: 31280.0}
   - {P: 0.1 atm, A: 4.9e+26, b: -4.96, Ea: 28780.0}
   - {P: 0.316 atm, A: 3.4e+20, b: -3.08, Ea: 26630.0}
@@ -5423,7 +5263,6 @@ reactions:
   - {P: 31.6 atm, A: 2.5e+185, b: -54.22, Ea: 88990.0}
   - {P: 100.0 atm, A: 1100.0, b: 1.81, Ea: 18100.0}
 - equation: CH2CHOO <=> CO + CH3O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.2e+33, b: -7.92, Ea: 31320.0}
@@ -5434,10 +5273,6 @@ reactions:
   - {P: 10.0 atm, A: 4.1e+32, b: -6.62, Ea: 37210.0}
   - {P: 31.6 atm, A: 6.9e+44, b: -10.04, Ea: 47030.0}
   - {P: 100.0 atm, A: 29.0, b: 2.492, Ea: 21710.0}
-- equation: CH2CHOO <=> CO + CH3O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 2.3e+129, b: -41.86, Ea: 45850.0}
   - {P: 0.1 atm, A: 2.4e+28, b: -5.99, Ea: 30540.0}
   - {P: 0.316 atm, A: 8.7e-50, b: 16.63, Ea: -3900.0}
@@ -5447,7 +5282,6 @@ reactions:
   - {P: 31.6 atm, A: 2.0e+17, b: -2.23, Ea: 28590.0}
   - {P: 100.0 atm, A: 29.0, b: 2.492, Ea: 21710.0}
 - equation: CH2CHOO <=> CO2 + CH3
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.1e+33, b: -7.95, Ea: 31290.0}
@@ -5458,10 +5292,6 @@ reactions:
   - {P: 10.0 atm, A: 8.2e+32, b: -6.76, Ea: 37270.0}
   - {P: 31.6 atm, A: 7.0e+37, b: -8.06, Ea: 42200.0}
   - {P: 100.0 atm, A: 6.7e+48, b: -11.657, Ea: 44080.0}
-- equation: CH2CHOO <=> CO2 + CH3
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 4.2e+122, b: -39.75, Ea: 43640.0}
   - {P: 0.1 atm, A: 2.0e+29, b: -6.29, Ea: 30920.0}
   - {P: 0.316 atm, A: 5.1e-66, b: 21.37, Ea: -11110.0}
@@ -6975,16 +6805,11 @@ reactions:
 - equation: H2CN + O <=> HCN + OH
   rate-constant: {A: 170000000.0, b: 1.5, Ea: -894.0}
 - equation: H2CN + OH <=> HCN + H2O
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.1 atm, A: 2.1e+17, b: -1.68, Ea: 318.0}
   - {P: 1.0 atm, A: 1.5e+19, b: -2.18, Ea: 2166.0}
   - {P: 10.0 atm, A: 9.5e+21, b: -2.91, Ea: 5633.0}
-- equation: H2CN + OH <=> HCN + H2O
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.1 atm, A: 1200000.0, b: 2.0, Ea: -1192.0}
   - {P: 1.0 atm, A: 1200000.0, b: 2.0, Ea: -1192.0}
   - {P: 10.0 atm, A: 1200000.0, b: 2.0, Ea: -1192.0}
