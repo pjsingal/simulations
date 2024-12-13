@@ -6342,23 +6342,31 @@ reactions:
     efficiency: {A: 1.11913269, b: 0.04365487, Ea: 50.02477402}
     note: JOM-2015
 - equation: C2H4 <=> CH2C + H2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.003 atm, A: 6.49e+45, b: -9.908, Ea: 106920.0}
-  - {P: 0.01 atm, A: 3.23e+45, b: -9.67, Ea: 107470.0}
-  - {P: 0.03 atm, A: 9.68e+44, b: -9.384, Ea: 107910.0}
-  - {P: 0.1 atm, A: 1.22e+44, b: -8.982, Ea: 108290.0}
-  - {P: 0.3 atm, A: 6.28e+42, b: -8.488, Ea: 108420.0}
-  - {P: 1.0 atm, A: 8.3e+40, b: -7.822, Ea: 108300.0}
-  - {P: 3.0 atm, A: 3.9e+38, b: -7.051, Ea: 107780.0}
-  - {P: 10.0 atm, A: 3.24e+35, b: -6.07, Ea: 106800.0}
-  - {P: 30.0 atm, A: 1.62e+32, b: -5.051, Ea: 105510.0}
-  - {P: 100.0 atm, A: 2.11e+28, b: -3.873, Ea: 103790.0}
-  note: 'SJ Klippenstein - unpublished
-
-    DH = -109.2
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.003 atm, A: 6.49e+45, b: -9.908, Ea: 106920.0}
+    - {P: 0.01 atm, A: 3.23e+45, b: -9.67, Ea: 107470.0}
+    - {P: 0.03 atm, A: 9.68e+44, b: -9.384, Ea: 107910.0}
+    - {P: 0.1 atm, A: 1.22e+44, b: -8.982, Ea: 108290.0}
+    - {P: 0.3 atm, A: 6.28e+42, b: -8.488, Ea: 108420.0}
+    - {P: 1.0 atm, A: 8.3e+40, b: -7.822, Ea: 108300.0}
+    - {P: 3.0 atm, A: 3.9e+38, b: -7.051, Ea: 107780.0}
+    - {P: 10.0 atm, A: 3.24e+35, b: -6.07, Ea: 106800.0}
+    - {P: 30.0 atm, A: 1.62e+32, b: -5.051, Ea: 105510.0}
+    - {P: 100.0 atm, A: 2.11e+28, b: -3.873, Ea: 103790.0}
+  - name: H2
+    efficiency: {A: 2.41464005, b: 0.03495197, Ea: 50.04854838}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 0.57345799, b: 0.11908217, Ea: 50.02919431}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.11913269, b: 0.04365487, Ea: 50.02477402}
+    note: JOM-2015
 - equation: C2H4 + O <=> CH3 + HCO
   rate-constant: {A: 5.88e+17, b: -1.717, Ea: 2893.0}
   note: "SJ Klippenstein - unpublished \nDH = 84.0\n*** Fuel + Radical\n"
@@ -6533,41 +6541,54 @@ reactions:
 
     '
 - equation: CH3 + C2H4 <=> CH3CH2CH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.00132 atm, A: 8.67e+48, b: -12.541, Ea: 18206.0}
-  - {P: 0.00132 atm, A: 1.12e+43, b: -11.304, Ea: 13080.0}
-  - {P: 0.0395 atm, A: 1.06e+49, b: -12.035, Ea: 20001.0}
-  - {P: 0.0395 atm, A: 7.29e+39, b: -9.88, Ea: 13164.0}
-  - {P: 1.0 atm, A: 7.67e+47, b: -11.169, Ea: 22366.0}
-  - {P: 1.0 atm, A: 2.6e+33, b: -7.462, Ea: 12416.0}
-  - {P: 10.0 atm, A: 1.81e+45, b: -10.03, Ea: 23769.0}
-  - {P: 10.0 atm, A: 3.85e+27, b: -5.385, Ea: 11455.0}
-  - {P: 100.0 atm, A: 2.04e+40, b: -8.254, Ea: 24214.0}
-  - {P: 100.0 atm, A: 1.66e+21, b: -3.175, Ea: 10241.0}
-  note: 'J Zador, JA Miller, PCI 35:181 (2015).
-
-    DH = -2.7
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.00132 atm, A: 8.67e+48, b: -12.541, Ea: 18206.0}
+    - {P: 0.00132 atm, A: 1.12e+43, b: -11.304, Ea: 13080.0}
+    - {P: 0.0395 atm, A: 1.06e+49, b: -12.035, Ea: 20001.0}
+    - {P: 0.0395 atm, A: 7.29e+39, b: -9.88, Ea: 13164.0}
+    - {P: 1.0 atm, A: 7.67e+47, b: -11.169, Ea: 22366.0}
+    - {P: 1.0 atm, A: 2.6e+33, b: -7.462, Ea: 12416.0}
+    - {P: 10.0 atm, A: 1.81e+45, b: -10.03, Ea: 23769.0}
+    - {P: 10.0 atm, A: 3.85e+27, b: -5.385, Ea: 11455.0}
+    - {P: 100.0 atm, A: 2.04e+40, b: -8.254, Ea: 24214.0}
+    - {P: 100.0 atm, A: 1.66e+21, b: -3.175, Ea: 10241.0}
+  - name: H2
+    efficiency: {A: 44.68504619, b: -0.48000638, Ea: 45.28560986}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 0.97201742, b: 0.03155164, Ea: 50.0268071}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 3.05881757, b: -0.13531095, Ea: 50.00086505}
+    note: JOM-2015
 - equation: CH2(S) + C2H4 <=> CH3CHCH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 4.82e+57, b: -14.34, Ea: 17091.0}
-  - {P: 0.01 atm, A: 1.15e+45, b: -11.13, Ea: 6145.0}
-  - {P: 0.1 atm, A: 3.84e+59, b: -14.36, Ea: 18427.0}
-  - {P: 0.1 atm, A: 1.83e+45, b: -10.68, Ea: 6639.0}
-  - {P: 1.0 atm, A: 2.13e+58, b: -13.55, Ea: 20355.0}
-  - {P: 1.0 atm, A: 1.3e+40, b: -8.77, Ea: 5864.0}
-  - {P: 10.0 atm, A: 8.48e+52, b: -11.63, Ea: 20677.0}
-  - {P: 10.0 atm, A: 2.27e+32, b: -6.14, Ea: 4318.0}
-  - {P: 100.0 atm, A: 6.08e+47, b: -9.85, Ea: 22055.0}
-  - {P: 100.0 atm, A: 1.28e+24, b: -3.49, Ea: 2530.0}
-  note: 'JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
-
-    DH = -22.0
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 4.82e+57, b: -14.34, Ea: 17091.0}
+    - {P: 0.01 atm, A: 1.15e+45, b: -11.13, Ea: 6145.0}
+    - {P: 0.1 atm, A: 3.84e+59, b: -14.36, Ea: 18427.0}
+    - {P: 0.1 atm, A: 1.83e+45, b: -10.68, Ea: 6639.0}
+    - {P: 1.0 atm, A: 2.13e+58, b: -13.55, Ea: 20355.0}
+    - {P: 1.0 atm, A: 1.3e+40, b: -8.77, Ea: 5864.0}
+    - {P: 10.0 atm, A: 8.48e+52, b: -11.63, Ea: 20677.0}
+    - {P: 10.0 atm, A: 2.27e+32, b: -6.14, Ea: 4318.0}
+    - {P: 100.0 atm, A: 6.08e+47, b: -9.85, Ea: 22055.0}
+    - {P: 100.0 atm, A: 1.28e+24, b: -3.49, Ea: 2530.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: CH2(S) + C2H4 <=> c-CH2CH2CH2
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -7106,19 +7127,28 @@ reactions:
     \ calculations on the reaction of ethylene with oxygen. Chem Phys. 2005;311:335-41.\n\
     DH = 61.2\n"
 - equation: C2H3 + CH3 <=> CH3CHCH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 1.93e+61, b: -14.91, Ea: 19559.0}
-  - {P: 0.01 atm, A: 3.78e+46, b: -11.15, Ea: 7332.0}
-  - {P: 0.1 atm, A: 7.49e+58, b: -13.81, Ea: 20442.0}
-  - {P: 0.1 atm, A: 2.86e+40, b: -8.97, Ea: 6234.0}
-  - {P: 1.0 atm, A: 9.74e+55, b: -12.62, Ea: 21930.0}
-  - {P: 1.0 atm, A: 7.24e+33, b: -6.71, Ea: 4848.0}
-  - {P: 10.0 atm, A: 7.7e+50, b: -10.88, Ea: 22198.0}
-  - {P: 10.0 atm, A: 2.28e+27, b: -4.53, Ea: 3329.0}
-  - {P: 100.0 atm, A: 2.07e+48, b: -9.9, Ea: 24315.0}
-  - {P: 100.0 atm, A: 5.4e+23, b: -3.31, Ea: 2522.0}
-  note: "W Tsang, RF Hampson JPCRD 15:1087 (1986). \nDH = -51.8\n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 1.93e+61, b: -14.91, Ea: 19559.0}
+    - {P: 0.01 atm, A: 3.78e+46, b: -11.15, Ea: 7332.0}
+    - {P: 0.1 atm, A: 7.49e+58, b: -13.81, Ea: 20442.0}
+    - {P: 0.1 atm, A: 2.86e+40, b: -8.97, Ea: 6234.0}
+    - {P: 1.0 atm, A: 9.74e+55, b: -12.62, Ea: 21930.0}
+    - {P: 1.0 atm, A: 7.24e+33, b: -6.71, Ea: 4848.0}
+    - {P: 10.0 atm, A: 7.7e+50, b: -10.88, Ea: 22198.0}
+    - {P: 10.0 atm, A: 2.28e+27, b: -4.53, Ea: 3329.0}
+    - {P: 100.0 atm, A: 2.07e+48, b: -9.9, Ea: 24315.0}
+    - {P: 100.0 atm, A: 5.4e+23, b: -3.31, Ea: 2522.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: C2H3 + CH3 <=> CH2CHCH2 + H
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -9075,38 +9105,57 @@ reactions:
 
     '
 - equation: CH3CHCH2 + H <=> CH3CHCH3
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.00132 atm, A: 1.35e+44, b: -10.678, Ea: 8196.0}
-  - {P: 0.00132 atm, A: 3.4e+38, b: -32.584, Ea: 136140.0}
-  - {P: 0.0395 atm, A: 2.11e+57, b: -14.227, Ea: 15147.0}
-  - {P: 0.0395 atm, A: 2.25e+29, b: -5.843, Ea: 4242.0}
-  - {P: 1.0 atm, A: 3.26e+61, b: -14.944, Ea: 20161.0}
-  - {P: 1.0 atm, A: 1.06e+30, b: -5.632, Ea: 5613.0}
-  - {P: 10.0 atm, A: 5.3e+56, b: -13.122, Ea: 20667.0}
-  - {P: 10.0 atm, A: 6.11e+26, b: -4.442, Ea: 5182.0}
-  - {P: 100.0 atm, A: 1.11e+50, b: -10.803, Ea: 20202.0}
-  - {P: 100.0 atm, A: 2.73e+23, b: -3.261, Ea: 4598.0}
-  note: "W Tsang, JPCRD 17:887 (1988).\nDH = -9.4\n*** Fuel Radical Decomposition\
-    \ \n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.00132 atm, A: 1.35e+44, b: -10.678, Ea: 8196.0}
+    - {P: 0.00132 atm, A: 3.4e+38, b: -32.584, Ea: 136140.0}
+    - {P: 0.0395 atm, A: 2.11e+57, b: -14.227, Ea: 15147.0}
+    - {P: 0.0395 atm, A: 2.25e+29, b: -5.843, Ea: 4242.0}
+    - {P: 1.0 atm, A: 3.26e+61, b: -14.944, Ea: 20161.0}
+    - {P: 1.0 atm, A: 1.06e+30, b: -5.632, Ea: 5613.0}
+    - {P: 10.0 atm, A: 5.3e+56, b: -13.122, Ea: 20667.0}
+    - {P: 10.0 atm, A: 6.11e+26, b: -4.442, Ea: 5182.0}
+    - {P: 100.0 atm, A: 1.11e+50, b: -10.803, Ea: 20202.0}
+    - {P: 100.0 atm, A: 2.73e+23, b: -3.261, Ea: 4598.0}
+  - name: H2
+    efficiency: {A: 44.68504619, b: -0.48000638, Ea: 45.28560986}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 0.97201742, b: 0.03155164, Ea: 50.0268071}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 3.05881757, b: -0.13531095, Ea: 50.00086505}
+    note: JOM-2015
 - equation: CH3CHCH2 + H <=> CH3CH2CH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.00132 atm, A: 7.99e+81, b: -23.61, Ea: 22239.0}
-  - {P: 0.00132 atm, A: 1.86e+26, b: -5.827, Ea: 3866.0}
-  - {P: 0.0395 atm, A: 4.24e+68, b: -18.427, Ea: 19665.0}
-  - {P: 0.0395 atm, A: 2.83e+30, b: -6.495, Ea: 5471.0}
-  - {P: 1.0 atm, A: 1.04e+49, b: -11.5, Ea: 15359.0}
-  - {P: 1.0 atm, A: 3.78e+28, b: -5.569, Ea: 5625.0}
-  - {P: 10.0 atm, A: 6.2e+41, b: -8.892, Ea: 14637.0}
-  - {P: 10.0 atm, A: 1.46e+25, b: -4.28, Ea: 5248.0}
-  - {P: 100.0 atm, A: -6.45e+31, b: -5.851, Ea: 8178.0}
-  - {P: 100.0 atm, A: 7.24e+26, b: -4.21, Ea: 6825.0}
-  note: 'JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
-
-    DH = -34.8
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.00132 atm, A: 7.99e+81, b: -23.61, Ea: 22239.0}
+    - {P: 0.00132 atm, A: 1.86e+26, b: -5.827, Ea: 3866.0}
+    - {P: 0.0395 atm, A: 4.24e+68, b: -18.427, Ea: 19665.0}
+    - {P: 0.0395 atm, A: 2.83e+30, b: -6.495, Ea: 5471.0}
+    - {P: 1.0 atm, A: 1.04e+49, b: -11.5, Ea: 15359.0}
+    - {P: 1.0 atm, A: 3.78e+28, b: -5.569, Ea: 5625.0}
+    - {P: 10.0 atm, A: 6.2e+41, b: -8.892, Ea: 14637.0}
+    - {P: 10.0 atm, A: 1.46e+25, b: -4.28, Ea: 5248.0}
+    - {P: 100.0 atm, A: -6.45e+31, b: -5.851, Ea: 8178.0}
+    - {P: 100.0 atm, A: 7.24e+26, b: -4.21, Ea: 6825.0}
+  - name: H2
+    efficiency: {A: 44.68504619, b: -0.48000638, Ea: 45.28560986}
+    note: JOM-2015
+  - name: N2
+    efficiency: {A: 0.97201742, b: 0.03155164, Ea: 50.0268071}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 3.05881757, b: -0.13531095, Ea: 50.00086505}
+    note: JOM-2015
 - equation: C3H8 + HO2 <=> CH3CHCH3 + H2O2
   rate-constant: {A: 6.32, b: 3.67, Ea: 13416.0}
   note: 'JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
@@ -10450,76 +10499,84 @@ reactions:
 
     '
 - equation: CH2CHCH2 + H <=> CH3CHCH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 2.0e+64, b: -15.02, Ea: 23890.0}
-  - {P: 0.01 atm, A: 1.85e+40, b: -8.59, Ea: 6466.0}
-  - {P: 0.1 atm, A: 1.4e+61, b: -13.84, Ea: 24846.0}
-  - {P: 0.1 atm, A: 3.37e+34, b: -6.64, Ea: 5193.0}
-  - {P: 1.0 atm, A: 1.0e+58, b: -12.7, Ea: 25947.0}
-  - {P: 1.0 atm, A: 9.06e+29, b: -5.1, Ea: 4172.0}
-  - {P: 10.0 atm, A: 1.68e+53, b: -11.13, Ea: 25910.0}
-  - {P: 10.0 atm, A: 4.78e+25, b: -3.68, Ea: 3143.0}
-  - {P: 100.0 atm, A: 6.89e+44, b: -8.62, Ea: 22842.0}
-  - {P: 100.0 atm, A: 1.1e+21, b: -2.16, Ea: 1917.0}
-  note: "CF Goldsmith, WH Green, SJ Klippenstein, JPCA 116:3325 (2012).\nDH = ??\n\
-    *****************************************************************************\n\
-    \   CH3CHCH2 subset                                                          *\n\
-    \   c-CH2CH2CH2 subset                                                       *\n\
-    *****************************************************************************\n\
-    Fuel Radicals: CH2CHCH2,CH3CCH2,CH3CHCH\nNew Radicals Formed: \nNew Fuels: \n\
-    *** Fuel Decomposition\n"
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 2.0e+64, b: -15.02, Ea: 23890.0}
+    - {P: 0.01 atm, A: 1.85e+40, b: -8.59, Ea: 6466.0}
+    - {P: 0.1 atm, A: 1.4e+61, b: -13.84, Ea: 24846.0}
+    - {P: 0.1 atm, A: 3.37e+34, b: -6.64, Ea: 5193.0}
+    - {P: 1.0 atm, A: 1.0e+58, b: -12.7, Ea: 25947.0}
+    - {P: 1.0 atm, A: 9.06e+29, b: -5.1, Ea: 4172.0}
+    - {P: 10.0 atm, A: 1.68e+53, b: -11.13, Ea: 25910.0}
+    - {P: 10.0 atm, A: 4.78e+25, b: -3.68, Ea: 3143.0}
+    - {P: 100.0 atm, A: 6.89e+44, b: -8.62, Ea: 22842.0}
+    - {P: 100.0 atm, A: 1.1e+21, b: -2.16, Ea: 1917.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: CH3CHCH + H <=> CH3CHCH2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 1.63e+57, b: -14.37, Ea: 16568.0}
-  - {P: 0.01 atm, A: 4.51e+45, b: -11.46, Ea: 6416.0}
-  - {P: 0.1 atm, A: 2.2e+62, b: -15.25, Ea: 19327.0}
-  - {P: 0.1 atm, A: 2.97e+48, b: -11.72, Ea: 7674.0}
-  - {P: 1.0 atm, A: 4.64e+60, b: -14.23, Ea: 20781.0}
-  - {P: 1.0 atm, A: 3.06e+42, b: -9.47, Ea: 6817.0}
-  - {P: 10.0 atm, A: 9.54e+56, b: -12.72, Ea: 22415.0}
-  - {P: 10.0 atm, A: 3.28e+34, b: -6.72, Ea: 5190.0}
-  - {P: 100.0 atm, A: 5.46e+49, b: -10.31, Ea: 21925.0}
-  - {P: 100.0 atm, A: 4.65e+26, b: -4.09, Ea: 3350.0}
-  note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
-
-    DH = -86.3
-
-    '
-- equation: CH3CHCH + H <=> CH3CHCH2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 5.82e+56, b: -14.28, Ea: 16407.0}
-  - {P: 0.01 atm, A: 1.95e+45, b: -11.4, Ea: 6309.0}
-  - {P: 0.1 atm, A: 1.24e+62, b: -15.22, Ea: 19112.0}
-  - {P: 0.1 atm, A: 2.65e+48, b: -11.75, Ea: 7584.0}
-  - {P: 1.0 atm, A: 3.77e+60, b: -14.24, Ea: 20603.0}
-  - {P: 1.0 atm, A: 4.28e+42, b: -9.54, Ea: 6789.0}
-  - {P: 10.0 atm, A: 9.1e+56, b: -12.74, Ea: 22284.0}
-  - {P: 10.0 atm, A: 4.44e+34, b: -6.79, Ea: 5170.0}
-  - {P: 100.0 atm, A: 6.39e+49, b: -10.35, Ea: 21902.0}
-  - {P: 100.0 atm, A: 5.11e+26, b: -4.13, Ea: 3313.0}
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 1.63e+57, b: -14.37, Ea: 16568.0}
+    - {P: 0.01 atm, A: 4.51e+45, b: -11.46, Ea: 6416.0}
+    - {P: 0.1 atm, A: 2.2e+62, b: -15.25, Ea: 19327.0}
+    - {P: 0.1 atm, A: 2.97e+48, b: -11.72, Ea: 7674.0}
+    - {P: 1.0 atm, A: 4.64e+60, b: -14.23, Ea: 20781.0}
+    - {P: 1.0 atm, A: 3.06e+42, b: -9.47, Ea: 6817.0}
+    - {P: 10.0 atm, A: 9.54e+56, b: -12.72, Ea: 22415.0}
+    - {P: 10.0 atm, A: 3.28e+34, b: -6.72, Ea: 5190.0}
+    - {P: 100.0 atm, A: 5.46e+49, b: -10.31, Ea: 21925.0}
+    - {P: 100.0 atm, A: 4.65e+26, b: -4.09, Ea: 3350.0}
+    - {P: 0.01 atm, A: 5.82e+56, b: -14.28, Ea: 16407.0}
+    - {P: 0.01 atm, A: 1.95e+45, b: -11.4, Ea: 6309.0}
+    - {P: 0.1 atm, A: 1.24e+62, b: -15.22, Ea: 19112.0}
+    - {P: 0.1 atm, A: 2.65e+48, b: -11.75, Ea: 7584.0}
+    - {P: 1.0 atm, A: 3.77e+60, b: -14.24, Ea: 20603.0}
+    - {P: 1.0 atm, A: 4.28e+42, b: -9.54, Ea: 6789.0}
+    - {P: 10.0 atm, A: 9.1e+56, b: -12.74, Ea: 22284.0}
+    - {P: 10.0 atm, A: 4.44e+34, b: -6.79, Ea: 5170.0}
+    - {P: 100.0 atm, A: 6.39e+49, b: -10.35, Ea: 21902.0}
+    - {P: 100.0 atm, A: 5.11e+26, b: -4.13, Ea: 3313.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: CH3CCH2 + H <=> CH3CHCH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 4.96e+60, b: -15.16, Ea: 17958.0}
-  - {P: 0.01 atm, A: 1.49e+48, b: -11.99, Ea: 7203.0}
-  - {P: 0.1 atm, A: 3.2e+62, b: -15.13, Ea: 20123.0}
-  - {P: 0.1 atm, A: 6.77e+46, b: -11.09, Ea: 7630.0}
-  - {P: 1.0 atm, A: 2.31e+60, b: -14.03, Ea: 21860.0}
-  - {P: 1.0 atm, A: 1.09e+40, b: -8.66, Ea: 6448.0}
-  - {P: 10.0 atm, A: 3.69e+54, b: -11.97, Ea: 22107.0}
-  - {P: 10.0 atm, A: 2.38e+31, b: -5.73, Ea: 4506.0}
-  - {P: 100.0 atm, A: 1.15e+50, b: -10.37, Ea: 23293.0}
-  - {P: 100.0 atm, A: 5.69e+25, b: -3.83, Ea: 3250.0}
-  note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
-
-    DH = -109.9
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 4.96e+60, b: -15.16, Ea: 17958.0}
+    - {P: 0.01 atm, A: 1.49e+48, b: -11.99, Ea: 7203.0}
+    - {P: 0.1 atm, A: 3.2e+62, b: -15.13, Ea: 20123.0}
+    - {P: 0.1 atm, A: 6.77e+46, b: -11.09, Ea: 7630.0}
+    - {P: 1.0 atm, A: 2.31e+60, b: -14.03, Ea: 21860.0}
+    - {P: 1.0 atm, A: 1.09e+40, b: -8.66, Ea: 6448.0}
+    - {P: 10.0 atm, A: 3.69e+54, b: -11.97, Ea: 22107.0}
+    - {P: 10.0 atm, A: 2.38e+31, b: -5.73, Ea: 4506.0}
+    - {P: 100.0 atm, A: 1.15e+50, b: -10.37, Ea: 23293.0}
+    - {P: 100.0 atm, A: 5.69e+25, b: -3.83, Ea: 3250.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: CH3CHCH2 <=> C2H2 + CH4
   rate-constant: {A: 2500000000000.0, b: 0.0, Ea: 70000.0}
   note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
@@ -10535,23 +10592,28 @@ reactions:
 
     '
 - equation: c-CH2CH2CH2 <=> CH3CHCH2
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01 atm, A: 4.6e+66, b: -15.84, Ea: 87387.0}
-  - {P: 0.01 atm, A: 2.91e+43, b: -9.67, Ea: 71470.0}
-  - {P: 0.1 atm, A: 4.17e+67, b: -15.76, Ea: 90989.0}
-  - {P: 0.1 atm, A: 3.92e+41, b: -8.87, Ea: 71601.0}
-  - {P: 1.0 atm, A: 2.15e+68, b: -15.6, Ea: 95345.0}
-  - {P: 1.0 atm, A: 8.93e+40, b: -8.32, Ea: 73420.0}
-  - {P: 10.0 atm, A: 7.33e+69, b: -15.66, Ea: 101560.0}
-  - {P: 10.0 atm, A: 6.76e+41, b: -8.29, Ea: 75727.0}
-  - {P: 100.0 atm, A: 8.35e+64, b: -13.97, Ea: 102660.0}
-  - {P: 100.0 atm, A: 2.47e+34, b: -5.92, Ea: 73409.0}
-  note: 'JA Miller - estimate
-
-    DH = 38.8
-
-    '
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01 atm, A: 4.6e+66, b: -15.84, Ea: 87387.0}
+    - {P: 0.01 atm, A: 2.91e+43, b: -9.67, Ea: 71470.0}
+    - {P: 0.1 atm, A: 4.17e+67, b: -15.76, Ea: 90989.0}
+    - {P: 0.1 atm, A: 3.92e+41, b: -8.87, Ea: 71601.0}
+    - {P: 1.0 atm, A: 2.15e+68, b: -15.6, Ea: 95345.0}
+    - {P: 1.0 atm, A: 8.93e+40, b: -8.32, Ea: 73420.0}
+    - {P: 10.0 atm, A: 7.33e+69, b: -15.66, Ea: 101560.0}
+    - {P: 10.0 atm, A: 6.76e+41, b: -8.29, Ea: 75727.0}
+    - {P: 100.0 atm, A: 8.35e+64, b: -13.97, Ea: 102660.0}
+    - {P: 100.0 atm, A: 2.47e+34, b: -5.92, Ea: 73409.0}
+  - name: H2
+    efficiency: {A: 11.79134873, b: -0.23043872, Ea: 50.57372798}
+    note: JOM-2015
+  - name: O2
+    efficiency: {A: 1.39088591, b: 0.01333485, Ea: 50.02260164}
+    note: JOM-2015
 - equation: c-CH2CH2CH2 <=> CH2CHCH2 + H
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -11003,7 +11065,6 @@ reactions:
 
     '
 - equation: CH3CHCH + H <=> CH2CHCH2 + H
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.78e+16, b: -0.82, Ea: 770.0}
@@ -11016,15 +11077,6 @@ reactions:
   - {P: 10.0 atm, A: 23200000000.0, b: 0.91, Ea: 988.0}
   - {P: 100.0 atm, A: 9.48e+28, b: -4.02, Ea: 18931.0}
   - {P: 100.0 atm, A: 1540000.0, b: 2.06, Ea: 546.0}
-  note: 'JA Miller, SJ Klippenstein - estimate
-
-    DH = ??
-
-    '
-- equation: CH3CHCH + H <=> CH2CHCH2 + H
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 3.47e+16, b: -0.84, Ea: 711.0}
   - {P: 0.01 atm, A: 453.0, b: 2.94, Ea: -4342.0}
   - {P: 0.1 atm, A: 1.47e+21, b: -2.26, Ea: 3180.0}
@@ -11035,6 +11087,11 @@ reactions:
   - {P: 10.0 atm, A: 12400000000.0, b: 0.98, Ea: 842.0}
   - {P: 100.0 atm, A: 3.74e+28, b: -3.92, Ea: 18561.0}
   - {P: 100.0 atm, A: 1360000.0, b: 2.06, Ea: 447.0}
+  note: 'JA Miller, SJ Klippenstein - estimate
+
+    DH = ??
+
+    '
 - equation: CH3CHCH + O2 <=> CH3CHO + HCO
   rate-constant: {A: 5000000000000.0, b: 0.0, Ea: 0.0}
   note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
@@ -11050,7 +11107,6 @@ reactions:
 
     '
 - equation: CH3CHCH + H <=> C2H3 + CH3
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.22e+16, b: -0.72, Ea: 4920.0}
@@ -11063,15 +11119,6 @@ reactions:
   - {P: 10.0 atm, A: 1150000000.0, b: 1.29, Ea: 1566.0}
   - {P: 100.0 atm, A: 5.8e+26, b: -3.29, Ea: 18849.0}
   - {P: 100.0 atm, A: 453.0, b: 3.2, Ea: 662.0}
-  note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
-
-    DH = -72.2
-
-    '
-- equation: CH3CHCH + H <=> C2H3 + CH3
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.43e+16, b: -0.59, Ea: 4573.0}
   - {P: 0.01 atm, A: 43100000000000.0, b: -0.01, Ea: 435.0}
   - {P: 0.1 atm, A: 1760000000000000.0, b: -0.314, Ea: 3087.0}
@@ -11082,6 +11129,11 @@ reactions:
   - {P: 10.0 atm, A: 440000000.0, b: 1.41, Ea: 1351.0}
   - {P: 100.0 atm, A: 9.72e+30, b: -4.44, Ea: 22834.0}
   - {P: 100.0 atm, A: 6460000000000.0, b: 0.22, Ea: 5469.0}
+  note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
+
+    DH = -72.2
+
+    '
 - equation: CH3CHCH + OH <=> CH3CCH + H2O
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
   note: 'L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
@@ -13258,7 +13310,6 @@ reactions:
   - {P: 98.69 atm, A: 116000000000000.0, b: -0.05, Ea: 38930.0}
   - {P: 98.69 atm, A: 386000.0, b: 1.67, Ea: 24490.0}
 - equation: CH2CCCH + H <=> c-(CHCHC)CH2
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 3.77e+52, b: -12.51, Ea: 13040.0}
@@ -13273,6 +13324,18 @@ reactions:
   - {P: 9.869 atm, A: 5.86e+38, b: -7.84, Ea: 10640.0}
   - {P: 98.69 atm, A: 1.32e+47, b: -9.2, Ea: 33830.0}
   - {P: 98.69 atm, A: 1.27e+20, b: -2.08, Ea: 3352.0}
+  - {P: 0.0009869 atm, A: 4.54e+30, b: -6.01, Ea: 21390.0}
+  - {P: 0.0009869 atm, A: 2.61e+44, b: -10.96, Ea: 9592.0}
+  - {P: 0.009869 atm, A: 6.93e+43, b: -9.3, Ea: 34860.0}
+  - {P: 0.009869 atm, A: 7.06e+42, b: -9.98, Ea: 11150.0}
+  - {P: 0.09869 atm, A: 2.57e+64, b: -14.44, Ea: 62490.0}
+  - {P: 0.09869 atm, A: 9.38e+36, b: -7.83, Ea: 11420.0}
+  - {P: 0.9869 atm, A: 1.52e+26, b: -3.95, Ea: 29760.0}
+  - {P: 0.9869 atm, A: 1.19e+26, b: -4.42, Ea: 7390.0}
+  - {P: 9.869 atm, A: 8.1e-05, b: -4.12, Ea: -71150.0}
+  - {P: 9.869 atm, A: 1.08e+25, b: -3.91, Ea: 7963.0}
+  - {P: 98.69 atm, A: 1.26e+34, b: -6.18, Ea: 18600.0}
+  - {P: 98.69 atm, A: 6.06e+70, b: -18.39, Ea: 24760.0}
 - equation: CH2CCCH + H <=> CH2CCCH2
   type: pressure-dependent-Arrhenius
   rate-constants:
@@ -13288,22 +13351,6 @@ reactions:
   - {P: 9.869 atm, A: 7.54e+47, b: -10.46, Ea: 13180.0}
   - {P: 98.69 atm, A: 8.39e+47, b: -9.52, Ea: 25910.0}
   - {P: 98.69 atm, A: 3.93e+39, b: -7.87, Ea: 10200.0}
-- equation: CH2CCCH + H <=> c-(CHCHC)CH2
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.0009869 atm, A: 4.54e+30, b: -6.01, Ea: 21390.0}
-  - {P: 0.0009869 atm, A: 2.61e+44, b: -10.96, Ea: 9592.0}
-  - {P: 0.009869 atm, A: 6.93e+43, b: -9.3, Ea: 34860.0}
-  - {P: 0.009869 atm, A: 7.06e+42, b: -9.98, Ea: 11150.0}
-  - {P: 0.09869 atm, A: 2.57e+64, b: -14.44, Ea: 62490.0}
-  - {P: 0.09869 atm, A: 9.38e+36, b: -7.83, Ea: 11420.0}
-  - {P: 0.9869 atm, A: 1.52e+26, b: -3.95, Ea: 29760.0}
-  - {P: 0.9869 atm, A: 1.19e+26, b: -4.42, Ea: 7390.0}
-  - {P: 9.869 atm, A: 8.1e-05, b: -4.12, Ea: -71150.0}
-  - {P: 9.869 atm, A: 1.08e+25, b: -3.91, Ea: 7963.0}
-  - {P: 98.69 atm, A: 1.26e+34, b: -6.18, Ea: 18600.0}
-  - {P: 98.69 atm, A: 6.06e+70, b: -18.39, Ea: 24760.0}
 - equation: CH2CCCH + H <=> c-CHCHCHCH
   type: pressure-dependent-Arrhenius
   rate-constants:

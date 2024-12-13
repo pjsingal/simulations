@@ -60,11 +60,11 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-fuel='CH2O'
+fuel='CH4'
 oxidizer={'O2':1,'N2':3.76}
-phi_list = np.linspace(0.6,2.0,gridsz)
-P=1
-T = 300 #unburned gas temperature
+phi_list = np.linspace(0.8,1.4,gridsz)
+P=30
+T = 700 #unburned gas temperature
 Xlim=[0.1,1000]
 Ylim=[4,1000]
 width=0.03
@@ -73,14 +73,14 @@ folder='ThinkMech'
 name=f'{fuel}_{P}atm{T}K'
 
 models = {
-    # 'ThInK 1.0': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
-    #                 },
-    # },
+    'ThInK 1.0': {
+        'submodels': {
+            'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
+                    },
+    },
     'ThInK 1.0 (HO2-PLOG)': {
         'submodels': {
             'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",

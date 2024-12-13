@@ -3025,12 +3025,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3067,6 +3061,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CO + OH <=> HOCO
   type: linear-Burke
   reference-collider: AR
@@ -3112,12 +3118,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3154,6 +3154,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CO + HO2 <=> CO2 + OH
   rate-constant: {A: 160000.0, b: 2.18, Ea: 17943.0}
 - equation: CO + O2 <=> CO2 + O
@@ -3235,12 +3247,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3277,6 +3283,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2O + H <=> H + CO + H2
   type: linear-Burke
   reference-collider: AR
@@ -3320,12 +3338,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3362,6 +3374,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2O + O <=> HCO + OH
   duplicate: true
   rate-constant: {A: 5.6e+31, b: -5.189, Ea: 19968.0}
@@ -3413,12 +3437,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3455,6 +3473,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2O + OH <=> H + CO + H2O
   type: linear-Burke
   reference-collider: AR
@@ -3498,12 +3528,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3540,6 +3564,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2O + HO2 <=> HCO + H2O2
   rate-constant: {A: 440000000.0, b: 1.298, Ea: 12129.0}
 - equation: CH2O + HO2 <=> H + CO + H2O2
@@ -3681,12 +3717,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3723,6 +3753,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + OH <=> CH2(S) + H2O
   type: linear-Burke
   reference-collider: AR
@@ -3769,12 +3811,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3811,6 +3847,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + OH <=> H2 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -3857,12 +3905,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3899,6 +3941,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + OH <=> H + CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -3945,12 +3999,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -3987,6 +4035,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + OH <=> H + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -4033,12 +4093,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4075,6 +4129,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + OH <=> H2 + HCOH
   type: linear-Burke
   reference-collider: AR
@@ -4121,12 +4187,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4163,6 +4223,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + HO2 <=> CH3O + OH
   rate-constant: {A: 1000000000000.0, b: 0.2688, Ea: -688.0}
 - equation: CH3 + O2 <=> CH3O + O
@@ -4218,12 +4290,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4260,6 +4326,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2O + CH3 <=> HCO + CH4
   rate-constant: {A: 350000.0, b: 2.157, Ea: 6234.0}
 - equation: CH2O + CH3 <=> H + CO + CH4
@@ -4308,12 +4386,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4350,6 +4422,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + HCO <=> CH2CO + H2
   type: linear-Burke
   reference-collider: AR
@@ -4394,12 +4478,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4436,6 +4514,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + CH3 <=> C2H5 + H
   rate-constant: {A: 54000000000000.0, b: 0.0, Ea: 16055.0}
 - equation: CH3 + CH2 <=> C2H4 + H
@@ -4627,12 +4717,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4669,6 +4753,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2OH + HCO <=> CH3OH + CO
   rate-constant: {A: 10000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2OH + HCO <=> CH2O + CH2O
@@ -4805,12 +4901,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -4847,6 +4937,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCOH <=> CH2O
   rate-constant: {A: 52000000000000.0, b: 0.0, Ea: 32109.0}
 - equation: HCOH <=> CO + H2
@@ -4999,12 +5101,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5041,6 +5137,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + OH <=> CH3 + CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -5087,12 +5195,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5129,6 +5231,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + HO2 <=> CH3CH2O + OH
   rate-constant: {A: 31000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C2H5 + O2 <=> CH3CH2OO
@@ -5184,12 +5298,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5226,6 +5334,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + O2 <=> C2H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -5279,12 +5399,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5321,6 +5435,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + O2 <=> CH2CH2OOH
   type: linear-Burke
   reference-collider: AR
@@ -5374,12 +5500,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5416,6 +5536,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + O2 <=> cC2H4O + OH
   type: linear-Burke
   reference-collider: AR
@@ -5469,12 +5601,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5511,6 +5637,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H6 + HCO <=> C2H5 + CH2O
   rate-constant: {A: 2.3, b: 3.74, Ea: 16933.0}
 - equation: C2H5 + HCO <=> C2H6 + CO
@@ -5561,12 +5699,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5603,6 +5735,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5 + CH3 <=> C2H4 + CH4
   rate-constant: {A: 900000000000.0, b: 0.0, Ea: 0.0}
 - equation: C2H5 + CH3OO <=> CH3CH2O + CH3O
@@ -5707,12 +5851,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5749,6 +5887,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + OH <=> CH3CHO + H
   type: linear-Burke
   reference-collider: AR
@@ -5795,12 +5945,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5837,6 +5981,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + OH <=> CH2CHOH + H
   type: linear-Burke
   reference-collider: AR
@@ -5883,12 +6039,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -5925,6 +6075,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + OH <=> CH2CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -5977,12 +6139,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6019,6 +6175,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + HO2 <=> CH2CH2OOH
   type: linear-Burke
   reference-collider: AR
@@ -6072,12 +6240,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6114,6 +6276,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + HO2 <=> cC2H4O + OH
   type: linear-Burke
   reference-collider: AR
@@ -6167,12 +6341,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6209,6 +6377,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H4 + O2 <=> C2H3 + HO2
   rate-constant: {A: 71000000000000.0, b: 0.0, Ea: 60010.0}
 - equation: C2H4 + CH3 <=> C2H3 + CH4
@@ -6267,12 +6447,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6309,6 +6483,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + H (+M) <=> C2H3 (+M)
   type: falloff
   low-P-rate-constant: {A: 6.3e+31, b: -4.664, Ea: 3780.0}
@@ -6379,12 +6565,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6421,6 +6601,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CHCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -6477,12 +6669,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6519,6 +6705,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CH2CO + OH
   type: linear-Burke
   reference-collider: AR
@@ -6575,12 +6773,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6617,6 +6809,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CH2CHO + O
   type: linear-Burke
   reference-collider: AR
@@ -6673,12 +6877,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6715,6 +6913,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> C2H2 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -6771,12 +6981,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6813,6 +7017,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> OCHCHO + H
   type: linear-Burke
   reference-collider: AR
@@ -6869,12 +7085,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -6911,6 +7121,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CH2O + HCO
   type: linear-Burke
   reference-collider: AR
@@ -6967,12 +7189,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7009,6 +7225,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CH2O + H + CO
   type: linear-Burke
   reference-collider: AR
@@ -7065,12 +7293,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7107,6 +7329,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CO + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -7163,12 +7397,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7205,6 +7433,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + O2 <=> CO2 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -7261,12 +7501,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7303,6 +7537,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + CH2O <=> C2H4 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -7350,12 +7596,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7392,6 +7632,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + CH2O <=> C2H4 + H + CO
   type: linear-Burke
   reference-collider: AR
@@ -7439,12 +7691,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7481,6 +7727,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H3 + HCO <=> C2H4 + CO
   rate-constant: {A: 90000000000000.0, b: 0.0, Ea: 0.0}
 - equation: C2H3 + CH3 <=> C2H2 + CH4
@@ -7556,12 +7814,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7598,6 +7850,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + OH <=> HCCOH + H
   type: linear-Burke
   reference-collider: AR
@@ -7644,12 +7908,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7686,6 +7944,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + OH <=> CHCHOH
   type: linear-Burke
   reference-collider: AR
@@ -7738,12 +8008,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7780,6 +8044,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + OH <=> CH2CO + H
   type: linear-Burke
   reference-collider: AR
@@ -7826,12 +8102,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7868,6 +8138,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + OH <=> C2H + H2O
   rate-constant: {A: 2600000.0, b: 2.14, Ea: 17060.0}
 - equation: C2H2 + HO2 <=> CH2CHOO
@@ -7926,12 +8208,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -7968,6 +8244,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CHCHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -8024,12 +8312,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8066,6 +8348,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CH2CO + OH
   type: linear-Burke
   reference-collider: AR
@@ -8122,12 +8416,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8164,6 +8452,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CH2CHO + O
   type: linear-Burke
   reference-collider: AR
@@ -8220,12 +8520,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8262,6 +8556,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> OCHCHO + H
   type: linear-Burke
   reference-collider: AR
@@ -8318,12 +8624,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8360,6 +8660,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CH2O + HCO
   type: linear-Burke
   reference-collider: AR
@@ -8416,12 +8728,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8458,6 +8764,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CH2O + H + CO
   type: linear-Burke
   reference-collider: AR
@@ -8514,12 +8832,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8556,6 +8868,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CO + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -8612,12 +8936,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8654,6 +8972,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + HO2 <=> CO2 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -8710,12 +9040,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8752,6 +9076,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H2 + O2 <=> HCO + HCO
   duplicate: true
   rate-constant: {A: 6100000000000.0, b: 0.0, Ea: 53250.0}
@@ -8841,12 +9177,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8883,6 +9213,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OH <=> C2H5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -8929,12 +9271,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -8971,6 +9307,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OH <=> C2H4 + H2O
   type: linear-Burke
   reference-collider: AR
@@ -9017,12 +9365,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9059,6 +9401,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHOH + H <=> CH3CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -9104,12 +9458,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9146,6 +9494,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OH + H <=> CH3CHOH + H2
   rate-constant: {A: 8800.0, b: 2.68, Ea: 2913.0}
 - equation: CH3CH2OH + H <=> CH2CH2OH + H2
@@ -9243,12 +9603,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9285,6 +9639,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHOH + H <=> CH3 + CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -9331,12 +9697,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9373,6 +9733,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHOH + H <=> C2H5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -9419,12 +9791,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9461,6 +9827,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHOH + O <=> CH3CHO + OH
   rate-constant: {A: 100000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH3CHOH + OH <=> CH3CHO + H2O
@@ -9513,12 +9891,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9555,6 +9927,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHOH + O2 <=> CH2CHOH + HO2
   type: linear-Burke
   reference-collider: AR
@@ -9601,12 +9985,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9643,6 +10021,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH <=> CH2CHOH + H
   type: linear-Burke
   reference-collider: AR
@@ -9686,12 +10076,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9728,6 +10112,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + H <=> C2H4 + H2O
   type: linear-Burke
   reference-collider: AR
@@ -9774,12 +10170,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9816,6 +10206,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + H <=> CH3 + CH2OH
   type: linear-Burke
   reference-collider: AR
@@ -9862,12 +10264,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9904,6 +10300,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + H <=> C2H5 + OH
   type: linear-Burke
   reference-collider: AR
@@ -9950,12 +10358,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -9992,6 +10394,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + H (+M) <=> CH3CH2OH (+M)
   type: falloff
   low-P-rate-constant: {A: 2.0e+41, b: -7.08, Ea: 6685.0}
@@ -10045,12 +10459,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10087,6 +10495,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + HO2 <=> CH3CH2OH + O2
   rate-constant: {A: 1000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2CH2OH + HO2 => CH2OH + CH2O + OH
@@ -10136,12 +10556,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10178,6 +10592,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + O2 <=> CH2CHOH + HO2
   type: linear-Burke
   reference-collider: AR
@@ -10228,12 +10654,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10270,6 +10690,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CH2OH + O2 <=> CH2O + CH2O + OH
   type: linear-Burke
   reference-collider: AR
@@ -10315,12 +10747,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10357,6 +10783,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2O (+M) <=> CH3 + CH2O (+M)
   type: falloff
   low-P-rate-constant: {A: 4.7e+25, b: 0.93, Ea: 16532.0}
@@ -10427,12 +10865,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10469,6 +10901,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHO <=> CH4 + CO
   type: linear-Burke
   reference-collider: AR
@@ -10513,12 +10957,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10555,6 +10993,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHO <=> CH2CHOH
   type: linear-Burke
   reference-collider: AR
@@ -10599,12 +11049,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10641,6 +11085,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CHO + H <=> CH3CO + H2
   rate-constant: {A: 130000.0, b: 2.58, Ea: 1219.0}
 - equation: CH3CHO + H <=> CH2CHO + H2
@@ -10790,12 +11246,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10832,6 +11282,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CHCHOH + H <=> CH2CHO + H
   rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CHCHOH + H <=> HCCOH + H2
@@ -10916,12 +11378,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -10958,6 +11414,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CO + H <=> CH3CO
   rate-constant: {A: 230000000.0, b: 1.61, Ea: 2627.0}
 - equation: CH3CO + H <=> CH3 + HCO
@@ -11020,12 +11488,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11062,6 +11524,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CO + O2 <=> CH2CO + HO2
   type: linear-Burke
   reference-collider: AR
@@ -11105,12 +11579,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11147,6 +11615,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CO + O2 <=> CH2O + CO + OH
   type: linear-Burke
   reference-collider: AR
@@ -11190,12 +11670,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11232,6 +11706,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CO + CH3 <=> C2H6 + CO
   rate-constant: {A: 33000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH3CO + CH3 <=> CH2CO + CH4
@@ -11283,12 +11769,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11325,6 +11805,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHO <=> CH3 + CO
   type: linear-Burke
   reference-collider: AR
@@ -11371,12 +11863,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11413,6 +11899,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHO + H <=> CH3 + HCO
   type: linear-Burke
   reference-collider: AR
@@ -11463,12 +11961,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11505,6 +11997,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHO + H <=> CH3 + H + CO
   type: linear-Burke
   reference-collider: AR
@@ -11550,12 +12054,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11592,6 +12090,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHO + H <=> CH3CO + H
   type: linear-Burke
   reference-collider: AR
@@ -11638,12 +12148,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11680,6 +12184,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHO + O <=> CH2O + HCO
   rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2CHO + O <=> CH2O + H + CO
@@ -11748,8 +12264,8 @@ reactions:
 - equation: HCCO + OH <=> CH2CO + O
   rate-constant: {A: 1300000.0, b: 1.99, Ea: 11280.0}
 - equation: HCCO + OH <=> HCOH + CO
-  duplicate: true
   type: linear-Burke
+  duplicate: true
   reference-collider: AR
   colliders:
   - name: M
@@ -11794,12 +12310,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11836,6 +12346,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCCO + OH <=> HCOH + CO
   duplicate: true
   rate-constant: {A: 2900000000000.0, b: 0.37, Ea: -24.0}
@@ -11881,12 +12403,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -11923,6 +12439,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCCO + OH <=> OCHCO + H
   type: linear-Burke
   reference-collider: AR
@@ -11968,12 +12496,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12010,6 +12532,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCCO + O2 <=> CO2 + CO + H
   rate-constant: {A: 4900000000000.0, b: -0.142, Ea: 1150.0}
 - equation: HCCO + O2 <=> CO + CO + OH
@@ -12082,12 +12616,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12124,6 +12652,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OOH + H <=> CH3CHOOH + H2
   rate-constant: {A: 65000000000.0, b: 0.0, Ea: 1860.0}
 - equation: CH3CH2OOH + H <=> CH3CH2OO + H2
@@ -12183,12 +12723,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12225,6 +12759,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OO <=> CH2CH2OOH
   type: linear-Burke
   reference-collider: AR
@@ -12278,12 +12824,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12320,6 +12860,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OO <=> C2H4 + HO2
   type: linear-Burke
   reference-collider: AR
@@ -12373,12 +12925,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12415,6 +12961,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OO <=> cC2H4O + OH
   type: linear-Burke
   reference-collider: AR
@@ -12468,12 +13026,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12510,6 +13062,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3CH2OO + H <=> CH3CH2O + OH
   rate-constant: {A: 96000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH3CH2OO + O <=> CH3CH2O + O2
@@ -12595,12 +13159,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12637,6 +13195,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOOH <=> CH2CHO + OH
   type: linear-Burke
   reference-collider: AR
@@ -12681,12 +13251,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12723,6 +13287,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOOH + H <=> CH2CHOO + H2
   rate-constant: {A: 43000000000.0, b: 0.0, Ea: 1860.0}
 - equation: CH2CHOOH + H <=> CH2CHO + H2O
@@ -12789,12 +13365,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12831,6 +13401,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CH2CHO + O
   type: linear-Burke
   reference-collider: AR
@@ -12887,12 +13469,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -12929,6 +13505,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> OCHCHO + H
   type: linear-Burke
   reference-collider: AR
@@ -12985,12 +13573,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13027,6 +13609,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CH2CO + OH
   type: linear-Burke
   reference-collider: AR
@@ -13083,12 +13677,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13125,6 +13713,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CH2O + HCO
   type: linear-Burke
   reference-collider: AR
@@ -13181,12 +13781,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13223,6 +13817,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CH2O + H + CO
   type: linear-Burke
   reference-collider: AR
@@ -13279,12 +13885,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13321,6 +13921,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CO + CH3O
   type: linear-Burke
   reference-collider: AR
@@ -13377,12 +13989,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13419,6 +14025,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO <=> CO2 + CH3
   type: linear-Burke
   reference-collider: AR
@@ -13475,12 +14093,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13517,6 +14129,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2CHOO + H <=> CH2CHO + OH
   rate-constant: {A: 96000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2CHOO + O <=> CH2CHO + O2
@@ -13586,12 +14210,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13628,6 +14246,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCHO <=> HCOH + CO
   type: linear-Burke
   reference-collider: AR
@@ -13675,12 +14305,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13717,6 +14341,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCHO <=> CO + CO + H2
   type: linear-Burke
   reference-collider: AR
@@ -13764,12 +14400,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13806,6 +14436,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCHO <=> HCO + HCO
   type: linear-Burke
   reference-collider: AR
@@ -13853,12 +14495,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13895,6 +14531,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCHO + H <=> CH2O + HCO
   rate-constant: {A: 54000000000000.0, b: 0.0, Ea: 4300.0}
 - equation: OCHCHO + H <=> CH2O + H + CO
@@ -13954,12 +14602,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -13996,6 +14638,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCO <=> H + CO + CO
   type: linear-Burke
   reference-collider: AR
@@ -14040,12 +14694,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -14082,6 +14730,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: OCHCO + O2 <=> CO + CO2 + OH
   type: linear-Burke
   reference-collider: AR
@@ -14125,12 +14785,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -14167,6 +14821,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HOCHO (+M) <=> CO + H2O (+M)
   type: falloff
   low-P-rate-constant: {A: 4100000000000000.0, b: 0.0, Ea: 52980.0}
@@ -14244,12 +14910,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -14286,6 +14946,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HOCH2CH2OO <=> CH2CHOH + HO2
   type: linear-Burke
   reference-collider: AR
@@ -14331,12 +15003,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -14373,6 +15039,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HOCH2CH2OO + HO2 => CH2OOH + CH2OH + O2
   rate-constant: {A: 250000000000.0, b: 0.0, Ea: -1490.0}
 - equation: HOCH2CH2OO + CH2O => CH2OOH + CH2OH + HCO
@@ -14986,12 +15664,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15028,6 +15700,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCNO + H <=> HCN + OH
   rate-constant: {A: 72000000000.0, b: 0.841, Ea: 8612.0}
 - equation: HCNO + O <=> HCO + NO
@@ -15237,12 +15921,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15279,6 +15957,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH + N2 <=> HNCN
   type: linear-Burke
   reference-collider: AR
@@ -15328,12 +16018,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15370,6 +16054,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH + NH3 <=> H2CN + H + H
   rate-constant: {A: 44000000000000.0, b: 0.0, Ea: -630.0}
 - equation: CH + N <=> CN + H
@@ -15538,12 +16234,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15580,6 +16270,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + H <=> HCN + N
   type: linear-Burke
   reference-collider: AR
@@ -15629,12 +16331,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15671,6 +16367,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + H <=> HNC + N
   type: linear-Burke
   reference-collider: AR
@@ -15720,12 +16428,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15762,6 +16464,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + O <=> CN + NO
   rate-constant: {A: 25000000000000.0, b: 0.17, Ea: -34.0}
 - equation: NCN + OH <=> NCNOH
@@ -15814,12 +16528,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15856,6 +16564,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + OH <=> NCO + NH
   type: linear-Burke
   reference-collider: AR
@@ -15906,12 +16626,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -15948,6 +16662,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + OH <=> HCN + NO
   type: linear-Burke
   reference-collider: AR
@@ -15998,12 +16724,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16040,6 +16760,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCN + O2 <=> NCO + NO
   rate-constant: {A: 1300000000000.0, b: 0.0, Ea: 23167.0}
 - equation: NCN + NO <=> CN + N2O
@@ -16108,12 +16840,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16150,6 +16876,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCNOH => NCNO + H
   type: linear-Burke
   reference-collider: AR
@@ -16200,12 +16938,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16242,6 +16974,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCNOH <=> HCN + NO
   type: linear-Burke
   reference-collider: AR
@@ -16292,12 +17036,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16334,6 +17072,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: NCNOH + H <=> HNCN + OH
   rate-constant: {A: 120000000000000.0, b: 0.0, Ea: 0.0}
 - equation: NCNOH + O => NCNO + OH
@@ -16414,12 +17164,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16456,6 +17200,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2NO + H <=> CH3 + NO
   rate-constant: {A: 40000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2NO + H <=> HCNO + H2
@@ -16579,12 +17335,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16621,6 +17371,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2NO2 + H <=> CH3 + NO2
   rate-constant: {A: 50000000000000.0, b: 0.0, Ea: 0.0}
 - equation: CH2NO2 + O <=> CH2O + NO2
@@ -16676,12 +17438,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16718,6 +17474,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5NO2 <=> C2H4 + HNO2
   type: linear-Burke
   reference-collider: AR
@@ -16763,12 +17531,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16805,6 +17567,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: C2H5NO2 <=> CH2CHNO + H2O
   rate-constant: {A: 8.9e+51, b: -20.019, Ea: 92377.0}
 - equation: C2H5NO2 <=> CH3CH2ONO
@@ -16924,12 +17698,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -16966,6 +17734,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3NH2 + M <=> CH2NH + H2 + M
   type: three-body
   rate-constant: {A: 24000000000000.0, b: 0.0, Ea: 107260.0}
@@ -17032,12 +17812,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17074,6 +17848,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + NH2 <=> CH3NH + H
   type: linear-Burke
   reference-collider: AR
@@ -17117,12 +17903,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17159,6 +17939,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3 + NH2 <=> CH2NH + H2
   type: linear-Burke
   reference-collider: AR
@@ -17202,12 +17994,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17244,6 +18030,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2NH2 <=> CH2NH + H
   type: linear-Burke
   reference-collider: AR
@@ -17287,12 +18085,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17329,6 +18121,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH2NH2 + H <=> CH2NH + H2
   rate-constant: {A: 480000000.0, b: 1.5, Ea: -894.0}
 - equation: CH2NH2 + O <=> CH2O + NH2
@@ -17388,12 +18192,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17430,6 +18228,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: CH3NH + H <=> CH2NH + H2
   rate-constant: {A: 720000000.0, b: 1.5, Ea: -894.0}
 - equation: CH3NH + O <=> CH2NH + OH
@@ -17503,12 +18313,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17545,6 +18349,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: H2CN + H <=> HCN + H2
   rate-constant: {A: 240000000.0, b: 1.5, Ea: -894.0}
 - equation: H2CN + O <=> HCN + OH
@@ -17595,12 +18411,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17637,6 +18447,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: H2CN + O2 <=> CH2O + NO
   rate-constant: {A: 3000000000000.0, b: 0.0, Ea: 5961.0}
 - equation: H2CN + NH2 <=> HCN + NH3
@@ -17688,12 +18510,6 @@ reactions:
   - name: C2H6
     efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
     note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H2
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
-  - name: C2H4
-    efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
-    note: Aramco-3.0 / TsangHampson-1986
   - name: CH2O
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Glarborg-2018
@@ -17730,6 +18546,18 @@ reactions:
   - name: O3
     efficiency: {A: 3.36877033, b: -0.03758428, Ea: 50.00351491}
     note: Han-2021
+  - name: C3H8
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H4
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C3H6
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
+  - name: C2H2
+    efficiency: {A: 4.04282579, b: -0.03759366, Ea: 50.01609475}
+    note: ThInK 1.0
 - equation: HCNH + H <=> H2CN + H
   rate-constant: {A: 20000000000000.0, b: 0.0, Ea: 0.0}
 - equation: HCNH + H <=> HCN + H2

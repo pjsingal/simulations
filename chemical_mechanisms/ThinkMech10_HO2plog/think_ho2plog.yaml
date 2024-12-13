@@ -50,7 +50,7 @@ description: |2-
 generator: ck2yaml
 input-files: [chem.inp, tran.dat]
 cantera-version: 3.1.0a4
-date: Thu, 12 Dec 2024 23:25:44 +0000
+date: Fri, 13 Dec 2024 03:10:15 +0000
 
 units: {length: cm, time: s, quantity: mol, activation-energy: cal/mol}
 
@@ -10252,7 +10252,6 @@ reactions:
     New Fuels: 
     *** Fuel Decomposition
 - equation: CH3CHCH + H <=> CH3CHCH2  # Reaction 729
-  duplicate: true
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.63e+57, b: -14.37, Ea: 1.6568e+04}
@@ -10265,13 +10264,6 @@ reactions:
   - {P: 10.0 atm, A: 3.28e+34, b: -6.72, Ea: 5190.0}
   - {P: 100.0 atm, A: 5.46e+49, b: -10.31, Ea: 2.1925e+04}
   - {P: 100.0 atm, A: 4.65e+26, b: -4.09, Ea: 3350.0}
-  note: |
-    L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
-    DH = -86.3
-- equation: CH3CHCH + H <=> CH3CHCH2  # Reaction 730
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 5.82e+56, b: -14.28, Ea: 1.6407e+04}
   - {P: 0.01 atm, A: 1.95e+45, b: -11.4, Ea: 6309.0}
   - {P: 0.1 atm, A: 1.24e+62, b: -15.22, Ea: 1.9112e+04}
@@ -10282,7 +10274,10 @@ reactions:
   - {P: 10.0 atm, A: 4.44e+34, b: -6.79, Ea: 5170.0}
   - {P: 100.0 atm, A: 6.39e+49, b: -10.35, Ea: 2.1902e+04}
   - {P: 100.0 atm, A: 5.11e+26, b: -4.13, Ea: 3313.0}
-- equation: CH3CCH2 + H <=> CH3CHCH2  # Reaction 731
+  note: |
+    L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
+    DH = -86.3
+- equation: CH3CCH2 + H <=> CH3CHCH2  # Reaction 730
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 4.96e+60, b: -15.16, Ea: 1.7958e+04}
@@ -10298,17 +10293,17 @@ reactions:
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -109.9
-- equation: CH3CHCH2 <=> C2H2 + CH4  # Reaction 732
+- equation: CH3CHCH2 <=> C2H2 + CH4  # Reaction 731
   rate-constant: {A: 2.5e+12, b: 0.0, Ea: 7.0e+04}
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -106.3
-- equation: CH3CHCH2 <=> CH2CCH2 + H2  # Reaction 733
+- equation: CH3CHCH2 <=> CH2CCH2 + H2  # Reaction 732
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 8.0e+04}
   note: |
     JA Miller - estimate
     DH = 30.4
-- equation: c-CH2CH2CH2 <=> CH3CHCH2  # Reaction 734
+- equation: c-CH2CH2CH2 <=> CH3CHCH2  # Reaction 733
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 4.6e+66, b: -15.84, Ea: 8.7387e+04}
@@ -10324,7 +10319,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = 38.8
-- equation: c-CH2CH2CH2 <=> CH2CHCH2 + H  # Reaction 735
+- equation: c-CH2CH2CH2 <=> CH2CHCH2 + H  # Reaction 734
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.33e+63, b: -14.55, Ea: 1.0332e+05}
@@ -10340,7 +10335,7 @@ reactions:
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -8.0
-- equation: CH3CHCH2 + H <=> CH3 + C2H4  # Reaction 736
+- equation: CH3CHCH2 + H <=> CH3 + C2H4  # Reaction 735
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 1.54e+09, b: 1.355, Ea: 2542.0}
@@ -10354,27 +10349,27 @@ reactions:
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = 77.5
     *** Fuel + Radical
-- equation: CH3CHCH2 + H <=> CH2CHCH2 + H2  # Reaction 737
+- equation: CH3CHCH2 + H <=> CH2CHCH2 + H2  # Reaction 736
   duplicate: true
   rate-constant: {A: -8.87e+08, b: 1.307, Ea: 3412.0}
   negative-A: true
   note: |
     JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
     DH = -9.6
-- equation: CH3CHCH2 + H <=> CH2CHCH2 + H2  # Reaction 738
+- equation: CH3CHCH2 + H <=> CH2CHCH2 + H2  # Reaction 737
   duplicate: true
   rate-constant: {A: 5.49e+05, b: 2.396, Ea: 2613.0}
-- equation: CH3CHCH2 + O <=> C2H5 + HCO  # Reaction 739
+- equation: CH3CHCH2 + O <=> C2H5 + HCO  # Reaction 738
   rate-constant: {A: 1.58e+07, b: 1.8, Ea: -1216.0}
   note: |
     JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
     DH = -17.0
-- equation: CH3CHCH2 + O <=> CH2CHCH2 + OH  # Reaction 740
+- equation: CH3CHCH2 + O <=> CH2CHCH2 + OH  # Reaction 739
   rate-constant: {A: 5.24e+11, b: 0.7, Ea: 5884.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -26.2
-- equation: CH3CHCH2 + OH <=> CH2CHOH + CH3  # Reaction 741
+- equation: CH3CHCH2 + OH <=> CH2CHOH + CH3  # Reaction 740
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0013 atm, A: 6.69e+07, b: 1.42, Ea: 2708.0}
@@ -10398,7 +10393,7 @@ reactions:
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -15.4
-- equation: CH3CHCH2 + OH <=> CH3CHO + CH3  # Reaction 742
+- equation: CH3CHCH2 + OH <=> CH3CHO + CH3  # Reaction 741
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0013 atm, A: -4.44e+07, b: 0.89, Ea: 540.0}
@@ -10422,7 +10417,7 @@ reactions:
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -8.8
-- equation: CH3CHCH2 + OH <=> CH3C(OH)CH2 + H  # Reaction 743
+- equation: CH3CHCH2 + OH <=> CH3C(OH)CH2 + H  # Reaction 742
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0013 atm, A: 9340.0, b: 2.35, Ea: 2635.0}
@@ -10446,35 +10441,35 @@ reactions:
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -18.5
-- equation: CH3CHCH2 + OH <=> CH2CHCH2 + H2O  # Reaction 744
+- equation: CH3CHCH2 + OH <=> CH2CHCH2 + H2O  # Reaction 743
   duplicate: true
   rate-constant: {A: -1.25e+08, b: 1.73, Ea: 925.0}
   negative-A: true
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -1.9
-- equation: CH3CHCH2 + OH <=> CH2CHCH2 + H2O  # Reaction 745
+- equation: CH3CHCH2 + OH <=> CH2CHCH2 + H2O  # Reaction 744
   duplicate: true
   rate-constant: {A: 1.88e+07, b: 2.03, Ea: 684.0}
-- equation: CH3CHCH2 + OH <=> CH3CCH2 + H2O  # Reaction 746
+- equation: CH3CHCH2 + OH <=> CH3CCH2 + H2O  # Reaction 745
   duplicate: true
   rate-constant: {A: 4.67e+04, b: 2.47, Ea: 1748.0}
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -31.5
-- equation: CH3CHCH2 + OH <=> CH3CCH2 + H2O  # Reaction 747
+- equation: CH3CHCH2 + OH <=> CH3CCH2 + H2O  # Reaction 746
   duplicate: true
   rate-constant: {A: 5.72e-07, b: 2.61, Ea: -3086.0}
-- equation: CH3CHCH2 + OH <=> CH3CHCH + H2O  # Reaction 748
+- equation: CH3CHCH2 + OH <=> CH3CHCH + H2O  # Reaction 747
   duplicate: true
   rate-constant: {A: 7590.0, b: 2.8, Ea: 2193.0}
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -11.5
-- equation: CH3CHCH2 + OH <=> CH3CHCH + H2O  # Reaction 749
+- equation: CH3CHCH2 + OH <=> CH3CHCH + H2O  # Reaction 748
   duplicate: true
   rate-constant: {A: 1.01, b: 3.51, Ea: -101.0}
-- equation: HO2 + CH3CHCH2 <=> OH + c-CH2OCH(CH3)  # Reaction 750
+- equation: HO2 + CH3CHCH2 <=> OH + c-CH2OCH(CH3)  # Reaction 749
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 4.72e+04, b: 2.29, Ea: 1.2336e+04}
@@ -10485,22 +10480,22 @@ reactions:
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = -7.8
-- equation: CH3CHCH2 + C2H3 <=> CH2CHCHCH2 + CH3  # Reaction 751
+- equation: CH3CHCH2 + C2H3 <=> CH2CHCHCH2 + CH3  # Reaction 750
   rate-constant: {A: 1.24e+07, b: 1.6, Ea: 3000.0}
   note: |
     J Zador, SJ Klippenstein, JA Miller, JPCA 115:10218 (2011).
     DH = -20.7
-- equation: CH3CHCH2 + HCO <=> CH2CHCH2 + CH2O  # Reaction 752
+- equation: CH3CHCH2 + HCO <=> CH2CHCH2 + CH2O  # Reaction 751
   rate-constant: {A: 1.08e+07, b: 1.9, Ea: 1.701e+04}
   note: |
     CF Goldsmith, I Huzeifa, PR Abel, WH Green, PCI 32:139 (2009).
     DH = --14.5
-- equation: CH3CHCH2 + CH3 <=> CH2CHCH2 + CH4  # Reaction 753
+- equation: CH3CHCH2 + CH3 <=> CH2CHCH2 + CH4  # Reaction 752
   rate-constant: {A: 2.22, b: 3.5, Ea: 5675.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -0.3
-- equation: CH2CCH2 + H <=> CH2CHCH2  # Reaction 754
+- equation: CH2CCH2 + H <=> CH2CHCH2  # Reaction 753
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 2.21e+61, b: -15.25, Ea: 2.0076e+04}
@@ -10517,7 +10512,7 @@ reactions:
     W Tsang, JPCRD 20:221 (1991)
     DH = -17.1
     *** Fuel Radical Decomposition 
-- equation: CH2CCH2 + H <=> CH3CCH2  # Reaction 755
+- equation: CH2CCH2 + H <=> CH3CCH2  # Reaction 754
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 6.44e+102, b: -27.51, Ea: 5.1768e+04}
@@ -10533,7 +10528,7 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, Y Georgievskii JPCA, 112:9429 (2008).
     DH = -55.8
-- equation: CH3CCH + H <=> CH3CCH2  # Reaction 756
+- equation: CH3CCH + H <=> CH3CCH2  # Reaction 755
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: -1.36e+53, b: -13.27, Ea: 9784.0}
@@ -10549,7 +10544,7 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, Y Georgievskii JPCA, 112:9429 (2008).
     DH = -35.9
-- equation: CH3CCH + H <=> CH3CHCH  # Reaction 757
+- equation: CH3CCH + H <=> CH3CHCH  # Reaction 756
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: -1.71e+39, b: -10.47, Ea: 7722.0}
@@ -10564,89 +10559,89 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, Y Georgievskii JPCA, 112:9429 (2008).
     DH = -34.8
-- equation: CH3CHCH2 + H <=> CH3CCH2 + H2  # Reaction 758
+- equation: CH3CHCH2 + H <=> CH3CCH2 + H2  # Reaction 757
   rate-constant: {A: 149.0, b: 3.381, Ea: 8909.0}
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, Y Georgievskii JPCA, 112:9429 (2008).
     DH = -31.1
     *** Fuel Radical + Stable
-- equation: CH3CHCH2 + H <=> CH3CHCH + H2  # Reaction 759
+- equation: CH3CHCH2 + H <=> CH3CHCH + H2  # Reaction 758
   duplicate: true
   rate-constant: {A: 510.0, b: 3.234, Ea: 1.2357e+04}
   note: |
     JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
     DH = 3.0
-- equation: CH3CHCH2 + H <=> CH3CHCH + H2  # Reaction 760
+- equation: CH3CHCH2 + H <=> CH3CHCH + H2  # Reaction 759
   duplicate: true
   rate-constant: {A: 397.0, b: 3.252, Ea: 1.2007e+04}
-- equation: CH3CHCH2 + O <=> CH3CCH2 + OH  # Reaction 761
+- equation: CH3CHCH2 + O <=> CH3CCH2 + OH  # Reaction 760
   rate-constant: {A: 6.03e+10, b: 0.7, Ea: 7632.0}
   note: |
     JA Miller, SJ Klippenstein, JPCA 117:2718 (2013).
     first trans then cis CHCH group in CH3CHCH
     DH = 6.6
-- equation: CH3CHCH2 + O <=> CH3CHCH + OH  # Reaction 762
+- equation: CH3CHCH2 + O <=> CH3CHCH + OH  # Reaction 761
   rate-constant: {A: 1.2e+11, b: 0.7, Ea: 8959.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = 4.6
-- equation: CH3CHCH2 + HO2 <=> CH2CHCH2 + H2O2  # Reaction 763
+- equation: CH3CHCH2 + HO2 <=> CH2CHCH2 + H2O2  # Reaction 762
   rate-constant: {A: 0.0771, b: 4.4, Ea: 1.3547e+04}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = 8.3
-- equation: CH3CHCH2 + CH3 <=> CH3CCH2 + CH4  # Reaction 764
+- equation: CH3CHCH2 + CH3 <=> CH3CCH2 + CH4  # Reaction 763
   rate-constant: {A: 0.843, b: 3.5, Ea: 1.1656e+04}
   note: |
     J Zador, SJ Klippenstein, JA Miller, JPCA 115:10218 (2011).
     DH = 0.2
-- equation: CH3CHCH2 + CH3 <=> CH3CHCH + CH4  # Reaction 765
+- equation: CH3CHCH2 + CH3 <=> CH3CHCH + CH4  # Reaction 764
   rate-constant: {A: 1.35, b: 3.5, Ea: 1.2848e+04}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = 2.9
-- equation: CH2CHCH2 + O2 <=> CH2CHO + CH2O  # Reaction 766
+- equation: CH2CHCH2 + O2 <=> CH2CHO + CH2O  # Reaction 765
   rate-constant: {A: 1.06e+10, b: 0.3, Ea: 1.2838e+04}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = 6.6
     *** Fuel Radical + Radical
-- equation: CH2CHCH2 + O2 <=> C2H2 + CH2O + OH  # Reaction 767
+- equation: CH2CHCH2 + O2 <=> C2H2 + CH2O + OH  # Reaction 766
   rate-constant: {A: 2.78e+25, b: -4.8, Ea: 1.5468e+04}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -62.5
-- equation: CH2CHCH2 + H <=> CH2CCH2 + H2  # Reaction 768
+- equation: CH2CHCH2 + H <=> CH2CCH2 + H2  # Reaction 767
   rate-constant: {A: 4.14e+04, b: 2.743, Ea: 3591.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -4.5
-- equation: CH2CHCH2 + H <=> CH3CCH + H2  # Reaction 769
+- equation: CH2CHCH2 + H <=> CH3CCH + H2  # Reaction 768
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     SJ Klippenstein - unpublished.
     DH = -47.5
-- equation: CH2CHCH2 + H <=> C2H2 + CH4  # Reaction 770
+- equation: CH2CHCH2 + H <=> C2H2 + CH4  # Reaction 769
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -48.6
-- equation: CH2CHCH2 + O <=> CH3 + CH2CO  # Reaction 771
+- equation: CH2CHCH2 + O <=> CH3 + CH2CO  # Reaction 770
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -55.9
-- equation: CH2CHCH2 + OH <=> CH2CCH2 + H2O  # Reaction 772
+- equation: CH2CHCH2 + OH <=> CH2CCH2 + H2O  # Reaction 771
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -77.0
-- equation: CH2CHCH2 + OH <=> CH2O + C2H4  # Reaction 773
+- equation: CH2CHCH2 + OH <=> CH2O + C2H4  # Reaction 772
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -62.0
-- equation: CH2CHCH2 + HO2 <=> CH2CHCH2OOH  # Reaction 774
+- equation: CH2CHCH2 + HO2 <=> CH2CHCH2OOH  # Reaction 773
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.91e+31, b: -7.23, Ea: 1336.0}
@@ -10657,7 +10652,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -62.8
-- equation: CH2CHCH2 + HO2 <=> CH2CHCHO + H2O  # Reaction 775
+- equation: CH2CHCH2 + HO2 <=> CH2CHCHO + H2O  # Reaction 774
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.09, b: 3.01, Ea: -3421.0}
@@ -10668,7 +10663,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = ??
-- equation: CH2CHCH2 + HO2 <=> CH2CHCH2O + OH  # Reaction 776
+- equation: CH2CHCH2 + HO2 <=> CH2CHCH2O + OH  # Reaction 775
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.02e+13, b: -0.158, Ea: -1417.0}
@@ -10679,23 +10674,22 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = -116.8
-- equation: CH3CHCH2 + O2 <=> CH2CHCH2 + HO2  # Reaction 777
+- equation: CH3CHCH2 + O2 <=> CH2CHCH2 + HO2  # Reaction 776
   rate-constant: {A: 1.04e+04, b: 2.5, Ea: 3.5726e+04}
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = -10.6
-- equation: CH2CHCH2 + CH3 <=> CH2CCH2 + CH4  # Reaction 778
+- equation: CH2CHCH2 + CH3 <=> CH2CCH2 + CH4  # Reaction 777
   rate-constant: {A: 3.02e+12, b: -0.3, Ea: -131.0}
   note: |
     DL Baulch, CT Bowman, CJ Cobos, RA Cox, T Just, et al., JPCRD 34:757 (2005).
     DH = 38.4
-- equation: CH2CHCH2 + CHCCH <=> C6H6 + H  # Reaction 779
+- equation: CH2CHCH2 + CHCCH <=> C6H6 + H  # Reaction 778
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -47.6
-- equation: CH3CHCH + H <=> CH2CHCH2 + H  # Reaction 780
-  duplicate: true
+- equation: CH3CHCH + H <=> CH2CHCH2 + H  # Reaction 779
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.78e+16, b: -0.82, Ea: 770.0}
@@ -10708,13 +10702,6 @@ reactions:
   - {P: 10.0 atm, A: 2.32e+10, b: 0.91, Ea: 988.0}
   - {P: 100.0 atm, A: 9.48e+28, b: -4.02, Ea: 1.8931e+04}
   - {P: 100.0 atm, A: 1.54e+06, b: 2.06, Ea: 546.0}
-  note: |
-    JA Miller, SJ Klippenstein - estimate
-    DH = ??
-- equation: CH3CHCH + H <=> CH2CHCH2 + H  # Reaction 781
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 3.47e+16, b: -0.84, Ea: 711.0}
   - {P: 0.01 atm, A: 453.0, b: 2.94, Ea: -4342.0}
   - {P: 0.1 atm, A: 1.47e+21, b: -2.26, Ea: 3180.0}
@@ -10725,18 +10712,20 @@ reactions:
   - {P: 10.0 atm, A: 1.24e+10, b: 0.98, Ea: 842.0}
   - {P: 100.0 atm, A: 3.74e+28, b: -3.92, Ea: 1.8561e+04}
   - {P: 100.0 atm, A: 1.36e+06, b: 2.06, Ea: 447.0}
-- equation: CH3CHCH + O2 <=> CH3CHO + HCO  # Reaction 782
+  note: |
+    JA Miller, SJ Klippenstein - estimate
+    DH = ??
+- equation: CH3CHCH + O2 <=> CH3CHO + HCO  # Reaction 780
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -23.6
-- equation: CH3CHCH + H <=> CH3CCH + H2  # Reaction 783
+- equation: CH3CHCH + H <=> CH3CCH + H2  # Reaction 781
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -93.7
-- equation: CH3CHCH + H <=> C2H3 + CH3  # Reaction 784
-  duplicate: true
+- equation: CH3CHCH + H <=> C2H3 + CH3  # Reaction 782
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.22e+16, b: -0.72, Ea: 4920.0}
@@ -10749,13 +10738,6 @@ reactions:
   - {P: 10.0 atm, A: 1.15e+09, b: 1.29, Ea: 1566.0}
   - {P: 100.0 atm, A: 5.8e+26, b: -3.29, Ea: 1.8849e+04}
   - {P: 100.0 atm, A: 453.0, b: 3.2, Ea: 662.0}
-  note: |
-    L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
-    DH = -72.2
-- equation: CH3CHCH + H <=> C2H3 + CH3  # Reaction 785
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
   - {P: 0.01 atm, A: 1.43e+16, b: -0.59, Ea: 4573.0}
   - {P: 0.01 atm, A: 4.31e+13, b: -0.01, Ea: 435.0}
   - {P: 0.1 atm, A: 1.76e+15, b: -0.314, Ea: 3087.0}
@@ -10766,22 +10748,25 @@ reactions:
   - {P: 10.0 atm, A: 4.4e+08, b: 1.41, Ea: 1351.0}
   - {P: 100.0 atm, A: 9.72e+30, b: -4.44, Ea: 2.2834e+04}
   - {P: 100.0 atm, A: 6.46e+12, b: 0.22, Ea: 5469.0}
-- equation: CH3CHCH + OH <=> CH3CCH + H2O  # Reaction 786
+  note: |
+    L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
+    DH = -72.2
+- equation: CH3CHCH + OH <=> CH3CCH + H2O  # Reaction 783
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -10.4
-- equation: CH3CHCH + HO2 <=> CH3CHCH2 + O2  # Reaction 787
+- equation: CH3CHCH + HO2 <=> CH3CHCH2 + O2  # Reaction 784
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -86.7
-- equation: CH3CCH2 + O2 <=> CH3CO + CH2O  # Reaction 788
+- equation: CH3CCH2 + O2 <=> CH3CO + CH2O  # Reaction 785
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -62.0
-- equation: CH3CCH2 + H <=> CH2CHCH2 + H  # Reaction 789
+- equation: CH3CCH2 + H <=> CH2CHCH2 + H  # Reaction 786
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.11e+17, b: -1.08, Ea: 1291.0}
@@ -10797,7 +10782,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -34.5
-- equation: CH3CCH2 + H <=> C2H3 + CH3  # Reaction 790
+- equation: CH3CCH2 + H <=> C2H3 + CH3  # Reaction 787
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.32e+16, b: -0.69, Ea: 5203.0}
@@ -10813,33 +10798,33 @@ reactions:
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -20.0
-- equation: CH3CCH2 + H <=> CH3CCH + H2  # Reaction 791
+- equation: CH3CCH2 + H <=> CH3CCH + H2  # Reaction 788
   rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
   note: |
     L Ye, Y Georgievskii, SJ Klippenstein, PCI 35:223 (2015).
     DH = -6.8
-- equation: CH3CCH2 + O <=> CH2CO + CH3  # Reaction 792
+- equation: CH3CCH2 + O <=> CH2CO + CH3  # Reaction 789
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -68.6
-- equation: CH3CCH2 + OH <=> CH3CCH + H2O  # Reaction 793
+- equation: CH3CCH2 + OH <=> CH3CCH + H2O  # Reaction 790
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -97.0
-- equation: CH3CCH2 + HO2 <=> CH3CHCH2 + O2  # Reaction 794
+- equation: CH3CCH2 + HO2 <=> CH3CHCH2 + O2  # Reaction 791
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -83.0
-- equation: CH3CHCH2 + OH + O2 <=> CH3CHO + CH2O + OH  # Reaction 795
+- equation: CH3CHCH2 + OH + O2 <=> CH3CHO + CH2O + OH  # Reaction 792
   rate-constant: {A: 3.0e+10, b: 0.0, Ea: -8280.0}
   note: |
     JA Miller - estimate
     DH = -58.3
     *** Termolecular
-- equation: CH3CHCH2 + OH <=> CH2CHCH2OH + H  # Reaction 796
+- equation: CH3CHCH2 + OH <=> CH2CHCH2OH + H  # Reaction 793
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0013 atm, A: -1.05e+15, b: -0.49, Ea: 1.1043e+04}
@@ -10878,7 +10863,7 @@ reactions:
     New Radicals Formed: 
     New Fuels: 
     *** Fuel + Radical
-- equation: CH3CHCH2 + OH <=> CH3CHCHOH + H  # Reaction 797
+- equation: CH3CHCH2 + OH <=> CH3CHCHOH + H  # Reaction 794
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0013 atm, A: 6.5e+10, b: 0.53, Ea: 7292.0}
@@ -10902,7 +10887,7 @@ reactions:
   note: |
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = 8.6
-- equation: CH2OCHCH2 <=> CH2CH2CHO  # Reaction 798
+- equation: CH2OCHCH2 <=> CH2CH2CHO  # Reaction 795
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 8.01e-92, b: 27.8, Ea: -3.7321e+04}
@@ -10916,7 +10901,7 @@ reactions:
     J Zador, AW Jasper, JA Miller, PCCP 11:11040 (2009).
     DH = 2.4
     *** Fuel Radical Decomposition
-- equation: CH2OCHCH2 <=> CH2CHCHO + H  # Reaction 799
+- equation: CH2OCHCH2 <=> CH2CHCHO + H  # Reaction 796
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 4.93e+24, b: -5.05, Ea: 2.0108e+04}
@@ -10929,7 +10914,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = -16.2
-- equation: CH2CHCH2O <=> CH2OCHCH2  # Reaction 800
+- equation: CH2CHCH2O <=> CH2OCHCH2  # Reaction 797
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 3.17e+20, b: -4.15, Ea: 1.2121e+04}
@@ -10942,7 +10927,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = 14.3
-- equation: CH2CHCH2O <=> CH2CH2CHO  # Reaction 801
+- equation: CH2CHCH2O <=> CH2CH2CHO  # Reaction 798
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 5.25e-49, b: 15.5, Ea: -1.564e+04}
@@ -10955,7 +10940,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = -2.7
-- equation: CH2CHCH2O <=> CH2CHCHO + H  # Reaction 802
+- equation: CH2CHCH2O <=> CH2CHCHO + H  # Reaction 799
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 3.0e+15, b: -2.31, Ea: 1.4668e+04}
@@ -10968,7 +10953,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = -19.0
-- equation: CH3C(OH)CH <=> CH3C(O)CH2  # Reaction 803
+- equation: CH3C(OH)CH <=> CH3C(O)CH2  # Reaction 800
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 34.7, b: 0.0, Ea: 7218.0}
@@ -10988,7 +10973,7 @@ reactions:
   note: |
     CF Goldsmith, SJ Klippenstein, WH Green, PCI 33:273 (2011).
     DH = 11.5
-- equation: CH2CHCH2OOH <=> CH2CHCHO + H2O  # Reaction 804
+- equation: CH2CHCH2OOH <=> CH2CHCHO + H2O  # Reaction 801
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.99e+50, b: -12.7, Ea: 5.3532e+04}
@@ -11005,7 +10990,7 @@ reactions:
     Fuel Radicals:
     New Radicals Formed: 
     New Fuels: 
-- equation: CH2CHCH2OOH <=> CH2CHCH2O + OH  # Reaction 805
+- equation: CH2CHCH2OOH <=> CH2CHCH2O + OH  # Reaction 802
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.49e+58, b: -13.9, Ea: 5.4267e+04}
@@ -11016,7 +11001,7 @@ reactions:
   note: |
     CF Goldsmith, WH Green, SJ Klippenstein, JPCA 116:3325 (2012).
     DH = ??
-- equation: CH2CCH2 <=> CH3CCH  # Reaction 806
+- equation: CH2CCH2 <=> CH3CCH  # Reaction 803
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 6.03e+53, b: -12.18, Ea: 8.4276e+04}
@@ -11031,7 +11016,7 @@ reactions:
        c-CHCH2CH subset                                                         *
     *****************************************************************************
     *** Fuel Decomposition
-- equation: c-CHCH2CH <=> CH3CCH  # Reaction 807
+- equation: c-CHCH2CH <=> CH3CCH  # Reaction 804
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 2.51e+50, b: -11.82, Ea: 5.0914e+04}
@@ -11040,7 +11025,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -1.1
-- equation: c-CHCH2CH <=> CH2CCH2  # Reaction 808
+- equation: c-CHCH2CH <=> CH2CCH2  # Reaction 805
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 9.77e+43, b: -9.97, Ea: 5.6007e+04}
@@ -11049,7 +11034,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -23.9
-- equation: CH2CCH + H <=> CH3CCH  # Reaction 809
+- equation: CH2CCH + H <=> CH3CCH  # Reaction 806
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 3.63e+36, b: -7.36, Ea: 6039.0}
@@ -11058,7 +11043,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -22.8
-- equation: CH2CCH + H <=> CH2CCH2  # Reaction 810
+- equation: CH2CCH + H <=> CH2CCH2  # Reaction 807
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 3.39e+36, b: -7.41, Ea: 6337.0}
@@ -11067,7 +11052,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -90.3
-- equation: CH2CCH + H <=> c-CHCH2CH  # Reaction 811
+- equation: CH2CCH + H <=> c-CHCH2CH  # Reaction 808
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 8.91e+112, b: -28.26, Ea: 8.3611e+04}
@@ -11076,13 +11061,13 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -89.2
-- equation: CH3CCH + H <=> CH2CCH + H2  # Reaction 812
+- equation: CH3CCH + H <=> CH2CCH + H2  # Reaction 809
   rate-constant: {A: 3.57e+04, b: 2.825, Ea: 4821.0}
   note: |
     JA Miller - estimate
     DH = -66.4
     *** Fuel + Radical 
-- equation: CH3CCH + H <=> CH3 + C2H2  # Reaction 813
+- equation: CH3CCH + H <=> CH3 + C2H2  # Reaction 810
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 2.45e+10, b: 1.04, Ea: 3980.0}
@@ -11094,26 +11079,26 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, JPCA 112:9429 (2008).
     DH = -13.0
-- equation: CH3CCH + O <=> HCCO + CH3  # Reaction 814
+- equation: CH3CCH + O <=> HCCO + CH3  # Reaction 811
   rate-constant: {A: 2.04e+13, b: 0.0, Ea: 2250.0}
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, JPCA 112:9429 (2008).
     DH = -7.2
-- equation: CH3CCH + O <=> C2H4 + CO  # Reaction 815
+- equation: CH3CCH + O <=> C2H4 + CO  # Reaction 812
   rate-constant: {A: 5.8e+12, b: 0.0, Ea: 2250.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -27.0
-- equation: CH3CCH + OH <=> CH2CCH + H2O  # Reaction 816
+- equation: CH3CCH + OH <=> CH2CCH + H2O  # Reaction 813
   duplicate: true
   rate-constant: {A: 3.87e+05, b: 2.34, Ea: 2173.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -117.9
-- equation: CH3CCH + OH <=> CH2CCH + H2O  # Reaction 817
+- equation: CH3CCH + OH <=> CH2CCH + H2O  # Reaction 814
   duplicate: true
   rate-constant: {A: 4.93e+04, b: 2.48, Ea: -62.0}
-- equation: CH3CCH + OH <=> CH2CO + CH3  # Reaction 818
+- equation: CH3CCH + OH <=> CH2CO + CH3  # Reaction 815
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 2.66e+19, b: -2.65, Ea: 3168.0}
@@ -11133,7 +11118,7 @@ reactions:
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -27.5
-- equation: CH3CCH + OH <=> CH3C(OH)CH  # Reaction 819
+- equation: CH3CCH + OH <=> CH3C(OH)CH  # Reaction 816
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 2.72e+56, b: -14.84, Ea: 1.395e+04}
@@ -11153,7 +11138,7 @@ reactions:
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -30.0
-- equation: CH3CCH + OH <=> CH3CCHOH  # Reaction 820
+- equation: CH3CCH + OH <=> CH3CCHOH  # Reaction 817
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 4.45e+58, b: -15.46, Ea: 1.4e+04}
@@ -11173,47 +11158,47 @@ reactions:
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -30.8
-- equation: CH3CCH + CH3 <=> CH2CCH + CH4  # Reaction 821
+- equation: CH3CCH + CH3 <=> CH2CCH + CH4  # Reaction 818
   rate-constant: {A: 1.8e+12, b: 0.0, Ea: 7700.0}
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -30.3
-- equation: CH2CHCHCH2 + H <=> CH3CCH + CH3  # Reaction 822
+- equation: CH2CHCHCH2 + H <=> CH3CCH + CH3  # Reaction 819
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 7000.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -13.1
-- equation: CH3CCH + CH2 <=> CH3CCCH2 + H  # Reaction 823
+- equation: CH3CCH + CH2 <=> CH3CCCH2 + H  # Reaction 820
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 0.3
-- equation: CH3CCH + CH2 <=> CH2CHCCH2 + H  # Reaction 824
+- equation: CH3CCH + CH2 <=> CH2CHCCH2 + H  # Reaction 821
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -11.7
-- equation: CH3CCH + CH2(S) <=> CH3CCCH2 + H  # Reaction 825
+- equation: CH3CCH + CH2(S) <=> CH3CCCH2 + H  # Reaction 822
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -9.6
-- equation: CH3CCH + CH2(S) <=> CH2CHCCH2 + H  # Reaction 826
+- equation: CH3CCH + CH2(S) <=> CH2CHCCH2 + H  # Reaction 823
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -20.8
-- equation: CH3CCH + C2H <=> C2H2 + CH2CCH  # Reaction 827
+- equation: CH3CCH + C2H <=> C2H2 + CH2CCH  # Reaction 824
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -18.7
-- equation: CH2CCH2 + H <=> CH2CCH + H2  # Reaction 828
+- equation: CH2CCH2 + H <=> CH2CCH + H2  # Reaction 825
   rate-constant: {A: 6630.0, b: 3.095, Ea: 5522.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -41.3
-- equation: CH2CCH2 + H <=> CH3CCH + H  # Reaction 829
+- equation: CH2CCH2 + H <=> CH3CCH + H  # Reaction 826
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 8.49e+10, b: 0.89, Ea: 2503.0}
@@ -11226,7 +11211,7 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, JPCA 112:9429 (2008).
     DH = -14.1
-- equation: CH2CCH2 + H <=> C2H2 + CH3  # Reaction 830
+- equation: CH2CCH2 + H <=> C2H2 + CH3  # Reaction 827
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.00132 atm, A: 1.23e+08, b: 1.53, Ea: 4737.0}
@@ -11240,21 +11225,21 @@ reactions:
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, JPCA 112:9429 (2008).
     DH = -1.1
-- equation: CH2CCH2 + O <=> C2H4 + CO  # Reaction 831
+- equation: CH2CCH2 + O <=> C2H4 + CO  # Reaction 828
   rate-constant: {A: 2.0e+07, b: 1.8, Ea: 1000.0}
   note: |
     JA Miller, JP Senosiain, SJ Klippenstein, JPCA 112:9429 (2008).
     DH = -8.3
-- equation: CH2CCH2 + OH <=> CH2CCH + H2O  # Reaction 832
+- equation: CH2CCH2 + OH <=> CH2CCH + H2O  # Reaction 829
   duplicate: true
   rate-constant: {A: 5.05e+05, b: 2.36, Ea: 2879.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -119.0
-- equation: CH2CCH2 + OH <=> CH2CCH + H2O  # Reaction 833
+- equation: CH2CCH2 + OH <=> CH2CCH + H2O  # Reaction 830
   duplicate: true
   rate-constant: {A: 5.95e+04, b: 2.5, Ea: 661.0}
-- equation: CH2CCH2 + OH <=> CH2CO + CH3  # Reaction 834
+- equation: CH2CCH2 + OH <=> CH2CO + CH3  # Reaction 831
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 3.03e+22, b: -3.01, Ea: 6341.0}
@@ -11274,7 +11259,7 @@ reactions:
   note: |
     J Zador, JA Miller, PCI 35:181 (2015); with factor of 2 correction by JA Miller
     DH = -28.6
-- equation: CH2CCH2 + OH <=> CH2CCH2OH  # Reaction 835
+- equation: CH2CCH2 + OH <=> CH2CCH2OH  # Reaction 832
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.000987 atm, A: 3.13e+64, b: -17.33, Ea: 1.522e+04}
@@ -11294,47 +11279,47 @@ reactions:
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -31.2
-- equation: CH2CHCH2 + O2 <=> CH2CCH2 + HO2  # Reaction 836
+- equation: CH2CHCH2 + O2 <=> CH2CCH2 + HO2  # Reaction 833
   rate-constant: {A: 4.99e+15, b: -1.4, Ea: 2.2428e+04}
   note: |
     J Zador, JA Miller, PCI 35:181 (2015).
     DH = -26.4
-- equation: CH2CCH2 + CH3 <=> CH2CCH + CH4  # Reaction 837
+- equation: CH2CCH2 + CH3 <=> CH2CCH + CH4  # Reaction 834
   rate-constant: {A: 1.3e+12, b: 0.0, Ea: 7700.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = 7.8
-- equation: CH2CHCHCH2 + H <=> CH2CCH2 + CH3  # Reaction 838
+- equation: CH2CHCHCH2 + H <=> CH2CCH2 + CH3  # Reaction 835
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 7000.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -14.2
-- equation: CH2CCH2 + CH2 <=> CH3CCCH2 + H  # Reaction 839
+- equation: CH2CCH2 + CH2 <=> CH3CCCH2 + H  # Reaction 836
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 1.4
-- equation: CH2CCH2 + CH2 <=> CH2CHCCH2 + H  # Reaction 840
+- equation: CH2CCH2 + CH2 <=> CH2CHCCH2 + H  # Reaction 837
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -12.8
-- equation: CH2CCH2 + CH2(S) <=> CH3CCCH2 + H  # Reaction 841
+- equation: CH2CCH2 + CH2(S) <=> CH3CCCH2 + H  # Reaction 838
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -10.7
-- equation: CH2CCH2 + CH2(S) <=> CH2CHCCH2 + H  # Reaction 842
+- equation: CH2CCH2 + CH2(S) <=> CH2CHCCH2 + H  # Reaction 839
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -21.9
-- equation: CH2CCH2 + C2H <=> C2H2 + CH2CCH  # Reaction 843
+- equation: CH2CCH2 + C2H <=> C2H2 + CH2CCH  # Reaction 840
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -19.8
-- equation: CH2CCH <=> c-CHCCH + H  # Reaction 844
+- equation: CH2CCH <=> c-CHCCH + H  # Reaction 841
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 1.18e+42, b: -8.89, Ea: 9.651e+04}
@@ -11352,7 +11337,7 @@ reactions:
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -42.4
     *** Fuel Radical Decomposition
-- equation: CH2CCH <=> CHCCH + H  # Reaction 845
+- equation: CH2CCH <=> CHCCH + H  # Reaction 842
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.001 atm, A: 9.3e+38, b: -8.1, Ea: 1.056e+05}
@@ -11369,41 +11354,41 @@ reactions:
   note: |
     SJ Klippenstein, JA Miller, AW Jasper, JPCA 119:7780 (2015).
     DH = 85.7
-- equation: CH3CCH + HO2 <=> CH2CCH + H2O2  # Reaction 846
+- equation: CH3CCH + HO2 <=> CH2CCH + H2O2  # Reaction 843
   rate-constant: {A: 0.0771, b: 4.4, Ea: 1.3547e+04}
   note: |
     SJ Klippenstein, JA Miller, AW Jasper, JPCA 119:7780 (2015).
     DH = 96.4
     *** Fuel Radical + Stable
-- equation: CH2CCH2 + HO2 <=> CH2CCH + H2O2  # Reaction 847
+- equation: CH2CCH2 + HO2 <=> CH2CCH + H2O2  # Reaction 844
   rate-constant: {A: 0.0771, b: 4.4, Ea: 1.3547e+04}
   note: |
     JA Miller - estimate
     DH = 4.2
-- equation: CH2CCH + C2H2 <=> C5H5(L)  # Reaction 848
+- equation: CH2CCH + C2H2 <=> C5H5(L)  # Reaction 845
   rate-constant: {A: 5.62e+32, b: -7.3, Ea: 6758.0}
   note: |
     JA Miller - estimate
     DH = 3.1
-- equation: CH2CCH + C2H2 <=> C5H5  # Reaction 849
+- equation: CH2CCH + C2H2 <=> C5H5  # Reaction 846
   rate-constant: {A: 7.39e+53, b: -12.5, Ea: 5.7313e+04}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: CH2CCH + O2 <=> CH2CO + HCO  # Reaction 850
+- equation: CH2CCH + O2 <=> CH2CO + HCO  # Reaction 847
   rate-constant: {A: 1.7e+05, b: 1.7, Ea: 1500.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
     *** Fuel Radical + Radical
-- equation: CH2CCH + H <=> CHCCH + H2  # Reaction 851
+- equation: CH2CCH + H <=> CHCCH + H2  # Reaction 848
   rate-constant: {A: 2.14e+05, b: 2.52, Ea: 7453.0}
   note: |
     DK Hahn, SJ Klippenstein, JA Miller, Faraday Disc. 119:79 (2001).
     DH = -85.6
-- equation: CH2CCH + H <=> CHCCH(S) + H2  # Reaction 852
+- equation: CH2CCH + H <=> CHCCH(S) + H2  # Reaction 849
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 2.95e+09, b: 1.28, Ea: 1.3474e+04}
@@ -11412,7 +11397,7 @@ reactions:
   note: |
     JA Miller, SJ Klippenstein, JPCA 107:2680 (2003).
     DH = -6.9
-- equation: CH2CCH + H <=> CH2CC + H2  # Reaction 853
+- equation: CH2CCH + H <=> CH2CC + H2  # Reaction 850
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 2.69e+09, b: 1.05, Ea: 5371.0}
@@ -11421,7 +11406,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CCH + H <=> c-CHCCH + H2  # Reaction 854
+- equation: CH2CCH + H <=> c-CHCCH + H2  # Reaction 851
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 1.07e+07, b: 1.37, Ea: 1.5557e+04}
@@ -11430,67 +11415,67 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -3.9
-- equation: CH2CCH + O <=> CH2O + C2H  # Reaction 855
+- equation: CH2CCH + O <=> CH2O + C2H  # Reaction 852
   rate-constant: {A: 1.4e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -17.6
-- equation: CH2CCH + OH <=> CHCCH + H2O  # Reaction 856
+- equation: CH2CCH + OH <=> CHCCH + H2O  # Reaction 853
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 8000.0}
   note: |
     IR Slagle, GW Gmurczyk, L Batt, D Gutman, PCI 23:115 (1990).
     DH = -34.4
-- equation: CH2CCH + OH <=> CH2O + C2H2  # Reaction 857
+- equation: CH2CCH + OH <=> CH2O + C2H2  # Reaction 854
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2007).
     DH = -21.3
-- equation: CH2CCH + OH <=> C2H3 + HCO  # Reaction 858
+- equation: CH2CCH + OH <=> C2H3 + HCO  # Reaction 855
   rate-constant: {A: 7.6e+13, b: -0.15, Ea: -45.0}
   note: |
     JA Miller - estimate (2007).
     DH = -64.3
-- equation: CH2CCH + OH <=> C2H4 + CO  # Reaction 859
+- equation: CH2CCH + OH <=> C2H4 + CO  # Reaction 856
   rate-constant: {A: 7.6e+13, b: -0.15, Ea: -45.0}
   note: |
     JA Miller - unpublished (2013).
     DH = -12.0
-- equation: CH2CCH + OH <=> CHCCH(S) + H2O  # Reaction 860
+- equation: CH2CCH + OH <=> CHCCH(S) + H2O  # Reaction 857
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - unpublished (2013).
     DH = -106.5
-- equation: CH2CCH + OH <=> CH2CC + H2O  # Reaction 861
+- equation: CH2CCH + OH <=> CH2CC + H2O  # Reaction 858
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2007).
     DH = ??
-- equation: CH2CCH + HO2 <=> CH2O + CHCOH  # Reaction 862
+- equation: CH2CCH + HO2 <=> CH2O + CHCOH  # Reaction 859
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2007).
     DH = -18.4
-- equation: CH2CCH + HO2 <=> CH3CCH + O2  # Reaction 863
+- equation: CH2CCH + HO2 <=> CH3CCH + O2  # Reaction 860
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2014).
     DH = -90.9
-- equation: CH2CCH + HO2 <=> CH2CCH2 + O2  # Reaction 864
+- equation: CH2CCH + HO2 <=> CH2CCH2 + O2  # Reaction 861
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2014).
     DH = -42.3
-- equation: CH2CCH + HCO <=> CH3CCH + CO  # Reaction 865
+- equation: CH2CCH + HCO <=> CH3CCH + CO  # Reaction 862
   rate-constant: {A: 2.5e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate (2014).
     DH = -41.2
-- equation: CH2CCH + HCO <=> CH2CCH2 + CO  # Reaction 866
+- equation: CH2CCH + HCO <=> CH2CCH2 + CO  # Reaction 863
   rate-constant: {A: 2.5e+13, b: 0.0, Ea: 0.0}
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -75.6
-- equation: CH2CCH + CH3 (+M) <=> CH2CCHCH3 (+M)  # Reaction 867
+- equation: CH2CCH + CH3 (+M) <=> CH2CCHCH3 (+M)  # Reaction 864
   type: falloff
   low-P-rate-constant: {A: 2.6e+57, b: -11.94, Ea: 9770.0}
   high-P-rate-constant: {A: 1.5e+12, b: 0.0, Ea: 0.0}
@@ -11500,71 +11485,71 @@ reactions:
   note: |
     SG Davis, CK Law, H Wang, JPCA 103:5889 (1999).
     DH = -74.5
-- equation: CH2CCH + CH2 <=> CH2CHCCH + H  # Reaction 868
+- equation: CH2CCH + CH2 <=> CH2CHCCH + H  # Reaction 865
   rate-constant: {A: 8.0e+13, b: 0.0, Ea: 0.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH =-78.3
-- equation: CH2CCH + CH <=> CH2CCCH + H  # Reaction 869
+- equation: CH2CCH + CH <=> CH2CCCH + H  # Reaction 866
   rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
-- equation: CH2CCH + CH <=> CHCHCCH + H  # Reaction 870
+- equation: CH2CCH + CH <=> CHCHCCH + H  # Reaction 867
   rate-constant: {A: 7.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
-- equation: CH2CCH + C2H <=> H2CCCCCH + H  # Reaction 871
+- equation: CH2CCH + C2H <=> H2CCCCCH + H  # Reaction 868
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
-- equation: CH2CCH + C2H <=> HCCCHCCH + H  # Reaction 872
+- equation: CH2CCH + C2H <=> HCCCHCCH + H  # Reaction 869
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
-- equation: CH2CCH + C2H3 <=> C5H5 + H  # Reaction 873
+- equation: CH2CCH + C2H3 <=> C5H5 + H  # Reaction 870
   rate-constant: {A: 9.63e+40, b: -7.8, Ea: 2.882e+04}
   note: |
     JA Miller, SJ Klippenstein - estimate
-- equation: FULVENE + H <=> C6H6 + H  # Reaction 874
+- equation: FULVENE + H <=> C6H6 + H  # Reaction 871
   rate-constant: {A: 3.0e+12, b: 0.5, Ea: 2000.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: CH2CCH + CH2CCH <=> C6H5 + H  # Reaction 875
+- equation: CH2CCH + CH2CCH <=> C6H5 + H  # Reaction 872
   rate-constant: {A: 2.02e+33, b: -6.05, Ea: 1.594e+04}
   note: |
     NM Marinov, MJ Castaldi, CF Melius, W Tsang, CST 128:295 (1997).
     Marinov et al., CS&T 128:295-342 (1997).
     DH = ??
-- equation: CH2CCH + CH2CCH <=> C4H5C2H  # Reaction 876
+- equation: CH2CCH + CH2CCH <=> C4H5C2H  # Reaction 873
   duplicate: true
   rate-constant: {A: 6.48e+68, b: -16.686, Ea: 2.872e+04}
   note: |
     JA Miller, SJ Klippenstein, JPCA 107:7783 (2003).
     DH = ??
-- equation: CH2CCH + CH2CCH <=> C4H5C2H  # Reaction 877
+- equation: CH2CCH + CH2CCH <=> C4H5C2H  # Reaction 874
   duplicate: true
   rate-constant: {A: 1.54e+36, b: -7.797, Ea: 5580.0}
-- equation: CH2CCH + CH2CCH <=> FULVENE  # Reaction 878
+- equation: CH2CCH + CH2CCH <=> FULVENE  # Reaction 875
   duplicate: true
   rate-constant: {A: 7.25e+65, b: -16.015, Ea: 2.5035e+04}
   note: |
     JA Miller, SJ Klippenstein, JPCA 107:7783 (2003).
     DH = ??
-- equation: CH2CCH + CH2CCH <=> FULVENE  # Reaction 879
+- equation: CH2CCH + CH2CCH <=> FULVENE  # Reaction 876
   duplicate: true
   rate-constant: {A: 4.19e+39, b: -8.958, Ea: 6098.0}
-- equation: CH2CCH + CH2CCH <=> C6H6  # Reaction 880
+- equation: CH2CCH + CH2CCH <=> C6H6  # Reaction 877
   duplicate: true
   rate-constant: {A: 1.64e+66, b: -15.902, Ea: 2.7529e+04}
   note: |
     JA Miller, SJ Klippenstein, JPCA 107:7783 (2003).
     DH = ??
-- equation: CH2CCH + CH2CCH <=> C6H6  # Reaction 881
+- equation: CH2CCH + CH2CCH <=> C6H6  # Reaction 878
   duplicate: true
   rate-constant: {A: 1.2e+35, b: -7.435, Ea: 5058.0}
-- equation: CHCCH(S) + M <=> CHCCH + M  # Reaction 882
+- equation: CHCCH(S) + M <=> CHCCH + M  # Reaction 879
   type: three-body
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
@@ -11580,28 +11565,28 @@ reactions:
     New Radicals Formed: 
     New Fuels: 
     *** Fuel Decomposition
-- equation: CHCCH + O2 <=> HCCO + CO + H  # Reaction 883
+- equation: CHCCH + O2 <=> HCCO + CO + H  # Reaction 880
   rate-constant: {A: 2.55e+06, b: 2.245, Ea: 368.0}
   note: |
     JA Miller - estimate
     DH = ??
     *** Fuel + Radical
-- equation: CH2CC + O2 <=> CO2 + C2H2  # Reaction 884
+- equation: CH2CC + O2 <=> CO2 + C2H2  # Reaction 881
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -62.6
-- equation: CHCCH(S) + H <=> CH2CC + H  # Reaction 885
+- equation: CHCCH(S) + H <=> CH2CC + H  # Reaction 882
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -171.7
-- equation: c-CHCCH + O2 <=> C2H2 + CO2  # Reaction 886
+- equation: c-CHCCH + O2 <=> C2H2 + CO2  # Reaction 883
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CHCCH + H <=> c-CHCCH + H  # Reaction 887
+- equation: CHCCH + H <=> c-CHCCH + H  # Reaction 884
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 7.36e+26, b: -3.76, Ea: 2.093e+04}
@@ -11625,7 +11610,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = -158.0
-- equation: CH2CC + H <=> c-CHCCH + H  # Reaction 888
+- equation: CH2CC + H <=> c-CHCCH + H  # Reaction 885
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 4.17e+23, b: -3.23, Ea: 2385.0}
@@ -11649,7 +11634,7 @@ reactions:
   note: |
     SJ Klippenstein, JA Miller, AW Jasper, JPCA 119:7780 (2015).
     DH = -10.7
-- equation: CH2CC + H <=> CHCCH + H  # Reaction 889
+- equation: CH2CC + H <=> CHCCH + H  # Reaction 886
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 3.93e-22, b: 9.64, Ea: -1.724e+04}
@@ -11673,57 +11658,57 @@ reactions:
   note: |
     SJ Klippenstein, JA Miller, AW Jasper, JPCA 119:7780 (2015).
     DH = -13.6
-- equation: CHCCH + H <=> C3H + H2  # Reaction 890
+- equation: CHCCH + H <=> C3H + H2  # Reaction 887
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     SJ Klippenstein, JA Miller, AW Jasper, JPCA 119:7780 (2015).
     DH = -2.9
-- equation: CHCCH + O <=> C2H2 + CO  # Reaction 891
+- equation: CHCCH + O <=> C2H2 + CO  # Reaction 888
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CHCCH + OH <=> C2H2 + HCO  # Reaction 892
+- equation: CHCCH + OH <=> C2H2 + HCO  # Reaction 889
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -161.1
-- equation: CHCCH + CH3 <=> CH2CHCCH + H  # Reaction 893
+- equation: CHCCH + CH3 <=> CH2CHCCH + H  # Reaction 890
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -74.1
-- equation: CHCCH + CH2 <=> CH2CCCH + H  # Reaction 894
+- equation: CHCCH + CH2 <=> CH2CCCH + H  # Reaction 891
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -42.9
-- equation: CHCCH + CH2(S) <=> CH2CCCH + H  # Reaction 895
+- equation: CHCCH + CH2(S) <=> CH2CCCH + H  # Reaction 892
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -52.7
-- equation: CHCCH + HCCO <=> CHCHCCH + CO  # Reaction 896
+- equation: CHCCH + HCCO <=> CHCHCCH + CO  # Reaction 893
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -61.8
-- equation: CHCCH + CH2CCH <=> C6H4 + H  # Reaction 897
+- equation: CHCCH + CH2CCH <=> C6H4 + H  # Reaction 894
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -68.0
-- equation: C3H + O2 <=> HCCO + CO  # Reaction 898
+- equation: C3H + O2 <=> HCCO + CO  # Reaction 895
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C3H + O <=> C2H + CO  # Reaction 899
+- equation: C3H + O <=> C2H + CO  # Reaction 896
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CHCHCH2 <=> CH2CHCCH2 + H  # Reaction 900
+- equation: CH2CHCHCH2 <=> CH2CHCCH2 + H  # Reaction 897
   rate-constant: {A: 5.7e+36, b: -6.27, Ea: 1.12353e+05}
   note: |
     JA Miller - estimate
@@ -11737,206 +11722,206 @@ reactions:
     New Radicals Formed: 
     New Fuels: 
     *** Fuel Decomposition
-- equation: CH2CCHCH3 <=> CH2CHCHCH2  # Reaction 901
+- equation: CH2CCHCH3 <=> CH2CHCHCH2  # Reaction 898
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 6.5e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 100.0
-- equation: CH2CHCHCH2 <=> CH2CHCHCH + H  # Reaction 902
+- equation: CH2CHCHCH2 <=> CH2CHCHCH + H  # Reaction 899
   rate-constant: {A: 5.3e+44, b: -8.62, Ea: 1.23608e+05}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -12.3
-- equation: CH2CCHCH3 <=> CH2CHCCH2 + H  # Reaction 903
+- equation: CH2CCHCH3 <=> CH2CHCCH2 + H  # Reaction 900
   rate-constant: {A: 4.2e+15, b: 0.0, Ea: 9.26e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 110.6
-- equation: CH3CCCH3 <=> CH2CHCHCH2  # Reaction 904
+- equation: CH3CCCH3 <=> CH2CHCHCH2  # Reaction 901
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 6.5e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 87.8
-- equation: CH3CCCH3 <=> CH2CCHCH3  # Reaction 905
+- equation: CH3CCCH3 <=> CH2CCHCH3  # Reaction 902
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 6.7e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -8.2
-- equation: C2H4 + C2H3 <=> CH2CHCHCH2 + H  # Reaction 906
+- equation: C2H4 + C2H3 <=> CH2CHCHCH2 + H  # Reaction 903
   rate-constant: {A: 4.75e+05, b: 2.0, Ea: 2841.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 4.1
     *** Fuel + Radical
-- equation: CH2CHCHCH2 + H <=> CH2CHCCH2 + H2  # Reaction 907
+- equation: CH2CHCHCH2 + H <=> CH2CHCCH2 + H2  # Reaction 904
   rate-constant: {A: 3.0e+07, b: 2.0, Ea: 6000.0}
   note: |
     I Huzeifa, CF Goldsmith, PR Abel, PT Howe, A Fahr, JB Halpern, LE Jusinski, Y Georgievskii, CA Taatjes, WH Green, JPCA 111:6843 (2007).
     products assumed JA Miller
     DH = -4.8
-- equation: CH2CHCHCH2 + O <=> CH2CHCCH2 + OH  # Reaction 908
+- equation: CH2CHCHCH2 + O <=> CH2CHCCH2 + OH  # Reaction 905
   rate-constant: {A: 7.5e+06, b: 1.9, Ea: 3740.0}
   note: |
     JA Miller - estimate
     DH = -3.3
-- equation: CH2CHCHCH2 + O <=> HCO + CH2CHCH2  # Reaction 909
+- equation: CH2CHCHCH2 + O <=> HCO + CH2CHCH2  # Reaction 906
   rate-constant: {A: 6.02e+08, b: 1.4, Ea: -858.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -1.7
-- equation: CH2CHCHCH2 + OH <=> CH2CHCCH2 + H2O  # Reaction 910
+- equation: CH2CHCHCH2 + OH <=> CH2CHCCH2 + H2O  # Reaction 907
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 2000.0}
   note: |
     W Tsang, JPCRD 20:221 (1991)
     DH = -36.3
-- equation: CH2CHCHCH2 + OH <=> CH2CHCHCH + H2O  # Reaction 911
+- equation: CH2CHCHCH2 + OH <=> CH2CHCHCH + H2O  # Reaction 908
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -17.8
-- equation: CH2CHCHCH2 + OH <=> CH3CHO + C2H3  # Reaction 912
+- equation: CH2CHCHCH2 + OH <=> CH3CHO + C2H3  # Reaction 909
   rate-constant: {A: 6.3e+12, b: 0.0, Ea: -874.0}
   note: |
     JA Miller - estimate
     DH = -7.2
-- equation: CH2CHCHCH2 + OH <=> CH2CHCH2 + CH2O  # Reaction 913
+- equation: CH2CHCHCH2 + OH <=> CH2CHCH2 + CH2O  # Reaction 910
   rate-constant: {A: 6.3e+12, b: 0.0, Ea: -874.0}
   note: |
     A Liu, WA Mulac, CD Jonah, JPC 92:131 (1988).
     DH = -4.0
-- equation: CH2CHCHCH2 + CH3 <=> CH2CHCCH2 + CH4  # Reaction 914
+- equation: CH2CHCHCH2 + CH3 <=> CH2CHCCH2 + CH4  # Reaction 911
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 1.98e+04}
   note: |
     A Liu, WA Mulac, CD Jonah, JPC 92:131 (1988).
     DH = -21.2
-- equation: CH2CHCHCH2 + C2H3 <=> CH2CHCCH2 + C2H4  # Reaction 915
+- equation: CH2CHCHCH2 + C2H3 <=> CH2CHCCH2 + C2H4  # Reaction 912
   rate-constant: {A: 2.5e+13, b: 0.0, Ea: 1.98e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -3.4
-- equation: CH2CCHCH3 + H <=> CH2CHCHCH2 + H  # Reaction 916
+- equation: CH2CCHCH3 + H <=> CH2CHCHCH2 + H  # Reaction 913
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -9.2
-- equation: CH2CCHCH3 + O <=> CH2CO + C2H4  # Reaction 917
+- equation: CH2CCHCH3 + O <=> CH2CO + C2H4  # Reaction 914
   rate-constant: {A: 1.2e+08, b: 1.65, Ea: 327.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -12.3
-- equation: CH2CCHCH3 + OH <=> CH2CHCCH2 + H2O  # Reaction 918
+- equation: CH2CCHCH3 + OH <=> CH2CHCCH2 + H2O  # Reaction 915
   rate-constant: {A: 3.1e+06, b: 2.0, Ea: -298.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -97.7
-- equation: CH2CCHCH3 + CH3 <=> CH2CHCCH2 + CH4  # Reaction 919
+- equation: CH2CCHCH3 + CH3 <=> CH2CHCCH2 + CH4  # Reaction 916
   rate-constant: {A: 7.0e+13, b: 0.0, Ea: 1.85e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -30.
-- equation: CH2CCH + CH3 <=> CH3CCCH2 + H  # Reaction 920
+- equation: CH2CCH + CH3 <=> CH3CCCH2 + H  # Reaction 917
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -15.6
-- equation: CH2CCHCH3 + H <=> CH2CHCCH2 + H2  # Reaction 921
+- equation: CH2CCHCH3 + H <=> CH2CHCCH2 + H2  # Reaction 918
   rate-constant: {A: 1.7e+05, b: 2.5, Ea: 2490.0}
   note: |
     JA Miller - estimate
     DH = 7.3
-- equation: CH2CCHCH3 + H <=> CH2CCH2 + CH3  # Reaction 922
+- equation: CH2CCHCH3 + H <=> CH2CCH2 + CH3  # Reaction 919
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -15.6
-- equation: CH2CCHCH3 + H <=> CH3CCH + CH3  # Reaction 923
+- equation: CH2CCHCH3 + H <=> CH3CCH + CH3  # Reaction 920
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -10.9
-- equation: CH2CCHCH3 + O <=> CH2CHCCH2 + OH  # Reaction 924
+- equation: CH2CCHCH3 + O <=> CH2CHCCH2 + OH  # Reaction 921
   rate-constant: {A: 1.8e+11, b: 0.7, Ea: 5880.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -12.0
-- equation: CH3CCCH3 + H <=> CH3 + CH3CCH  # Reaction 925
+- equation: CH3CCCH3 + H <=> CH3 + CH3CCH  # Reaction 922
   rate-constant: {A: 2.6e+05, b: 2.5, Ea: 1000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -13.9
-- equation: CH3CCCH3 + H <=> CH2CCHCH3 + H  # Reaction 926
+- equation: CH3CCCH3 + H <=> CH2CCHCH3 + H  # Reaction 923
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -7.9
-- equation: CH2CHCCH2 <=> CH2CHCCH + H  # Reaction 927
+- equation: CH2CHCCH2 <=> CH2CHCCH + H  # Reaction 924
   rate-constant: {A: 3.15e+58, b: -13.954, Ea: 6.4898e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 4.1
     *** Fuel Radical Decomposition
-- equation: CH2CHCCH2 <=> c-CH2CHCHCH  # Reaction 928
+- equation: CH2CHCCH2 <=> c-CH2CHCHCH  # Reaction 925
   rate-constant: {A: 3.72e+50, b: -12.58, Ea: 4.0676e+04}
   note: |
     SJ Klippenstein, JA Miller, JPCA 106:9267 (2002).
     DH = 44.1
-- equation: c-CH2CHCHCH <=> CH2CHCCH + H  # Reaction 929
+- equation: c-CH2CHCHCH <=> CH2CHCCH + H  # Reaction 926
   rate-constant: {A: 2.26e+40, b: -9.0, Ea: 4.9484e+04}
   note: |
     SJ Klippenstein, JA Miller, JPCA 106:9267 (2002).
     DH = 3.6
-- equation: CH2CHCHCH <=> CH2CHCCH + H  # Reaction 930
+- equation: CH2CHCHCH <=> CH2CHCCH + H  # Reaction 927
   rate-constant: {A: 1.12e+47, b: -10.997, Ea: 4.8397e+04}
   note: |
     SJ Klippenstein, JA Miller, JPCA 106:9267 (2002).
     DH = 40.6
-- equation: CH2CHCHCH2 + H <=> CH2CHCHCH + H2  # Reaction 931
+- equation: CH2CHCHCH2 + H <=> CH2CHCHCH + H2  # Reaction 928
   rate-constant: {A: 3.0e+07, b: 2.0, Ea: 1.3e+04}
   note: |
     SJ Klippenstein, JA Miller, JPCA 106:9267 (2002).
     DH = 33.5
     *** Fuel Radical + Stable
-- equation: CH2CHCHCH2 + HO2 <=> CH2CHCCH2 + H2O2  # Reaction 932
+- equation: CH2CHCHCH2 + HO2 <=> CH2CHCCH2 + H2O2  # Reaction 929
   rate-constant: {A: 1.0e+11, b: 0.0, Ea: 9920.0}
   note: |
     JA Miller - estimate
     DH = 7.3
-- equation: CH2CHCHCH2 + HO2 <=> CH2CHCHCH + H2O2  # Reaction 933
+- equation: CH2CHCHCH2 + HO2 <=> CH2CHCHCH + H2O2  # Reaction 930
   rate-constant: {A: 2.0e+11, b: 0.0, Ea: 1.26e+04}
   note: |
     P Dagaut, M Cathonnet, CST 140:225 (1998).
     DH = 13.9
-- equation: CH2CHCHCH2 + CH3 <=> CH2CHCHCH + CH4  # Reaction 934
+- equation: CH2CHCHCH2 + CH3 <=> CH2CHCHCH + CH4  # Reaction 931
   rate-constant: {A: 2.0e+14, b: 0.0, Ea: 2.28e+04}
   note: |
     P Dagaut, M Cathonnet, CST 140:225 (1998).
     DH = 24.5
-- equation: CH2CHCHCH2 + C2H3 <=> CH2CHCHCH + C2H4  # Reaction 935
+- equation: CH2CHCHCH2 + C2H3 <=> CH2CHCHCH + C2H4  # Reaction 932
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 2.28e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 7.2
-- equation: CH2CHCHCH2 + CH2CCH <=> CH2CHCHCH + CH2CCH2  # Reaction 936
+- equation: CH2CHCHCH2 + CH2CCH <=> CH2CHCHCH + CH2CCH2  # Reaction 933
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2.25e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 1.4
-- equation: CH2CHCHCH2 + CH2CHCH2 <=> CH2CHCCH2 + CH3CHCH2  # Reaction 937
+- equation: CH2CHCHCH2 + CH2CHCH2 <=> CH2CHCCH2 + CH3CHCH2  # Reaction 934
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 1.95e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 21.4
-- equation: CH2CHCHCH2 + CH2CHCH2 <=> CH2CHCHCH + CH3CHCH2  # Reaction 938
+- equation: CH2CHCHCH2 + CH2CHCH2 <=> CH2CHCHCH + CH3CHCH2  # Reaction 935
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 2.25e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 13.7
-- equation: CH2CHCHCH2 + CH2CCH <=> CH2CHCCH2 + CH2CCH2  # Reaction 939
+- equation: CH2CHCHCH2 + CH2CCH <=> CH2CHCCH2 + CH2CCH2  # Reaction 936
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 1.95e+04}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 24.3
-- equation: C2H2 + CH2CHCCH2 <=> H + C6H6  # Reaction 940
+- equation: C2H2 + CH2CHCCH2 <=> H + C6H6  # Reaction 937
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.47e+23, b: -3.28, Ea: 2.4907e+04}
@@ -11948,7 +11933,7 @@ reactions:
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 10.8
-- equation: C2H2 + CH2CHCCH2 <=> H + FULVENE  # Reaction 941
+- equation: C2H2 + CH2CHCCH2 <=> H + FULVENE  # Reaction 938
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 6.5e+24, b: -3.44, Ea: 2.0319e+04}
@@ -11960,7 +11945,7 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: C2H2 + CH2CHCCH2 <=> H + C4H5C2H  # Reaction 942
+- equation: C2H2 + CH2CHCCH2 <=> H + C4H5C2H  # Reaction 939
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.59e+18, b: -1.43, Ea: 3.0341e+04}
@@ -11972,7 +11957,7 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: C2H2 + CH2CHCCH2 <=> H + CHCCH2CHCCH2  # Reaction 943
+- equation: C2H2 + CH2CHCCH2 <=> H + CHCCH2CHCCH2  # Reaction 940
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 6.44e+15, b: -0.52, Ea: 3.8439e+04}
@@ -11984,7 +11969,7 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: C2H2 + CH2CHCHCH <=> H + C6H6  # Reaction 944
+- equation: C2H2 + CH2CHCHCH <=> H + C6H6  # Reaction 941
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.37e+16, b: -1.0, Ea: 4477.0}
@@ -11996,7 +11981,7 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: C2H2 + CH2CHCHCH <=> H + FULVENE  # Reaction 945
+- equation: C2H2 + CH2CHCHCH <=> H + FULVENE  # Reaction 942
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.51e+15, b: -0.76, Ea: 4412.0}
@@ -12008,7 +11993,7 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: C2H2 + CH2CHCHCH <=> H + CH2CHCHCHCCH  # Reaction 946
+- equation: C2H2 + CH2CHCHCH <=> H + CH2CHCHCHCCH  # Reaction 943
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.12e+09, b: 1.39, Ea: 8723.0}
@@ -12020,148 +12005,148 @@ reactions:
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
-- equation: CH2CHCHCH2 + O <=> CH2CHCHCH + OH  # Reaction 947
+- equation: CH2CHCHCH2 + O <=> CH2CHCHCH + OH  # Reaction 944
   rate-constant: {A: 7.5e+06, b: 1.9, Ea: 3740.0}
   note: |
     JP Senosiain, JA Miller, JPCA 111:3740 (2007).
     DH = ??
     *** Fuel Radical + Radical
-- equation: CH3CCCH2 + O2 <=> CH3CO + CH2CO  # Reaction 948
+- equation: CH3CCCH2 + O2 <=> CH3CO + CH2CO  # Reaction 945
   rate-constant: {A: 1.7e+05, b: 1.7, Ea: 1500.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = 8.9
-- equation: CH3CCCH2 + H <=> CH2CHCCH2 + H  # Reaction 949
+- equation: CH3CCCH2 + H <=> CH2CHCCH2 + H  # Reaction 946
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -88.0
-- equation: CH3CCCH2 + OH <=> CH3CO + C2H3  # Reaction 950
+- equation: CH3CCCH2 + OH <=> CH3CO + C2H3  # Reaction 947
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = 2.1
-- equation: CH3CCCH2 + OH <=> CH2O + CH3CCH  # Reaction 951
+- equation: CH3CCCH2 + OH <=> CH2O + CH3CCH  # Reaction 948
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -14.3
-- equation: CH3CCCH2 + HO2 <=> OH + C2H2 + CH3CO  # Reaction 952
+- equation: CH3CCCH2 + HO2 <=> OH + C2H2 + CH3CO  # Reaction 949
   rate-constant: {A: 8.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -64.5
-- equation: CH2CHCHCH + H <=> CH2CHCCH2 + H  # Reaction 953
+- equation: CH2CHCHCH + H <=> CH2CHCCH2 + H  # Reaction 950
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     A Laskin, H Wang, CK Law, IJCK 32:589 (2000).
     DH = -17.2
-- equation: CH2CHCCH2 + O2 <=> CH2CHO + CH2CO  # Reaction 954
+- equation: CH2CHCCH2 + O2 <=> CH2CHO + CH2CO  # Reaction 951
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 1000.0}
   note: |
     JA Miller - estimate
     DH = -10.6
-- equation: CH2CHCCH2 + H <=> CH2CCH + CH3  # Reaction 955
+- equation: CH2CHCCH2 + H <=> CH2CCH + CH3  # Reaction 952
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -97.8
-- equation: CH2CHCCH2 + H <=> C2H2 + C2H4  # Reaction 956
+- equation: CH2CHCCH2 + H <=> C2H2 + C2H4  # Reaction 953
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -9.4
-- equation: CH2CHCCH2 + O <=> C2H3 + CH2CO  # Reaction 957
+- equation: CH2CHCCH2 + O <=> C2H3 + CH2CO  # Reaction 954
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -60.9
-- equation: CH2CHCCH2 + O <=> CH2O + CH2CCH  # Reaction 958
+- equation: CH2CHCCH2 + O <=> CH2O + CH2CCH  # Reaction 955
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -76.3
-- equation: CH2CHCCH2 + OH <=> CH2CHCCH + H2O  # Reaction 959
+- equation: CH2CHCCH2 + OH <=> CH2CHCCH + H2O  # Reaction 956
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -77.9
-- equation: CH2CHCCH2 + OH <=> C2H4 + CH2CO  # Reaction 960
+- equation: CH2CHCCH2 + OH <=> C2H4 + CH2CO  # Reaction 957
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -73.7
-- equation: CH2CHCCH2 + OH <=> CH2O + CH2CCH2  # Reaction 961
+- equation: CH2CHCCH2 + OH <=> CH2O + CH2CCH2  # Reaction 958
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -83.7
-- equation: CH2CHCCH2 + OH <=> CH2OH + CH2CCH  # Reaction 962
+- equation: CH2CHCCH2 + OH <=> CH2OH + CH2CCH  # Reaction 959
   rate-constant: {A: 3.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -65.4
-- equation: CH2CHCHCH2 + O2 <=> CH2CHCCH2 + HO2  # Reaction 963
+- equation: CH2CHCHCH2 + O2 <=> CH2CHCCH2 + HO2  # Reaction 960
   rate-constant: {A: 1.4e+13, b: 0.0, Ea: 5.06e+04}
   note: |
     JA Miller - estimate
     DH = -5.2
-- equation: CH2CHCCH2 + C2H <=> FULVENE  # Reaction 964
+- equation: CH2CHCCH2 + C2H <=> FULVENE  # Reaction 961
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     P Dagaut, M Cathonnet, CST 140:225 (1998).
     DH = 52.0
-- equation: CH2CHCCH2 + C2H <=> C6H5 + H  # Reaction 965
+- equation: CH2CHCCH2 + C2H <=> C6H5 + H  # Reaction 962
   rate-constant: {A: 6.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CHCCH2 + C2H <=> CH2CCH + CH2CCH  # Reaction 966
+- equation: CH2CHCCH2 + C2H <=> CH2CCH + CH2CCH  # Reaction 963
   rate-constant: {A: 4.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CHCCH2 + C2H <=> CH2CHCCH + C2H2  # Reaction 967
+- equation: CH2CHCCH2 + C2H <=> CH2CHCCH + C2H2  # Reaction 964
   rate-constant: {A: 3.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -43.5
-- equation: CH2CHCHCH + O2 <=> CH2CO + CH2CHO  # Reaction 968
+- equation: CH2CHCHCH + O2 <=> CH2CO + CH2CHO  # Reaction 965
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -87.5
-- equation: CH2CHCHCH + H <=> CH2CHCCH + H2  # Reaction 969
+- equation: CH2CHCHCH + H <=> CH2CHCCH + H2  # Reaction 966
   rate-constant: {A: 3.0e+07, b: 2.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -94.0
-- equation: CH2CHCHCH + OH <=> CH2CHCCH + H2O  # Reaction 970
+- equation: CH2CHCHCH + OH <=> CH2CHCCH + H2O  # Reaction 967
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -69.8
-- equation: CH2CHCHCH + OH <=> HCO + CH2CHCH2  # Reaction 971
+- equation: CH2CHCHCH + OH <=> HCO + CH2CHCH2  # Reaction 968
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -84.3
-- equation: CH2CHCHCH + C2H <=> FULVENE  # Reaction 972
+- equation: CH2CHCHCH + C2H <=> FULVENE  # Reaction 969
   rate-constant: {A: 4.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -45.2
-- equation: CH2CHCHCH + C2H <=> C6H5 + H  # Reaction 973
+- equation: CH2CHCHCH + C2H <=> C6H5 + H  # Reaction 970
   rate-constant: {A: 1.6e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CHCHCH + C2H <=> CH2CHCCH + C2H2  # Reaction 974
+- equation: CH2CHCHCH + C2H <=> CH2CHCCH + C2H2  # Reaction 971
   rate-constant: {A: 3.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CCCH + H <=> CH2CHCCH  # Reaction 975
+- equation: CH2CCCH + H <=> CH2CHCCH  # Reaction 972
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 3.77e+52, b: -12.51, Ea: 1.304e+04}
@@ -12186,7 +12171,7 @@ reactions:
     New Radicals Formed: 
     New Fuels: 
     *** Fuel Decomposition
-- equation: CH2CHCCH <=> CH2CCC + H2  # Reaction 976
+- equation: CH2CHCCH <=> CH2CCC + H2  # Reaction 973
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.32e+58, b: -13.86, Ea: 1.165e+05}
@@ -12208,7 +12193,7 @@ reactions:
     fit btw. 600 and 2500 K with MAE of 2.0%, 4.6%
     fit btw. 600 and 2500 K with MAE of 2.6%, 7.3%
     fit btw. 600 and 2500 K with MAE of 1.6%, 3.5%
-- equation: CH2CHCCH <=> CHCCCH + H2  # Reaction 977
+- equation: CH2CHCCH <=> CHCCCH + H2  # Reaction 974
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 5.89e+56, b: -13.27, Ea: 1.11e+05}
@@ -12223,7 +12208,7 @@ reactions:
   - {P: 9.869 atm, A: 2.95e+37, b: -7.01, Ea: 1.069e+05}
   - {P: 98.69 atm, A: 1.5e+34, b: -5.23, Ea: 1.17e+05}
   - {P: 98.69 atm, A: 3.64e+26, b: -3.66, Ea: 1.025e+05}
-- equation: CH2CCCH2 <=> CH2CHCCH  # Reaction 978
+- equation: CH2CCCH2 <=> CH2CHCCH  # Reaction 975
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.42e+64, b: -15.26, Ea: 9.656e+04}
@@ -12238,7 +12223,7 @@ reactions:
   - {P: 9.869 atm, A: 2.88e+58, b: -12.4, Ea: 1.094e+05}
   - {P: 98.69 atm, A: 1.09e+49, b: -9.57, Ea: 1.08e+05}
   - {P: 98.69 atm, A: 7.31e+39, b: -7.95, Ea: 8.981e+04}
-- equation: CH2CCCH2 <=> CH2CCC + H2  # Reaction 979
+- equation: CH2CCCH2 <=> CH2CCC + H2  # Reaction 976
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 3.59e+187, b: -46.33, Ea: 3.285e+05}
@@ -12253,7 +12238,7 @@ reactions:
   - {P: 9.869 atm, A: 2.13e+58, b: -12.36, Ea: 1.217e+05}
   - {P: 98.69 atm, A: 9.55e+48, b: -9.5, Ea: 1.185e+05}
   - {P: 98.69 atm, A: 1.47e+39, b: -7.48, Ea: 1.013e+05}
-- equation: CH2CCCH2 <=> CHCCCH + H2  # Reaction 980
+- equation: CH2CCCH2 <=> CHCCCH + H2  # Reaction 977
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.23e+49, b: -11.36, Ea: 9.484e+04}
@@ -12268,7 +12253,7 @@ reactions:
   - {P: 9.869 atm, A: 1.99e+36, b: -7.15, Ea: 8.994e+04}
   - {P: 98.69 atm, A: 1.35e+37, b: -6.5, Ea: 1.026e+05}
   - {P: 98.69 atm, A: 5.65e+28, b: -4.81, Ea: 8.706e+04}
-- equation: c-(CHCHC)CH2 <=> CH2CHCCH  # Reaction 981
+- equation: c-(CHCHC)CH2 <=> CH2CHCCH  # Reaction 978
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 4.39e+59, b: -13.52, Ea: 8.983e+04}
@@ -12283,7 +12268,7 @@ reactions:
   - {P: 9.869 atm, A: 2.89e+113, b: -31.33, Ea: 7.976e+04}
   - {P: 98.69 atm, A: 5.81e+47, b: -9.59, Ea: 7.172e+04}
   - {P: 98.69 atm, A: 4.45e+23, b: -3.1, Ea: 4.792e+04}
-- equation: c-(CHCHC)CH2 <=> CH2CCCH2  # Reaction 982
+- equation: c-(CHCHC)CH2 <=> CH2CCCH2  # Reaction 979
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.37e+82, b: -19.77, Ea: 1.281e+05}
@@ -12298,7 +12283,7 @@ reactions:
   - {P: 9.869 atm, A: 2.1e+183, b: -53.24, Ea: 1.177e+05}
   - {P: 98.69 atm, A: 1.55e+58, b: -12.46, Ea: 9.058e+04}
   - {P: 98.69 atm, A: 7.94e+29, b: -4.79, Ea: 6.488e+04}
-- equation: c-(CHCHC)CH2 <=> CH2CCC + H2  # Reaction 983
+- equation: c-(CHCHC)CH2 <=> CH2CCC + H2  # Reaction 980
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 7.57e+39, b: -8.19, Ea: 1.05e+05}
@@ -12313,7 +12298,7 @@ reactions:
   - {P: 9.869 atm, A: 3.91e+22, b: -4.84, Ea: 6.984e+04}
   - {P: 98.69 atm, A: 4.04e+40, b: -7.59, Ea: 1.01e+05}
   - {P: 98.69 atm, A: 9.28e+46, b: -10.5, Ea: 9.367e+04}
-- equation: c-(CHCHC)CH2 <=> CHCCCH + H2  # Reaction 984
+- equation: c-(CHCHC)CH2 <=> CHCCCH + H2  # Reaction 981
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 6.94e+45, b: -9.62, Ea: 1.068e+05}
@@ -12328,7 +12313,7 @@ reactions:
   - {P: 9.869 atm, A: 2.44e+133, b: -37.96, Ea: 1.165e+05}
   - {P: 98.69 atm, A: 5.05e+25, b: -3.3, Ea: 8.799e+04}
   - {P: 98.69 atm, A: 7.34e+49, b: -11.69, Ea: 8.885e+04}
-- equation: c-CHCHCHCH <=> CH2CHCCH  # Reaction 985
+- equation: c-CHCHCHCH <=> CH2CHCCH  # Reaction 982
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.3e+10, b: -1.0, Ea: 5.595e+04}
@@ -12343,7 +12328,7 @@ reactions:
   - {P: 9.869 atm, A: 2.43e+43, b: -8.96, Ea: 6.958e+04}
   - {P: 98.69 atm, A: 1.89e+40, b: -7.67, Ea: 7.15e+04}
   - {P: 98.69 atm, A: 1.25e+179, b: -51.57, Ea: 1.176e+05}
-- equation: c-CHCHCHCH <=> CH2CCCH2  # Reaction 986
+- equation: c-CHCHCHCH <=> CH2CCCH2  # Reaction 983
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 5.19e+15, b: -2.77, Ea: 5.988e+04}
@@ -12358,7 +12343,7 @@ reactions:
   - {P: 9.869 atm, A: 4.56e+35, b: -7.1, Ea: 7.628e+04}
   - {P: 98.69 atm, A: 1.84e+40, b: -8.0, Ea: 8.513e+04}
   - {P: 98.69 atm, A: 2.06e+179, b: -52.47, Ea: 1.282e+05}
-- equation: c-CHCHCHCH <=> c-(CHCHC)CH2  # Reaction 987
+- equation: c-CHCHCHCH <=> c-(CHCHC)CH2  # Reaction 984
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.15e+14, b: -3.06, Ea: 5.123e+04}
@@ -12373,7 +12358,7 @@ reactions:
   - {P: 9.869 atm, A: 6.8e+42, b: -9.38, Ea: 7.313e+04}
   - {P: 98.69 atm, A: 5.8e+34, b: -8.86, Ea: 5.754e+04}
   - {P: 98.69 atm, A: 2.27e+45, b: -9.53, Ea: 8.102e+04}
-- equation: c-CHCHCHCH <=> CH2CCC + H2  # Reaction 988
+- equation: c-CHCHCHCH <=> CH2CCC + H2  # Reaction 985
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.2e-03, b: 3.01, Ea: 6.85e+04}
@@ -12388,7 +12373,7 @@ reactions:
   - {P: 9.869 atm, A: 6.49e+19, b: -2.65, Ea: 8.123e+04}
   - {P: 98.69 atm, A: 2.4e+165, b: -39.52, Ea: 3.104e+05}
   - {P: 98.69 atm, A: 6.0e+20, b: -2.66, Ea: 8.658e+04}
-- equation: c-CHCHCHCH <=> CHCCCH + H2  # Reaction 989
+- equation: c-CHCHCHCH <=> CHCCCH + H2  # Reaction 986
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.49e-03, b: 2.7, Ea: 5.778e+04}
@@ -12403,7 +12388,7 @@ reactions:
   - {P: 9.869 atm, A: 3.07e+17, b: -1.79, Ea: 7.27e+04}
   - {P: 98.69 atm, A: 2.04e+159, b: -37.6, Ea: 2.93e+05}
   - {P: 98.69 atm, A: 4.4e+16, b: -1.19, Ea: 7.639e+04}
-- equation: C2H2 + C2H2 <=> CH2CHCCH  # Reaction 990
+- equation: C2H2 + C2H2 <=> CH2CHCCH  # Reaction 987
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.28e+54, b: -12.65, Ea: 6.865e+04}
@@ -12418,7 +12403,7 @@ reactions:
   - {P: 9.869 atm, A: 7.66e+33, b: -5.84, Ea: 6.945e+04}
   - {P: 98.69 atm, A: 6.5e+26, b: -3.75, Ea: 6.772e+04}
   - {P: 98.69 atm, A: 9.56e+11, b: 0.0, Ea: 4.772e+04}
-- equation: C2H2 + C2H2 <=> CH2CCCH2  # Reaction 991
+- equation: C2H2 + C2H2 <=> CH2CCCH2  # Reaction 988
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 3.53e+50, b: -11.91, Ea: 6.762e+04}
@@ -12433,7 +12418,7 @@ reactions:
   - {P: 9.869 atm, A: 1.53e+34, b: -7.0, Ea: 6.973e+04}
   - {P: 98.69 atm, A: 2.7e+32, b: -5.5, Ea: 8.567e+04}
   - {P: 98.69 atm, A: 1.09e+23, b: -3.8, Ea: 6.821e+04}
-- equation: C2H2 + C2H2 <=> c-(CHCHC)CH2  # Reaction 992
+- equation: C2H2 + C2H2 <=> c-(CHCHC)CH2  # Reaction 989
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.27e+60, b: -13.88, Ea: 1.04e+05}
@@ -12448,7 +12433,7 @@ reactions:
   - {P: 9.869 atm, A: 7.9e+11, b: -0.35, Ea: 5.388e+04}
   - {P: 98.69 atm, A: 6.41e+52, b: -13.59, Ea: 6.763e+04}
   - {P: 98.69 atm, A: 1.97e+17, b: -1.68, Ea: 6.28e+04}
-- equation: C2H2 + C2H2 <=> c-CHCHCHCH  # Reaction 993
+- equation: C2H2 + C2H2 <=> c-CHCHCHCH  # Reaction 990
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 9.01e+31, b: -6.85, Ea: 5.727e+04}
@@ -12463,7 +12448,7 @@ reactions:
   - {P: 9.869 atm, A: 8.5e+39, b: -8.35, Ea: 5.517e+04}
   - {P: 98.69 atm, A: 1.25e+29, b: -4.98, Ea: 5.128e+04}
   - {P: 98.69 atm, A: 1.19e+97, b: -26.79, Ea: 7.08e+04}
-- equation: C2H2 + C2H2 <=> CH2CCC + H2  # Reaction 994
+- equation: C2H2 + C2H2 <=> CH2CCC + H2  # Reaction 991
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 4.91e+47, b: -10.53, Ea: 8.497e+04}
@@ -12478,7 +12463,7 @@ reactions:
   - {P: 9.869 atm, A: 4.32e+33, b: -6.74, Ea: 8.33e+04}
   - {P: 98.69 atm, A: 4.48e+33, b: -5.81, Ea: 1.012e+05}
   - {P: 98.69 atm, A: 2.8e+23, b: -3.86, Ea: 8.343e+04}
-- equation: C2H2 + C2H2 <=> CHCCCH + H2  # Reaction 995
+- equation: C2H2 + C2H2 <=> CHCCCH + H2  # Reaction 992
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 6.12e+30, b: -4.93, Ea: 8.121e+04}
@@ -12493,7 +12478,7 @@ reactions:
   - {P: 9.869 atm, A: 1.63e+20, b: -2.54, Ea: 7.049e+04}
   - {P: 98.69 atm, A: 7.44e+19, b: -1.59, Ea: 8.529e+04}
   - {P: 98.69 atm, A: 1.16e+11, b: 0.0, Ea: 6.753e+04}
-- equation: C2H2 + CH2C <=> CH2CHCCH  # Reaction 996
+- equation: C2H2 + CH2C <=> CH2CHCCH  # Reaction 993
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.84e+54, b: -12.74, Ea: 2.596e+04}
@@ -12508,7 +12493,7 @@ reactions:
   - {P: 9.869 atm, A: 7.06e+38, b: -7.38, Ea: 2.89e+04}
   - {P: 98.69 atm, A: 1.93e+23, b: -3.56, Ea: 1.335e+04}
   - {P: 98.69 atm, A: 6.62e+32, b: -5.55, Ea: 2.895e+04}
-- equation: C2H2 + CH2C <=> CH2CCCH2  # Reaction 997
+- equation: C2H2 + CH2C <=> CH2CCCH2  # Reaction 994
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 5.8e+49, b: -11.69, Ea: 2.395e+04}
@@ -12523,7 +12508,7 @@ reactions:
   - {P: 9.869 atm, A: 6.63e+37, b: -8.01, Ea: 2.175e+04}
   - {P: 98.69 atm, A: 1.47e+40, b: -7.69, Ea: 3.799e+04}
   - {P: 98.69 atm, A: 5.37e+30, b: -5.91, Ea: 2.07e+04}
-- equation: C2H2 + CH2C <=> c-(CHCHC)CH2  # Reaction 998
+- equation: C2H2 + CH2C <=> c-(CHCHC)CH2  # Reaction 995
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 8.89e+55, b: -12.76, Ea: 5.664e+04}
@@ -12538,7 +12523,7 @@ reactions:
   - {P: 9.869 atm, A: 1.58e+32, b: -6.23, Ea: 1.302e+04}
   - {P: 98.69 atm, A: 3.71e+33, b: -6.21, Ea: 1.827e+04}
   - {P: 98.69 atm, A: 5.91e+74, b: -19.73, Ea: 2.696e+04}
-- equation: C2H2 + CH2C <=> c-CHCHCHCH  # Reaction 999
+- equation: C2H2 + CH2C <=> c-CHCHCHCH  # Reaction 996
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.58e-05, b: 2.53, Ea: 4328.0}
@@ -12553,7 +12538,7 @@ reactions:
   - {P: 9.869 atm, A: 1.8e+22, b: -4.16, Ea: 2.319e+04}
   - {P: 98.69 atm, A: 3.35e+168, b: -40.98, Ea: 2.565e+05}
   - {P: 98.69 atm, A: 1.45e+25, b: -4.6, Ea: 3.003e+04}
-- equation: C2H2 + CH2C <=> C2H2 + C2H2  # Reaction 1000
+- equation: C2H2 + CH2C <=> C2H2 + C2H2  # Reaction 997
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 8.33e-03, b: -5.93, Ea: -6.895e+04}
@@ -12568,7 +12553,7 @@ reactions:
   - {P: 9.869 atm, A: 1.33e+26, b: -4.65, Ea: 2.58e+04}
   - {P: 98.69 atm, A: 1.32e+21, b: -2.43, Ea: 3.775e+04}
   - {P: 98.69 atm, A: 3.11e+12, b: -0.7, Ea: 2.325e+04}
-- equation: C2H2 + CH2C <=> CH2CCC + H2  # Reaction 1001
+- equation: C2H2 + CH2C <=> CH2CCC + H2  # Reaction 998
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 8.69e+161, b: -38.82, Ea: 2.441e+05}
@@ -12583,7 +12568,7 @@ reactions:
   - {P: 9.869 atm, A: 2.36e+12, b: -0.27, Ea: 2.666e+04}
   - {P: 98.69 atm, A: 2.48e+27, b: -4.01, Ea: 4.749e+04}
   - {P: 98.69 atm, A: 8.78e+17, b: -2.11, Ea: 3.21e+04}
-- equation: C2H2 + CH2C <=> CHCCCH + H2  # Reaction 1002
+- equation: C2H2 + CH2C <=> CHCCCH + H2  # Reaction 999
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 1.2e+14, b: -0.46, Ea: 2.196e+04}
@@ -12598,8 +12583,7 @@ reactions:
   - {P: 9.869 atm, A: 9.32e+14, b: -1.03, Ea: 2.521e+04}
   - {P: 98.69 atm, A: 1.16e+14, b: -0.05, Ea: 3.893e+04}
   - {P: 98.69 atm, A: 3.86e+05, b: 1.67, Ea: 2.449e+04}
-- equation: CH2CCCH + H <=> c-(CHCHC)CH2  # Reaction 1003
-  duplicate: true
+- equation: CH2CCCH + H <=> c-(CHCHC)CH2  # Reaction 1000
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 3.77e+52, b: -12.51, Ea: 1.304e+04}
@@ -12614,7 +12598,19 @@ reactions:
   - {P: 9.869 atm, A: 5.86e+38, b: -7.84, Ea: 1.064e+04}
   - {P: 98.69 atm, A: 1.32e+47, b: -9.2, Ea: 3.383e+04}
   - {P: 98.69 atm, A: 1.27e+20, b: -2.08, Ea: 3352.0}
-- equation: CH2CCCH + H <=> CH2CCCH2  # Reaction 1004
+  - {P: 0.0009869 atm, A: 4.54e+30, b: -6.01, Ea: 2.139e+04}
+  - {P: 0.0009869 atm, A: 2.61e+44, b: -10.96, Ea: 9592.0}
+  - {P: 0.009869 atm, A: 6.93e+43, b: -9.3, Ea: 3.486e+04}
+  - {P: 0.009869 atm, A: 7.06e+42, b: -9.98, Ea: 1.115e+04}
+  - {P: 0.09869 atm, A: 2.57e+64, b: -14.44, Ea: 6.249e+04}
+  - {P: 0.09869 atm, A: 9.38e+36, b: -7.83, Ea: 1.142e+04}
+  - {P: 0.9869 atm, A: 1.52e+26, b: -3.95, Ea: 2.976e+04}
+  - {P: 0.9869 atm, A: 1.19e+26, b: -4.42, Ea: 7390.0}
+  - {P: 9.869 atm, A: 8.1e-05, b: -4.12, Ea: -7.115e+04}
+  - {P: 9.869 atm, A: 1.08e+25, b: -3.91, Ea: 7963.0}
+  - {P: 98.69 atm, A: 1.26e+34, b: -6.18, Ea: 1.86e+04}
+  - {P: 98.69 atm, A: 6.06e+70, b: -18.39, Ea: 2.476e+04}
+- equation: CH2CCCH + H <=> CH2CCCH2  # Reaction 1001
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.45e+164, b: -40.68, Ea: 2.031e+05}
@@ -12629,23 +12625,7 @@ reactions:
   - {P: 9.869 atm, A: 7.54e+47, b: -10.46, Ea: 1.318e+04}
   - {P: 98.69 atm, A: 8.39e+47, b: -9.52, Ea: 2.591e+04}
   - {P: 98.69 atm, A: 3.93e+39, b: -7.87, Ea: 1.02e+04}
-- equation: CH2CCCH + H <=> c-(CHCHC)CH2  # Reaction 1005
-  duplicate: true
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.0009869 atm, A: 4.54e+30, b: -6.01, Ea: 2.139e+04}
-  - {P: 0.0009869 atm, A: 2.61e+44, b: -10.96, Ea: 9592.0}
-  - {P: 0.009869 atm, A: 6.93e+43, b: -9.3, Ea: 3.486e+04}
-  - {P: 0.009869 atm, A: 7.06e+42, b: -9.98, Ea: 1.115e+04}
-  - {P: 0.09869 atm, A: 2.57e+64, b: -14.44, Ea: 6.249e+04}
-  - {P: 0.09869 atm, A: 9.38e+36, b: -7.83, Ea: 1.142e+04}
-  - {P: 0.9869 atm, A: 1.52e+26, b: -3.95, Ea: 2.976e+04}
-  - {P: 0.9869 atm, A: 1.19e+26, b: -4.42, Ea: 7390.0}
-  - {P: 9.869 atm, A: 8.1e-05, b: -4.12, Ea: -7.115e+04}
-  - {P: 9.869 atm, A: 1.08e+25, b: -3.91, Ea: 7963.0}
-  - {P: 98.69 atm, A: 1.26e+34, b: -6.18, Ea: 1.86e+04}
-  - {P: 98.69 atm, A: 6.06e+70, b: -18.39, Ea: 2.476e+04}
-- equation: CH2CCCH + H <=> c-CHCHCHCH  # Reaction 1006
+- equation: CH2CCCH + H <=> c-CHCHCHCH  # Reaction 1002
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 7.56e+13, b: -3.21, Ea: 3247.0}
@@ -12660,7 +12640,7 @@ reactions:
   - {P: 9.869 atm, A: 1.11e+12, b: -1.08, Ea: 5283.0}
   - {P: 98.69 atm, A: 2.55e+155, b: -37.45, Ea: 2.239e+05}
   - {P: 98.69 atm, A: 4.05e+12, b: -0.95, Ea: 8932.0}
-- equation: CH2CCCH + H <=> C2H2 + C2H2  # Reaction 1007
+- equation: CH2CCCH + H <=> C2H2 + C2H2  # Reaction 1003
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 8.83e+52, b: -10.86, Ea: 5.908e+04}
@@ -12675,7 +12655,7 @@ reactions:
   - {P: 9.869 atm, A: 1.52e+40, b: -7.52, Ea: 3.256e+04}
   - {P: 98.69 atm, A: 5.19e+27, b: -3.97, Ea: 2.942e+04}
   - {P: 98.69 atm, A: 1.22e+19, b: -2.48, Ea: 1.142e+04}
-- equation: CH2CCCH + H <=> C2H2 + CH2C  # Reaction 1008
+- equation: CH2CCCH + H <=> C2H2 + CH2C  # Reaction 1004
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.31e-04, b: 4.42, Ea: -1.209e+04}
@@ -12690,7 +12670,7 @@ reactions:
   - {P: 9.869 atm, A: 1.27e+36, b: -6.09, Ea: 2.593e+04}
   - {P: 98.69 atm, A: 1.45e+33, b: -5.17, Ea: 2.966e+04}
   - {P: 98.69 atm, A: 9.48e+23, b: -3.28, Ea: 1.512e+04}
-- equation: CH2CCCH + H <=> CH2CCC + H2  # Reaction 1009
+- equation: CH2CCCH + H <=> CH2CCC + H2  # Reaction 1005
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 2.11e+14, b: -0.36, Ea: 5281.0}
@@ -12705,7 +12685,7 @@ reactions:
   - {P: 9.869 atm, A: 2.06e+84, b: -22.44, Ea: 3.487e+04}
   - {P: 98.69 atm, A: 2.88e+18, b: -1.84, Ea: 1.344e+04}
   - {P: 98.69 atm, A: 2.73e+29, b: -4.2, Ea: 2.958e+04}
-- equation: CH2CCCH + H <=> CHCCCH + H2  # Reaction 1010
+- equation: CH2CCCH + H <=> CHCCCH + H2  # Reaction 1006
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0009869 atm, A: 4.01e+49, b: -9.48, Ea: 6.347e+04}
@@ -12720,38 +12700,38 @@ reactions:
   - {P: 9.869 atm, A: 4.5e+12, b: -0.04, Ea: 7451.0}
   - {P: 98.69 atm, A: 1.31e+16, b: -0.49, Ea: 2.051e+04}
   - {P: 98.69 atm, A: 5.67e+07, b: 1.23, Ea: 6348.0}
-- equation: CH2CHCCH + H <=> CH2CCCH + H2  # Reaction 1011
+- equation: CH2CHCCH + H <=> CH2CCCH + H2  # Reaction 1007
   rate-constant: {A: 3.0e+07, b: 2.0, Ea: 5000.0}
   note: |
     Zádor, Fellows, Miller: Initiation Reactions in Acetylene Pyrolysis
     Journal of Physical Chemistry A
     *** Fuel + Radical
-- equation: CH2CHCCH + OH <=> CHCHCCH + H2O  # Reaction 1012
+- equation: CH2CHCCH + OH <=> CHCHCCH + H2O  # Reaction 1008
   rate-constant: {A: 7.5e+06, b: 2.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -3.9
-- equation: CH2CHCCH + OH <=> CH2CCCH + H2O  # Reaction 1013
+- equation: CH2CHCCH + OH <=> CH2CCCH + H2O  # Reaction 1009
   rate-constant: {A: 1.0e+07, b: 2.0, Ea: 2000.0}
   note: |
     JA Miller - estimate
     DH = -6.0
-- equation: CH2CHCCH + OH <=> HCCO + C2H4  # Reaction 1014
+- equation: CH2CHCCH + OH <=> HCCO + C2H4  # Reaction 1010
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 4000.0}
   note: |
     JA Miller - estimate
     DH = -18.3
-- equation: CH2CHCCH + OH <=> CH2O + CH2CCH  # Reaction 1015
+- equation: CH2CHCCH + OH <=> CH2O + CH2CCH  # Reaction 1011
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -23.1
-- equation: CH2CHCCH + CH2 <=> C5H5 + H  # Reaction 1016
+- equation: CH2CHCCH + CH2 <=> C5H5 + H  # Reaction 1012
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -20.4
-- equation: CHCCCH + H (+M) <=> CH2CCCH (+M)  # Reaction 1017
+- equation: CHCCCH + H (+M) <=> CH2CCCH (+M)  # Reaction 1013
   type: falloff
   low-P-rate-constant: {A: 2.3e+45, b: -8.095, Ea: 2507.0}
   high-P-rate-constant: {A: 4.31e+10, b: 1.158, Ea: 1753.0}
@@ -12761,7 +12741,7 @@ reactions:
     JA Miller, SJ Klippenstein - estimate
     DH = ??
     *** Fuel Radical Decomposition
-- equation: CHCCCH + H <=> CHCHCCH  # Reaction 1018
+- equation: CHCCCH + H <=> CHCHCCH  # Reaction 1014
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0263 atm, A: 1.44e+63, b: -15.66, Ea: 2.4018e+04}
@@ -12777,109 +12757,109 @@ reactions:
   note: |
     SJ Klippenstein, JA Miller, JPCA, 109:4285 (2005).
     DH = -42.6
-- equation: CH2CHCCH + H <=> CHCHCCH + H2  # Reaction 1019
+- equation: CH2CHCCH + H <=> CHCHCCH + H2  # Reaction 1015
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 1.5e+04}
   note: |
     SJ Klippenstein, JA Miller, JPCA, 109:4285 (2005).
     DH = -30.3
     *** Fuel Radical + Stable
-- equation: CHCHCCH + C2H2 <=> C6H5  # Reaction 1020
+- equation: CHCHCCH + C2H2 <=> C6H5  # Reaction 1016
   rate-constant: {A: 1.67e+10, b: 0.446, Ea: 7719.0}
   note: |
     JA Miller - estimate
     DH = 8.5
-- equation: CH2CCCH + O2 <=> CH2CO + HCCO  # Reaction 1021
+- equation: CH2CCCH + O2 <=> CH2CO + HCCO  # Reaction 1017
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 0.0}
   note: |
     CJ Pope, JA Miller, PCI 28:1519 (2000).
     DH = ??
     *** Fuel Radical + Radical
-- equation: CH2CCCH + O <=> CH2CO + C2H  # Reaction 1022
+- equation: CH2CCCH + O <=> CH2CO + C2H  # Reaction 1018
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -87.0
-- equation: CH2CCCH + O <=> H2C4O + H  # Reaction 1023
+- equation: CH2CCCH + O <=> H2C4O + H  # Reaction 1019
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -53.9
-- equation: CH2CCCH + OH <=> CHCCCH + H2O  # Reaction 1024
+- equation: CH2CCCH + OH <=> CHCCCH + H2O  # Reaction 1020
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -72.1
-- equation: CH2CCCH + CH3 <=> C5H5(L) + H  # Reaction 1025
+- equation: CH2CCCH + CH3 <=> C5H5(L) + H  # Reaction 1021
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -75.2
-- equation: CH2CCCH + CH2 <=> CH2CCH2 + C2H  # Reaction 1026
+- equation: CH2CCCH + CH2 <=> CH2CCH2 + C2H  # Reaction 1022
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 0.0}
   note: |
     SJ Klippenstein, JA Miller, JPCA, 109:4285 (2005).
     DH = ??
-- equation: CH2CCCH + C2H3 <=> FULVENE  # Reaction 1027
+- equation: CH2CCCH + C2H3 <=> FULVENE  # Reaction 1023
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -30.4
-- equation: CH2CCCH + C2H3 <=> C6H5 + H  # Reaction 1028
+- equation: CH2CCCH + C2H3 <=> C6H5 + H  # Reaction 1024
   rate-constant: {A: 6.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CCCH + C2H3 <=> CH2CCH + CH2CCH  # Reaction 1029
+- equation: CH2CCCH + C2H3 <=> CH2CCH + CH2CCH  # Reaction 1025
   rate-constant: {A: 4.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CH2CCCH + C2H3 <=> CHCCCH + C2H4  # Reaction 1030
+- equation: CH2CCCH + C2H3 <=> CHCCCH + C2H4  # Reaction 1026
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -21.2
-- equation: CH2CCCH + C2H3 <=> CH2CHCCH + C2H2  # Reaction 1031
+- equation: CH2CCCH + C2H3 <=> CH2CHCCH + C2H2  # Reaction 1027
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -66.6
-- equation: H + CHCHCCH <=> CH2CCCH + H  # Reaction 1032
+- equation: H + CHCHCCH <=> CH2CCCH + H  # Reaction 1028
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -65.1
-- equation: H + CHCHCCH <=> C2H2 + C2H2  # Reaction 1033
+- equation: H + CHCHCCH <=> C2H2 + C2H2  # Reaction 1029
   rate-constant: {A: 5.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -12.4
-- equation: CHCHCCH + CH3 <=> C5H5 + H  # Reaction 1034
+- equation: CHCHCCH + CH3 <=> C5H5 + H  # Reaction 1030
   rate-constant: {A: 3.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -73.3
-- equation: CHCHCCH + C2H3 <=> FULVENE  # Reaction 1035
+- equation: CHCHCCH + C2H3 <=> FULVENE  # Reaction 1031
   rate-constant: {A: 4.0e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = ??
-- equation: CHCHCCH + C2H3 <=> C6H5 + H  # Reaction 1036
+- equation: CHCHCCH + C2H3 <=> C6H5 + H  # Reaction 1032
   rate-constant: {A: 1.6e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CHCHCCH + C2H3 <=> CHCCCH + C2H4  # Reaction 1037
+- equation: CHCHCCH + C2H3 <=> CHCCCH + C2H4  # Reaction 1033
   rate-constant: {A: 1.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: CHCHCCH + C2H3 <=> CH2CHCCH + C2H2  # Reaction 1038
+- equation: CHCHCCH + C2H3 <=> CH2CHCCH + C2H2  # Reaction 1034
   rate-constant: {A: 2.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = -78.9
-- equation: CHCCCH + OH <=> CO + CH2CCH  # Reaction 1039
+- equation: CHCCCH + OH <=> CO + CH2CCH  # Reaction 1035
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 2.58e+19, b: -2.44, Ea: 3034.0}
@@ -12898,7 +12878,7 @@ reactions:
     New Radicals Formed: 
     New Fuels: 
     *** Fuel + Radical
-- equation: CHCCCH + OH <=> H + H2C4O  # Reaction 1040
+- equation: CHCCCH + OH <=> H + H2C4O  # Reaction 1036
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 1.63e+15, b: -1.13, Ea: 2549.0}
@@ -12910,7 +12890,7 @@ reactions:
   note: |
     JP Senosiain, SJ Klippenstein, JA Miller, PCI 31:185 (2007).
     DH = -61.1
-- equation: CHCCCH + OH <=> H + OCCHCCH  # Reaction 1041
+- equation: CHCCCH + OH <=> H + OCCHCCH  # Reaction 1037
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.01 atm, A: 5.37e+07, b: 1.29, Ea: 8866.0}
@@ -12922,55 +12902,55 @@ reactions:
   note: |
     JP Senosiain, SJ Klippenstein, JA Miller, PCI 31:185 (2007).
     DH = -13.0
-- equation: CH2 + CHCCCH <=> H2CCCCCH + H  # Reaction 1042
+- equation: CH2 + CHCCCH <=> H2CCCCCH + H  # Reaction 1038
   rate-constant: {A: 1.3e+13, b: 0.0, Ea: 4326.0}
   note: |
     JP Senosiain, SJ Klippenstein, JA Miller, PCI 31:185 (2007).
     DH = -17.2
-- equation: CHCCCH + O <=> CHCCH + CO  # Reaction 1043
+- equation: CHCCCH + O <=> CHCCH + CO  # Reaction 1039
   rate-constant: {A: 1.2e+12, b: 0.0, Ea: 0.0}
   note: |
     T Bohland, F Temps, HGg Wagner, PCI 21:841 (1986).
     DH = -15.4
-- equation: CH2(S) + CHCCCH <=> H2CCCCCH + H  # Reaction 1044
+- equation: CH2(S) + CHCCCH <=> H2CCCCCH + H  # Reaction 1040
   rate-constant: {A: 2.54e+16, b: -0.9, Ea: 0.0}
   note: |
     JA Miller, RE Mitchell, MD Smookte, RJ Kee, PCI 19:181 (1982).
     JA Miller - estimate
     DH = -66.4
-- equation: CH2(S) + CHCCCH <=> HCCCHCCH + H  # Reaction 1045
+- equation: CH2(S) + CHCCCH <=> HCCCHCCH + H  # Reaction 1041
   rate-constant: {A: 2.54e+16, b: -0.9, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -24.5
-- equation: CH + CHCCCH <=> C5H2 + H  # Reaction 1046
+- equation: CH + CHCCCH <=> C5H2 + H  # Reaction 1042
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller, SJ Klippenstein - estimate
     DH = -22.4
-- equation: CHCCCH + C2H <=> C6H2 + H  # Reaction 1047
+- equation: CHCCCH + C2H <=> C6H2 + H  # Reaction 1043
   rate-constant: {A: 4.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -25.8
-- equation: CHCCCH + OH <=> H2O + C4H  # Reaction 1048
+- equation: CHCCCH + OH <=> H2O + C4H  # Reaction 1044
   rate-constant: {A: 9.15e+09, b: 1.03, Ea: 2.1746e+04}
   note: |
     JA Miller - estimate
     DH = ??
     *** Fuel Radical + Stable
-- equation: C4H + H2 <=> CHCCCH + H  # Reaction 1049
+- equation: C4H + H2 <=> CHCCCH + H  # Reaction 1045
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 5000.0}
   note: |
     JP Senosiain, SJ Klippenstein, JA Miller, PCI 31:185 (2007).
     DH = 16.2
-- equation: C4H + O2 <=> CO + CO + C2H  # Reaction 1050
+- equation: C4H + O2 <=> CO + CO + C2H  # Reaction 1046
   rate-constant: {A: 1.2e+12, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -30.6
     *** Fuel Radical + Radical
-- equation: H2C4O + OH <=> C2H2 + CO + HCO  # Reaction 1051
+- equation: H2C4O + OH <=> C2H2 + CO + HCO  # Reaction 1047
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
@@ -12981,7 +12961,7 @@ reactions:
     Fuel Radicals: 
     New Radicals Formed: 
     New Fuels: 
-- equation: CH2CCH + CH2CCH <=> HCCCHCCH + CH3  # Reaction 1052
+- equation: CH2CCH + CH2CCH <=> HCCCHCCH + CH3  # Reaction 1048
   rate-constant: {A: 5.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
@@ -12991,12 +12971,12 @@ reactions:
     *****************************************************************************
     Fuel Radicals: C5H3
     New Radicals Formed: 
-- equation: CHCCH + C2H2 <=> HCCCHCCH + H  # Reaction 1053
+- equation: CHCCH + C2H2 <=> HCCCHCCH + H  # Reaction 1049
   rate-constant: {A: 5.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = 4.6
-- equation: C5H6 + O2 <=> C5H5 + HO2  # Reaction 1054
+- equation: C5H6 + O2 <=> C5H5 + HO2  # Reaction 1050
   rate-constant: {A: 2.0e+13, b: 0.0, Ea: 2.5e+04}
   note: |
     JA Miller - estimate
@@ -13007,44 +12987,44 @@ reactions:
     Fuel Radicals: C5H5
     New Radicals Formed: C5H5(L)
     *** Fuel + Radical
-- equation: H + C5H6 <=> CH2CHCH2 + C2H2  # Reaction 1055
+- equation: H + C5H6 <=> CH2CHCH2 + C2H2  # Reaction 1051
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 1.2e+04}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H6 + H <=> C5H5 + H2  # Reaction 1056
+- equation: C5H6 + H <=> C5H5 + H2  # Reaction 1052
   rate-constant: {A: 2.19e+08, b: 1.8, Ea: 3000.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H6 + O <=> C5H5 + OH  # Reaction 1057
+- equation: C5H6 + O <=> C5H5 + OH  # Reaction 1053
   rate-constant: {A: 1.81e+13, b: 0.0, Ea: 3080.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H6 + OH <=> C5H5 + H2O  # Reaction 1058
+- equation: C5H6 + OH <=> C5H5 + H2O  # Reaction 1054
   rate-constant: {A: 3.43e+09, b: 1.2, Ea: -447.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H6 + HO2 <=> C5H5 + H2O2  # Reaction 1059
+- equation: C5H6 + HO2 <=> C5H5 + H2O2  # Reaction 1055
   rate-constant: {A: 1.99e+12, b: 0.0, Ea: 1.166e+04}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H5 <=> C5H5(L)  # Reaction 1060
+- equation: C5H5 <=> C5H5(L)  # Reaction 1056
   rate-constant: {A: 4.09e+47, b: -10.4, Ea: 5.4874e+04}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
     *** Fuel Radical Decomposition
-- equation: C5H5 + H <=> C5H6  # Reaction 1061
+- equation: C5H5 + H <=> C5H6  # Reaction 1057
   rate-constant: {A: 2.92e+29, b: -4.7, Ea: 6148.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
@@ -13052,23 +13032,23 @@ reactions:
     DH = ??
     *** Fuel Radical + Stable
     *** Fuel Radical + Radical
-- equation: C5H4 + H2 <=> C5H5 + H  # Reaction 1062
+- equation: C5H4 + H2 <=> C5H5 + H  # Reaction 1058
   rate-constant: {A: 3.0e+07, b: 2.0, Ea: 7000.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C5H4 + H2O <=> C5H5 + OH  # Reaction 1063
+- equation: C5H4 + H2O <=> C5H5 + OH  # Reaction 1059
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C5H5 + O <=> CH2CHCHCH + CO  # Reaction 1064
+- equation: C5H5 + O <=> CH2CHCHCH + CO  # Reaction 1060
   rate-constant: {A: 1.0e+14, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: H2CCCCCH + H <=> C5H2 + H2  # Reaction 1065
+- equation: H2CCCCCH + H <=> C5H2 + H2  # Reaction 1061
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
@@ -13080,51 +13060,51 @@ reactions:
     Fuel Radicals: H2CCCCCH
     New Radicals Formed: 
     New Fuels: 
-- equation: H2CCCCCH + CH3 <=> FULVENE  # Reaction 1066
+- equation: H2CCCCCH + CH3 <=> FULVENE  # Reaction 1062
   rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
-- equation: H2CCCCCH + CH3 <=> C6H5 + H  # Reaction 1067
+- equation: H2CCCCCH + CH3 <=> C6H5 + H  # Reaction 1063
   rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: H2CCCCCH + CH3 <=> C6H6  # Reaction 1068
+- equation: H2CCCCCH + CH3 <=> C6H6  # Reaction 1064
   rate-constant: {A: 5.0e+10, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: H2CCCCCH + CH3 <=> C5H2 + CH4  # Reaction 1069
+- equation: H2CCCCCH + CH3 <=> C5H2 + CH4  # Reaction 1065
   rate-constant: {A: 3.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: HCCCHCCH + H <=> C5H2 + H2  # Reaction 1070
+- equation: HCCCHCCH + H <=> C5H2 + H2  # Reaction 1066
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -13.9
-- equation: HCCCHCCH + H <=> H2CCCCCH + H  # Reaction 1071
+- equation: HCCCHCCH + H <=> H2CCCCCH + H  # Reaction 1067
   rate-constant: {A: 1.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -15.9
-- equation: HCCCHCCH + CH3 <=> FULVENE  # Reaction 1072
+- equation: HCCCHCCH + CH3 <=> FULVENE  # Reaction 1068
   rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = -2.1
-- equation: HCCCHCCH + CH3 <=> C6H5 + H  # Reaction 1073
+- equation: HCCCHCCH + CH3 <=> C6H5 + H  # Reaction 1069
   rate-constant: {A: 1.0e+11, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: HCCCHCCH + CH3 <=> C5H2 + CH4  # Reaction 1074
+- equation: HCCCHCCH + CH3 <=> C5H2 + CH4  # Reaction 1070
   rate-constant: {A: 3.0e+12, b: 0.0, Ea: 5000.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C6H5 + H2 <=> C6H6 + H  # Reaction 1075
+- equation: C6H5 + H2 <=> C6H6 + H  # Reaction 1071
   rate-constant: {A: 5.71e+04, b: 2.43, Ea: 6277.0}
   note: |
     JA Miller - estimate
@@ -13137,27 +13117,27 @@ reactions:
     New Fuels: 
     *** Fuel Decomposition
     *** Fuel + Radical
-- equation: C6H6 + O <=> C6H5 + OH  # Reaction 1076
+- equation: C6H6 + O <=> C6H5 + OH  # Reaction 1072
   rate-constant: {A: 2.4e+13, b: 0.0, Ea: 4700.0}
   note: |
     AM Mebel, MC Lin, T Yu, K Morokuma, JPCA 101:3189 (1997).
     DH = ??
-- equation: C6H6 + OH <=> C6H5 + H2O  # Reaction 1077
+- equation: C6H6 + OH <=> C6H5 + H2O  # Reaction 1073
   rate-constant: {A: 403.0, b: 3.33, Ea: 1455.0}
   note: |
     T Ko, GY Adusei, A Fontijn, JPC 95:8745 (1991).
     DH = ??
-- equation: C6H5 + CH4 <=> CH3 + C6H6  # Reaction 1078
+- equation: C6H5 + CH4 <=> CH3 + C6H6  # Reaction 1074
   rate-constant: {A: 3.89e-03, b: 4.57, Ea: 5256.0}
   note: |
     IV Tokmakov, MC Lin, JPCA 106:11309 (2002).
     DH = ??
-- equation: CH2(S) + C6H6 <=> C6H5 + CH3  # Reaction 1079
+- equation: CH2(S) + C6H6 <=> C6H5 + CH3  # Reaction 1075
   rate-constant: {A: 1.7e+14, b: 0.0, Ea: 0.0}
   note: |
     IV Tokmakov, J Park, S Gheyas, MC Lin, JPCA 103:3636 (1999)
     DH = ??
-- equation: C6H5 (+M) <=> C6H4 + H (+M)  # Reaction 1080
+- equation: C6H5 (+M) <=> C6H4 + H (+M)  # Reaction 1076
   type: falloff
   low-P-rate-constant: {A: 1.0e+84, b: -18.87, Ea: 9.0091e+04}
   high-P-rate-constant: {A: 4.3e+12, b: 0.62, Ea: 7.7294e+04}
@@ -13167,24 +13147,24 @@ reactions:
     W Hack, M Koch, HGg Wagner, A Wilms,  BBPC 92:674 (1988)
     DH = ??
     *** Fuel Radical Decomposition
-- equation: H + C6H5 <=> C6H4 + H2  # Reaction 1081
+- equation: H + C6H5 <=> C6H4 + H2  # Reaction 1077
   rate-constant: {A: 2.0e+07, b: 2.0, Ea: 1000.0}
   note: |
     H Wang, A Laskin, NW Moriarty, M Frenklach, PCI 28:1545 (2000).
     DH = ??
     *** Fuel Radical + Stable
-- equation: C6H5 + O <=> C5H5 + CO  # Reaction 1082
+- equation: C6H5 + O <=> C5H5 + CO  # Reaction 1078
   rate-constant: {A: 9.0e+13, b: 0.0, Ea: 0.0}
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C6H5 + OH <=> C6H4 + H2O  # Reaction 1083
+- equation: C6H5 + OH <=> C6H4 + H2O  # Reaction 1079
   rate-constant: {A: 1.0e+07, b: 2.0, Ea: 1000.0}
   note: |
     NM Marinov, WJ Pitz, CK Westbrook, AE Lutz, AM Vincitore, SM Senkan, PCI 27:905 (1998).
     H Richter, WJ Grieco, JB Howard, CF 119:1 (1999).
     DH = ??
-- equation: C4H5C2H <=> FULVENE  # Reaction 1084
+- equation: C4H5C2H <=> FULVENE  # Reaction 1080
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 5.75e+76, b: -18.67, Ea: 9.5531e+04}
@@ -13193,7 +13173,7 @@ reactions:
   note: |
     CJ Pope - estimate
     DH = ??
-- equation: C4H5C2H <=> C6H6  # Reaction 1085
+- equation: C4H5C2H <=> C6H6  # Reaction 1081
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 6.76e+98, b: -24.58, Ea: 1.2231e+05}
@@ -13202,7 +13182,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C4H5C2H <=> C6H5 + H  # Reaction 1086
+- equation: C4H5C2H <=> C6H5 + H  # Reaction 1082
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 2.69e+84, b: -20.14, Ea: 1.219e+05}
@@ -13211,7 +13191,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = ??
-- equation: FULVENE <=> C6H6  # Reaction 1087
+- equation: FULVENE <=> C6H6  # Reaction 1083
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 5.62e+81, b: -19.36, Ea: 1.215e+05}
@@ -13220,7 +13200,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = ??
-- equation: FULVENE <=> C6H5 + H  # Reaction 1088
+- equation: FULVENE <=> C6H5 + H  # Reaction 1084
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 2.57e+97, b: -23.16, Ea: 1.5347e+05}
@@ -13229,7 +13209,7 @@ reactions:
   note: |
     JA Miller - estimate
     DH = ??
-- equation: C6H6 <=> C6H5 + H  # Reaction 1089
+- equation: C6H6 <=> C6H5 + H  # Reaction 1085
   type: pressure-dependent-Arrhenius
   rate-constants:
   - {P: 0.0395 atm, A: 1.35e+108, b: -25.81, Ea: 1.8175e+05}

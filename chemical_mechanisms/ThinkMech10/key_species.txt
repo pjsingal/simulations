@@ -1,0 +1,165 @@
+CH3             	! MW =  15,	methyl radical
+CH4             	! MW =  16,	methane
+C2H4            	! MW =  28,	ethene
+C2H5            	! MW =  29,	ethyl radical
+C2H6            	! MW =  30,	ethane
+CH3CCH2         	! MW =  41,	propen-2-yl (1-methyl-vinyl) radical
+CH3CHCH         	! MW =  41,	propen-1-yl (2-methyl-vinyl) radical
+c-CH2CHCH2         	! MW =  41,     cyclo-propyl
+c-CHCH2CH       	! MW =  40,	cyclopropene
+CH3CHCH2        	! MW =  42,	propene
+c-CH2CH2CH2         ! MW  = 42,     cyclopropane
+CH3CH2CH2       	! MW =  43,	n-propyl radical
+CH3CHCH3        	! MW =  43,	isopropyl radical
+C3H8            	! MW =  44,	propane
+
+
+
+
+
+ALL SPECIES
+SPECIES
+!------------------------
+AR
+KR
+HE
+N2
+H               	! MW =   1,	H atom 
+H2			        ! MW =   2,	Hydrogen molecule
+C               	! MW =  12,	C 
+CH              	! MW =  13,	CH radical 
+CH2             	! MW =  14,	CH2 triplet 
+CH2(S)          	! MW =  14,	CH2 singlet
+CH3             	! MW =  15,	methyl radical
+O               	! MW =  15,	O
+CH4             	! MW =  16,	methane
+OH              	! MW =  17,	hydroxyl radical
+H2O			        ! MW =  18, 	water
+C2              	! MW =  24,	C2 singlet
+C2H             	! MW =  25,	ethynyl radical
+C2H2            	! MW =  26,	acetylene ethyne
+CH2C            	! MW =  26,	vinylidene singlet
+C2H3            	! MW =  27,	vinyl radical
+CO              	! MW =  28,	carbon monoxide
+C2H4            	! MW =  28,	ethene
+HCO             	! MW =  29,	formyl radical
+C2H5            	! MW =  29,	ethyl radical
+CHOH            	! MW =  30,	hydroxymethylene singlet
+CHOH(T)			    ! MW =  30,     hydorxymethylene triplet
+CH2O            	! MW =  30,	formaldehyde
+C2H6            	! MW =  30,	ethane
+CH3O            	! MW =  31,	methoxy radical
+CH2OH           	! MW =  31,	hydroxymethyl radical
+O2              	! MW =  31,	Oxygen molecule
+CH3OH           	! MW =  32,	methanol
+HO2             	! MW =  33,	hydroperoxyl radical
+H2O2            	! MW =  34,	hydrogen-peroxide
+C3H             	! MW =  37,	C3H radical
+CH2CC           	! MW =  38,	propadienylidene singlet
+CHCCH(S)        	! MW =  38,	HCCCH singlet
+CHCCH           	! MW =  38,	propynylidene triplet
+c-CHCCH         	! MW =  38,	cyclo C3H2 singlet
+CH2CCH          	! MW =  39,	propargyl radical
+CCO             	! MW =  40,	dicarbon monoxide triplet
+c-CHCH2CH       	! MW =  40,	cyclopropene
+CH2CCH2         	! MW =  40,	allene
+CH3CCH          	! MW =  40,	propyne
+HCCO            	! MW =  41,	ketenyl radical
+CH2CHCH2        	! MW =  41,	allyl radical
+CH3CCH2         	! MW =  41,	propen-2-yl (1-methyl-vinyl) radical
+CH3CHCH         	! MW =  41,	propen-1-yl (2-methyl-vinyl) radical
+c-CH2CHCH2         	! MW =  41,     cyclo-propyl
+CHCOH           	! MW =  42,	ethynol
+CH2CO           	! MW =  42,	ketene
+CHCHO               ! MW =  42,     3CHCHO
+CH3CHCH2        	! MW =  42,	propene
+c-CH2CH2CH2         ! MW  = 42,     cyclopropane
+CH3CO           	! MW =  43,	acetyl radical
+CH2CHO          	! MW =  43,	vinoxy radical
+CHCHOH          	! MW =  43,	2-hydroxy-vinyl radical
+CH3CH2CH2       	! MW =  43,	n-propyl radical
+CH3CHCH3        	! MW =  43,	isopropyl radical
+CO2             	! MW =  44,	carbon dioxide
+CH3CHO          	! MW =  44,	acetaldehyde
+CH2CHOH         	! MW =  44,	ethenol vinyl alcohol
+c-CH2CH2O       	! MW =  44,	oxirane, ethylene-oxide
+C3H8            	! MW =  44,	propane
+OCOH            	! MW =  45,	hydroxycarbonyl radical
+CH3CH2O         	! MW =  45,	ethoxy radical
+CH2CH2OH        	! MW =  45,	2-hydroxy-ethyl radical
+CH3CHOH         	! MW =  45,	1-hydroxy-ethyl radical
+CH3CH2OH        	! MW =  46,	ethanol
+OCHOH               ! MW =  46,     formic acid
+CH3OO           	! MW =  47,	methylperoxy radical
+CH3OOH          	! MW =  48,	methyl-hydroperoxide
+C4H             	! MW =  49,	C4H radical
+CHCCCH          	! MW =  50,	1,3-butadiyne
+CH2CCC
+CHCHCCH         	! MW =  51,	but-3-yn-1-en-1-yl radical
+CH2CCCH         	! MW =  51,	but-1-yn-3-en-3-yl radical
+CH2CHCCH        	! MW =  52,	1-buten-3-yne
+CH2CCCH2
+c-(CHCHC)CH2
+c-CHCHCHCH
+CH2CHCCH2       	! MW =  53,	1,3-butadien-2-yl radical
+CH3CCCH2        	! MW =  53,	2-butyn-1-yl radical
+c-CH2CHCHCH     	! MW =  53,	cyclobutenyl radical
+CH2CHCHCH       	! MW =  53,	1,3-butadien-1-yl radical
+CH3CCCH3        	! MW =  54,	2-butyne
+CH2CHCHCH2      	! MW =  54,	1,3-butadiene
+CH2CCHCH3       	! MW =  54,	1,2-butadiene
+CH2CHCHO        	! MW =  56,	acrolein
+CH3CHCO             ! MW =  56,     methyl ketene
+CH2CHCH2O       	! MW =  57,	allyloxy radical
+CH2OCHCH2       	! MW =  57,	vinoxyl-methyl radical
+CH3CH2CO		    ! MW =  57,     propionaldehyde radical
+CH3C(O)CH2          ! MW =  57,     dimethyl ether radical
+CH3CHCHO            ! MW =  57,
+CH2CHCHOH           ! MW =  57,
+CH3CCHOH            ! MW =  57,
+CH2CCH2OH           ! MW =  57,
+CH3C(OH)CH          ! MW =  57, 
+CH2CH2CHO       	! MW =  57,	2-formyl-ethyl radical
+OCCHO               ! MW =  57,
+OCHCHO          	! MW =  58,	glyoxal
+CH3CH2CHO       	! MW =  58,	propanal (propaldehyde)
+CH3C(O)CH3      	! MW =  58,	acetone
+c-CH2OCH(CH3)   	! MW =  58,	propylene-oxide
+CH3C(OH)CH2     	! MW =  58,	propen-2-ol
+CH3CHCHOH       	! MW =  58,	propen-1-ol
+CH2CHCH2OH      	! MW =  58,	allyl-alcohol
+CH2CHOO             ! MW =  59,     vinylperoxy radical
+CH2OCHO         	! MW =  59,	formyloxyl-methyl radical
+CH3OCO          	! MW =  59,	methoxyl-formyl radical
+CH3CHCH2OH      	! MW =  59,	1-methyl-2-hydroxy-ethyl radical
+CH2CH2CH2OH     	! MW =  59,	3-hydroperoxy-propyl radical
+CH3CH2CH2O      	! MW =  59,	n-propyloxy radical
+CH3CH(O)CH3     	! MW =  59,	isopropyloxy radical
+CH3CH2CHOH      	! MW =  59,	1-hydroxy-propyl radical
+CH3CH(OH)CH2    	! MW =  59,	2-hydroxyl-propyl radical
+CH3C(OH)CH3     	! MW =  59,	1-methyl-1-hydroxyl-ethyl radical
+CH3C(O)O            ! MW =  59,     acetyl radical
+CH3OCHO         	! MW =  60,	methyl-formate
+CH3CH2OO        	! MW =  61,	ethylperoxy radical
+CH2CH2OOH           ! MW =  61,     2-hydroperoxyethyl radical
+OCHCH2CH2O      	! MW =  73,	2-formyl-ethoxy radical
+c-CH2OCH(CH2O)  	! MW =  73,	oxiranylmethoxy radical
+CH3CH(O)CHO     	! MW =  73,	1-formyl-ethoxy radical
+CH3C(O)CH2O     	! MW =  73,	acetyl-methoxy radical
+CH3CHCHOOH      	! MW =  74,	propen-1-hydroperoxide
+CH3C(OOH)CH2    	! MW =  74,	propen-2-hydroperoxide
+CH2CHCH2OOH     	! MW =  74,	allyl-hydroperoxide
+CH2CH2CH2OOH    	! MW =  75,	3-hydroperoxyl-1-propyl radical
+CH3CHCH2OOH     	! MW =  75,	3-hydroperoxyl-2-propyl radical
+CH3CH2CH2OO     	! MW =  75,	n-propylperoxy radical
+CH3CH(OOH)CH2   	! MW =  75,	2-methyl-2-hydroperoxyl-ethyl radical
+CH3CH(OO)CH3    	! MW =  75,	isopropylperoxy radical
+OHCH2CH2OO      	! MW =  77,	2-hydroxyl-ethyl-peroxy radical
+OCHCH2CH2OOH    	! MW =  90,	2-formyl-ethyl-hydroperoxide
+CH3C(O)CH2OOH   	! MW =  90,	acetyl-methyl-hydroperoxide
+c-CH2OCH(CH2OOH)	! MW =  90,	oxiranyl-methyl-hydroperoxide
+CH3CH(OOH)CHO   	! MW =  90,	1-formyl-ethyl-hydroperoxide
+CH3CH(OO)CH2OOH 	! MW = 107,	1-methyl-2-hydroperoxy-ethylperoxy radical
+CH3CH(OOH)CH2OO 	! MW = 107,	2-hydroperoxy-propylperoxy radical
+OHOCH2CH2CH2OO  	! MW = 107,	3-hydroperoxy-propylperoxy radical
+CH2CH(OOH)CH2OOH	! MW = 107,	2,3-dihydroperoxy-prop-1-yl radical

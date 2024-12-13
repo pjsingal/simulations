@@ -140,14 +140,14 @@ date='Dec12'
 # --figwidth 2.5 --figheight 5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 5.5 --gridsz 25 --date $date
 
-python USSCI/simulateFR_Rasmussen.py \
---figwidth 2.5 --figheight 5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
+# python USSCI/simulateFR_Rasmussen.py \
+# --figwidth 2.5 --figheight 5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
 # python USSCI/simulateResidenceTime_Gubbi_multiModel.py \
 # --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
 
-# python USSCI/simulateFlameSpeed_ThinkMech10.py \
-# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
+python USSCI/simulateFlameSpeed_ThinkMech10.py \
+--figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
