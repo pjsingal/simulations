@@ -3503,29 +3503,55 @@ reactions:
   note: |
     DL Baulch, CT Bowman, CJ Cobos, RA Cox, T Just, et al., JPCRD 34:757 (2005).
     DH = -103.3 
-- equation: H + O2 <=> HO2  # Reaction 4
-  type: pressure-dependent-Arrhenius
-  rate-constants:
-  - {P: 0.01316 atm, A: 9.3997e+14, b: -2.1435, Ea: 77.273}
-  - {P: 0.1316 atm, A: 1.0725e+16, b: -2.16, Ea: 130.239}
-  - {P: 0.3947 atm, A: 3.1783e+16, b: -2.1581, Ea: 166.994}
-  - {P: 1.0 atm, A: 7.7259e+16, b: -2.152, Ea: 213.473}
-  - {P: 3.0 atm, A: 2.1169e+17, b: -2.1406, Ea: 279.031}
-  - {P: 10.0 atm, A: 6.5309e+17, b: -2.1321, Ea: 387.493}
-  - {P: 30.0 atm, A: 1.4978e+18, b: -2.1003, Ea: 487.579}
-  - {P: 100.0 atm, A: 3.8222e+18, b: -2.0706, Ea: 665.984}
-  note: |2
-     W Tsang, RF Hampson JPCRD 15:1087 (1986). 
-     DH = -118.1
-     *** Fuel + Radical 
-    H+O2(+M)=HO2(+M)                            1.31E+12    0.572    -203  
-      LOW /  7.20E+20     -1.730     536/	
-      TROE / 9.00E-01      1.000E-30     2300/	
-        AR/0.50/ H2O/14.00/ CO2/2.00/ H2/3.00/ CH4/3.00/ C2H6/3.00/ C3H8/3.00/ C2H4/3.00/ C2H2/3.00/ CH3CHCH2/3.00/ CH3CCH/3.00/
-     SR Sellevag, Y Georgievskii, JA Miller, JPCA 112:5085 (2008).
-     Replaced constant Fc with temperature dependent form.
-     DH = -48.1 
-    Subbed in by PSingal from Klippenstein-2017 Fig. 4
+- equation: H + O2 <=> HO2 #PSingal. Written in this format so that effs can be applied to a PLOG
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.01316 atm, A: 939970000000000.0, b: -2.1435, Ea: 77.273}
+    - {P: 0.1316 atm, A: 1.0725e+16, b: -2.16, Ea: 130.239}
+    - {P: 0.3947 atm, A: 3.1783e+16, b: -2.1581, Ea: 166.994}
+    - {P: 1.0 atm, A: 7.7259e+16, b: -2.152, Ea: 213.473}
+    - {P: 3.0 atm, A: 2.1169e+17, b: -2.1406, Ea: 279.031}
+    - {P: 10.0 atm, A: 6.5309e+17, b: -2.1321, Ea: 387.493}
+    - {P: 30.0 atm, A: 1.4978e+18, b: -2.1003, Ea: 487.579}
+    - {P: 100.0 atm, A: 3.8222e+18, b: -2.0706, Ea: 665.984}
+  - name: AR
+    efficiency: {A: 0.5, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: H2O
+    efficiency: {A: 14.0, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: CO2
+    efficiency: {A: 2, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: H2
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: CH4
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: C2H6
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: C3H8
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: C2H4
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: C2H2
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: CH3CHCH2
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+  - name: CH3CCH
+    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    note: present work
+
 - equation: H + O + M <=> OH + M  # Reaction 5
   type: three-body
   rate-constant: {A: 4.7e+18, b: -1.0, Ea: 0.0}

@@ -1,0 +1,511 @@
+generator: YamlWriter
+cantera-version: 3.1.0a4
+git-commit: 5487d032c
+date: Mon Dec 16 21:23:51 2024
+phases:
+  - name: reducedThink
+    thermo: ideal-gas
+    elements: [Ar, Kr, He, N, H, O]
+    species: [AR, KR, HE, N2, H, H2, O, OH, H2O, O2, HO2, H2O2]
+    kinetics: bulk
+    skip-undeclared-third-bodies: true
+    transport: mixture-averaged
+    state:
+      T: 1.0e-03
+      density: 1.0e-03
+      Y: {AR: 1.0}
+species:
+  - name: AR
+    composition: {Ar: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [300.0, 5000.0, 5000.0]
+      data:
+        - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.366]
+        - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 4.366]
+      note: '120186'
+    transport:
+      model: gas
+      geometry: atom
+      diameter: 3.462
+      well-depth: 127.697
+      polarizability: 1.609
+      rotational-relaxation: 2.0
+  - name: KR
+    composition: {Kr: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 5.49095651]
+        - [2.50001436, -2.78190281e-08, 1.74071629e-11, -4.31400304e-15,
+        3.66743374e-19, -745.380247, 5.49087778]
+      note: REF Elements  g 8/97
+    transport:
+      model: gas
+      geometry: atom
+      diameter: 3.462
+      well-depth: 127.697
+      polarizability: 1.609
+      rotational-relaxation: 2.0
+      note: phony
+  - name: HE
+    composition: {He: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [300.0, 1000.0, 5000.0]
+      data:
+        - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.9153488]
+        - [2.5, 0.0, 0.0, 0.0, 0.0, -745.375, 0.9153489]
+      note: '120186'
+    transport:
+      model: gas
+      geometry: atom
+      diameter: 2.715
+      well-depth: 11.442
+      polarizability: 0.204
+      rotational-relaxation: 2.0
+  - name: N2
+    composition: {N: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [300.0, 1000.0, 5000.0]
+      data:
+        - [3.298677, 1.4082404e-03, -3.963222e-06, 5.641515e-09, -2.444854e-12,
+        -1020.8999, 3.950372]
+        - [2.92664, 1.4879768e-03, -5.68476e-07, 1.0097038e-10, -6.753351e-15,
+        -922.7977, 5.980528]
+      note: '121286'
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 3.44
+      well-depth: 158.27
+      polarizability: 1.756
+      rotational-relaxation: 4.0
+  - name: H
+    composition: {H: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [2.49975925, 6.73824499e-07, 1.11807261e-09, -3.70192126e-12,
+        2.14233822e-15, 2.54737665e+04, -0.445574009]
+        - [2.49985211, 2.34582548e-07, -1.16171641e-10, 2.25708298e-14,
+        -1.52992005e-18, 2.54738024e+04, -0.445864645]
+      note: |
+        ATcT  
+        ------------------------------------------------------------------------------
+         All HxOy species taken from ATcT Branko 2/2015
+         H <g> ATcT ver. 1.122, DHf298 = 217.998 ± 0.000 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: atom
+      diameter: 1.7
+      well-depth: 334.852
+      polarizability: 0.666
+    note: " MW =   1,\tH atom "
+  - name: H2
+    composition: {H: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [2.37694204, 7.73916922e-03, -1.88735073e-05, 1.95517114e-08,
+        -7.17095663e-12, -921.173081, 0.547184736]
+        - [2.90207649, 8.68992581e-04, -1.6586443e-07, 1.90851899e-11,
+        -9.31121789e-16, -797.948726, -0.84559132]
+      note: |
+        ATcT  
+         H2 <g> ATcT ver. 1.122, DHf298 = 0.000 ± 0.000 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 2.36
+      well-depth: 188.354
+      polarizability: 0.775
+      rotational-relaxation: 280.0
+    note: " MW =   2,\tHydrogen molecule"
+  - name: O
+    composition: {O: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [3.15906526, -3.21509999e-03, 6.49255543e-06, -5.98755115e-09,
+        2.06876117e-12, 2.91298453e+04, 2.09078344]
+        - [2.5635554, -6.96013118e-05, 2.84669076e-08, -5.00880169e-12,
+        3.18531252e-16, 2.92253549e+04, 4.8138953]
+      note: |
+        ATcT  
+         O <g, triplet> ATcT ver. 1.122, DHf298 = 249.229 ± 0.002 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: atom
+      diameter: 2.655
+      well-depth: 145.697
+      polarizability: 0.744
+    note: " MW =  15,\tO"
+  - name: OH
+    composition: {H: 1.0, O: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [3.97585165, -2.28555291e-03, 4.33442882e-06, -3.5992664e-09,
+        1.2670693e-12, 3393.41137, -0.0355397262]
+        - [2.84581721, 1.09723818e-03, -2.89121101e-07, 4.0909991e-11,
+        -2.31382258e-15, 3717.0661, 5.80339915]
+      note: |
+        ATcT  
+         OH <g> ATcT ver. 1.122, DHf298 = 37.490 ± 0.026 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 2.752
+      well-depth: 318.115
+      dipole: 1.635
+      polarizability: 1.077
+    note: " MW =  17,\thydroxyl radical"
+  - name: H2O
+    composition: {H: 2.0, O: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [4.20147551, -2.05583546e-03, 6.56547207e-06, -5.5290696e-09,
+        1.78282605e-12, -3.02951268e+04, -0.860610906]
+        - [2.73117512, 2.95136995e-03, -8.35359785e-07, 1.26088593e-10,
+        -8.40531676e-15, -2.99170285e+04, 6.55183]
+      note: |
+        ATcT  
+         H2O <g> ATcT ver. 1.122, DHf298 = -241.834 ± 0.026 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: nonlinear
+      diameter: 3.113
+      well-depth: 393.816
+      dipole: 1.851
+      polarizability: 1.407
+      rotational-relaxation: 4.0
+    note: " MW =  18, \twater"
+  - name: O2
+    composition: {O: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [3.78446324, -3.01443921e-03, 9.89939387e-06, -9.74638732e-09,
+        3.27154648e-12, -1064.09971, 3.64978147]
+        - [3.48049505, 1.04091268e-03, -3.8872698e-07, 6.58742056e-11,
+        -3.97789397e-15, -1156.39435, 4.38635511]
+      note: |
+        ATcT  
+         O2 <g, triplet> ATcT ver. 1.122, DHf298 = 0.000 ± 0.000 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 3.239
+      well-depth: 418.153
+      polarizability: 1.487
+      rotational-relaxation: 3.8
+    note: " MW =  31,\tOxygen molecule"
+  - name: HO2
+    composition: {H: 1.0, O: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [4.2625125, -4.45642032e-03, 2.05164934e-05, -2.35794011e-08,
+        9.05614257e-12, 262.442356, 3.88223684]
+        - [4.1056401, 2.04046836e-03, -3.65877562e-07, 1.85973044e-11,
+        4.98818315e-16, 43.2898769, 3.30808126]
+      note: |
+        ATcT  
+         HO2 <g> ATcT ver. 1.122, DHf298 = 12.26 ± 0.16 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: nonlinear
+      diameter: 3.299
+      well-depth: 595.311
+      dipole: 2.146
+      polarizability: 1.959
+      rotational-relaxation: 3.8
+    note: " MW =  33,\thydroperoxyl radical"
+  - name: H2O2
+    composition: {H: 2.0, O: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [4.2385416, -2.49610911e-04, 1.59857901e-05, -2.06919945e-08,
+        8.2976632e-12, -1.76486003e+04, 3.58850097]
+        - [4.5401748, 4.15970971e-03, -1.30876777e-06, 2.00823615e-10,
+        -1.15509243e-14, -1.79514029e+04, 0.855881745]
+      note: |
+        ATcT  
+         H2O2 <g> ATcT ver. 1.122, DHf298 = -135.457 ± 0.062 kJ/mol - fit FEB15
+    transport:
+      model: gas
+      geometry: nonlinear
+      diameter: 3.349
+      well-depth: 841.437
+      dipole: 1.702
+      polarizability: 2.239
+      rotational-relaxation: 3.8
+    note: " MW =  34,\thydrogen-peroxide"
+reactions:
+  - equation: 2 H + M <=> H2 + M
+    type: three-body
+    rate-constant: {A: 6.52e+11, b: -1.0, Ea: 0.0}
+    efficiencies: {CO2: 3.0, H2: 0.0, H2O: 14.0, O2: 0.0}
+    note: |
+      default units are cm, mole, sec, K, and cal/mole
+      DH = Delta H_0(0 K) for the reaction in kcal/mol - for the direction written - when 
+      positive they are placed according to the type of reaction for the reverse reaction.
+      *****************************************************************************
+         H2 subset                                                                *
+         O2 subset                                                                *
+      *****************************************************************************
+      Fuel Radicals: H, O
+      New Radicals Formed: HO2, OH
+      New Fuels: H2O
+      *** Fuel Decomposition
+  - equation: 2 H + H2 <=> H2 + H2
+    rate-constant: {A: 1.01e+11, b: -0.6, Ea: 0.0}
+  - equation: 2 O + M <=> O2 + M
+    type: three-body
+    rate-constant: {A: 1.89e+07, b: 0.0, Ea: -7.480992e+06}
+    efficiencies: {CO: 2.0, CO2: 3.0, H2: 2.0, H2O: 5.0}
+    note: |
+      DL Baulch, CT Bowman, CJ Cobos, RA Cox, T Just, et al., JPCRD 34:757 (2005).
+      DH = -103.3
+  - equation: H + O2 (+M) <=> HO2 (+M)
+    type: linear-Burke
+    colliders:
+      - name: M
+        type: falloff
+        low-P-rate-constant: {A: 7.2e+14, b: -1.73, Ea: 2.242624e+06}
+        high-P-rate-constant: {A: 1.31e+09, b: 0.572, Ea: -8.49352e+05}
+        Troe: {A: 0.9, T3: 1.0e-30, T1: 2300.0}
+      - name: HE
+        efficiency: {A: 0.33760072, b: 0.18256786, Ea: 1.5163141653272e+05}
+      - name: N2
+        efficiency: {A: 124.93183838, b: -0.59326267, Ea: 2.263214442512081e+06}
+      - name: H2
+        efficiency: {A: 3.137170907565e+04, b: -1.25419464, Ea: 4.7247445958768e+06}
+      - name: CO2
+        efficiency: {A: 1.624126802582870e+08, b: -2.27621756, Ea: 8.243454660205920e+06}
+      - name: H2O
+        efficiency: {A: 36.91455865, b: -0.07129016, Ea: 1.3350590469352e+05}
+      - name: AR
+        efficiency: {A: 1.0, b: 0.0, Ea: 0.0}
+      - name: CO2
+        efficiency: {A: 4.0, b: 0.0, Ea: 0.0}
+      - name: CH4
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: C2H6
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: C3H8
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: C2H4
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: C2H2
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: CH3CHCH2
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+      - name: CH3CCH
+        efficiency: {A: 6.0, b: 0.0, Ea: 0.0}
+    reference-collider: AR
+  - equation: H + O + M <=> OH + M
+    type: three-body
+    rate-constant: {A: 4.7e+12, b: -1.0, Ea: 0.0}
+    efficiencies: {H2O: 5.0, O2: 0.0}
+    note: |
+      SR Sellevag, Y Georgievskii, JA Miller, JPCA 112:5085 (2008).
+      Replaced constant Fc with temperature dependent form.
+      DH = -48.1 
+      *** Fuel Radical + Radical
+  - equation: H2 + O <=> H + OH
+    rate-constant: {A: 50.6, b: 2.67, Ea: 2.631736e+07}
+    note: |
+      W Tsang, RF Hampson JPCRD 15:1087 (1986). 
+      DH = -101.7
+  - equation: 2 H + O2 <=> H2 + O2
+    rate-constant: {A: 8.8e+16, b: -1.835, Ea: 3.3472e+06}
+    note: |
+      JW Sutherland, JV Michael, AN Pirraglia, FL Nesbitt, RB Klemm, PCI 21:929 (1986).
+      $$ Baulch 2005
+      DH = 1.6
+      *** Chemically Termolecular
+  - equation: 2 H + O2 <=> 2 OH
+    rate-constant: {A: 4.0e+16, b: -1.835, Ea: 3.3472e+06}
+    note: |
+      MP Burke, SJ Klippenstein, NC 9:1078 (2017).
+      DH = -103.3
+  - equation: H + O + O2 <=> OH + O2
+    rate-constant: {A: 7.35e+16, b: -1.835, Ea: 3.3472e+06}
+    note: |
+      MP Burke, SJ Klippenstein, NC 9:1078 (2017).
+      DH = -85.3
+  - equation: H + OH (+M) <=> H2O (+M)
+    type: linear-Burke
+    colliders:
+      - name: M
+        type: falloff
+        low-P-rate-constant: {A: 4.53e+15, b: -1.81, Ea: 2.087816e+06}
+        high-P-rate-constant: {A: 2.51e+10, b: 0.234, Ea: -4.76976e+05}
+        Troe: {A: 0.73, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+      - name: AR
+        efficiency: {A: 0.02206208, b: 0.47403597, Ea: -4.734117903548e+05}
+      - name: H2O
+        efficiency: {A: 0.10452866, b: 0.55078681, Ea: -9.7351207042152e+05}
+      - name: H2O
+        efficiency: {A: 10.0, b: 0.0, Ea: 0.0}
+      - name: CO2
+        efficiency: {A: 2.0, b: 0.0, Ea: 0.0}
+    reference-collider: N2
+  - equation: H2 + OH <=> H + H2O
+    rate-constant: {A: 2.14e+05, b: 1.52, Ea: 1.4430616e+07}
+    note: |
+      SR Sellevag, Y Georgievskii, JA Miller, JPCA 112:5085 (2008). 
+      DH = -117.8
+      *** Fuel + Radical
+      H2O + H is endothermic
+      H2O + O is endothermic
+      H2O + OH is an identity
+      H2O + O2 is endothermic
+      *** Fuel Radical Decomposition
+      Included in H2/O2 submechanism
+      *** Fuel Radical + Stable
+  - equation: O + OH <=> H + O2
+    rate-constant: {A: 2.63e+15, b: -1.783, Ea: 3.57732e+06}
+    duplicate: true
+    note: |
+      JV Michael, PECS 18:327 (1992).
+      DH = -14.5
+      *** Fuel Radical + Radical
+      O2 + OH is endothermic
+  - equation: O + OH <=> H + O2
+    rate-constant: {A: 1.61e+15, b: -1.36, Ea: 3.6241808e+07}
+    duplicate: true
+  - equation: 2 OH (+M) <=> H2O2 (+M)
+    type: linear-Burke
+    colliders:
+      - name: M
+        type: falloff
+        low-P-rate-constant: {A: 5.68e+19, b: -3.358, Ea: 2.409984e+06}
+        high-P-rate-constant: {A: 5.03e+09, b: 0.058, Ea: -2.652656e+06}
+        Troe: {A: 0.55, T3: 1.0e-30, T1: 1.0e+30, T2: 1.0e+30}
+      - name: N2
+        efficiency: {A: 1.14813005, b: 0.04600896, Ea: -1.223454125936e+04}
+      - name: CO2
+        efficiency: {A: 89.88391622, b: -0.42797367, Ea: 1.009985942015040e+06}
+      - name: H2O2
+        efficiency: {A: 0.64529544, b: 0.42626591, Ea: 1.7946496579184e+05}
+      - name: H2O
+        efficiency: {A: 1.36377291, b: 0.30659152, Ea: 8.7896895064056e+05}
+      - name: HE
+        efficiency: {A: 0.22766022, b: 0.19992445, Ea: 2.0927860949408e+05}
+      - name: H2
+        efficiency: {A: 4.29127763, b: -0.09640595, Ea: 2.0922610380864e+05}
+      - name: CO
+        efficiency: {A: 2.50843065, b: 0.01466739, Ea: 2.0922419992128e+05}
+      - name: CH4
+        efficiency: {A: 162.68535619, b: -0.48171025, Ea: 1.214699457392e+04}
+      - name: HE
+        efficiency: {A: 0.4, b: 0.0, Ea: 0.0}
+      - name: CO2
+        efficiency: {A: 3.0, b: 0.0, Ea: 0.0}
+    reference-collider: AR
+  - equation: 2 OH <=> H2O + O
+    rate-constant: {A: 2.83e+10, b: -0.764, Ea: -1.92464e+06}
+    duplicate: true
+    note: |
+      SR Sellevag, Y Georgievskii, JA Miller, JPCA 113:4457 (2009).
+      DH = -48.9
+  - equation: 2 OH <=> H2O + O
+    rate-constant: {A: 12.6, b: 2.531, Ea: -6.786448e+06}
+    duplicate: true
+  - equation: H + OH + O2 <=> H2O + O2
+    rate-constant: {A: 2.56e+16, b: -1.835, Ea: 3.3472e+06}
+    note: |
+      MP Burke, SJ Klippenstein, LB Harding, PCI 34:547 (2013).
+      DH = -16.1
+      *** Chemically Termolecular
+  - equation: H + H2O2 <=> H2O + OH
+    rate-constant: {A: 3.35e+04, b: 1.91, Ea: 1.5288336e+07}
+    note: |
+      MP Burke, SJ Klippenstein, NC 9:1078 (2017).
+      DH = -117.8
+      *****************************************************************************
+         H2O2 subset                                                              *
+      *****************************************************************************
+      Fuel Radicals: HO2
+      New Radicals Formed: None
+      New Fuels: None
+      *** Fuel Decomposition
+      Included in H2O submechanism
+      *** Fuel + Radical
+      H2O2 + O2 is endothermic
+  - equation: H + H2O2 <=> H2 + HO2
+    rate-constant: {A: 0.044, b: 3.45, Ea: 2.979008e+06}
+    note: |
+      SJK, unpublished (2021).
+      DH = -69.9
+  - equation: H2O2 + O <=> HO2 + OH
+    rate-constant: {A: 9600.0, b: 2.0, Ea: 1.661048e+07}
+    note: |
+      SJK, unpublished (2021).
+      DH = -17.2
+  - equation: H2O2 + OH <=> H2O + HO2
+    rate-constant: {A: 1.51e+11, b: -1.055, Ea: -3.184024e+06}
+    duplicate: true
+    note: |
+      DH = -15.6
+      W Tsang, RF Hampson JPCRD 15:1087 (1986).
+  - equation: H2O2 + OH <=> H2O + HO2
+    rate-constant: {A: 2.1, b: 2.957, Ea: -5.681872e+06}
+    duplicate: true
+  - equation: H + HO2 <=> H2 + O2
+    rate-constant: {A: 1.12e+04, b: 1.941, Ea: -2.69868e+06}
+    note: |
+      MP Burke, SJ Klippenstein, LB Harding, PCI 34:547 (2013).
+      DH = -31.7 
+      *** Fuel Radical Decomposition
+      Included in H2/O2 submechanism
+      *** Fuel Radical + Stable
+      Nothing New
+      *** Fuel Radical + Radical
+      HO2 + O2 is identity or endothermic to O3 + OH
+  - equation: H + HO2 <=> 2 OH
+    rate-constant: {A: 6.67e+09, b: 0.295, Ea: -5.27184e+05}
+    note: |
+      SJK 7/2011 fit by Mike Burke
+      DH = -55.2
+  - equation: HO2 + O <=> O2 + OH
+    rate-constant: {A: 2.85e+07, b: 1.0, Ea: -3.029216e+06}
+    note: |
+      SJK unpublished by Mike Burke
+      DH = -37.2
+  - equation: HO2 + OH <=> H2O + O2
+    rate-constant: {A: 1.93e+17, b: -2.488, Ea: 2.439272e+06}
+    duplicate: true
+    note: |
+      A Fernandez-Ramos, AJC Varandas, JPCA 106:4077-4083 (2002)
+      Scaled by 0.60 to match experimental data at low T's
+      $$ Hong et al. (2013)
+      DH = -53.6
+  - equation: HO2 + OH <=> H2O + O2
+    rate-constant: {A: 1.21e+06, b: 1.239, Ea: -5.468488e+06}
+    duplicate: true
+  - equation: 2 HO2 <=> H2O2 + O2
+    rate-constant: {A: 1.93e-05, b: 4.12, Ea: -2.075264e+07}
+    note: |
+      MP Burke, SJ Klippenstein, LB Harding, PCI 34:547 (2013).
+      DH = -69.7
+  - equation: 2 HO2 <=> O2 + 2 OH
+    rate-constant: {A: 6.41e+14, b: -1.54, Ea: 3.573136e+07}
+    note: |
+      SJ Klippenstein, R Sivaramakrishnan, U. Burke, KP Somers, HJ Curran, L Cai, H Pitsch, M Pelucchi, T Faravelli, P Glarborg, US Comb. 2019
+      DH = -38.0

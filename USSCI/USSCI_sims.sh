@@ -12,7 +12,7 @@ lgdfsz=7
 
 # python startup.py &
 
-date='Dec12'
+date='Dec16'
 
 # python USSCI/runLMRRfactory.py --date $date --allPdep 'True' --allPLOG 'True'
 
@@ -87,13 +87,9 @@ date='Dec12'
 # --figwidth 7 --figheight 3 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 25 --date $date
 
-# python USSCI/simulateIDT_Shao2019.py 
-# --figwidth 6.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
 
-# python USSCI/simulateJSR_SabiaH2O.py \
-# --figwidth 6.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
-# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date
+
+
 
 # python USSCI/simulateST_Shao2019.py \
 # --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
@@ -148,6 +144,26 @@ date='Dec12'
 # --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
 # --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 15 --date $date
 
-python USSCI/simulateFlameSpeed_ThinkMech10.py \
+# python USSCI/simulateFlameSpeed_ThinkMech10_H2.py \
+# --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 5.5 --gridsz 20 --date $date
+
+python USSCI/simulateFlameSpeed_ThinkMech10_CH4_lowP.py \
 --figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
---lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 20 --date $date
+--lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 5.5 --gridsz 20 --date $date
+
+python USSCI/simulateFlameSpeed_ThinkMech10_CH4_hiP.py \
+--figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 5.5 --gridsz 20 --date $date
+
+python USSCI/simulateFlameSpeed_ThinkMech10_CH2O.py \
+--figwidth 2.5 --figheight 2.35 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+--lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 5.5 --gridsz 20 --date $date
+
+# python USSCI/simulateJSR_SabiaH2O.py \
+# --figwidth 6.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw 2 --lgdfsz 6.5 --gridsz 10 --date $date
+
+# python USSCI/simulateIDT_Shao2019.py \
+# --figwidth 7.5 --figheight 2.5 --fsz $fszxtick --fszxtick $fszxtick --fszytick $fszytick --fszaxlab $fszaxlab \
+# --lw $lw --mw $mw --msz $msz --lgdw $lgdw --lgdfsz 5.5 --gridsz 10 --date $date

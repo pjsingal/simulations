@@ -60,13 +60,14 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-fuel='CH4'
+fuel='H2'
 oxidizer={'O2':1,'N2':3.76}
-phi_list = np.linspace(0.8,1.4,gridsz)
+phi_list = np.linspace(0.6,3,gridsz)
 P=30
 T = 700 #unburned gas temperature
-Xlim=[0.1,1000]
-Ylim=[4,1000]
+Xlim=[0.6,3]
+# Ylim=[0,400] #low-P case
+Ylim=[300,1000] #hi-P case
 width=0.03
 title=f'{fuel}/air ({P} atm, {T} K)'
 folder='ThinkMech'
@@ -81,7 +82,7 @@ models = {
             'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
-    'ThInK 1.0 (HO2-PLOG)': {
+    r'ThInK 1.0 (HO2-PLOG)': {
         'submodels': {
             'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
@@ -105,15 +106,19 @@ def getFlameSpeed(gaz,phi):
     flame.set_refine_criteria(ratio=3, slope=0.06, curve=0.1)
     # flame.soret_enabled = True
     # flame.transport_model = 'multicomponent'
-    flame.solve(loglevel=0, auto=True)
+    flame.solve(loglevel=1, auto=True)
     return flame.velocity[0]*100 # cm/s
 
 def generateData(model,m):
     print(f'  Generating species data')
     tic2 = time.time()
-    gas = ct.Solution(models[model]['submodels'][m])
+    gas = filteredModel(models[model]['submodels'][m])
     gas.TP = T, P*ct.one_atm
-    mbr=[getFlameSpeed(gas,phi) for phi in phi_list]
+    # mbr=[getFlameSpeed(gas,phi) for phi in phi_list]
+    mbr = Parallel(n_jobs=len(phi_list))(
+        delayed(getFlameSpeed)(gas,phi)
+        for phi in phi_list
+    )
     data = zip(phi_list,mbr)
     simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/FlameSpeed/{m}'
     os.makedirs(simOutPath,exist_ok=True)
@@ -121,27 +126,54 @@ def generateData(model,m):
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
 
+#Filter species
+def filteredModel(model):
+    #Filter species
+    all_species = ct.Species.list_from_file(model)
+    species=[]
+    for S in all_species:
+        comp = S.composition
+        if 'C' in comp:
+            continue
+        species.append(S)
+    species_names = {S.name for S in species}
+    #Filter reactions
+    ref_phase = ct.Solution(thermo='ideal-gas',kinetics='gas',species=all_species)
+    all_reactions = ct.Reaction.list_from_file(model,ref_phase)
+    reactions=[]
+    for R in all_reactions:
+        if not all(reactant in species_names for reactant in R.reactants):
+            continue
+        if not all(product in species_names for product in R.products):
+            continue
+        reactions.append(R)
+    gas = ct.Solution(name='reducedThink',thermo='ideal-gas',kinetics='gas',transport_model='mixture-averaged',species=species,reactions=reactions)
+    # gas.write_yaml("reducedThink.yaml")
+    return gas
+
+
 print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 for j,model in enumerate(models):
     print(f'Model: {model}')
+    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
         simFile=f'USSCI/data/{args.date}/{folder}/{model}/FlameSpeed/{m}/{name}.csv'
         if not os.path.exists(simFile):
             sims=generateData(model,m)  
         sims=pd.read_csv(simFile)
-        label = f'{m}' if k == 0 else None
-        ax.loglog(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+        label = f'{m}'
+        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
         ax.set_xlim(Xlim)
         ax.set_ylim(Ylim)
         ax.tick_params(axis='both',direction='in')
         ax.set_xlabel(r'Equivalence Ratio')
         ax.set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
         print('  > Data added to plot')
-ax.annotate(f'{title}', xy=(0.97, 0.97), xycoords='axes fraction',ha='right', va='top',fontsize=lgdfsz+1)
+ax.annotate(f'{title}', xy=(0.05, 0.97), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz+1)
 
 ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
 toc1=time.time()
