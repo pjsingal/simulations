@@ -97,6 +97,7 @@ models = {
             'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
                     },
     },
     # 'Glarborg-2025_NH3PLOG': {
@@ -111,6 +112,7 @@ models = {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
                     },
     },
     # 'Klippenstein-CNF2018-NH3PLOG': {
@@ -122,7 +124,7 @@ models = {
     # },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
+lstyles = ["solid","dashed","dotted","dashdot"]*6
 colors = ["xkcd:purple","xkcd:teal","r",'orange']
 
 def save_to_csv(filename, data):

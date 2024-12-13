@@ -73,7 +73,7 @@ P=100
 T_list = np.linspace(500,1200,gridsz)
 Xlim=[600,1200]
 # tau=0.15 #it actually ranges from 0.234 to 0.13 seconds
-vfr = 4/1000/60 #m3/s
+Q_std = 4000/1e6/60 # [m3/s]
 V=0.5e-6 #m3
 t_max=40
 
@@ -90,6 +90,7 @@ models = {
             'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
                     },
     },
     # 'Stagni-2023': {
@@ -111,11 +112,12 @@ models = {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
                     },
     },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
+lstyles = ["solid","dashed","dotted","dashdot"]*6
 colors = ["xkcd:purple","xkcd:teal","r"]*3
 # V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
@@ -125,7 +127,8 @@ def save_to_csv(filename, data):
         writer.writerows(data)
 
 def getStirredReactor(gas,T):
-    tau = V/vfr*293/T
+    Q = Q_std*(ct.one_atm/(P*ct.one_atm))*(293/T)
+    tau = V/Q*293/T
     h = 79.5 # heat transfer coefficient W/m2/K
     K = 2e-5 # pressureValveCoefficient
     reactorRadius = (V*3/4/np.pi)**(1/3) # [m3]

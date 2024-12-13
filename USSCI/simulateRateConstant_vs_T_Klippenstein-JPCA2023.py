@@ -67,11 +67,12 @@ name='Fig3_vs_T'
 
 # H,2,N,O, ,+, ,M, ,<,=,>, ,H, ,+, ,H,N,O, ,+, ,M
 
-P=100
+P=44
 T_list = np.linspace(100,2600,gridsz)
 reactionList=['NH2 + O <=> H + HNO','H + HNO <=> H2NO','H + HNO <=> HNOH', 'NH + OH <=> H + HNO']
 Xlim=[200,2600]
 Ylim=[1e-12,1e-9]
+X={'NH3':1}
 
 models = {
     'Glarborg-2025': {
@@ -100,7 +101,7 @@ def save_to_csv(filename, data):
 
 
 def getRateConstant(gas,T,P,reaction):
-    gas.TP = T, P*ct.one_atm
+    gas.TPX = T, P*ct.one_atm,X
     return gas.forward_rate_constants[gas.reaction_equations().index(reaction)]*1000/6.02e23
 
 def generateData(model,m,reaction):
@@ -121,7 +122,12 @@ tic1=time.time()
 f, ax = plt.subplots(1,len(reactionList), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 
+import matplotlib.ticker as ticker
+
+
 for i, reaction in enumerate(reactionList):
+    ax[i].xaxis.set_major_locator(ticker.MultipleLocator(300))
+    ax[i].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
     print(reaction)
     title=f'{reaction}\n{P}atm'
     for j,model in enumerate(models):
@@ -134,6 +140,7 @@ for i, reaction in enumerate(reactionList):
             sims=pd.read_csv(simFile)
             label = f'{model}' if k == 0 else None
             ax[i].semilogy(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            print(sims.iloc[:,0][sims.iloc[:,1].argmax()])
             ax[i].set_xlim(Xlim)
             ax[i].set_ylim(Ylim)
             ax[i].tick_params(axis='both',direction='in')

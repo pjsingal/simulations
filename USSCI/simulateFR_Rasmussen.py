@@ -100,26 +100,26 @@ n_steps = 3000
 Q_std = 3000 #nominal gas flow rate @ STP [mL/min]
 
 models = {
-    'Klippenstein-CNF2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
-            # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
-            #         },
-            'LMRR-allPdep': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Klippenstein-CNF2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+    #         'LMRR-allPdep': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
+    #                 },
+    # },
     'Glarborg-2025': {
         'submodels': {
             'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
                     },
     },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r"]*3
+lstyles = ["solid","dashed","dotted","dashdot"]*6
+colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
@@ -181,7 +181,10 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/FR/{m}/{species}/{name}.csv' 
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            zorder=10
+            if m=='LMRR-allPLOG':
+                zorder=100
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label,zorder=zorder)
             ax[z].set_ylabel(f'X-{species} [ppm]')
             if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)

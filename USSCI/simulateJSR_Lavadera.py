@@ -136,13 +136,14 @@ models = {
         'submodels': {
             'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-            # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
                     },
     },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
-colors = ['goldenrod',"xkcd:teal","r",'orange','xkcd:grey',"xkcd:purple"]*12
+lstyles = ["solid","dashed","dotted","dashdot"]*6
+colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 # V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
@@ -214,7 +215,7 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
             
             if exp and j==len(models)-1 and k==len(models[model]['submodels'])-1:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)

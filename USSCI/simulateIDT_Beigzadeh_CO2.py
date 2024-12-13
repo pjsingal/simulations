@@ -71,7 +71,7 @@ X={'H2':0.04,'CO2':0.45,'AR':0.51}
 P=2.5
 T_list = np.linspace(1390,760,gridsz)
 Xlim=[1000/1400,1000/750]
-indicator='o' # oh, oh*, h, o, pressure
+indicator='oh' # oh, oh*, h, o, pressure
 
 models = {
     # 'Stagni-2023': {

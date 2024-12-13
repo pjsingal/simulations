@@ -81,6 +81,7 @@ models = {
             'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
             'LMRR-allPdep': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
                     },
     },
     'Alzueta-2023': {
@@ -88,6 +89,7 @@ models = {
             'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml",
                     },
     },
     'Klippenstein-CNF2018': {
@@ -95,6 +97,7 @@ models = {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
                     },
     },
     # 'Glarborg-2018': {
@@ -109,6 +112,7 @@ models = {
             'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
                     },
     },
     # 'Song-2019': {  #bad
@@ -128,7 +132,7 @@ models = {
     # },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
+lstyles = ["solid","dashed","dotted","dashdot"]*6
 colors = ["xkcd:purple","xkcd:teal","r",'orange']
 
 def save_to_csv(filename, data):

@@ -58,16 +58,17 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-title=f'JSR:\n1000ppm NH3/\n12500ppm O2/N2'
+
 folder='Klippenstein-JPCA2023'
 name='Fig4'
 exp=True
 dataLabel='Dagaut (2020)'
 data=['dagaut.csv']
 observables=['NO','NH3','H2']
-
+# observables=['HNO','NH2','H2NO','HNOH','NH']
 X={'NH3':1000e-6,'O2':12500e-6,'N2':1-1000e-6-12500e-6}
 P=1
+title=f'JSR:\n1000ppm NH3/\n12500ppm O2/N2 ({P} atm)'
 T_list = np.linspace(1100,1390,gridsz)
 Xlim=[1100,1400]
 tau=0.1
@@ -75,13 +76,14 @@ V=27.5e-6 #m3
 t_max=20
 
 models = {
-    # 'Glarborg-2025': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
-    #                 },
-    # },
+    'Glarborg-2025': {
+        'submodels': {
+            'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
+                    },
+    },
     # 'Alzueta-2023': {
     #     'submodels': {
     #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
@@ -89,13 +91,14 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Klippenstein-CNF2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Klippenstein-CNF2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
+    #                 },
+    # },
     # 'Glarborg-2018': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
@@ -127,8 +130,8 @@ models = {
     # },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r",'orange']
+lstyles = ["solid","dashed","dotted","dashdot"]*6
+colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
@@ -199,7 +202,7 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [ppm]')
             if exp and j==len(models)-1 and k==len(models[model]['submodels'])-1 and z==0:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)

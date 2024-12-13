@@ -82,19 +82,21 @@ models = {
             'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
                     },
     },
-    'Glarborg-2018': {
-        'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Glarborg-2018': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2018/glarborg-2018.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allPLOG.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2018_LMRR_allP.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted"]*6
-colors = ["xkcd:purple","xkcd:teal","r",'orange']
+lstyles = ["solid","dashed","dotted", "dashdot"]*6
+colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 # V = 4/3*np.pi*(diameter/2)**2 #PSR volume
 
 def save_to_csv(filename, data):
@@ -171,16 +173,17 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/PSR/{m}/{oxidizer}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*1e6, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
             
             # if exp and j==len(models)-1 and k==2:
             #     dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
             #     ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
             ax[z].tick_params(axis='both',direction='in')
-            ax[z].set_xlabel('Equivalence ratio [-]')
+            
+            ax[z].set_ylabel(f'NO mole fraction [ppm]')
         print('  > Data added to plot')
-ax[0].set_ylabel(f'NO mole fraction [ppm]')
+ax[0].set_xlabel('Equivalence ratio [-]')
 ax[0].annotate(f'{title}', xy=(0.07, 0.96), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz+2)
 ax[0].annotate(f'CH4/air', xy=(0.09, 0.05), xycoords='axes fraction',ha='left', va='bottom',fontsize=lgdfsz+2)
 ax[1].annotate(f'CH4/({oxidizerList[1]})', xy=(0.09, 0.05), xycoords='axes fraction',ha='left', va='bottom',fontsize=lgdfsz+2)

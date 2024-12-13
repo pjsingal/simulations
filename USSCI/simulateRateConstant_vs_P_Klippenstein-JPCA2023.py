@@ -59,6 +59,8 @@ mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
 mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
+
+
 ########################################################################################
 
 
@@ -68,11 +70,11 @@ name='Fig3_vs_P'
 # H,2,N,O, ,+, ,M, ,<,=,>, ,H, ,+, ,H,N,O, ,+, ,M
 
 P_list = np.linspace(1,100,gridsz)
-T=1000
+T=2000
 reactionList=['NH2 + O <=> H + HNO','H + HNO <=> H2NO','H + HNO <=> HNOH', 'NH + OH <=> H + HNO']
-Xlim=[200,2600]
+Xlim=[0,60]
 Ylim=[1e-12,1e-9]
-X={'H2':1}
+X={'H2O2':1}
 
 models = {
     'Glarborg-2025': {
@@ -122,7 +124,12 @@ tic1=time.time()
 f, ax = plt.subplots(1,len(reactionList), figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
 
+import matplotlib.ticker as ticker
+
+
 for i, reaction in enumerate(reactionList):
+    ax[i].xaxis.set_major_locator(ticker.MultipleLocator(5))
+    ax[i].xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
     print(reaction)
     title=f'{reaction}\n{T}K'
     for j,model in enumerate(models):
@@ -133,9 +140,10 @@ for i, reaction in enumerate(reactionList):
             # if not os.path.exists(simFile):
             sims=generateData(model,m,reaction)  
             sims=pd.read_csv(simFile)
+            print(sims.iloc[:,0][sims.iloc[:,1].argmax()])
             label = f'{model}' if k == 0 else None
             ax[i].semilogy(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-            # ax[i].set_xlim(Xlim)
+            ax[i].set_xlim(Xlim)
             ax[i].set_ylim(Ylim)
             ax[i].tick_params(axis='both',direction='in')
             ax[i].set_xlabel('Pressure [atm]')
@@ -149,3 +157,5 @@ os.makedirs(outPath,exist_ok=True)
 name=f'{name}.png'
 plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
 print(f'Figure generated in {round(toc1-tic1,3)}s')
+
+

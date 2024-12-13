@@ -81,20 +81,29 @@ indicator='NH2' # oh, oh*, h, o, pressure
 width=0.05
 
 models = {
-    'Alzueta-2023': {
+    # 'Alzueta-2023': {
+    #     'submodels': {
+    #         # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+    #         'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
+    #         r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+    #                 },
+    # },
+    'Glarborg-2025': {
         'submodels': {
-            # 'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-            'Ar':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allAR.yaml",
-            r'H$_2$O':"chemical_mechanisms/Alzueta-2023/alzuetamechanism_LMRR_allH2O.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
                     },
     },
 }
 ########################################################################################
-lstyles = ["dashed","dashed","solid","dotted"]*6
-colors = ['r', 'b',"xkcd:purple",'orange',"xkcd:teal", 'xkcd:grey',"goldenrod"]*12
-linewidth = [lw*0.5,lw*0.5,lw,lw]
+# lstyles = ["dashed","dashed","solid","dotted"]*6
+lstyles = ["solid","dashed","dotted","dashdot"]*6
+# colors = ['r', 'b',"xkcd:purple",'orange',"xkcd:teal", 'xkcd:grey',"goldenrod"]*12
+colors = ["xkcd:purple",'orange',"xkcd:teal", 'xkcd:grey',"goldenrod"]*12
+linewidth = [lw,lw,lw,lw]
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
