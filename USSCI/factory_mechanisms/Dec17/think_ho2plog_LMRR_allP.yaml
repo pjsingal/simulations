@@ -19483,6 +19483,7 @@ reactions:
     efficiency: {A: 2.3, b: 0, Ea: 0}
     note: ThInK 1.0 (generic)
 - equation: CH3OCO + H <=> CH3 + H + CO2
+  duplicate: true
   type: linear-Burke
   reference-collider: AR
   colliders:
