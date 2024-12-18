@@ -60,71 +60,36 @@ mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
-folder='Cornell-2022'
-name='Fig2_sensitivity'
-observables=['NO','NO2','NH3']
+folder='Zhang-2018'
+name='Fig10_sensitivity'
+observables=['CH4','C2H2','C2H4','C2H6']
 cutoff=12
 threshold=0.001
 override=False
-
-X={'NH3':214.8e-6,'NO2':197.4e-6,'O2':396e-6, 'N2':1-(214.8+197.4+396)*1e-6}
-P=1.02
-# T=875
-T_list = np.linspace(700,1100,gridsz)
-Xlim=[700,1100]
-Ylim=[[-4,6],[-0.25,0.5],[-0.25,0.25]]
-tau=1
-V=90e-6 #m3
-t_max=20
-title=f'JSR: 214.8ppm NH3/197.4ppm NO2/396ppm O2/N2 ({P}atm)'
-
+X={'CH3CH2OH':0.002,'O2':0.02,'N2':1-0.002-0.02} #ethanol mixed with o2 and n2 bath
+P=10
+T_list = np.linspace(775,1100,gridsz)
+Xlim=[773,1100]
+Ylim=[[-4,6],[-0.25,0.5],[-0.25,0.25],[-0.25,0.25]]
+tau=0.07
+diameter=0.04 #m
+t_max=50
+title=r'JSR: 0.2% ethanol/2% O$_2$/N$_2$'+f'\n{P} atm'
 models = {
-    # 'Glarborg-2025': {
-    #     'submodels': {
-    #         # 'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
-    #         # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
-    #         # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
-    #                 },
-    # },
-    'Glarborg-2025-original': {
+    'ThInK 1.0': {
         'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2025-original/glarborg-2025-original.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR_allPLOG.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR_allP.yaml",
+            'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
-    # 'Jian-2024': {
+    # r'ThInK 1.0 (HO2-PLOG)': {
     #     'submodels': {
-    #         'base': r"chemical_mechanisms/Jian-2024/jian-2024.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/jian-2024_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/jian-2024_LMRR_allPLOG.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/jian-2024_LMRR_allP.yaml",
-    #                 },
-    # },
-    # 'Klippenstein-CNF2018': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allPLOG.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/klippenstein-CNF2018_LMRR_allP.yaml",
-    #                 },
-    # },
-    # 'Stagni-2023': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/stagni-2023_LMRR_allP.yaml",
-    #                 },
-    # },
-    # 'Alzueta-2023': {
-    #     'submodels': {
-    #         'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allPLOG.yaml",
-    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/alzuetamechanism_LMRR_allP.yaml",
+    #         'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
+    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
     #                 },
     # },
 }
@@ -132,6 +97,7 @@ models = {
 lstyles = ["solid","dashed","dotted", "dashdot"]*6
 # colors = ["xkcd:purple","r","xkcd:teal",'orange']*3
 # colours=[(np.random.rand(), np.random.rand(), np.random.rand()) for _ in range(len(list(models.keys())))]
+V = 4/3*np.pi*(diameter/2)**2 #JSR volume
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
