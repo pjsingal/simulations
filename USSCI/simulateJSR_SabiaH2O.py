@@ -70,6 +70,7 @@ X={'H2': 0.03, 'O2': 0.03, 'AR': 0.94*(1-0.2), 'H2O':0.2}
 P=1.2
 T_list = np.linspace(800,1050,gridsz)
 Xlim=[780,1070]
+Ylim=[[1.45,3.2],[-0.05,3.2]]
 tau=0.5
 V=113e-6 #m3
 t_max=20
@@ -80,7 +81,7 @@ models = {
             'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
     r'ThInK 1.0 (HO2-PLOG)': {
@@ -88,7 +89,7 @@ models = {
             'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
                     },
     },
 }
@@ -153,25 +154,21 @@ for j,model in enumerate(models):
     ax[0].plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
     for k,m in enumerate(models[model]['submodels']):
         print(f' Submodel: {m}')
-        flag=False
-        while not flag:
-            for z, species in enumerate(observables):
-                simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
-                if not os.path.exists(simFile):
-                    sims=generateData(model,m) 
-                    flag=True
-            flag=True
+        for z, species in enumerate(observables):
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
+            if not os.path.exists(simFile):
+                sims=generateData(model,m) 
         for z, species in enumerate(observables):   
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
             ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             ax[z].set_ylabel(f'X-{species} [ppm]')
-            if exp and j==len(models)-1 and k==3:
+            if exp and j==len(models)-1 and k==2:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}')
                 ax[z].plot(dat.iloc[:,0],dat.iloc[:,1],'o',fillstyle='none',linestyle='none',color='k',markersize=msz,markeredgewidth=mw,label=dataLabel)
             ax[z].set_xlim(Xlim)
-            # ax[z].set_ylim(Ylim)
+            ax[z].set_ylim(Ylim[z])
             ax[z].tick_params(axis='both',direction='in')
             ax[z].set_xlabel('Temperature [K]')
         print('  > Data added to plot')

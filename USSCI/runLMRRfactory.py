@@ -31,7 +31,8 @@ models = {
     # 'Otomo': "chemical_mechanisms/Otomo-2018/otomo-2018.yaml",
     # 'Stagni': "chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     # 'Klippenstein-CNF2018': "chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
-    'Glarborg-2025-HNNO': "chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+    # 'Glarborg-2025-HNNO': "chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+    'Glarborg-2025-original': "chemical_mechanisms/Glarborg-2025-original/glarborg-2025-original.yaml",
     }
 
 for m in models.keys():

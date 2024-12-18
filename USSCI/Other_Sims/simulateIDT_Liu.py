@@ -79,6 +79,22 @@ Ylim=[20,3000]
 indicator='o' # oh, oh*, h, o, pressure
 
 models = {
+    'ThInK 1.0': {
+        'submodels': {
+            'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
+                    },
+    },
+    r'ThInK 1.0 (HO2-PLOG)': {
+        'submodels': {
+            'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
+                    },
+    },
     # 'Stagni-2023': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
@@ -135,13 +151,13 @@ models = {
     #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/gutierrez-2025_LMRR_allPLOG.yaml",
     #                 },
     # },
-    'Aramco-3.0': {
-        'submodels': {
-            'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
-                    },
-    },
+    # 'Aramco-3.0': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
+    #                 },
+    # },
     # 'Zhang-2018': {
     #     'submodels': {
     #         'base': r"chemical_mechanisms/Zhang-2018/zhang-2018_ethanolDME.yaml",

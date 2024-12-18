@@ -81,12 +81,20 @@ n_steps = 2000
 Q_tn = 1000 #nominal gas flow rate @ STP [mL/min]
 
 models = {
-    'Glarborg-2025': {
+    # 'Glarborg-2025': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
+    #         'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
+    #                 },
+    # },
+    'Glarborg-2025-original': {
         'submodels': {
-            'base': r"chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allPLOG.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-HNNO_LMRR_allP.yaml",
+            'base': r"chemical_mechanisms/Glarborg-2025-original/glarborg-2025-original.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR_allPLOG.yaml",
+            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/glarborg-2025-original_LMRR_allP.yaml",
                     },
     },
     # 'Jian-2024': {

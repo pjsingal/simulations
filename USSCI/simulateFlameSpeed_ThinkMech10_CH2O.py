@@ -75,16 +75,16 @@ name=f'{fuel}_{P}atm{T}K'
 models = {
     'ThInK 1.0': {
         'submodels': {
-            # 'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-            # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
-            # 'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
+            'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
             # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
     r'ThInK 1.0 (HO2-PLOG)': {
         'submodels': {
-            # 'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
-            # 'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
+            'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
             # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
                     },
