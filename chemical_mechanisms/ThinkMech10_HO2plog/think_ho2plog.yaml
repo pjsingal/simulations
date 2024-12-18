@@ -3518,38 +3518,35 @@ reactions:
     - {P: 10.0 atm, A: 6.5309e+17, b: -2.1321, Ea: 387.493}
     - {P: 30.0 atm, A: 1.4978e+18, b: -2.1003, Ea: 487.579}
     - {P: 100.0 atm, A: 3.8222e+18, b: -2.0706, Ea: 665.984}
-  - name: AR
-    efficiency: {A: 0.5, b: 0.0, Ea: 0.0}
-    note: present work
   - name: H2O
-    efficiency: {A: 14.0, b: 0.0, Ea: 0.0}
+    efficiency: {A: 28.0, b: 0.0, Ea: 0.0}
     note: present work
   - name: CO2
-    efficiency: {A: 2, b: 0.0, Ea: 0.0}
+    efficiency: {A: 4, b: 0.0, Ea: 0.0}
     note: present work
   - name: H2
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: CH4
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: C2H6
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: C3H8
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: C2H4
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: C2H2
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: CH3CHCH2
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
   - name: CH3CCH
-    efficiency: {A: 3, b: 0.0, Ea: 0.0}
+    efficiency: {A: 6, b: 0.0, Ea: 0.0}
     note: present work
 
 - equation: H + O + M <=> OH + M  # Reaction 5
