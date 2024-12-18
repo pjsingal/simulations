@@ -18,7 +18,7 @@ models = {
     # 'Cornell-2024': "chemical_mechanisms/Cornell-2024/cornell-2024.yaml",
     # 'Jian-2024': "chemical_mechanisms/Jian-2024/jian-2024.yaml",
     # 'AramcoMech30-updated': 'chemical_mechanisms/AramcoMech30-updated/aramco30-updated.yaml',
-    # 'AramcoMech30': 'chemical_mechanisms/AramcoMech30/aramco30.yaml',
+    'AramcoMech30': 'chemical_mechanisms/AramcoMech30/aramco30.yaml',
     # 'ThinkMech10': 'chemical_mechanisms/ThinkMech10/think.yaml',
     # 'ThinkMech10_HO2plog': 'chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml',
     # 'Alzueta': 'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
@@ -32,7 +32,7 @@ models = {
     # 'Stagni': "chemical_mechanisms/Stagni-2023/stagni-2023.yaml",
     # 'Klippenstein-CNF2018': "chemical_mechanisms/Klippenstein-CNF2018/klippenstein-CNF2018.yaml",
     # 'Glarborg-2025-HNNO': "chemical_mechanisms/Glarborg-2025-HNNO/glarborg-2025-HNNO.yaml",
-    'Glarborg-2025-original': "chemical_mechanisms/Glarborg-2025-original/glarborg-2025-original.yaml",
+    # 'Glarborg-2025-original': "chemical_mechanisms/Glarborg-2025-original/glarborg-2025-original.yaml",
     }
 
 for m in models.keys():
