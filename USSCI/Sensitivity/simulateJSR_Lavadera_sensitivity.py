@@ -86,14 +86,14 @@ models = {
             # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
-    # r'ThInK 1.0 (HO2-PLOG)': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
-    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
-    #                 },
-    # },
+    r'ThInK 1.0 (HO2-PLOG)': {
+        'submodels': {
+            'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
+            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
+                    },
+    },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted", "dashdot"]*6
