@@ -4051,57 +4051,57 @@ reactions:
   - name: NH3
     efficiency: {A: 5.0, b: 0, Ea: 0}
     note: present work
-- equation: NO + O (+AR) <=> NO2 (+AR)
-  type: linear-Burke
-  reference-collider: AR
-  colliders:
-  - name: M
-    type: falloff
-    low-P-rate-constant: {A: 7.56e+19, b: -1.41, Ea: 0.0}
-    high-P-rate-constant: {A: 1300000000000000.0, b: -0.75, Ea: 0.0}
-    Troe: {A: 0.75, T3: 1000.0, T1: 100000.0, T2: 1.0e+30}
-  - name: HE
-    efficiency: {A: 2.56, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: N2
-    efficiency: {A: 2.25, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: H2
-    efficiency: {A: 4.09, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: CO2
-    efficiency: {A: 14.3, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: NH3
-    efficiency: {A: 22.2, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: H2O
-    efficiency: {A: 27.9, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: H2O2
-    efficiency: {A: 16.3, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: CO
-    efficiency: {A: 2.746, b: 0, Ea: 0}
-    note: Matsugi-2021 (generic)
-  - name: O2
-    efficiency: {A: 1.7, b: 0, Ea: 0}
-    note: Jasper-2022 (generic)
-  - name: CH2O
-    efficiency: {A: 2.5, b: 0, Ea: 0}
-    note: Glarborg-2018 (generic)
-  - name: NO2
-    efficiency: {A: 6.2, b: 0, Ea: 0}
-    note: Zhang-2017 (generic)
-  - name: N2O
-    efficiency: {A: 4.4, b: 0, Ea: 0}
-    note: Zhang-2017 (generic)
-  - name: O
-    efficiency: {A: 4, b: 0, Ea: 0}
-    note: Han-2021 (generic)
-  - name: O3
-    efficiency: {A: 2.5, b: 0, Ea: 0}
-    note: Han-2021 (generic)
+# - equation: NO + O (+AR) <=> NO2 (+AR)
+#   type: linear-Burke
+#   reference-collider: AR
+#   colliders:
+#   - name: M
+#     type: falloff
+#     low-P-rate-constant: {A: 7.56e+19, b: -1.41, Ea: 0.0}
+#     high-P-rate-constant: {A: 1300000000000000.0, b: -0.75, Ea: 0.0}
+#     Troe: {A: 0.75, T3: 1000.0, T1: 100000.0, T2: 1.0e+30}
+#   - name: HE
+#     efficiency: {A: 2.56, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: N2
+#     efficiency: {A: 2.25, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: H2
+#     efficiency: {A: 4.09, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: CO2
+#     efficiency: {A: 14.3, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: NH3
+#     efficiency: {A: 22.2, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: H2O
+#     efficiency: {A: 27.9, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: H2O2
+#     efficiency: {A: 16.3, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: CO
+#     efficiency: {A: 2.746, b: 0, Ea: 0}
+#     note: Matsugi-2021 (generic)
+#   - name: O2
+#     efficiency: {A: 1.7, b: 0, Ea: 0}
+#     note: Jasper-2022 (generic)
+#   - name: CH2O
+#     efficiency: {A: 2.5, b: 0, Ea: 0}
+#     note: Glarborg-2018 (generic)
+#   - name: NO2
+#     efficiency: {A: 6.2, b: 0, Ea: 0}
+#     note: Zhang-2017 (generic)
+#   - name: N2O
+#     efficiency: {A: 4.4, b: 0, Ea: 0}
+#     note: Zhang-2017 (generic)
+#   - name: O
+#     efficiency: {A: 4, b: 0, Ea: 0}
+#     note: Han-2021 (generic)
+#   - name: O3
+#     efficiency: {A: 2.5, b: 0, Ea: 0}
+#     note: Han-2021 (generic)
 - equation: NO2 + H <=> NO + OH
   rate-constant: {A: 14000000000000.0, b: 0.29, Ea: 25.0}
   note: 'AR
