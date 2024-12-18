@@ -70,7 +70,8 @@ data=['DME_1phi.csv']
 X={'CH3OCH3':0.12285,'O2':0.18428,'AR':0.69287} #DME phi=2
 P=8 #7-10 atm
 T_list = np.linspace(760,580,gridsz)
-Xlim=[1000/1650,1000/600]
+# Xlim=[1000/1650,1000/600]
+Xlim=[1000/750,1000/580]
 Ylim=[0.035,75]
 indicator='o' # oh, oh*, h, o, pressure
 

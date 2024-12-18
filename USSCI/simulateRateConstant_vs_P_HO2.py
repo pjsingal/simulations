@@ -59,99 +59,106 @@ mpl.rcParams['ytick.major.size'] = 2.5  # Length of major ticks on y-axis
 mpl.rcParams['xtick.minor.size'] = 1.5  # Length of minor ticks on x-axis
 mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
+
+
 ########################################################################################
-fuel='CH3OH'
-oxidizer={'O2':1,'N2':3.76}
-phi_list = np.linspace(0.6,3,gridsz)
-P=1
-T = 300 #unburned gas temperature
-Xlim=[0.6,2]
-Ylim=[0,60]
-width=0.03
-title=f'{fuel}/air ({P} atm, {T} K)'
-folder='ThinkMech'
-name=f'{fuel}_{P}atm{T}K'
+
+
+folder='HO2'
+P_list = np.linspace(1,100,gridsz)
+T_list=[700,1500,2000]
+reactionList=['H + O2 (+M) <=> HO2 (+M)','H + O2 <=> HO2','H + O2 (+M) <=> HO2 (+M)']
+Xlim=[0,60]
+Ylim=[1e0,1e3]
+collider='AR'
+X={collider:1}
+title=f'H + O2 (+Ar) <=> HO2 (+Ar)'
 
 models = {
-    'ThInK 1.0': {
+    'Troe (ThInK 1.0)': {
         'submodels': {
             'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allPLOG.yaml",
-            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
-    # r'ThInK 1.0 (HO2-PLOG)': {
-    #     'submodels': {
-    #         'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
-    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
-    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
-    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
-    #                 },
-    # },
+    r'PLOG (ThInK 1.0)': {
+        'submodels': {
+            'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+                    },
+    },
+    'Troe (Burke-2013)': {
+        'submodels': {
+            'base': r'chemical_mechanisms/Alzueta-2023/alzuetamechanism.yaml',
+                    },
+    },
 }
 ########################################################################################
-lstyles = ["solid","dashed","dotted","dashdot"]*6
-colors = ["xkcd:purple",'orange',"xkcd:teal", 'xkcd:grey',"goldenrod",'r', 'b']*12
+lstyles = ["solid","dashed","dotted"]*6
+colors = ["xkcd:purple","xkcd:teal","r"]*3
 
 def save_to_csv(filename, data):
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(data)
 
-def getFlameSpeed(gaz,phi):
-    gaz.set_equivalence_ratio(phi,fuel,oxidizer)
-    flame = ct.FreeFlame(gaz,width=width)
-    flame.set_refine_criteria(ratio=3, slope=0.06, curve=0.1)
-    # flame.soret_enabled = True
-    # flame.transport_model = 'multicomponent'
-    flame.solve(loglevel=1, auto=True)
-    return flame.velocity[0]*100 # cm/s
 
-def generateData(model,m):
+def getRateConstant(gas,T,P,reaction):
+    gas.TPX = T, P*ct.one_atm,X
+    k=gas.forward_rate_constants[gas.reaction_equations().index(reaction)]*1e-6
+    Rjoule = 8.31446261815324 # [J/K/mol]
+    conc = np.multiply(gas[collider].X, np.divide(P*ct.one_atm,np.multiply(Rjoule,T)))
+    return k/conc
+
+def generateData(model,m,reaction,T):
     print(f'  Generating species data')
     tic2 = time.time()
     gas = ct.Solution(models[model]['submodels'][m])
-    gas.TP = T, P*ct.one_atm
-    # mbr=[getFlameSpeed(gas,phi) for phi in phi_list]
-    mbr = Parallel(n_jobs=len(phi_list))(
-        delayed(getFlameSpeed)(gas,phi)
-        for phi in phi_list
-    )
-    data = zip(phi_list,mbr)
-    simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/FlameSpeed/{m}'
+    # save_to_csv('data.csv', gas.reaction_equations())
+    # print(gas.reaction_equations())
+    k_list=[getRateConstant(gas,T,P,reaction) for P in P_list]
+    data = zip(P_list,k_list)
+    simOutPath = f'USSCI/data/{args.date}/{folder}/{model}/RC_vs_P/{m}/{reaction}'
     os.makedirs(simOutPath,exist_ok=True)
     save_to_csv(f'{simOutPath}/{name}.csv', data)
     toc2 = time.time()
     print(f'  > Simulated in {round(toc2-tic2,2)}s')
-
 print(folder)
 tic1=time.time()
 f, ax = plt.subplots(1,1, figsize=(args.figwidth, args.figheight))
 plt.subplots_adjust(wspace=0.3)
-for j,model in enumerate(models):
-    print(f'Model: {model}')
-    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
-    for k,m in enumerate(models[model]['submodels']):
-        print(f' Submodel: {m}')
-        simFile=f'USSCI/data/{args.date}/{folder}/{model}/FlameSpeed/{m}/{name}.csv'
-        if not os.path.exists(simFile):
-            sims=generateData(model,m)  
-        sims=pd.read_csv(simFile)
-        label = f'{m}'
-        ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
-        ax.set_xlim(Xlim)
-        ax.set_ylim(Ylim)
-        ax.tick_params(axis='both',direction='in')
-        ax.set_xlabel(r'Equivalence Ratio')
-        ax.set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
-        print('  > Data added to plot')
-ax.annotate(f'{title}', xy=(0.05, 0.97), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz+1)
 
-ax.legend(fontsize=lgdfsz,frameon=False,loc='best', handlelength=lgdw,ncol=1) 
+import matplotlib.ticker as ticker
+
+ax.xaxis.set_major_locator(ticker.MultipleLocator(5))
+ax.xaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.0f}"))
+for j,model in enumerate(models):
+    ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
+    for i, T in enumerate(T_list):
+        name=f'K_vs_P_{collider}_{T}K'
+        reaction = reactionList[j]
+        print(f'Model: {model}')
+        print(reaction)
+        
+        for k,m in enumerate(models[model]['submodels']):
+            print(f' Submodel: {m}')
+            simFile=f'USSCI/data/{args.date}/{folder}/{model}/RC_vs_P/{m}/{reaction}/{name}.csv'
+            # if not os.path.exists(simFile):
+            sims=generateData(model,m,reaction,T)  
+            sims=pd.read_csv(simFile)
+            label = f'{T}K'
+            ax.semilogy(sims.iloc[:,0],sims.iloc[:,1], color=colors[j], linestyle=lstyles[i], linewidth=lw, label=label)
+            ax.set_xlim(Xlim)
+            ax.set_ylim(Ylim)
+            ax.tick_params(axis='both',direction='in')
+            ax.set_xlabel('Pressure [atm]')
+            print('  > Data added to plot')
+ax.annotate(f'{title}', xy=(0.05, 0.95), xycoords='axes fraction',ha='left', va='top',fontsize=lgdfsz)
+ax.legend(fontsize=lgdfsz,frameon=False,loc='lower left', handlelength=lgdw,ncol=1,bbox_to_anchor=(1,0))
+ax.set_ylabel(f'k/[AR] [/s]')
 toc1=time.time()
-outPath=f'USSCI/figures/{args.date}/{folder}/FlameSpeed'
+outPath=f'USSCI/figures/{args.date}/{folder}/RC'
 os.makedirs(outPath,exist_ok=True)
 name=f'{name}.png'
 plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
 print(f'Figure generated in {round(toc1-tic1,3)}s')
+
+

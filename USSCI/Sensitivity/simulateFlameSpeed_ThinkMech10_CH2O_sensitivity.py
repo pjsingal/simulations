@@ -103,6 +103,8 @@ def save_to_csv(filename, data):
         writer = csv.writer(csvfile)
         writer.writerows(data)
 
+        
+
 def getSensitivity(gas):
     gas.set_equivalence_ratio(phi,fuel,oxidizer)
     f = ct.FreeFlame(gas,width=width)

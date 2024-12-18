@@ -231,7 +231,7 @@ for j,model in enumerate(models):
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/JSR/{m}/{species}/{name}.csv'
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label)
+            ax[z].plot(sims.iloc[:,0],sims.iloc[:,1]*100, color=colors[j], linestyle=lstyles[k], linewidth=lw, label=label)
             
             if exp and j==len(models)-1 and k==len(models[model]['submodels'])-1:
                 dat = pd.read_csv(f'USSCI/graph-reading/{folder}/{data[z]}',header=None)
@@ -248,7 +248,7 @@ ax[0].annotate(r'CH$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', 
 ax[1].annotate(r'C$_2$H$_2$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
 ax[2].annotate(r'C$_2$H$_4$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
 ax[3].annotate(r'C$_2$H$_6$', xy=(0.91, 0.05), xycoords='axes fraction',ha='right', va='bottom',fontsize=lgdfsz+2)
-ax[1].legend(fontsize=lgdfsz,frameon=False,loc='upper left', handlelength=lgdw,ncol=1)
+ax[1].legend(fontsize=lgdfsz-2,frameon=False,loc='upper left', handlelength=lgdw,ncol=1)
 toc1=time.time()
 outPath=f'USSCI/figures/{args.date}/{folder}/JSR'
 os.makedirs(outPath,exist_ok=True)

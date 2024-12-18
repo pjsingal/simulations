@@ -105,7 +105,7 @@ models = {
             'base': r"chemical_mechanisms/AramcoMech30/aramco30.yaml",
             'LMRR': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR.yaml",
             'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allPLOG.yaml",
-            'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
+            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/aramco30_LMRR_allP.yaml",
                     },
     },
     # 'Klippenstein-CNF2018': {

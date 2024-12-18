@@ -66,7 +66,7 @@ phi_list = np.linspace(0.6,3,gridsz)
 P=1
 T = 300 #unburned gas temperature
 Xlim=[0.6,3]
-Ylim=[0,120]
+Ylim=[40,150]
 width=0.03
 title=f'{fuel}/air ({P} atm, {T} K)'
 folder='ThinkMech'
@@ -81,14 +81,14 @@ models = {
             # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_LMRR_allP.yaml",
                     },
     },
-    r'ThInK 1.0 (HO2-PLOG)': {
-        'submodels': {
-            'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
-            'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
-            'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
-            # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
-                    },
-    },
+    # r'ThInK 1.0 (HO2-PLOG)': {
+    #     'submodels': {
+    #         'base': r"chemical_mechanisms/ThinkMech10_HO2plog/think_ho2plog.yaml",
+    #         'LMRR': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR.yaml",
+    #         'LMRR-allPLOG': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allPLOG.yaml",
+    #         # 'LMRR-allP': f"USSCI/factory_mechanisms/{args.date}/think_ho2plog_LMRR_allP.yaml",
+    #                 },
+    # },
 }
 ########################################################################################
 lstyles = ["solid","dashed","dotted","dashdot"]*6
