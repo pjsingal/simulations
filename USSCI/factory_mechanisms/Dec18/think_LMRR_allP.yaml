@@ -5264,6 +5264,7 @@ reactions:
     efficiency: {A: 2.3, b: 0, Ea: 0}
     note: ThInK 1.0 (generic)
 - equation: CH3OCO (+M) <=> CH3 + CO2 (+M)
+  duplicate: true
   type: linear-Burke
   reference-collider: AR
   colliders:
@@ -5338,16 +5339,6 @@ reactions:
   - name: KR
     efficiency: {A: 1.0, b: 0, Ea: 0}
     note: present work
-  - name: H
-    efficiency: {A: 1, b: 0, Ea: 0}
-    type: pressure-dependent-Arrhenius
-    rate-constants:
-    - {P: 0.0395 atm, A: 4840000000000000.0, b: -0.44, Ea: 3809.0}
-    - {P: 0.1 atm, A: 5040000000000000.0, b: -0.44, Ea: 3823.0}
-    - {P: 1.0 atm, A: 8530000000000000.0, b: -0.51, Ea: 4032.0}
-    - {P: 10.0 atm, A: 5.36e+17, b: -1.0, Ea: 5719.0}
-    - {P: 100.0 atm, A: 2.2e+22, b: -2.22, Ea: 10892.0}
-    note: PSingal (originally written as separate rxn, CH3OCO + H <=> CH3 + H + CO2)
 - equation: CH3CH2O <=> CH3 + CH2O
   type: linear-Burke
   reference-collider: AR
@@ -19485,84 +19476,82 @@ reactions:
   - name: CH3OCHO
     efficiency: {A: 2.3, b: 0, Ea: 0}
     note: ThInK 1.0 (generic)
-# - equation: CH3OCO + H <=> CH3 + H + CO2
-#   type: linear-Burke
-#   reference-collider: AR
-#   colliders:
-#   - name: M
-#     type: pressure-dependent-Arrhenius
-#     rate-constants:
-#     - {P: 0.0395 atm, A: 4840000000000000.0, b: -0.44, Ea: 3809.0}
-#     - {P: 0.1 atm, A: 5040000000000000.0, b: -0.44, Ea: 3823.0}
-#     - {P: 1.0 atm, A: 8530000000000000.0, b: -0.51, Ea: 4032.0}
-#     - {P: 10.0 atm, A: 5.36e+17, b: -1.0, Ea: 5719.0}
-#     - {P: 100.0 atm, A: 2.2e+22, b: -2.22, Ea: 10892.0}
-  # - name: HE
-  #   efficiency: {A: 2.56, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: N2
-  #   efficiency: {A: 2.25, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: H2
-  #   efficiency: {A: 4.09, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: CO2
-  #   efficiency: {A: 14.3, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: H2O
-  #   efficiency: {A: 27.9, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: H2O2
-  #   efficiency: {A: 16.3, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: CO
-  #   efficiency: {A: 2.746, b: 0, Ea: 0}
-  #   note: Matsugi-2021 (generic)
-  # - name: CH4
-  #   efficiency: {A: 14.3, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: O2
-  #   efficiency: {A: 1.7, b: 0, Ea: 0}
-  #   note: Jasper-2022 (generic)
-  # - name: KR
-  #   efficiency: {A: 0.96, b: 0, Ea: 0}
-  #   note: JOM-2015 (generic)
-  # - name: C2H6
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: Aramco-3.0 / TsangHampson-1986 (generic)
-  # - name: CH2O
-  #   efficiency: {A: 2.5, b: 0, Ea: 0}
-  #   note: Glarborg-2018 (generic)
-  # - name: CH3OH
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: Glarborg-2018 (generic)
-  # - name: O
-  #   efficiency: {A: 4, b: 0, Ea: 0}
-  #   note: Han-2021 (generic)
-  # - name: C3H8
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: C2H4
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: CH3CHCH2
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: C2H2
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: CH2CCH2
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: CH3CCH
-  #   efficiency: {A: 3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: CH3OCHO
-  #   efficiency: {A: 2.3, b: 0, Ea: 0}
-  #   note: ThInK 1.0 (generic)
-  # - name: H
-  #   efficiency: {A: 0, b: 0, Ea: 0}
-  #   note: Added by PSingal (prevent duplicate)
+- equation: CH3OCO + H <=> CH3 + H + CO2
+  duplicate: true
+  type: linear-Burke
+  reference-collider: AR
+  colliders:
+  - name: M
+    type: pressure-dependent-Arrhenius
+    rate-constants:
+    - {P: 0.0395 atm, A: 4840000000000000.0, b: -0.44, Ea: 3809.0}
+    - {P: 0.1 atm, A: 5040000000000000.0, b: -0.44, Ea: 3823.0}
+    - {P: 1.0 atm, A: 8530000000000000.0, b: -0.51, Ea: 4032.0}
+    - {P: 10.0 atm, A: 5.36e+17, b: -1.0, Ea: 5719.0}
+    - {P: 100.0 atm, A: 2.2e+22, b: -2.22, Ea: 10892.0}
+  - name: HE
+    efficiency: {A: 2.56, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: N2
+    efficiency: {A: 2.25, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: H2
+    efficiency: {A: 4.09, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: CO2
+    efficiency: {A: 14.3, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: H2O
+    efficiency: {A: 27.9, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: H2O2
+    efficiency: {A: 16.3, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: CO
+    efficiency: {A: 2.746, b: 0, Ea: 0}
+    note: Matsugi-2021 (generic)
+  - name: CH4
+    efficiency: {A: 14.3, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: O2
+    efficiency: {A: 1.7, b: 0, Ea: 0}
+    note: Jasper-2022 (generic)
+  - name: KR
+    efficiency: {A: 0.96, b: 0, Ea: 0}
+    note: JOM-2015 (generic)
+  - name: C2H6
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: Aramco-3.0 / TsangHampson-1986 (generic)
+  - name: CH2O
+    efficiency: {A: 2.5, b: 0, Ea: 0}
+    note: Glarborg-2018 (generic)
+  - name: CH3OH
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: Glarborg-2018 (generic)
+  - name: O
+    efficiency: {A: 4, b: 0, Ea: 0}
+    note: Han-2021 (generic)
+  - name: C3H8
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: C2H4
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: CH3CHCH2
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: C2H2
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: CH2CCH2
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: CH3CCH
+    efficiency: {A: 3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
+  - name: CH3OCHO
+    efficiency: {A: 2.3, b: 0, Ea: 0}
+    note: ThInK 1.0 (generic)
 - equation: CH3OCO + CH3 <=> CH3OH + CH2CO
   type: linear-Burke
   reference-collider: AR

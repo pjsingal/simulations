@@ -5268,6 +5268,7 @@ reactions:
     efficiency: {A: 2.3, b: 0, Ea: 0}
     note: ThInK 1.0 (generic)
 - equation: CH3OCO (+M) <=> CH3 + CO2 (+M)
+  duplicate: true
   type: linear-Burke
   reference-collider: AR
   colliders:
@@ -5342,9 +5343,6 @@ reactions:
   - name: KR
     efficiency: {A: 1.0, b: 0, Ea: 0}
     note: present work
-  - name: H
-    efficiency: {A: 0.0, b: 0, Ea: 0}
-    note: PSingal (prevent 3b duplicate)
 - equation: CH3CH2O <=> CH3 + CH2O
   type: linear-Burke
   reference-collider: AR
