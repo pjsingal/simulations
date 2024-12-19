@@ -61,14 +61,14 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 
 ########################################################################################
 # fuel='CH4'
-fuelList=['C2H2','CH2O','CH3OH','H2']
-for fuel in fuelList:
+fuelList=['CH4','C2H2','CH2O','CH3OH','H2']
+for x, fuel in enumerate(fuelList):
     oxidizer={'O2':1,'N2':3.76}
     phi_list = np.linspace(0.6,1.5,gridsz)
     P=30
     T = 700 #unburned gas temperature
     Xlim=[0.6,1.6]
-    Ylim=[20,60]
+    Ylim=[[20,60],[100,350],[80,250],[0,150],[200,1200]]
     width=0.03
     title=f'{fuel}/air ({P} atm, {T} K)'
     folder='ThinkMech'
@@ -76,7 +76,7 @@ for fuel in fuelList:
 
     models = {
         'ThInK 1.0': {
-            'submodels': {
+            'CH4': {
                 'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
                 'C2H3+O2=CH2CHO+O': f"chemical_mechanisms/ThinkMech10/think_C2H3+O2=CH2CHO+O.yaml",
                 'H+C2H4(+M)=C2H5(+M)': f"chemical_mechanisms/ThinkMech10/think_H+C2H4+M=C2H5+M.yaml",
@@ -88,6 +88,47 @@ for fuel in fuelList:
                 'CH3+OH=H+CH2OH': f"chemical_mechanisms/ThinkMech10/think_CH3+OH=H+CH2OH.yaml",
                 'C2H5+H=CH3+CH3': f"chemical_mechanisms/ThinkMech10/think_C2H5+H=CH3+CH3.yaml",
                 'CH3+H(+M)=CH4(+M)': f"chemical_mechanisms/ThinkMech10/think_CH3+H+M=CH4+M.yaml",
+            },
+            'C2H2': {
+                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+                'HCO(+M)=H+CO(+M)': f"chemical_mechanisms/ThinkMech10/think_HCO+M=H+CO+M.yaml",
+                'CH2O+H=H+CO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=H+CO+H2.yaml",
+                'CO+OH=CO2+H': f"chemical_mechanisms/ThinkMech10/think_CO+OH=CO2+H.yaml",
+                'CH2O+H=HCO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=HCO+H2.yaml",
+                'C2H3+H=C2H2+H2': f"chemical_mechanisms/ThinkMech10/think_C2H3+H=C2H2+H2.yaml",
+                'H+C2H2(+M)=C2H3(+M)': f"chemical_mechanisms/ThinkMech10/think_H+C2H2+M=C2H3+M.yaml",
+                'H+O2(+M)=HO2(+M)': f"chemical_mechanisms/ThinkMech10/think_H+O2+M=HO2+M.yaml",
+                'CH3+H(+M)=CH4(+M)': f"chemical_mechanisms/ThinkMech10/think_CH3+H+M=CH4+M.yaml",
+                'C2H3+O2=CH2CHO+O': f"chemical_mechanisms/ThinkMech10/think_C2H3+O2=CH2CHO+O.yaml",
+            },
+            'CH2O': {
+                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+                'HCO(+M)=H+CO(+M)': f"chemical_mechanisms/ThinkMech10/think_HCO+M=H+CO+M.yaml",
+                'CO+OH=CO2+H': f"chemical_mechanisms/ThinkMech10/think_CO+OH=CO2+H.yaml",
+                'CH2O+H=H+CO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=H+CO+H2.yaml",
+                'CH2O+H=HCO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=HCO+H2.yaml",
+                'H+OH(+M)=H2O(+M)': f"chemical_mechanisms/ThinkMech10/think_H+OH+M=H2O+M.yaml",
+                'H+O2(+M)=HO2(+M)': f"chemical_mechanisms/ThinkMech10/think_H+O2+M=HO2+M.yaml",
+                'OH+OH(+M)=H2O2(+M)': f"chemical_mechanisms/ThinkMech10/think_OH+OH+M=H2O2+M.yaml",
+                'CH2O+OH=H+CO+H2O': f"chemical_mechanisms/ThinkMech10/think_CH2O+OH=H+CO+H2O.yaml",
+            },
+            'CH3OH': {
+                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+                'CH2OH(+M)=CH2O+H(+M)': f"chemical_mechanisms/ThinkMech10/think_CH2OH+M=CH2O+H+M.yaml",
+                'HCO(+M)=H+CO(+M)': f"chemical_mechanisms/ThinkMech10/think_HCO+M=H+CO+M.yaml",
+                'CH3+OH=H+CH2OH': f"chemical_mechanisms/ThinkMech10/think_CH3+OH=H+CH2OH.yaml",
+                'CH2O+H=H+CO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=H+CO+H2.yaml",
+                'H+OH(+M)=H2O(+M)': f"chemical_mechanisms/ThinkMech10/think_H+OH+M=H2O+M.yaml",
+                'CH3+H(+M)=CH4(+M)': f"chemical_mechanisms/ThinkMech10/think_CH3+H+M=CH4+M.yaml",
+                'CH2O+H=HCO+H2': f"chemical_mechanisms/ThinkMech10/think_CH2O+H=HCO+H2.yaml",
+                'CO+OH=CO2+H': f"chemical_mechanisms/ThinkMech10/think_CO+OH=CO2+H.yaml",
+                'OH+OH(+M)=H2O2(+M)': f"chemical_mechanisms/ThinkMech10/think_OH+OH+M=H2O2+M.yaml",
+                'H+O2(+M)=HO2(+M)': f"chemical_mechanisms/ThinkMech10/think_H+O2+M=HO2+M.yaml",
+            },
+            'H2': {
+                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
+                'H+O2(+M)=HO2(+M)': f"chemical_mechanisms/ThinkMech10/think_H+O2+M=HO2+M.yaml",
+                'H+OH(+M)=H2O(+M)': f"chemical_mechanisms/ThinkMech10/think_H+OH+M=H2O+M.yaml",
             },
         },
 
@@ -111,10 +152,10 @@ for fuel in fuelList:
         flame.solve(loglevel=1, auto=True)
         return flame.velocity[0]*100 # cm/s
 
-    def generateData(model,m):
+    def generateData(model,m,fuel):
         print(f'  Generating species data')
         tic2 = time.time()
-        gas = ct.Solution(models[model]['submodels'][m])
+        gas = ct.Solution(models[model][fuel][m])
         gas.TP = T, P*ct.one_atm
         # mbr=[getFlameSpeed(gas,phi) for phi in phi_list]
         mbr = Parallel(n_jobs=len(phi_list))(
@@ -135,17 +176,17 @@ for fuel in fuelList:
     for j,model in enumerate(models):
         print(f'Model: {model}')
         ax.plot(0, 0, '.', color='white',markersize=0.1,label=f'{model}') 
-        for k,m in enumerate(models[model]['submodels']):
+        for k,m in enumerate(models[model][fuel]):
             print(f' Submodel: {m}')
             simFile=f'USSCI/data/{args.date}/{folder}/{model}/FlameSpeed/{m}/{name}.csv'
             if not os.path.exists(simFile):
-                sims=generateData(model,m)  
+                sims=generateData(model,m,fuel)  
             sims=pd.read_csv(simFile)
             label = f'{m}'
             zorder=100 if m=='base' else 10
             ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label,zorder=zorder)
             ax.set_xlim(Xlim)
-            ax.set_ylim(Ylim)
+            ax.set_ylim(Ylim[x])
             ax.tick_params(axis='both',direction='in')
             ax.set_xlabel(r'Equivalence Ratio')
             ax.set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
