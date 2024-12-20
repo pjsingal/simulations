@@ -3781,24 +3781,24 @@ reactions:
   - name: CH3OCHO
     efficiency: {A: 2.3, b: 0, Ea: 0}
     note: ThInK 1.0 (generic)
-  - name: HE
-    efficiency: {A: 1.1639344262295082, b: 0, Ea: 0}
-    note: present work
-  - name: AR
-    efficiency: {A: 1.0, b: 0, Ea: 0}
-    note: present work
-  - name: H2
-    efficiency: {A: 2.459016393442623, b: 0, Ea: 0}
-    note: present work
-  - name: CH4
-    efficiency: {A: 4.918032786885246, b: 0, Ea: 0}
-    note: present work
-  - name: CO2
-    efficiency: {A: 3.278688524590164, b: 0, Ea: 0}
-    note: present work
-  - name: H2O
-    efficiency: {A: 11.475409836065573, b: 0, Ea: 0}
-    note: present work
+  # - name: HE
+  #   efficiency: {A: 1.1639344262295082, b: 0, Ea: 0}
+  #   note: present work
+  # - name: AR
+  #   efficiency: {A: 1.0, b: 0, Ea: 0}
+  #   note: present work
+  # - name: H2
+  #   efficiency: {A: 2.459016393442623, b: 0, Ea: 0}
+  #   note: present work
+  # - name: CH4
+  #   efficiency: {A: 4.918032786885246, b: 0, Ea: 0}
+  #   note: present work
+  # - name: CO2
+  #   efficiency: {A: 3.278688524590164, b: 0, Ea: 0}
+  #   note: present work
+  # - name: H2O
+  #   efficiency: {A: 11.475409836065573, b: 0, Ea: 0}
+  #   note: present work
 - equation: CO + OH <=> OCOH  # Reaction 33
   type: pressure-dependent-Arrhenius
   rate-constants:
