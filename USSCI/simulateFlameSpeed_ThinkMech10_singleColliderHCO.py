@@ -62,6 +62,7 @@ mpl.rcParams['ytick.minor.size'] = 1.5  # Length of minor ticks on y-axis
 ########################################################################################
 # fuel='CH4'
 fuelList=['CH4','C2H2','CH2O','CH3OH']
+# fuelList=['CH4']
 for x, fuel in enumerate(fuelList):
     oxidizer={'O2':1,'N2':3.76}
     phi_list = np.linspace(0.6,1.5,gridsz)
@@ -77,88 +78,109 @@ for x, fuel in enumerate(fuelList):
     models = {
         'ThInK 1.0': {
             'CH4': {
-                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-                'C2H2': f"chemical_mechanisms/ThinkMech10/think_C2H2.yaml",
-                'C2H4': f"chemical_mechanisms/ThinkMech10/think_C2H4.yaml",
-                'C2H6': f"chemical_mechanisms/ThinkMech10/think_C2H6.yaml",
-                'C3H8': f"chemical_mechanisms/ThinkMech10/think_C3H8.yaml",
-                'CH2CCH2': f"chemical_mechanisms/ThinkMech10/think_CH2CCH2.yaml",
-                'CH2O': f"chemical_mechanisms/ThinkMech10/think_CH2O.yaml",
-                'CH3CCH': f"chemical_mechanisms/ThinkMech10/think_CH3CCH.yaml",
-                'CH3CHCH2': f"chemical_mechanisms/ThinkMech10/think_CH3CHCH2.yaml",
-                'CH3OCHO': f"chemical_mechanisms/ThinkMech10/think_CH3OHO.yaml",
-                'CH3OH': f"chemical_mechanisms/ThinkMech10/think_CH3OH.yaml",
-                'CO': f"chemical_mechanisms/ThinkMech10/think_CO.yaml",
-                'H2O2': f"chemical_mechanisms/ThinkMech10/think_H2O2.yaml",
-                'KR': f"chemical_mechanisms/ThinkMech10/think_KR.yaml",
-                'N2': f"chemical_mechanisms/ThinkMech10/think_N2.yaml",
-                'O': f"chemical_mechanisms/ThinkMech10/think_O.yaml",
-                'O2': f"chemical_mechanisms/ThinkMech10/think_O2.yaml",
+                'no-colliders': r"chemical_mechanisms/ThinkMech10_HCOsubstitution/think.yaml",
+                # 'C2H2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H2.yaml",
+                # 'C2H4-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H4.yaml",
+                # 'C2H6-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H6.yaml",
+                # 'C3H8-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C3H8.yaml",
+                # 'CH2CCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2CCH2.yaml",
+                'CH2O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2O.yaml",
+                # 'CH3CCH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CCH.yaml",
+                # 'CH3CHCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CHCH2.yaml",
+                # 'CH3OCHO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OCHO.yaml",
+                'CH3OH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OH.yaml",
+                'CO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO.yaml",
+                'H2O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O2.yaml",
+                # # 'Kr-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_Kr.yaml",
+                'N2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_N2.yaml",
+                'O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O.yaml",
+                'O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O2.yaml",
+                # # 'He': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_He.yaml",
+                'H2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2.yaml",
+                'CH4': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH4.yaml",
+                'CO2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO2.yaml",
+                'H2O': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O.yaml",
             },
             'C2H2': {
-                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-                'C2H2': f"chemical_mechanisms/ThinkMech10/think_C2H2.yaml",
-                'C2H4': f"chemical_mechanisms/ThinkMech10/think_C2H4.yaml",
-                'C2H6': f"chemical_mechanisms/ThinkMech10/think_C2H6.yaml",
-                'C3H8': f"chemical_mechanisms/ThinkMech10/think_C3H8.yaml",
-                'CH2CCH2': f"chemical_mechanisms/ThinkMech10/think_CH2CCH2.yaml",
-                'CH2O': f"chemical_mechanisms/ThinkMech10/think_CH2O.yaml",
-                'CH3CCH': f"chemical_mechanisms/ThinkMech10/think_CH3CCH.yaml",
-                'CH3CHCH2': f"chemical_mechanisms/ThinkMech10/think_CH3CHCH2.yaml",
-                'CH3OCHO': f"chemical_mechanisms/ThinkMech10/think_CH3OHO.yaml",
-                'CH3OH': f"chemical_mechanisms/ThinkMech10/think_CH3OH.yaml",
-                'CO': f"chemical_mechanisms/ThinkMech10/think_CO.yaml",
-                'H2O2': f"chemical_mechanisms/ThinkMech10/think_H2O2.yaml",
-                'KR': f"chemical_mechanisms/ThinkMech10/think_KR.yaml",
-                'N2': f"chemical_mechanisms/ThinkMech10/think_N2.yaml",
-                'O': f"chemical_mechanisms/ThinkMech10/think_O.yaml",
-                'O2': f"chemical_mechanisms/ThinkMech10/think_O2.yaml",
+                'no-colliders': r"chemical_mechanisms/ThinkMech10_HCOsubstitution/think.yaml",
+                'C2H2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H2.yaml",
+                'C2H4-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H4.yaml",
+                'C2H6-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H6.yaml",
+                # 'C3H8-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C3H8.yaml",
+                # 'CH2CCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2CCH2.yaml",
+                'CH2O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2O.yaml",
+                # 'CH3CCH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CCH.yaml",
+                # 'CH3CHCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CHCH2.yaml",
+                'CH3OCHO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OCHO.yaml",
+                'CH3OH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OH.yaml",
+                'CO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO.yaml",
+                'H2O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O2.yaml",
+                # 'Kr-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_Kr.yaml",
+                'N2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_N2.yaml",
+                'O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O.yaml",
+                'O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O2.yaml",
+                # # 'He': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_He.yaml",
+                'H2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2.yaml",
+                'CH4': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH4.yaml",
+                'CO2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO2.yaml",
+                'H2O': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O.yaml",
             },
             'CH2O': {
-                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-                'C2H2': f"chemical_mechanisms/ThinkMech10/think_C2H2.yaml",
-                'C2H4': f"chemical_mechanisms/ThinkMech10/think_C2H4.yaml",
-                'C2H6': f"chemical_mechanisms/ThinkMech10/think_C2H6.yaml",
-                'C3H8': f"chemical_mechanisms/ThinkMech10/think_C3H8.yaml",
-                'CH2CCH2': f"chemical_mechanisms/ThinkMech10/think_CH2CCH2.yaml",
-                'CH2O': f"chemical_mechanisms/ThinkMech10/think_CH2O.yaml",
-                'CH3CCH': f"chemical_mechanisms/ThinkMech10/think_CH3CCH.yaml",
-                'CH3CHCH2': f"chemical_mechanisms/ThinkMech10/think_CH3CHCH2.yaml",
-                'CH3OCHO': f"chemical_mechanisms/ThinkMech10/think_CH3OHO.yaml",
-                'CH3OH': f"chemical_mechanisms/ThinkMech10/think_CH3OH.yaml",
-                'CO': f"chemical_mechanisms/ThinkMech10/think_CO.yaml",
-                'H2O2': f"chemical_mechanisms/ThinkMech10/think_H2O2.yaml",
-                'KR': f"chemical_mechanisms/ThinkMech10/think_KR.yaml",
-                'N2': f"chemical_mechanisms/ThinkMech10/think_N2.yaml",
-                'O': f"chemical_mechanisms/ThinkMech10/think_O.yaml",
-                'O2': f"chemical_mechanisms/ThinkMech10/think_O2.yaml",
+                'no-colliders': r"chemical_mechanisms/ThinkMech10_HCOsubstitution/think.yaml",
+                # 'C2H2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H2.yaml",
+                # 'C2H4-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H4.yaml",
+                # 'C2H6-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H6.yaml",
+                # 'C3H8-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C3H8.yaml",
+                # 'CH2CCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2CCH2.yaml",
+                'CH2O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2O.yaml",
+                # 'CH3CCH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CCH.yaml",
+                # 'CH3CHCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CHCH2.yaml",
+                # 'CH3OCHO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OCHO.yaml",
+                'CH3OH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OH.yaml",
+                'CO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO.yaml",
+                'H2O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O2.yaml",
+                # 'Kr-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_Kr.yaml",
+                'N2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_N2.yaml",
+                'O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O.yaml",
+                'O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O2.yaml",
+                # 'He': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_He.yaml",
+                'H2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2.yaml",
+                'CH4': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH4.yaml",
+                'CO2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO2.yaml",
+                'H2O': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O.yaml",
             },
             'CH3OH': {
-                'base': r"chemical_mechanisms/ThinkMech10/think.yaml",
-                'C2H2': f"chemical_mechanisms/ThinkMech10/think_C2H2.yaml",
-                'C2H4': f"chemical_mechanisms/ThinkMech10/think_C2H4.yaml",
-                'C2H6': f"chemical_mechanisms/ThinkMech10/think_C2H6.yaml",
-                'C3H8': f"chemical_mechanisms/ThinkMech10/think_C3H8.yaml",
-                'CH2CCH2': f"chemical_mechanisms/ThinkMech10/think_CH2CCH2.yaml",
-                'CH2O': f"chemical_mechanisms/ThinkMech10/think_CH2O.yaml",
-                'CH3CCH': f"chemical_mechanisms/ThinkMech10/think_CH3CCH.yaml",
-                'CH3CHCH2': f"chemical_mechanisms/ThinkMech10/think_CH3CHCH2.yaml",
-                'CH3OCHO': f"chemical_mechanisms/ThinkMech10/think_CH3OHO.yaml",
-                'CH3OH': f"chemical_mechanisms/ThinkMech10/think_CH3OH.yaml",
-                'CO': f"chemical_mechanisms/ThinkMech10/think_CO.yaml",
-                'H2O2': f"chemical_mechanisms/ThinkMech10/think_H2O2.yaml",
-                'KR': f"chemical_mechanisms/ThinkMech10/think_KR.yaml",
-                'N2': f"chemical_mechanisms/ThinkMech10/think_N2.yaml",
-                'O': f"chemical_mechanisms/ThinkMech10/think_O.yaml",
-                'O2': f"chemical_mechanisms/ThinkMech10/think_O2.yaml",
+                'no-colliders': r"chemical_mechanisms/ThinkMech10_HCOsubstitution/think.yaml",
+                # 'C2H2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H2.yaml",
+                # 'C2H4-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H4.yaml",
+                # 'C2H6-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C2H6.yaml",
+                # 'C3H8-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_C3H8.yaml",
+                # 'CH2CCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2CCH2.yaml",
+                'CH2O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH2O.yaml",
+                # 'CH3CCH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CCH.yaml",
+                # 'CH3CHCH2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3CHCH2.yaml",
+                # 'CH3OCHO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OCHO.yaml",
+                'CH3OH-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH3OH.yaml",
+                'CO-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO.yaml",
+                'H2O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O2.yaml",
+                # 'Kr-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_Kr.yaml",
+                'N2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_N2.yaml",
+                'O-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O.yaml",
+                'O2-generic': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_O2.yaml",
+                # 'He': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_He.yaml",
+                'H2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2.yaml",
+                'CH4': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CH4.yaml",
+                'CO2': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_CO2.yaml",
+                'H2O': f"chemical_mechanisms/ThinkMech10_HCOsubstitution/think_H2O.yaml",
             },
         },
 
     }
     ########################################################################################
     # lstyles = ["solid"]+["dashed","dotted","dashdot"]*11
-    lstyles = ["solid"] + ["dashed"]*10
-    colors = ["xkcd:purple",'orange','xkcd:grey','r', "xkcd:teal", 'b',"xkcd:lime green", "xkcd:magenta", "xkcd:navy blue","xkcd:sea green","coral"]
+    lstyles = ["solid"] + ["dashed"]*30
+    # lstyles = ["solid", (0, (2, 2)), (0, (3, 2)), (0, (4, 2)), (0, (5, 2)), (0, (6, 2))]
+    colors = ["xkcd:purple",'orange','xkcd:grey','r', "xkcd:teal", 'b',"xkcd:lime green", "xkcd:magenta", "xkcd:navy blue","xkcd:sea green","coral"]*5
 
     def save_to_csv(filename, data):
         with open(filename, 'w', newline='') as csvfile:
@@ -180,7 +202,7 @@ for x, fuel in enumerate(fuelList):
         gas = ct.Solution(models[model][fuel][m])
         gas.TP = T, P*ct.one_atm
         # mbr=[getFlameSpeed(gas,phi) for phi in phi_list]
-        mbr = Parallel(n_jobs=len(phi_list))(
+        mbr = Parallel(n_jobs=-1)(
             delayed(getFlameSpeed)(gas,phi)
             for phi in phi_list
         )
@@ -205,7 +227,7 @@ for x, fuel in enumerate(fuelList):
                 sims=generateData(model,m,fuel)  
             sims=pd.read_csv(simFile)
             label = f'{m}'
-            zorder=100 if m=='base' else 10
+            zorder=100 if m=='no-colliders' else 10
             ax.plot(sims.iloc[:,0],sims.iloc[:,1], color=colors[k], linestyle=lstyles[k], linewidth=lw, label=label,zorder=zorder)
             ax.set_xlim(Xlim)
             ax.set_ylim(Ylim[x])
@@ -219,6 +241,6 @@ for x, fuel in enumerate(fuelList):
     toc1=time.time()
     outPath=f'USSCI/figures/{args.date}/{folder}/FlameSpeed'
     os.makedirs(outPath,exist_ok=True)
-    name=f'{name}-singleLMRR.png'
+    name=f'{name}-singleColliderHCO.png'
     plt.savefig(f'{outPath}/{name}', dpi=500, bbox_inches='tight')
     print(f'Figure generated in {round(toc1-tic1,3)}s')
